@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Controles.contenedores
 {
-    class gesGroup:System.Windows.Forms.GroupBox
+    public  class gesGroup:System.Windows.Forms.GroupBox
     {
         public gesGroup()
         {

@@ -22,3 +22,11 @@ C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Implement\obj\Debug\Implem
 C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.csproj.CoreCompileInputs.cache
 C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.dll
 C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.pdb
+C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\bin\Debug\Implement.dll
+C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\bin\Debug\Implement.pdb
+C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\bin\Debug\Model.dll
+C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\bin\Debug\Model.pdb
+C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.csprojResolveAssemblyReference.cache
+C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.csproj.CoreCompileInputs.cache
+C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.dll
+C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.pdb

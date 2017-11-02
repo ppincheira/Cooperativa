@@ -47,11 +47,47 @@
     <Compile Include="btnPersonalizado.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="buttons\btnAceptar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnCancelar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnNuevo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\gesButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="contenedores\gesGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\gesMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\gesToolBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\gpbGrupo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="contenedores\mnuMenuPrincipal.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="datos\gesGrid.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\gesTreeVew.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\trvMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="forms\frmAdminGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmAdminGeneral.Designer.cs">
+      <DependentUpon>frmAdminGeneral.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\frmBuscador.cs">
       <SubType>Form</SubType>
@@ -59,44 +95,53 @@
     <Compile Include="forms\frmBuscador.Designer.cs">
       <DependentUpon>frmBuscador.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmBusqueda.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="forms\frmFormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\gesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\UserControl1.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="labels\gesLabel.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="forms\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="labels\lblEtiqueta.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="lblPersonalizado.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="txtNumeric.cs">
+    <Compile Include="textBoxes\gesTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="txtPersonalizado.cs">
+    <Compile Include="textBoxes\txtDescripcionCorta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="textBoxes\txtNumeric.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="textBoxes\txtPassword.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="textBoxes\txtPersonalizado.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="forms\frmAdminGeneral.resx">
+      <DependentUpon>frmAdminGeneral.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frmBuscador.resx">
       <DependentUpon>frmBuscador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frmBusqueda.resx">
-      <DependentUpon>frmBusqueda.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="forms\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +152,10 @@
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{30b38eed-bf12-4118-8492-53051e87d716}</Project>
       <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\service\Service.csproj">
+      <Project>{86fb2f28-828e-4d75-8656-fe5f83fa1d11}</Project>
+      <Name>Service</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
