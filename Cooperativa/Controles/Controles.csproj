@@ -83,6 +83,9 @@
     <Compile Include="datos\trvMenu.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Fecha\dtpFecha.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="forms\frmAdminGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
