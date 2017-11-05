@@ -67,9 +67,7 @@ namespace Controles.forms
                     
                     if (oDetalle.DctFiltroBusqueda == "S")
                     {
-
                         _dtCombo.Rows.Add(oDetalle.DctColumna, oDetalle.DctDescripcion);
-                     //   this.cmbBuscar.Items.Add(new KeyValuePair<string, string>(oDetalle.DctColumna, oDetalle.DctDescripcion));
                     }
 
                 }

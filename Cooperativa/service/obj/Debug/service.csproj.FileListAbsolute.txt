@@ -1,0 +1,10 @@
+C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\service\obj\Debug\service.csproj.CoreCompileInputs.cache
+C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Service.dll
+C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Service.pdb
+C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.dll
+C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\bin\Debug\Service.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\bin\Debug\Service.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\obj\Debug\Service.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\obj\Debug\Service.pdb

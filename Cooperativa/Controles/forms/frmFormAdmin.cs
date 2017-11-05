@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Controles
 {
-    public class frmFormAdmin:gesForm
+    abstract public class frmFormAdmin:gesForm
     {
     }
 }

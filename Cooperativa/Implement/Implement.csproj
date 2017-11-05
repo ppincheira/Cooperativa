@@ -45,6 +45,7 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="DepartamentosImpl.cs" />
     <Compile Include="DetallesColumnasTablasImpl.cs" />
+    <Compile Include="MenuItemsImp.cs" />
     <Compile Include="PruebaImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AreasImpl.cs" />

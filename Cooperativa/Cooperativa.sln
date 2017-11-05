@@ -11,11 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Implement", "Implement\Impl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{B9CE123C-0ACE-4976-B314-5167F547A6D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service", "service\service.csproj", "{86FB2F28-828E-4D75-8656-FE5F83FA1D11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "service\Service.csproj", "{86FB2F28-828E-4D75-8656-FE5F83FA1D11}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controles", "Controles\Controles.csproj", "{2B8D11AE-A2F8-4DD8-97A7-9E722B57182E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modulos", "modulos", "{C3A6235B-0AA8-403C-B4E1-15670B7E7136}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Subsistemas", "Subsistemas", "{C3A6235B-0AA8-403C-B4E1-15670B7E7136}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gesBilling", "gesBilling\gesBilling.csproj", "{FDE6A93E-E38E-4E13-BCB6-2832E9FD4634}"
 EndProject
