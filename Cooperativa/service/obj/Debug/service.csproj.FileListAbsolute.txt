@@ -3,3 +3,4 @@ C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\S
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Service.pdb
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.dll
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.pdb
+C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.csprojResolveAssemblyReference.cache

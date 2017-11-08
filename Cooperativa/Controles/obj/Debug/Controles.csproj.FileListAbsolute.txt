@@ -45,3 +45,4 @@ C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Model.pdb
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Service.pdb
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Implement.pdb
+C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.frmFormAdmin.resources

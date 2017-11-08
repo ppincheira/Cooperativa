@@ -87,15 +87,18 @@ namespace Controles.forms
 
         private void frmBuscador_Load(object sender, EventArgs e)
         {
-            inicializar();
+            try { 
+                Inicializar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         #endregion
         #region << METODOS >>
-        private void inicializar()
+        private void Inicializar()
         {
-
-            try
-            {
                
                 _filtroCampos = "";
                 _filtroValores = "";
@@ -141,13 +144,7 @@ namespace Controles.forms
                 TablasBus oTablasBus = new TablasBus();
                 this.dgBusqueda.DataSource = oTablasBus.TablasBusquedaGetAllFilter(_Tabla,_Campo, _filtroCampos, _filtroValores);
                 this.lblCantidad.Text = "Se encontraron " + this.dgBusqueda.VisibleRowCount.ToString() + " registros";
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-
+        
         }
 
         private void CargarGrilla() {
