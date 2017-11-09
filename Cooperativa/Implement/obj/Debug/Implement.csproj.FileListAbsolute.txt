@@ -37,3 +37,11 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Oracle
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Model.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\bin\Debug\Implement.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\bin\Debug\Implement.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\bin\Debug\Model.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\bin\Debug\Model.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.csprojResolveAssemblyReference.cache
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.pdb
