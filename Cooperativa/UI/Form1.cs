@@ -65,9 +65,16 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            //Areas oArea = new Areas();
+            //oArea.AreCodigo = "BBB";
+            //oArea.AreDescripcion = "BBBBBBBB";
+            //AreasBus oAreaBus = new AreasBus();
+            //oAreaBus.AreasAdd(oArea);
             Controles.forms.frmBuscador frmbus = new Controles.forms.frmBuscador("AREAS");
             frmbus.ShowDialog();
+
+          
+
         }
     }
 }

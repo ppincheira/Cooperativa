@@ -142,6 +142,7 @@ namespace Implement
             }
         }
 
+
         public List<DetallesColumnasTablas> DetallesColumnasTablasGetAll()
         {
             List<DetallesColumnasTablas> lstDetallesColumnasTablas = new List<DetallesColumnasTablas>();

@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace Controles.buttons
 {
-    abstract public class gesButton: System.Windows.Forms.Button
+    class btnVer : gesButton
     {
-        public gesButton() {
-            BackColor = System.Drawing.Color.Blue;
-
-        }
-
-
     }
 }

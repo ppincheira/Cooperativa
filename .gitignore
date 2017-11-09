@@ -1,8 +1,21 @@
 
 *.ide
 Cooperativa/.vs/Cooperativa/v15/.suo
-Cooperativa/.vs/Cooperativa/v15/.suo
 *.dll
 *.dll
 *.pdb
 *.dll
+*.ide
+*.ide
+*.dll
+*.pdb
+Cooperativa/Business/obj/Debug/Business.csprojResolveAssemblyReference.cache
+*.pdb
+*.dll
+*.pdb
+*.dll
+*.pdb
+*.dll
+*.pdb
+*.cache
+

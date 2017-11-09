@@ -40,6 +40,7 @@ C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.dll
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.pdb
+<<<<<<< HEAD
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Business.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Business.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Implement.dll
@@ -60,3 +61,5 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Business\bin\D
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.pdb
+=======
+>>>>>>> 80f0da89263d4ddaa909f164393667f24b57550c

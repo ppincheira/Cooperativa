@@ -50,10 +50,28 @@
     <Compile Include="buttons\btnAceptar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="buttons\btnAnular.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="buttons\btnCancelar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="buttons\btnEditar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnExportar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnImprimir.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="buttons\btnNuevo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnSalir.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnVer.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="buttons\gesButton.cs">
@@ -81,6 +99,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="datos\trvMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fecha\dtpFecha.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="forms\frmAdminGeneral.cs">
@@ -139,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmBuscador.resx">
       <DependentUpon>frmBuscador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmFormAdmin.resx">
+      <DependentUpon>frmFormAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

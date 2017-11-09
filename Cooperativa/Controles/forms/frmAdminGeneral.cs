@@ -8,12 +8,9 @@ using System.Windows.Forms;
 
 namespace Controles.forms
 {
-    public partial class frmAdminGeneral : Controles.frmFormAdmin
+    public partial class frmAdminGeneral : gesForm
     {
-        public frmAdminGeneral()
-        {
-            InitializeComponent();
-        }
+  
       
     }
 }

@@ -196,7 +196,7 @@ namespace Implement
 		}
 
 
-        public DataTable TablasBusquedaGetAllFilter(string Tabla, string Campos, string filterCampos, string filterValores)
+        public DataTable TablasBusquedaGetAllFilter(string Tabla, string Campos, string filterCampos, string filterValores )
         {
             try
             {
@@ -214,8 +214,24 @@ namespace Implement
 
                     for (int i = 0; i < filterCamp.Length; i++)
                     {
+
+                        if  (filterV[i].Contains("%"))
+                        {
+                            string[] filterFecha = System.Text.RegularExpressions.Regex.Split(filterV[i], "%");
+
+                            sqlSelect += filterCamp[i] + " >=" + filterFecha[0] ;
+                            sqlSelect += " AND ";
+                            sqlSelect += filterCamp[i] + " >=" + filterFecha[1];
+                        }
+                        if  (filterCamp[i]!="")
+
                         sqlSelect += filterCamp[i] + " like '%" + filterV[i]+"%'";
+
                     }
+
+
+
+
                 }
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);

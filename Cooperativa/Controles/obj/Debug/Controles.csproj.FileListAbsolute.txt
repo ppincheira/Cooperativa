@@ -45,6 +45,9 @@ C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Model.pdb
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Service.pdb
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Implement.pdb
+<<<<<<< HEAD
+C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.frmFormAdmin.resources
+=======
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Business.dll
@@ -63,6 +66,7 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Contro
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
+<<<<<<< HEAD
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Business.dll
@@ -81,3 +85,6 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
+=======
+>>>>>>> 8dcfdcfae598675de8ed36f8a494ffc615f3dc36
+>>>>>>> 80f0da89263d4ddaa909f164393667f24b57550c
