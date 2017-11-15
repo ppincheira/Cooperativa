@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Usuarios
+    public class Usuarios
     {
         #region Private Properties
         private int _UsrNumero;
@@ -18,12 +18,9 @@ namespace Model
         private DateTime _UsrFechaBaja;
         private string _UsrPerfil;
         #endregion
-
         #region Constructors
-
         public Usuarios()
         {
-
         }
 
         public Usuarios(int UsrNumero, int PrsNumero, string UsrNombre, string UsrBloqueado, string UsrClave, DateTime UsrFechaAlta, DateTime UsrFechaBaja, string UsrPerfil)
@@ -37,42 +34,24 @@ namespace Model
             _UsrFechaBaja = UsrFechaBaja;
             _UsrPerfil = UsrPerfil;
         }
-
         #endregion
-
         #region Properties
-
         public int UsrNumero
         {
             get { return _UsrNumero; }
             set { _UsrNumero = value; }
         }
-
         public int PrsNumero
         {
             get { return _PrsNumero; }
             set { _PrsNumero = value; }
         }
-        //public string MniDescripcion
-        //{
-        //    get { return _MniDescripcion; }
-        //    set { _MniDescripcion = value; }
-        //}
-        //public string FrmNombre
-        //{
-        //    get { return _FrmNombre; }
-        //    set { _FrmNombre = value; }
-        //}
-        //public string MniParametros
-        //{
-        //    get { return _MniParametros; }
-        //    set { _MniParametros = value; }
-        //}
-        //public string SbsCodigo
-        //{
-        //    get { return _SbsCodigo; }
-        //    set { _SbsCodigo = value; }
-        //}
+        public string UsrNombre   {get;  set;}
+        public string UsrBloqueado { get; set;}
+        public string UsrClave { get; set;}
+        public DateTime UsrFechaAlta { get; set;}
+        public DateTime UsrFechaBaja { get; set;}
+        public string UsrPerfil { get; set;}
         #endregion
     }
 }

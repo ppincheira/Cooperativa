@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Controles.textBoxes 
 {
-    abstract class gesTextBox : System.Windows.Forms.TextBox
+    public class gesTextBox : System.Windows.Forms.TextBox
     {
+        public gesTextBox(){
+            this.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+        }
     }
+    
 }

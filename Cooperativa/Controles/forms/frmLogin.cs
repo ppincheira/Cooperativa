@@ -4,10 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Service;
+using Business;
+using Model;
+using System.Data;
 namespace Controles
 {
     public partial class frmLogin: gesForm
     {
+        #region << PROPIEDADES >>
+        private string _Subsistema;
+        
+        
+       
+
         private contenedores.gpbGrupo gpbGrupo2;
         private buttons.btnCancelar btnCancelar;
         private buttons.btnAceptar btnAceptar;
@@ -16,13 +25,13 @@ namespace Controles
         private labels.lblEtiqueta lblEtiqueta1;
         private labels.lblEtiqueta lblEtiqueta2;
         private contenedores.gpbGrupo gpbGrupo1;
-
-        public frmLogin(string modulo)
+        #endregion
+        #region <<METODOS>>
+        public frmLogin(string subsistema)
         {
             this.Text = "LOGIN";
+            _Subsistema = subsistema;
             InitializeComponent();
-            
-
         }
 
         private void InitializeComponent()
@@ -98,21 +107,22 @@ namespace Controles
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Blue;
             this.btnCancelar.Location = new System.Drawing.Point(189, 28);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(97, 23);
             this.btnCancelar.TabIndex = 1;
-       
+            this.btnCancelar.Text = "[F3] CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(24, 28);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(94, 23);
+            //this.btnAceptar.Size = new System.Drawing.Size(94, 23);
             this.btnAceptar.TabIndex = 0;
-       
-            //this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // frmLogin
@@ -130,13 +140,28 @@ namespace Controles
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            ValidarLogin valida = new ValidarLogin();
-            if (valida.existeUsuario()){
-                frmPrincipal vtnPrincipal = new frmPrincipal();
-                this.Visible = false;
-                vtnPrincipal.Show();
+             UsuariosBus oUsuarioBus = new UsuariosBus();
+            Usuarios oUsuario = new Usuarios();
+            oUsuario = oUsuarioBus.UsuariosLogin(txtUsuario.Text, txtPassword.Text);
+            if  (oUsuario != null)
+            {
+                PersonasBus oPersonaBus = new PersonasBus();
+                Personas oPersona = new Personas();
+                oPersona = oPersonaBus.PersonasGetById(oUsuario.PrsNumero);
+                frmPrincipal frm = new frmPrincipal(_Subsistema);
+                frm.Text = _Subsistema; 
+                frm.toolStripStatusLabel1.Text = _Subsistema  + oPersona.PrsNombre + ", " + oPersona.PrsApellido ;
+                frm.Show();
+            }
+         }
 
-            }
-            }
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            frmPrincipal frm = new frmPrincipal(_Subsistema);
+            //frm.Text = _Subsistema + _drUsuario[2];
+            frm.toolStripStatusLabel1.Text = "HOLA MUNDO";
+            frm.Show();
+        }
+        #endregion
     }
 }
