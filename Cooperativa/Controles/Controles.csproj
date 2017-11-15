@@ -134,6 +134,9 @@
     <Compile Include="Fecha\dtpFecha.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Fecha\gesDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="forms\frmABM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,7 +196,7 @@
     <Compile Include="textBoxes\txtPassword.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="textBoxes\txtPersonalizado.cs">
+    <Compile Include="textBoxes\txtFiltro.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -208,13 +211,11 @@
     <EmbeddedResource Include="forms\frmBuscador.resx">
       <DependentUpon>frmBuscador.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmFormAdmin.resx">
       <DependentUpon>frmFormAdmin.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

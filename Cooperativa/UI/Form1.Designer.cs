@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblPersonalizado1 = new Controles.lblPersonalizado();
             this.numericTextBox1 = new Controles.NumericTextBox();
-            this.txtPersonalizado1 = new Controles.txtPersonalizado();
+            this.txtPersonalizado1 = new Controles.txtFiltro();
             this.btnPersonalizado1 = new Controles.btnPersonalizado();
             this.btnPersonalizado2 = new Controles.btnPersonalizado();
             this.dgvTest = new System.Windows.Forms.DataGridView();
@@ -138,7 +138,7 @@
 
         #endregion
 
-        private Controles.txtPersonalizado txtPersonalizado1;
+        private Controles.txtFiltro txtPersonalizado1;
         private Controles.NumericTextBox numericTextBox1;
         private System.Windows.Forms.Label label1;
         private Controles.lblPersonalizado lblPersonalizado1;

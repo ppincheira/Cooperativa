@@ -20,3 +20,25 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmFormAdmin.resources
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.frmLogin.resources
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.Resources.Iconos.resources
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Business.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Model.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Service.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Implement.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Oracle.DataAccess.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Business.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Model.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Service.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Implement.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csprojResolveAssemblyReference.cache
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmABM.resources
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmAdminGeneral.resources
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmBuscador.resources
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.frmLogin.resources
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmFormAdmin.resources
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.frmPrincipal.resources
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.Resources.Iconos.resources
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
