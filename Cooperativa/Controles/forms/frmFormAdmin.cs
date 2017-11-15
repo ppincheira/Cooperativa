@@ -12,7 +12,7 @@ namespace Controles.forms
     public partial class frmFormAdmin :gesForm
     {
         private contenedores.gpbGrupo gpbFiltro;
-        private txtPersonalizado txtFiltro;
+        private txtFiltro txtFiltro;
         private System.Windows.Forms.ComboBox cmbBuscar;
         private labels.lblEtiqueta lblEtiqueta2;
         private labels.lblEtiqueta lblFiltro;
@@ -39,7 +39,7 @@ namespace Controles.forms
         private void InitializeComponent()
         {
             this.gpbFiltro = new Controles.contenedores.gpbGrupo();
-            this.txtFiltro = new Controles.txtPersonalizado();
+            this.txtFiltro = new Controles.txtFiltro();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
             this.lblFiltro = new Controles.labels.lblEtiqueta();

@@ -8,7 +8,7 @@ using System.ComponentModel;
 using System.Drawing;
 namespace Controles
 {
-    public class txtPersonalizado : TextBox 
+    public class txtFiltro : Controles.textBoxes.gesTextBox
     {
         //Nuevas propiedades
         private string textoVacio;
@@ -28,7 +28,7 @@ namespace Controles
         //Variables privadas
         bool bndTextoVacio = false;//Bandera que nos indica si esta activo el TextoVacio
         //Constructor
-        public txtPersonalizado()
+        public txtFiltro()
         {//Iniciamos los valores por defecto
             colorTextoVacio = Color.Gray;
             textoVacio = "<Descripcion>";

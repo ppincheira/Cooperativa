@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Controles.Fecha
 {
-    public class dtpFecha: gesDateTimePicker
+    public class gesDateTimePicker : System.Windows.Forms.DateTimePicker
     {
     }
 }
