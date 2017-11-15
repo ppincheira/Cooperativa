@@ -106,13 +106,11 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\B
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Controles.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Model.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Implement.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Service.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Oracle.DataAccess.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Business.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Controles.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Model.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Implement.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Service.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.Form1.resources
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.frmLogin.resources

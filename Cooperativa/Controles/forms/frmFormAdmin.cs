@@ -90,6 +90,7 @@ namespace Controles.forms
             this.txtFiltro.Size = new System.Drawing.Size(166, 20);
             this.txtFiltro.TabIndex = 3;
             this.txtFiltro.TextoVacio = "<Descripcion>";
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // cmbBuscar
             // 
@@ -397,6 +398,10 @@ namespace Controles.forms
 
         }
 
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            CargarGrilla();
+        }
         #endregion
 
         #region << METODOS >>
@@ -451,8 +456,30 @@ namespace Controles.forms
 
         }
 
-        #endregion
+        private void CargarGrilla()
+        {
+            _filtroCampos = "";
+            _filtroValores = "";
 
+            if (this.gpbFecha.Enabled)
+            {
+                _filtroValores = this.dtpFechaDesde.Text + "%" + this.dtpFechaHasta.Text + "&";
+                _filtroCampos = _Fecha;
+            }
+            if (this.gpbGrupoEstado.Enabled)
+                _filtroValores = this.cmbEstado.Text + "&";
+
+            _filtroCampos = _filtroCampos + this.cmbBuscar.SelectedValue.ToString() + "&";
+            _filtroValores = _filtroValores + this.txtFiltro.Text + "&";
+
+            TablasBus oTablasBus = new TablasBus();
+            this.dgBusqueda.DataSource = oTablasBus.TablasBusquedaGetAllFilter(_Tabla, _Campo, _filtroCampos, _filtroValores);
+            this.lblCantidad.Text = "Se encontraron " + this.dgBusqueda.VisibleRowCount.ToString() + " registros";
+
+        }
+
+
+        #endregion
 
     }
 }
