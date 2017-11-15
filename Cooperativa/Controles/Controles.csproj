@@ -68,10 +68,28 @@
     <Compile Include="buttons\btnAceptar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="buttons\btnAnular.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="buttons\btnCancelar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="buttons\btnEditar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnExportar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnImprimir.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="buttons\btnNuevo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnSalir.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnVer.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="buttons\gesButton.cs">
@@ -112,6 +130,15 @@
     </Compile>
     <Compile Include="datos\trvMenu.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Fecha\dtpFecha.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="forms\frmABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmABM.Designer.cs">
+      <DependentUpon>frmABM.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\frmAdminGeneral.cs">
       <SubType>Form</SubType>
@@ -172,14 +199,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="forms\frmABM.resx">
+      <DependentUpon>frmABM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frmAdminGeneral.resx">
       <DependentUpon>frmAdminGeneral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmBuscador.resx">
       <DependentUpon>frmBuscador.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="forms\frmFormAdmin.resx">
+      <DependentUpon>frmFormAdmin.cs</DependentUpon>
+>>>>>>> 7b0441016618a778103919dcd114c3e1222b5828
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

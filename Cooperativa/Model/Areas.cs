@@ -33,13 +33,9 @@ namespace Model
 
         #region Properties
 
-        public string AreCodigo
-        {
-            get { return _AreCodigo; }
-            set { _AreCodigo = value; }
-        }
+        public string AreCodigo { get; set; }
 
-        public string AreDescripcion
+    public string AreDescripcion
         {
             get { return _AreDescripcion; }
             set { _AreDescripcion = value; }

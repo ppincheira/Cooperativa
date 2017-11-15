@@ -142,6 +142,7 @@ namespace Implement
             }
         }
 
+
         public List<DetallesColumnasTablas> DetallesColumnasTablasGetAll()
         {
             List<DetallesColumnasTablas> lstDetallesColumnasTablas = new List<DetallesColumnasTablas>();
@@ -189,6 +190,43 @@ namespace Implement
                 string sqlSelect = " SELECT DCT.* FROM  DETALLES_COLUMNAS_TABLAS DCT " +
                 " INNER JOIN TABLAS t on t.TAB_CODIGO = dct.TAB_CODIGO "+
                 " WHERE T.TAB_NOMBRE = '" + name+"'";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt = new DataTable();
+                dt = ds.Tables[0];
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; dt.Rows.Count > i; i++)
+                    {
+                        DataRow dr = dt.Rows[i];
+                        DetallesColumnasTablas NewEnt = new DetallesColumnasTablas();
+                        NewEnt = CargarDetallesColumnasTablas(dr);
+                        lstDetallesColumnasTablas.Add(NewEnt);
+                    }
+                }
+                return lstDetallesColumnasTablas;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<DetallesColumnasTablas> DetallesColumnasTablasGetByCodigo(String codigo)
+        {
+            List<DetallesColumnasTablas> lstDetallesColumnasTablas = new List<DetallesColumnasTablas>();
+            try
+            {
+
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = " SELECT DCT.* FROM  DETALLES_COLUMNAS_TABLAS DCT " +
+                " INNER JOIN TABLAS t on t.TAB_CODIGO = dct.TAB_CODIGO " +
+                " WHERE T.TAB_CODIGO = '" + codigo + "'";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();

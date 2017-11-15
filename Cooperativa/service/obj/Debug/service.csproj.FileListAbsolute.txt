@@ -1,0 +1,4 @@
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Service.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Service.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.pdb

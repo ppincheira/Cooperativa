@@ -59,6 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas.cs" />
+    <Compile Include="Auditorias.cs" />
+    <Compile Include="Barrios.cs" />
+    <Compile Include="CallesLocalidades.cs" />
+    <Compile Include="Clientes.cs" />
+    <Compile Include="CodigosPostalesLocalidade.cs" />
     <Compile Include="Departamentos.cs" />
     <Compile Include="DetallesColumnasTablas.cs" />
     <Compile Include="Personas.cs" />

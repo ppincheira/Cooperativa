@@ -196,13 +196,14 @@ namespace Implement
 		}
 
 
-        public DataTable TablasBusquedaGetAllFilter(string Tabla, string Campos, string filterCampos, string filterValores)
+        public DataTable TablasBusquedaGetAllFilter(string Tabla, string Campos, string filterCampos, string filterValores )
         {
             try
             {
                 DataSet ds = new DataSet();
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
+                
                 string[] filterCamp = System.Text.RegularExpressions.Regex.Split(filterCampos, "&");
                 string[] filterV = System.Text.RegularExpressions.Regex.Split(filterValores, "&");
                 
@@ -210,12 +211,25 @@ namespace Implement
 
                 string sqlSelect = "select "+Campos+" from " + Tabla;
                 if (filterCampos != "") { 
-                     sqlSelect=sqlSelect+" where ";
+                     sqlSelect=sqlSelect+" where  1=1";
 
                     for (int i = 0; i < filterCamp.Length; i++)
                     {
-                        sqlSelect += filterCamp[i] + " like '%" + filterV[i]+"%'";
+
+                        if  (filterV[i].Contains("%"))
+                        {
+                            string[] filterFecha = System.Text.RegularExpressions.Regex.Split(filterV[i], "%");
+
+                            sqlSelect += "AND ("+filterCamp[i] + " >='" + filterFecha[0] +"'";
+                            sqlSelect += " AND ";
+                            sqlSelect += filterCamp[i] + " <='" + filterFecha[1]+"')";
+                        }
+                        else { 
+                            if  (filterCamp[i]!="")
+                               sqlSelect += " AND "+filterCamp[i] + " like '%" + filterV[i]+"%'";
+                        }
                     }
+
                 }
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);

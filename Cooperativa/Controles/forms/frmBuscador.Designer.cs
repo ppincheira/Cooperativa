@@ -28,32 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbBotones = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.gbBusqueda = new System.Windows.Forms.GroupBox();
+            this.gpbGrupoEstado = new Controles.contenedores.gpbGrupo();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.lblEEstado = new Controles.labels.lblEtiqueta();
+            this.gpbGrupoFecha = new Controles.contenedores.gpbGrupo();
+            this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
+            this.lblEFechaHasta = new Controles.labels.lblEtiqueta();
+            this.lblEFechaDesde = new Controles.labels.lblEtiqueta();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.gbData = new Controles.contenedores.gesGroup();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.dgBusqueda = new Controles.datos.gesGrid();
-            this.groupBox1.SuspendLayout();
+            this.gbBotones.SuspendLayout();
             this.gbBusqueda.SuspendLayout();
+            this.gpbGrupoEstado.SuspendLayout();
+            this.gpbGrupoFecha.SuspendLayout();
             this.gbData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgBusqueda)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbBotones
             // 
-            this.groupBox1.Controls.Add(this.btnCancelar);
-            this.groupBox1.Controls.Add(this.btnAceptar);
-            this.groupBox1.Location = new System.Drawing.Point(9, 439);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(581, 51);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.gbBotones.Controls.Add(this.btnCancelar);
+            this.gbBotones.Controls.Add(this.btnAceptar);
+            this.gbBotones.Location = new System.Drawing.Point(9, 439);
+            this.gbBotones.Name = "gbBotones";
+            this.gbBotones.Size = new System.Drawing.Size(581, 51);
+            this.gbBotones.TabIndex = 10;
+            this.gbBotones.TabStop = false;
             // 
             // btnCancelar
             // 
@@ -76,15 +85,93 @@
             // 
             // gbBusqueda
             // 
+            this.gbBusqueda.Controls.Add(this.gpbGrupoEstado);
+            this.gbBusqueda.Controls.Add(this.gpbGrupoFecha);
             this.gbBusqueda.Controls.Add(this.lblTitulo);
             this.gbBusqueda.Controls.Add(this.cmbBuscar);
             this.gbBusqueda.Controls.Add(this.txtFiltro);
             this.gbBusqueda.Location = new System.Drawing.Point(9, 6);
             this.gbBusqueda.Name = "gbBusqueda";
-            this.gbBusqueda.Size = new System.Drawing.Size(581, 112);
+            this.gbBusqueda.Size = new System.Drawing.Size(581, 118);
             this.gbBusqueda.TabIndex = 9;
             this.gbBusqueda.TabStop = false;
             this.gbBusqueda.Text = "Busqueda";
+            // 
+            // gpbGrupoEstado
+            // 
+            this.gpbGrupoEstado.Controls.Add(this.cmbEstado);
+            this.gpbGrupoEstado.Controls.Add(this.lblEEstado);
+            this.gpbGrupoEstado.Location = new System.Drawing.Point(438, 19);
+            this.gpbGrupoEstado.Name = "gpbGrupoEstado";
+            this.gpbGrupoEstado.Size = new System.Drawing.Size(137, 83);
+            this.gpbGrupoEstado.TabIndex = 7;
+            this.gpbGrupoEstado.TabStop = false;
+            this.gpbGrupoEstado.Visible = false;
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(6, 54);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(125, 21);
+            this.cmbEstado.TabIndex = 8;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
+            // 
+            // lblEEstado
+            // 
+            this.lblEEstado.AutoSize = true;
+            this.lblEEstado.Location = new System.Drawing.Point(6, 16);
+            this.lblEEstado.Name = "lblEEstado";
+            this.lblEEstado.Size = new System.Drawing.Size(40, 13);
+            this.lblEEstado.TabIndex = 8;
+            this.lblEEstado.Text = "Estado";
+            // 
+            // gpbGrupoFecha
+            // 
+            this.gpbGrupoFecha.Controls.Add(this.dtpFechaHasta);
+            this.gpbGrupoFecha.Controls.Add(this.dtpFechaDesde);
+            this.gpbGrupoFecha.Controls.Add(this.lblEFechaHasta);
+            this.gpbGrupoFecha.Controls.Add(this.lblEFechaDesde);
+            this.gpbGrupoFecha.Location = new System.Drawing.Point(206, 19);
+            this.gpbGrupoFecha.Name = "gpbGrupoFecha";
+            this.gpbGrupoFecha.Size = new System.Drawing.Size(226, 83);
+            this.gpbGrupoFecha.TabIndex = 6;
+            this.gpbGrupoFecha.TabStop = false;
+            this.gpbGrupoFecha.Visible = false;
+            // 
+            // dtpFechaHasta
+            // 
+            this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaHasta.Location = new System.Drawing.Point(117, 55);
+            this.dtpFechaHasta.Name = "dtpFechaHasta";
+            this.dtpFechaHasta.Size = new System.Drawing.Size(96, 20);
+            this.dtpFechaHasta.TabIndex = 9;
+            // 
+            // dtpFechaDesde
+            // 
+            this.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaDesde.Location = new System.Drawing.Point(6, 55);
+            this.dtpFechaDesde.Name = "dtpFechaDesde";
+            this.dtpFechaDesde.Size = new System.Drawing.Size(96, 20);
+            this.dtpFechaDesde.TabIndex = 8;
+            // 
+            // lblEFechaHasta
+            // 
+            this.lblEFechaHasta.AutoSize = true;
+            this.lblEFechaHasta.Location = new System.Drawing.Point(114, 16);
+            this.lblEFechaHasta.Name = "lblEFechaHasta";
+            this.lblEFechaHasta.Size = new System.Drawing.Size(68, 13);
+            this.lblEFechaHasta.TabIndex = 7;
+            this.lblEFechaHasta.Text = "Fecha Hasta";
+            // 
+            // lblEFechaDesde
+            // 
+            this.lblEFechaDesde.AutoSize = true;
+            this.lblEFechaDesde.Location = new System.Drawing.Point(6, 16);
+            this.lblEFechaDesde.Name = "lblEFechaDesde";
+            this.lblEFechaDesde.Size = new System.Drawing.Size(71, 13);
+            this.lblEFechaDesde.TabIndex = 6;
+            this.lblEFechaDesde.Text = "Fecha Desde";
             // 
             // lblTitulo
             // 
@@ -100,14 +187,14 @@
             this.cmbBuscar.FormattingEnabled = true;
             this.cmbBuscar.Location = new System.Drawing.Point(49, 36);
             this.cmbBuscar.Name = "cmbBuscar";
-            this.cmbBuscar.Size = new System.Drawing.Size(176, 21);
+            this.cmbBuscar.Size = new System.Drawing.Size(140, 21);
             this.cmbBuscar.TabIndex = 2;
             // 
             // txtFiltro
             // 
             this.txtFiltro.Location = new System.Drawing.Point(49, 74);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(176, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(140, 20);
             this.txtFiltro.TabIndex = 0;
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
@@ -115,12 +202,11 @@
             // 
             this.gbData.Controls.Add(this.lblCantidad);
             this.gbData.Controls.Add(this.dgBusqueda);
-            this.gbData.Location = new System.Drawing.Point(9, 140);
+            this.gbData.Location = new System.Drawing.Point(9, 130);
             this.gbData.Name = "gbData";
             this.gbData.Size = new System.Drawing.Size(581, 307);
             this.gbData.TabIndex = 8;
             this.gbData.TabStop = false;
-            this.gbData.Text = "Data";
             // 
             // lblCantidad
             // 
@@ -144,14 +230,18 @@
             // frmBuscador
             // 
             this.ClientSize = new System.Drawing.Size(597, 495);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbBotones);
             this.Controls.Add(this.gbBusqueda);
             this.Controls.Add(this.gbData);
             this.Name = "frmBuscador";
             this.Load += new System.EventHandler(this.frmBuscador_Load);
-            this.groupBox1.ResumeLayout(false);
+            this.gbBotones.ResumeLayout(false);
             this.gbBusqueda.ResumeLayout(false);
             this.gbBusqueda.PerformLayout();
+            this.gpbGrupoEstado.ResumeLayout(false);
+            this.gpbGrupoEstado.PerformLayout();
+            this.gpbGrupoFecha.ResumeLayout(false);
+            this.gpbGrupoFecha.PerformLayout();
             this.gbData.ResumeLayout(false);
             this.gbData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgBusqueda)).EndInit();
@@ -161,7 +251,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbBotones;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         internal System.Windows.Forms.GroupBox gbBusqueda;
@@ -171,5 +261,13 @@
         private contenedores.gesGroup gbData;
         private System.Windows.Forms.Label lblCantidad;
         public datos.gesGrid dgBusqueda;
+        private contenedores.gpbGrupo gpbGrupoEstado;
+        public System.Windows.Forms.ComboBox cmbEstado;
+        private labels.lblEtiqueta lblEEstado;
+        private contenedores.gpbGrupo gpbGrupoFecha;
+        private labels.lblEtiqueta lblEFechaHasta;
+        private labels.lblEtiqueta lblEFechaDesde;
+        private System.Windows.Forms.DateTimePicker dtpFechaHasta;
+        private System.Windows.Forms.DateTimePicker dtpFechaDesde;
     }
 }
