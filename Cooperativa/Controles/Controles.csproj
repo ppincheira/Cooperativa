@@ -208,13 +208,13 @@
     <EmbeddedResource Include="forms\frmBuscador.resx">
       <DependentUpon>frmBuscador.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
+
     <EmbeddedResource Include="forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frmFormAdmin.resx">
       <DependentUpon>frmFormAdmin.cs</DependentUpon>
->>>>>>> 7b0441016618a778103919dcd114c3e1222b5828
+
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
