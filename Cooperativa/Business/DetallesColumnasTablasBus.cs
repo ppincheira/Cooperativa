@@ -46,6 +46,12 @@ namespace Business
             return oDetallesColumnasTablasImpl.DetallesColumnasTablasGetByName(name);
         }
 
+        public List<DetallesColumnasTablas> DetallesColumnasTablasGetByCodigo(string codigo)
+        {
+            DetallesColumnasTablasImpl oDetallesColumnasTablasImpl = new DetallesColumnasTablasImpl();
+            return oDetallesColumnasTablasImpl.DetallesColumnasTablasGetByCodigo(codigo);
+        }
+
 
     }
 }

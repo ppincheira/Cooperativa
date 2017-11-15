@@ -1,72 +1,3 @@
-C:\Users\ppincheira\source\repos\Cooperativa\Controles\bin\Debug\Controles.dll
-C:\Users\ppincheira\source\repos\Cooperativa\Controles\bin\Debug\Controles.pdb
-C:\Users\ppincheira\source\repos\Cooperativa\Controles\obj\Debug\Controles.csproj.CoreCompileInputs.cache
-C:\Users\ppincheira\source\repos\Cooperativa\Controles\obj\Debug\Controles.dll
-C:\Users\ppincheira\source\repos\Cooperativa\Controles\obj\Debug\Controles.pdb
-D:\DESARROLLO\Cooperativa\Controles\bin\Debug\Controles.dll
-D:\DESARROLLO\Cooperativa\Controles\bin\Debug\Controles.pdb
-D:\DESARROLLO\Cooperativa\Controles\obj\Debug\Controles.frmBusqueda.resources
-D:\DESARROLLO\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
-D:\DESARROLLO\Cooperativa\Controles\obj\Debug\Controles.dll
-D:\DESARROLLO\Cooperativa\Controles\obj\Debug\Controles.pdb
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.pdb
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\bin\Debug\Business.dll
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\bin\Debug\Model.dll
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\bin\Debug\Implement.dll
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\bin\Debug\Oracle.DataAccess.dll
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\bin\Debug\Business.pdb
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\bin\Debug\Model.pdb
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\bin\Debug\Implement.pdb
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csprojResolveAssemblyReference.cache
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmBusqueda.resources
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.CoreCompileInputs.cache
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmBuscador.resources
-C:\Users\ppincheira\Downloads\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.UserControl1.resources
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csprojResolveAssemblyReference.cache
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmAdminGeneral.resources
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmBuscador.resources
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.frmPrincipal.resources
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.CoreCompileInputs.cache
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.pdb
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Business.dll
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Model.dll
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Service.dll
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Implement.dll
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Oracle.DataAccess.dll
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Business.pdb
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Model.pdb
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Service.pdb
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Implement.pdb
-<<<<<<< HEAD
-C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.frmFormAdmin.resources
-=======
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Business.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Model.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Service.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Implement.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Oracle.DataAccess.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Business.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Model.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Service.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Implement.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csprojResolveAssemblyReference.cache
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmAdminGeneral.resources
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmBuscador.resources
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.frmPrincipal.resources
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
-<<<<<<< HEAD
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Business.dll
@@ -81,10 +12,8 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csprojResolveAssemblyReference.cache
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmAdminGeneral.resources
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmBuscador.resources
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.frmFormAdmin.resources
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.frmPrincipal.resources
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
-=======
->>>>>>> 8dcfdcfae598675de8ed36f8a494ffc615f3dc36
->>>>>>> 80f0da89263d4ddaa909f164393667f24b57550c

@@ -9,7 +9,7 @@ using Model;
 
 namespace Controles
 {
-    abstract public class frmFormAdmin:gesForm
+    public partial class frmFormAdmin :gesForm
     {
         private contenedores.gpbGrupo gpbFiltro;
         private txtPersonalizado txtFiltro;
@@ -31,6 +31,9 @@ namespace Controles
         private buttons.btnImprimir btnImprimir;
         private buttons.btnVer btnVer;
         private buttons.btnEditar btnEditar;
+        private contenedores.gpbGrupo gpbGrupoEstado;
+        public System.Windows.Forms.ComboBox cmbEstado;
+        private labels.lblEtiqueta lblEEstado;
         private datos.gesGrid dgBusqueda;
 
         private void InitializeComponent()
@@ -46,21 +49,25 @@ namespace Controles
             this.dtpFechaHasta = new Controles.Fecha.dtpFecha();
             this.dtpFechaDesde = new Controles.Fecha.dtpFecha();
             this.gpbGrupo3 = new Controles.contenedores.gpbGrupo();
+            this.btnSalir = new Controles.buttons.btnSalir();
+            this.btnAnular = new Controles.buttons.btnAnular();
+            this.btnExportar = new Controles.buttons.btnExportar();
+            this.btnImprimir = new Controles.buttons.btnImprimir();
+            this.btnVer = new Controles.buttons.btnVer();
+            this.btnEditar = new Controles.buttons.btnEditar();
             this.btnNuevo = new Controles.buttons.btnNuevo();
             this.gpbGrupo4 = new Controles.contenedores.gpbGrupo();
             this.lblCantidad = new Controles.labels.lblEtiqueta();
             this.dgBusqueda = new Controles.datos.gesGrid();
-            this.btnEditar = new Controles.buttons.btnEditar();
-            this.btnVer = new Controles.buttons.btnVer();
-            this.btnImprimir = new Controles.buttons.btnImprimir();
-            this.btnExportar = new Controles.buttons.btnExportar();
-            this.btnAnular = new Controles.buttons.btnAnular();
-            this.btnSalir = new Controles.buttons.btnSalir();
+            this.gpbGrupoEstado = new Controles.contenedores.gpbGrupo();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.lblEEstado = new Controles.labels.lblEtiqueta();
             this.gpbFiltro.SuspendLayout();
             this.gpbFecha.SuspendLayout();
             this.gpbGrupo3.SuspendLayout();
             this.gpbGrupo4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgBusqueda)).BeginInit();
+            this.gpbGrupoEstado.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpbFiltro
@@ -69,16 +76,16 @@ namespace Controles
             this.gpbFiltro.Controls.Add(this.cmbBuscar);
             this.gpbFiltro.Controls.Add(this.lblEtiqueta2);
             this.gpbFiltro.Controls.Add(this.lblFiltro);
-            this.gpbFiltro.Location = new System.Drawing.Point(12, 12);
+            this.gpbFiltro.Location = new System.Drawing.Point(12, 1);
             this.gpbFiltro.Name = "gpbFiltro";
-            this.gpbFiltro.Size = new System.Drawing.Size(257, 82);
+            this.gpbFiltro.Size = new System.Drawing.Size(257, 101);
             this.gpbFiltro.TabIndex = 0;
             this.gpbFiltro.TabStop = false;
             // 
             // txtFiltro
             // 
             this.txtFiltro.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtFiltro.Location = new System.Drawing.Point(86, 49);
+            this.txtFiltro.Location = new System.Drawing.Point(86, 58);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(166, 20);
             this.txtFiltro.TabIndex = 3;
@@ -95,7 +102,7 @@ namespace Controles
             // lblEtiqueta2
             // 
             this.lblEtiqueta2.AutoSize = true;
-            this.lblEtiqueta2.Location = new System.Drawing.Point(3, 57);
+            this.lblEtiqueta2.Location = new System.Drawing.Point(6, 64);
             this.lblEtiqueta2.Name = "lblEtiqueta2";
             this.lblEtiqueta2.Size = new System.Drawing.Size(45, 13);
             this.lblEtiqueta2.TabIndex = 1;
@@ -104,7 +111,7 @@ namespace Controles
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(3, 23);
+            this.lblFiltro.Location = new System.Drawing.Point(6, 22);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(78, 13);
             this.lblFiltro.TabIndex = 0;
@@ -116,16 +123,17 @@ namespace Controles
             this.gpbFecha.Controls.Add(this.lblEFechaDesde);
             this.gpbFecha.Controls.Add(this.dtpFechaHasta);
             this.gpbFecha.Controls.Add(this.dtpFechaDesde);
-            this.gpbFecha.Location = new System.Drawing.Point(275, 12);
+            this.gpbFecha.Enabled = false;
+            this.gpbFecha.Location = new System.Drawing.Point(275, 1);
             this.gpbFecha.Name = "gpbFecha";
-            this.gpbFecha.Size = new System.Drawing.Size(200, 82);
+            this.gpbFecha.Size = new System.Drawing.Size(200, 103);
             this.gpbFecha.TabIndex = 1;
             this.gpbFecha.TabStop = false;
             // 
             // lblEFechaHasta
             // 
             this.lblEFechaHasta.AutoSize = true;
-            this.lblEFechaHasta.Location = new System.Drawing.Point(4, 56);
+            this.lblEFechaHasta.Location = new System.Drawing.Point(4, 65);
             this.lblEFechaHasta.Name = "lblEFechaHasta";
             this.lblEFechaHasta.Size = new System.Drawing.Size(68, 13);
             this.lblEFechaHasta.TabIndex = 11;
@@ -143,7 +151,7 @@ namespace Controles
             // dtpFechaHasta
             // 
             this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaHasta.Location = new System.Drawing.Point(81, 49);
+            this.dtpFechaHasta.Location = new System.Drawing.Point(81, 58);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
             this.dtpFechaHasta.Size = new System.Drawing.Size(95, 20);
             this.dtpFechaHasta.TabIndex = 9;
@@ -165,16 +173,82 @@ namespace Controles
             this.gpbGrupo3.Controls.Add(this.btnVer);
             this.gpbGrupo3.Controls.Add(this.btnEditar);
             this.gpbGrupo3.Controls.Add(this.btnNuevo);
-            this.gpbGrupo3.Location = new System.Drawing.Point(481, 12);
+            this.gpbGrupo3.Location = new System.Drawing.Point(481, 1);
             this.gpbGrupo3.Name = "gpbGrupo3";
-            this.gpbGrupo3.Size = new System.Drawing.Size(456, 82);
+            this.gpbGrupo3.Size = new System.Drawing.Size(456, 53);
             this.gpbGrupo3.TabIndex = 1;
             this.gpbGrupo3.TabStop = false;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Blue;
+            this.btnSalir.Location = new System.Drawing.Point(384, 9);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(57, 40);
+            this.btnSalir.TabIndex = 6;
+            this.btnSalir.Text = "btnSalir1";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnAnular
+            // 
+            this.btnAnular.BackColor = System.Drawing.Color.Blue;
+            this.btnAnular.Location = new System.Drawing.Point(321, 9);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(57, 40);
+            this.btnAnular.TabIndex = 5;
+            this.btnAnular.Text = "btnAnular1";
+            this.btnAnular.UseVisualStyleBackColor = false;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.BackColor = System.Drawing.Color.Blue;
+            this.btnExportar.Location = new System.Drawing.Point(258, 9);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(57, 40);
+            this.btnExportar.TabIndex = 4;
+            this.btnExportar.Text = "btnExportar1";
+            this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.Blue;
+            this.btnImprimir.Location = new System.Drawing.Point(195, 8);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(57, 41);
+            this.btnImprimir.TabIndex = 3;
+            this.btnImprimir.Text = "btnImprimir1";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnVer
+            // 
+            this.btnVer.BackColor = System.Drawing.Color.Blue;
+            this.btnVer.Location = new System.Drawing.Point(132, 9);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(57, 40);
+            this.btnVer.TabIndex = 2;
+            this.btnVer.Text = "btnVer1";
+            this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.Blue;
+            this.btnEditar.Location = new System.Drawing.Point(69, 9);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(57, 40);
+            this.btnEditar.TabIndex = 1;
+            this.btnEditar.Text = "btnEditar1";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.Blue;
-            this.btnNuevo.Location = new System.Drawing.Point(6, 23);
+            this.btnNuevo.Location = new System.Drawing.Point(6, 9);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(57, 40);
             this.btnNuevo.TabIndex = 0;
@@ -186,12 +260,12 @@ namespace Controles
             // 
             this.gpbGrupo4.Controls.Add(this.lblCantidad);
             this.gpbGrupo4.Controls.Add(this.dgBusqueda);
-            this.gpbGrupo4.Location = new System.Drawing.Point(12, 100);
+            this.gpbGrupo4.Location = new System.Drawing.Point(12, 110);
             this.gpbGrupo4.Name = "gpbGrupo4";
             this.gpbGrupo4.Size = new System.Drawing.Size(925, 351);
             this.gpbGrupo4.TabIndex = 1;
             this.gpbGrupo4.TabStop = false;
-            this.gpbGrupo4.Text = "gpbGrid";
+            this.gpbGrupo4.Text = "Datos";
             // 
             // lblCantidad
             // 
@@ -211,75 +285,38 @@ namespace Controles
             this.dgBusqueda.Size = new System.Drawing.Size(913, 312);
             this.dgBusqueda.TabIndex = 0;
             // 
-            // btnEditar
+            // gpbGrupoEstado
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.Blue;
-            this.btnEditar.Location = new System.Drawing.Point(69, 23);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(57, 40);
-            this.btnEditar.TabIndex = 1;
-            this.btnEditar.Text = "btnEditar1";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.gpbGrupoEstado.Controls.Add(this.cmbEstado);
+            this.gpbGrupoEstado.Controls.Add(this.lblEEstado);
+            this.gpbGrupoEstado.Enabled = false;
+            this.gpbGrupoEstado.Location = new System.Drawing.Point(481, 56);
+            this.gpbGrupoEstado.Name = "gpbGrupoEstado";
+            this.gpbGrupoEstado.Size = new System.Drawing.Size(456, 46);
+            this.gpbGrupoEstado.TabIndex = 8;
+            this.gpbGrupoEstado.TabStop = false;
             // 
-            // btnVer
+            // cmbEstado
             // 
-            this.btnVer.BackColor = System.Drawing.Color.Blue;
-            this.btnVer.Location = new System.Drawing.Point(132, 23);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(57, 40);
-            this.btnVer.TabIndex = 2;
-            this.btnVer.Text = "btnVer1";
-            this.btnVer.UseVisualStyleBackColor = false;
-            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(64, 12);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(188, 21);
+            this.cmbEstado.TabIndex = 8;
             // 
-            // btnImprimir
+            // lblEEstado
             // 
-            this.btnImprimir.BackColor = System.Drawing.Color.Blue;
-            this.btnImprimir.Location = new System.Drawing.Point(195, 22);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(57, 41);
-            this.btnImprimir.TabIndex = 3;
-            this.btnImprimir.Text = "btnImprimir1";
-            this.btnImprimir.UseVisualStyleBackColor = false;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
-            // btnExportar
-            // 
-            this.btnExportar.BackColor = System.Drawing.Color.Blue;
-            this.btnExportar.Location = new System.Drawing.Point(258, 23);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(57, 40);
-            this.btnExportar.TabIndex = 4;
-            this.btnExportar.Text = "btnExportar1";
-            this.btnExportar.UseVisualStyleBackColor = false;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
-            // 
-            // btnAnular
-            // 
-            this.btnAnular.BackColor = System.Drawing.Color.Blue;
-            this.btnAnular.Location = new System.Drawing.Point(321, 23);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(57, 40);
-            this.btnAnular.TabIndex = 5;
-            this.btnAnular.Text = "btnAnular1";
-            this.btnAnular.UseVisualStyleBackColor = false;
-            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.Blue;
-            this.btnSalir.Location = new System.Drawing.Point(384, 23);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(57, 40);
-            this.btnSalir.TabIndex = 6;
-            this.btnSalir.Text = "btnSalir1";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.lblEEstado.AutoSize = true;
+            this.lblEEstado.Location = new System.Drawing.Point(3, 20);
+            this.lblEEstado.Name = "lblEEstado";
+            this.lblEEstado.Size = new System.Drawing.Size(40, 13);
+            this.lblEEstado.TabIndex = 8;
+            this.lblEEstado.Text = "Estado";
             // 
             // frmFormAdmin
             // 
-            this.ClientSize = new System.Drawing.Size(949, 455);
+            this.ClientSize = new System.Drawing.Size(949, 487);
+            this.Controls.Add(this.gpbGrupoEstado);
             this.Controls.Add(this.gpbGrupo4);
             this.Controls.Add(this.gpbGrupo3);
             this.Controls.Add(this.gpbFecha);
@@ -294,6 +331,8 @@ namespace Controles
             this.gpbGrupo4.ResumeLayout(false);
             this.gpbGrupo4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgBusqueda)).EndInit();
+            this.gpbGrupoEstado.ResumeLayout(false);
+            this.gpbGrupoEstado.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -307,6 +346,7 @@ namespace Controles
         private string _filtroCampos;
         private string _filtroValores;
         private DataTable _dtCombo;
+        private string _Fecha;
         #endregion
 
         #region << EVENTOS >>
@@ -370,45 +410,43 @@ namespace Controles
             _dtCombo.Columns.Add("DctColumna", typeof(string));
             _dtCombo.Columns.Add("DctDescripcion", typeof(string));
             DetallesColumnasTablasBus oDetalleBus = new DetallesColumnasTablasBus();
-            List<DetallesColumnasTablas> ListDetalle = oDetalleBus.DetallesColumnasTablasGetByName(_Tabla);
+            List<DetallesColumnasTablas> ListDetalle = oDetalleBus.DetallesColumnasTablasGetByCodigo(_Tabla);
             foreach (DetallesColumnasTablas oDetalle in ListDetalle)
             {
+
                 _Campo = _Campo + ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
-                if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl != "Fecha") && oDetalle.DctTipoControl != "Estado")
+                if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl != "FECHA") && oDetalle.DctTipoControl != "ESTADO")
                 {
                     _dtCombo.Rows.Add(oDetalle.DctColumna, oDetalle.DctDescripcion);
                 }
 
-                if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "Fecha"))
+                if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "FECHA"))
                 {
-                    this.gpbFecha.Visible = true;
-                    _filtroCampos = oDetalle.DctColumna + "&";
-                    _filtroValores = this.dtpFechaDesde.Text + "%" + this.dtpFechaHasta.Text + "&";
+                    this.gpbFecha.Enabled = true;
+                    this.dtpFechaDesde.Value = DateTime.Now.Date.AddMonths(-1);
+                    this.dtpFechaHasta.Value = DateTime.Now.Date;
+                    _filtroCampos = _filtroCampos + oDetalle.DctColumna + "&";
+                    _Fecha = oDetalle.DctColumna + "&";
+                    _filtroValores = _filtroValores + this.dtpFechaDesde.Text + "%" + this.dtpFechaHasta.Text + "&";
                 }
-                //if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "Estado"))
-                //{
-                //    this.gpbGrupoEstado.Visible = true;
-                //    _filtroCampos = oDetalle.DctColumna + "&";
-                //    _filtroValores = this.cmbEstado.Text + "&";
-                //}
+                if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "ESTADO"))
+                {
+                    this.gpbGrupoEstado.Enabled = true;
+                    _filtroCampos = _filtroCampos + oDetalle.DctColumna + "&";
+                    _filtroValores = _filtroValores + this.cmbEstado.Text + "&";
+                }
             }
 
-            if (this.gpbFecha.Visible)
-            {
-                this.dtpFechaDesde.Text = DateTime.Now.AddMonths(-1).ToString("dd/MM/yyyy");
-                this.dtpFechaHasta.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            }
             this.cmbBuscar.DataSource = _dtCombo;
             this.cmbBuscar.ValueMember = "DctColumna";
             this.cmbBuscar.DisplayMember = "DctDescripcion";
             if (_Campo.Length > 0)
 
                 _Campo = _Campo.Substring(0, _Campo.Length - 1);
-
-
             TablasBus oTablasBus = new TablasBus();
             this.dgBusqueda.DataSource = oTablasBus.TablasBusquedaGetAllFilter(_Tabla, _Campo, _filtroCampos, _filtroValores);
             this.lblCantidad.Text = "Se encontraron " + this.dgBusqueda.VisibleRowCount.ToString() + " registros";
+
 
         }
 

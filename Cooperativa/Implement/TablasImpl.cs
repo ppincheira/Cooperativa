@@ -203,6 +203,7 @@ namespace Implement
                 DataSet ds = new DataSet();
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
+                
                 string[] filterCamp = System.Text.RegularExpressions.Regex.Split(filterCampos, "&");
                 string[] filterV = System.Text.RegularExpressions.Regex.Split(filterValores, "&");
                 
@@ -210,7 +211,7 @@ namespace Implement
 
                 string sqlSelect = "select "+Campos+" from " + Tabla;
                 if (filterCampos != "") { 
-                     sqlSelect=sqlSelect+" where ";
+                     sqlSelect=sqlSelect+" where  1=1";
 
                     for (int i = 0; i < filterCamp.Length; i++)
                     {
@@ -219,18 +220,15 @@ namespace Implement
                         {
                             string[] filterFecha = System.Text.RegularExpressions.Regex.Split(filterV[i], "%");
 
-                            sqlSelect += filterCamp[i] + " >=" + filterFecha[0] ;
+                            sqlSelect += "AND ("+filterCamp[i] + " >='" + filterFecha[0] +"'";
                             sqlSelect += " AND ";
-                            sqlSelect += filterCamp[i] + " >=" + filterFecha[1];
+                            sqlSelect += filterCamp[i] + " <='" + filterFecha[1]+"')";
                         }
-                        if  (filterCamp[i]!="")
-
-                        sqlSelect += filterCamp[i] + " like '%" + filterV[i]+"%'";
-
+                        else { 
+                            if  (filterCamp[i]!="")
+                               sqlSelect += " AND "+filterCamp[i] + " like '%" + filterV[i]+"%'";
+                        }
                     }
-
-
-
 
                 }
                 cmd = new OracleCommand(sqlSelect, cn);

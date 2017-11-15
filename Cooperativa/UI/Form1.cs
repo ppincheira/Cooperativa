@@ -50,17 +50,9 @@ namespace UI
 
         private void btnPersonalizado2_Click(object sender, EventArgs e)
         {
-            TablasBus oTablasBus = new TablasBus();
-            Tablas oTablas = new Tablas();
-            oTablas.TabCodigo = "AAB";
-            oTablas.TabNombre = "Nombre";
-            oTablas.TabDescripcion = "Descripcion prueba";
+            frmFormAdmin frmbus = new frmFormAdmin("PERB");
+            frmbus.ShowDialog();
 
-            oTablasBus.TablasUpdate(oTablas);
-
-            oTablas = oTablasBus.TablasGetById("AAA");
-
-            this.dgvTest.DataSource = oTablasBus.TablasGetAll();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,7 +62,8 @@ namespace UI
             //oArea.AreDescripcion = "BBBBBBBB";
             //AreasBus oAreaBus = new AreasBus();
             //oAreaBus.AreasAdd(oArea);
-            Controles.forms.frmBuscador frmbus = new Controles.forms.frmBuscador("AREAS");
+            //Controles.forms.frmBuscador frmbus = new Controles.forms.frmBuscador("AREB");
+            Controles.forms.frmBuscador frmbus = new Controles.forms.frmBuscador("PERB");
             frmbus.ShowDialog();
 
           

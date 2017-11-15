@@ -41,9 +41,12 @@ namespace Business
             return oTablasImpl.TablasGetAll();
         }
 
-        public DataTable TablasBusquedaGetAllFilter(string Tabla, string Campos ,string filterCampos, string filterValores) {
+        public DataTable TablasBusquedaGetAllFilter(string Codigo, string Campos ,string filterCampos, string filterValores) {
+
+            Tablas oTabla = new Tablas();
+            oTabla = TablasGetById(Codigo);
             TablasImpl oTablasImpl = new TablasImpl();
-            return oTablasImpl.TablasBusquedaGetAllFilter(Tabla, Campos, filterCampos, filterValores);
+            return oTablasImpl.TablasBusquedaGetAllFilter(oTabla.TabNombre, Campos, filterCampos, filterValores);
 
         }
 

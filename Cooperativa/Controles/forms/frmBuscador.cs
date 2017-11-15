@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Business;
 using Model;
-
+using System.Globalization;
 
 namespace Controles.forms
 {
@@ -23,6 +23,7 @@ namespace Controles.forms
         private string _filtroCampos;
         private string _filtroValores;
         private DataTable _dtCombo;
+        private string _Fecha;
         #endregion
         #region << EVENTOS >>
 
@@ -95,52 +96,51 @@ namespace Controles.forms
                 throw ex;
             }
         }
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
         #region << METODOS >>
         private void Inicializar()
         {
-               
                 _filtroCampos = "";
                 _filtroValores = "";
                 _dtCombo = new DataTable();
                 _dtCombo.Columns.Add("DctColumna", typeof(string));
                 _dtCombo.Columns.Add("DctDescripcion", typeof(string));
                 DetallesColumnasTablasBus oDetalleBus = new DetallesColumnasTablasBus();
-                List<DetallesColumnasTablas> ListDetalle = oDetalleBus.DetallesColumnasTablasGetByName(_Tabla);
+                List<DetallesColumnasTablas> ListDetalle = oDetalleBus.DetallesColumnasTablasGetByCodigo(_Tabla);
                 foreach (DetallesColumnasTablas oDetalle in ListDetalle)
                 {
 
                     _Campo = _Campo + ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
-                    if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl!="Fecha" ) && oDetalle.DctTipoControl != "Estado") { 
+                    if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl!="FECHA" ) && oDetalle.DctTipoControl != "ESTADO") { 
                         _dtCombo.Rows.Add(oDetalle.DctColumna, oDetalle.DctDescripcion);
-                     
                     }
 
-                    if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "Fecha"))
+                    if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "FECHA"))
                     { 
                         this.gpbGrupoFecha.Visible = true;
-                        _filtroCampos = oDetalle.DctColumna + "&";
-                        _filtroValores = this.dtpFechaDesde.Text + "%" + this.dtpFechaHasta.Text + "&";
+                        this.dtpFechaDesde.Value = DateTime.Now.Date.AddMonths(-1);
+                        this.dtpFechaHasta.Value = DateTime.Now.Date;
+                        _filtroCampos = _filtroCampos+ oDetalle.DctColumna + "&";
+                        _Fecha=oDetalle.DctColumna + "&";
+                        _filtroValores = _filtroValores+this.dtpFechaDesde.Text + "%" + this.dtpFechaHasta.Text + "&";
                     }
-                    if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "Estado")) { 
+                    if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "ESTADO")) { 
                         this.gpbGrupoEstado.Visible = true;
-                        _filtroCampos = oDetalle.DctColumna + "&";
-                        _filtroValores = this.cmbEstado.Text + "&";
+                        _filtroCampos = _filtroCampos+oDetalle.DctColumna + "&";
+                        _filtroValores = _filtroValores+this.cmbEstado.Text + "&";
                     }
                 }
 
-                if (this.gpbGrupoFecha.Visible) {
-                    this.dtpFechaDesde.Text = DateTime.Now.AddMonths(-1).ToString("dd/MM/yyyy");
-                    this.dtpFechaHasta.Text = DateTime.Now.ToString("dd/MM/yyyy");
-                }
                 this.cmbBuscar.DataSource = _dtCombo;
                 this.cmbBuscar.ValueMember = "DctColumna";
                 this.cmbBuscar.DisplayMember = "DctDescripcion";
                 if (_Campo.Length > 0)
                     
                     _Campo = _Campo.Substring(0, _Campo.Length - 1);
-
-               
                 TablasBus oTablasBus = new TablasBus();
                 this.dgBusqueda.DataSource = oTablasBus.TablasBusquedaGetAllFilter(_Tabla,_Campo, _filtroCampos, _filtroValores);
                 this.lblCantidad.Text = "Se encontraron " + this.dgBusqueda.VisibleRowCount.ToString() + " registros";
@@ -148,15 +148,18 @@ namespace Controles.forms
         }
 
         private void CargarGrilla() {
+            _filtroCampos = "";
+            _filtroValores = "";
 
-            
-            if (this.gpbGrupoFecha.Visible)
+            if (this.gpbGrupoFecha.Visible) { 
                 _filtroValores = this.dtpFechaDesde.Text + "%" + this.dtpFechaHasta.Text + "&";
+                _filtroCampos = _Fecha ;
+            }
             if (this.gpbGrupoEstado.Visible)
                 _filtroValores = this.cmbEstado.Text + "&";
 
-            _filtroCampos = this.cmbBuscar.SelectedValue.ToString() + "&";
-            _filtroValores = this.txtFiltro.Text + "&";
+            _filtroCampos = _filtroCampos+this.cmbBuscar.SelectedValue.ToString() + "&";
+            _filtroValores = _filtroValores+this.txtFiltro.Text + "&";
 
             TablasBus oTablasBus = new TablasBus();
             this.dgBusqueda.DataSource = oTablasBus.TablasBusquedaGetAllFilter(_Tabla, _Campo, _filtroCampos, _filtroValores);
@@ -165,13 +168,11 @@ namespace Controles.forms
         }
 
 
+
+
         #endregion
 
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-
-        }
-
+  
     }
 
 

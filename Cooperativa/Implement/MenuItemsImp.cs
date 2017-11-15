@@ -15,8 +15,7 @@ namespace Implement
 
         private OracleDataAdapter adapter;
         private OracleCommand cmd;
-        private DataSet ds;
-        private int response;
+
 
         public DataTable MenuItemsGetBySbsCodigo(string SbsCodigo)
         {

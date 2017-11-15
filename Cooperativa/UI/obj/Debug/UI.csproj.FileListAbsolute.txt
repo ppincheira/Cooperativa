@@ -99,3 +99,24 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.Properties
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.exe
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\UI.exe.config
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\UI.exe
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\UI.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Business.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Controles.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Model.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Implement.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Service.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Business.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Controles.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Model.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Implement.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Service.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.Form1.resources
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.frmLogin.resources
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.exe
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.pdb

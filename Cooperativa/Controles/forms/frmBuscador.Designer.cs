@@ -36,10 +36,10 @@
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.lblEEstado = new Controles.labels.lblEtiqueta();
             this.gpbGrupoFecha = new Controles.contenedores.gpbGrupo();
+            this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.lblEFechaHasta = new Controles.labels.lblEtiqueta();
             this.lblEFechaDesde = new Controles.labels.lblEtiqueta();
-            this.dtpFechaDesde = new Controles.Fecha.dtpFecha();
-            this.dtpFechaHasta = new Controles.Fecha.dtpFecha();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.txtFiltro = new System.Windows.Forms.TextBox();
@@ -128,16 +128,32 @@
             // 
             // gpbGrupoFecha
             // 
+            this.gpbGrupoFecha.Controls.Add(this.dtpFechaHasta);
+            this.gpbGrupoFecha.Controls.Add(this.dtpFechaDesde);
             this.gpbGrupoFecha.Controls.Add(this.lblEFechaHasta);
             this.gpbGrupoFecha.Controls.Add(this.lblEFechaDesde);
-            this.gpbGrupoFecha.Controls.Add(this.dtpFechaDesde);
-            this.gpbGrupoFecha.Controls.Add(this.dtpFechaHasta);
             this.gpbGrupoFecha.Location = new System.Drawing.Point(206, 19);
             this.gpbGrupoFecha.Name = "gpbGrupoFecha";
             this.gpbGrupoFecha.Size = new System.Drawing.Size(226, 83);
             this.gpbGrupoFecha.TabIndex = 6;
             this.gpbGrupoFecha.TabStop = false;
             this.gpbGrupoFecha.Visible = false;
+            // 
+            // dtpFechaHasta
+            // 
+            this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaHasta.Location = new System.Drawing.Point(117, 55);
+            this.dtpFechaHasta.Name = "dtpFechaHasta";
+            this.dtpFechaHasta.Size = new System.Drawing.Size(96, 20);
+            this.dtpFechaHasta.TabIndex = 9;
+            // 
+            // dtpFechaDesde
+            // 
+            this.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaDesde.Location = new System.Drawing.Point(6, 55);
+            this.dtpFechaDesde.Name = "dtpFechaDesde";
+            this.dtpFechaDesde.Size = new System.Drawing.Size(96, 20);
+            this.dtpFechaDesde.TabIndex = 8;
             // 
             // lblEFechaHasta
             // 
@@ -156,24 +172,6 @@
             this.lblEFechaDesde.Size = new System.Drawing.Size(71, 13);
             this.lblEFechaDesde.TabIndex = 6;
             this.lblEFechaDesde.Text = "Fecha Desde";
-            // 
-            // dtpFechaDesde
-            // 
-            this.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaDesde.Location = new System.Drawing.Point(9, 55);
-            this.dtpFechaDesde.Name = "dtpFechaDesde";
-            this.dtpFechaDesde.Size = new System.Drawing.Size(95, 20);
-            this.dtpFechaDesde.TabIndex = 4;
-            this.dtpFechaDesde.ValueChanged += new System.EventHandler(this.dtpFechaDesde_ValueChanged);
-            // 
-            // dtpFechaHasta
-            // 
-            this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaHasta.Location = new System.Drawing.Point(117, 55);
-            this.dtpFechaHasta.Name = "dtpFechaHasta";
-            this.dtpFechaHasta.Size = new System.Drawing.Size(95, 20);
-            this.dtpFechaHasta.TabIndex = 5;
-            this.dtpFechaHasta.ValueChanged += new System.EventHandler(this.dtpFechaHasta_ValueChanged);
             // 
             // lblTitulo
             // 
@@ -269,7 +267,7 @@
         private contenedores.gpbGrupo gpbGrupoFecha;
         private labels.lblEtiqueta lblEFechaHasta;
         private labels.lblEtiqueta lblEFechaDesde;
-        private Fecha.dtpFecha dtpFechaDesde;
-        private Fecha.dtpFecha dtpFechaHasta;
+        private System.Windows.Forms.DateTimePicker dtpFechaHasta;
+        private System.Windows.Forms.DateTimePicker dtpFechaDesde;
     }
 }
