@@ -1,2 +1,11 @@
 
 *.ide
+*.dll
+*.pdb
+*.dll
+*.cache
+*.cache
+*.cache
+*.config
+*.exe
+*.txt
