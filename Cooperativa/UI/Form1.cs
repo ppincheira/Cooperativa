@@ -50,7 +50,7 @@ namespace UI
 
         private void btnPersonalizado2_Click(object sender, EventArgs e)
         {
-            frmFormAdmin frmbus = new frmFormAdmin("PERB");
+            Controles.forms.frmFormAdmin frmbus = new Controles.forms.frmFormAdmin("PERB");
             frmbus.ShowDialog();
 
         }

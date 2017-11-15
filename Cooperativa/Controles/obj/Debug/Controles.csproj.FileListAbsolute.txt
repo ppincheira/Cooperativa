@@ -12,8 +12,9 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csprojResolveAssemblyReference.cache
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmAdminGeneral.resources
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmBuscador.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.frmFormAdmin.resources
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.frmPrincipal.resources
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmABM.resources
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmFormAdmin.resources

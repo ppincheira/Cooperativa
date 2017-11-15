@@ -6,8 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Business;
 using Model;
-
-namespace Controles
+using Controles;
+namespace Controles.forms
 {
     public partial class frmFormAdmin :gesForm
     {
@@ -363,7 +363,8 @@ namespace Controles
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            frmABM  ofrm = new frmABM(_Tabla);
+            ofrm.Show();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
