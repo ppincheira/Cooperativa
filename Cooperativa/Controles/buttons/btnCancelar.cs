@@ -9,7 +9,7 @@ namespace Controles.buttons
     public partial class btnCancelar:gesButton
     {
         public btnCancelar() {
-            Text = "[F3] CANCELAR";
+            Text = "[ESC] CANCELAR";
         }
     }
 }

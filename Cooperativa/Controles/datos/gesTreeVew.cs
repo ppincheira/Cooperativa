@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Controles.datos
 {
-    abstract public class gesTreeVew: System.Windows.Forms.TreeView
+     public class gesTreeVew: System.Windows.Forms.TreeView
     {
 
     }
