@@ -61,9 +61,10 @@ namespace Controles
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(180, 24);
-            this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "PASSWORD";
+            this.txtPassword.TabIndex = 3;
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Click);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // txtUsuario
             // 
@@ -72,13 +73,13 @@ namespace Controles
             this.txtUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtUsuario.Location = new System.Drawing.Point(42, 107);
+            this.txtUsuario.Location = new System.Drawing.Point(63, 107);
             this.txtUsuario.MaxLength = 20;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(180, 24);
-            this.txtUsuario.TabIndex = 0;
-            this.txtUsuario.Text = "USUARIO";
+            this.txtUsuario.TabIndex = 2;
             this.txtUsuario.Click += new System.EventHandler(this.txtUsuario_Click);
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
             // 
             // lblTitulo1
@@ -89,7 +90,7 @@ namespace Controles
             this.lblTitulo1.Location = new System.Drawing.Point(102, 27);
             this.lblTitulo1.Name = "lblTitulo1";
             this.lblTitulo1.Size = new System.Drawing.Size(99, 31);
-            this.lblTitulo1.TabIndex = 2;
+            this.lblTitulo1.TabIndex = 1;
             this.lblTitulo1.Text = "LOGIN";
             // 
             // shapeContainer1
@@ -140,7 +141,8 @@ namespace Controles
             this.pnlPanelEstado1.Location = new System.Drawing.Point(19, 294);
             this.pnlPanelEstado1.Name = "pnlPanelEstado1";
             this.pnlPanelEstado1.Size = new System.Drawing.Size(264, 34);
-            this.pnlPanelEstado1.TabIndex = 6;
+            this.pnlPanelEstado1.TabIndex = 4;
+            this.pnlPanelEstado1.Click += new System.EventHandler(this.pnlPanelEstado1_Click);
             // 
             // lblEtiqueta1
             // 
@@ -152,6 +154,7 @@ namespace Controles
             this.lblEtiqueta1.Size = new System.Drawing.Size(65, 25);
             this.lblEtiqueta1.TabIndex = 0;
             this.lblEtiqueta1.Text = "Login";
+            this.lblEtiqueta1.Click += new System.EventHandler(this.lblEtiqueta1_Click);
             // 
             // frmLogin
             // 
@@ -174,18 +177,7 @@ namespace Controles
         }
 
   
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            frmPrincipal frm = new frmPrincipal(_Subsistema);
-            //frm.Text = _Subsistema + _drUsuario[2];
-            frm.toolStripStatusLabel1.Text = "HOLA MUNDO";
-            frm.Show();
-        }
-
-
-
-        #endregion
-
+       #endregion
         private void frmLogin_Load(object sender, EventArgs e)
         {
             txtUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
@@ -196,24 +188,77 @@ namespace Controles
 
 
             txtPassword.UseSystemPasswordChar = false;
+            txtPassword.Text = "password";
+            txtPassword.ForeColor = System.Drawing.Color.Gray;
+            txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
         }
 
         private void txtUsuario_Click(object sender, EventArgs e)
         {
-            txtUsuario.Text = "";
+            
+            txtUsuario.ForeColor = System.Drawing.Color.Black;
+            if (txtUsuario.Text == "usuario")
+            {
+                txtUsuario.Text = "";
+            }
         }
 
         private void txtPassword_Click(object sender, EventArgs e)
         {
             txtPassword.UseSystemPasswordChar = true;
-            txtPassword.Text = "";
+            txtPassword.ForeColor = System.Drawing.Color.Black;
+            if (txtPassword.Text == "PASSWORD") {
+                txtPassword.Text = "";
+            }
         }
 
         private void txtUsuario_Leave(object sender, EventArgs e)
         {
-            /*if (txtUsuario.Text = "") {
+            if (txtUsuario.Text == "") {
+                txtUsuario.Text = "usuario";
+                txtUsuario.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
 
-            }*/
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "")
+            {
+                txtPassword.Text = "password";
+                txtPassword.UseSystemPasswordChar = false;
+                txtPassword.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
+
+        private void pnlPanelEstado1_Click(object sender, EventArgs e)
+        {
+            UsuariosBus oUsuarioBus = new UsuariosBus();
+            Usuarios oUsuario = new Usuarios();
+            oUsuario = oUsuarioBus.UsuariosLogin(txtUsuario.Text, txtPassword.Text);
+            if (oUsuario != null)
+            {
+                PersonasBus oPersonaBus = new PersonasBus();
+                Personas oPersona = new Personas();
+                oPersona = oPersonaBus.PersonasGetById(oUsuario.PrsNumero);
+                frmPrincipal frm = new frmPrincipal(_Subsistema);
+                frm.Text = _Subsistema;
+                frm.toolStripStatusLabel1.Text = _Subsistema + oPersona.PrsNombre + ", " + oPersona.PrsApellido;
+                frm.Show();
+            }
+        }
+
+        private void lblEtiqueta1_Click(object sender, EventArgs e)
+        {
+
+            pnlPanelEstado1_Click(pnlPanelEstado1, new EventArgs());
+            
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            txtUsuario.ForeColor = System.Drawing.Color.Black;
         }
     }
 }
