@@ -32,3 +32,5 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBi
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.GenerateResource.Cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.exe
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll

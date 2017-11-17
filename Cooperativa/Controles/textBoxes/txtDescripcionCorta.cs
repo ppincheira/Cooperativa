@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Controles.textBoxes
 {
-    class txtDescripcionCorta:gesTextBox
+    partial class txtDescripcionCorta:gesTextBox
     {
         public txtDescripcionCorta()
         {
             this.MaxLength = 20;
-            this.Width = 210;
-            this.Height= 20;
+            this.Width = 150;
+            this.Height= 40;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Controles.buttons
         public gesButton() {
 
             //BackColor = System.Drawing.Color.Blue;
-            BackColor = System.Drawing.Color.Blue;
+            //BackColor = System.Drawing.Color.Blue;
 
 
         }

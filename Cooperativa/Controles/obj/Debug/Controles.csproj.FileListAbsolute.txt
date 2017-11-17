@@ -23,6 +23,7 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Business.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Model.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Service.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Implement.dll
@@ -31,6 +32,7 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Busine
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Model.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Service.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Implement.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmABM.resources
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmAdminGeneral.resources

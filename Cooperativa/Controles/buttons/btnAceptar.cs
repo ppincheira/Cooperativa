@@ -12,7 +12,7 @@ namespace Controles.buttons
         {
             //Text = "[F2] ACEPTAR";
             Image = Resources.Iconos.aceptar;
-            Size = new System.Drawing.Size(100, 60);
+            Size = new System.Drawing.Size(80, 60);
             //UseVisualStyleBackColor = true;
             //BackColor = System.Drawing.Color.Blue;
 

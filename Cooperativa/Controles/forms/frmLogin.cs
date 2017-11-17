@@ -7,6 +7,7 @@ using Service;
 using Business;
 using Model;
 using System.Data;
+using Microsoft.VisualBasic.PowerPacks;
 namespace Controles
 {
     public partial class frmLogin: gesForm
@@ -16,15 +17,15 @@ namespace Controles
         
         
        
-
-        private contenedores.gpbGrupo gpbGrupo2;
-        private buttons.btnCancelar btnCancelar;
-        private buttons.btnAceptar btnAceptar;
         private textBoxes.txtDescripcionCorta txtUsuario;
         private textBoxes.txtPassword txtPassword;
+        private labels.lblTitulo lblTitulo1;
+        private ShapeContainer shapeContainer1;
+        private RectangleShape rectangleShape2;
+        private RectangleShape rectangleShape3;
+        private contenedores.pnlPanelEstado pnlPanelEstado1;
         private labels.lblEtiqueta lblEtiqueta1;
-        private labels.lblEtiqueta lblEtiqueta2;
-        private contenedores.gpbGrupo gpbGrupo1;
+        private RectangleShape rectangleShape1;
         #endregion
         #region <<METODOS>>
         public frmLogin(string subsistema)
@@ -36,125 +37,143 @@ namespace Controles
 
         private void InitializeComponent()
         {
-            this.gpbGrupo1 = new Controles.contenedores.gpbGrupo();
-            this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
-            this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
             this.txtPassword = new Controles.textBoxes.txtPassword();
             this.txtUsuario = new Controles.textBoxes.txtDescripcionCorta();
-            this.gpbGrupo2 = new Controles.contenedores.gpbGrupo();
-            this.btnCancelar = new Controles.buttons.btnCancelar();
-            this.btnAceptar = new Controles.buttons.btnAceptar();
-            this.gpbGrupo1.SuspendLayout();
-            this.gpbGrupo2.SuspendLayout();
+            this.lblTitulo1 = new Controles.labels.lblTitulo();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.rectangleShape3 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.pnlPanelEstado1 = new Controles.contenedores.pnlPanelEstado();
+            this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
+            this.pnlPanelEstado1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gpbGrupo1
+            // txtPassword
             // 
-            this.gpbGrupo1.Controls.Add(this.lblEtiqueta2);
-            this.gpbGrupo1.Controls.Add(this.lblEtiqueta1);
-            this.gpbGrupo1.Controls.Add(this.txtPassword);
-            this.gpbGrupo1.Controls.Add(this.txtUsuario);
-            this.gpbGrupo1.Location = new System.Drawing.Point(12, 12);
-            this.gpbGrupo1.Name = "gpbGrupo1";
-            this.gpbGrupo1.Size = new System.Drawing.Size(319, 119);
-            this.gpbGrupo1.TabIndex = 0;
-            this.gpbGrupo1.TabStop = false;
+            this.txtPassword.BackColor = System.Drawing.Color.White;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.DarkGray;
+            this.txtPassword.Location = new System.Drawing.Point(63, 193);
+            this.txtPassword.MaxLength = 10;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(180, 24);
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.Text = "PASSWORD";
+            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             // 
-            // lblEtiqueta2
+            // txtUsuario
             // 
-            this.lblEtiqueta2.AutoSize = true;
-            this.lblEtiqueta2.Location = new System.Drawing.Point(21, 74);
-            this.lblEtiqueta2.Name = "lblEtiqueta2";
-            this.lblEtiqueta2.Size = new System.Drawing.Size(61, 13);
-            this.lblEtiqueta2.TabIndex = 3;
-            this.lblEtiqueta2.Text = "Contraseña";
+            this.txtUsuario.BackColor = System.Drawing.Color.White;
+            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.ForeColor = System.Drawing.Color.DarkGray;
+            this.txtUsuario.Location = new System.Drawing.Point(42, 107);
+            this.txtUsuario.MaxLength = 20;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(180, 24);
+            this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.Text = "USUARIO";
+            this.txtUsuario.Click += new System.EventHandler(this.txtUsuario_Click);
+            this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
+            // 
+            // lblTitulo1
+            // 
+            this.lblTitulo1.AutoSize = true;
+            this.lblTitulo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblTitulo1.Location = new System.Drawing.Point(102, 27);
+            this.lblTitulo1.Name = "lblTitulo1";
+            this.lblTitulo1.Size = new System.Drawing.Size(99, 31);
+            this.lblTitulo1.TabIndex = 2;
+            this.lblTitulo1.Text = "LOGIN";
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.rectangleShape3,
+            this.rectangleShape2,
+            this.rectangleShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(309, 352);
+            this.shapeContainer1.TabIndex = 5;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // rectangleShape3
+            // 
+            this.rectangleShape3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(153)))), ((int)(((byte)(220)))));
+            this.rectangleShape3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShape3.BorderColor = System.Drawing.Color.Transparent;
+            this.rectangleShape3.CornerRadius = 4;
+            this.rectangleShape3.Location = new System.Drawing.Point(18, 285);
+            this.rectangleShape3.Name = "rectangleShape3";
+            this.rectangleShape3.Size = new System.Drawing.Size(271, 54);
+            // 
+            // rectangleShape2
+            // 
+            this.rectangleShape2.BackColor = System.Drawing.Color.White;
+            this.rectangleShape2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShape2.BorderColor = System.Drawing.Color.Transparent;
+            this.rectangleShape2.Location = new System.Drawing.Point(19, 179);
+            this.rectangleShape2.Name = "rectangleShape2";
+            this.rectangleShape2.Size = new System.Drawing.Size(271, 57);
+            // 
+            // rectangleShape1
+            // 
+            this.rectangleShape1.BackColor = System.Drawing.Color.White;
+            this.rectangleShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShape1.BorderColor = System.Drawing.Color.Transparent;
+            this.rectangleShape1.Location = new System.Drawing.Point(19, 91);
+            this.rectangleShape1.Name = "rectangleShape1";
+            this.rectangleShape1.Size = new System.Drawing.Size(271, 57);
+            // 
+            // pnlPanelEstado1
+            // 
+            this.pnlPanelEstado1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(153)))), ((int)(((byte)(220)))));
+            this.pnlPanelEstado1.Controls.Add(this.lblEtiqueta1);
+            this.pnlPanelEstado1.Location = new System.Drawing.Point(19, 294);
+            this.pnlPanelEstado1.Name = "pnlPanelEstado1";
+            this.pnlPanelEstado1.Size = new System.Drawing.Size(264, 34);
+            this.pnlPanelEstado1.TabIndex = 6;
             // 
             // lblEtiqueta1
             // 
             this.lblEtiqueta1.AutoSize = true;
-            this.lblEtiqueta1.Location = new System.Drawing.Point(21, 36);
+            this.lblEtiqueta1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEtiqueta1.ForeColor = System.Drawing.Color.White;
+            this.lblEtiqueta1.Location = new System.Drawing.Point(91, 3);
             this.lblEtiqueta1.Name = "lblEtiqueta1";
-            this.lblEtiqueta1.Size = new System.Drawing.Size(43, 13);
-            this.lblEtiqueta1.TabIndex = 2;
-            this.lblEtiqueta1.Text = "Usuario";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(88, 71);
-            this.txtPassword.MaxLength = 10;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(210, 20);
-            this.txtPassword.TabIndex = 1;
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Location = new System.Drawing.Point(88, 33);
-            this.txtUsuario.MaxLength = 20;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(210, 20);
-            this.txtUsuario.TabIndex = 0;
-            // 
-            // gpbGrupo2
-            // 
-            this.gpbGrupo2.Controls.Add(this.btnCancelar);
-            this.gpbGrupo2.Controls.Add(this.btnAceptar);
-            this.gpbGrupo2.Location = new System.Drawing.Point(12, 137);
-            this.gpbGrupo2.Name = "gpbGrupo2";
-            this.gpbGrupo2.Size = new System.Drawing.Size(319, 71);
-            this.gpbGrupo2.TabIndex = 1;
-            this.gpbGrupo2.TabStop = false;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Blue;
-            this.btnCancelar.Location = new System.Drawing.Point(189, 28);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(97, 23);
-            this.btnCancelar.TabIndex = 1;
-            this.btnCancelar.Text = "[F3] CANCELAR";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(24, 28);
-            this.btnAceptar.Name = "btnAceptar";
-            //this.btnAceptar.Size = new System.Drawing.Size(94, 23);
-            this.btnAceptar.TabIndex = 0;
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.lblEtiqueta1.Size = new System.Drawing.Size(65, 25);
+            this.lblEtiqueta1.TabIndex = 0;
+            this.lblEtiqueta1.Text = "Login";
             // 
             // frmLogin
             // 
-            this.ClientSize = new System.Drawing.Size(343, 229);
-            this.Controls.Add(this.gpbGrupo2);
-            this.Controls.Add(this.gpbGrupo1);
+            this.ClientSize = new System.Drawing.Size(309, 352);
+            this.Controls.Add(this.pnlPanelEstado1);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.lblTitulo1);
+            this.Controls.Add(this.shapeContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
-            this.gpbGrupo1.ResumeLayout(false);
-            this.gpbGrupo1.PerformLayout();
-            this.gpbGrupo2.ResumeLayout(false);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "LOGIN";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
+            this.pnlPanelEstado1.ResumeLayout(false);
+            this.pnlPanelEstado1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-             UsuariosBus oUsuarioBus = new UsuariosBus();
-            Usuarios oUsuario = new Usuarios();
-            oUsuario = oUsuarioBus.UsuariosLogin(txtUsuario.Text, txtPassword.Text);
-            if  (oUsuario != null)
-            {
-                PersonasBus oPersonaBus = new PersonasBus();
-                Personas oPersona = new Personas();
-                oPersona = oPersonaBus.PersonasGetById(oUsuario.PrsNumero);
-                frmPrincipal frm = new frmPrincipal(_Subsistema);
-                frm.Text = _Subsistema; 
-                frm.toolStripStatusLabel1.Text = _Subsistema  + oPersona.PrsNombre + ", " + oPersona.PrsApellido ;
-                frm.Show();
-            }
-         }
-
+  
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             frmPrincipal frm = new frmPrincipal(_Subsistema);
@@ -162,6 +181,39 @@ namespace Controles
             frm.toolStripStatusLabel1.Text = "HOLA MUNDO";
             frm.Show();
         }
+
+
+
         #endregion
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            txtUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            txtUsuario.Text = "usuario";
+            txtUsuario.ForeColor = System.Drawing.Color.Gray;
+            txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+
+            txtPassword.UseSystemPasswordChar = false;
+        }
+
+        private void txtUsuario_Click(object sender, EventArgs e)
+        {
+            txtUsuario.Text = "";
+        }
+
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = true;
+            txtPassword.Text = "";
+        }
+
+        private void txtUsuario_Leave(object sender, EventArgs e)
+        {
+            /*if (txtUsuario.Text = "") {
+
+            }*/
+        }
     }
 }

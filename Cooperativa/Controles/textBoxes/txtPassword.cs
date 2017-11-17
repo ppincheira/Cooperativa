@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Controles.textBoxes
 {
-    class txtPassword:gesTextBox
+    partial class txtPassword:gesTextBox
     {
         public txtPassword()
         {
             this.PasswordChar = '*';
             this.MaxLength = 10;
-            this.Width = 210;
-            this.Height = 20;
+            this.Width = 150;
+            this.Height = 40;
         }
     }
 }

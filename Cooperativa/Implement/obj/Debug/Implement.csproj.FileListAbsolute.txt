@@ -43,6 +43,5 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Implem
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Model.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Oracle.DataAccess.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Model.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.pdb

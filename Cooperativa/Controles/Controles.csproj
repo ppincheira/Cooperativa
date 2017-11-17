@@ -48,6 +48,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -81,6 +82,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="buttons\btnImprimir.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnLogin.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="buttons\btnNuevo.cs">
@@ -241,6 +245,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ok-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel1-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
