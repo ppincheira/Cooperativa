@@ -120,6 +120,9 @@
     <Compile Include="contenedores\mnuMenuPrincipal.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="contenedores\pnlPanelContenedor.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="contenedores\pnlPanelEstado.cs">
       <SubType>Component</SubType>
     </Compile>
