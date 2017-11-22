@@ -16,8 +16,8 @@ namespace gesBilling
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmLogin("BILL"));
-            Application.Run(new controles.forms.frmAdminSuministros());
+            Application.Run(new frmLogin("BILL"));
+            //Application.Run(new controles.forms.frmAdminSuministros());
 
         }
     }

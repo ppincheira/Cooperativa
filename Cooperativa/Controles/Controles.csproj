@@ -135,6 +135,12 @@
     <Compile Include="contenedores\sstBarraEstado.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="datos\cmbLista.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\gesComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="datos\gesGrid.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -199,6 +205,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="lblPersonalizado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="objects\gesToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="objects\tttEtiqueta.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Resources\Iconos.Designer.cs">
@@ -284,6 +296,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imprimir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

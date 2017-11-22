@@ -10,7 +10,7 @@ namespace Controles.buttons
     {
         public btnEditar() {
             //Image = Resources.Iconos.nuevo;
-            Size = new System.Drawing.Size(50, 50);
+            Size = new System.Drawing.Size(40, 40);
             BackgroundImage = Resources.Iconos.editar;
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             //Text = "N";

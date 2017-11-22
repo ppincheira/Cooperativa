@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Controles.buttons
 {
-    class btnExportar: gesButton
+    public partial class btnExportar: gesButton
     {
+        public btnExportar()
+        {
+            //Image = Resources.Iconos.nuevo;
+            Size = new System.Drawing.Size(40, 40);
+            BackgroundImage = Resources.Iconos.excel;
+            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            //Text = "N";
+            //Size = this.BackgroundImage.Size;
+        }
     }
 }
