@@ -182,7 +182,7 @@ namespace Controles.forms
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.Blue;
+            
             this.btnSalir.Location = new System.Drawing.Point(384, 9);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(57, 40);
@@ -193,7 +193,7 @@ namespace Controles.forms
             // 
             // btnAnular
             // 
-            this.btnAnular.BackColor = System.Drawing.Color.Blue;
+            
             this.btnAnular.Location = new System.Drawing.Point(321, 9);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(57, 40);
@@ -204,7 +204,7 @@ namespace Controles.forms
             // 
             // btnExportar
             // 
-            this.btnExportar.BackColor = System.Drawing.Color.Blue;
+           
             this.btnExportar.Location = new System.Drawing.Point(258, 9);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(57, 40);
@@ -215,7 +215,7 @@ namespace Controles.forms
             // 
             // btnImprimir
             // 
-            this.btnImprimir.BackColor = System.Drawing.Color.Blue;
+            
             this.btnImprimir.Location = new System.Drawing.Point(195, 8);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(57, 41);
@@ -226,7 +226,7 @@ namespace Controles.forms
             // 
             // btnVer
             // 
-            this.btnVer.BackColor = System.Drawing.Color.Blue;
+            
             this.btnVer.Location = new System.Drawing.Point(132, 9);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(57, 40);
@@ -237,7 +237,7 @@ namespace Controles.forms
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.Blue;
+           
             this.btnEditar.Location = new System.Drawing.Point(69, 9);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(57, 40);
@@ -248,7 +248,7 @@ namespace Controles.forms
             // 
             // btnNuevo
             // 
-            this.btnNuevo.BackColor = System.Drawing.Color.Blue;
+            
             this.btnNuevo.Location = new System.Drawing.Point(6, 9);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(57, 40);

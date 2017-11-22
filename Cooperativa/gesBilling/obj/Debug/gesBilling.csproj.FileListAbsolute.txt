@@ -20,9 +20,9 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBi
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\Business.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\Controles.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\Model.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\Implement.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\Oracle.DataAccess.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\Business.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\Controles.pdb

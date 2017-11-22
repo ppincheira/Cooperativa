@@ -10,9 +10,12 @@ namespace Controles.buttons
     {
         public btnNuevo()
         {
-            Text = "N";
-            Height = 40;
-            Width = 40;
+            //Image = Resources.Iconos.nuevo;
+            Size = new System.Drawing.Size(40, 40);
+            BackgroundImage = Resources.Iconos.nuevo;
+            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            //Text = "N";
+            //Size = this.BackgroundImage.Size;
         }
     }
 }

@@ -69,5 +69,11 @@ namespace UI
           
 
         }
+
+        private void btnPersonalizado3_Click(object sender, EventArgs e)
+        {
+            Controles.forms.frmObservaciones frmObs = new Controles.forms.frmObservaciones();
+            frmObs.Show();
+        }
     }
 }

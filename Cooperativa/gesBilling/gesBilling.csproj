@@ -57,6 +57,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -70,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controles\forms\frmAdminSuministros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmAdminSuministros.Designer.cs">
+      <DependentUpon>frmAdminSuministros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

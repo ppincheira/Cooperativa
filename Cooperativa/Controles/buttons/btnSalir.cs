@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Controles.buttons
 {
-    class btnSalir: gesButton
+    public partial class btnSalir : gesButton
     {
+        public btnSalir() {
+            Size = new System.Drawing.Size(40, 40);
+            BackgroundImage = Resources.Iconos.salida;
+            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            //Text = "";
+        }
     }
 }

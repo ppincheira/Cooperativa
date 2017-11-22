@@ -36,6 +36,7 @@
             this.btnPersonalizado2 = new Controles.btnPersonalizado();
             this.dgvTest = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnPersonalizado3 = new Controles.btnPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +69,7 @@
             // 
             // txtPersonalizado1
             // 
+            this.txtPersonalizado1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPersonalizado1.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtPersonalizado1.Location = new System.Drawing.Point(62, 44);
             this.txtPersonalizado1.Name = "txtPersonalizado1";
@@ -114,11 +116,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnPersonalizado3
+            // 
+            this.btnPersonalizado3.ForeColor = System.Drawing.Color.Green;
+            this.btnPersonalizado3.Location = new System.Drawing.Point(47, 241);
+            this.btnPersonalizado3.Name = "btnPersonalizado3";
+            this.btnPersonalizado3.Size = new System.Drawing.Size(100, 23);
+            this.btnPersonalizado3.TabIndex = 9;
+            this.btnPersonalizado3.Text = "observaciones";
+            this.btnPersonalizado3.UseVisualStyleBackColor = true;
+            this.btnPersonalizado3.Click += new System.EventHandler(this.btnPersonalizado3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 468);
+            this.Controls.Add(this.btnPersonalizado3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvTest);
             this.Controls.Add(this.btnPersonalizado2);
@@ -146,6 +160,7 @@
         private Controles.btnPersonalizado btnPersonalizado2;
         private System.Windows.Forms.DataGridView dgvTest;
         private System.Windows.Forms.Button button1;
+        private Controles.btnPersonalizado btnPersonalizado3;
     }
 }
 
