@@ -64,12 +64,14 @@
     <Compile Include="DepartamentosImpl.cs" />
     <Compile Include="DetallesColumnasTablasImpl.cs" />
     <Compile Include="MenuItemsImp.cs" />
+    <Compile Include="ObservacionesImpl.cs" />
     <Compile Include="PersonasImpl.cs" />
     <Compile Include="PruebaImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AreasImpl.cs" />
     <Compile Include="SectoresImpl.cs" />
     <Compile Include="TablasImpl.cs" />
+    <Compile Include="TiposObservacionesTablasImpl.cs" />
     <Compile Include="UsuariosImpl.cs" />
   </ItemGroup>
   <ItemGroup>

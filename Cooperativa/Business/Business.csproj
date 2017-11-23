@@ -61,11 +61,13 @@
     <Compile Include="DetallesColumnasTablasBus.cs" />
     <Compile Include="AreasBus.cs" />
     <Compile Include="DepartamentosBus.cs" />
+    <Compile Include="ObservacionesBus.cs" />
     <Compile Include="PersonasBus.cs" />
     <Compile Include="SectoresBus.cs" />
     <Compile Include="TablasBus.cs" />
     <Compile Include="PruebaBus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TiposObservacionesTablasBus.cs" />
     <Compile Include="UsuariosBus.cs" />
   </ItemGroup>
   <ItemGroup>

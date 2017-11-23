@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controles.datos
+namespace Controles.contenedores
 {
-    public partial class grdGrillaEdit : gesGrid
+    public partial class tabSolapas : gesTabControl
     {
-        public grdGrillaEdit() {
-            ReadOnly = false;
+        public tabSolapas() {
+
         }
     }
 }

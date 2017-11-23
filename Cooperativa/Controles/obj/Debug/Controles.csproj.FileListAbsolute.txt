@@ -37,6 +37,7 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Contro
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmABM.resources
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmAdminGeneral.resources
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmBuscador.resources
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmCrudGrilla.resources
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.frmLogin.resources
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmFormAdmin.resources
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.forms.frmObservaciones.resources

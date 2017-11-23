@@ -66,10 +66,12 @@
     <Compile Include="CodigosPostalesLocalidade.cs" />
     <Compile Include="Departamentos.cs" />
     <Compile Include="DetallesColumnasTablas.cs" />
+    <Compile Include="Observaciones.cs" />
     <Compile Include="Personas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sectores.cs" />
     <Compile Include="Tablas.cs" />
+    <Compile Include="TiposObservacionesTablas.cs" />
     <Compile Include="Usuarios.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

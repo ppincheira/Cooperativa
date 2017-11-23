@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Controles.buttons
 {
-    class btnEliminar:gesButton
+    public partial class btnEliminar:gesButton
     {
         public btnEliminar()
         {
