@@ -42,7 +42,8 @@
             this.lblEFechaDesde = new Controles.labels.lblEtiqueta();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
+            //this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.txtFiltro = new Controles.txtFiltro();
             this.gbData = new Controles.contenedores.gesGroup();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.dgBusqueda = new Controles.datos.gesGrid();

@@ -180,6 +180,9 @@
     <Compile Include="forms\frmBuscador.Designer.cs">
       <DependentUpon>frmBuscador.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\frmCrudGrilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\frmFormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>

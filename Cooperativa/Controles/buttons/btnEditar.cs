@@ -13,6 +13,8 @@ namespace Controles.buttons
             Size = new System.Drawing.Size(40, 40);
             BackgroundImage = Resources.Iconos.editar;
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            objects.tttEtiqueta ttt = new objects.tttEtiqueta();
+            ttt.SetToolTip(this, "Editar registro");
             //Text = "N";
             //Size = this.BackgroundImage.Size;
         }

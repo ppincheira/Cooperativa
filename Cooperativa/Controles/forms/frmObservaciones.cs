@@ -233,6 +233,7 @@ namespace Controles.forms
             this.Controls.Add(this.gpbGrupo2);
             this.Controls.Add(this.gpbGrupo1);
             this.Name = "frmObservaciones";
+            this.Text = "[OBSERVACIONES]";
             this.gpbGrupo1.ResumeLayout(false);
             this.gpbGrupo1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdGrillaAdmin1)).EndInit();
