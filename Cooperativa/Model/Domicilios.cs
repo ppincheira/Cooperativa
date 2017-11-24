@@ -5,25 +5,28 @@ using System.Collections.Generic;
 
 namespace Model {
     
-    public partial class Domicilios {
-        public virtual long domCodigo { get; set; }
-        public virtual string tdoCodigo { get; set; }
-        public virtual string paiCodigo { get; set; }
-        public virtual string prvCodigo { get; set; }
-        public virtual int locNumero { get; set; }
-        public virtual int calNumero { get; set; }
-        public virtual int calNumeroDesde { get; set; }
-        public virtual int calNumeroHasta { get; set; }
-        public virtual int domNumero { get; set; }
-        public virtual string domBloque { get; set; }
-        public virtual string domPiso { get; set; }
-        public virtual string domDepartamento { get; set; }
-        public virtual string domParcela { get; set; }
-        public virtual int cplNumero { get; set; }
-        public virtual long empNumero { get; set; }
-        public virtual int prsNumero { get; set; }
-        public virtual decimal? domGisX { get; set; }
-        public virtual decimal? domGisY { get; set; }
-        public virtual string domLote { get; set; }
+    public class Domicilios {
+        public Domicilios()
+        {
+        }
+        public virtual long DomCodigo { get; set; }
+        public virtual string TdoCodigo { get; set; }
+        public virtual string PaiCodigo { get; set; }
+        public virtual string PrvCodigo { get; set; }
+        public virtual int LocNumero { get; set; }
+        public virtual int CalNumero { get; set; }
+        public virtual int CalNumeroDesde { get; set; }
+        public virtual int CalNumeroHasta { get; set; }
+        public virtual int DomNumero { get; set; }
+        public virtual string DomBloque { get; set; }
+        public virtual string DomPiso { get; set; }
+        public virtual string DomDepartamento { get; set; }
+        public virtual string DomParcela { get; set; }
+        public virtual int CplNumero { get; set; }
+        public virtual long EmpNumero { get; set; }
+        public virtual int PrsNumero { get; set; }
+        public virtual decimal? DomGisX { get; set; }
+        public virtual decimal? DomGisY { get; set; }
+        public virtual string DomLote { get; set; }
     }
 }

@@ -142,6 +142,7 @@ namespace Implement
             }
             catch (Exception ex)
             {
+
                 throw ex;
             }
         }
@@ -192,11 +193,13 @@ namespace Implement
                 oObjeto.PrsNombre = dr["PRS_NOMBRE"].ToString();
                 oObjeto.PrsTipoDoc = dr["PRS_TIPO_DOC"].ToString();
                 oObjeto.PrsNumeroDoc = dr["PRS_NUMERO_DOC"].ToString();
-                oObjeto.PrsFechaNacimiento = DateTime.Parse(dr["PRS_FECHA_NACIMIENTO"].ToString());
+                if (dr["PRS_FECHA_NACIMIENTO"].ToString() != "")
+                    oObjeto.PrsFechaNacimiento = DateTime.Parse(dr["PRS_FECHA_NACIMIENTO"].ToString());
                 oObjeto.PrsLegajo = int.Parse(dr["PRS_LEGAJO"].ToString());
                 oObjeto.LocNumeroNacimiento = int.Parse(dr["LOC_NUMERO_NACIMIENTO"].ToString());
                 oObjeto.EstCodigo = dr["EST_CODIGO"].ToString();
-                oObjeto.PrsFechaIngreso = DateTime.Parse(dr["PRS_FECHA_INGRESO"].ToString());
+                if (dr["PRS_FECHA_INGRESO"].ToString() != "")
+                    oObjeto.PrsFechaIngreso = DateTime.Parse(dr["PRS_FECHA_INGRESO"].ToString());
                 oObjeto.PrsMotivoBaja = dr["PRS_MOTIVO_BAJA"].ToString();
                 oObjeto.PrsSexo = dr["PRS_SEXO"].ToString();
                 oObjeto.PrsEstadoCivil = dr["PRS_ESTADO_CIVIL"].ToString();
@@ -204,7 +207,8 @@ namespace Implement
                 oObjeto.PaiCodigoNacimiento= dr["PAI_CODIGO_NACIMIENTO"].ToString();
                 oObjeto.PrsCargo = dr["PRS_CARGO"].ToString();
                 oObjeto.PrvCodigoNacimiento = dr["PRV_CODIGO_NACIMIENTO"].ToString();
-                oObjeto.PrsFechaBaja = DateTime.Parse(dr["PRS_FECHA_BAJA"].ToString());
+                if (dr["PRS_FECHA_BAJA"].ToString() != "")
+                    oObjeto.PrsFechaBaja = DateTime.Parse(dr["PRS_FECHA_BAJA"].ToString());
                 return oObjeto;
             }
             catch (Exception ex)

@@ -1,58 +1,15 @@
-///////////////////////////////////////////////////////////////////////////
-//
-// Creado por Pablo Pincheira
-//
-///////////////////////////////////////////////////////////////////////////
-
 using System;
+using System.Text;
+using System.Collections.Generic;
 
 
-namespace Model
-{
-    public class Departamentos
-    {
-        #region Private Properties
-        private int _DepNumero;
-        private string _DepDescripcion;
-		private string _AreCodigo;
-        #endregion
-
-        #region Constructors
-
-        public Departamentos()
-        {
-
+namespace Model {
+    
+    public class Departamentos {
+        public Departamentos() {
         }
-
-        public Departamentos(int DepNumero, string DepDescripcion, string AreCodigo)
-        {
-			_DepNumero=DepNumero;
-			_DepDescripcion=DepDescripcion;
-			_AreCodigo=AreCodigo;			
-        }
-
-        #endregion
-
-        #region Properties
-
-        public int DepNumero
-        {
-            get { return _DepNumero; }
-            set { _DepNumero = value; }
-        }
-
-        public string DepDescripcion
-        {
-            get { return _DepDescripcion; }
-            set { _DepDescripcion = value; }
-        }
-
-		public string AreCodigo
-        {
-            get { return _AreCodigo; }
-            set { _AreCodigo = value; }
-        }
-
-        #endregion
+        public virtual int DepNumero { get; set; }
+        public virtual string DepDescripcion { get; set; }
+        public virtual string AreCodigo { get; set; }
     }
 }

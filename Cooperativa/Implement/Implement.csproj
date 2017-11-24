@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -60,16 +61,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccionistasImpl.cs" />
+    <Compile Include="AuditoriasImpl.cs" />
+    <Compile Include="BarriosImpl.cs" />
+    <Compile Include="BarriosLocalidadesImpl.cs" />
+    <Compile Include="CallesLocalidadesImpl.cs" />
+    <Compile Include="CodigosPostalesLocalidadesImpl.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="DepartamentosImpl.cs" />
+    <Compile Include="DetallesAuditoriaImpl.cs" />
     <Compile Include="DetallesColumnasTablasImpl.cs" />
+    <Compile Include="DetallesIvaImpl.cs" />
+    <Compile Include="DetallesModelosMedidoresImpl.cs" />
+    <Compile Include="DistritosImpl.cs" />
+    <Compile Include="FuncionalidadesImpl.cs" />
+    <Compile Include="FuncionalidadesUsuariosImpl.cs" />
     <Compile Include="MenuItemsImp.cs" />
+    <Compile Include="MenuItemsImpl.cs" />
+    <Compile Include="MenuItemsUsuariosImpl.cs" />
+    <Compile Include="ObservacionesImpl.cs" />
     <Compile Include="PersonasImpl.cs" />
     <Compile Include="PruebaImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AreasImpl.cs" />
+    <Compile Include="RolesFuncionalidadesImpl.cs" />
+    <Compile Include="RolesMenuItemsImpl.cs" />
     <Compile Include="SectoresImpl.cs" />
+    <Compile Include="SubsistemaImpl.cs" />
     <Compile Include="TablasImpl.cs" />
+    <Compile Include="TiposObservacionesTablasImpl.cs" />
     <Compile Include="UsuariosImpl.cs" />
   </ItemGroup>
   <ItemGroup>

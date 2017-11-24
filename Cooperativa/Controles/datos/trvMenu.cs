@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Controles.datos
 {
-    public class trvMenu : gesTreeVew
+    public class trvMenu : gesTreeView
     {
-        public trvMenu() {
-
-        }
+   
     }
 }

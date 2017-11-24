@@ -4,10 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Controles;
-namespace Controles
+using System.Data;
+using System.Windows.Forms;
+using Business;
+using Business.Presentacion;
+
+namespace Controles.forms
 {
-    public class frmPrincipal: gesForm
+    public class frmPrincipal: gesForm, IVistaPrincipal
     {
+
+        private  UIPrincipal _oPrincipal;
         private contenedores.mnuMenuPrincipal mnuMenuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarClaveToolStripMenuItem;
@@ -16,13 +23,19 @@ namespace Controles
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private datos.trvMenu trvMenu;
 
+        #region Implementation of IVistaPrincipal
+        public datos.trvMenu otrvMenu
+        {
+            get { return this.trvMenu; }
+            set { this.trvMenu = value; }
+        }
+        
+        #endregion
         public frmPrincipal(string subsistema)
         {
             this.IsMdiContainer = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             InitializeComponent();
-            //salirToolStripMenuItem.Click += ;
-
         }
 
  
@@ -45,7 +58,7 @@ namespace Controles
             this.trvMenu.Name = "trvMenu";
             this.trvMenu.Size = new System.Drawing.Size(400, 800);
             this.trvMenu.TabIndex = 0;
-            // 
+             
             // mnuMenuPrincipal
             // 
             this.mnuMenuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -101,6 +114,7 @@ namespace Controles
             this.Controls.Add(this.mnuMenuPrincipal);
             this.MainMenuStrip = this.mnuMenuPrincipal;
             this.Name = "frmPrincipal";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.mnuMenuPrincipal.ResumeLayout(false);
             this.mnuMenuPrincipal.PerformLayout();
             this.sstBarraEstado.ResumeLayout(false);
@@ -109,5 +123,19 @@ namespace Controles
             this.PerformLayout();
 
         }
+
+
+        #region << EVENTOS >>
+
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            _oPrincipal.InicializarArbol();
+        }
+        #endregion
+
+
+
+
     }
 }

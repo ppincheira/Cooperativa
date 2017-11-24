@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Oracle.DataAccess.Client;
 using System.Configuration;
 using Model;
@@ -211,10 +209,12 @@ namespace Implement
                 oObjeto.UsrBloqueado = dr["USR_BLOQUEADO"].ToString();
                 oObjeto.UsrNombre = dr["USR_NOMBRE"].ToString();
                 oObjeto.UsrClave = dr["USR_CLAVE"].ToString();
-                oObjeto.UsrFechaAlta = DateTime.Parse(dr["USR_FECHA_ALTA"].ToString());
-                if (dr["USR_FECHA_BAJA"].ToString() != "") {
+                if (dr["USR_FECHA_ALTA"].ToString() != "")
+                    oObjeto.UsrFechaAlta = DateTime.Parse(dr["USR_FECHA_ALTA"].ToString());
+                
+                if (dr["USR_FECHA_BAJA"].ToString() != "") 
                     oObjeto.UsrFechaBaja = DateTime.Parse(dr["USR_FECHA_BAJA"].ToString());
-                }
+                
                 return oObjeto;
             }
             catch (Exception ex)

@@ -5,11 +5,14 @@ using System.Collections.Generic;
 
 namespace Model {
     
-    public partial class Estados {
-        public virtual string estCodigo { get; set; }
-        public virtual string estDescripcion { get; set; }
-        public virtual string estDescripcionCorta { get; set; }
-        public virtual string estEntidad { get; set; }
-        public virtual string estTipoDato { get; set; }
+    public class Estados {
+        public Estados()
+        {
+        }
+        public virtual string EstCodigo { get; set; }
+        public virtual string EstDescripcion { get; set; }
+        public virtual string EstDescripcionCorta { get; set; }
+        public virtual string EstEntidad { get; set; }
+        public virtual string EstTipoDato { get; set; }
     }
 }

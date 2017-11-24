@@ -1,46 +1,16 @@
-///////////////////////////////////////////////////////////////////////////
-//
-// Creado por Pablo Pincheira
-//
-///////////////////////////////////////////////////////////////////////////
-
 using System;
+using System.Text;
+using System.Collections.Generic;
 
 
-namespace Model
-{
-    public class Areas
-    {
-        #region Private Properties
-        private string _AreCodigo;
-        private string _AreDescripcion;
-        #endregion
-
-        #region Constructors
-
-        public Areas()
-        {
-
+namespace Model {
+    
+    public class Areas {
+        public Areas() {
+//			Departamentos = new List<Departamentos>();
         }
-
-        public Areas(string AreCodigo, string AreDescripcion)
-        {
-			_AreCodigo=AreCodigo;
-			_AreDescripcion=AreDescripcion;			
-        }
-
-        #endregion
-
-        #region Properties
-
-        public string AreCodigo { get; set; }
-
-    public string AreDescripcion
-        {
-            get { return _AreDescripcion; }
-            set { _AreDescripcion = value; }
-        }
-
-        #endregion
+        public virtual string AreCodigo { get; set; }
+        public virtual string AreDescripcion { get; set; }
+ //       public virtual IList<Departamentos> Departamentos { get; set; }
     }
 }

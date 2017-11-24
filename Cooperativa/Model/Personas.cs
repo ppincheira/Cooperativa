@@ -23,9 +23,9 @@ namespace Model {
         public virtual DateTime PrsFechaNacimiento { get; set; }
         public virtual string PaiCodigoNacimiento { get; set; }
         public virtual string PrvCodigoNacimiento { get; set; }
-        public virtual int LocNumeroNacimiento { get; set; }
-        public virtual DateTime PrsFechaIngreso { get; set; }
-        public virtual DateTime PrsFechaBaja { get; set; }
+        public virtual int? LocNumeroNacimiento { get; set; }
+        public virtual DateTime? PrsFechaIngreso { get; set; }
+        public virtual DateTime? PrsFechaBaja { get; set; }
         public virtual string EstCodigo { get; set; }
         public virtual string PrsMotivoBaja { get; set; }
         public virtual int PrsLegajo { get; set; }

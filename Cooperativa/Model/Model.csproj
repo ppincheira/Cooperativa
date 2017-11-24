@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -58,18 +59,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accionistas.cs" />
     <Compile Include="Areas.cs" />
     <Compile Include="Auditorias.cs" />
     <Compile Include="Barrios.cs" />
+    <Compile Include="BarriosLocalidades.cs" />
     <Compile Include="CallesLocalidades.cs" />
     <Compile Include="Clientes.cs" />
     <Compile Include="CodigosPostalesLocalidade.cs" />
+    <Compile Include="CodigosPostalesLocalidades.cs" />
     <Compile Include="Departamentos.cs" />
+    <Compile Include="DetallesAuditoria.cs" />
     <Compile Include="DetallesColumnasTablas.cs" />
+    <Compile Include="DetallesIva.cs" />
+    <Compile Include="DetallesModelosMedidores.cs" />
+    <Compile Include="Distritos.cs" />
+    <Compile Include="Domicilios.cs" />
+    <Compile Include="Dominios.cs" />
+    <Compile Include="Empresas.cs" />
+    <Compile Include="Estados.cs" />
+    <Compile Include="Fabricantes.cs" />
+    <Compile Include="Funcionalidades.cs" />
+    <Compile Include="FuncionalidadesUsuarios.cs" />
+    <Compile Include="Help.cs" />
+    <Compile Include="Localidades.cs" />
+    <Compile Include="MenuItems.cs" />
+    <Compile Include="MenuItemsUsuarios.cs" />
+    <Compile Include="Observaciones.cs" />
     <Compile Include="Personas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolesFuncionalidades.cs" />
+    <Compile Include="RolesMenuItems.cs" />
     <Compile Include="Sectores.cs" />
+    <Compile Include="Subsistema.cs" />
     <Compile Include="Tablas.cs" />
+    <Compile Include="TiposObservacionesTablas.cs" />
     <Compile Include="Usuarios.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

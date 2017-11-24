@@ -257,7 +257,7 @@ namespace Implement
                 DetallesColumnasTablas oObjeto = new DetallesColumnasTablas();
                 oObjeto.DctCodigoTabla = dr["DCT_CODIGO_TABLA"].ToString();
                 oObjeto.TabCodigo = dr["TAB_CODIGO"].ToString();
-                oObjeto.DctNroOrden = int.Parse(dr["DCT_NRO_ORDEN"].ToString());
+                oObjeto.DctNroOrden = short.Parse(dr["DCT_NRO_ORDEN"].ToString());
                 oObjeto.DctColumna = dr["DCT_COLUMNA"].ToString();
                 oObjeto.DctHabilitado= dr["DCT_HABILITADO"].ToString();
                 oObjeto.DctRequerido = dr["DCT_REQUERIDO"].ToString();
