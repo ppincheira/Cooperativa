@@ -21,6 +21,7 @@ namespace Controles.forms
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         public contenedores.sstBarraEstado sstBarraEstado;
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private contenedores.pnlPanelContenedor pnlPanelContenedor1;
         private datos.trvMenu trvMenu;
 
         #region Implementation of IVistaPrincipal
@@ -48,15 +49,17 @@ namespace Controles.forms
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sstBarraEstado = new Controles.contenedores.sstBarraEstado();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pnlPanelContenedor1 = new Controles.contenedores.pnlPanelContenedor();
             this.mnuMenuPrincipal.SuspendLayout();
             this.sstBarraEstado.SuspendLayout();
+            this.pnlPanelContenedor1.SuspendLayout();
             this.SuspendLayout();
             // 
             // trvMenu
             // 
-            this.trvMenu.Location = new System.Drawing.Point(0, 24);
+            this.trvMenu.Location = new System.Drawing.Point(3, 0);
             this.trvMenu.Name = "trvMenu";
-            this.trvMenu.Size = new System.Drawing.Size(400, 800);
+            this.trvMenu.Size = new System.Drawing.Size(507, 776);
             this.trvMenu.TabIndex = 0;
              
             // mnuMenuPrincipal
@@ -65,7 +68,7 @@ namespace Controles.forms
             this.archivoToolStripMenuItem});
             this.mnuMenuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuMenuPrincipal.Name = "mnuMenuPrincipal";
-            this.mnuMenuPrincipal.Size = new System.Drawing.Size(284, 24);
+            this.mnuMenuPrincipal.Size = new System.Drawing.Size(1022, 24);
             this.mnuMenuPrincipal.TabIndex = 1;
             this.mnuMenuPrincipal.Text = "mnuMenuPrincipal";
             // 
@@ -94,9 +97,9 @@ namespace Controles.forms
             // 
             this.sstBarraEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.sstBarraEstado.Location = new System.Drawing.Point(0, 239);
+            this.sstBarraEstado.Location = new System.Drawing.Point(0, 623);
             this.sstBarraEstado.Name = "sstBarraEstado";
-            this.sstBarraEstado.Size = new System.Drawing.Size(284, 22);
+            this.sstBarraEstado.Size = new System.Drawing.Size(1022, 22);
             this.sstBarraEstado.TabIndex = 2;
             this.sstBarraEstado.Text = "sstBarraEstado";
             // 
@@ -106,11 +109,20 @@ namespace Controles.forms
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
+            // pnlPanelContenedor1
+            // 
+            this.pnlPanelContenedor1.Controls.Add(this.trvMenu);
+            this.pnlPanelContenedor1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlPanelContenedor1.Location = new System.Drawing.Point(0, 24);
+            this.pnlPanelContenedor1.Name = "pnlPanelContenedor1";
+            this.pnlPanelContenedor1.Size = new System.Drawing.Size(341, 599);
+            this.pnlPanelContenedor1.TabIndex = 3;
+            // 
             // frmPrincipal
             // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(1022, 645);
+            this.Controls.Add(this.pnlPanelContenedor1);
             this.Controls.Add(this.sstBarraEstado);
-            this.Controls.Add(this.trvMenu);
             this.Controls.Add(this.mnuMenuPrincipal);
             this.MainMenuStrip = this.mnuMenuPrincipal;
             this.Name = "frmPrincipal";
@@ -119,6 +131,7 @@ namespace Controles.forms
             this.mnuMenuPrincipal.PerformLayout();
             this.sstBarraEstado.ResumeLayout(false);
             this.sstBarraEstado.PerformLayout();
+            this.pnlPanelContenedor1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

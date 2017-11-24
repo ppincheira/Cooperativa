@@ -32,6 +32,8 @@ namespace Controles
         {//Iniciamos los valores por defecto
             colorTextoVacio = Color.Gray;
             textoVacio = "<Descripcion>";
+            objects.tttEtiqueta ttt = new objects.tttEtiqueta();
+            ttt.SetToolTip(this, "Escriba parte del texto que desea encontrar");
         }
         //Creamos un metodo que nos ayudara a verificar si se inserta el texto vacio o no
         private void VerificaTextoVacio()

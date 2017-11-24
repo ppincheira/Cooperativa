@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Controles.contenedores
 {
-    class gpbGrupo:gesGroup
+    public partial class gpbGrupo:gesGroup
     {
+        public gpbGrupo() {
+        }
     }
 }

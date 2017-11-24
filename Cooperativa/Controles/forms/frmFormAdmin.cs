@@ -26,7 +26,6 @@ namespace Controles.forms
         private Fecha.dtpFecha dtpFechaDesde;
         private buttons.btnNuevo btnNuevo;
         private buttons.btnSalir btnSalir;
-        private buttons.btnAnular btnAnular;
         private buttons.btnExportar btnExportar;
         private buttons.btnImprimir btnImprimir;
         private buttons.btnVer btnVer;
@@ -34,10 +33,12 @@ namespace Controles.forms
         private contenedores.gpbGrupo gpbGrupoEstado;
         public System.Windows.Forms.ComboBox cmbEstado;
         private labels.lblEtiqueta lblEEstado;
+        private buttons.btnEliminar btnEliminar1;
         private datos.gesGrid dgBusqueda;
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFormAdmin));
             this.gpbFiltro = new Controles.contenedores.gpbGrupo();
             this.txtFiltro = new Controles.txtFiltro();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
@@ -49,8 +50,8 @@ namespace Controles.forms
             this.dtpFechaHasta = new Controles.Fecha.dtpFecha();
             this.dtpFechaDesde = new Controles.Fecha.dtpFecha();
             this.gpbGrupo3 = new Controles.contenedores.gpbGrupo();
+            this.btnEliminar1 = new Controles.buttons.btnEliminar();
             this.btnSalir = new Controles.buttons.btnSalir();
-            this.btnAnular = new Controles.buttons.btnAnular();
             this.btnExportar = new Controles.buttons.btnExportar();
             this.btnImprimir = new Controles.buttons.btnImprimir();
             this.btnVer = new Controles.buttons.btnVer();
@@ -78,16 +79,17 @@ namespace Controles.forms
             this.gpbFiltro.Controls.Add(this.lblFiltro);
             this.gpbFiltro.Location = new System.Drawing.Point(12, 1);
             this.gpbFiltro.Name = "gpbFiltro";
-            this.gpbFiltro.Size = new System.Drawing.Size(257, 101);
+            this.gpbFiltro.Size = new System.Drawing.Size(381, 101);
             this.gpbFiltro.TabIndex = 0;
             this.gpbFiltro.TabStop = false;
             // 
             // txtFiltro
             // 
+            this.txtFiltro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtFiltro.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtFiltro.Location = new System.Drawing.Point(86, 58);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(166, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(289, 20);
             this.txtFiltro.TabIndex = 3;
             this.txtFiltro.TextoVacio = "<Descripcion>";
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
@@ -97,7 +99,7 @@ namespace Controles.forms
             this.cmbBuscar.FormattingEnabled = true;
             this.cmbBuscar.Location = new System.Drawing.Point(86, 14);
             this.cmbBuscar.Name = "cmbBuscar";
-            this.cmbBuscar.Size = new System.Drawing.Size(166, 21);
+            this.cmbBuscar.Size = new System.Drawing.Size(289, 21);
             this.cmbBuscar.TabIndex = 2;
             // 
             // lblEtiqueta2
@@ -125,7 +127,7 @@ namespace Controles.forms
             this.gpbFecha.Controls.Add(this.dtpFechaHasta);
             this.gpbFecha.Controls.Add(this.dtpFechaDesde);
             this.gpbFecha.Enabled = false;
-            this.gpbFecha.Location = new System.Drawing.Point(275, 1);
+            this.gpbFecha.Location = new System.Drawing.Point(399, 1);
             this.gpbFecha.Name = "gpbFecha";
             this.gpbFecha.Size = new System.Drawing.Size(200, 103);
             this.gpbFecha.TabIndex = 1;
@@ -167,93 +169,92 @@ namespace Controles.forms
             // 
             // gpbGrupo3
             // 
+            this.gpbGrupo3.Controls.Add(this.btnEliminar1);
             this.gpbGrupo3.Controls.Add(this.btnSalir);
-            this.gpbGrupo3.Controls.Add(this.btnAnular);
             this.gpbGrupo3.Controls.Add(this.btnExportar);
             this.gpbGrupo3.Controls.Add(this.btnImprimir);
             this.gpbGrupo3.Controls.Add(this.btnVer);
             this.gpbGrupo3.Controls.Add(this.btnEditar);
             this.gpbGrupo3.Controls.Add(this.btnNuevo);
-            this.gpbGrupo3.Location = new System.Drawing.Point(481, 1);
+            this.gpbGrupo3.Location = new System.Drawing.Point(605, 1);
             this.gpbGrupo3.Name = "gpbGrupo3";
-            this.gpbGrupo3.Size = new System.Drawing.Size(456, 53);
+            this.gpbGrupo3.Size = new System.Drawing.Size(332, 53);
             this.gpbGrupo3.TabIndex = 1;
             this.gpbGrupo3.TabStop = false;
             // 
+            // btnEliminar1
+            // 
+            this.btnEliminar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar1.BackgroundImage")));
+            this.btnEliminar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar1.Location = new System.Drawing.Point(98, 9);
+            this.btnEliminar1.Name = "btnEliminar1";
+            this.btnEliminar1.Size = new System.Drawing.Size(40, 40);
+            this.btnEliminar1.TabIndex = 7;
+            this.btnEliminar1.UseVisualStyleBackColor = true;
+            // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.Blue;
-            this.btnSalir.Location = new System.Drawing.Point(384, 9);
+            this.btnSalir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.BackgroundImage")));
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.Location = new System.Drawing.Point(282, 8);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(57, 40);
+            this.btnSalir.Size = new System.Drawing.Size(40, 40);
             this.btnSalir.TabIndex = 6;
-            this.btnSalir.Text = "btnSalir1";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnAnular
-            // 
-            this.btnAnular.BackColor = System.Drawing.Color.Blue;
-            this.btnAnular.Location = new System.Drawing.Point(321, 9);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(57, 40);
-            this.btnAnular.TabIndex = 5;
-            this.btnAnular.Text = "btnAnular1";
-            this.btnAnular.UseVisualStyleBackColor = false;
-            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
-            // 
             // btnExportar
             // 
-            this.btnExportar.BackColor = System.Drawing.Color.Blue;
-            this.btnExportar.Location = new System.Drawing.Point(258, 9);
+            this.btnExportar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExportar.BackgroundImage")));
+            this.btnExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExportar.Location = new System.Drawing.Point(190, 8);
             this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(57, 40);
+            this.btnExportar.Size = new System.Drawing.Size(40, 40);
             this.btnExportar.TabIndex = 4;
-            this.btnExportar.Text = "btnExportar1";
             this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // btnImprimir
             // 
-            this.btnImprimir.BackColor = System.Drawing.Color.Blue;
-            this.btnImprimir.Location = new System.Drawing.Point(195, 8);
+            this.btnImprimir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnImprimir.BackgroundImage")));
+            this.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImprimir.Location = new System.Drawing.Point(236, 8);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(57, 41);
+            this.btnImprimir.Size = new System.Drawing.Size(40, 40);
             this.btnImprimir.TabIndex = 3;
-            this.btnImprimir.Text = "btnImprimir1";
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnVer
             // 
-            this.btnVer.BackColor = System.Drawing.Color.Blue;
-            this.btnVer.Location = new System.Drawing.Point(132, 9);
+            this.btnVer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVer.BackgroundImage")));
+            this.btnVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVer.Location = new System.Drawing.Point(144, 8);
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(57, 40);
+            this.btnVer.Size = new System.Drawing.Size(40, 40);
             this.btnVer.TabIndex = 2;
-            this.btnVer.Text = "btnVer1";
             this.btnVer.UseVisualStyleBackColor = false;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.Blue;
-            this.btnEditar.Location = new System.Drawing.Point(69, 9);
+            this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
+            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditar.Location = new System.Drawing.Point(52, 9);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(57, 40);
+            this.btnEditar.Size = new System.Drawing.Size(40, 40);
             this.btnEditar.TabIndex = 1;
-            this.btnEditar.Text = "btnEditar1";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
-            this.btnNuevo.BackColor = System.Drawing.Color.Blue;
+            this.btnNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.BackgroundImage")));
+            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNuevo.Location = new System.Drawing.Point(6, 9);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(57, 40);
+            this.btnNuevo.Size = new System.Drawing.Size(40, 40);
             this.btnNuevo.TabIndex = 0;
-            this.btnNuevo.Text = "btnNuevo1";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -291,16 +292,16 @@ namespace Controles.forms
             this.gpbGrupoEstado.Controls.Add(this.cmbEstado);
             this.gpbGrupoEstado.Controls.Add(this.lblEEstado);
             this.gpbGrupoEstado.Enabled = false;
-            this.gpbGrupoEstado.Location = new System.Drawing.Point(481, 56);
+            this.gpbGrupoEstado.Location = new System.Drawing.Point(605, 56);
             this.gpbGrupoEstado.Name = "gpbGrupoEstado";
-            this.gpbGrupoEstado.Size = new System.Drawing.Size(456, 46);
+            this.gpbGrupoEstado.Size = new System.Drawing.Size(332, 46);
             this.gpbGrupoEstado.TabIndex = 8;
             this.gpbGrupoEstado.TabStop = false;
             // 
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(64, 12);
+            this.cmbEstado.Location = new System.Drawing.Point(55, 13);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(188, 21);
             this.cmbEstado.TabIndex = 8;
@@ -308,7 +309,7 @@ namespace Controles.forms
             // lblEEstado
             // 
             this.lblEEstado.AutoSize = true;
-            this.lblEEstado.Location = new System.Drawing.Point(3, 20);
+            this.lblEEstado.Location = new System.Drawing.Point(6, 16);
             this.lblEEstado.Name = "lblEEstado";
             this.lblEEstado.Size = new System.Drawing.Size(40, 13);
             this.lblEEstado.TabIndex = 8;
