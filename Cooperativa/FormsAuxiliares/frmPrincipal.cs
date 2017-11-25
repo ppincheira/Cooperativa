@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Controles;
-using AppProcesos.principal;
+using AppProcesos.formsAuxiliares.principal;
 
 namespace FormsAuxiliares
 {

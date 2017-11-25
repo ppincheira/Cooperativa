@@ -8,12 +8,16 @@ using System.Windows.Forms;
 using Business;
 using Model;
 using System.Globalization;
+using AppProcesos.formsAuxiliares.buscador;
+using Controles.datos;
+using Controles.contenedores;
 
 namespace FormsAuxiliares
 {
-    public partial class frmBuscador : gesForm
-    { 
+    public partial class frmBuscador : gesForm, IVistaBuscador
+    {
 
+        private UIBuscador _oBuscador;
         #region << PROPIEDADES >>
         private string _Tabla;
         private string _Campo;
@@ -21,6 +25,56 @@ namespace FormsAuxiliares
         private string _filtroValores;
         private DataTable _dtCombo;
         private string _Fecha;
+        #endregion
+        #region Implementation of IVistaBuscador
+        public gpbGrupo grupoEstado
+        {
+            get { return this.gpbGrupoEstado; }
+            set { this.gpbGrupoEstado = value; }
+        }
+        public gpbGrupo grupoFecha
+        {
+            get { return this.gpbGrupoFecha; }
+            set { this.gpbGrupoFecha = value; }
+        }
+
+
+        public grdGrillaAdmin grilla
+        {
+            get { return this.grilla; }
+            set { this.grilla = value; }
+        }
+        public DateTime fechaDesde
+        {
+            get { return this.dtpFechaDesde.Value; }
+            set { this.dtpFechaDesde.Value = value; }
+        }
+        public DateTime fechaHasta
+        {
+            get { return this.dtpFechaHasta.Value; }
+            set { this.dtpFechaHasta.Value = value; }
+        }
+        public cmbLista comboBuscar
+        {
+            get { return this.cmbBuscar; }
+            set { this.cmbBuscar = value; }
+        }
+        public string filtro
+        {
+            get { return this.txtFiltro.Text; }
+            set { this.txtFiltro.Text = value; }
+        }
+        public cmbLista comboEstado
+        {
+            get { return this.cmbEstado; }
+            set { this.cmbEstado = value; }
+        }
+        public string cantidad
+        {
+        
+            set { this.lblCantidad.Text = value; }
+        }
+
         #endregion
         #region << EVENTOS >>
 
@@ -35,7 +89,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                CargarGrilla();
+                _oBuscador.CargarGrilla();
             }
             catch (Exception ex)
             {
@@ -51,7 +105,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                CargarGrilla();
+                _oBuscador.CargarGrilla();
             }
             catch (Exception ex)
             {
@@ -63,7 +117,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                CargarGrilla();
+                _oBuscador.CargarGrilla();
             }
             catch (Exception ex)
             {
@@ -75,7 +129,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                CargarGrilla();
+                _oBuscador.CargarGrilla();
             }
             catch (Exception ex)
             {
@@ -85,8 +139,9 @@ namespace FormsAuxiliares
 
         private void frmBuscador_Load(object sender, EventArgs e)
         {
-            try { 
-                Inicializar();
+            try {
+
+                _oBuscador.Inicializar(_Tabla);
             }
             catch (Exception ex)
             {
@@ -98,77 +153,11 @@ namespace FormsAuxiliares
 
         }
         #endregion
-        #region << METODOS >>
-        private void Inicializar()
-        {
-                _filtroCampos = "";
-                _filtroValores = "";
-                _dtCombo = new DataTable();
-                _dtCombo.Columns.Add("DctColumna", typeof(string));
-                _dtCombo.Columns.Add("DctDescripcion", typeof(string));
-                DetallesColumnasTablasBus oDetalleBus = new DetallesColumnasTablasBus();
-                List<DetallesColumnasTablas> ListDetalle = oDetalleBus.DetallesColumnasTablasGetByCodigo(_Tabla);
-                foreach (DetallesColumnasTablas oDetalle in ListDetalle)
-                {
-
-                    _Campo = _Campo + ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
-                    if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl!="FECHA" ) && oDetalle.DctTipoControl != "ESTADO") { 
-                        _dtCombo.Rows.Add(oDetalle.DctColumna, oDetalle.DctDescripcion);
-                    }
-
-                    if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "FECHA"))
-                    { 
-                        this.gpbGrupoFecha.Visible = true;
-                        this.dtpFechaDesde.Value = DateTime.Now.Date.AddMonths(-1);
-                        this.dtpFechaHasta.Value = DateTime.Now.Date;
-                        _filtroCampos = _filtroCampos+ oDetalle.DctColumna + "&";
-                        _Fecha=oDetalle.DctColumna + "&";
-                        _filtroValores = _filtroValores+this.dtpFechaDesde.Text + "%" + this.dtpFechaHasta.Text + "&";
-                    }
-                    if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "ESTADO")) { 
-                        this.gpbGrupoEstado.Visible = true;
-                        _filtroCampos = _filtroCampos+oDetalle.DctColumna + "&";
-                        _filtroValores = _filtroValores+this.cmbEstado.Text + "&";
-                    }
-                }
-
-                this.cmbBuscar.DataSource = _dtCombo;
-                this.cmbBuscar.ValueMember = "DctColumna";
-                this.cmbBuscar.DisplayMember = "DctDescripcion";
-                if (_Campo.Length > 0)
-                    
-                    _Campo = _Campo.Substring(0, _Campo.Length - 1);
-                TablasBus oTablasBus = new TablasBus();
-                this.dgBusqueda.DataSource = oTablasBus.TablasBusquedaGetAllFilter(_Tabla,_Campo, _filtroCampos, _filtroValores);
-                this.lblCantidad.Text = "Se encontraron " + this.dgBusqueda.VisibleRowCount.ToString() + " registros";
-        
-        }
-
-        private void CargarGrilla() {
-            _filtroCampos = "";
-            _filtroValores = "";
-
-            if (this.gpbGrupoFecha.Visible) { 
-                _filtroValores = this.dtpFechaDesde.Text + "%" + this.dtpFechaHasta.Text + "&";
-                _filtroCampos = _Fecha ;
-            }
-            if (this.gpbGrupoEstado.Visible)
-                _filtroValores = this.cmbEstado.Text + "&";
-
-            _filtroCampos = _filtroCampos+this.cmbBuscar.SelectedValue.ToString() + "&";
-            _filtroValores = _filtroValores+this.txtFiltro.Text + "&";
-
-            TablasBus oTablasBus = new TablasBus();
-            this.dgBusqueda.DataSource = oTablasBus.TablasBusquedaGetAllFilter(_Tabla, _Campo, _filtroCampos, _filtroValores);
-            this.lblCantidad.Text= "Se encontraron "+this.dgBusqueda.VisibleRowCount.ToString()+ " registros";
-
-        }
 
 
 
 
 
-        #endregion
 
     }
 

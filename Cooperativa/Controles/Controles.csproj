@@ -217,10 +217,6 @@
       <Project>{30b38eed-bf12-4118-8492-53051e87d716}</Project>
       <Name>Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\service\Service.csproj">
-      <Project>{86fb2f28-828e-4d75-8656-fe5f83fa1d11}</Project>
-      <Name>Service</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ok-48.png" />

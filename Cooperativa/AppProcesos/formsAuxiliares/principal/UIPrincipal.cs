@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Business;
 using System.Windows.Forms;
-using System.Windows.Forms;
+using AppProcesos.formsAuxiliares.principal;
 
-namespace AppProcesos.principal
+namespace AppProcesos.formsAuxiliares.principal
 {
     public class UIPrincipal
     {

@@ -17,7 +17,7 @@ namespace Service
             return dt.Rows.Count;
 
         }
-        public void CargarCombo(ref Controles.datos.cmbLista combo, DataTable dt, string Value, string Text)
+        public void CargarCombo(Controles.datos.cmbLista combo, DataTable dt, string Value, string Text)
         {
             combo.DataSource = dt;
             combo.ValueMember = Value;

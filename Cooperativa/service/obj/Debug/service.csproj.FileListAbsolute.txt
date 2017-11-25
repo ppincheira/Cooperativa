@@ -7,3 +7,6 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\De
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Service.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Controles.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Controles.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.csprojResolveAssemblyReference.cache

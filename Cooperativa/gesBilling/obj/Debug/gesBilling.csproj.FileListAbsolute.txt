@@ -41,3 +41,5 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\AppProcesos.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\AppProcesos.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Service.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Service.pdb

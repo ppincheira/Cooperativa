@@ -33,7 +33,7 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.gbBusqueda = new System.Windows.Forms.GroupBox();
             this.gpbGrupoEstado = new Controles.contenedores.gpbGrupo();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.cmbEstado = new Controles.datos.cmbLista();
             this.lblEEstado = new Controles.labels.lblEtiqueta();
             this.gpbGrupoFecha = new Controles.contenedores.gpbGrupo();
             this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
@@ -41,7 +41,7 @@
             this.lblEFechaHasta = new Controles.labels.lblEtiqueta();
             this.lblEFechaDesde = new Controles.labels.lblEtiqueta();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.cmbBuscar = new System.Windows.Forms.ComboBox();
+            this.cmbBuscar = new Controles.datos.cmbLista();
             //this.txtFiltro = new System.Windows.Forms.TextBox();
             this.txtFiltro = new Controles.txtFiltro();
             this.gbData = new Controles.contenedores.gesGroup();
@@ -257,13 +257,13 @@
         private System.Windows.Forms.Button btnAceptar;
         internal System.Windows.Forms.GroupBox gbBusqueda;
         internal System.Windows.Forms.Label lblTitulo;
-        public System.Windows.Forms.ComboBox cmbBuscar;
+        private Controles.datos.cmbLista cmbBuscar;
         internal System.Windows.Forms.TextBox txtFiltro;
         private Controles.contenedores.gesGroup gbData;
         private System.Windows.Forms.Label lblCantidad;
         public Controles.datos.gesGrid dgBusqueda;
         private Controles.contenedores.gpbGrupo gpbGrupoEstado;
-        public System.Windows.Forms.ComboBox cmbEstado;
+        private Controles.datos.cmbLista cmbEstado;
         private Controles.labels.lblEtiqueta lblEEstado;
         private Controles.contenedores.gpbGrupo gpbGrupoFecha;
         private Controles.labels.lblEtiqueta lblEFechaHasta;
