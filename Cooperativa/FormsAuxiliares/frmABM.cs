@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using Business;
 using Model;
 
-namespace Controles.forms
+namespace FormsAuxiliares
 {
     public partial class frmABM : gesForm
     {

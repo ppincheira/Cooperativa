@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Controles.textBoxes
 {
-    partial class txtPassword:gesTextBox
+    public partial class txtPassword:gesTextBox
     {
         public txtPassword()
         {

@@ -1,4 +1,4 @@
-﻿namespace Controles.forms
+﻿namespace FormsAuxiliares
 {
     partial class frmAdminGeneral
     {
@@ -73,8 +73,8 @@
 
         #endregion
 
-        private contenedores.gpbGrupo gpbGrupo1;
-        private contenedores.gpbGrupo gpbGrupo2;
-        private contenedores.gpbGrupo gpbGrupo3;
+        private Controles.contenedores.gpbGrupo gpbGrupo1;
+        private Controles.contenedores.gpbGrupo gpbGrupo2;
+        private Controles.contenedores.gpbGrupo gpbGrupo3;
     }
 }

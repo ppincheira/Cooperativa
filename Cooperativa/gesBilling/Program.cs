@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controles;
+using FormsAuxiliares;
 namespace gesBilling
 {
     static class Program
@@ -16,7 +17,7 @@ namespace gesBilling
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Controles.forms.frmLogin("BILL"));
+            Application.Run(new frmLogin("BILL"));
         }
     }
 }

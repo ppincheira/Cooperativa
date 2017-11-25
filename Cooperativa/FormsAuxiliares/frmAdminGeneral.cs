@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Controles.forms
+namespace FormsAuxiliares
 {
     public partial class frmAdminGeneral : gesForm
     {

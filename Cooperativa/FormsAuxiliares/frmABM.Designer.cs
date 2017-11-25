@@ -1,4 +1,4 @@
-﻿namespace Controles.forms
+﻿namespace FormsAuxiliares
 {
     partial class frmABM
     {

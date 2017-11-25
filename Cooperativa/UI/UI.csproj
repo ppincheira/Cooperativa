@@ -36,7 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -135,6 +135,10 @@
     <ProjectReference Include="..\Controles\Controles.csproj">
       <Project>{2b8d11ae-a2f8-4dd8-97a7-9e722b57182e}</Project>
       <Name>Controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FormsAuxiliares\FormsAuxiliares.csproj">
+      <Project>{26ff4718-4f3b-48e5-9cc6-513e266de5ce}</Project>
+      <Name>FormsAuxiliares</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{30b38eed-bf12-4118-8492-53051e87d716}</Project>

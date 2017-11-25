@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Controles.datos;
 
-namespace AppProcesos
+namespace AppProcesos.principal
 {
     public interface IVistaPrincipal
     {

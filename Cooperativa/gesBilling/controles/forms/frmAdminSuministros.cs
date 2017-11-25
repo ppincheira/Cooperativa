@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace gesBilling.controles.forms
 {
-    public partial class frmAdminSuministros : Controles.forms.frmAdminGeneral
+    public partial class frmAdminSuministros : FormsAuxiliares.frmAdminGeneral
     {
         public frmAdminSuministros()
         {

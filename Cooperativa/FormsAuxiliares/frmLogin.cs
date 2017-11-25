@@ -7,8 +7,9 @@ using Service;
 using Business;
 using Model;
 using System.Data;
+using Controles;
 using Microsoft.VisualBasic.PowerPacks;
-namespace Controles.forms
+namespace FormsAuxiliares
 {
     public partial class frmLogin: gesForm
     {
@@ -17,14 +18,14 @@ namespace Controles.forms
         
         
        
-        private textBoxes.txtDescripcionCorta txtUsuario;
-        private textBoxes.txtPassword txtPassword;
-        private labels.lblTitulo lblTitulo1;
+        private Controles.textBoxes.txtDescripcionCorta txtUsuario;
+        private Controles.textBoxes.txtPassword txtPassword;
+        private Controles.labels.lblTitulo lblTitulo1;
         private ShapeContainer shapeContainer1;
         private RectangleShape rectangleShape2;
         private RectangleShape rectangleShape3;
-        private contenedores.pnlPanelEstado pnlPanelEstado1;
-        private labels.lblEtiqueta lblEtiqueta1;
+        private Controles.contenedores.pnlPanelEstado pnlPanelEstado1;
+        private Controles.labels.lblEtiqueta lblEtiqueta1;
         private RectangleShape rectangleShape1;
         #endregion
         #region <<METODOS>>
@@ -143,7 +144,6 @@ namespace Controles.forms
             this.pnlPanelEstado1.Size = new System.Drawing.Size(264, 34);
             this.pnlPanelEstado1.TabIndex = 4;
             this.pnlPanelEstado1.Click += new System.EventHandler(this.pnlPanelEstado1_Click);
-
             // 
             // lblEtiqueta1
             // 
@@ -261,7 +261,5 @@ namespace Controles.forms
         {
             txtUsuario.ForeColor = System.Drawing.Color.Black;
         }
-
-  
     }
 }

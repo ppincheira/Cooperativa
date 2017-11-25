@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -76,12 +76,8 @@
     <Compile Include="DistritosImpl.cs" />
     <Compile Include="FuncionalidadesImpl.cs" />
     <Compile Include="FuncionalidadesUsuariosImpl.cs" />
-    <Compile Include="MenuItemsImp.cs" />
-<<<<<<< HEAD
     <Compile Include="MenuItemsImpl.cs" />
     <Compile Include="MenuItemsUsuariosImpl.cs" />
-=======
->>>>>>> e10c073b2cd34d688de05e74fb92e1238297c7cc
     <Compile Include="ObservacionesImpl.cs" />
     <Compile Include="PersonasImpl.cs" />
     <Compile Include="PruebaImpl.cs" />

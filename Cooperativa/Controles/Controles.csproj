@@ -79,6 +79,9 @@
     <Compile Include="buttons\btnEditar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="buttons\btnEliminar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="buttons\btnExportar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -112,6 +115,9 @@
     <Compile Include="contenedores\gesStatusStrip.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="contenedores\gesTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="contenedores\gesToolBar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -121,16 +127,34 @@
     <Compile Include="contenedores\mnuMenuPrincipal.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="contenedores\pnlPanelContenedor.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="contenedores\pnlPanelEstado.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="contenedores\sstBarraEstado.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="contenedores\tabSolapas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\cmbLista.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\gesComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="datos\gesGrid.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="datos\gesTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\grdGrillaAdmin.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\grdGrillaEdit.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="datos\trvMenu.cs">
@@ -152,6 +176,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="lblPersonalizado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="objects\gesToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="objects\tttEtiqueta.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Resources\Iconos.Designer.cs">
@@ -197,6 +227,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel1-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\add_row-24.png" />
+    <Content Include="Resources\editar.png" />
+    <Content Include="Resources\eliminar.png" />
+    <Content Include="Resources\excel.png" />
+    <Content Include="Resources\imprimir.png" />
+    <Content Include="Resources\nuevo.png" />
+    <Content Include="Resources\salida.png" />
+    <Content Include="Resources\ver.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

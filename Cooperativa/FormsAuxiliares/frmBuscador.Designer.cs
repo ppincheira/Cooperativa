@@ -1,4 +1,4 @@
-﻿namespace Controles.forms
+﻿namespace FormsAuxiliares
 {
     partial class frmBuscador
     {
@@ -42,7 +42,8 @@
             this.lblEFechaDesde = new Controles.labels.lblEtiqueta();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
+            //this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.txtFiltro = new Controles.txtFiltro();
             this.gbData = new Controles.contenedores.gesGroup();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.dgBusqueda = new Controles.datos.gesGrid();
@@ -258,15 +259,15 @@
         internal System.Windows.Forms.Label lblTitulo;
         public System.Windows.Forms.ComboBox cmbBuscar;
         internal System.Windows.Forms.TextBox txtFiltro;
-        private contenedores.gesGroup gbData;
+        private Controles.contenedores.gesGroup gbData;
         private System.Windows.Forms.Label lblCantidad;
-        public datos.gesGrid dgBusqueda;
-        private contenedores.gpbGrupo gpbGrupoEstado;
+        public Controles.datos.gesGrid dgBusqueda;
+        private Controles.contenedores.gpbGrupo gpbGrupoEstado;
         public System.Windows.Forms.ComboBox cmbEstado;
-        private labels.lblEtiqueta lblEEstado;
-        private contenedores.gpbGrupo gpbGrupoFecha;
-        private labels.lblEtiqueta lblEFechaHasta;
-        private labels.lblEtiqueta lblEFechaDesde;
+        private Controles.labels.lblEtiqueta lblEEstado;
+        private Controles.contenedores.gpbGrupo gpbGrupoFecha;
+        private Controles.labels.lblEtiqueta lblEFechaHasta;
+        private Controles.labels.lblEtiqueta lblEFechaDesde;
         private System.Windows.Forms.DateTimePicker dtpFechaHasta;
         private System.Windows.Forms.DateTimePicker dtpFechaDesde;
     }

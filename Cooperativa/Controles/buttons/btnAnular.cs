@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Controles.buttons
 {
-    class btnAnular : gesButton
+    public class btnAnular : gesButton
     {
     }
 }

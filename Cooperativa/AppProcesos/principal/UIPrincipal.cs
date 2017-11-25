@@ -4,9 +4,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business;
+using System.Windows.Forms;
 using System.Windows.Forms;
 
-namespace Business.Presentacion
+namespace AppProcesos.principal
 {
     public class UIPrincipal
     {

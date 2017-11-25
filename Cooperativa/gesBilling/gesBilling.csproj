@@ -71,17 +71,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controles\forms\frmAdminSuministros.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="controles\forms\frmAdminSuministros.Designer.cs">
-      <DependentUpon>frmAdminSuministros.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="controles\forms\frmAdminSuministros.resx">
-      <DependentUpon>frmAdminSuministros.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -117,10 +108,17 @@
       <Project>{2b8d11ae-a2f8-4dd8-97a7-9e722b57182e}</Project>
       <Name>Controles</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FormsAuxiliares\FormsAuxiliares.csproj">
+      <Project>{26ff4718-4f3b-48e5-9cc6-513e266de5ce}</Project>
+      <Name>FormsAuxiliares</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{30b38eed-bf12-4118-8492-53051e87d716}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="controles\forms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

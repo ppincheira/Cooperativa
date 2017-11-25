@@ -50,7 +50,7 @@ namespace UI
 
         private void btnPersonalizado2_Click(object sender, EventArgs e)
         {
-            Controles.forms.frmFormAdmin frmbus = new Controles.forms.frmFormAdmin("PERB");
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("PERB");
             frmbus.ShowDialog();
 
         }
@@ -63,7 +63,7 @@ namespace UI
             //AreasBus oAreaBus = new AreasBus();
             //oAreaBus.AreasAdd(oArea);
             //Controles.forms.frmBuscador frmbus = new Controles.forms.frmBuscador("AREB");
-            Controles.forms.frmBuscador frmbus = new Controles.forms.frmBuscador("PERB");
+           FormsAuxiliares.frmBuscador frmbus = new FormsAuxiliares.frmBuscador("PERB");
             frmbus.ShowDialog();
 
           
@@ -72,8 +72,8 @@ namespace UI
 
         private void btnPersonalizado3_Click(object sender, EventArgs e)
         {
-            Controles.forms.frmObservaciones frmObs = new Controles.forms.frmObservaciones();
-            frmObs.Show();
+            //FormsAuxiliares.frmObservaciones frmObs = new Controles.forms.frmObservaciones();
+            //frmObs.Show();
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controles.forms
+namespace FormsAuxiliares
 {
     public class gesForm : System.Windows.Forms.Form
     {

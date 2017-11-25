@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Controles.textBoxes
 {
-    partial class txtDescripcionCorta:gesTextBox
+    public partial class txtDescripcionCorta:gesTextBox
     {
         public txtDescripcionCorta()
         {

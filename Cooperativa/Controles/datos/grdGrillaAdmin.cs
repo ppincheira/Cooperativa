@@ -9,7 +9,7 @@ namespace Controles.datos
     public partial class grdGrillaAdmin : gesGrid
     {
         public grdGrillaAdmin() {
-            ReadOnly = true;
+            ReadOnly = false;
         }
     }
 }
