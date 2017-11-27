@@ -15,8 +15,16 @@ namespace Service
             grilla.DataSource = dt;
       
             return dt.Rows.Count;
-
         }
+
+        public int CargarGrilla(Controles.datos.grdGrillaEdit grilla, DataTable dt)
+        {
+            grilla.DataSource = dt;
+
+            return dt.Rows.Count;
+        }
+
+
         public void CargarCombo(Controles.datos.cmbLista combo, DataTable dt, string Value, string Text)
         {
             combo.DataSource = dt;

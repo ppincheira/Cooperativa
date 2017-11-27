@@ -7,7 +7,6 @@
 *.txt
 *.ide
 Cooperativa/Business/obj/Debug/Business.csprojResolveAssemblyReference.cache
-
 *.cache
 *.resources
 *.cache
@@ -23,18 +22,6 @@ Cooperativa/Controles/bin/Debug/Controles.dll
 Cooperativa/Controles/bin/Debug/Business.pdb
 Cooperativa/Controles/bin/Debug/Business.dll
 Cooperativa/Business/obj/Debug/CoreCompileInputs.cache
-*.pdb
-*.dll
-*.cache
-*.txt
-*.pdb
-*.dll
-*.pdb
-*.Cache
-*.dll
-*.pdb
-*.pdb
-*.dll
 Cooperativa/Controles/obj/Debug/Controles.dll
 Cooperativa/Controles/obj/Debug/Controles.csprojResolveAssemblyReference.cache
 Cooperativa/Controles/bin/Debug/Model.pdb
