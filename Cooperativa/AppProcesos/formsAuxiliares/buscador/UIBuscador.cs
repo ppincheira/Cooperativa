@@ -10,19 +10,23 @@ using System.Threading.Tasks;
 
 namespace AppProcesos.formsAuxiliares.buscador
 {
-    public class UIBuscador
+    public partial  class UIBuscador
     {
         private IVistaBuscador _vista;
         Utility oUtil;
-        #region << PROPIEDADES >>
-        private string _Tabla;
+        
         private string _Campo;
         private string _filtroCampos;
         private string _filtroValores;
         private DataTable _dtCombo;
         private string _Fecha;
-        #endregion
+        
+        public UIBuscador(IVistaBuscador vista)
+        {
+            _vista = vista;
+            oUtil = new Utility();
 
+        }
 
         public void Inicializar(string tabla)
         {
@@ -44,51 +48,53 @@ namespace AppProcesos.formsAuxiliares.buscador
 
                 if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "FECHA"))
                 {
-                    _vista.grupoFecha.Visible = true;
+                    _vista.grupoFecha = true;
                     _vista.fechaDesde = DateTime.Now.Date.AddMonths(-1);
                     _vista.fechaHasta = DateTime.Now.Date;
                     _filtroCampos = _filtroCampos + oDetalle.DctColumna + "&";
                     _Fecha = oDetalle.DctColumna + "&";
-                    _filtroValores = _filtroValores + _vista.fechaDesde.ToString() + "%" + _vista.fechaHasta.ToString()+ "&";
+                    _filtroValores = _filtroValores + _vista.fechaDesde.ToString("dd/MM/yyyy") + "%" + _vista.fechaHasta.ToString("dd/MM/yyyy")+ "&";
                 }
                 if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "ESTADO"))
                 {
-                    _vista.grupoEstado.Visible = true;
+                    _vista.grupoEstado = true;
                     _filtroCampos = _filtroCampos + oDetalle.DctColumna + "&";
                     _filtroValores = _filtroValores +_vista.comboEstado.Text + "&";
                 }
             }
 
-            oUtil.CargarCombo( _vista.comboBuscar, _dtCombo, "DctColumna", "DctDescripcion");
-            //this.cmbBuscar.DataSource = _dtCombo;
-            //this.cmbBuscar.ValueMember = "DctColumna";
-            //this.cmbBuscar.DisplayMember = "DctDescripcion";
+            //oUtil.CargarCombo( _vista.comboBuscar, _dtCombo, "DctColumna", "DctDescripcion");
+            _vista.comboBuscar.DataSource = _dtCombo;
+            _vista.comboBuscar.ValueMember = "DctColumna";
+            _vista.comboBuscar.DisplayMember = "DctDescripcion";
             if (_Campo.Length > 0)
 
                 _Campo = _Campo.Substring(0, _Campo.Length - 1);
             TablasBus oTablasBus = new TablasBus();
-            _vista.grilla.DataSource = oTablasBus.TablasBusquedaGetAllFilter(_Tabla, _Campo, _filtroCampos, _filtroValores);
+            DataTable dt = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo, _filtroCampos, _filtroValores);
+            _vista.grilla.DataSource = dt;
+
             _vista.cantidad= "Se encontraron " + _vista.grilla.VisibleRowCount.ToString() + " registros";
 
         }
 
 
-         public void CargarGrilla() {
+         public void CargarGrilla(string tabla) {
             _filtroCampos = "";
             _filtroValores = "";
 
-            if (_vista.grupoFecha.Visible) { 
-                _filtroValores =_vista.fechaDesde + "%" + _vista.fechaHasta+ "&";
+            if (_vista.grupoFecha) { 
+                _filtroValores = _vista.fechaDesde.ToString("dd/MM/yyyy") + "%" + _vista.fechaHasta.ToString("dd/MM/yyyy") + "&";
                 _filtroCampos = _Fecha ;
             }
-            if (_vista.grupoEstado.Visible)
+            if (_vista.grupoEstado)
                 _filtroValores = _vista.comboEstado.Text + "&";
 
             _filtroCampos = _filtroCampos+_vista.comboBuscar.SelectedValue.ToString() + "&";
             _filtroValores = _filtroValores+_vista.filtro + "&";
 
             TablasBus oTablasBus = new TablasBus();
-            _vista.grilla.DataSource = oTablasBus.TablasBusquedaGetAllFilter(_Tabla, _Campo, _filtroCampos, _filtroValores);
+            _vista.grilla.DataSource = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo, _filtroCampos, _filtroValores);
             _vista.cantidad= "Se encontraron "+ _vista.grilla.VisibleRowCount.ToString()+ " registros";
 
         }

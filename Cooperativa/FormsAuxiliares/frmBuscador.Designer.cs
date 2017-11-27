@@ -42,11 +42,12 @@
             this.lblEFechaDesde = new Controles.labels.lblEtiqueta();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.cmbBuscar = new Controles.datos.cmbLista();
-            //this.txtFiltro = new System.Windows.Forms.TextBox();
+           
             this.txtFiltro = new Controles.txtFiltro();
             this.gbData = new Controles.contenedores.gesGroup();
             this.lblCantidad = new System.Windows.Forms.Label();
-            this.dgBusqueda = new Controles.datos.gesGrid();
+            //this.dgBusqueda = new Controles.datos.gesGrid();
+            this.dgBusqueda = new Controles.datos.grdGrillaAdmin();
             this.gbBotones.SuspendLayout();
             this.gbBusqueda.SuspendLayout();
             this.gpbGrupoEstado.SuspendLayout();
@@ -261,7 +262,7 @@
         internal System.Windows.Forms.TextBox txtFiltro;
         private Controles.contenedores.gesGroup gbData;
         private System.Windows.Forms.Label lblCantidad;
-        public Controles.datos.gesGrid dgBusqueda;
+        public Controles.datos.grdGrillaAdmin dgBusqueda;
         private Controles.contenedores.gpbGrupo gpbGrupoEstado;
         private Controles.datos.cmbLista cmbEstado;
         private Controles.labels.lblEtiqueta lblEEstado;

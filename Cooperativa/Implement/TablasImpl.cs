@@ -220,7 +220,7 @@ namespace Implement
                         {
                             string[] filterFecha = System.Text.RegularExpressions.Regex.Split(filterV[i], "%");
 
-                            sqlSelect += "AND ("+filterCamp[i] + " >='" + filterFecha[0] +"'";
+                            sqlSelect += " AND ("+filterCamp[i] + " >='" + filterFecha[0] +"'";
                             sqlSelect += " AND ";
                             sqlSelect += filterCamp[i] + " <='" + filterFecha[1]+"')";
                         }

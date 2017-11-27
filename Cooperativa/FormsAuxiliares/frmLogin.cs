@@ -198,7 +198,6 @@ namespace FormsAuxiliares
 
         private void txtUsuario_Click(object sender, EventArgs e)
         {
-            
             txtUsuario.ForeColor = System.Drawing.Color.Black;
             if (txtUsuario.Text == "usuario")
             {
@@ -252,9 +251,7 @@ namespace FormsAuxiliares
 
         private void lblEtiqueta1_Click(object sender, EventArgs e)
         {
-
-            pnlPanelEstado1_Click(pnlPanelEstado1, new EventArgs());
-            
+            pnlPanelEstado1_Click(pnlPanelEstado1, new EventArgs());   
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)

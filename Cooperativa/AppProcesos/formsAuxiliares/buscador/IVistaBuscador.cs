@@ -6,8 +6,8 @@ namespace AppProcesos.formsAuxiliares.buscador
 {
     public interface IVistaBuscador
     {
-        gpbGrupo grupoFecha { get; set; }
-        gpbGrupo grupoEstado { get; set; }
+        Boolean grupoFecha { get; set; }
+        Boolean grupoEstado { get; set; }
         grdGrillaAdmin grilla { get; set; }
 
         DateTime fechaDesde { get; set; }

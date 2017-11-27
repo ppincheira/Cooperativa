@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Controles.datos
 {
-    public partial class grdGrillaAdmin : gesGrid
+    public  class grdGrillaAdmin : gesGrid
     {
-        public grdGrillaAdmin() {
-            ReadOnly = false;
-        }
+    
     }
 }

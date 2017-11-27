@@ -20,29 +20,29 @@ namespace FormsAuxiliares
         private UIBuscador _oBuscador;
         #region << PROPIEDADES >>
         private string _Tabla;
-        private string _Campo;
-        private string _filtroCampos;
-        private string _filtroValores;
-        private DataTable _dtCombo;
-        private string _Fecha;
+        //private string _Campo;
+        //private string _filtroCampos;
+        //private string _filtroValores;
+        //private DataTable _dtCombo;
+        //private string _Fecha;
         #endregion
         #region Implementation of IVistaBuscador
-        public gpbGrupo grupoEstado
+        public Boolean grupoEstado
         {
-            get { return this.gpbGrupoEstado; }
-            set { this.gpbGrupoEstado = value; }
+            get { return this.gpbGrupoEstado.Visible; }
+            set { this.gpbGrupoEstado.Visible = value; }
         }
-        public gpbGrupo grupoFecha
+        public Boolean grupoFecha
         {
-            get { return this.gpbGrupoFecha; }
-            set { this.gpbGrupoFecha = value; }
+            get { return this.gpbGrupoFecha.Visible; }
+            set { this.gpbGrupoFecha.Visible = value; }
         }
 
 
         public grdGrillaAdmin grilla
         {
-            get { return this.grilla; }
-            set { this.grilla = value; }
+            get { return this.dgBusqueda; }
+            set { this.dgBusqueda = value; }
         }
         public DateTime fechaDesde
         {
@@ -82,6 +82,7 @@ namespace FormsAuxiliares
         {
             _Tabla = tabla;
             InitializeComponent();
+            _oBuscador = new UIBuscador(this);
         }
 
 
@@ -89,7 +90,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oBuscador.CargarGrilla();
+                _oBuscador.CargarGrilla(_Tabla);
             }
             catch (Exception ex)
             {
@@ -105,7 +106,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oBuscador.CargarGrilla();
+                _oBuscador.CargarGrilla(_Tabla);
             }
             catch (Exception ex)
             {
@@ -117,7 +118,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oBuscador.CargarGrilla();
+                _oBuscador.CargarGrilla(_Tabla);
             }
             catch (Exception ex)
             {
@@ -129,7 +130,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oBuscador.CargarGrilla();
+                _oBuscador.CargarGrilla(_Tabla);
             }
             catch (Exception ex)
             {
