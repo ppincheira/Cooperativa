@@ -4,21 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controles.forms
+namespace FormsAuxiliares
 {
     public partial class frmCrudGrilla:gesForm
     {
-        private contenedores.gpbGrupo gpbGrupo2;
-        private contenedores.gpbGrupo gpbGrupo3;
-        private buttons.btnCancelar btnCancelar1;
-        private buttons.btnAceptar btnAceptar1;
-        private labels.lblEtiqueta lblEtiqueta3;
-        private labels.lblEtiqueta lblEtiqueta2;
-        private txtFiltro txtFiltro1;
-        private datos.cmbLista cmbLista1;
-        private labels.lblEtiqueta lblEtiqueta1;
-        private datos.grdGrillaEdit grdGrillaEdit1;
-        private contenedores.gpbGrupo gpbGrupo1;
+        private Controles.contenedores.gpbGrupo gpbGrupo2;
+        private Controles.contenedores.gpbGrupo gpbGrupo3;
+        private Controles.buttons.btnCancelar btnCancelar1;
+        private Controles.buttons.btnAceptar btnAceptar1;
+        private Controles.labels.lblEtiqueta lblEtiqueta3;
+        private Controles.labels.lblEtiqueta lblEtiqueta2;
+        private Controles.txtFiltro txtFiltro1;
+        private Controles.datos.cmbLista cmbLista1;
+        private Controles.labels.lblEtiqueta lblEtiqueta1;
+        private Controles.datos.grdGrillaEdit grdGrillaEdit1;
+        private Controles.contenedores.gpbGrupo gpbGrupo1;
 
         public frmCrudGrilla() {
 

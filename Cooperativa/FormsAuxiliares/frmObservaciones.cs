@@ -4,27 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Controles.forms
+namespace FormsAuxiliares
 {
     public partial class frmObservaciones:gesForm
     {
-        private contenedores.gpbGrupo gpbGrupo2;
-        private contenedores.gpbGrupo gpbGrupo3;
-        private contenedores.gpbGrupo gpbGrupo4;
-        private buttons.btnNuevo btnNuevo1;
-        private buttons.btnEditar btnEditar1;
-        private buttons.btnSalir btnSalir1;
-        private buttons.btnEliminar btnEliminar1;
-        private buttons.btnExportar btnExportar1;
-        private buttons.btnVer btnVer1;
-        private buttons.btnImprimir btnImprimir1;
-        private datos.grdGrillaAdmin grdGrillaAdmin1;
-        private labels.lblEtiqueta lblEtiqueta1;
-        private labels.lblEtiqueta lblEtiqueta2;
-        private txtFiltro txtFiltro1;
-        private datos.cmbLista cmbLista1;
-        private labels.lblEtiqueta lblEtiqueta3;
-        private contenedores.gpbGrupo gpbGrupo1;
+        private Controles.contenedores.gpbGrupo gpbGrupo2;
+        private Controles.contenedores.gpbGrupo gpbGrupo3;
+        private Controles.contenedores.gpbGrupo gpbGrupo4;
+        private Controles.buttons.btnNuevo btnNuevo1;
+        private Controles.buttons.btnEditar btnEditar1;
+        private Controles.buttons.btnSalir btnSalir1;
+        private Controles.buttons.btnEliminar btnEliminar1;
+        private Controles.buttons.btnExportar btnExportar1;
+        private Controles.buttons.btnVer btnVer1;
+        private Controles.buttons.btnImprimir btnImprimir1;
+        private Controles.datos.grdGrillaAdmin grdGrillaAdmin1;
+        private Controles.labels.lblEtiqueta lblEtiqueta1;
+        private Controles.labels.lblEtiqueta lblEtiqueta2;
+        private Controles.txtFiltro txtFiltro1;
+        private Controles.datos.cmbLista cmbLista1;
+        private Controles.labels.lblEtiqueta lblEtiqueta3;
+        private Controles.contenedores.gpbGrupo gpbGrupo1;
 
         public frmObservaciones() {
             InitializeComponent();
