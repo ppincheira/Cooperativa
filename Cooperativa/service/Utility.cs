@@ -11,7 +11,7 @@ namespace Service
 {
     public class Utility
     {
-        public int CargarGrilla(ref Controles.datos.grdGrillaAdmin grilla, DataTable dt) {
+        public int CargarGrilla(Controles.datos.grdGrillaAdmin grilla, DataTable dt) {
             grilla.DataSource = dt;
       
             return dt.Rows.Count;

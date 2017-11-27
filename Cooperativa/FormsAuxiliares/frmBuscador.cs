@@ -54,7 +54,7 @@ namespace FormsAuxiliares
             get { return this.dtpFechaHasta.Value; }
             set { this.dtpFechaHasta.Value = value; }
         }
-        public cmbLista comboBuscar
+        public  cmbLista comboBuscar
         {
             get { return this.cmbBuscar; }
             set { this.cmbBuscar = value; }

@@ -1,46 +1,16 @@
 
 *.ide
-<<<<<<< HEAD
 *.dll
 *.pdb
-*.dll
-*.cache
-*.cache
-*.cache
 *.config
 *.exe
 *.txt
-=======
-Cooperativa/.vs/Cooperativa/v15/.suo
-*.dll
-*.dll
-*.pdb
-*.dll
 *.ide
-*.ide
-*.dll
-*.pdb
 Cooperativa/Business/obj/Debug/Business.csprojResolveAssemblyReference.cache
-*.pdb
-*.dll
-*.pdb
-*.dll
-*.pdb
-*.dll
-*.pdb
-*.cache
 
->>>>>>> 7b0441016618a778103919dcd114c3e1222b5828
 *.cache
-*.cache
-*.pdb
 *.resources
-*.resources
-*.dll
 *.cache
-*.Cache
-*.txt
-*.csproj
 Cooperativa/Controles/buttons/gesButton.cs
 Cooperativa/Controles/bin/Debug/Service.pdb
 Cooperativa/Controles/bin/Debug/Service.dll
@@ -59,14 +29,6 @@ Cooperativa/Business/obj/Debug/CoreCompileInputs.cache
 *.txt
 *.pdb
 *.dll
-*.pdb
-*.dll
-*.pdb
-*.dll
-Cooperativa/.vs/Cooperativa/v15/.suo
-*.pdb
-*.pdb
-Cooperativa/.vs/Cooperativa/v15/.suo
 *.pdb
 *.Cache
 *.dll
