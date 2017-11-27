@@ -7,13 +7,67 @@ using System.Threading.Tasks;
 using Business;
 using Model;
 using Controles;
+using AppProcesos.formsAuxiliares.formAdmin;
+using Controles.datos;
+
 namespace FormsAuxiliares
 {
-    public partial class frmFormAdmin :gesForm
+    public partial class frmFormAdmin :gesForm, IVistaFormAdmin
     {
+
+        private UIFormAdmin _oFormAdmin;
+        #region Implementation of IVistaBuscador
+        public Boolean grupoEstado
+        {
+            get { return this.gpbGrupoEstado.Visible; }
+            set { this.gpbGrupoEstado.Visible = value; }
+        }
+        public Boolean grupoFecha
+        {
+            get { return this.gpbFecha.Visible; }
+            set { this.gpbFecha.Visible = value; }
+        }
+
+        public grdGrillaAdmin grilla
+        {
+            get { return this.dgBusqueda; }
+            set { this.dgBusqueda = value; }
+        }
+        public DateTime fechaDesde
+        {
+            get { return this.dtpFechaDesde.Value; }
+            set { this.dtpFechaDesde.Value = value; }
+        }
+        public DateTime fechaHasta
+        {
+            get { return this.dtpFechaHasta.Value; }
+            set { this.dtpFechaHasta.Value = value; }
+        }
+        public cmbLista comboBuscar
+        {
+            get { return this.cmbBuscar; }
+            set { this.cmbBuscar = value; }
+        }
+        public string filtro
+        {
+            get { return this.txtFiltro.Text; }
+            set { this.txtFiltro.Text = value; }
+        }
+        public cmbLista comboEstado
+        {
+            get { return this.cmbEstado; }
+            set { this.cmbEstado = value; }
+        }
+        public string cantidad
+        {
+
+            set { this.lblCantidad.Text = value; }
+        }
+
+        #endregion
         private Controles.contenedores.gpbGrupo gpbFiltro;
         private txtFiltro txtFiltro;
-        private System.Windows.Forms.ComboBox cmbBuscar;
+        private Controles.datos.cmbLista cmbBuscar;
         private Controles.labels.lblEtiqueta lblEtiqueta2;
         private Controles.labels.lblEtiqueta lblFiltro;
         private Controles.contenedores.gpbGrupo gpbFecha;
@@ -31,17 +85,17 @@ namespace FormsAuxiliares
         private Controles.buttons.btnVer btnVer;
         private Controles.buttons.btnEditar btnEditar;
         private Controles.contenedores.gpbGrupo gpbGrupoEstado;
-        public System.Windows.Forms.ComboBox cmbEstado;
+        public Controles.datos.cmbLista cmbEstado;
         private Controles.labels.lblEtiqueta lblEEstado;
         private Controles.buttons.btnEliminar btnEliminar1;
-        private Controles.datos.gesGrid dgBusqueda;
+        private Controles.datos.grdGrillaAdmin dgBusqueda;
 
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFormAdmin));
             this.gpbFiltro = new Controles.contenedores.gpbGrupo();
             this.txtFiltro = new Controles.txtFiltro();
-            this.cmbBuscar = new System.Windows.Forms.ComboBox();
+            this.cmbBuscar = new Controles.datos.cmbLista();
             this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
             this.lblFiltro = new Controles.labels.lblEtiqueta();
             this.gpbFecha = new Controles.contenedores.gpbGrupo();
@@ -59,9 +113,9 @@ namespace FormsAuxiliares
             this.btnNuevo = new Controles.buttons.btnNuevo();
             this.gpbGrupo4 = new Controles.contenedores.gpbGrupo();
             this.lblCantidad = new Controles.labels.lblEtiqueta();
-            this.dgBusqueda = new Controles.datos.gesGrid();
+            this.dgBusqueda = new Controles.datos.grdGrillaAdmin();
             this.gpbGrupoEstado = new Controles.contenedores.gpbGrupo();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.cmbEstado = new Controles.datos.cmbLista();
             this.lblEEstado = new Controles.labels.lblEtiqueta();
             this.gpbFiltro.SuspendLayout();
             this.gpbFecha.SuspendLayout();
@@ -344,11 +398,7 @@ namespace FormsAuxiliares
 
         #region << PROPIEDADES >>
         private string _Tabla;
-        private string _Campo;
-        private string _filtroCampos;
-        private string _filtroValores;
-        private DataTable _dtCombo;
-        private string _Fecha;
+
         #endregion
 
         #region << EVENTOS >>
@@ -358,10 +408,11 @@ namespace FormsAuxiliares
         {
             _Tabla = tabla;
             InitializeComponent();
+            _oFormAdmin = new UIFormAdmin(this);
         }
         private void frmFormAdmin_Load(object sender, EventArgs e)
         {
-            Inicializar();
+            _oFormAdmin.Inicializar(_Tabla);
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -401,86 +452,11 @@ namespace FormsAuxiliares
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
-            CargarGrilla();
+            _oFormAdmin.CargarGrilla(_Tabla);
         }
         #endregion
 
-        #region << METODOS >>
-
-
-        private void Inicializar()
-        {
-
-            _filtroCampos = "";
-            _filtroValores = "";
-            _dtCombo = new DataTable();
-            _dtCombo.Columns.Add("DctColumna", typeof(string));
-            _dtCombo.Columns.Add("DctDescripcion", typeof(string));
-            DetallesColumnasTablasBus oDetalleBus = new DetallesColumnasTablasBus();
-            List<DetallesColumnasTablas> ListDetalle = oDetalleBus.DetallesColumnasTablasGetByCodigo(_Tabla);
-            foreach (DetallesColumnasTablas oDetalle in ListDetalle)
-            {
-
-                _Campo = _Campo + ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
-                if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl != "FECHA") && oDetalle.DctTipoControl != "ESTADO")
-                {
-                    _dtCombo.Rows.Add(oDetalle.DctColumna, oDetalle.DctDescripcion);
-                }
-
-                if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "FECHA"))
-                {
-                    this.gpbFecha.Enabled = true;
-                    this.dtpFechaDesde.Value = DateTime.Now.Date.AddMonths(-1);
-                    this.dtpFechaHasta.Value = DateTime.Now.Date;
-                    _filtroCampos = _filtroCampos + oDetalle.DctColumna + "&";
-                    _Fecha = oDetalle.DctColumna + "&";
-                    _filtroValores = _filtroValores + this.dtpFechaDesde.Text + "%" + this.dtpFechaHasta.Text + "&";
-                }
-                if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "ESTADO"))
-                {
-                    this.gpbGrupoEstado.Enabled = true;
-                    _filtroCampos = _filtroCampos + oDetalle.DctColumna + "&";
-                    _filtroValores = _filtroValores + this.cmbEstado.Text + "&";
-                }
-            }
-
-            this.cmbBuscar.DataSource = _dtCombo;
-            this.cmbBuscar.ValueMember = "DctColumna";
-            this.cmbBuscar.DisplayMember = "DctDescripcion";
-            if (_Campo.Length > 0)
-
-                _Campo = _Campo.Substring(0, _Campo.Length - 1);
-            TablasBus oTablasBus = new TablasBus();
-            this.dgBusqueda.DataSource = oTablasBus.TablasBusquedaGetAllFilter(_Tabla, _Campo, _filtroCampos, _filtroValores);
-            this.lblCantidad.Text = "Se encontraron " + this.dgBusqueda.VisibleRowCount.ToString() + " registros";
-
-
-        }
-
-        private void CargarGrilla()
-        {
-            _filtroCampos = "";
-            _filtroValores = "";
-
-            if (this.gpbFecha.Enabled)
-            {
-                _filtroValores = this.dtpFechaDesde.Text + "%" + this.dtpFechaHasta.Text + "&";
-                _filtroCampos = _Fecha;
-            }
-            if (this.gpbGrupoEstado.Enabled)
-                _filtroValores = this.cmbEstado.Text + "&";
-
-            _filtroCampos = _filtroCampos + this.cmbBuscar.SelectedValue.ToString() + "&";
-            _filtroValores = _filtroValores + this.txtFiltro.Text + "&";
-
-            TablasBus oTablasBus = new TablasBus();
-            this.dgBusqueda.DataSource = oTablasBus.TablasBusquedaGetAllFilter(_Tabla, _Campo, _filtroCampos, _filtroValores);
-            this.lblCantidad.Text = "Se encontraron " + this.dgBusqueda.VisibleRowCount.ToString() + " registros";
-
-        }
-
-
-        #endregion
+        
 
     }
 }

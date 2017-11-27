@@ -20,11 +20,6 @@ namespace FormsAuxiliares
         private UIBuscador _oBuscador;
         #region << PROPIEDADES >>
         private string _Tabla;
-        //private string _Campo;
-        //private string _filtroCampos;
-        //private string _filtroValores;
-        //private DataTable _dtCombo;
-        //private string _Fecha;
         #endregion
         #region Implementation of IVistaBuscador
         public Boolean grupoEstado
@@ -37,7 +32,6 @@ namespace FormsAuxiliares
             get { return this.gpbGrupoFecha.Visible; }
             set { this.gpbGrupoFecha.Visible = value; }
         }
-
 
         public grdGrillaAdmin grilla
         {
@@ -98,11 +92,8 @@ namespace FormsAuxiliares
             }
 
         }
-
-    
-
-
-        private void dtpFechaDesde_ValueChanged(object sender, EventArgs e)
+        
+         private void dtpFechaDesde_ValueChanged(object sender, EventArgs e)
         {
             try
             {
