@@ -57,6 +57,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gpbGrupo2 = new Controles.contenedores.gpbGrupo();
+            this.btnAccionesSuministros2 = new Controles.buttons.btnAccionesSuministros();
+            this.btnAccionesSuministros1 = new Controles.buttons.btnAccionesSuministros();
             this.gpbGrupoEstado.SuspendLayout();
             this.gpbGrupo3.SuspendLayout();
             this.gpbFecha.SuspendLayout();
@@ -64,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgBusqueda)).BeginInit();
             this.gpbGrupo1.SuspendLayout();
             this.tabSolapas1.SuspendLayout();
+            this.gpbGrupo2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpbGrupoEstado
@@ -333,12 +336,34 @@
             // 
             // gpbGrupo2
             // 
+            this.gpbGrupo2.Controls.Add(this.btnAccionesSuministros2);
+            this.gpbGrupo2.Controls.Add(this.btnAccionesSuministros1);
             this.gpbGrupo2.Location = new System.Drawing.Point(943, 12);
             this.gpbGrupo2.Name = "gpbGrupo2";
             this.gpbGrupo2.Size = new System.Drawing.Size(384, 460);
             this.gpbGrupo2.TabIndex = 15;
             this.gpbGrupo2.TabStop = false;
             this.gpbGrupo2.Text = "Datos";
+            // 
+            // btnAccionesSuministros2
+            // 
+            this.btnAccionesSuministros2.Location = new System.Drawing.Point(204, 24);
+            this.btnAccionesSuministros2.Name = "btnAccionesSuministros2";
+            this.btnAccionesSuministros2.Size = new System.Drawing.Size(170, 60);
+            this.btnAccionesSuministros2.TabIndex = 1;
+            this.btnAccionesSuministros2.Text = "RUTA";
+            this.btnAccionesSuministros2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAccionesSuministros2.UseVisualStyleBackColor = true;
+            // 
+            // btnAccionesSuministros1
+            // 
+             this.btnAccionesSuministros1.Location = new System.Drawing.Point(6, 23);
+            this.btnAccionesSuministros1.Name = "btnAccionesSuministros1";
+            this.btnAccionesSuministros1.Size = new System.Drawing.Size(170, 60);
+            this.btnAccionesSuministros1.TabIndex = 0;
+            this.btnAccionesSuministros1.Text = "CATEGORIA";
+            this.btnAccionesSuministros1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAccionesSuministros1.UseVisualStyleBackColor = true;
             // 
             // frmAdminSuministros
             // 
@@ -360,6 +385,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgBusqueda)).EndInit();
             this.gpbGrupo1.ResumeLayout(false);
             this.tabSolapas1.ResumeLayout(false);
+            this.gpbGrupo2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -394,5 +420,7 @@
         private Controles.contenedores.tabSolapas tabSolapas1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private Controles.buttons.btnAccionesSuministros btnAccionesSuministros2;
+        private Controles.buttons.btnAccionesSuministros btnAccionesSuministros1;
     }
 }
