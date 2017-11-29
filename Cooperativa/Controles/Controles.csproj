@@ -67,6 +67,9 @@
     <Compile Include="btnPersonalizado.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="buttons\btnAccionesSuministros.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="buttons\btnAceptar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -83,6 +86,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="buttons\btnExportar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="buttons\btnGeneral.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="buttons\btnImprimir.cs">

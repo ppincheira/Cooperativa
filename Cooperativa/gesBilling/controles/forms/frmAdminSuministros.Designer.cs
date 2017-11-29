@@ -53,10 +53,10 @@
             this.lblCantidad = new Controles.labels.lblEtiqueta();
             this.dgBusqueda = new Controles.datos.gesGrid();
             this.gpbGrupo1 = new Controles.contenedores.gpbGrupo();
-            this.gpbGrupo2 = new Controles.contenedores.gpbGrupo();
             this.tabSolapas1 = new Controles.contenedores.tabSolapas();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.gpbGrupo2 = new Controles.contenedores.gpbGrupo();
             this.gpbGrupoEstado.SuspendLayout();
             this.gpbGrupo3.SuspendLayout();
             this.gpbFecha.SuspendLayout();
@@ -301,15 +301,6 @@
             this.gpbGrupo1.TabStop = false;
             this.gpbGrupo1.Text = "Datos";
             // 
-            // gpbGrupo2
-            // 
-            this.gpbGrupo2.Location = new System.Drawing.Point(943, 12);
-            this.gpbGrupo2.Name = "gpbGrupo2";
-            this.gpbGrupo2.Size = new System.Drawing.Size(384, 460);
-            this.gpbGrupo2.TabIndex = 15;
-            this.gpbGrupo2.TabStop = false;
-            this.gpbGrupo2.Text = "Datos";
-            // 
             // tabSolapas1
             // 
             this.tabSolapas1.Controls.Add(this.tabPage1);
@@ -339,6 +330,15 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "CONSUMOS";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // gpbGrupo2
+            // 
+            this.gpbGrupo2.Location = new System.Drawing.Point(943, 12);
+            this.gpbGrupo2.Name = "gpbGrupo2";
+            this.gpbGrupo2.Size = new System.Drawing.Size(384, 460);
+            this.gpbGrupo2.TabIndex = 15;
+            this.gpbGrupo2.TabStop = false;
+            this.gpbGrupo2.Text = "Datos";
             // 
             // frmAdminSuministros
             // 

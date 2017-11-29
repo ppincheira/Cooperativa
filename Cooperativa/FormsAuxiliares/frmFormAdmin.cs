@@ -424,17 +424,14 @@ namespace FormsAuxiliares
         {
 
         }
-
         private void btnVer_Click(object sender, EventArgs e)
         {
 
         }
-
         private void btnImprimir_Click(object sender, EventArgs e)
         {
 
         }
-
         private void btnExportar_Click(object sender, EventArgs e)
         {
 
