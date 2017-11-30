@@ -59,6 +59,11 @@
             this.gpbGrupo2 = new Controles.contenedores.gpbGrupo();
             this.btnAccionesSuministros2 = new Controles.buttons.btnAccionesSuministros();
             this.btnAccionesSuministros1 = new Controles.buttons.btnAccionesSuministros();
+            this.gpbFiltro = new Controles.contenedores.gpbGrupo();
+            this.txtFiltro1 = new Controles.txtFiltro();
+            this.cmbLista1 = new Controles.datos.cmbLista();
+            this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
+            this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
             this.gpbGrupoEstado.SuspendLayout();
             this.gpbGrupo3.SuspendLayout();
             this.gpbFecha.SuspendLayout();
@@ -67,6 +72,7 @@
             this.gpbGrupo1.SuspendLayout();
             this.tabSolapas1.SuspendLayout();
             this.gpbGrupo2.SuspendLayout();
+            this.gpbFiltro.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpbGrupoEstado
@@ -181,6 +187,8 @@
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
             this.btnNuevo.TabIndex = 0;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.FUN_CODIGO = "3";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // gpbFecha
             // 
@@ -347,6 +355,7 @@
             // 
             // btnAccionesSuministros2
             // 
+            this.btnAccionesSuministros2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccionesSuministros2.Location = new System.Drawing.Point(204, 24);
             this.btnAccionesSuministros2.Name = "btnAccionesSuministros2";
             this.btnAccionesSuministros2.Size = new System.Drawing.Size(170, 60);
@@ -357,7 +366,8 @@
             // 
             // btnAccionesSuministros1
             // 
-             this.btnAccionesSuministros1.Location = new System.Drawing.Point(6, 23);
+            this.btnAccionesSuministros1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccionesSuministros1.Location = new System.Drawing.Point(6, 23);
             this.btnAccionesSuministros1.Name = "btnAccionesSuministros1";
             this.btnAccionesSuministros1.Size = new System.Drawing.Size(170, 60);
             this.btnAccionesSuministros1.TabIndex = 0;
@@ -365,9 +375,58 @@
             this.btnAccionesSuministros1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAccionesSuministros1.UseVisualStyleBackColor = true;
             // 
+            // gpbFiltro
+            // 
+            this.gpbFiltro.Controls.Add(this.txtFiltro1);
+            this.gpbFiltro.Controls.Add(this.cmbLista1);
+            this.gpbFiltro.Controls.Add(this.lblEtiqueta1);
+            this.gpbFiltro.Controls.Add(this.lblEtiqueta3);
+            this.gpbFiltro.Location = new System.Drawing.Point(12, 12);
+            this.gpbFiltro.Name = "gpbFiltro";
+            this.gpbFiltro.Size = new System.Drawing.Size(381, 101);
+            this.gpbFiltro.TabIndex = 16;
+            this.gpbFiltro.TabStop = false;
+            // 
+            // txtFiltro1
+            // 
+            this.txtFiltro1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFiltro1.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtFiltro1.Location = new System.Drawing.Point(86, 58);
+            this.txtFiltro1.Name = "txtFiltro1";
+            this.txtFiltro1.Size = new System.Drawing.Size(289, 20);
+            this.txtFiltro1.TabIndex = 3;
+            this.txtFiltro1.TextoVacio = "<Descripcion>";
+            // 
+            // cmbLista1
+            // 
+            this.cmbLista1.FormattingEnabled = true;
+            this.cmbLista1.Location = new System.Drawing.Point(86, 14);
+            this.cmbLista1.Name = "cmbLista1";
+            this.cmbLista1.Size = new System.Drawing.Size(289, 21);
+            this.cmbLista1.TabIndex = 2;
+            // 
+            // lblEtiqueta1
+            // 
+            this.lblEtiqueta1.AutoSize = true;
+            this.lblEtiqueta1.Location = new System.Drawing.Point(6, 64);
+            this.lblEtiqueta1.Name = "lblEtiqueta1";
+            this.lblEtiqueta1.Size = new System.Drawing.Size(45, 13);
+            this.lblEtiqueta1.TabIndex = 1;
+            this.lblEtiqueta1.Text = "FILTRO";
+            // 
+            // lblEtiqueta3
+            // 
+            this.lblEtiqueta3.AutoSize = true;
+            this.lblEtiqueta3.Location = new System.Drawing.Point(6, 22);
+            this.lblEtiqueta3.Name = "lblEtiqueta3";
+            this.lblEtiqueta3.Size = new System.Drawing.Size(78, 13);
+            this.lblEtiqueta3.TabIndex = 0;
+            this.lblEtiqueta3.Text = "FILTRAR POR";
+            // 
             // frmAdminSuministros
             // 
             this.ClientSize = new System.Drawing.Size(1339, 825);
+            this.Controls.Add(this.gpbFiltro);
             this.Controls.Add(this.gpbGrupo2);
             this.Controls.Add(this.gpbGrupo1);
             this.Controls.Add(this.gpbGrupo4);
@@ -386,6 +445,8 @@
             this.gpbGrupo1.ResumeLayout(false);
             this.tabSolapas1.ResumeLayout(false);
             this.gpbGrupo2.ResumeLayout(false);
+            this.gpbFiltro.ResumeLayout(false);
+            this.gpbFiltro.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -422,5 +483,10 @@
         private System.Windows.Forms.TabPage tabPage2;
         private Controles.buttons.btnAccionesSuministros btnAccionesSuministros2;
         private Controles.buttons.btnAccionesSuministros btnAccionesSuministros1;
+        private Controles.contenedores.gpbGrupo gpbFiltro;
+        private Controles.txtFiltro txtFiltro1;
+        private Controles.datos.cmbLista cmbLista1;
+        private Controles.labels.lblEtiqueta lblEtiqueta1;
+        private Controles.labels.lblEtiqueta lblEtiqueta3;
     }
 }
