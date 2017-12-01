@@ -162,7 +162,8 @@ namespace Implement
                 Auditorias oObjeto = new Auditorias();
                 oObjeto.AudNumero = long.Parse(dr["AUD_NUMERO"].ToString());
                 oObjeto.UsrCodigo = dr["USR_CODIGO"].ToString();
-                oObjeto.AudFecha = DateTime.Parse(dr["AUD_FECHA"].ToString());
+                if (dr["AUD_FECHA"].ToString() != "")
+                    oObjeto.AudFecha = DateTime.Parse(dr["AUD_FECHA"].ToString());
                 oObjeto.AudTerminal = dr["AUD_TERMINAL"].ToString();
                 oObjeto.TabNombre = dr["TAB_NOMBRE"].ToString();
                 oObjeto.AudTipo = dr["AUD_TIPO"].ToString();

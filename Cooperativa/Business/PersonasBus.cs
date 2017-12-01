@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Model;
+﻿using System.Collections.Generic;
 using Implement;
+using Model;
+
+
 namespace Business
 {
     public class PersonasBus
     {
+
         public int PersonasAdd(Personas oPersonas)
         {
             PersonasImpl oPersonasImpl = new PersonasImpl();
@@ -21,7 +20,7 @@ namespace Business
             return oPersonasImpl.PersonasUpdate(oPersonas);
         }
 
-        public bool PersonasDelete(String Id)
+        public bool PersonasDelete(int Id)
         {
             PersonasImpl oPersonasImpl = new PersonasImpl();
             return oPersonasImpl.PersonasDelete(Id);
@@ -38,6 +37,5 @@ namespace Business
             PersonasImpl oPersonasImpl = new PersonasImpl();
             return oPersonasImpl.PersonasGetAll();
         }
-       
     }
 }

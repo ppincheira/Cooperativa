@@ -191,7 +191,8 @@ namespace Implement
                     oObjeto.FabNumero = int.Parse(dr["FAB_NUMERO"].ToString());
                     oObjeto.TmeCodigo = dr["TME_CODIGO"].ToString();
                     oObjeto.UsrNumero = int.Parse(dr["USR_NUMERO"].ToString());
-                    oObjeto.DmeFechaCarga = DateTime.Parse(dr["DME_FECHA_CARGA"].ToString());
+                    if (dr["DME_FECHA_CARGA"].ToString() != "")
+                        oObjeto.DmeFechaCarga = DateTime.Parse(dr["DME_FECHA_CARGA"].ToString());
                     return oObjeto;
                 }
                 catch (Exception ex)

@@ -158,9 +158,11 @@ namespace Implement
 			{
                 Accionistas oObjeto = new Accionistas();
                 oObjeto.AccNumero = long.Parse(dr["ACC_NUMERO"].ToString());
-                oObjeto.AccFechaAlta = DateTime.Parse(dr["ACC_FECHA_ALTA"].ToString());
+                if (dr["ACC_FECHA_ALTA"].ToString() != "")
+                    oObjeto.AccFechaAlta = DateTime.Parse(dr["ACC_FECHA_ALTA"].ToString());
                 oObjeto.DisNumero = long.Parse(dr["DIS_NUMERO"].ToString());
-                oObjeto.AccFechaBaja = DateTime.Parse(dr["ACC_FECHA_BAJA"].ToString());
+                if (dr["ACC_FECHA_BAJA"].ToString() != "")
+                    oObjeto.AccFechaBaja = DateTime.Parse(dr["ACC_FECHA_BAJA"].ToString());
                 oObjeto.EstCodigo = dr["EST_CODIGO"].ToString();
                 oObjeto.EmpNumero = long.Parse(dr["EMP_NUMERO"].ToString());
 				return oObjeto;

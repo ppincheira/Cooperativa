@@ -18,7 +18,6 @@ namespace Model {
         public virtual string DctEtiqueta { get; set; }
         public virtual string DctTipoControl { get; set; }
         public virtual string DctListaValores { get; set; }
-        public virtual string DctFiltroBusqueda { get; set; }
         /*       #region NHibernate Composite Key Requirements
                public override bool Equals(object obj) {
                    if (obj == null) return false;

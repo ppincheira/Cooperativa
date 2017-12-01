@@ -160,8 +160,10 @@ namespace Implement
                     DetallesIva oObjeto = new DetallesIva();
                     oObjeto.TivCodigo = dr["TIV_CODIGO"].ToString();
                     oObjeto.DivPorcentaje = float.Parse(dr["DIV_PORCENTAJE"].ToString());
-                    oObjeto.DivVigenciaDesde = DateTime.Parse(dr["DIV_VIGENCIA_DESDE"].ToString());
-                    oObjeto.DivVigenciaHasta = DateTime.Parse(dr["DIV_VIGENCIA_HASTA"].ToString());
+                    if (dr["DIV_VIGENCIA_DESDE"].ToString() != "")
+                        oObjeto.DivVigenciaDesde = DateTime.Parse(dr["DIV_VIGENCIA_DESDE"].ToString());
+                    if (dr["DIV_VIGENCIA_HASTA"].ToString() != "")
+                        oObjeto.DivVigenciaHasta = DateTime.Parse(dr["DIV_VIGENCIA_HASTA"].ToString());
                     return oObjeto;
                 }
                 catch (Exception ex)
