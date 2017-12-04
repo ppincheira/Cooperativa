@@ -163,7 +163,8 @@ namespace Implement
                     oObjeto.ObsNumero = long.Parse(dr["OBS_NUMERO"].ToString());
                     oObjeto.CotClaveBusqueda = dr["COT_CLAVE_BUSQUEDA"].ToString();
                     oObjeto.ObsDetalle = dr["OBS_DETALLE"].ToString();
-                    oObjeto.ObsFechaCarga = DateTime.Parse(dr["OBS_FECHA_CARGA"].ToString());
+                    if (dr["OBS_FECHA_CARGA"].ToString() != "")
+                        oObjeto.ObsFechaCarga = DateTime.Parse(dr["OBS_FECHA_CARGA"].ToString());
                     oObjeto.TabCodigo = dr["TAB_CODIGO"].ToString();
                     oObjeto.TobCodigo = dr["TOB_CODIGO"].ToString();
                     return oObjeto;

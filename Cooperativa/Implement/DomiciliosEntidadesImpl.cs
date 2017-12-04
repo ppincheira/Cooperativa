@@ -3,32 +3,30 @@ using System;
 using System.Data;
 using System.Collections.Generic;
 using Oracle.DataAccess.Client;
-using System.Configuration;
 using Model;
 
 namespace Implement
 {
-	public class BarriosImpl
+	public class DomiciliosEntidadesImpl
     {
-        #region Barrios methods
+        #region DomiciliosEntidades methods
      
         private OracleDataAdapter adapter;
         private OracleCommand cmd;
         private DataSet ds;
         private int response;
-        public int BarriosAdd(Barrios oBarrio)
+        public int DomiciliosEntidadesAdd(DomiciliosEntidades oDEn)
 		{
 			try
 			{
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-
+                // Clave Secuencia DEN_NUMERO
                 ds = new DataSet();
-                cmd = new OracleCommand("insert into Barrios(BAR_NUMERO, PAI_CODIGO, PRV_CODIGO, " +
-                    "LOC_NUMERO, BAR_DESCRIPCION) " +
-                    "values("+oBarrio.BarNumero + ", '"+oBarrio.PaiCodigo + "', '"+oBarrio.PrvCodigo + "', '" + 
-                    oBarrio.LocNumero + "', '" + oBarrio.BarDescripcion + "')", cn);
+                cmd = new OracleCommand("insert into Domicilios_Entidades(" +
+                    "TDO_CODIGO, DEN_ID_ORIGEN, TAB_CODIGO) " +
+                    "values('"+oDEn.TdoCodigo + "', "+oDEn.DenIdOrigen + ", '"+oDEn.TabCodigo + "')", cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -40,7 +38,7 @@ namespace Implement
 			}
 		}
 
-        public bool BarriosUpdate(Barrios oBarrio)
+        public bool DomiciliosEntidadesUpdate(DomiciliosEntidades oDEn)
 		{
 			try
 			{
@@ -48,12 +46,11 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 ds = new DataSet();
-                cmd = new OracleCommand("update Barrios " +
-                    "SET PAI_CODIGO='" + oBarrio.PaiCodigo + "'," +
-                    "PRV_CODIGO='" + oBarrio.PrvCodigo + "'," +
-                    "LOC_NUMERO='" + oBarrio.LocNumero + "'," +
-                    "BAR_DESCRIPCION='" + oBarrio.BarDescripcion + 
-                    "WHERE BAR_NUMERO=" + oBarrio.BarNumero, cn);
+                cmd = new OracleCommand("update Domicilios_Entidades " +
+                    "SET TDO_CODIGO='" + oDEn.TdoCodigo + "'," +
+                    "DEN_ID_ORIGEN=" + oDEn.DenNumero + "," +
+                    "TAB_CODIGO='" + oDEn.TabCodigo + "'" +
+                    " WHERE DEN_NUMERO=" + oDEn.DenNumero, cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -65,7 +62,7 @@ namespace Implement
 			}
 		}
 
-        public bool BarriosDelete(Barrios oBarrio)
+        public bool DomiciliosEntidadesDelete(long Id)
 		{
 
                 try
@@ -74,8 +71,8 @@ namespace Implement
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
                     ds = new DataSet();
-                    cmd = new OracleCommand("DELETE Barrios " +
-                         "WHERE BAR_NUMERO=" + oBarrio.BarNumero.ToString(),cn);
+                    cmd = new OracleCommand("DELETE Domicilios_Entidades " +
+                         "WHERE DEN_NUMERO=" + Id.ToString(),cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
                     cn.Close();
@@ -87,7 +84,7 @@ namespace Implement
                 }
 		}
 
-        public Barrios BarriosGetById(int Id)
+        public DomiciliosEntidades DomiciliosEntidadesGetById(long Id)
 		{
 			try
 			{
@@ -95,19 +92,19 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select * from Barrios " +
-                    "WHERE BAR_NUMERO=" + Id.ToString();
+                string sqlSelect = "select * from Domicilios_Entidades " +
+                    "WHERE DEN_NUMERO=" + Id.ToString();
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
                 adapter.Fill(ds);
                 DataTable dt;
                 dt = ds.Tables[0];
-                Barrios NewEnt = new Barrios();
+                DomiciliosEntidades NewEnt = new DomiciliosEntidades();
 				if(dt.Rows.Count > 0)
 				{
 					DataRow dr = dt.Rows[0];
-                    NewEnt = CargarBarrios(dr);
+                    NewEnt = CargarDomiciliosEntidades(dr);
 				}
 				return NewEnt;
 			}
@@ -117,9 +114,9 @@ namespace Implement
 			}
 		}
 
-        public List<Barrios> BarriosGetAll()
+        public List<DomiciliosEntidades> DomiciliosEntidadesGetAll()
 		{
-            List<Barrios> lstBarrios = new List<Barrios>();
+            List<DomiciliosEntidades> lstDomiciliosEntidades = new List<DomiciliosEntidades>();
             try
             {
 
@@ -127,7 +124,7 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select * from Barrios ";
+                string sqlSelect = "select * from Domicilios_Entidades ";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -139,12 +136,12 @@ namespace Implement
                   for (int i = 0; dt.Rows.Count > i; i++)
                   {
                             DataRow dr = dt.Rows[i];
-                            Barrios NewEnt = new Barrios();
-                            NewEnt = CargarBarrios(dr);
-                            lstBarrios.Add(NewEnt);
+                            DomiciliosEntidades NewEnt = new DomiciliosEntidades();
+                            NewEnt = CargarDomiciliosEntidades(dr);
+                            lstDomiciliosEntidades.Add(NewEnt);
                   }
                 }
-                return lstBarrios;
+                return lstDomiciliosEntidades;
             }
             catch (Exception ex)
             {
@@ -152,16 +149,15 @@ namespace Implement
             }
 		}
 
-        private Barrios CargarBarrios(DataRow dr)
+        private DomiciliosEntidades CargarDomiciliosEntidades(DataRow dr)
 		{
 			try
 			{
-                Barrios oObjeto = new Barrios();
-                oObjeto.BarNumero = int.Parse(dr["BAR_NUMERO"].ToString());
-                oObjeto.PaiCodigo = dr["PAI_CODIGO"].ToString();
-                oObjeto.PrvCodigo = dr["PRV_CODIGO"].ToString();
-                oObjeto.LocNumero = int.Parse(dr["LOC_NUMERO"].ToString());
-                oObjeto.BarDescripcion = dr["BAR_DESCRIPCION"].ToString();
+                DomiciliosEntidades oObjeto = new DomiciliosEntidades();
+                oObjeto.DenNumero = long.Parse(dr["DEN_NUMERO"].ToString());
+                oObjeto.TdoCodigo = dr["TDO_CODIGO"].ToString();
+                oObjeto.DenIdOrigen = long.Parse(dr["DEN_ID_ORIGEN"].ToString());
+                oObjeto.TabCodigo = dr["TAB_CODIGO"].ToString();
                 return oObjeto;
 			}
 			catch(Exception ex)

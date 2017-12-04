@@ -8,7 +8,6 @@ namespace Controles.buttons
 {
      public class gesButton: System.Windows.Forms.Button
     {
-        public string FUN_CODIGO;
         public gesButton() {
 
             //BackColor = System.Drawing.Color.Blue;
@@ -16,7 +15,6 @@ namespace Controles.buttons
 
 
         }
-        
 
 
     }

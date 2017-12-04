@@ -16,7 +16,7 @@ namespace Model {
         public virtual short? MniParametros { get; set; }
         public virtual string SbsCodigo { get; set; }
         public virtual string FunCodigo { get; set; }
-
+        public virtual byte[] MniLogo { get; set; }
         //        public virtual IList<RolesMenuItem> RolesMenuItems { get; set; }
     }
 }

@@ -180,7 +180,7 @@ namespace Implement
                 Sectores oObjeto = new Sectores();
                 oObjeto.SecCodigo =dr["SEC_CODIGO"].ToString();
                 oObjeto.SecDescripcion = dr["SEC_DESCRIPCION"].ToString();
-                oObjeto.DepNumero = int.Parse(dr["DEP_NUMERO"].ToString());
+                oObjeto.DepNumero = short.Parse(dr["DEP_NUMERO"].ToString());
                 oObjeto.AreCodigo = dr["ARE_CODIGO"].ToString();
                 return oObjeto;
             }

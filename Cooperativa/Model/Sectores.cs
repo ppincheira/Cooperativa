@@ -1,65 +1,45 @@
-///////////////////////////////////////////////////////////////////////////
-//
-// Creado por Pablo Pincheira
-//
-///////////////////////////////////////////////////////////////////////////
-
 using System;
+using System.Text;
+using System.Collections.Generic;
 
 
-namespace Model
-{
-    public class Sectores
-    {
-        #region Private Properties
-        private string _SecCodigo;
-        private string _SecDescripcion;
-		private int _DepNumero;
-		private string _AreCodigo;
-        #endregion
-
-        #region Constructors
-
-        public Sectores()
-        {
-
+namespace Model {
+    
+    public class Sectores {
+        public Sectores() {
+/*			PersonasSectores = new List<PersonasSectore>();
+			PersonasSectores = new List<PersonasSectore>();
+			PersonasSectores = new List<PersonasSectore>();
+*/
         }
+        public virtual string SecCodigo { get; set; }
+        public virtual short DepNumero { get; set; }
+        public virtual string AreCodigo { get; set; }
+        public virtual string SecDescripcion { get; set; }
+/*        public virtual IList<PersonasSectore> PersonasSectores { get; set; }
+        public virtual IList<PersonasSectore> PersonasSectores { get; set; }
+        public virtual IList<PersonasSectore> PersonasSectores { get; set; }
+        #region NHibernate Composite Key Requirements
+        public override bool Equals(object obj) {
+			if (obj == null) return false;
+			var t = obj as Sectore;
+			if (t == null) return false;
+			if (SecCodigo == t.SecCodigo
+			 && DepNumero == t.DepNumero
+			 && AreCodigo == t.AreCodigo)
+				return true;
 
-        public Sectores(string SecCodigo, string SecDescripcion, int DepNumero, string AreCodigo)
-        {
-			_SecCodigo=SecCodigo;
-			_SecDescripcion=SecDescripcion;
-			_DepNumero=DepNumero;
-			_AreCodigo=AreCodigo;
-		}
-
-        #endregion
-
-        #region Properties
-
-        public string SecCodigo
-        {
-            get { return _SecCodigo; }
-            set { _SecCodigo = value; }
+			return false;
         }
+        public override int GetHashCode() {
+			int hash = GetType().GetHashCode();
+			hash = (hash * 397) ^ SecCodigo.GetHashCode();
+			hash = (hash * 397) ^ DepNumero.GetHashCode();
+			hash = (hash * 397) ^ AreCodigo.GetHashCode();
 
-        public string SecDescripcion
-        {
-            get { return _SecDescripcion; }
-            set { _SecDescripcion = value; }
-        }
-
-		public int DepNumero
-        {
-            get { return _DepNumero; }
-            set { _DepNumero = value; }
-        }
-
-		public string AreCodigo
-        {
-            get { return _AreCodigo; }
-            set { _AreCodigo = value; }
+			return hash;
         }
         #endregion
+*/
     }
 }

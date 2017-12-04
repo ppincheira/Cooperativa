@@ -20,3 +20,13 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Contro
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
+C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
+C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.pdb
+C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Model.dll
+C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Model.pdb
+C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csprojResolveAssemblyReference.cache
+C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.Resources.Iconos.resources
+C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
+C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.CoreCompileInputs.cache
+C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
+C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb

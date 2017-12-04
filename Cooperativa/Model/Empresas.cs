@@ -1,17 +1,16 @@
 using System;
-using System.Text;
-using System.Collections.Generic;
 
 
-namespace Model {
-    
+namespace Model
+{
+
     public class Empresas {
         public Empresas() {
-/*			fabricantes = new List<Fabricante>();
-			telefonos = new List<Telefono>();
-			domicilios = new List<Domicilio>();
-			medidores = new List<Medidore>();
-  */
+/*			Fabricantes = new List<Fabricante>();
+			Telefonos = new List<Telefono>();
+			Medidores = new List<Medidore>();
+			Accionistas = new List<Accionista>();
+*/
         }
         public virtual long EmpNumero { get; set; }
         public virtual string EmpRazonSocial { get; set; }
@@ -34,10 +33,13 @@ namespace Model {
         public virtual int UsrNumeroCarga { get; set; }
         public virtual string Apellidos { get; set; }
         public virtual string Nombres { get; set; }
-/*        public virtual IList<Fabricante> fabricantes { get; set; }
-        public virtual IList<Telefono> telefonos { get; set; }
-        public virtual IList<Domicilio> domicilios { get; set; }
-        public virtual IList<Medidore> medidores { get; set; }
-  */
+        public virtual string EstCodigoPro { get; set; }
+        public virtual string EstCodigoCli { get; set; }
+
+        /*        public virtual IList<Fabricante> Fabricantes { get; set; }
+                public virtual IList<Telefono> Telefonos { get; set; }
+                public virtual IList<Medidore> Medidores { get; set; }
+                public virtual IList<Accionista> Accionistas { get; set; }
+        */
     }
 }

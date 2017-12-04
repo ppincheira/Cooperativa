@@ -22,16 +22,16 @@ namespace Business
             return oDetallesColumnasTablasImpl.DetallesColumnasTablasUpdate(oDetallesColumnasTablas);
         }
 
-        public bool DetallesColumnasTablasDelete(String Id)
+        public bool DetallesColumnasTablasDelete(string Tab, string Tabla, string Columna)
         {
             DetallesColumnasTablasImpl oDetallesColumnasTablasImpl = new DetallesColumnasTablasImpl();
-            return oDetallesColumnasTablasImpl.DetallesColumnasTablasDelete(Id);
+            return oDetallesColumnasTablasImpl.DetallesColumnasTablasDelete(Tab, Tabla, Columna);
         }
 
-        public DetallesColumnasTablas DetallesColumnasTablasGetById(string Id)
+        public DetallesColumnasTablas DetallesColumnasTablasGetById(string Tab, string Tabla, string Columna)
         {
             DetallesColumnasTablasImpl oDetallesColumnasTablasImpl = new DetallesColumnasTablasImpl();
-            return oDetallesColumnasTablasImpl.DetallesColumnasTablasGetById(Id);
+            return oDetallesColumnasTablasImpl.DetallesColumnasTablasGetById(Tab, Tabla, Columna);
         }
 
         public List<DetallesColumnasTablas> DetallesColumnasTablasGetAll()

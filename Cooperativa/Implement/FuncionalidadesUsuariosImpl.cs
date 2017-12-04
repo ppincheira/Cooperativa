@@ -7,15 +7,13 @@
 
 using System;
 using System.Data;
-using System.Data.SqlClient;
 using System.Collections.Generic;
 using Oracle.DataAccess.Client;
-using System.Configuration;
 using Model;
 
 namespace Implement
 {
-        public class FuncionalidadesUsuariosImpl
+    public class FuncionalidadesUsuariosImpl
         {
             #region FuncionalidadesUsuarios methods
 
@@ -32,8 +30,8 @@ namespace Implement
                     cn.Open();
 
                     ds = new DataSet();
-                    cmd = new OracleCommand("insert into FuncionalidadesUsuarios(FUN_CODIGO, USR_NUMERO, ROL_CODIGO) " +
-                        "values('" + oFun.FunCodigo + "', '" + oFun.UsrNumero + "', '" + oFun.RolCodigo +"')", cn);
+                    cmd = new OracleCommand("insert into Funcionalidades_Usuarios(FUN_CODIGO, USR_NUMERO, ROL_CODIGO) " +
+                        "values('" + oFun.FunCodigo + "', " + oFun.UsrNumero + ", '" + oFun.RolCodigo +"')", cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
                     cn.Close();
@@ -53,11 +51,11 @@ namespace Implement
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
                     ds = new DataSet();
-                    cmd = new OracleCommand("update FuncionalidadesUsuarios " +
+                    cmd = new OracleCommand("update Funcionalidades_Usuarios " +
                         "SET FUN_CODIGO='" + oFunNuevo.FunCodigo + "'," +
                         "USR_NUMERO='" + oFunNuevo.UsrNumero +"', "+
                         "ROL_CODIGO='" + oFunNuevo.RolCodigo +"' "+
-                        "WHERE FUN_CODIGO='" + oFunActual.FunCodigo + "' and USR_NUMERO='" + oFunActual.UsrNumero + "' and ROL_CODIGO='" + oFunActual.RolCodigo + "'", cn);
+                        "WHERE FUN_CODIGO='" + oFunActual.FunCodigo + "' and USR_NUMERO=" + oFunActual.UsrNumero + " and ROL_CODIGO='" + oFunActual.RolCodigo + "'", cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
                     cn.Close();
@@ -69,7 +67,7 @@ namespace Implement
                 }
             }
 
-            public bool FuncionalidadesUsuariosDelete(FuncionalidadesUsuarios oFun)
+            public bool FuncionalidadesUsuariosDelete(string Codigo, int Usuario, string Rol)
             {
                 try
                 {
@@ -77,8 +75,8 @@ namespace Implement
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
                     ds = new DataSet();
-                    cmd = new OracleCommand("DELETE FuncionalidadesUsuarios " +
-                        "WHERE FUN_CODIGO='" + oFun.FunCodigo + "' and USR_NUMERO='" + oFun.UsrNumero + "' and ROL_CODIGO='" + oFun.RolCodigo + "'", cn);
+                    cmd = new OracleCommand("DELETE Funcionalidades_Usuarios " +
+                        "WHERE FUN_CODIGO='" + Codigo + "' and USR_NUMERO=" + Usuario + " and ROL_CODIGO='" + Rol + "'", cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
                     cn.Close();
@@ -130,7 +128,7 @@ namespace Implement
                     Conexion oConexion = new Conexion();
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
-                    string sqlSelect = "select * from FuncionalidadesUsuarios ";
+                    string sqlSelect = "select * from Funcionalidades_Usuarios ";
                     cmd = new OracleCommand(sqlSelect, cn);
                     adapter = new OracleDataAdapter(cmd);
                     cmd.ExecuteNonQuery();

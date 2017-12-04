@@ -13,7 +13,7 @@ namespace Service
     {
         public int CargarGrilla(Controles.datos.grdGrillaAdmin grilla, DataTable dt) {
             grilla.DataSource = dt;
-
+      
             return dt.Rows.Count;
         }
 
@@ -32,6 +32,7 @@ namespace Service
             combo.DisplayMember = Text;
         }
 
+<<<<<<< HEAD
         
 
         private void borrarContenidoControles(Control contenedor)
@@ -88,5 +89,7 @@ namespace Service
 
         //            }
 
+=======
+>>>>>>> c69271fd8ee4341398eaf0fb659efda4263333b9
     }
 }

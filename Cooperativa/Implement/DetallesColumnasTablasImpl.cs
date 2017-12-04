@@ -7,10 +7,8 @@
 
 using System;
 using System.Data;
-using System.Data.SqlClient;
 using System.Collections.Generic;
 using Oracle.DataAccess.Client;
-using System.Configuration;
 using Model;
 
 namespace Implement
@@ -30,14 +28,15 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-
+                // Clave TAB_CODIGO, DCT_CODIGO_TABLA Y DCT_COLUMNA
                 ds = new DataSet();
-                cmd = new OracleCommand("insert into DetallesColumnasTablas(TAB_CODIGO, DCT_CODIGO_TABLA, DCT_NRO_ORDEN," +
-                    "DCT_COLUMNA,DCT_HABILITADO,DCT_REQUERIDO,DCT_DESCRIPCION,DCT_ETIQUETA, DCT_TIPO_CONTROL,DCT_LISTA_VALORES," +
-                    "DCT_FILTRO_BUSQUEDA) " +
-                    "values('" + oDetalle.TabCodigo + "', '" + oDetalle.DctCodigoTabla + "'," + oDetalle.DctNroOrden + 
-                    ",'"+oDetalle.DctColumna+"','"+ oDetalle.DctHabilitado+"','"+oDetalle.DctRequerido+"','"+oDetalle.DctDescripcion+"','" + oDetalle.DctEtiqueta +"'"+
-                    ",'"+oDetalle.DctTipoControl+"','"+oDetalle.DctListaValores+"','"+oDetalle.DctFiltroBusqueda+"')", cn);
+                cmd = new OracleCommand("insert into Detalles_Columnas_Tablas(TAB_CODIGO, DCT_CODIGO_TABLA," +
+                    "DCT_NRO_ORDEN, DCT_COLUMNA, DCT_HABILITADO, DCT_REQUERIDO, DCT_DESCRIPCION, " +
+                    "DCT_ETIQUETA, DCT_TIPO_CONTROL, DCT_LISTA_VALORES) " +
+                    "values('" + oDetalle.TabCodigo + "', '" + oDetalle.DctCodigoTabla + "'," + 
+                    oDetalle.DctNroOrden + ",'"+oDetalle.DctColumna+"','"+ oDetalle.DctHabilitado+"','"+
+                    oDetalle.DctRequerido+"','"+oDetalle.DctDescripcion+"','" + oDetalle.DctEtiqueta +"'"+
+                    oDetalle.DctTipoControl+"','"+oDetalle.DctListaValores+"')", cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -57,22 +56,20 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 ds = new DataSet();
-                //cmd = new OracleCommand("update DetallesColumnasTablas " +
-                //    "SET DEP_NUMERO=" + oDetalle.DepNumero + "," +
-                //    "DEP_DESCRIPCION='" + oDetalle.DepDescripcion + "'," +
-                //    "ARE_CODIGO='" + oDetalle.AreCodigo + "' " +
-                //    "WHERE DEP_NUMERO=" + oDetalle.DepNumero, cn);
+                cmd = new OracleCommand("update Detalles_Columnas_Tablas " +
+                    "SET DCT_NRO_ORDEN=" + oDetalle.DctNroOrden + "," +
+                    "DCT_HABILITADO='" + oDetalle.DctHabilitado + "'," +
+                    "DCT_REQUERIDO='" + oDetalle.DctRequerido + "'," +
+                    "DCT_DESCRIPCION='" + oDetalle.DctDescripcion + "'," +
+                    "DCT_ETIQUETA='" + oDetalle.DctEtiqueta + "'," +
+                    "DCT_TIPO_CONTROL='" + oDetalle.DctTipoControl + "'," +
+                    "DCT_LISTA_VALORES='" + oDetalle.DctListaValores + "' " +
+                    "WHERE TAB_CODIGO='" + oDetalle.TabCodigo+ "' and DCT_CODIGO_TABLA='" + 
+                    oDetalle.DctCodigoTabla+ "' and DCT_COLUMNA='"+ oDetalle.DctColumna+ "'", cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
-                if (response > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return response > 0;
             }
             catch (Exception ex)
             {
@@ -80,29 +77,21 @@ namespace Implement
             }
         }
 
-        public bool DetallesColumnasTablasDelete(string Id)
+        public bool DetallesColumnasTablasDelete(string Tab, string Tabla, string Columna)
         {
-
-
             try
             {
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 ds = new DataSet();
-                cmd = new OracleCommand("DELETE DetallesColumnasTablas " +
-                      "WHERE TAB_CODIGO='" + Id, cn);
+                cmd = new OracleCommand("DELETE Detalles_Columnas_Tablas " +
+                    "WHERE TAB_CODIGO='" + Tab + "' and DCT_CODIGO_TABLA='" +
+                    Tabla + "' and DCT_COLUMNA='" + Columna + "'", cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
-                if (response > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return response > 0;
             }
             catch (Exception ex)
             {
@@ -112,7 +101,7 @@ namespace Implement
 
         }
 
-        public DetallesColumnasTablas DetallesColumnasTablasGetById(string Id)
+        public DetallesColumnasTablas DetallesColumnasTablasGetById(string TabCodigo, string DctCodigoTabla, string DctColumna)
         {
             try
             {
@@ -120,8 +109,9 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select * from DetallesColumnasTablas " +
-                    "where DEP_NUMERO=" + Id;
+                string sqlSelect = "select * from Detalles_Columnas_Tablas " +
+                    "WHERE TAB_CODIGO='" + TabCodigo + "' and DCT_CODIGO_TABLA='" +
+                    DctCodigoTabla + "' and DCT_COLUMNA='" + DctColumna + "'";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -142,7 +132,6 @@ namespace Implement
             }
         }
 
-
         public List<DetallesColumnasTablas> DetallesColumnasTablasGetAll()
         {
             List<DetallesColumnasTablas> lstDetallesColumnasTablas = new List<DetallesColumnasTablas>();
@@ -153,7 +142,7 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select * from DetallesColumnasTablas ";
+                string sqlSelect = "select * from Detalles_Columnas_Tablas ";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -177,7 +166,7 @@ namespace Implement
                 throw ex;
             }
         }
-        public List<DetallesColumnasTablas> DetallesColumnasTablasGetByName(String name)
+        public List<DetallesColumnasTablas> DetallesColumnasTablasGetByName(string name)
         {
             List<DetallesColumnasTablas> lstDetallesColumnasTablas = new List<DetallesColumnasTablas>();
             try
@@ -187,9 +176,8 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = " SELECT DCT.* FROM  DETALLES_COLUMNAS_TABLAS DCT " +
-                " INNER JOIN TABLAS t on t.TAB_CODIGO = dct.TAB_CODIGO "+
-                " WHERE T.TAB_NOMBRE = '" + name+"'";
+                string sqlSelect = "select * from Detalles_Columnas_Tablas DCT, Tablas T" +
+                    " where DCT.TAB_CODIGO=T.TAB_CODIGO and T.nombre = '" + name + "'";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -213,8 +201,7 @@ namespace Implement
                 throw ex;
             }
         }
-
-        public List<DetallesColumnasTablas> DetallesColumnasTablasGetByCodigo(String codigo)
+        public List<DetallesColumnasTablas> DetallesColumnasTablasGetByCodigo(string codigo)
         {
             List<DetallesColumnasTablas> lstDetallesColumnasTablas = new List<DetallesColumnasTablas>();
             try
@@ -224,9 +211,8 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = " SELECT DCT.* FROM  DETALLES_COLUMNAS_TABLAS DCT " +
-                " INNER JOIN TABLAS t on t.TAB_CODIGO = dct.TAB_CODIGO " +
-                " WHERE T.TAB_CODIGO = '" + codigo + "'";
+                string sqlSelect = "select * from Detalles_Columnas_Tablas" +
+                    " where TAB_CODIGO= '" + codigo + "'";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -255,8 +241,8 @@ namespace Implement
             try
             {
                 DetallesColumnasTablas oObjeto = new DetallesColumnasTablas();
-                oObjeto.DctCodigoTabla = dr["DCT_CODIGO_TABLA"].ToString();
                 oObjeto.TabCodigo = dr["TAB_CODIGO"].ToString();
+                oObjeto.DctCodigoTabla = dr["DCT_CODIGO_TABLA"].ToString();
                 oObjeto.DctNroOrden = short.Parse(dr["DCT_NRO_ORDEN"].ToString());
                 oObjeto.DctColumna = dr["DCT_COLUMNA"].ToString();
                 oObjeto.DctHabilitado= dr["DCT_HABILITADO"].ToString();
@@ -264,8 +250,7 @@ namespace Implement
                 oObjeto.DctDescripcion = dr["DCT_DESCRIPCION"].ToString();
                 oObjeto.DctEtiqueta = dr["DCT_ETIQUETA"].ToString();
                 oObjeto.DctTipoControl= dr["DCT_TIPO_CONTROL"].ToString();
-                oObjeto.DctListaValores = dr["DCT_LISTA_VALORES"].ToString();
-                oObjeto.DctFiltroBusqueda= dr["DCT_FILTRO_BUSQUEDA"].ToString();
+                oObjeto.DctListaValores= dr["DCT_LISTA_VALORES"].ToString();
 
                 return oObjeto;
             }
