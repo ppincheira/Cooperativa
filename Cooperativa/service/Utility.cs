@@ -32,6 +32,34 @@ namespace Service
             combo.DisplayMember = Text;
         }
 
+        
+
+        private void borrarContenidoControles(Control contenedor)
+        {
+            foreach (Control control in contenedor.Controls)
+            {
+                if (control.Controls.Count > 0) borrarContenidoControles(control);
+                else
+                {
+                    if (control is TextBox) ((TextBox)control).Clear();
+                    if (control is RadioButton) ((RadioButton)control).Checked = false;
+                    if (control is CheckBox) ((CheckBox)control).Checked = false;
+                }
+            }
+        }
+
+        public static List<T> GetControls<T>(this Control container) where T : Control
+        {
+            List<T> controls = new List<T>();
+            foreach (Control c in container.Controls)
+            {
+                if (c is T)
+                    controls.Add((T)c);
+                controls.AddRange(GetControls<T>(c));
+            }
+            return controls;
+        }
+
         //public bool DatosFaltantes(Form clase, ref string falta)
         //{
         //    GroupBox {
@@ -59,15 +87,6 @@ namespace Service
 
 
         //            }
-
-
-                }
-            }
-        }
-
-
-
-
 
     }
 }
