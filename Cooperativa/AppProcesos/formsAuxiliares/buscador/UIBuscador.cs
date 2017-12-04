@@ -41,12 +41,12 @@ namespace AppProcesos.formsAuxiliares.buscador
             {
 
                 _Campo = _Campo + ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
-                if ((oDetalle.DctTipoControl != "FECHA") && oDetalle.DctTipoControl != "ESTADO")
+                if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl != "FECHA") && oDetalle.DctTipoControl != "ESTADO")
                 {
                     _dtCombo.Rows.Add(oDetalle.DctColumna, oDetalle.DctDescripcion);
                 }
 
-                if ((oDetalle.DctTipoControl == "FECHA"))
+                if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "FECHA"))
                 {
                     _vista.grupoFecha = true;
                     _vista.fechaDesde = DateTime.Now.Date.AddMonths(-1);
@@ -55,7 +55,7 @@ namespace AppProcesos.formsAuxiliares.buscador
                     _Fecha = oDetalle.DctColumna + "&";
                     _filtroValores = _filtroValores + _vista.fechaDesde.ToString("dd/MM/yyyy") + "%" + _vista.fechaHasta.ToString("dd/MM/yyyy")+ "&";
                 }
-                if ((oDetalle.DctTipoControl == "ESTADO"))
+                if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "ESTADO"))
                 {
                     _vista.grupoEstado = true;
                     _filtroCampos = _filtroCampos + oDetalle.DctColumna + "&";
