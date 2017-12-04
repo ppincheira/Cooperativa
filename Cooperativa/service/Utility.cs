@@ -47,17 +47,17 @@ namespace Service
             }
         }
 
-        //public static List<T> GetControls<T>(this Control container) where T : Control
-        //{
-        //    List<T> controls = new List<T>();
-        //    foreach (Control c in container.Controls)
-        //    {
-        //        if (c is T)
-        //            controls.Add((T)c);
-        //        controls.AddRange(GetControls<T>(c));
-        //    }
-        //    return controls;
-        //}
+        ////public static List<T> GetControls<T>(this Control container) where T : Control
+        ////{
+        ////    List<T> controls = new List<T>();
+        ////    foreach (Control c in container.Controls)
+        ////    {
+        ////        if (c is T)
+        ////            controls.Add((T)c);
+        ////        controls.AddRange(GetControls<T>(c));
+        ////    }
+        ////    return controls;
+        ////}
 
        
 
