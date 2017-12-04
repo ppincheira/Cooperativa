@@ -32,8 +32,6 @@ namespace Service
             combo.DisplayMember = Text;
         }
 
-<<<<<<< HEAD
-        
 
         private void borrarContenidoControles(Control contenedor)
         {
@@ -49,47 +47,19 @@ namespace Service
             }
         }
 
-        public static List<T> GetControls<T>(this Control container) where T : Control
-        {
-            List<T> controls = new List<T>();
-            foreach (Control c in container.Controls)
-            {
-                if (c is T)
-                    controls.Add((T)c);
-                controls.AddRange(GetControls<T>(c));
-            }
-            return controls;
-        }
-
-        //public bool DatosFaltantes(Form clase, ref string falta)
+        //public static List<T> GetControls<T>(this Control container) where T : Control
         //{
-        //    GroupBox {
-        //        Dim grupo;
-        //        Control contrl;
+        //    List<T> controls = new List<T>();
+        //    foreach (Control c in container.Controls)
+        //    {
+        //        if (c is T)
+        //            controls.Add((T)c);
+        //        controls.AddRange(GetControls<T>(c));
+        //    }
+        //    return controls;
+        //}
 
-        //        DatosFaltantes = false;
-        //        foreach (Dim /*TODO: cambiar el nombre de la variable*/ grupo in clase.Controls)
-        //        {
-        //            foreach (Control /*TODO: cambiar el nombre de la variable*/ contrl in grupo.Controls)
-        //            {
+       
 
-        //                if ((contrl is TextBox) | (TypeOf contrl is ComboBox) | (TypeOf contrl is RichTextBox) | (TypeOf contrl is MaskedTextBox) ){
-
-        //                    if (contrl.Text == "" & contrl.Tag == "n")
-        //                    {
-        //                        DatosFaltantes = true;
-
-        //                        falta = contrl.Name;
-
-        //                        return;
-        //                    }
-
-        //                }
-
-
-        //            }
-
-=======
->>>>>>> c69271fd8ee4341398eaf0fb659efda4263333b9
     }
 }
