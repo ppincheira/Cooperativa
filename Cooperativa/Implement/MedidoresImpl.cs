@@ -173,8 +173,10 @@ namespace Implement
                 oObjeto.MedDigitos = int.Parse(dr["MED_DIGITOS"].ToString());
                 oObjeto.MedEstado = dr["MED_ESTADO"].ToString();
                 oObjeto.MedFactorCalib = double.Parse(dr["MED_FACTOR_CALIB"].ToString());
-                oObjeto.GisX = decimal.Parse(dr["GIS_X"].ToString());
-                oObjeto.GisY = decimal.Parse(dr["GIS_Y"].ToString());
+                if (dr["GIS_X"].ToString() != "")
+                    oObjeto.GisX = decimal.Parse(dr["GIS_X"].ToString());
+                if (dr["GIS_Y"].ToString() != "")
+                    oObjeto.GisY = decimal.Parse(dr["GIS_Y"].ToString());
                 oObjeto.DmeCodigo = dr["DME_CODIGO"].ToString();
                 oObjeto.UsrNumero = int.Parse(dr["USR_NUMERO"].ToString());
                 if (dr["MED_FECHA_CARGA"].ToString() != "")

@@ -47,6 +47,8 @@
     <Compile Include="formsAuxiliares\buscador\UIBuscador.cs" />
     <Compile Include="formsAuxiliares\formAdmin\IVistaFormAdmin.cs" />
     <Compile Include="formsAuxiliares\formAdmin\UIFormAdmin.cs" />
+    <Compile Include="formsAuxiliares\frmLogin\IVistaLogin.cs" />
+    <Compile Include="formsAuxiliares\frmLogin\UILogin.cs" />
     <Compile Include="formsAuxiliares\principal\IVistaPrincipal.cs" />
     <Compile Include="formsAuxiliares\principal\UIPrincipal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
