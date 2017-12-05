@@ -78,6 +78,7 @@
     <Compile Include="EstadosBus.cs" />
     <Compile Include="FabricantesBus.cs" />
     <Compile Include="FuncionalidadesBus.cs" />
+    <Compile Include="FuncionalidadesFormulariosBus.cs" />
     <Compile Include="FuncionalidadesUsuariosBus.cs" />
     <Compile Include="LocalidadesBus.cs" />
     <Compile Include="MedidoresBus.cs" />

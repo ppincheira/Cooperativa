@@ -78,6 +78,7 @@
     <Compile Include="Estados.cs" />
     <Compile Include="Fabricantes.cs" />
     <Compile Include="Funcionalidades.cs" />
+    <Compile Include="FuncionalidadesFormularios.cs" />
     <Compile Include="FuncionalidadesUsuarios.cs" />
     <Compile Include="Help.cs" />
     <Compile Include="Localidades.cs" />

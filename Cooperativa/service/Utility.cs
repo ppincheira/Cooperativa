@@ -47,6 +47,20 @@ namespace Service
             }
         }
 
+        private void HabilitarControles(Control contenedor )
+        {
+            foreach (Control control in contenedor.Controls)
+            {
+                if (control.Controls.Count > 0) borrarContenidoControles(control);
+                else
+                {
+                    if (control is Controles.buttons.btnEditar) ((Controles.buttons.btnEditar)control).FUN_CODIGO 
+                    if (control is RadioButton) ((RadioButton)control).Checked = false;
+                    if (control is CheckBox) ((CheckBox)control).Checked = false;
+                }
+            }
+        }
+
         ////public static List<T> GetControls<T>(this Control container) where T : Control
         ////{
         ////    List<T> controls = new List<T>();
@@ -59,7 +73,7 @@ namespace Service
         ////    return controls;
         ////}
 
-       
+
 
     }
 }

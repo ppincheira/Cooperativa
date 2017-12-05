@@ -79,6 +79,7 @@
     <Compile Include="EmpresasImpl.cs" />
     <Compile Include="EstadosImpl.cs" />
     <Compile Include="FabricantesImpl.cs" />
+    <Compile Include="FuncionalidadesFormulariosImpl.cs" />
     <Compile Include="FuncionalidadesImpl.cs" />
     <Compile Include="FuncionalidadesUsuariosImpl.cs" />
     <Compile Include="LocalidadesImpl.cs" />
