@@ -289,3 +289,7 @@ Cooperativa/Business/obj/Debug/*.cache
 Cooperativa/gesBilling/obj/Debug/*.cache
 Cooperativa/gesBilling/obj/Debug/gesBilling.csproj.GenerateResource.Cache
 
+*.cache
+Cooperativa/gesBilling/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+Cooperativa/gesBilling/obj/Debug/gesBilling.csproj.GenerateResource.Cache
+Cooperativa/.vs/Cooperativa/v15/.suo

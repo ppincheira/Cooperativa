@@ -178,10 +178,13 @@ namespace Implement
                 oObjeto.DomPiso = dr["DOM_PISO"].ToString();
                 oObjeto.DomDepartamento = dr["DOM_DEPARTAMENTO"].ToString();
                 oObjeto.DomParcela = dr["DOM_PARCELA"].ToString();
-                oObjeto.CplNumero = int.Parse(dr["CPL_NUMERO"].ToString());
+                if (dr[""].ToString() != "CPL_NUMERO")
+                    oObjeto.CplNumero = int.Parse(dr["CPL_NUMERO"].ToString());
                 oObjeto.DomLote = dr["DOM_LOTE"].ToString();
-                oObjeto.DomGisX = decimal.Parse(dr["DOM_GIS_X"].ToString());
-                oObjeto.DomGisY = decimal.Parse(dr["DOM_GIS_Y"].ToString());
+                if (dr[""].ToString() != "DOM_GIS_X")
+                    oObjeto.DomGisX = decimal.Parse(dr["DOM_GIS_X"].ToString());
+                if (dr[""].ToString() != "DOM_GIS_Y")
+                    oObjeto.DomGisY = decimal.Parse(dr["DOM_GIS_Y"].ToString());
                 return oObjeto;
 			}
 			catch(Exception ex)

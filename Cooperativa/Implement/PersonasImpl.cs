@@ -187,14 +187,16 @@ namespace Implement
                 oObjeto.PrsSexo = dr["PRS_SEXO"].ToString();
                 if (dr["PRS_FECHA_NACIMIENTO"].ToString() != "")
                     oObjeto.PrsFechaNacimiento = DateTime.Parse(dr["PRS_FECHA_NACIMIENTO"].ToString());
-                oObjeto.LocNumeroNacimiento = int.Parse(dr["LOC_NUMERO_NACIMIENTO"].ToString());
+                if (dr["LOC_NUMERO_NACIMIENTO"].ToString()!="")
+                   oObjeto.LocNumeroNacimiento = int.Parse(dr["LOC_NUMERO_NACIMIENTO"].ToString());
                 if (dr["PRS_FECHA_INGRESO"].ToString() != "")
                     oObjeto.PrsFechaIngreso = DateTime.Parse(dr["PRS_FECHA_INGRESO"].ToString());
                 if (dr["PRS_FECHA_BAJA"].ToString() != "")
                     oObjeto.PrsFechaBaja = DateTime.Parse(dr["PRS_FECHA_BAJA"].ToString());
                 oObjeto.EstCodigo = dr["EST_CODIGO"].ToString();
                 oObjeto.PrsMotivoBaja = dr["PRS_MOTIVO_BAJA"].ToString();
-                oObjeto.PrsLegajo = int.Parse(dr["PRS_LEGAJO"].ToString());
+                if (dr["PRS_LEGAJO"].ToString()!="")
+                    oObjeto.PrsLegajo = int.Parse(dr["PRS_LEGAJO"].ToString());
                 oObjeto.PrsCuil = dr["PRS_CUIL"].ToString();
                 oObjeto.PrsCargo = dr["PRS_CARGO"].ToString();
                 return oObjeto;

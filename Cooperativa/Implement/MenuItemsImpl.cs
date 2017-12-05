@@ -199,7 +199,8 @@ namespace Implement
                 oObjeto.MniCodigoPadre = dr["MNI_CODIGO_PADRE"].ToString();
                 oObjeto.MniDescripcion = dr["MNI_DESCRIPCION"].ToString();
                 oObjeto.FrmNombre = dr["FRM_NOMBRE"].ToString();
-                oObjeto.MniParametros = short.Parse(dr["MNI_PARAMETROS"].ToString());
+                if (dr["MNI_PARAMETROS"].ToString() != "")
+                    oObjeto.MniParametros = short.Parse(dr["MNI_PARAMETROS"].ToString());
                 oObjeto.SbsCodigo = dr["SBS_CODIGO"].ToString();
                 oObjeto.FunCodigo = dr["FUN_CODIGO"].ToString();
                 return oObjeto;

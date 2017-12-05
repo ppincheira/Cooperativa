@@ -9,13 +9,15 @@ using Model;
 using System.Data;
 using Controles;
 using Microsoft.VisualBasic.PowerPacks;
+using AppProcesos.formsAuxiliares.formLogin;
+
 namespace FormsAuxiliares
 {
-    public partial class frmLogin: gesForm
+    public partial class frmLogin: gesForm,IVistaLogin
     {
         #region << PROPIEDADES >>
         private string _Subsistema;
-        
+        private UILogin _oLogin;
         
        
         private Controles.textBoxes.txtDescripcionCorta txtUsuario;
@@ -27,6 +29,20 @@ namespace FormsAuxiliares
         private Controles.contenedores.pnlPanelEstado pnlPanelEstado1;
         private Controles.labels.lblEtiqueta lblEtiqueta1;
         private RectangleShape rectangleShape1;
+
+        public string usuario {
+            get { return this.txtUsuario.Text; }
+            set { this.txtUsuario.Text = value; }
+        }
+        public string password
+        {
+            get
+            { return this.txtPassword.Text; }
+            set
+            { this.txtPassword.Text = value; }
+        }
+
+  //      public string login { set => throw new NotImplementedException(); }
         #endregion
         #region <<METODOS>>
         public frmLogin(string subsistema)
@@ -34,6 +50,7 @@ namespace FormsAuxiliares
             this.Text = "LOGIN";
             _Subsistema = subsistema;
             InitializeComponent();
+            _oLogin = new UILogin(this);
         }
 
         private void InitializeComponent()
@@ -144,6 +161,7 @@ namespace FormsAuxiliares
             this.pnlPanelEstado1.Size = new System.Drawing.Size(264, 34);
             this.pnlPanelEstado1.TabIndex = 4;
             this.pnlPanelEstado1.Click += new System.EventHandler(this.pnlPanelEstado1_Click);
+            this.pnlPanelEstado1.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPanelEstado1_Paint);
             // 
             // lblEtiqueta1
             // 
@@ -234,17 +252,14 @@ namespace FormsAuxiliares
 
         private void pnlPanelEstado1_Click(object sender, EventArgs e)
         {
-            UsuariosBus oUsuarioBus = new UsuariosBus();
-            Usuarios oUsuario = new Usuarios();
-            oUsuario = oUsuarioBus.UsuariosLogin(txtUsuario.Text, txtPassword.Text);
-            if (oUsuario != null)
+            int usuario = _oLogin.validar();
+            if ( usuario!= 0)
             {
-                PersonasBus oPersonaBus = new PersonasBus();
-                Personas oPersona = new Personas();
-                oPersona = oPersonaBus.PersonasGetById(oUsuario.PrsNumero);
-                frmPrincipal frm = new frmPrincipal(_Subsistema);
+                //obtener la persona del login
+                ;
+                    frmPrincipal frm = new frmPrincipal(_Subsistema);
                 frm.Text = _Subsistema;
-                frm.toolStripStatusLabel1.Text = _Subsistema + oPersona.PrsNombre + ", " + oPersona.PrsApellido;
+                frm.toolStripStatusLabel1.Text = _Subsistema + _oLogin.nombreUsuario(usuario);
                 frm.Show();
             }
         }
@@ -257,6 +272,11 @@ namespace FormsAuxiliares
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
             txtUsuario.ForeColor = System.Drawing.Color.Black;
+        }
+
+        private void pnlPanelEstado1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        {
+
         }
     }
 }

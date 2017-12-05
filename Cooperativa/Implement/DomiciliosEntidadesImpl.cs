@@ -156,7 +156,8 @@ namespace Implement
                 DomiciliosEntidades oObjeto = new DomiciliosEntidades();
                 oObjeto.DenNumero = long.Parse(dr["DEN_NUMERO"].ToString());
                 oObjeto.TdoCodigo = dr["TDO_CODIGO"].ToString();
-                oObjeto.DenIdOrigen = long.Parse(dr["DEN_ID_ORIGEN"].ToString());
+                if (dr["DEN_ID_ORIGEN"].ToString() != "")
+                    oObjeto.DenIdOrigen = long.Parse(dr["DEN_ID_ORIGEN"].ToString());
                 oObjeto.TabCodigo = dr["TAB_CODIGO"].ToString();
                 return oObjeto;
 			}
