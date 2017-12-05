@@ -25,3 +25,6 @@ Cooperativa/Business/obj/Debug/CoreCompileInputs.cache
 Cooperativa/Controles/obj/Debug/Controles.dll
 Cooperativa/Controles/obj/Debug/Controles.csprojResolveAssemblyReference.cache
 Cooperativa/Controles/bin/Debug/Model.pdb
+*.cache
+Cooperativa/gesBilling/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+Cooperativa/gesBilling/obj/Debug/gesBilling.csproj.GenerateResource.Cache
