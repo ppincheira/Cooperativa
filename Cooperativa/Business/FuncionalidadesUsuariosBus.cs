@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿ using System.Collections.Generic;
 using Implement;
 using Model;
 
@@ -24,12 +24,7 @@ namespace Business
             return oFuncionalidadesUsuariosImpl.FuncionalidadesUsuariosDelete(Codigo, Usuario, Rol);
         }
 
-  /*      public FuncionalidadesUsuarios FuncionalidadesUsuariosGetById(string Id)
-        {
-            FuncionalidadesUsuariosImpl oFuncionalidadesUsuariosImpl = new FuncionalidadesUsuariosImpl();
-            return oFuncionalidadesUsuariosImpl.FuncionalidadesUsuariosGetById(Id);
-        }
-*/
+
         public List<FuncionalidadesUsuarios> FuncionalidadesUsuariosGetAll()
         {
             FuncionalidadesUsuariosImpl oFuncionalidadesUsuariosImpl = new FuncionalidadesUsuariosImpl();

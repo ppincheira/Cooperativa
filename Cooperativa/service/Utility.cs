@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Controles;
 using System.Data;
 using System.Windows.Forms;
+using Model;
+using Business;
 
 namespace Service
 {
@@ -33,7 +35,7 @@ namespace Service
         }
 
 
-        private void borrarContenidoControles(Control contenedor)
+        public void borrarContenidoControles(Control contenedor)
         {
             foreach (Control control in contenedor.Controls)
             {
@@ -47,31 +49,29 @@ namespace Service
             }
         }
 
-        private void HabilitarControles(Control contenedor )
+        public void HabilitarControles(Control contenedor, int usrNumero, string formulario, string sbsCodigo)
         {
-            foreach (Control control in contenedor.Controls)
+            FuncionalidadesBus oFunBus = new FuncionalidadesBus();
+            DataTable dt = oFunBus.FuncionalidadesPermisos(formulario, usrNumero, sbsCodigo);
+            if (dt.Rows.Count > 0)
             {
-                if (control.Controls.Count > 0) borrarContenidoControles(control);
-                else
+                for (int i = 0; dt.Rows.Count > i; i++)
                 {
-                    if (control is Controles.buttons.btnEditar) ((Controles.buttons.btnEditar)control).FUN_CODIGO 
-                    if (control is RadioButton) ((RadioButton)control).Checked = false;
-                    if (control is CheckBox) ((CheckBox)control).Checked = false;
+                    DataRow dr = dt.Rows[i];
+                    foreach (Control control in contenedor.Controls)
+
+                        if (control.Controls.Count > 0) borrarContenidoControles(control);
+                        else
+                        {
+                            if (control is Controles.buttons.btnEditar)
+                                if (((Controles.buttons.btnEditar)control).FUN_CODIGO == dr["FUN_CODIGO"].ToString())
+                                    ((Controles.buttons.btnEditar)control).Enabled = true;
+                        }
                 }
             }
         }
 
-        ////public static List<T> GetControls<T>(this Control container) where T : Control
-        ////{
-        ////    List<T> controls = new List<T>();
-        ////    foreach (Control c in container.Controls)
-        ////    {
-        ////        if (c is T)
-        ////            controls.Add((T)c);
-        ////        controls.AddRange(GetControls<T>(c));
-        ////    }
-        ////    return controls;
-        ////}
+
 
 
 

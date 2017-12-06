@@ -32,8 +32,8 @@ namespace Implement
                     cn.Open();
 
                     ds = new DataSet();
-                    cmd = new OracleCommand("insert into Funcionalidades(FUN_CODIGO, FUN_DESCRIPCION, FUN_FUNCIONALIDAD, SBS_CODIGO) " +
-                        "values('" + oFun.FunCodigo + "', '" + oFun.FunDescripcion + "', '" + oFun.FunFuncionalidad + "','"+ oFun.SbsCodigo +"')", cn);
+                    cmd = new OracleCommand("insert into FUNCIONALIDADES(FUN_CODIGO, FUN_DESCRIPCION, FUN_FUNCIONALIDAD, SBS_CODIGO, FFO_CODIGO) " +
+                        "values('" + oFun.FunCodigo + "', '" + oFun.FunDescripcion + "', '" + oFun.FunFuncionalidad + "','"+ oFun.SbsCodigo +"',"+oFun.ffoCodigo+")", cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
                     cn.Close();
@@ -56,9 +56,10 @@ namespace Implement
                     cmd = new OracleCommand("update Funcionalidades " +
                         "SET FUN_DESCRIPCION='" + oFun.FunDescripcion + "'," +
                         "FUN_FUNCIONALIDAD='" + oFun.FunFuncionalidad +"', "+
-                        "SBS_CODIGO='" + oFun.SbsCodigo +"' "+
+                        "SBS_CODIGO='" + oFun.SbsCodigo +"', "+
+                        "FFO_CODIGO="+oFun.ffoCodigo +" "+
                         "WHERE FUN_CODIGO='" + oFun.FunCodigo + "' ", cn);
-                    adapter = new OracleDataAdapter(cmd);
+                    adapter = new OracleDataAdapter(cmd); 
                     response = cmd.ExecuteNonQuery();
                     cn.Close();
                     return response > 0;
@@ -168,6 +169,7 @@ namespace Implement
                     oObjeto.FunDescripcion = dr["FUN_DESCRIPCION"].ToString();
                     oObjeto.FunDescripcion = dr["FUN_FUNCIONALIDAD"].ToString();
                     oObjeto.SbsCodigo = dr["SBS_CODIGO"].ToString();
+                    oObjeto.ffoCodigo = int.Parse(dr["FFO_CODIGO"].ToString()) ;
                     return oObjeto;
                 }
                 catch (Exception ex)
@@ -177,23 +179,34 @@ namespace Implement
             }
 
 
-            //public DataTable FuncionalidadesGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
-            //{
-            //    try
-            //    {
-            //        DataTable DTPartes;
-            //        DataSet DSPartes = SqlHelper.ExecuteDataset(SqlImplHelper.getConnectionString(), "FuncionalidadesGetAllByFilter", Periodo, Empresa, IdPresentacion,Tipo);
-            //        DTPartes = DSPartes.Tables[0];
-            //        DSPartes.Tables.RemoveAt(0);
-            //        return DTPartes;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        throw ex;
-            //    }
-            //}
-            #endregion
+            public DataTable FuncionalidadesPermisos(string formulario, int usrNumero, string sbscodigo )
+            {
+                try
+                {
+                DataSet ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "SELECT F.* FROM OWNER.FUNCIONALIDADES F " +
+                " INNER JOIN OWNER.FUNCIONALIDADES_FORMULARIOS FF ON F.FFO_CODIGO = FF.FFO_CODIGO " +
+                " INNER JOIN OWNER.FUNCIONALIDADES_USUARIOS FU ON FU.FUN_CODIGO = F.FUN_CODIGO " +
+                " WHERE SBS_CODIGO='"+sbscodigo+"' AND " +
+                " FF.FFO_NOMBRE='"+ formulario + "' AND "+
+                " FU.USR_NUMERO="+ usrNumero.ToString();
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt;
+                return  dt = ds.Tables[0];
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        #endregion
 
-        }
+    }
 }
 

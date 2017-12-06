@@ -20,3 +20,10 @@ C:\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.csprojResolveAssembl
 C:\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.dll
 C:\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Business.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Model.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Implement.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Business.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Model.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Implement.pdb

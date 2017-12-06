@@ -65,9 +65,17 @@
     <Compile Include="validarLogin.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{cbade339-921e-4277-971c-d80d69751c74}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Controles\Controles.csproj">
       <Project>{2b8d11ae-a2f8-4dd8-97a7-9e722b57182e}</Project>
       <Name>Controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{30b38eed-bf12-4118-8492-53051e87d716}</Project>
+      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Implement;
 using Model;
+using System.Data;
 
 namespace Business
 {
@@ -35,6 +36,12 @@ namespace Business
         {
             FuncionalidadesImpl oFuncionalidadesImpl = new FuncionalidadesImpl();
             return oFuncionalidadesImpl.FuncionalidadesGetAll();
+        }
+
+        public DataTable FuncionalidadesPermisos(string formulario, int usrNumero, string sbscodigo)
+        {
+            FuncionalidadesImpl oFuncionalidadesImpl = new FuncionalidadesImpl();
+            return oFuncionalidadesImpl.FuncionalidadesPermisos(formulario, usrNumero, sbscodigo);
         }
     }
 }
