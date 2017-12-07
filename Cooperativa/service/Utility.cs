@@ -56,7 +56,7 @@ namespace Service
             if (dt.Rows.Count > 0)
             {
                 for (int i = 0; dt.Rows.Count > i; i++)
-                {
+                { 
                     DataRow dr = dt.Rows[i];
                     foreach (Control control in contenedor.Controls)
 
@@ -66,6 +66,15 @@ namespace Service
                             if (control is Controles.buttons.btnEditar)
                                 if (((Controles.buttons.btnEditar)control).FUN_CODIGO == dr["FUN_CODIGO"].ToString())
                                     ((Controles.buttons.btnEditar)control).Enabled = true;
+                            if (control is Controles.buttons.btnNuevo)
+                                if (((Controles.buttons.btnNuevo)control).FUN_CODIGO == dr["FUN_CODIGO"].ToString())
+                                    ((Controles.buttons.btnNuevo)control).Enabled = true;
+                            if (control is Controles.buttons.btnEliminar)
+                                if (((Controles.buttons.btnEliminar)control).FUN_CODIGO == dr["FUN_CODIGO"].ToString())
+                                    ((Controles.buttons.btnEliminar)control).Enabled = true;
+                            if (control is Controles.buttons.btnGeneral)
+                                if (((Controles.buttons.btnGeneral)control).FUN_CODIGO == dr["FUN_CODIGO"].ToString())
+                                    ((Controles.buttons.btnGeneral)control).Enabled = true;
                         }
                 }
             }
