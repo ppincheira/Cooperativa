@@ -119,6 +119,7 @@
             this.btnEliminar1.Location = new System.Drawing.Point(98, 9);
             this.btnEliminar1.Name = "btnEliminar1";
             this.btnEliminar1.Size = new System.Drawing.Size(40, 40);
+            this.btnEliminar1.FUN_CODIGO = "134";
             this.btnEliminar1.TabIndex = 7;
             this.btnEliminar1.UseVisualStyleBackColor = true;
             // 
