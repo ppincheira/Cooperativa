@@ -49,23 +49,37 @@ namespace Service
             }
         }
 
-        public void HabilitarControles(Control contenedor, int usrNumero, string formulario, string sbsCodigo)
+        public void HabilitarControles(Control contenedor, int usrNumero, string formulario, string sbsCodigo, DataTable dt)
         {
+            if (dt == null) { 
             FuncionalidadesBus oFunBus = new FuncionalidadesBus();
-            DataTable dt = oFunBus.FuncionalidadesPermisos(formulario, usrNumero, sbsCodigo);
+            dt = oFunBus.FuncionalidadesPermisos(formulario, usrNumero, sbsCodigo);
+            }
             if (dt.Rows.Count > 0)
             {
                 for (int i = 0; dt.Rows.Count > i; i++)
-                {
+                { 
                     DataRow dr = dt.Rows[i];
                     foreach (Control control in contenedor.Controls)
 
-                        if (control.Controls.Count > 0) borrarContenidoControles(control);
+                        if (control.Controls.Count > 0) HabilitarControles(control,usrNumero,formulario,sbsCodigo,dt);
                         else
                         {
                             if (control is Controles.buttons.btnEditar)
                                 if (((Controles.buttons.btnEditar)control).FUN_CODIGO == dr["FUN_CODIGO"].ToString())
                                     ((Controles.buttons.btnEditar)control).Enabled = true;
+                            if (control is Controles.buttons.btnNuevo)
+                                if (((Controles.buttons.btnNuevo)control).FUN_CODIGO == dr["FUN_CODIGO"].ToString())
+                                    ((Controles.buttons.btnNuevo)control).Enabled = true;
+                            if (control is Controles.buttons.btnEliminar)
+                                if (((Controles.buttons.btnEliminar)control).FUN_CODIGO == dr["FUN_CODIGO"].ToString())
+                                    ((Controles.buttons.btnEliminar)control).Enabled = true;
+                            if (control is Controles.buttons.btnExportar)
+                                if (((Controles.buttons.btnExportar)control).FUN_CODIGO == dr["FUN_CODIGO"].ToString())
+                                    ((Controles.buttons.btnExportar)control).Enabled = true;
+                            if (control is Controles.buttons.btnGeneral)
+                                if (((Controles.buttons.btnGeneral)control).FUN_CODIGO == dr["FUN_CODIGO"].ToString())
+                                    ((Controles.buttons.btnGeneral)control).Enabled = true;
                         }
                 }
             }
