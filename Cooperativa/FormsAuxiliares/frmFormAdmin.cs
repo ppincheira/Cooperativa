@@ -12,7 +12,7 @@ using Controles.datos;
 using Service;
 namespace FormsAuxiliares
 {
-    public partial class frmFormAdmin :gesForm, IVistaFormAdmin
+    public partial class frmFormAdmin : gesForm, IVistaFormAdmin
     {
         Utility oUtil;
         private UIFormAdmin _oFormAdmin;
@@ -405,25 +405,28 @@ namespace FormsAuxiliares
 
 
         #region << PROPIEDADES >>
-        
+
         private string _Tabla;
 
         #endregion
 
         #region << EVENTOS >>
 
-
-        public frmFormAdmin(string tabla)
+        
+        public frmFormAdmin(string tabla, PermisosFoms oPerForm)
         {
-            _Tabla = tabla;
             InitializeComponent();
+            AsignarPermisos(oPerForm);
+            _Tabla = tabla;
+
             _oFormAdmin = new UIFormAdmin(this);
            
         }
         private void frmFormAdmin_Load(object sender, EventArgs e)
         {
-            //   _oFormAdmin.Inicializar(_Tabla);
-            try {
+            try
+            {
+            //    _oFormAdmin.Inicializar(_Tabla);
                 oUtil = new Utility();
                 oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA",null);
             }
@@ -471,7 +474,15 @@ namespace FormsAuxiliares
         }
         #endregion
 
-        
+        #region << METODOS >>
+        public void AsignarPermisos(PermisosFoms oPerForm) {
+            this.btnNuevo.FUN_CODIGO = oPerForm.New;
+            this.btnEditar.FUN_CODIGO = oPerForm.Edit;
+            this.btnExportar.FUN_CODIGO = oPerForm.Exp;
+            this.btnEliminar1.FUN_CODIGO = oPerForm.Del;
+            this.btnImprimir.FUN_CODIGO = oPerForm.Imp;
+        }
+        #endregion
 
     }
 }
