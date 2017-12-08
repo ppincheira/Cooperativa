@@ -14,7 +14,7 @@ namespace FormsAuxiliares
 {
     public partial class frmFormAdmin :gesForm, IVistaFormAdmin
     {
-        Utility oUtil = new Utility();
+        Utility oUtil;
         private UIFormAdmin _oFormAdmin;
         #region Implementation of IVistaBuscador
         public Boolean grupoEstado
@@ -396,7 +396,9 @@ namespace FormsAuxiliares
             this.gpbGrupoEstado.ResumeLayout(false);
             this.gpbGrupoEstado.PerformLayout();
             this.ResumeLayout(false);
-
+            this.btnNuevo.FUN_CODIGO = "2";
+            this.btnEditar.FUN_CODIGO = "3";
+            this.btnExportar.FUN_CODIGO = "4";
         }
 
 
@@ -420,9 +422,16 @@ namespace FormsAuxiliares
         }
         private void frmFormAdmin_Load(object sender, EventArgs e)
         {
-            _oFormAdmin.Inicializar(_Tabla);
-            oUtil.HabilitarControles(this,1,"frmAdmin","CAJA");
-        }
+            //   _oFormAdmin.Inicializar(_Tabla);
+            try {
+                oUtil = new Utility();
+                oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA",null);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("{0} Exception caught.", ex);
+            }
+        } 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             frmABM  ofrm = new frmABM(_Tabla);
