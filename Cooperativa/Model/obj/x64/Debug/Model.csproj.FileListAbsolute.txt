@@ -1,0 +1,5 @@
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Model\bin\x64\Debug\Model.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Model\bin\x64\Debug\Model.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Model\obj\x64\Debug\Model.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Model\obj\x64\Debug\Model.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Model\obj\x64\Debug\Model.csprojResolveAssemblyReference.cache
