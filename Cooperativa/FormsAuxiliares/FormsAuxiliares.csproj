@@ -77,7 +77,7 @@
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmObservaciones.cs">
+    <Compile Include="frmObservacionesAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.cs">
@@ -105,8 +105,8 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmObservaciones.resx">
-      <DependentUpon>frmObservaciones.cs</DependentUpon>
+    <EmbeddedResource Include="frmObservacionesAdmin.resx">
+      <DependentUpon>frmObservacionesAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

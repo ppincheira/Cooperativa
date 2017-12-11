@@ -204,6 +204,9 @@
     <Compile Include="textBoxes\txtNumeric.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="textBoxes\txtObservaciones.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="textBoxes\txtPassword.cs">
       <SubType>Component</SubType>
     </Compile>
