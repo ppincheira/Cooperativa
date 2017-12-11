@@ -36,6 +36,7 @@
     <StartupObject />
   </PropertyGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
@@ -54,6 +55,8 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
   <ItemGroup>
@@ -99,7 +102,13 @@
       <SubType>Form</SubType>
     </Compile>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="frmObservaciones.cs" />
+=======
+    <Compile Include="frmObservacionesAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
     <Compile Include="frmObservacionesAdmin.cs">
       <SubType>Form</SubType>
@@ -131,8 +140,13 @@
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <EmbeddedResource Include="frmObservaciones.resx">
       <DependentUpon>frmObservaciones.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="frmObservacionesAdmin.resx">
+      <DependentUpon>frmObservacionesAdmin.cs</DependentUpon>
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
     <EmbeddedResource Include="frmObservacionesAdmin.resx">
       <DependentUpon>frmObservacionesAdmin.cs</DependentUpon>

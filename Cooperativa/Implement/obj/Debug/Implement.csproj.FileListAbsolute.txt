@@ -31,6 +31,7 @@ C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.dll
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Implement.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Implement.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Model.dll
@@ -39,6 +40,8 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Model.
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.pdb
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 C:\GitHub\Cooperativa\Cooperativa\Implement\bin\Debug\Implement.dll
@@ -58,7 +61,10 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Implement.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Implement.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Model.dll
@@ -67,4 +73,7 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Model.
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.pdb
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa

@@ -1,5 +1,6 @@
 ﻿using System;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using AppProcesos.formsAuxiliares.frmCrudGrilla;
 using Controles.datos;
 
@@ -22,6 +23,8 @@ namespace FormsAuxiliares
         private Controles.buttons.btnAceptar btnAceptar1;
         private Controles.labels.lblEtiqueta lblCantidad;
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,6 +44,9 @@ namespace FormsAuxiliares
         private Controles.datos.cmbLista cmbLista1;
         private Controles.labels.lblEtiqueta lblEtiqueta1;
         private Controles.datos.grdGrillaEdit grdGrillaEdit1;
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
         private Controles.contenedores.gpbGrupo gpbGrupoEstado;
         private Controles.datos.cmbLista cmbEstado;
@@ -50,6 +56,7 @@ namespace FormsAuxiliares
         private System.Windows.Forms.DateTimePicker dtpFechaDesde;
         private Controles.labels.lblEtiqueta lblEFechaHasta;
         private Controles.labels.lblEtiqueta lblEFechaDesde;
+<<<<<<< HEAD
 <<<<<<< HEAD
         #region << PROPIEDADES >>
         private string _Tabla;
@@ -140,12 +147,17 @@ namespace FormsAuxiliares
 
         #endregion
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
         private Controles.contenedores.gpbGrupo gpbGrupo1;
 
         public frmCrudGrilla() {
 
         }
 
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
         private void InitializeComponent()
         {
@@ -158,7 +170,11 @@ namespace FormsAuxiliares
             this.gpbGrupo2 = new Controles.contenedores.gpbGrupo();
             this.grdGrillaEdit1 = new Controles.datos.grdGrillaEdit();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.lblCantidad = new Controles.labels.lblEtiqueta();
+=======
+            this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
             this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
@@ -193,7 +209,10 @@ namespace FormsAuxiliares
             this.gpbGrupo1.TabIndex = 0;
             this.gpbGrupo1.TabStop = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.gpbGrupo1.Enter += new System.EventHandler(this.gpbGrupo1_Enter);
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
             // 
@@ -203,7 +222,11 @@ namespace FormsAuxiliares
             this.lblEtiqueta3.Location = new System.Drawing.Point(7, 61);
             this.lblEtiqueta3.Name = "lblEtiqueta3";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.lblEtiqueta3.Size = new System.Drawing.Size(45, 13);
+=======
+            this.lblEtiqueta3.Size = new System.Drawing.Size(66, 20);
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
             this.lblEtiqueta3.Size = new System.Drawing.Size(66, 20);
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
@@ -216,7 +239,11 @@ namespace FormsAuxiliares
             this.lblEtiqueta2.Location = new System.Drawing.Point(6, 23);
             this.lblEtiqueta2.Name = "lblEtiqueta2";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.lblEtiqueta2.Size = new System.Drawing.Size(78, 13);
+=======
+            this.lblEtiqueta2.Size = new System.Drawing.Size(115, 20);
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
             this.lblEtiqueta2.Size = new System.Drawing.Size(115, 20);
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
@@ -230,7 +257,11 @@ namespace FormsAuxiliares
             this.txtFiltro1.Location = new System.Drawing.Point(127, 58);
             this.txtFiltro1.Name = "txtFiltro1";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.txtFiltro1.Size = new System.Drawing.Size(175, 20);
+=======
+            this.txtFiltro1.Size = new System.Drawing.Size(175, 26);
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
             this.txtFiltro1.Size = new System.Drawing.Size(175, 26);
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
@@ -243,7 +274,11 @@ namespace FormsAuxiliares
             this.cmbLista1.Location = new System.Drawing.Point(127, 15);
             this.cmbLista1.Name = "cmbLista1";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.cmbLista1.Size = new System.Drawing.Size(175, 21);
+=======
+            this.cmbLista1.Size = new System.Drawing.Size(175, 28);
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
             this.cmbLista1.Size = new System.Drawing.Size(175, 28);
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
@@ -253,7 +288,11 @@ namespace FormsAuxiliares
             // 
             this.gpbGrupo2.Controls.Add(this.grdGrillaEdit1);
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.gpbGrupo2.Controls.Add(this.lblCantidad);
+=======
+            this.gpbGrupo2.Controls.Add(this.lblEtiqueta1);
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
             this.gpbGrupo2.Controls.Add(this.lblEtiqueta1);
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
@@ -273,6 +312,7 @@ namespace FormsAuxiliares
             this.grdGrillaEdit1.TabIndex = 3;
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
@@ -282,6 +322,8 @@ namespace FormsAuxiliares
             this.lblCantidad.TabIndex = 2;
             this.lblCantidad.Text = "Cantidad";
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
             // lblEtiqueta1
             // 
             this.lblEtiqueta1.AutoSize = true;
@@ -290,6 +332,9 @@ namespace FormsAuxiliares
             this.lblEtiqueta1.Size = new System.Drawing.Size(73, 20);
             this.lblEtiqueta1.TabIndex = 2;
             this.lblEtiqueta1.Text = "Cantidad";
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
             // 
             // gpbGrupo3
@@ -337,7 +382,11 @@ namespace FormsAuxiliares
             this.cmbEstado.Location = new System.Drawing.Point(6, 54);
             this.cmbEstado.Name = "cmbEstado";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.cmbEstado.Size = new System.Drawing.Size(164, 21);
+=======
+            this.cmbEstado.Size = new System.Drawing.Size(164, 28);
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
             this.cmbEstado.Size = new System.Drawing.Size(164, 28);
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
@@ -349,7 +398,11 @@ namespace FormsAuxiliares
             this.lblEEstado.Location = new System.Drawing.Point(6, 16);
             this.lblEEstado.Name = "lblEEstado";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.lblEEstado.Size = new System.Drawing.Size(40, 13);
+=======
+            this.lblEEstado.Size = new System.Drawing.Size(60, 20);
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
             this.lblEEstado.Size = new System.Drawing.Size(60, 20);
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
@@ -369,7 +422,10 @@ namespace FormsAuxiliares
             this.gpbGrupoFecha.TabStop = false;
             this.gpbGrupoFecha.Visible = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.gpbGrupoFecha.Enter += new System.EventHandler(this.gpbGrupoFecha_Enter);
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
             // 
@@ -379,7 +435,11 @@ namespace FormsAuxiliares
             this.dtpFechaHasta.Location = new System.Drawing.Point(117, 55);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.dtpFechaHasta.Size = new System.Drawing.Size(96, 20);
+=======
+            this.dtpFechaHasta.Size = new System.Drawing.Size(96, 26);
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
             this.dtpFechaHasta.Size = new System.Drawing.Size(96, 26);
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
@@ -391,7 +451,11 @@ namespace FormsAuxiliares
             this.dtpFechaDesde.Location = new System.Drawing.Point(6, 55);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.dtpFechaDesde.Size = new System.Drawing.Size(96, 20);
+=======
+            this.dtpFechaDesde.Size = new System.Drawing.Size(96, 26);
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
             this.dtpFechaDesde.Size = new System.Drawing.Size(96, 26);
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
@@ -403,7 +467,11 @@ namespace FormsAuxiliares
             this.lblEFechaHasta.Location = new System.Drawing.Point(114, 16);
             this.lblEFechaHasta.Name = "lblEFechaHasta";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.lblEFechaHasta.Size = new System.Drawing.Size(68, 13);
+=======
+            this.lblEFechaHasta.Size = new System.Drawing.Size(101, 20);
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
             this.lblEFechaHasta.Size = new System.Drawing.Size(101, 20);
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
@@ -416,7 +484,11 @@ namespace FormsAuxiliares
             this.lblEFechaDesde.Location = new System.Drawing.Point(6, 16);
             this.lblEFechaDesde.Name = "lblEFechaDesde";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.lblEFechaDesde.Size = new System.Drawing.Size(71, 13);
+=======
+            this.lblEFechaDesde.Size = new System.Drawing.Size(105, 20);
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
             this.lblEFechaDesde.Size = new System.Drawing.Size(105, 20);
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
@@ -426,7 +498,11 @@ namespace FormsAuxiliares
             // frmCrudGrilla
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(776, 749);
+=======
+            this.ClientSize = new System.Drawing.Size(776, 1044);
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
             this.ClientSize = new System.Drawing.Size(776, 1044);
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
@@ -437,7 +513,10 @@ namespace FormsAuxiliares
             this.Controls.Add(this.gpbGrupo1);
             this.Name = "frmCrudGrilla";
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Load += new System.EventHandler(this.frmCrudGrilla_Load);
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
             this.gpbGrupo1.ResumeLayout(false);
@@ -454,6 +533,7 @@ namespace FormsAuxiliares
 
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         private void gpbGrupo1_Enter(object sender, EventArgs e)
         {
@@ -465,6 +545,8 @@ namespace FormsAuxiliares
 
         }
 
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
     }

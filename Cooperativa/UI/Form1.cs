@@ -1,8 +1,11 @@
 ﻿using System;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.Windows.Forms;
 using Business;
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +18,9 @@ using System.Configuration;
 using Business;
 using Model;
 using Controles;
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 namespace UI
 {
@@ -74,7 +80,11 @@ namespace UI
 
           
 <<<<<<< HEAD
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
@@ -86,6 +96,7 @@ namespace UI
             frmObs.Show();
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         private void buttonCrudGrilla_Click(object sender, EventArgs e)
         {
@@ -93,6 +104,8 @@ namespace UI
             frmbus.ShowDialog();
 
         }
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
     }

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe.config
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.pdb
@@ -26,6 +27,8 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBi
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.exe
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.pdb
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe.config
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.pdb
@@ -50,6 +53,9 @@ C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.Generat
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.exe
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.pdb
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe.config
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe
@@ -78,6 +84,7 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.exe
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csprojResolveAssemblyReference.cache
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.controles.forms.frmAdminSuministros.resources
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.Properties.Resources.resources
@@ -103,6 +110,8 @@ C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Service.pdb
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.exe
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.pdb
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe.config
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.pdb
@@ -129,4 +138,7 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBi
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.GenerateResource.Cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.exe
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.pdb
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
@@ -10,6 +11,8 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Contro
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
@@ -34,7 +37,10 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
@@ -46,4 +52,7 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Contro
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa

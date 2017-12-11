@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Service.dll
 C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Service.pdb
 C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Controles.dll
@@ -8,6 +11,9 @@ C:\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.csprojResolveAssembl
 C:\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.dll
 C:\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.pdb
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Service.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Service.pdb
@@ -24,7 +30,10 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\obj\De
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\bin\Debug\Service.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\bin\Debug\Service.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\bin\Debug\Business.dll
@@ -39,4 +48,7 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\bin\Debug\Implemen
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\obj\Debug\Service.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\obj\Debug\Service.pdb
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa

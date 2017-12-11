@@ -38,7 +38,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnPersonalizado3 = new Controles.btnPersonalizado();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.buttonCrudGrilla = new System.Windows.Forms.Button();
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
@@ -132,6 +135,7 @@
             this.btnPersonalizado3.Click += new System.EventHandler(this.btnPersonalizado3_Click);
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             // buttonCrudGrilla
             // 
             this.buttonCrudGrilla.Location = new System.Drawing.Point(372, 365);
@@ -144,6 +148,8 @@
             // 
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,7 +157,10 @@
             this.ClientSize = new System.Drawing.Size(479, 468);
             this.Controls.Add(this.btnPersonalizado3);
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Controls.Add(this.buttonCrudGrilla);
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
             this.Controls.Add(this.button1);
@@ -183,7 +192,10 @@
         private System.Windows.Forms.Button button1;
         private Controles.btnPersonalizado btnPersonalizado3;
 <<<<<<< HEAD
+<<<<<<< HEAD
         private System.Windows.Forms.Button buttonCrudGrilla;
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
     }

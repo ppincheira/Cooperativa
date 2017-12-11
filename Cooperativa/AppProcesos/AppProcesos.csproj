@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
@@ -52,6 +53,8 @@
   </PropertyGroup>
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -69,8 +72,11 @@
     <Compile Include="formsAuxiliares\formAdmin\IVistaFormAdmin.cs" />
     <Compile Include="formsAuxiliares\formAdmin\UIFormAdmin.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="formsAuxiliares\frmCrudGrilla\IVistaCrudGrilla.cs" />
     <Compile Include="formsAuxiliares\frmCrudGrilla\UICrudGrilla.cs" />
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
     <Compile Include="formsAuxiliares\frmLogin\IVistaLogin.cs" />

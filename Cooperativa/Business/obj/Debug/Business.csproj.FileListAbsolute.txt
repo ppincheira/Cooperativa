@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Business.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Business.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Implement.dll
@@ -9,6 +10,8 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Model.p
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\obj\Debug\Business.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\obj\Debug\Business.pdb
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 C:\GitHub\Cooperativa\Cooperativa\Business\bin\Debug\Business.dll
@@ -32,7 +35,10 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\D
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Business.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Business.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Implement.dll
@@ -43,4 +49,7 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Model.p
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\obj\Debug\Business.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\obj\Debug\Business.pdb
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa

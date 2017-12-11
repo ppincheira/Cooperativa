@@ -2,7 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 <<<<<<< HEAD
+<<<<<<< HEAD
 VisualStudioVersion = 15.0.27004.2010
+=======
+VisualStudioVersion = 15.0.26228.4
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 VisualStudioVersion = 15.0.26228.4
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
@@ -32,10 +36,15 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
 <<<<<<< HEAD
+<<<<<<< HEAD
 		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
+=======
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
@@ -45,6 +54,7 @@ Global
 		{30B38EED-BF12-4118-8492-53051E87D716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{30B38EED-BF12-4118-8492-53051E87D716}.Debug|Any CPU.Build.0 = Debug|Any CPU
 <<<<<<< HEAD
+<<<<<<< HEAD
 		{30B38EED-BF12-4118-8492-53051E87D716}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{30B38EED-BF12-4118-8492-53051E87D716}.Debug|x64.Build.0 = Debug|Any CPU
 		{30B38EED-BF12-4118-8492-53051E87D716}.Debug|x86.ActiveCfg = Debug|x86
@@ -53,10 +63,15 @@ Global
 		{30B38EED-BF12-4118-8492-53051E87D716}.Debug|x64.ActiveCfg = Debug|x64
 		{30B38EED-BF12-4118-8492-53051E87D716}.Debug|x64.Build.0 = Debug|x64
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
+		{30B38EED-BF12-4118-8492-53051E87D716}.Debug|x64.ActiveCfg = Debug|x64
+		{30B38EED-BF12-4118-8492-53051E87D716}.Debug|x64.Build.0 = Debug|x64
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{30B38EED-BF12-4118-8492-53051E87D716}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30B38EED-BF12-4118-8492-53051E87D716}.Release|Any CPU.Build.0 = Release|Any CPU
 		{30B38EED-BF12-4118-8492-53051E87D716}.Release|x64.ActiveCfg = Release|x64
 		{30B38EED-BF12-4118-8492-53051E87D716}.Release|x64.Build.0 = Release|x64
+<<<<<<< HEAD
 <<<<<<< HEAD
 		{30B38EED-BF12-4118-8492-53051E87D716}.Release|x86.ActiveCfg = Release|x86
 		{30B38EED-BF12-4118-8492-53051E87D716}.Release|x86.Build.0 = Release|x86
@@ -67,15 +82,21 @@ Global
 		{CBADE339-921E-4277-971C-D80D69751C74}.Debug|x86.ActiveCfg = Debug|x86
 		{CBADE339-921E-4277-971C-D80D69751C74}.Debug|x86.Build.0 = Debug|x86
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{CBADE339-921E-4277-971C-D80D69751C74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CBADE339-921E-4277-971C-D80D69751C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBADE339-921E-4277-971C-D80D69751C74}.Debug|x64.ActiveCfg = Debug|x64
 		{CBADE339-921E-4277-971C-D80D69751C74}.Debug|x64.Build.0 = Debug|x64
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{CBADE339-921E-4277-971C-D80D69751C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBADE339-921E-4277-971C-D80D69751C74}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CBADE339-921E-4277-971C-D80D69751C74}.Release|x64.ActiveCfg = Release|x64
 		{CBADE339-921E-4277-971C-D80D69751C74}.Release|x64.Build.0 = Release|x64
+<<<<<<< HEAD
 <<<<<<< HEAD
 		{CBADE339-921E-4277-971C-D80D69751C74}.Release|x86.ActiveCfg = Release|x86
 		{CBADE339-921E-4277-971C-D80D69751C74}.Release|x86.Build.0 = Release|x86
@@ -86,15 +107,21 @@ Global
 		{EE5DDE2E-F621-444B-9B23-E4A1E7638264}.Debug|x86.ActiveCfg = Debug|x86
 		{EE5DDE2E-F621-444B-9B23-E4A1E7638264}.Debug|x86.Build.0 = Debug|x86
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{EE5DDE2E-F621-444B-9B23-E4A1E7638264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EE5DDE2E-F621-444B-9B23-E4A1E7638264}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE5DDE2E-F621-444B-9B23-E4A1E7638264}.Debug|x64.ActiveCfg = Debug|x64
 		{EE5DDE2E-F621-444B-9B23-E4A1E7638264}.Debug|x64.Build.0 = Debug|x64
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{EE5DDE2E-F621-444B-9B23-E4A1E7638264}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE5DDE2E-F621-444B-9B23-E4A1E7638264}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EE5DDE2E-F621-444B-9B23-E4A1E7638264}.Release|x64.ActiveCfg = Release|x64
 		{EE5DDE2E-F621-444B-9B23-E4A1E7638264}.Release|x64.Build.0 = Release|x64
+<<<<<<< HEAD
 <<<<<<< HEAD
 		{EE5DDE2E-F621-444B-9B23-E4A1E7638264}.Release|x86.ActiveCfg = Release|x86
 		{EE5DDE2E-F621-444B-9B23-E4A1E7638264}.Release|x86.Build.0 = Release|x86
@@ -105,15 +132,21 @@ Global
 		{B9CE123C-0ACE-4976-B314-5167F547A6D1}.Debug|x86.ActiveCfg = Debug|x86
 		{B9CE123C-0ACE-4976-B314-5167F547A6D1}.Debug|x86.Build.0 = Debug|x86
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{B9CE123C-0ACE-4976-B314-5167F547A6D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B9CE123C-0ACE-4976-B314-5167F547A6D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9CE123C-0ACE-4976-B314-5167F547A6D1}.Debug|x64.ActiveCfg = Debug|x64
 		{B9CE123C-0ACE-4976-B314-5167F547A6D1}.Debug|x64.Build.0 = Debug|x64
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{B9CE123C-0ACE-4976-B314-5167F547A6D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9CE123C-0ACE-4976-B314-5167F547A6D1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B9CE123C-0ACE-4976-B314-5167F547A6D1}.Release|x64.ActiveCfg = Release|x64
 		{B9CE123C-0ACE-4976-B314-5167F547A6D1}.Release|x64.Build.0 = Release|x64
+<<<<<<< HEAD
 <<<<<<< HEAD
 		{B9CE123C-0ACE-4976-B314-5167F547A6D1}.Release|x86.ActiveCfg = Release|x86
 		{B9CE123C-0ACE-4976-B314-5167F547A6D1}.Release|x86.Build.0 = Release|x86
@@ -124,15 +157,21 @@ Global
 		{86FB2F28-828E-4D75-8656-FE5F83FA1D11}.Debug|x86.ActiveCfg = Debug|x86
 		{86FB2F28-828E-4D75-8656-FE5F83FA1D11}.Debug|x86.Build.0 = Debug|x86
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{86FB2F28-828E-4D75-8656-FE5F83FA1D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{86FB2F28-828E-4D75-8656-FE5F83FA1D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86FB2F28-828E-4D75-8656-FE5F83FA1D11}.Debug|x64.ActiveCfg = Debug|x64
 		{86FB2F28-828E-4D75-8656-FE5F83FA1D11}.Debug|x64.Build.0 = Debug|x64
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{86FB2F28-828E-4D75-8656-FE5F83FA1D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86FB2F28-828E-4D75-8656-FE5F83FA1D11}.Release|Any CPU.Build.0 = Release|Any CPU
 		{86FB2F28-828E-4D75-8656-FE5F83FA1D11}.Release|x64.ActiveCfg = Release|x64
 		{86FB2F28-828E-4D75-8656-FE5F83FA1D11}.Release|x64.Build.0 = Release|x64
+<<<<<<< HEAD
 <<<<<<< HEAD
 		{86FB2F28-828E-4D75-8656-FE5F83FA1D11}.Release|x86.ActiveCfg = Release|x86
 		{86FB2F28-828E-4D75-8656-FE5F83FA1D11}.Release|x86.Build.0 = Release|x86
@@ -143,15 +182,21 @@ Global
 		{2B8D11AE-A2F8-4DD8-97A7-9E722B57182E}.Debug|x86.ActiveCfg = Debug|x86
 		{2B8D11AE-A2F8-4DD8-97A7-9E722B57182E}.Debug|x86.Build.0 = Debug|x86
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{2B8D11AE-A2F8-4DD8-97A7-9E722B57182E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2B8D11AE-A2F8-4DD8-97A7-9E722B57182E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B8D11AE-A2F8-4DD8-97A7-9E722B57182E}.Debug|x64.ActiveCfg = Debug|x64
 		{2B8D11AE-A2F8-4DD8-97A7-9E722B57182E}.Debug|x64.Build.0 = Debug|x64
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{2B8D11AE-A2F8-4DD8-97A7-9E722B57182E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B8D11AE-A2F8-4DD8-97A7-9E722B57182E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2B8D11AE-A2F8-4DD8-97A7-9E722B57182E}.Release|x64.ActiveCfg = Release|x64
 		{2B8D11AE-A2F8-4DD8-97A7-9E722B57182E}.Release|x64.Build.0 = Release|x64
+<<<<<<< HEAD
 <<<<<<< HEAD
 		{2B8D11AE-A2F8-4DD8-97A7-9E722B57182E}.Release|x86.ActiveCfg = Release|x86
 		{2B8D11AE-A2F8-4DD8-97A7-9E722B57182E}.Release|x86.Build.0 = Release|x86
@@ -162,18 +207,26 @@ Global
 		{FDE6A93E-E38E-4E13-BCB6-2832E9FD4634}.Debug|x86.ActiveCfg = Debug|x86
 		{FDE6A93E-E38E-4E13-BCB6-2832E9FD4634}.Debug|x86.Build.0 = Debug|x86
 =======
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{FDE6A93E-E38E-4E13-BCB6-2832E9FD4634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FDE6A93E-E38E-4E13-BCB6-2832E9FD4634}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDE6A93E-E38E-4E13-BCB6-2832E9FD4634}.Debug|x64.ActiveCfg = Debug|x64
 		{FDE6A93E-E38E-4E13-BCB6-2832E9FD4634}.Debug|x64.Build.0 = Debug|x64
+<<<<<<< HEAD
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
+=======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{FDE6A93E-E38E-4E13-BCB6-2832E9FD4634}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDE6A93E-E38E-4E13-BCB6-2832E9FD4634}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FDE6A93E-E38E-4E13-BCB6-2832E9FD4634}.Release|x64.ActiveCfg = Release|x64
 		{FDE6A93E-E38E-4E13-BCB6-2832E9FD4634}.Release|x64.Build.0 = Release|x64
 <<<<<<< HEAD
+<<<<<<< HEAD
 		{FDE6A93E-E38E-4E13-BCB6-2832E9FD4634}.Release|x86.ActiveCfg = Release|x86
 		{FDE6A93E-E38E-4E13-BCB6-2832E9FD4634}.Release|x86.Build.0 = Release|x86
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{713451E2-581C-4099-B5CA-15E95F3F0A16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -181,8 +234,11 @@ Global
 		{713451E2-581C-4099-B5CA-15E95F3F0A16}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{713451E2-581C-4099-B5CA-15E95F3F0A16}.Debug|x64.Build.0 = Debug|Any CPU
 <<<<<<< HEAD
+<<<<<<< HEAD
 		{713451E2-581C-4099-B5CA-15E95F3F0A16}.Debug|x86.ActiveCfg = Debug|x86
 		{713451E2-581C-4099-B5CA-15E95F3F0A16}.Debug|x86.Build.0 = Debug|x86
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{713451E2-581C-4099-B5CA-15E95F3F0A16}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -190,8 +246,11 @@ Global
 		{713451E2-581C-4099-B5CA-15E95F3F0A16}.Release|x64.ActiveCfg = Release|Any CPU
 		{713451E2-581C-4099-B5CA-15E95F3F0A16}.Release|x64.Build.0 = Release|Any CPU
 <<<<<<< HEAD
+<<<<<<< HEAD
 		{713451E2-581C-4099-B5CA-15E95F3F0A16}.Release|x86.ActiveCfg = Release|x86
 		{713451E2-581C-4099-B5CA-15E95F3F0A16}.Release|x86.Build.0 = Release|x86
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{26FF4718-4F3B-48E5-9CC6-513E266DE5CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -199,8 +258,11 @@ Global
 		{26FF4718-4F3B-48E5-9CC6-513E266DE5CE}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{26FF4718-4F3B-48E5-9CC6-513E266DE5CE}.Debug|x64.Build.0 = Debug|Any CPU
 <<<<<<< HEAD
+<<<<<<< HEAD
 		{26FF4718-4F3B-48E5-9CC6-513E266DE5CE}.Debug|x86.ActiveCfg = Debug|x86
 		{26FF4718-4F3B-48E5-9CC6-513E266DE5CE}.Debug|x86.Build.0 = Debug|x86
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 		{26FF4718-4F3B-48E5-9CC6-513E266DE5CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -208,8 +270,11 @@ Global
 		{26FF4718-4F3B-48E5-9CC6-513E266DE5CE}.Release|x64.ActiveCfg = Release|Any CPU
 		{26FF4718-4F3B-48E5-9CC6-513E266DE5CE}.Release|x64.Build.0 = Release|Any CPU
 <<<<<<< HEAD
+<<<<<<< HEAD
 		{26FF4718-4F3B-48E5-9CC6-513E266DE5CE}.Release|x86.ActiveCfg = Release|x86
 		{26FF4718-4F3B-48E5-9CC6-513E266DE5CE}.Release|x86.Build.0 = Release|x86
+=======
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 =======
 >>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 	EndGlobalSection
