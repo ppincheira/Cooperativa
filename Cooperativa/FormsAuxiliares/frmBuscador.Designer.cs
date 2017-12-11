@@ -42,23 +42,9 @@
             this.lblEFechaDesde = new Controles.labels.lblEtiqueta();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.cmbBuscar = new Controles.datos.cmbLista();
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.txtFiltro = new Controles.txtFiltro();
             this.gbData = new Controles.contenedores.gesGroup();
             this.lblCantidad = new System.Windows.Forms.Label();
-=======
-=======
->>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
-           
-            this.txtFiltro = new Controles.txtFiltro();
-            this.gbData = new Controles.contenedores.gesGroup();
-            this.lblCantidad = new System.Windows.Forms.Label();
-            //this.dgBusqueda = new Controles.datos.gesGrid();
-<<<<<<< HEAD
->>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
-=======
->>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
             this.dgBusqueda = new Controles.datos.grdGrillaAdmin();
             this.gbBotones.SuspendLayout();
             this.gbBusqueda.SuspendLayout();
@@ -110,13 +96,7 @@
             this.gbBusqueda.TabIndex = 9;
             this.gbBusqueda.TabStop = false;
             this.gbBusqueda.Text = "Busqueda";
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.gbBusqueda.Enter += new System.EventHandler(this.gbBusqueda_Enter);
-=======
->>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
-=======
->>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
             // 
             // gpbGrupoEstado
             // 
@@ -213,25 +193,13 @@
             // 
             // txtFiltro
             // 
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.txtFiltro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtFiltro.ColorTextoVacio = System.Drawing.Color.Gray;
-=======
->>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
-=======
->>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
             this.txtFiltro.Location = new System.Drawing.Point(49, 74);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(140, 20);
             this.txtFiltro.TabIndex = 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.txtFiltro.TextoVacio = "<Descripcion>";
-=======
->>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
-=======
->>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // gbData
@@ -293,14 +261,6 @@
         internal System.Windows.Forms.GroupBox gbBusqueda;
         internal System.Windows.Forms.Label lblTitulo;
         private Controles.datos.cmbLista cmbBuscar;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        internal System.Windows.Forms.TextBox txtFiltro;
->>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
-=======
-        internal System.Windows.Forms.TextBox txtFiltro;
->>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
         private Controles.contenedores.gesGroup gbData;
         private System.Windows.Forms.Label lblCantidad;
         public Controles.datos.grdGrillaAdmin dgBusqueda;
@@ -312,12 +272,6 @@
         private Controles.labels.lblEtiqueta lblEFechaDesde;
         private System.Windows.Forms.DateTimePicker dtpFechaHasta;
         private System.Windows.Forms.DateTimePicker dtpFechaDesde;
-<<<<<<< HEAD
-<<<<<<< HEAD
         internal Controles.txtFiltro txtFiltro;
-=======
->>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
-=======
->>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
     }
 }
