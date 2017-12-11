@@ -1,7 +1,0 @@
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\GesRoles\bin\Debug\GesRoles.exe.config
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\GesRoles\bin\Debug\GesRoles.exe
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\GesRoles\bin\Debug\GesRoles.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\GesRoles\obj\Debug\GesRoles.Properties.Resources.resources
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\GesRoles\obj\Debug\GesRoles.csproj.GenerateResource.Cache
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\GesRoles\obj\Debug\GesRoles.exe
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\GesRoles\obj\Debug\GesRoles.pdb

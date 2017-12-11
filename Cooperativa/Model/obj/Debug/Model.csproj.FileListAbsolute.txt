@@ -1,0 +1,4 @@
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\bin\Debug\Model.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\bin\Debug\Model.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.pdb

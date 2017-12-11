@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FormsAuxiliares
 {
-    public partial class frmObservacionesAdmin:gesForm
+    public partial class frmObservaciones:gesForm
     {
         private Controles.contenedores.gpbGrupo gpbGrupo2;
         private Controles.contenedores.gpbGrupo gpbGrupo3;
@@ -24,21 +24,19 @@ namespace FormsAuxiliares
         private Controles.txtFiltro txtFiltro1;
         private Controles.datos.cmbLista cmbLista1;
         private Controles.labels.lblEtiqueta lblEtiqueta3;
-        private Controles.textBoxes.txtObservaciones txtObservaciones1;
         private Controles.contenedores.gpbGrupo gpbGrupo1;
 
-        public frmObservacionesAdmin() {
+        public frmObservaciones() {
             InitializeComponent();
         }
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmObservacionesAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmObservaciones));
             this.gpbGrupo1 = new Controles.contenedores.gpbGrupo();
             this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
             this.grdGrillaAdmin1 = new Controles.datos.grdGrillaAdmin();
             this.gpbGrupo2 = new Controles.contenedores.gpbGrupo();
-            this.txtObservaciones1 = new Controles.textBoxes.txtObservaciones();
             this.gpbGrupo3 = new Controles.contenedores.gpbGrupo();
             this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
             this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
@@ -54,7 +52,6 @@ namespace FormsAuxiliares
             this.btnNuevo1 = new Controles.buttons.btnNuevo();
             this.gpbGrupo1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdGrillaAdmin1)).BeginInit();
-            this.gpbGrupo2.SuspendLayout();
             this.gpbGrupo3.SuspendLayout();
             this.gpbGrupo4.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +71,7 @@ namespace FormsAuxiliares
             this.lblEtiqueta1.AutoSize = true;
             this.lblEtiqueta1.Location = new System.Drawing.Point(7, 218);
             this.lblEtiqueta1.Name = "lblEtiqueta1";
-            this.lblEtiqueta1.Size = new System.Drawing.Size(49, 13);
+            this.lblEtiqueta1.Size = new System.Drawing.Size(62, 13);
             this.lblEtiqueta1.TabIndex = 1;
             this.lblEtiqueta1.Text = "Cantidad";
             // 
@@ -89,22 +86,11 @@ namespace FormsAuxiliares
             // 
             // gpbGrupo2
             // 
-            this.gpbGrupo2.Controls.Add(this.txtObservaciones1);
             this.gpbGrupo2.Location = new System.Drawing.Point(12, 328);
             this.gpbGrupo2.Name = "gpbGrupo2";
             this.gpbGrupo2.Size = new System.Drawing.Size(643, 141);
             this.gpbGrupo2.TabIndex = 1;
             this.gpbGrupo2.TabStop = false;
-            this.gpbGrupo2.Text = "Detalle de la observacionseleccionada";
-            // 
-            // txtObservaciones1
-            // 
-            this.txtObservaciones1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtObservaciones1.Location = new System.Drawing.Point(10, 19);
-            this.txtObservaciones1.Multiline = true;
-            this.txtObservaciones1.Name = "txtObservaciones1";
-            this.txtObservaciones1.Size = new System.Drawing.Size(627, 102);
-            this.txtObservaciones1.TabIndex = 0;
             // 
             // gpbGrupo3
             // 
@@ -239,20 +225,18 @@ namespace FormsAuxiliares
             this.btnNuevo1.TabIndex = 0;
             this.btnNuevo1.UseVisualStyleBackColor = true;
             // 
-            // frmObservacionesAdmin
+            // frmObservaciones
             // 
             this.ClientSize = new System.Drawing.Size(667, 481);
             this.Controls.Add(this.gpbGrupo4);
             this.Controls.Add(this.gpbGrupo3);
             this.Controls.Add(this.gpbGrupo2);
             this.Controls.Add(this.gpbGrupo1);
-            this.Name = "frmObservacionesAdmin";
+            this.Name = "frmObservaciones";
             this.Text = "[OBSERVACIONES]";
             this.gpbGrupo1.ResumeLayout(false);
             this.gpbGrupo1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdGrillaAdmin1)).EndInit();
-            this.gpbGrupo2.ResumeLayout(false);
-            this.gpbGrupo2.PerformLayout();
             this.gpbGrupo3.ResumeLayout(false);
             this.gpbGrupo3.PerformLayout();
             this.gpbGrupo4.ResumeLayout(false);

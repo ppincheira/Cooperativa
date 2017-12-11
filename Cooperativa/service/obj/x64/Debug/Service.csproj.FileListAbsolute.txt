@@ -1,5 +1,0 @@
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\bin\x64\Debug\Service.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\bin\x64\Debug\Service.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\obj\x64\Debug\Service.csprojResolveAssemblyReference.cache
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\obj\x64\Debug\Service.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\obj\x64\Debug\Service.pdb
