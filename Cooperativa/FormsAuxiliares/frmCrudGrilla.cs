@@ -1,25 +1,23 @@
 ﻿using System;
-using AppProcesos.formsAuxiliares.frmCrudGrilla;
-using Controles.datos;
-
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace FormsAuxiliares
 {
-    public partial class frmCrudGrilla : gesForm, IVistaCrudGrilla
+    public partial class frmCrudGrilla:gesForm
     {
-
-        private UICrudGrilla _oCrudGrilla;
-        private Controles.contenedores.gpbGrupo gpbGrupo1;
-        private Controles.txtFiltro txtFiltro1;
-        private Controles.datos.cmbLista cmbLista1;
-        private Controles.labels.lblEtiqueta lblEtiqueta3;
-        private Controles.labels.lblEtiqueta lblEtiqueta2;
         private Controles.contenedores.gpbGrupo gpbGrupo2;
-        private Controles.datos.grdGrillaEdit grdGrillaEdit1;
         private Controles.contenedores.gpbGrupo gpbGrupo3;
         private Controles.buttons.btnCancelar btnCancelar1;
         private Controles.buttons.btnAceptar btnAceptar1;
-        private Controles.labels.lblEtiqueta lblCantidad;
+        private Controles.labels.lblEtiqueta lblEtiqueta3;
+        private Controles.labels.lblEtiqueta lblEtiqueta2;
+        private Controles.txtFiltro txtFiltro1;
+        private Controles.datos.cmbLista cmbLista1;
+        private Controles.labels.lblEtiqueta lblEtiqueta1;
+        private Controles.datos.grdGrillaEdit grdGrillaEdit1;
         private Controles.contenedores.gpbGrupo gpbGrupoEstado;
         private Controles.datos.cmbLista cmbEstado;
         private Controles.labels.lblEtiqueta lblEEstado;
@@ -28,94 +26,12 @@ namespace FormsAuxiliares
         private System.Windows.Forms.DateTimePicker dtpFechaDesde;
         private Controles.labels.lblEtiqueta lblEFechaHasta;
         private Controles.labels.lblEtiqueta lblEFechaDesde;
-        #region << PROPIEDADES >>
-        private string _Tabla;
-        #endregion
-        #region Implementation of IVistaCrudGrilla
-        public Boolean grupoEstado
-        {
-            get { return this.gpbGrupoEstado.Visible; }
-            set { this.gpbGrupoEstado.Visible = value; }
-        }
-        public Boolean grupoFecha
-        {
-            get { return this.gpbGrupoFecha.Visible; }
-            set { this.gpbGrupoFecha.Visible = value; }
-        }
+        private Controles.contenedores.gpbGrupo gpbGrupo1;
 
-        public grdGrillaEdit grilla
-        {
-            get { return this.grdGrillaEdit1; }
-            set { this.grdGrillaEdit1 = value; }
-        }
-        public DateTime fechaDesde
-        {
-            get { return this.dtpFechaDesde.Value; }
-            set { this.dtpFechaDesde.Value = value; }
-        }
-        public DateTime fechaHasta
-        {
-            get { return this.dtpFechaHasta.Value; }
-            set { this.dtpFechaHasta.Value = value; }
-        }
-        public cmbLista comboBuscar
-        {
-            get { return this.cmbLista1; }
-            set { this.cmbLista1 = value; }
-        }
-        public string filtro
-        {
-            get { return this.txtFiltro1.Text; }
-            set { this.txtFiltro1.Text = value; }
-        }
-        public cmbLista comboEstado
-        {
-            get { return this.cmbEstado; }
-            set { this.cmbEstado = value; }
-        }
-        public string cantidad
-        {
-
-            set { this.lblCantidad.Text = value; }
-        }
-
-        #endregion
-        #region << EVENTOS >>
-
-        public frmCrudGrilla(string tabla)
-        {
-            _Tabla = tabla;
-            InitializeComponent();
-            _oCrudGrilla = new UICrudGrilla(this);
-        }
-        private void txtFiltro1_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                _oCrudGrilla.CargarGrilla(_Tabla);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+        public frmCrudGrilla() {
 
         }
 
-
-        private void frmCrudGrilla_Load(object sender, EventArgs e)
-        {
-            try
-            {
-
-                _oCrudGrilla.Inicializar(_Tabla);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        #endregion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCrudGrilla));
@@ -126,7 +42,7 @@ namespace FormsAuxiliares
             this.cmbLista1 = new Controles.datos.cmbLista();
             this.gpbGrupo2 = new Controles.contenedores.gpbGrupo();
             this.grdGrillaEdit1 = new Controles.datos.grdGrillaEdit();
-            this.lblCantidad = new Controles.labels.lblEtiqueta();
+            this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
             this.gpbGrupo3 = new Controles.contenedores.gpbGrupo();
             this.btnCancelar1 = new Controles.buttons.btnCancelar();
             this.btnAceptar1 = new Controles.buttons.btnAceptar();
@@ -157,14 +73,13 @@ namespace FormsAuxiliares
             this.gpbGrupo1.Size = new System.Drawing.Size(334, 99);
             this.gpbGrupo1.TabIndex = 0;
             this.gpbGrupo1.TabStop = false;
-            this.gpbGrupo1.Enter += new System.EventHandler(this.gpbGrupo1_Enter);
             // 
             // lblEtiqueta3
             // 
             this.lblEtiqueta3.AutoSize = true;
             this.lblEtiqueta3.Location = new System.Drawing.Point(7, 61);
             this.lblEtiqueta3.Name = "lblEtiqueta3";
-            this.lblEtiqueta3.Size = new System.Drawing.Size(45, 13);
+            this.lblEtiqueta3.Size = new System.Drawing.Size(66, 20);
             this.lblEtiqueta3.TabIndex = 7;
             this.lblEtiqueta3.Text = "FILTRO";
             // 
@@ -173,7 +88,7 @@ namespace FormsAuxiliares
             this.lblEtiqueta2.AutoSize = true;
             this.lblEtiqueta2.Location = new System.Drawing.Point(6, 23);
             this.lblEtiqueta2.Name = "lblEtiqueta2";
-            this.lblEtiqueta2.Size = new System.Drawing.Size(78, 13);
+            this.lblEtiqueta2.Size = new System.Drawing.Size(115, 20);
             this.lblEtiqueta2.TabIndex = 6;
             this.lblEtiqueta2.Text = "FILTRAR POR";
             // 
@@ -183,7 +98,7 @@ namespace FormsAuxiliares
             this.txtFiltro1.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtFiltro1.Location = new System.Drawing.Point(127, 58);
             this.txtFiltro1.Name = "txtFiltro1";
-            this.txtFiltro1.Size = new System.Drawing.Size(175, 20);
+            this.txtFiltro1.Size = new System.Drawing.Size(175, 26);
             this.txtFiltro1.TabIndex = 5;
             this.txtFiltro1.TextoVacio = "<Descripcion>";
             // 
@@ -192,13 +107,13 @@ namespace FormsAuxiliares
             this.cmbLista1.FormattingEnabled = true;
             this.cmbLista1.Location = new System.Drawing.Point(127, 15);
             this.cmbLista1.Name = "cmbLista1";
-            this.cmbLista1.Size = new System.Drawing.Size(175, 21);
+            this.cmbLista1.Size = new System.Drawing.Size(175, 28);
             this.cmbLista1.TabIndex = 4;
             // 
             // gpbGrupo2
             // 
             this.gpbGrupo2.Controls.Add(this.grdGrillaEdit1);
-            this.gpbGrupo2.Controls.Add(this.lblCantidad);
+            this.gpbGrupo2.Controls.Add(this.lblEtiqueta1);
             this.gpbGrupo2.Location = new System.Drawing.Point(12, 111);
             this.gpbGrupo2.Name = "gpbGrupo2";
             this.gpbGrupo2.Size = new System.Drawing.Size(748, 831);
@@ -214,14 +129,14 @@ namespace FormsAuxiliares
             this.grdGrillaEdit1.Size = new System.Drawing.Size(736, 763);
             this.grdGrillaEdit1.TabIndex = 3;
             // 
-            // lblCantidad
+            // lblEtiqueta1
             // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(7, 791);
-            this.lblCantidad.Name = "lblEtiqueta1";
-            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
-            this.lblCantidad.TabIndex = 2;
-            this.lblCantidad.Text = "Cantidad";
+            this.lblEtiqueta1.AutoSize = true;
+            this.lblEtiqueta1.Location = new System.Drawing.Point(7, 791);
+            this.lblEtiqueta1.Name = "lblEtiqueta1";
+            this.lblEtiqueta1.Size = new System.Drawing.Size(73, 20);
+            this.lblEtiqueta1.TabIndex = 2;
+            this.lblEtiqueta1.Text = "Cantidad";
             // 
             // gpbGrupo3
             // 
@@ -267,7 +182,7 @@ namespace FormsAuxiliares
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(6, 54);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(164, 21);
+            this.cmbEstado.Size = new System.Drawing.Size(164, 28);
             this.cmbEstado.TabIndex = 8;
             // 
             // lblEEstado
@@ -275,7 +190,7 @@ namespace FormsAuxiliares
             this.lblEEstado.AutoSize = true;
             this.lblEEstado.Location = new System.Drawing.Point(6, 16);
             this.lblEEstado.Name = "lblEEstado";
-            this.lblEEstado.Size = new System.Drawing.Size(40, 13);
+            this.lblEEstado.Size = new System.Drawing.Size(60, 20);
             this.lblEEstado.TabIndex = 8;
             this.lblEEstado.Text = "Estado";
             // 
@@ -291,14 +206,13 @@ namespace FormsAuxiliares
             this.gpbGrupoFecha.TabIndex = 8;
             this.gpbGrupoFecha.TabStop = false;
             this.gpbGrupoFecha.Visible = false;
-            this.gpbGrupoFecha.Enter += new System.EventHandler(this.gpbGrupoFecha_Enter);
             // 
             // dtpFechaHasta
             // 
             this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaHasta.Location = new System.Drawing.Point(117, 55);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
-            this.dtpFechaHasta.Size = new System.Drawing.Size(96, 20);
+            this.dtpFechaHasta.Size = new System.Drawing.Size(96, 26);
             this.dtpFechaHasta.TabIndex = 9;
             // 
             // dtpFechaDesde
@@ -306,7 +220,7 @@ namespace FormsAuxiliares
             this.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaDesde.Location = new System.Drawing.Point(6, 55);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
-            this.dtpFechaDesde.Size = new System.Drawing.Size(96, 20);
+            this.dtpFechaDesde.Size = new System.Drawing.Size(96, 26);
             this.dtpFechaDesde.TabIndex = 8;
             // 
             // lblEFechaHasta
@@ -314,7 +228,7 @@ namespace FormsAuxiliares
             this.lblEFechaHasta.AutoSize = true;
             this.lblEFechaHasta.Location = new System.Drawing.Point(114, 16);
             this.lblEFechaHasta.Name = "lblEFechaHasta";
-            this.lblEFechaHasta.Size = new System.Drawing.Size(68, 13);
+            this.lblEFechaHasta.Size = new System.Drawing.Size(101, 20);
             this.lblEFechaHasta.TabIndex = 7;
             this.lblEFechaHasta.Text = "Fecha Hasta";
             // 
@@ -323,20 +237,19 @@ namespace FormsAuxiliares
             this.lblEFechaDesde.AutoSize = true;
             this.lblEFechaDesde.Location = new System.Drawing.Point(6, 16);
             this.lblEFechaDesde.Name = "lblEFechaDesde";
-            this.lblEFechaDesde.Size = new System.Drawing.Size(71, 13);
+            this.lblEFechaDesde.Size = new System.Drawing.Size(105, 20);
             this.lblEFechaDesde.TabIndex = 6;
             this.lblEFechaDesde.Text = "Fecha Desde";
             // 
             // frmCrudGrilla
             // 
-            this.ClientSize = new System.Drawing.Size(776, 749);
+            this.ClientSize = new System.Drawing.Size(776, 1044);
             this.Controls.Add(this.gpbGrupoEstado);
             this.Controls.Add(this.gpbGrupoFecha);
             this.Controls.Add(this.gpbGrupo3);
             this.Controls.Add(this.gpbGrupo2);
             this.Controls.Add(this.gpbGrupo1);
             this.Name = "frmCrudGrilla";
-            this.Load += new System.EventHandler(this.frmCrudGrilla_Load);
             this.gpbGrupo1.ResumeLayout(false);
             this.gpbGrupo1.PerformLayout();
             this.gpbGrupo2.ResumeLayout(false);
@@ -350,16 +263,5 @@ namespace FormsAuxiliares
             this.ResumeLayout(false);
 
         }
-
-        private void gpbGrupo1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gpbGrupoFecha_Enter(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
