@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
 using Business;
-using Model;
-using Controles;
 namespace UI
 {
     public partial class Form1 : Form
@@ -67,13 +57,20 @@ namespace UI
             frmbus.ShowDialog();
 
           
-
+  
         }
 
         private void btnPersonalizado3_Click(object sender, EventArgs e)
         {
             FormsAuxiliares.frmObservaciones frmObs = new FormsAuxiliares.frmObservaciones();
             frmObs.Show();
+        }
+
+        private void buttonCrudGrilla_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("AREAS");
+            frmbus.ShowDialog();
+
         }
     }
 }

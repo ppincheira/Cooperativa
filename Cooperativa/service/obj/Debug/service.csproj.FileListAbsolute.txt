@@ -12,14 +12,6 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\bin\Debug\Controle
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\obj\Debug\Service.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\service\obj\Debug\Service.pdb
-C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Service.dll
-C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Service.pdb
-C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Controles.dll
-C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Controles.pdb
-C:\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.csprojResolveAssemblyReference.cache
-C:\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.csproj.CoreCompileInputs.cache
-C:\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.dll
-C:\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Business.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Model.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Implement.dll
@@ -27,3 +19,17 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\De
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Business.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Model.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Implement.pdb
+C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Service.dll
+C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Service.pdb
+C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Business.dll
+C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Controles.dll
+C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Model.dll
+C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Implement.dll
+C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Business.pdb
+C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Controles.pdb
+C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Model.pdb
+C:\GitHub\Cooperativa\Cooperativa\service\bin\Debug\Implement.pdb
+C:\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+C:\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.dll
+C:\GitHub\Cooperativa\Cooperativa\service\obj\Debug\Service.pdb

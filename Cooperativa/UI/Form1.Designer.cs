@@ -37,6 +37,7 @@
             this.dgvTest = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.btnPersonalizado3 = new Controles.btnPersonalizado();
+            this.buttonCrudGrilla = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,12 +128,23 @@
             this.btnPersonalizado3.UseVisualStyleBackColor = true;
             this.btnPersonalizado3.Click += new System.EventHandler(this.btnPersonalizado3_Click);
             // 
+            // buttonCrudGrilla
+            // 
+            this.buttonCrudGrilla.Location = new System.Drawing.Point(372, 365);
+            this.buttonCrudGrilla.Name = "buttonCrudGrilla";
+            this.buttonCrudGrilla.Size = new System.Drawing.Size(91, 51);
+            this.buttonCrudGrilla.TabIndex = 8;
+            this.buttonCrudGrilla.Text = "CrudGrilla";
+            this.buttonCrudGrilla.UseVisualStyleBackColor = true;
+            this.buttonCrudGrilla.Click += new System.EventHandler(this.buttonCrudGrilla_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 468);
             this.Controls.Add(this.btnPersonalizado3);
+            this.Controls.Add(this.buttonCrudGrilla);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvTest);
             this.Controls.Add(this.btnPersonalizado2);
@@ -161,6 +173,7 @@
         private System.Windows.Forms.DataGridView dgvTest;
         private System.Windows.Forms.Button button1;
         private Controles.btnPersonalizado btnPersonalizado3;
+        private System.Windows.Forms.Button buttonCrudGrilla;
     }
 }
 

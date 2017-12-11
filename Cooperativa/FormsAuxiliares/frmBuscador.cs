@@ -144,13 +144,17 @@ namespace FormsAuxiliares
         {
 
         }
+
+
+
+
+
         #endregion
 
+        private void gbBusqueda_Enter(object sender, EventArgs e)
+        {
 
-
-
-
-
+        }
     }
 
 
