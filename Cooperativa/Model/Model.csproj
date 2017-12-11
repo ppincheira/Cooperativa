@@ -93,6 +93,7 @@
     <Compile Include="DomiciliosEntidades.cs" />
     <Compile Include="Dominios.cs" />
     <Compile Include="Empresas.cs" />
+    <Compile Include="Enumeration.cs" />
     <Compile Include="Estados.cs" />
     <Compile Include="Fabricantes.cs" />
     <Compile Include="Funcionalidades.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Observaciones.cs" />
     <Compile Include="Paises.cs" />
     <Compile Include="ParametrosGenerales.cs" />
+    <Compile Include="PermisosFoms.cs" />
     <Compile Include="Personas.cs" />
     <Compile Include="PersonasSectores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

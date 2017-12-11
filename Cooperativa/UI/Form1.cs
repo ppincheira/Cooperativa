@@ -40,7 +40,8 @@ namespace UI
 
         private void btnPersonalizado2_Click(object sender, EventArgs e)
         {
-            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("PERB");
+            PermisosFoms oPermiso = new PermisosFoms("2", "3", "0", "4", "0"); 
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("PERB", oPermiso);
             frmbus.ShowDialog();
 
         }
@@ -62,7 +63,7 @@ namespace UI
 
         private void btnPersonalizado3_Click(object sender, EventArgs e)
         {
-            FormsAuxiliares.frmObservaciones frmObs = new FormsAuxiliares.frmObservaciones();
+            FormsAuxiliares.frmObservacionesAdmin frmObs = new FormsAuxiliares.frmObservacionesAdmin();
             frmObs.Show();
         }
 
