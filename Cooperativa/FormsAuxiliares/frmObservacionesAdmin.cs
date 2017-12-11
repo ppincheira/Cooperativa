@@ -74,7 +74,7 @@ namespace FormsAuxiliares
             this.lblEtiqueta1.AutoSize = true;
             this.lblEtiqueta1.Location = new System.Drawing.Point(7, 218);
             this.lblEtiqueta1.Name = "lblEtiqueta1";
-            this.lblEtiqueta1.Size = new System.Drawing.Size(49, 13);
+            this.lblEtiqueta1.Size = new System.Drawing.Size(64, 17);
             this.lblEtiqueta1.TabIndex = 1;
             this.lblEtiqueta1.Text = "Cantidad";
             // 
@@ -123,7 +123,7 @@ namespace FormsAuxiliares
             this.lblEtiqueta3.AutoSize = true;
             this.lblEtiqueta3.Location = new System.Drawing.Point(28, 50);
             this.lblEtiqueta3.Name = "lblEtiqueta3";
-            this.lblEtiqueta3.Size = new System.Drawing.Size(45, 13);
+            this.lblEtiqueta3.Size = new System.Drawing.Size(57, 17);
             this.lblEtiqueta3.TabIndex = 3;
             this.lblEtiqueta3.Text = "FILTRO";
             // 
@@ -132,7 +132,7 @@ namespace FormsAuxiliares
             this.lblEtiqueta2.AutoSize = true;
             this.lblEtiqueta2.Location = new System.Drawing.Point(27, 26);
             this.lblEtiqueta2.Name = "lblEtiqueta2";
-            this.lblEtiqueta2.Size = new System.Drawing.Size(78, 13);
+            this.lblEtiqueta2.Size = new System.Drawing.Size(99, 17);
             this.lblEtiqueta2.TabIndex = 2;
             this.lblEtiqueta2.Text = "FILTRAR POR";
             // 
@@ -142,7 +142,7 @@ namespace FormsAuxiliares
             this.txtFiltro1.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtFiltro1.Location = new System.Drawing.Point(120, 47);
             this.txtFiltro1.Name = "txtFiltro1";
-            this.txtFiltro1.Size = new System.Drawing.Size(175, 20);
+            this.txtFiltro1.Size = new System.Drawing.Size(175, 22);
             this.txtFiltro1.TabIndex = 1;
             this.txtFiltro1.TextoVacio = "<Descripcion>";
             // 
@@ -151,7 +151,7 @@ namespace FormsAuxiliares
             this.cmbLista1.FormattingEnabled = true;
             this.cmbLista1.Location = new System.Drawing.Point(120, 19);
             this.cmbLista1.Name = "cmbLista1";
-            this.cmbLista1.Size = new System.Drawing.Size(175, 21);
+            this.cmbLista1.Size = new System.Drawing.Size(175, 24);
             this.cmbLista1.TabIndex = 0;
             // 
             // gpbGrupo4
@@ -248,6 +248,7 @@ namespace FormsAuxiliares
             this.Controls.Add(this.gpbGrupo1);
             this.Name = "frmObservacionesAdmin";
             this.Text = "[OBSERVACIONES]";
+            this.Load += new System.EventHandler(this.frmObservacionesAdmin_Load);
             this.gpbGrupo1.ResumeLayout(false);
             this.gpbGrupo1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdGrillaAdmin1)).EndInit();
@@ -257,6 +258,11 @@ namespace FormsAuxiliares
             this.gpbGrupo3.PerformLayout();
             this.gpbGrupo4.ResumeLayout(false);
             this.ResumeLayout(false);
+
+        }
+
+        private void frmObservacionesAdmin_Load(object sender, EventArgs e)
+        {
 
         }
     }

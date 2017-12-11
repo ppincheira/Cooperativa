@@ -71,7 +71,7 @@ namespace UI
 
         private void buttonCrudGrilla_Click(object sender, EventArgs e)
         {
-            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("AREAS");
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla();
             frmbus.ShowDialog();
 
         }

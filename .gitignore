@@ -70,12 +70,9 @@ Cooperativa/service/obj/Debug/Service.dll
 Cooperativa/service/bin/Debug/Service.pdb
 Cooperativa/service/obj/Debug/Service.pdb
 Cooperativa/FormsAuxiliares/obj/Debug/CoreCompileInputs.cache
-Cooperativa/Business/obj/Debug/*.cache
-Cooperativa/gesBilling/obj/Debug/*.cache
 Cooperativa/gesBilling/obj/Debug/gesBilling.csproj.GenerateResource.Cache
 Cooperativa/gesBilling/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 Cooperativa/gesBilling/obj/Debug/gesBilling.csproj.GenerateResource.Cache
-
 Cooperativa/Business/bin/Debug/Business.dll
 Cooperativa/Business/bin/Debug/Business.pdb
 Cooperativa/Business/bin/Debug/Implement.dll
@@ -149,3 +146,4 @@ Cooperativa/Controles/obj/Debug/Controles.dll
 Cooperativa/Controles/bin/Debug/Controles.pdb
 Cooperativa/Controles/bin/Debug/Controles.dll
 Cooperativa/AppProcesos/obj/Debug/AppProcesos.csprojResolveAssemblyReference.cache
+Cooperativa/Business/bin/Debug/Business.dll

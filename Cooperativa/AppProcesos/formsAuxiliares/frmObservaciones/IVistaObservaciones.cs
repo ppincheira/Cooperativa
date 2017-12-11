@@ -1,13 +1,14 @@
 ﻿using Controles.datos;
-using Controles.contenedores;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace AppProcesos.formsAuxiliares.buscador
+namespace AppProcesos.formsAuxiliares.frmObservaciones
 {
-    public interface IVistaBuscador
+    public interface IVistaObservaciones
     {
-        Boolean grupoFecha { get; set; }
-        Boolean grupoEstado { get; set; }
         grdGrillaAdmin grilla { get; set; }
         DateTime fechaDesde { get; set; }
         DateTime fechaHasta { get; set; }
@@ -15,6 +16,5 @@ namespace AppProcesos.formsAuxiliares.buscador
         string filtro { get; set; }
         cmbLista comboEstado { get; set; }
         string cantidad { set; }
-
     }
 }
