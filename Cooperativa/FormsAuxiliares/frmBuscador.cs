@@ -144,17 +144,25 @@ namespace FormsAuxiliares
         {
 
         }
+<<<<<<< HEAD
+=======
+        #endregion
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
 
 
 
 
 
+<<<<<<< HEAD
         #endregion
 
         private void gbBusqueda_Enter(object sender, EventArgs e)
         {
 
         }
+=======
+
+>>>>>>> parent of 45d0aa8... Merge branch 'master' of https://github.com/ppincheira/Cooperativa
     }
 
 
