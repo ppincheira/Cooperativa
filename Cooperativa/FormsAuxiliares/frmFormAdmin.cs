@@ -341,7 +341,7 @@ namespace FormsAuxiliares
             // dgBusqueda
             // 
             this.dgBusqueda.DataMember = "";
-            this.dgBusqueda.HeaderForeColor = System.Drawing.SystemColors.ControlText;
+            this.dgBusqueda.BackgroundColor = System.Drawing.SystemColors.ControlText;
             this.dgBusqueda.Location = new System.Drawing.Point(6, 19);
             this.dgBusqueda.Name = "dgBusqueda";
             this.dgBusqueda.Size = new System.Drawing.Size(913, 312);

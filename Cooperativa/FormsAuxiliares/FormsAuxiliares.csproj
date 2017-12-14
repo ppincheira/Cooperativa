@@ -54,9 +54,10 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -101,6 +102,12 @@
     <Compile Include="frmObservacionesAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmObservacionesCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmObservacionesCrud.Designer.cs">
+      <DependentUpon>frmObservacionesCrud.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmObservacionesAdmin.resx">
       <DependentUpon>frmObservacionesAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmObservacionesCrud.resx">
+      <DependentUpon>frmObservacionesCrud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

@@ -130,7 +130,7 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\M
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Implement.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\AppProcesos.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Service.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.Form1.resources
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.frmLogin.resources

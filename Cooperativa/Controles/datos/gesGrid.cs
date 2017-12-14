@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Controles.datos
 {
-    public class gesGrid: System.Windows.Forms.DataGrid
+    public class gesGrid: System.Windows.Forms.DataGridView
     {
     }
 }

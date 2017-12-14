@@ -70,6 +70,9 @@
     <Compile Include="formsAuxiliares\frmLogin\IVistaLogin.cs" />
     <Compile Include="formsAuxiliares\frmLogin\UILogin.cs" />
     <Compile Include="formsAuxiliares\frmObservaciones\IVistaObservaciones.cs" />
+    <Compile Include="formsAuxiliares\frmObservaciones\IVistaObservacionesCrud.cs" />
+    <Compile Include="formsAuxiliares\frmObservaciones\UIObservaciones.cs" />
+    <Compile Include="formsAuxiliares\frmObservaciones\UIObservacionesCrud.cs" />
     <Compile Include="formsAuxiliares\principal\IVistaPrincipal.cs" />
     <Compile Include="formsAuxiliares\principal\UIPrincipal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

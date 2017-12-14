@@ -24,10 +24,12 @@ namespace Implement
                     cn.Open();
                     // Clave Secuencia OBS_NUMERO
                     ds = new DataSet();
-                    cmd = new OracleCommand("insert into Observaciones(COT_CLAVE_BUSQUEDA, " +
-                        "OBS_DETALLE, OBS_FECHA_CARGA, TAB_CODIGO, TOB_CODIGO) " +
-                        "values('" + oObs.CotClaveBusqueda + "', '" + oObs.ObsDetalle + "', " + 
-                        oObs.ObsFechaCarga + ",'"+ oObs.TabCodigo + "','"+ oObs.TobCodigo +"')", cn);
+                    cmd = new OracleCommand("insert into Observaciones( " +
+                        "OBS_CODIGO_REGISTRO,OBS_DETALLE, OBS_FECHA_ALTA, TOB_CODIGO) " +
+                        "values('" + oObs.ObsCodigoRegistro + "'," +
+                        "'" +oObs.ObsDetalle + "'," +
+                        "'"+ oObs.ObsFechaAlta + "'," +
+                        ""+ oObs.TobCodigo +")", cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
                     cn.Close();
@@ -48,12 +50,12 @@ namespace Implement
                     cn.Open();
                     ds = new DataSet();
                     cmd = new OracleCommand("update Observaciones " +
-                        "SET COT_CLAVE_BUSQUEDA='" + oObs.CotClaveBusqueda + "'," +
+                        "SET OBS_CODIGO_REGISTRO='" + oObs.ObsCodigoRegistro + "'," +
                         "OBS_DETALLE='" + oObs.ObsDetalle +"', "+
-                        "OBS_FECHA_CARGA=" + oObs.ObsFechaCarga +", "+
-                        "TAB_CODIGO='" + oObs.TabCodigo +"', "+
-                        "TOB_CODIGO='" + oObs.TobCodigo +"' "+
-                        "WHERE OBS_NUMERO=" + oObs.ObsNumero, cn);
+                        "OBS_FECHA_ALTA='" + oObs.ObsFechaAlta +"', "+
+                        "TOB_CODIGO='" + oObs.TobCodigo +"', "+
+                        "OBS_DATO_ADJUNTO='"+oObs.ObsDatoAdjunto+"' "+ 
+                        "WHERE OBS_CODIGO=" + oObs.ObsCodigo, cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
                     cn.Close();
@@ -76,7 +78,7 @@ namespace Implement
                     cn.Open();
                     ds = new DataSet();
                     cmd = new OracleCommand("DELETE Observaciones " +
-                          "WHERE OBS_NUMERO=" + Id, cn);
+                          "WHERE OBS_CODIGO=" + Id, cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
                     cn.Close();
@@ -99,7 +101,7 @@ namespace Implement
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
                     string sqlSelect = "select * from Observaciones " +
-                        "WHERE OBS_NUMERO=" + Id;
+                        "WHERE OBS_CODIGO=" + Id;
                     cmd = new OracleCommand(sqlSelect, cn);
                     adapter = new OracleDataAdapter(cmd);
                     cmd.ExecuteNonQuery();
@@ -155,19 +157,51 @@ namespace Implement
                 }
             }
 
-            private Observaciones CargarObservaciones(DataRow dr)
+        public DataTable ObservacionesGetByFilter( string tabCodigo ,int tobCodigo, string obsCodigoRegistro,DateTime fechaDesde, DateTime fechaHasta)
+        {
+           
+            try
+            {
+
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "SELECT O.* FROM OBSERVACIONES O "+
+                " INNER JOIN TIPOS_OBSERVACIONES_TABLAS TOT ON O.TOB_CODIGO = TOT.TOB_CODIGO " +
+                " WHERE TOT.TAB_CODIGO='"+tabCodigo+"' " +
+                " AND O.TOB_CODIGO="+tobCodigo.ToString() +
+                " AND O.OBS_CODIGO_REGISTRO='"+obsCodigoRegistro +"'" +
+                " AND O.OBS_FECHA_ALTA>='"+fechaDesde.ToString("dd/MM/yyyy") + "' AND O.OBS_FECHA_ALTA <='"+ fechaHasta.ToString("dd/MM/yyyy") +"'" +
+                "  ORDER BY O.OBS_FECHA_ALTA;";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+
+
+                DataTable dt;
+                return dt = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private Observaciones CargarObservaciones(DataRow dr)
             {
                 try
                 {
                     Observaciones oObjeto = new Observaciones();
-                    oObjeto.ObsNumero = long.Parse(dr["OBS_NUMERO"].ToString());
-                    oObjeto.CotClaveBusqueda = dr["COT_CLAVE_BUSQUEDA"].ToString();
+                    oObjeto.ObsCodigo = int.Parse(dr["OBS_CODIGO"].ToString());
+                    oObjeto.ObsCodigoRegistro = dr["OBS_CODIGO_REGISTRO"].ToString();
                     oObjeto.ObsDetalle = dr["OBS_DETALLE"].ToString();
-                    if (dr["OBS_FECHA_CARGA"].ToString() != "")
-                        oObjeto.ObsFechaCarga = DateTime.Parse(dr["OBS_FECHA_CARGA"].ToString());
-                    oObjeto.TabCodigo = dr["TAB_CODIGO"].ToString();
-                    oObjeto.TobCodigo = dr["TOB_CODIGO"].ToString();
-                    return oObjeto;
+                    if (dr["OBS_FECHA_ALTA"].ToString() != "")
+                        oObjeto.ObsFechaAlta = DateTime.Parse(dr["OBS_FECHA_ALTA"].ToString());
+                    oObjeto.TobCodigo = int.Parse(dr["TOB_CODIGO"].ToString());
+                    oObjeto.ObsDatoAdjunto= dr["OBS_DATO_ADJUNTO"].ToString(); 
+                return oObjeto;
                 }
                 catch (Exception ex)
                 {
@@ -175,21 +209,7 @@ namespace Implement
                 }
             }
 
-            //public DataTable ObservacionesGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
-            //{
-            //    try
-            //    {
-            //        DataTable DTPartes;
-            //        DataSet DSPartes = SqlHelper.ExecuteDataset(SqlImplHelper.getConnectionString(), "ObservacionesGetAllByFilter", Periodo, Empresa, IdPresentacion,Tipo);
-            //        DTPartes = DSPartes.Tables[0];
-            //        DSPartes.Tables.RemoveAt(0);
-            //        return DTPartes;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        throw ex;
-            //    }
-            //}
+           
             #endregion
 
         }

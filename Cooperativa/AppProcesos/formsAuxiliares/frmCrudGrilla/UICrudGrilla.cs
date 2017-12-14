@@ -91,7 +91,7 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
 
             TablasBus oTablasBus = new TablasBus();
             _vista.grilla.DataSource = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo, _filtroCampos, _filtroValores);
-            _vista.cantidad = "Se encontraron " + _vista.grilla.VisibleRowCount.ToString() + " registros";
+            _vista.cantidad = "Se encontraron " + _vista.grilla.RowCount.ToString() + " registros";
 
         }
 

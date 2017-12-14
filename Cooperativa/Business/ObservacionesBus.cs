@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Implement;
 using Model;
+using System;
+using System.Data;
 
 namespace Business
 {
@@ -35,5 +37,13 @@ namespace Business
             ObservacionesImpl oObservacionesImpl = new ObservacionesImpl();
             return oObservacionesImpl.ObservacionesGetAll();
         }
-    }
+
+        public DataTable ObservacionesGetByFilter(string tabCodigo, int tobCodigo, string obsCodigoRegistro, DateTime fechaDesde, DateTime fechaHasta)
+        {
+            ObservacionesImpl oObservacionesImpl = new ObservacionesImpl();
+            return oObservacionesImpl.ObservacionesGetByFilter(tabCodigo, tobCodigo, obsCodigoRegistro, fechaDesde, fechaHasta);
+
+        }
+
+        }
 }

@@ -6,7 +6,6 @@ namespace Model
 
     public class DetallesModelosMedidores {
         public DetallesModelosMedidores() {
-//			medidores = new List<Medidore>();
         }
         public virtual string DmeCodigo { get; set; }
         public virtual string DmeDescripcion { get; set; }

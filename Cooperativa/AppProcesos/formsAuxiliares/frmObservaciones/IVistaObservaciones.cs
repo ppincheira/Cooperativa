@@ -9,12 +9,15 @@ namespace AppProcesos.formsAuxiliares.frmObservaciones
 {
     public interface IVistaObservaciones
     {
+
+        string tabCodigo { get; set; }
+        int tobCodigo { get; set; }
+        string obsCodigoRegistro { get; set; }
         grdGrillaAdmin grilla { get; set; }
         DateTime fechaDesde { get; set; }
         DateTime fechaHasta { get; set; }
-        cmbLista comboBuscar { get; set; }
-        string filtro { get; set; }
-        cmbLista comboEstado { get; set; }
         string cantidad { set; }
+        string detalle { set; }
+
     }
 }

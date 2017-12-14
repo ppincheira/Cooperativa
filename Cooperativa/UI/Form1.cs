@@ -75,5 +75,11 @@ namespace UI
             frmbus.ShowDialog();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmObservacionesAdmin frmobs = new FormsAuxiliares.frmObservacionesAdmin("PERS",1,"1");
+            frmobs.ShowDialog();
+        }
     }
 }

@@ -39,7 +39,6 @@ namespace AppProcesos.formsAuxiliares.buscador
             List<DetallesColumnasTablas> ListDetalle = oDetalleBus.DetallesColumnasTablasGetByCodigo(tabla);
             foreach (DetallesColumnasTablas oDetalle in ListDetalle)
             {
-
                 _Campo = _Campo + ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
                 if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl != "FECHA") && oDetalle.DctTipoControl != "ESTADO")
                 {
@@ -62,7 +61,6 @@ namespace AppProcesos.formsAuxiliares.buscador
                     _filtroValores = _filtroValores +_vista.comboEstado.Text + "&";
                 }
             }
-
             oUtil.CargarCombo( _vista.comboBuscar, _dtCombo, "DctColumna", "DctDescripcion");
             if (_Campo.Length > 0)
                 _Campo = _Campo.Substring(0, _Campo.Length - 1);
@@ -89,7 +87,7 @@ namespace AppProcesos.formsAuxiliares.buscador
 
             TablasBus oTablasBus = new TablasBus();
             _vista.grilla.DataSource = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo, _filtroCampos, _filtroValores);
-            _vista.cantidad= "Se encontraron "+ _vista.grilla.VisibleRowCount.ToString()+ " registros";
+            _vista.cantidad= "Se encontraron "+ _vista.grilla.RowCount.ToString()+ " registros";
 
         }
 

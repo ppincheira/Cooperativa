@@ -1,0 +1,42 @@
+﻿using Business;
+using Service;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AppProcesos.formsAuxiliares.frmObservaciones
+{
+    public class UIObservaciones
+    {
+
+
+        private IVistaObservaciones _vista;
+        Utility oUtil;
+
+    
+
+        public UIObservaciones(IVistaObservaciones vista)
+        {
+            _vista = vista;
+            oUtil = new Utility();
+        }
+
+        public void Inicializar()
+        {
+            ObservacionesBus oObsBus = new ObservacionesBus();
+            _vista.fechaDesde = DateTime.Now.AddYears(-1);
+            _vista.fechaHasta = DateTime.Now.AddDays(1);
+            _vista.cantidad = oUtil.CargarGrilla(_vista.grilla, oObsBus.ObservacionesGetByFilter(_vista.tabCodigo, _vista.tobCodigo, _vista.obsCodigoRegistro, _vista.fechaDesde, _vista.fechaHasta)).ToString();
+        }
+
+
+
+        public void CargarGrilla() {
+            ObservacionesBus oObsBus = new ObservacionesBus();
+            _vista.cantidad = oUtil.CargarGrilla(_vista.grilla, oObsBus.ObservacionesGetByFilter(_vista.tabCodigo, _vista.tobCodigo, _vista.obsCodigoRegistro, _vista.fechaDesde, _vista.fechaHasta)).ToString();
+        }
+    }
+}

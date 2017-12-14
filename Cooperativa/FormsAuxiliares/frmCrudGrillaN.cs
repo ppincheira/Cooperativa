@@ -204,7 +204,7 @@ namespace FormsAuxiliares
             // grdGrillaEdit1
             // 
             this.grdGrillaEdit1.DataMember = "";
-            this.grdGrillaEdit1.HeaderForeColor = System.Drawing.SystemColors.ControlText;
+            this.grdGrillaEdit1.BackgroundColor = System.Drawing.SystemColors.ControlText;
             this.grdGrillaEdit1.Location = new System.Drawing.Point(6, 25);
             this.grdGrillaEdit1.Name = "grdGrillaEdit1";
             this.grdGrillaEdit1.Size = new System.Drawing.Size(736, 763);
