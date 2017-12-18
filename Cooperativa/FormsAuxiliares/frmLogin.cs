@@ -10,6 +10,7 @@ using System.Data;
 using Controles;
 using Microsoft.VisualBasic.PowerPacks;
 using AppProcesos.formsAuxiliares.formLogin;
+using Controles.form;
 
 namespace FormsAuxiliares
 {

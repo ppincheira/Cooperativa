@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Controles;
 using AppProcesos.formsAuxiliares.principal;
+using Controles.form;
 
 namespace FormsAuxiliares
 {

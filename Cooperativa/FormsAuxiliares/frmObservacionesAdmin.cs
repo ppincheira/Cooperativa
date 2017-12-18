@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AppProcesos.formsAuxiliares.frmObservaciones;
 using Controles.datos;
-
+using Controles.form;
 namespace FormsAuxiliares
 {
     public partial class frmObservacionesAdmin:gesForm, IVistaObservaciones
@@ -325,7 +325,7 @@ namespace FormsAuxiliares
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmObservacionesCrud ofrmObs = new frmObservacionesCrud();
+            frmObservacionesCrud ofrmObs = new frmObservacionesCrud(0,_tobCodigo,_obsCodigoRegistro);
             ofrmObs.Show();
         }
     }

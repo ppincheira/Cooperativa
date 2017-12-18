@@ -11,7 +11,7 @@ using System.Globalization;
 using AppProcesos.formsAuxiliares.buscador;
 using Controles.datos;
 using Controles.contenedores;
-
+using Controles.form;
 namespace FormsAuxiliares
 {
     public partial class frmBuscador : gesForm, IVistaBuscador

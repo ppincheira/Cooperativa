@@ -1,4 +1,5 @@
 ﻿using AppProcesos.formsAuxiliares.frmObservaciones;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,14 +9,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controles.form;
 
 namespace FormsAuxiliares
 {
 
-    public partial class frmObservacionesCrud : Form,IVistaObservacionesCrud
+    public partial class frmObservacionesCrud : gesForm,IVistaObservacionesCrud
     {
         #region << PROPIEDADES >>
         UIObservacionesCrud _oObservacionCrud;
+        Utility oUtility;
         int _Codigo;
         int _TipoObservaciones;
         string _CodigoRegistro;
@@ -60,25 +63,41 @@ namespace FormsAuxiliares
             set { _Adjunto = value; }
         }
         #endregion
-        public frmObservacionesCrud(                                                                                                   )
+
+        #region << EVENTOS >>
+        public frmObservacionesCrud(int Codigo, int tobCodigo, string CodigoRegistro)
         {
             InitializeComponent();
             _oObservacionCrud = new  UIObservacionesCrud (this);
-        }
-
-        private void btnGeneral1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAceptar1_Click(object sender, EventArgs e)
-        {
-
+            _Codigo = Codigo;
+            _TipoObservaciones = tobCodigo;
+            _CodigoRegistro = codigoRegistro;
         }
 
         private void frmObservacionesCrud_Load(object sender, EventArgs e)
         {
+            _oObservacionCrud.Inicializar();
+            oUtility = new Utility();
+            this.dtpFecha.REQUERIDO = "SI";
+            this.txtDetalle.REQUERIDO = "SI";
+            
 
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+            oUtility.ValidarFormulario(this, this, 5);
+            if    (this.VALIDARFORM)
+                _oObservacionCrud.Guardar();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        #endregion
     }
 }

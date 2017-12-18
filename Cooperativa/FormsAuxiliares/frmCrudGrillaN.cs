@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AppProcesos.formsAuxiliares.frmCrudGrilla;
 using Controles.datos;
-
+using Controles.form;
 
 namespace FormsAuxiliares
 {

@@ -127,6 +127,9 @@
     <Compile Include="buttons\gesButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="contenedores\gesControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="contenedores\gesGroup.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -163,7 +166,13 @@
     <Compile Include="contenedores\tabSolapas.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="datos\chkBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="datos\cmbLista.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\gesCheckBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="datos\gesComboBox.cs">
@@ -189,6 +198,9 @@
     </Compile>
     <Compile Include="Fecha\gesDateTimePicker.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="form\gesForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="labels\gesLabel.cs">
       <SubType>Component</SubType>
@@ -234,6 +246,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="datos\gesComboBox.resx">
+      <DependentUpon>gesComboBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Iconos.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Iconos.Designer.cs</LastGenOutput>

@@ -30,26 +30,26 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmObservacionesCrud));
             this.gesGroup1 = new Controles.contenedores.gesGroup();
-            this.btnGeneral1 = new Controles.buttons.btnGeneral();
+            this.btnAgregar = new Controles.buttons.btnGeneral();
             this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
             this.txtDetalle = new Controles.textBoxes.txtObservaciones();
             this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.gesGroup2 = new Controles.contenedores.gesGroup();
-            this.btnCancelar1 = new Controles.buttons.btnCancelar();
-            this.btnAceptar1 = new Controles.buttons.btnAceptar();
+            this.btnCancelar = new Controles.buttons.btnCancelar();
+            this.btnAceptar = new Controles.buttons.btnAceptar();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.dtpFecha = new Controles.Fecha.dtpFecha();
             this.gesGroup1.SuspendLayout();
             this.gesGroup2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gesGroup1
             // 
-            this.gesGroup1.Controls.Add(this.btnGeneral1);
-            this.gesGroup1.Controls.Add(this.lblEtiqueta3);
             this.gesGroup1.Controls.Add(this.dtpFecha);
+            this.gesGroup1.Controls.Add(this.btnAgregar);
+            this.gesGroup1.Controls.Add(this.lblEtiqueta3);
             this.gesGroup1.Controls.Add(this.lblEtiqueta2);
             this.gesGroup1.Controls.Add(this.txtDetalle);
             this.gesGroup1.Controls.Add(this.lblEtiqueta1);
@@ -60,15 +60,15 @@
             this.gesGroup1.TabStop = false;
             this.gesGroup1.Text = "Datos";
             // 
-            // btnGeneral1
+            // btnAgregar
             // 
-            this.btnGeneral1.Location = new System.Drawing.Point(122, 206);
-            this.btnGeneral1.Name = "btnGeneral1";
-            this.btnGeneral1.Size = new System.Drawing.Size(37, 33);
-            this.btnGeneral1.TabIndex = 11;
-            this.btnGeneral1.Text = "...";
-            this.btnGeneral1.UseVisualStyleBackColor = true;
-            this.btnGeneral1.Click += new System.EventHandler(this.btnGeneral1_Click);
+            this.btnAgregar.Location = new System.Drawing.Point(122, 206);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(37, 33);
+            this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.Text = "...";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblEtiqueta3
             // 
@@ -78,14 +78,6 @@
             this.lblEtiqueta3.Size = new System.Drawing.Size(62, 13);
             this.lblEtiqueta3.TabIndex = 10;
             this.lblEtiqueta3.Text = "lblEtiqueta3";
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(122, 27);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(96, 20);
-            this.dtpFecha.TabIndex = 9;
             // 
             // lblEtiqueta2
             // 
@@ -103,7 +95,7 @@
             this.txtDetalle.Multiline = true;
             this.txtDetalle.Name = "txtDetalle";
             this.txtDetalle.Size = new System.Drawing.Size(364, 137);
-            this.txtDetalle.TabIndex = 1;
+            this.txtDetalle.TabIndex = 2;
             // 
             // lblEtiqueta1
             // 
@@ -116,38 +108,46 @@
             // 
             // gesGroup2
             // 
-            this.gesGroup2.Controls.Add(this.btnCancelar1);
-            this.gesGroup2.Controls.Add(this.btnAceptar1);
+            this.gesGroup2.Controls.Add(this.btnCancelar);
+            this.gesGroup2.Controls.Add(this.btnAceptar);
             this.gesGroup2.Location = new System.Drawing.Point(12, 272);
             this.gesGroup2.Name = "gesGroup2";
             this.gesGroup2.Size = new System.Drawing.Size(504, 89);
             this.gesGroup2.TabIndex = 1;
             this.gesGroup2.TabStop = false;
             // 
-            // btnCancelar1
+            // btnCancelar
             // 
-            this.btnCancelar1.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar1.Image")));
-            this.btnCancelar1.Location = new System.Drawing.Point(309, 14);
-            this.btnCancelar1.Name = "btnCancelar1";
-            this.btnCancelar1.Size = new System.Drawing.Size(80, 60);
-            this.btnCancelar1.TabIndex = 1;
-            this.btnCancelar1.Text = "btnCancelar1";
-            this.btnCancelar1.UseVisualStyleBackColor = true;
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.Location = new System.Drawing.Point(309, 14);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(80, 60);
+            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.Text = "btnCancelar1";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // btnAceptar1
+            // btnAceptar
             // 
-            this.btnAceptar1.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar1.Image")));
-            this.btnAceptar1.Location = new System.Drawing.Point(418, 14);
-            this.btnAceptar1.Name = "btnAceptar1";
-            this.btnAceptar1.Size = new System.Drawing.Size(80, 60);
-            this.btnAceptar1.TabIndex = 0;
-            this.btnAceptar1.Text = "btnAceptar1";
-            this.btnAceptar1.UseVisualStyleBackColor = true;
-            this.btnAceptar1.Click += new System.EventHandler(this.btnAceptar1_Click);
+            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
+            this.btnAceptar.Location = new System.Drawing.Point(418, 14);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(80, 60);
+            this.btnAceptar.TabIndex = 5;
+            this.btnAceptar.Text = "btnAceptar1";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(122, 28);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(105, 20);
+            this.dtpFecha.TabIndex = 11;
             // 
             // frmObservacionesCrud
             // 
@@ -172,13 +172,13 @@
         private Controles.labels.lblEtiqueta lblEtiqueta2;
         private Controles.textBoxes.txtObservaciones txtDetalle;
         private Controles.labels.lblEtiqueta lblEtiqueta1;
-        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private Controles.contenedores.gesGroup gesGroup2;
-        private Controles.buttons.btnCancelar btnCancelar1;
-        private Controles.buttons.btnAceptar btnAceptar1;
+        private Controles.buttons.btnCancelar btnCancelar;
+        private Controles.buttons.btnAceptar btnAceptar;
         private Controles.labels.lblEtiqueta lblEtiqueta3;
-        private Controles.buttons.btnGeneral btnGeneral1;
+        private Controles.buttons.btnGeneral btnAgregar;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private Controles.Fecha.dtpFecha dtpFecha;
     }
 }

@@ -10,6 +10,7 @@ using Controles;
 using AppProcesos.formsAuxiliares.formAdmin;
 using Controles.datos;
 using Service;
+using Controles.form;
 namespace FormsAuxiliares
 {
     public partial class frmFormAdmin : gesForm, IVistaFormAdmin

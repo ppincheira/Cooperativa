@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Business;
 using Model;
+using Controles.form;
 
 namespace FormsAuxiliares
 {
@@ -15,11 +16,6 @@ namespace FormsAuxiliares
 
         #region << PROPIEDADES >>
         private string _Tabla;
-        private string _Campo;
-        private string _filtroCampos;
-        private string _filtroValores;
-        private DataTable _dtCombo;
-        private string _Fecha;
         #endregion
 
         public frmABM(string clave)

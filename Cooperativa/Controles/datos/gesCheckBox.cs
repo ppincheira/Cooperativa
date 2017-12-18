@@ -6,16 +6,8 @@ using System.Threading.Tasks;
 
 namespace Controles.datos
 {
-
-    public class gesComboBox: System.Windows.Forms.ComboBox
+    public class gesCheckbox : System.Windows.Forms.CheckBox
     {
         public string REQUERIDO = "NO";
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            this.ResumeLayout(false);
-
-        }
     }
 }

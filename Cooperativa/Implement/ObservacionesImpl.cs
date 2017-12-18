@@ -167,13 +167,13 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "SELECT O.* FROM OBSERVACIONES O "+
+                string sqlSelect = "SELECT O.* FROM OBSERVACIONES O " +
                 " INNER JOIN TIPOS_OBSERVACIONES_TABLAS TOT ON O.TOB_CODIGO = TOT.TOB_CODIGO " +
-                " WHERE TOT.TAB_CODIGO='"+tabCodigo+"' " +
-                " AND O.TOB_CODIGO="+tobCodigo.ToString() +
-                " AND O.OBS_CODIGO_REGISTRO='"+obsCodigoRegistro +"'" +
-                " AND O.OBS_FECHA_ALTA>='"+fechaDesde.ToString("dd/MM/yyyy") + "' AND O.OBS_FECHA_ALTA <='"+ fechaHasta.ToString("dd/MM/yyyy") +"'" +
-                "  ORDER BY O.OBS_FECHA_ALTA;";
+                " WHERE TOT.TAB_CODIGO='" + tabCodigo + "' " +
+                " AND O.TOB_CODIGO=" + tobCodigo.ToString() +
+                " AND O.OBS_CODIGO_REGISTRO='" + obsCodigoRegistro + "'" +
+                " AND O.OBS_FECHA_ALTA>='" + fechaDesde.ToString("dd/MM/yyyy") + "' AND O.OBS_FECHA_ALTA <='" + fechaHasta.ToString("dd/MM/yyyy") + "'";
+               
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
