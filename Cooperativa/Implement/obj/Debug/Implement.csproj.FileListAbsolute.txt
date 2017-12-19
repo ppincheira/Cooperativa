@@ -30,14 +30,6 @@ C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.csproj.CoreCompileInputs.cache
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.dll
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Implement.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Implement.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Model.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Oracle.DataAccess.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Model.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.csprojResolveAssemblyReference.cache
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.pdb
 C:\GitHub\Cooperativa\Cooperativa\Implement\bin\Debug\Implement.dll
 C:\GitHub\Cooperativa\Cooperativa\Implement\bin\Debug\Implement.pdb
 C:\GitHub\Cooperativa\Cooperativa\Implement\bin\Debug\Model.dll
@@ -54,3 +46,11 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\bin\
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.csprojResolveAssemblyReference.cache
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Implement.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Implement.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Model.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Oracle.DataAccess.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\bin\Debug\Model.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.csprojResolveAssemblyReference.cache
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Implement\obj\Debug\Implement.pdb

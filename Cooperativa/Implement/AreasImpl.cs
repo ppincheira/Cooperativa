@@ -56,7 +56,7 @@ namespace Implement
                 cmd = new OracleCommand("update Areas " +
                     "SET ARE_CODIGO='" + oArea.AreCodigo + "',"+
                     "ARE_DESCRIPCION='"+ oArea.AreDescripcion + "'," +
-                    "WHERE TAB_CODIGO='" + oArea.AreCodigo + "'", cn);
+                    "WHERE ARE_CODIGO='" + oArea.AreCodigo + "'", cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
