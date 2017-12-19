@@ -51,6 +51,34 @@ namespace Service
             }
         }
 
+        public void ExportarDataGridViewExcel(DataGridView grd)
+        {
+            SaveFileDialog fichero = new SaveFileDialog();
+            fichero.Filter = "Excel (*.xls)|*.xls";
+            if (fichero.ShowDialog() == DialogResult.OK)
+            {
+                Microsoft.Office.Interop.Excel.Application aplicacion;
+                Microsoft.Office.Interop.Excel.Workbook libros_trabajo;
+                Microsoft.Office.Interop.Excel.Worksheet hoja_trabajo;
+                aplicacion = new Microsoft.Office.Interop.Excel.Application();
+                libros_trabajo = aplicacion.Workbooks.Add();
+                hoja_trabajo =
+                    (Microsoft.Office.Interop.Excel.Worksheet)libros_trabajo.Worksheets.get_Item(1);
+                //Recorremos el DataGridView rellenando la hoja de trabajo
+                for (int i = 0; i < grd.Rows.Count - 1; i++)
+                {
+                    for (int j = 0; j < grd.Columns.Count; j++)
+                    {
+                        hoja_trabajo.Cells[i + 1, j + 1] = grd.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                libros_trabajo.SaveAs(fichero.FileName,
+                    Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+                libros_trabajo.Close(true);
+                aplicacion.Quit();
+            }
+        }
+
         public void HabilitarControles(Control contenedor, int usrNumero, string formulario, string sbsCodigo, DataTable dt)
         {
             if (dt == null) { 
@@ -102,32 +130,32 @@ namespace Service
                         if (((Controles.textBoxes.txtDescripcionCorta)control).REQUERIDO == "SI" && ((Controles.textBoxes.txtDescripcionCorta)control).Text == "" && ((Controles.textBoxes.txtDescripcionCorta)control).TabIndex <= index)
                         {
                             ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Red;
-                            formInicial.VALIDARFORM = true;
+                            formInicial.VALIDARFORM = false;
                         }
           
                         if (control is Controles.textBoxes.txtObservaciones)
                             if (((Controles.textBoxes.txtObservaciones)control).REQUERIDO == "SI" && ((Controles.textBoxes.txtObservaciones)control).Text == "" && ((Controles.textBoxes.txtObservaciones)control).TabIndex <= index)
                             { 
                                 ((Controles.textBoxes.txtObservaciones)control).BackColor = System.Drawing.Color.Red;
-                                formInicial.VALIDARFORM = true;
+                                formInicial.VALIDARFORM = false;
                         }
                     if (control is Controles.textBoxes.txtPassword)
                             if (((Controles.textBoxes.txtPassword)control).REQUERIDO == "SI" && ((Controles.textBoxes.txtPassword)control).Text == "" && ((Controles.textBoxes.txtPassword)control).TabIndex <= index)
                             {
                                 ((Controles.textBoxes.txtPassword)control).BackColor = System.Drawing.Color.Red;
-                                formInicial.VALIDARFORM = true;
+                                formInicial.VALIDARFORM = false;
                         }
                     if (control is Controles.Fecha.dtpFecha)
                             if (((Controles.Fecha.dtpFecha)control).REQUERIDO == "SI" && ((Controles.Fecha.dtpFecha)control).Text == "" && ((Controles.Fecha.dtpFecha)control).TabIndex <= index)
                             {
                              ((Controles.textBoxes.txtPassword)control).BackColor = System.Drawing.Color.Red;
-                             formInicial.VALIDARFORM = true;
+                             formInicial.VALIDARFORM = false;
                         }
                     if (control is Controles.datos.chkBox)
                         if (((Controles.datos.chkBox)control).REQUERIDO == "SI" && ((Controles.datos.chkBox)control).Text == "" && ((Controles.datos.chkBox)control).TabIndex <= index)
                         {
                             ((Controles.textBoxes.txtPassword)control).BackColor = System.Drawing.Color.Red;
-                            formInicial.VALIDARFORM = true;
+                            formInicial.VALIDARFORM = false;
                         }
                 }
 

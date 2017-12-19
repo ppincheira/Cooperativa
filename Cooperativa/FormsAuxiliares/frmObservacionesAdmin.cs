@@ -6,15 +6,19 @@ using System.Threading.Tasks;
 using AppProcesos.formsAuxiliares.frmObservaciones;
 using Controles.datos;
 using Controles.form;
+using System.Windows.Forms;
+using Service;
+
 namespace FormsAuxiliares
 {
-    public partial class frmObservacionesAdmin:gesForm, IVistaObservaciones
+    public partial class frmObservacionesAdmin : gesForm, IVistaObservaciones
     {
         #region << PROPIEDADES >>
         private UIObservaciones _oUIObservaciones;
         string _tabCodigo;
         int _tobCodigo;
         string _obsCodigoRegistro;
+        private Utility _oUtility;
 
         #endregion
 
@@ -38,7 +42,7 @@ namespace FormsAuxiliares
         private Controles.contenedores.gpbGrupo gpbGrupo1;
 
         #region Implementation of IVistaObservaciones
-        
+
         public string tabCodigo
         {
             get { return this._tabCodigo; }
@@ -81,7 +85,8 @@ namespace FormsAuxiliares
         }
         #endregion
 
-        public frmObservacionesAdmin(string tabCodigo, int tobCodigo, string obsCodigoRegistro) {
+        public frmObservacionesAdmin(string tabCodigo, int tobCodigo, string obsCodigoRegistro)
+        {
             InitializeComponent();
             _oUIObservaciones = new UIObservaciones(this);
             _tabCodigo = tabCodigo;
@@ -98,6 +103,10 @@ namespace FormsAuxiliares
             this.gpbGrupo2 = new Controles.contenedores.gpbGrupo();
             this.txtObservaciones = new Controles.textBoxes.txtObservaciones();
             this.gpbGrupo3 = new Controles.contenedores.gpbGrupo();
+            this.lblEFechaHasta = new Controles.labels.lblEtiqueta();
+            this.lblEFechaDesde = new Controles.labels.lblEtiqueta();
+            this.dtpFechaHasta = new Controles.Fecha.dtpFecha();
+            this.dtpFechaDesde = new Controles.Fecha.dtpFecha();
             this.gpbGrupo4 = new Controles.contenedores.gpbGrupo();
             this.btnImprimir = new Controles.buttons.btnImprimir();
             this.btnVer = new Controles.buttons.btnVer();
@@ -106,10 +115,6 @@ namespace FormsAuxiliares
             this.btnSalir = new Controles.buttons.btnSalir();
             this.btnEditar = new Controles.buttons.btnEditar();
             this.btnNuevo = new Controles.buttons.btnNuevo();
-            this.lblEFechaHasta = new Controles.labels.lblEtiqueta();
-            this.lblEFechaDesde = new Controles.labels.lblEtiqueta();
-            this.dtpFechaHasta = new Controles.Fecha.dtpFecha();
-            this.dtpFechaDesde = new Controles.Fecha.dtpFecha();
             this.gpbGrupo1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdGrillaAdmin)).BeginInit();
             this.gpbGrupo2.SuspendLayout();
@@ -138,12 +143,12 @@ namespace FormsAuxiliares
             // 
             // grdGrillaAdmin
             // 
-            this.grdGrillaAdmin.DataMember = "";
-           
+            this.grdGrillaAdmin.AllowUserToAddRows = false;
             this.grdGrillaAdmin.Location = new System.Drawing.Point(6, 19);
             this.grdGrillaAdmin.Name = "grdGrillaAdmin";
             this.grdGrillaAdmin.Size = new System.Drawing.Size(631, 197);
             this.grdGrillaAdmin.TabIndex = 0;
+            this.grdGrillaAdmin.SelectionChanged += new System.EventHandler(this.grdGrillaAdmin_SelectionChanged);
             // 
             // gpbGrupo2
             // 
@@ -175,92 +180,6 @@ namespace FormsAuxiliares
             this.gpbGrupo3.Size = new System.Drawing.Size(301, 78);
             this.gpbGrupo3.TabIndex = 1;
             this.gpbGrupo3.TabStop = false;
-            // 
-            // gpbGrupo4
-            // 
-            this.gpbGrupo4.Controls.Add(this.btnImprimir);
-            this.gpbGrupo4.Controls.Add(this.btnVer);
-            this.gpbGrupo4.Controls.Add(this.btnExportar);
-            this.gpbGrupo4.Controls.Add(this.btnEliminar);
-            this.gpbGrupo4.Controls.Add(this.btnSalir);
-            this.gpbGrupo4.Controls.Add(this.btnEditar);
-            this.gpbGrupo4.Controls.Add(this.btnNuevo);
-            this.gpbGrupo4.Location = new System.Drawing.Point(319, 3);
-            this.gpbGrupo4.Name = "gpbGrupo4";
-            this.gpbGrupo4.Size = new System.Drawing.Size(336, 78);
-            this.gpbGrupo4.TabIndex = 2;
-            this.gpbGrupo4.TabStop = false;
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnImprimir.BackgroundImage")));
-            this.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImprimir.Location = new System.Drawing.Point(237, 19);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(40, 40);
-            this.btnImprimir.TabIndex = 6;
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            // 
-            // btnVer
-            // 
-            this.btnVer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVer.BackgroundImage")));
-            this.btnVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVer.Location = new System.Drawing.Point(145, 20);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(40, 40);
-            this.btnVer.TabIndex = 5;
-            this.btnVer.UseVisualStyleBackColor = true;
-            // 
-            // btnExportar
-            // 
-            this.btnExportar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExportar.BackgroundImage")));
-            this.btnExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExportar.Location = new System.Drawing.Point(191, 20);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(40, 40);
-            this.btnExportar.TabIndex = 4;
-            this.btnExportar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
-            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(99, 20);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(40, 40);
-            this.btnEliminar.TabIndex = 3;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.BackgroundImage")));
-            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSalir.Location = new System.Drawing.Point(283, 19);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(40, 40);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
-            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditar.Location = new System.Drawing.Point(53, 20);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(40, 40);
-            this.btnEditar.TabIndex = 1;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.BackgroundImage")));
-            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNuevo.Location = new System.Drawing.Point(6, 19);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(40, 40);
-            this.btnNuevo.TabIndex = 0;
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // lblEFechaHasta
             // 
@@ -296,6 +215,95 @@ namespace FormsAuxiliares
             this.dtpFechaDesde.Size = new System.Drawing.Size(109, 20);
             this.dtpFechaDesde.TabIndex = 12;
             // 
+            // gpbGrupo4
+            // 
+            this.gpbGrupo4.Controls.Add(this.btnImprimir);
+            this.gpbGrupo4.Controls.Add(this.btnVer);
+            this.gpbGrupo4.Controls.Add(this.btnExportar);
+            this.gpbGrupo4.Controls.Add(this.btnEliminar);
+            this.gpbGrupo4.Controls.Add(this.btnSalir);
+            this.gpbGrupo4.Controls.Add(this.btnEditar);
+            this.gpbGrupo4.Controls.Add(this.btnNuevo);
+            this.gpbGrupo4.Location = new System.Drawing.Point(319, 3);
+            this.gpbGrupo4.Name = "gpbGrupo4";
+            this.gpbGrupo4.Size = new System.Drawing.Size(336, 78);
+            this.gpbGrupo4.TabIndex = 2;
+            this.gpbGrupo4.TabStop = false;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnImprimir.BackgroundImage")));
+            this.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImprimir.Location = new System.Drawing.Point(237, 19);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(40, 40);
+            this.btnImprimir.TabIndex = 6;
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            // 
+            // btnVer
+            // 
+            this.btnVer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVer.BackgroundImage")));
+            this.btnVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVer.Location = new System.Drawing.Point(145, 20);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(40, 40);
+            this.btnVer.TabIndex = 5;
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExportar.BackgroundImage")));
+            this.btnExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExportar.Location = new System.Drawing.Point(191, 20);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(40, 40);
+            this.btnExportar.TabIndex = 4;
+            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar.Location = new System.Drawing.Point(99, 20);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(40, 40);
+            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.BackgroundImage")));
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.Location = new System.Drawing.Point(283, 19);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(40, 40);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
+            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditar.Location = new System.Drawing.Point(53, 20);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(40, 40);
+            this.btnEditar.TabIndex = 1;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.BackgroundImage")));
+            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevo.Location = new System.Drawing.Point(6, 19);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(40, 40);
+            this.btnNuevo.TabIndex = 0;
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
             // frmObservacionesAdmin
             // 
             this.ClientSize = new System.Drawing.Size(667, 481);
@@ -320,13 +328,86 @@ namespace FormsAuxiliares
 
         private void frmObservacionesAdmin_Load(object sender, EventArgs e)
         {
-            _oUIObservaciones.Inicializar();
+            try
+            {
+                _oUIObservaciones.Inicializar();
+                _oUtility = new Utility();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmObservacionesCrud ofrmObs = new frmObservacionesCrud(0,_tobCodigo,_obsCodigoRegistro);
-            ofrmObs.Show();
+            try
+            {
+                frmObservacionesCrud ofrmObs = new frmObservacionesCrud(0, _tobCodigo, _obsCodigoRegistro, "I");
+                if (ofrmObs.ShowDialog() == DialogResult.OK)
+                    _oUIObservaciones.CargarGrilla();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = this.grdGrillaAdmin.CurrentRow;
+                int id = Convert.ToInt32(row.Cells[0].Value);
+                frmObservacionesCrud ofrmObs = new frmObservacionesCrud(id, _tobCodigo, _obsCodigoRegistro, "E");
+                if (ofrmObs.ShowDialog() == DialogResult.OK)
+                    _oUIObservaciones.CargarGrilla();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
+
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _oUtility.ExportarDataGridViewExcel(this.grdGrillaAdmin);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = this.grdGrillaAdmin.CurrentRow;
+                int id = Convert.ToInt32(row.Cells[0].Value);
+                frmObservacionesCrud ofrmObs = new frmObservacionesCrud(id, _tobCodigo, _obsCodigoRegistro, "V");
+
+                ofrmObs.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
+        }
+
+        private void grdGrillaAdmin_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _oUIObservaciones.CargarDetalle(this.grdGrillaAdmin.CurrentRow);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
         }
     }
 }

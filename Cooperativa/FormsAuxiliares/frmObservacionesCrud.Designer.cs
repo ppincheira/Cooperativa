@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmObservacionesCrud));
-            this.gesGroup1 = new Controles.contenedores.gesGroup();
+            this.gbDatos = new Controles.contenedores.gesGroup();
+            this.dtpFecha = new Controles.Fecha.dtpFecha();
             this.btnAgregar = new Controles.buttons.btnGeneral();
             this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
             this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
@@ -40,25 +41,32 @@
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.dtpFecha = new Controles.Fecha.dtpFecha();
-            this.gesGroup1.SuspendLayout();
+            this.gbDatos.SuspendLayout();
             this.gesGroup2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gesGroup1
+            // gbDatos
             // 
-            this.gesGroup1.Controls.Add(this.dtpFecha);
-            this.gesGroup1.Controls.Add(this.btnAgregar);
-            this.gesGroup1.Controls.Add(this.lblEtiqueta3);
-            this.gesGroup1.Controls.Add(this.lblEtiqueta2);
-            this.gesGroup1.Controls.Add(this.txtDetalle);
-            this.gesGroup1.Controls.Add(this.lblEtiqueta1);
-            this.gesGroup1.Location = new System.Drawing.Point(12, 12);
-            this.gesGroup1.Name = "gesGroup1";
-            this.gesGroup1.Size = new System.Drawing.Size(504, 254);
-            this.gesGroup1.TabIndex = 0;
-            this.gesGroup1.TabStop = false;
-            this.gesGroup1.Text = "Datos";
+            this.gbDatos.Controls.Add(this.dtpFecha);
+            this.gbDatos.Controls.Add(this.btnAgregar);
+            this.gbDatos.Controls.Add(this.lblEtiqueta3);
+            this.gbDatos.Controls.Add(this.lblEtiqueta2);
+            this.gbDatos.Controls.Add(this.txtDetalle);
+            this.gbDatos.Controls.Add(this.lblEtiqueta1);
+            this.gbDatos.Location = new System.Drawing.Point(12, 12);
+            this.gbDatos.Name = "gbDatos";
+            this.gbDatos.Size = new System.Drawing.Size(504, 254);
+            this.gbDatos.TabIndex = 0;
+            this.gbDatos.TabStop = false;
+            this.gbDatos.Text = "Datos";
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(122, 28);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(105, 20);
+            this.dtpFecha.TabIndex = 11;
             // 
             // btnAgregar
             // 
@@ -125,6 +133,7 @@
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "btnCancelar1";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -141,26 +150,18 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(122, 28);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(105, 20);
-            this.dtpFecha.TabIndex = 11;
-            // 
             // frmObservacionesCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 373);
             this.Controls.Add(this.gesGroup2);
-            this.Controls.Add(this.gesGroup1);
+            this.Controls.Add(this.gbDatos);
             this.Name = "frmObservacionesCrud";
             this.Text = "frmObservacionesCrud";
             this.Load += new System.EventHandler(this.frmObservacionesCrud_Load);
-            this.gesGroup1.ResumeLayout(false);
-            this.gesGroup1.PerformLayout();
+            this.gbDatos.ResumeLayout(false);
+            this.gbDatos.PerformLayout();
             this.gesGroup2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -168,7 +169,7 @@
 
         #endregion
 
-        private Controles.contenedores.gesGroup gesGroup1;
+        private Controles.contenedores.gesGroup gbDatos;
         private Controles.labels.lblEtiqueta lblEtiqueta2;
         private Controles.textBoxes.txtObservaciones txtDetalle;
         private Controles.labels.lblEtiqueta lblEtiqueta1;

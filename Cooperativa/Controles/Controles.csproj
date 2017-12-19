@@ -249,6 +249,9 @@
     <EmbeddedResource Include="datos\gesComboBox.resx">
       <DependentUpon>gesComboBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\gesForm.resx">
+      <DependentUpon>gesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Iconos.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Iconos.Designer.cs</LastGenOutput>

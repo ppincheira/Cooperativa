@@ -23,6 +23,7 @@ namespace FormsAuxiliares
         int _TipoObservaciones;
         string _CodigoRegistro;
         string _Adjunto;
+        string _Accion;
 
         #endregion
 
@@ -65,31 +66,37 @@ namespace FormsAuxiliares
         #endregion
 
         #region << EVENTOS >>
-        public frmObservacionesCrud(int Codigo, int tobCodigo, string CodigoRegistro)
+        public frmObservacionesCrud(int Codigo, int TobCodigo, string CodigoRegistro, string Accion)
         {
             InitializeComponent();
             _oObservacionCrud = new  UIObservacionesCrud (this);
             _Codigo = Codigo;
-            _TipoObservaciones = tobCodigo;
-            _CodigoRegistro = codigoRegistro;
+            _TipoObservaciones = TobCodigo;
+            _CodigoRegistro = CodigoRegistro;
+            _Accion = Accion;
         }
 
         private void frmObservacionesCrud_Load(object sender, EventArgs e)
         {
+            
             _oObservacionCrud.Inicializar();
             oUtility = new Utility();
             this.dtpFecha.REQUERIDO = "SI";
             this.txtDetalle.REQUERIDO = "SI";
-            
-
+            if (_Accion == "V") 
+                this.gbDatos.Enabled = false;
         }
-
+       
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
             oUtility.ValidarFormulario(this, this, 5);
             if    (this.VALIDARFORM)
+            {
+                DialogResult = DialogResult.OK; 
                 _oObservacionCrud.Guardar();
+                this.Close();
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -97,7 +104,14 @@ namespace FormsAuxiliares
 
 
         }
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
 
         #endregion
+
+      
     }
 }

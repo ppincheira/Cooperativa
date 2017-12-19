@@ -24,15 +24,16 @@ namespace Implement
                     cn.Open();
                     // Clave Secuencia OBS_NUMERO
                     ds = new DataSet();
-                    cmd = new OracleCommand("insert into Observaciones( " +
-                        "OBS_CODIGO_REGISTRO,OBS_DETALLE, OBS_FECHA_ALTA, TOB_CODIGO) " +
-                        "values('" + oObs.ObsCodigoRegistro + "'," +
+                    cmd = new OracleCommand("insert into Observaciones( OBS_CODIGO,OBS_CODIGO_REGISTRO,OBS_DETALLE, OBS_FECHA_ALTA, TOB_CODIGO)" +
+                        " values(OBS_CODIGO.NEXTVAL,'" + oObs.ObsCodigoRegistro + "'," +
                         "'" +oObs.ObsDetalle + "'," +
-                        "'"+ oObs.ObsFechaAlta + "'," +
-                        ""+ oObs.TobCodigo +")", cn);
+                        "'"+ oObs.ObsFechaAlta.ToString("dd/MM/yyyy") + "'," +
+                        ""+ oObs.TobCodigo +") ", cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
                     cn.Close();
+                    cmd.Dispose();
+                    cn.Dispose();
                     return response;
                 }
                 catch (Exception ex)
@@ -52,7 +53,7 @@ namespace Implement
                     cmd = new OracleCommand("update Observaciones " +
                         "SET OBS_CODIGO_REGISTRO='" + oObs.ObsCodigoRegistro + "'," +
                         "OBS_DETALLE='" + oObs.ObsDetalle +"', "+
-                        "OBS_FECHA_ALTA='" + oObs.ObsFechaAlta +"', "+
+                        "OBS_FECHA_ALTA='" + oObs.ObsFechaAlta.ToString("dd/MM/yyyy") +"', "+
                         "TOB_CODIGO='" + oObs.TobCodigo +"', "+
                         "OBS_DATO_ADJUNTO='"+oObs.ObsDatoAdjunto+"' "+ 
                         "WHERE OBS_CODIGO=" + oObs.ObsCodigo, cn);
@@ -167,7 +168,7 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "SELECT O.* FROM OBSERVACIONES O " +
+                string sqlSelect = "SELECT  O.OBS_CODIGO, O.OBS_CODIGO_REGISTRO, O.TOB_CODIGO,O.OBS_DETALLE DETALLE,O.OBS_FECHA_ALTA FECHA,O.OBS_DATO_ADJUNTO FROM OBSERVACIONES O " +
                 " INNER JOIN TIPOS_OBSERVACIONES_TABLAS TOT ON O.TOB_CODIGO = TOT.TOB_CODIGO " +
                 " WHERE TOT.TAB_CODIGO='" + tabCodigo + "' " +
                 " AND O.TOB_CODIGO=" + tobCodigo.ToString() +

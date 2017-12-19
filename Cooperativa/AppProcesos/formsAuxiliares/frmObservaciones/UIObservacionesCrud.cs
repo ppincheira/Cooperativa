@@ -40,6 +40,8 @@ namespace AppProcesos.formsAuxiliares.frmObservaciones
             }
         }
 
+     
+
         public void Guardar()
         {
             int rtdo;
