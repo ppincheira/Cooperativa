@@ -95,6 +95,7 @@
     <Compile Include="Empresas.cs" />
     <Compile Include="Enumeration.cs" />
     <Compile Include="Estados.cs" />
+    <Compile Include="Excepciones.cs" />
     <Compile Include="Fabricantes.cs" />
     <Compile Include="Funcionalidades.cs" />
     <Compile Include="FuncionalidadesFormularios.cs" />

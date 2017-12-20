@@ -94,6 +94,7 @@
     <Compile Include="DominiosBus.cs" />
     <Compile Include="EmpresasBus.cs" />
     <Compile Include="EstadosBus.cs" />
+    <Compile Include="ExcepcionesBus.cs" />
     <Compile Include="FabricantesBus.cs" />
     <Compile Include="FuncionalidadesBus.cs" />
     <Compile Include="FuncionalidadesFormulariosBus.cs" />
