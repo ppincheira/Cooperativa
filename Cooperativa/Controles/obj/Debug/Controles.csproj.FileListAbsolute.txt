@@ -1,13 +1,3 @@
-C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
-C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.pdb
-C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Model.dll
-C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Model.pdb
-C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csprojResolveAssemblyReference.cache
-C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.Resources.Iconos.resources
-C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
-C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.CoreCompileInputs.cache
-C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
-C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Model.dll
@@ -32,3 +22,17 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Contro
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
+C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
+C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.pdb
+C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Model.dll
+C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Model.pdb
+C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
+C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csprojResolveAssemblyReference.cache
+C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.datos.gesComboBox.resources
+C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.form.gesForm.resources
+C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.Resources.Iconos.resources
+C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
+C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.CoreCompileInputs.cache
+C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
+C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
