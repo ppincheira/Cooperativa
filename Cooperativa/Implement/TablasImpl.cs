@@ -247,7 +247,58 @@ namespace Implement
 
         }
 
+        public bool TablaActualizaGrid(string tabla, string[] columnas, string[] valores, string criterio, string operacion)
+        {
+            string comando = "";
+            switch (operacion)
+            {
+                case "U":
+                    comando = "update " + tabla + " set ";
+                    for (int pos = 0; pos < columnas.Length; pos++)
+                    {
+                        comando += columnas[columnas.Length - 1] + " = '" + valores[valores.Length - 1] + "'";
+                        if (columnas.Length > pos + 1)
+                            comando += ", ";
+                    };
+                    comando += " where " + criterio;
+                    break;
 
+                case "D":
+                    comando = "delete " + tabla + " where " + criterio;
+                    break;
+
+                case "I":
+                    comando = "insert into " + tabla;
+                    string listaCampos = "";
+                    string listaValores = "";
+                    for (int pos = 0; pos < columnas.Length; pos++)
+                    {
+                        listaCampos += columnas[columnas.Length - 1];
+                        listaValores += "'" + valores[valores.Length - 1] + "'";
+                        if (columnas.Length > pos + 1)
+                            comando += ", ";
+                    };
+                    comando += " ( " + listaCampos + ") values(" + listaValores + ")";
+                    break;
+                default: return false;
+            }
+            try
+            {
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+
+                cn.Open();
+                OracleCommand cmd = new OracleCommand(comando, cn);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+                return false;
+            }
+
+        }
 
         #endregion
 
