@@ -100,6 +100,15 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
             _vista.grilla.DataSource = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo, _filtroCampos, _filtroValores);
             _vista.cantidad = "Se encontraron " + _vista.grilla.RowCount.ToString() + " registros";
         }
+        public void MostrarTabla(string Tabla)
+        {
+            // Obtener de DetallesColumnasTablas todos los campos de la tabla menos el campo clave
+            // Pasar esos campos a un arreglo de campos y valores
+            // actualizar
+            Tablas otabla = new Tablas();
+            TablasBus tablasGrd = new TablasBus();
+            tablasGrd.MostrarEstructura(Tabla);
+        }
 
         public void ActualizaTabla(string Tabla, string campoClave)
         {

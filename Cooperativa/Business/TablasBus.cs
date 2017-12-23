@@ -54,5 +54,12 @@ namespace Business
             TablasImpl oTablasImpl = new TablasImpl();
             return oTablasImpl.TablaActualizaGrid(tabla, columnas, valores, criterio, operacion);
         }
+
+        public void MostrarEstructura(string tabla)
+        {
+            TablasImpl oTablasImpl = new TablasImpl();
+            oTablasImpl.MostrarEstructura(tabla);
+        }
+
     }
 }

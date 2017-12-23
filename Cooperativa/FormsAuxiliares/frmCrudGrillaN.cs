@@ -33,7 +33,9 @@ namespace FormsAuxiliares
         private Controles.labels.lblEtiqueta lblEFechaDesde;
         #region << PROPIEDADES >>
         private string _Tabla, _campoClave;
+        private Controles.buttons.btnAceptar btnAceptar2;
         #endregion
+
         #region Implementation of IVistaCrudGrilla
         public Boolean grupoEstado
         {
@@ -123,6 +125,7 @@ namespace FormsAuxiliares
         #endregion
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCrudGrillaN));
             this.gpbGrupoEstado = new Controles.contenedores.gpbGrupo();
             this.cmbEstado = new Controles.datos.cmbLista();
             this.lblEEstado = new Controles.labels.lblEtiqueta();
@@ -142,6 +145,7 @@ namespace FormsAuxiliares
             this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
             this.txtFiltro1 = new Controles.txtFiltro();
             this.cmbLista1 = new Controles.datos.cmbLista();
+            this.btnAceptar2 = new Controles.buttons.btnAceptar();
             this.gpbGrupoEstado.SuspendLayout();
             this.gpbGrupoFecha.SuspendLayout();
             this.gpbGrupo2.SuspendLayout();
@@ -229,6 +233,7 @@ namespace FormsAuxiliares
             // gpbGrupo2
             // 
             this.gpbGrupo2.Controls.Add(this.grdGrillaEdit1);
+            this.gpbGrupo2.Controls.Add(this.btnAceptar2);
             this.gpbGrupo2.Controls.Add(this.lblCantidad);
             this.gpbGrupo2.Controls.Add(this.gpbGrupo3);
             this.gpbGrupo2.Location = new System.Drawing.Point(12, 111);
@@ -273,6 +278,7 @@ namespace FormsAuxiliares
             // 
             // btnCancelar1
             // 
+            this.btnCancelar1.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar1.Image")));
             this.btnCancelar1.Location = new System.Drawing.Point(100, 14);
             this.btnCancelar1.Name = "btnCancelar1";
             this.btnCancelar1.Size = new System.Drawing.Size(80, 60);
@@ -281,6 +287,7 @@ namespace FormsAuxiliares
             // 
             // btnAceptar1
             // 
+            this.btnAceptar1.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar1.Image")));
             this.btnAceptar1.Location = new System.Drawing.Point(9, 14);
             this.btnAceptar1.Name = "btnAceptar1";
             this.btnAceptar1.Size = new System.Drawing.Size(80, 60);
@@ -338,6 +345,16 @@ namespace FormsAuxiliares
             this.cmbLista1.Size = new System.Drawing.Size(175, 21);
             this.cmbLista1.TabIndex = 4;
             // 
+            // btnAceptar2
+            // 
+            this.btnAceptar2.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar2.Image")));
+            this.btnAceptar2.Location = new System.Drawing.Point(109, 545);
+            this.btnAceptar2.Name = "btnAceptar2";
+            this.btnAceptar2.Size = new System.Drawing.Size(80, 60);
+            this.btnAceptar2.TabIndex = 0;
+            this.btnAceptar2.UseVisualStyleBackColor = true;
+            this.btnAceptar2.Click += new System.EventHandler(this.btnAceptar2_Click);
+            // 
             // frmCrudGrillaN
             // 
             this.ClientSize = new System.Drawing.Size(776, 749);
@@ -380,7 +397,6 @@ namespace FormsAuxiliares
                     v1 += row.Cells[0].Value.ToString() + row.Cells[grdGrillaEdit1.ColumnCount - 1].Value.ToString() + "  ";
             }
             _oCrudGrilla.ActualizaTabla(_Tabla, _campoClave);
-            //          MessageBox.Show(v1, "contenido", MessageBoxButtons.OK);
 
 
 
@@ -443,6 +459,11 @@ namespace FormsAuxiliares
         private void grdGrillaEdit1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnAceptar2_Click(object sender, EventArgs e)
+        {
+            _oCrudGrilla.MostrarTabla(_Tabla);
         }
 
         private void grdGrillaEdit1_CellEndEdit(object sender, DataGridViewCellEventArgs e)

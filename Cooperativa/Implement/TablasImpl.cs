@@ -246,7 +246,68 @@ namespace Implement
             }
 
         }
+        private static void DisplayData(System.Data.DataTable table)
+        {
+            foreach (System.Data.DataRow row in table.Rows)
+            {
+                foreach (System.Data.DataColumn col in table.Columns)
+                {
+                    Console.WriteLine("{0} = {1}", col.ColumnName, row[col]);
+                }
+                Console.WriteLine("============================");
+            }
+        }
+        private static void VerDataTable(DataTable table)
+        {
+            foreach (DataRow row in table.Rows)
+            {
+                Console.WriteLine(row.ItemArray[1].ToString());
+                foreach (DataColumn col in table.Columns)
+                {
+                    if (col.ToString() == "COLUMN_NAME")
+                        Console.Write("Campo: " + row[col] + " ");
+                    if (col.ToString() == "DATATYPE")
+                        Console.Write("Tipo: " + row[col] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
 
+        public void MostrarEstructura(string tabla)
+        {
+            try
+            {
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+
+
+                cn.Open();
+//               Muestra la estructura de la tabla PERSONAS
+                String[] tableRestrictions = new String[2];
+                tableRestrictions[1] = "PERSONAS";
+                DataTable table = cn.GetSchema("Columns", tableRestrictions);
+                DisplayData(table);
+                VerDataTable(table);
+                Console.WriteLine("Press any key to continue.");
+ //             Muestra la columna ARE_CODIGO de la tabla AREAS
+                tableRestrictions = new String[3];
+                tableRestrictions[1] = "AREAS";
+                tableRestrictions[2] = "ARE_CODIGO";
+                table = cn.GetSchema("Columns", tableRestrictions);
+                DisplayData(table);
+                VerDataTable(table);
+                Console.WriteLine("Press any key to continue.");
+                //Console.ReadKey();
+                //OracleCommand cmd = new OracleCommand(comando, cn);
+                //cmd.ExecuteNonQuery();
+                return ;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
         public bool TablaActualizaGrid(string tabla, string[] columnas, string[] valores, string criterio, string operacion)
         {
             string comando = "";
