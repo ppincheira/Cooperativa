@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
+using System.Windows.Forms;
 using AppProcesos.formsAuxiliares.frmCrudGrilla;
 using Controles.datos;
 using Controles.form;
 
+
 namespace FormsAuxiliares
 {
-    public partial class frmCrudGrillaN:gesForm, IVistaCrudGrilla
+    public partial class frmCrudGrillaN : gesForm, IVistaCrudGrilla
     {
 
         private UICrudGrilla _oCrudGrilla;
@@ -33,8 +32,10 @@ namespace FormsAuxiliares
         private Controles.labels.lblEtiqueta lblEFechaHasta;
         private Controles.labels.lblEtiqueta lblEFechaDesde;
         #region << PROPIEDADES >>
-        private string _Tabla;
+        private string _Tabla, _campoClave;
+        private Controles.buttons.btnAceptar btnAceptar2;
         #endregion
+
         #region Implementation of IVistaCrudGrilla
         public Boolean grupoEstado
         {
@@ -82,13 +83,14 @@ namespace FormsAuxiliares
 
             set { this.lblCantidad.Text = value; }
         }
-        
+
         #endregion
         #region << EVENTOS >>
 
-        public frmCrudGrillaN(string tabla)
+        public frmCrudGrillaN(string tabla, string campoClave)
         {
             _Tabla = tabla;
+            _campoClave = campoClave;
             InitializeComponent();
             _oCrudGrilla = new UICrudGrilla(this);
         }
@@ -96,7 +98,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oCrudGrilla.CargarGrilla(_Tabla);
+                _oCrudGrilla.CargarGrilla(_Tabla, _campoClave);
             }
             catch (Exception ex)
             {
@@ -108,24 +110,22 @@ namespace FormsAuxiliares
 
         private void frmCrudGrilla_Load(object sender, EventArgs e)
         {
+            try
+            {
+
+                _oCrudGrilla.Inicializar(_Tabla, _campoClave);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
         }
 
         #endregion
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCrudGrilla));
-            this.gpbGrupo1 = new Controles.contenedores.gpbGrupo();
-            this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
-            this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
-            this.txtFiltro1 = new Controles.txtFiltro();
-            this.cmbLista1 = new Controles.datos.cmbLista();
-            this.gpbGrupo2 = new Controles.contenedores.gpbGrupo();
-            this.grdGrillaEdit1 = new Controles.datos.grdGrillaEdit();
-            this.lblCantidad = new Controles.labels.lblEtiqueta();
-            this.gpbGrupo3 = new Controles.contenedores.gpbGrupo();
-            this.btnCancelar1 = new Controles.buttons.btnCancelar();
-            this.btnAceptar1 = new Controles.buttons.btnAceptar();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCrudGrillaN));
             this.gpbGrupoEstado = new Controles.contenedores.gpbGrupo();
             this.cmbEstado = new Controles.datos.cmbLista();
             this.lblEEstado = new Controles.labels.lblEtiqueta();
@@ -134,118 +134,25 @@ namespace FormsAuxiliares
             this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.lblEFechaHasta = new Controles.labels.lblEtiqueta();
             this.lblEFechaDesde = new Controles.labels.lblEtiqueta();
-            this.gpbGrupo1.SuspendLayout();
+            this.gpbGrupo2 = new Controles.contenedores.gpbGrupo();
+            this.grdGrillaEdit1 = new Controles.datos.grdGrillaEdit();
+            this.lblCantidad = new Controles.labels.lblEtiqueta();
+            this.gpbGrupo3 = new Controles.contenedores.gpbGrupo();
+            this.btnCancelar1 = new Controles.buttons.btnCancelar();
+            this.btnAceptar1 = new Controles.buttons.btnAceptar();
+            this.gpbGrupo1 = new Controles.contenedores.gpbGrupo();
+            this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
+            this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
+            this.txtFiltro1 = new Controles.txtFiltro();
+            this.cmbLista1 = new Controles.datos.cmbLista();
+            this.btnAceptar2 = new Controles.buttons.btnAceptar();
+            this.gpbGrupoEstado.SuspendLayout();
+            this.gpbGrupoFecha.SuspendLayout();
             this.gpbGrupo2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdGrillaEdit1)).BeginInit();
             this.gpbGrupo3.SuspendLayout();
-            this.gpbGrupoEstado.SuspendLayout();
-            this.gpbGrupoFecha.SuspendLayout();
+            this.gpbGrupo1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gpbGrupo1
-            // 
-            this.gpbGrupo1.Controls.Add(this.lblEtiqueta3);
-            this.gpbGrupo1.Controls.Add(this.lblEtiqueta2);
-            this.gpbGrupo1.Controls.Add(this.txtFiltro1);
-            this.gpbGrupo1.Controls.Add(this.cmbLista1);
-            this.gpbGrupo1.Location = new System.Drawing.Point(12, 6);
-            this.gpbGrupo1.Name = "gpbGrupo1";
-            this.gpbGrupo1.Size = new System.Drawing.Size(334, 99);
-            this.gpbGrupo1.TabIndex = 0;
-            this.gpbGrupo1.TabStop = false;
-            this.gpbGrupo1.Enter += new System.EventHandler(this.gpbGrupo1_Enter);
-            // 
-            // lblEtiqueta3
-            // 
-            this.lblEtiqueta3.AutoSize = true;
-            this.lblEtiqueta3.Location = new System.Drawing.Point(7, 61);
-            this.lblEtiqueta3.Name = "lblEtiqueta3";
-            this.lblEtiqueta3.Size = new System.Drawing.Size(45, 13);
-            this.lblEtiqueta3.TabIndex = 7;
-            this.lblEtiqueta3.Text = "FILTRO";
-            // 
-            // lblEtiqueta2
-            // 
-            this.lblEtiqueta2.AutoSize = true;
-            this.lblEtiqueta2.Location = new System.Drawing.Point(6, 23);
-            this.lblEtiqueta2.Name = "lblEtiqueta2";
-            this.lblEtiqueta2.Size = new System.Drawing.Size(78, 13);
-            this.lblEtiqueta2.TabIndex = 6;
-            this.lblEtiqueta2.Text = "FILTRAR POR";
-            // 
-            // txtFiltro1
-            // 
-            this.txtFiltro1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFiltro1.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtFiltro1.Location = new System.Drawing.Point(127, 58);
-            this.txtFiltro1.Name = "txtFiltro1";
-            this.txtFiltro1.Size = new System.Drawing.Size(175, 20);
-            this.txtFiltro1.TabIndex = 5;
-            this.txtFiltro1.TextoVacio = "<Descripcion>";
-            // 
-            // cmbLista1
-            // 
-            this.cmbLista1.FormattingEnabled = true;
-            this.cmbLista1.Location = new System.Drawing.Point(127, 15);
-            this.cmbLista1.Name = "cmbLista1";
-            this.cmbLista1.Size = new System.Drawing.Size(175, 21);
-            this.cmbLista1.TabIndex = 4;
-            // 
-            // gpbGrupo2
-            // 
-            this.gpbGrupo2.Controls.Add(this.grdGrillaEdit1);
-            this.gpbGrupo2.Controls.Add(this.lblCantidad);
-            this.gpbGrupo2.Location = new System.Drawing.Point(12, 111);
-            this.gpbGrupo2.Name = "gpbGrupo2";
-            this.gpbGrupo2.Size = new System.Drawing.Size(748, 831);
-            this.gpbGrupo2.TabIndex = 1;
-            this.gpbGrupo2.TabStop = false;
-            // 
-            // grdGrillaEdit1
-            // 
-            this.grdGrillaEdit1.DataMember = "";
-            this.grdGrillaEdit1.BackgroundColor = System.Drawing.SystemColors.ControlText;
-            this.grdGrillaEdit1.Location = new System.Drawing.Point(6, 25);
-            this.grdGrillaEdit1.Name = "grdGrillaEdit1";
-            this.grdGrillaEdit1.Size = new System.Drawing.Size(736, 763);
-            this.grdGrillaEdit1.TabIndex = 3;
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(7, 791);
-            this.lblCantidad.Name = "lblEtiqueta1";
-            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
-            this.lblCantidad.TabIndex = 2;
-            this.lblCantidad.Text = "Cantidad";
-            // 
-            // gpbGrupo3
-            // 
-            this.gpbGrupo3.Controls.Add(this.btnCancelar1);
-            this.gpbGrupo3.Controls.Add(this.btnAceptar1);
-            this.gpbGrupo3.Location = new System.Drawing.Point(571, 948);
-            this.gpbGrupo3.Name = "gpbGrupo3";
-            this.gpbGrupo3.Size = new System.Drawing.Size(189, 84);
-            this.gpbGrupo3.TabIndex = 1;
-            this.gpbGrupo3.TabStop = false;
-            // 
-            // btnCancelar1
-            // 
-            this.btnCancelar1.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar1.Image")));
-            this.btnCancelar1.Location = new System.Drawing.Point(100, 14);
-            this.btnCancelar1.Name = "btnCancelar1";
-            this.btnCancelar1.Size = new System.Drawing.Size(80, 60);
-            this.btnCancelar1.TabIndex = 1;
-            this.btnCancelar1.UseVisualStyleBackColor = true;
-            // 
-            // btnAceptar1
-            // 
-            this.btnAceptar1.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar1.Image")));
-            this.btnAceptar1.Location = new System.Drawing.Point(9, 14);
-            this.btnAceptar1.Name = "btnAceptar1";
-            this.btnAceptar1.Size = new System.Drawing.Size(80, 60);
-            this.btnAceptar1.TabIndex = 0;
-            this.btnAceptar1.UseVisualStyleBackColor = true;
             // 
             // gpbGrupoEstado
             // 
@@ -323,26 +230,150 @@ namespace FormsAuxiliares
             this.lblEFechaDesde.TabIndex = 6;
             this.lblEFechaDesde.Text = "Fecha Desde";
             // 
-            // frmCrudGrilla
+            // gpbGrupo2
+            // 
+            this.gpbGrupo2.Controls.Add(this.grdGrillaEdit1);
+            this.gpbGrupo2.Controls.Add(this.btnAceptar2);
+            this.gpbGrupo2.Controls.Add(this.lblCantidad);
+            this.gpbGrupo2.Controls.Add(this.gpbGrupo3);
+            this.gpbGrupo2.Location = new System.Drawing.Point(12, 111);
+            this.gpbGrupo2.Name = "gpbGrupo2";
+            this.gpbGrupo2.Size = new System.Drawing.Size(748, 831);
+            this.gpbGrupo2.TabIndex = 1;
+            this.gpbGrupo2.TabStop = false;
+            this.gpbGrupo2.Enter += new System.EventHandler(this.gpbGrupo2_Enter);
+            // 
+            // grdGrillaEdit1
+            // 
+            this.grdGrillaEdit1.Location = new System.Drawing.Point(6, 25);
+            this.grdGrillaEdit1.Name = "grdGrillaEdit1";
+            this.grdGrillaEdit1.Size = new System.Drawing.Size(650, 500);
+            this.grdGrillaEdit1.TabIndex = 3;
+            this.grdGrillaEdit1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.grdGrillaEdit1_CellBeginEdit);
+            this.grdGrillaEdit1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdGrillaEdit1_CellContentClick);
+            this.grdGrillaEdit1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdGrillaEdit1_CellEndEdit);
+            this.grdGrillaEdit1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdGrillaEdit1_CellValueChanged);
+            this.grdGrillaEdit1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grdGrillaEdit1_RowsAdded);
+            this.grdGrillaEdit1.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.grdGrillaEdit1_UserAddedRow);
+            this.grdGrillaEdit1.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.grdGrillaEdit1_UserDeletingRow);
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(7, 791);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
+            this.lblCantidad.TabIndex = 2;
+            this.lblCantidad.Text = "Cantidad";
+            // 
+            // gpbGrupo3
+            // 
+            this.gpbGrupo3.Controls.Add(this.btnCancelar1);
+            this.gpbGrupo3.Controls.Add(this.btnAceptar1);
+            this.gpbGrupo3.Location = new System.Drawing.Point(288, 531);
+            this.gpbGrupo3.Name = "gpbGrupo3";
+            this.gpbGrupo3.Size = new System.Drawing.Size(189, 84);
+            this.gpbGrupo3.TabIndex = 1;
+            this.gpbGrupo3.TabStop = false;
+            // 
+            // btnCancelar1
+            // 
+            this.btnCancelar1.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar1.Image")));
+            this.btnCancelar1.Location = new System.Drawing.Point(100, 14);
+            this.btnCancelar1.Name = "btnCancelar1";
+            this.btnCancelar1.Size = new System.Drawing.Size(80, 60);
+            this.btnCancelar1.TabIndex = 1;
+            this.btnCancelar1.UseVisualStyleBackColor = true;
+            // 
+            // btnAceptar1
+            // 
+            this.btnAceptar1.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar1.Image")));
+            this.btnAceptar1.Location = new System.Drawing.Point(9, 14);
+            this.btnAceptar1.Name = "btnAceptar1";
+            this.btnAceptar1.Size = new System.Drawing.Size(80, 60);
+            this.btnAceptar1.TabIndex = 0;
+            this.btnAceptar1.UseVisualStyleBackColor = true;
+            this.btnAceptar1.Click += new System.EventHandler(this.btnAceptar1_Click);
+            // 
+            // gpbGrupo1
+            // 
+            this.gpbGrupo1.Controls.Add(this.lblEtiqueta3);
+            this.gpbGrupo1.Controls.Add(this.lblEtiqueta2);
+            this.gpbGrupo1.Controls.Add(this.txtFiltro1);
+            this.gpbGrupo1.Controls.Add(this.cmbLista1);
+            this.gpbGrupo1.Location = new System.Drawing.Point(12, 6);
+            this.gpbGrupo1.Name = "gpbGrupo1";
+            this.gpbGrupo1.Size = new System.Drawing.Size(334, 99);
+            this.gpbGrupo1.TabIndex = 0;
+            this.gpbGrupo1.TabStop = false;
+            this.gpbGrupo1.Enter += new System.EventHandler(this.gpbGrupo1_Enter);
+            // 
+            // lblEtiqueta3
+            // 
+            this.lblEtiqueta3.AutoSize = true;
+            this.lblEtiqueta3.Location = new System.Drawing.Point(7, 61);
+            this.lblEtiqueta3.Name = "lblEtiqueta3";
+            this.lblEtiqueta3.Size = new System.Drawing.Size(45, 13);
+            this.lblEtiqueta3.TabIndex = 7;
+            this.lblEtiqueta3.Text = "FILTRO";
+            // 
+            // lblEtiqueta2
+            // 
+            this.lblEtiqueta2.AutoSize = true;
+            this.lblEtiqueta2.Location = new System.Drawing.Point(6, 23);
+            this.lblEtiqueta2.Name = "lblEtiqueta2";
+            this.lblEtiqueta2.Size = new System.Drawing.Size(78, 13);
+            this.lblEtiqueta2.TabIndex = 6;
+            this.lblEtiqueta2.Text = "FILTRAR POR";
+            // 
+            // txtFiltro1
+            // 
+            this.txtFiltro1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFiltro1.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtFiltro1.Location = new System.Drawing.Point(127, 58);
+            this.txtFiltro1.Name = "txtFiltro1";
+            this.txtFiltro1.Size = new System.Drawing.Size(175, 20);
+            this.txtFiltro1.TabIndex = 5;
+            this.txtFiltro1.TextoVacio = "<Descripcion>";
+            this.txtFiltro1.TextChanged += new System.EventHandler(this.txtFiltro1_TextChanged_1);
+            // 
+            // cmbLista1
+            // 
+            this.cmbLista1.FormattingEnabled = true;
+            this.cmbLista1.Location = new System.Drawing.Point(127, 15);
+            this.cmbLista1.Name = "cmbLista1";
+            this.cmbLista1.Size = new System.Drawing.Size(175, 21);
+            this.cmbLista1.TabIndex = 4;
+            // 
+            // btnAceptar2
+            // 
+            this.btnAceptar2.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar2.Image")));
+            this.btnAceptar2.Location = new System.Drawing.Point(109, 545);
+            this.btnAceptar2.Name = "btnAceptar2";
+            this.btnAceptar2.Size = new System.Drawing.Size(80, 60);
+            this.btnAceptar2.TabIndex = 0;
+            this.btnAceptar2.UseVisualStyleBackColor = true;
+            this.btnAceptar2.Click += new System.EventHandler(this.btnAceptar2_Click);
+            // 
+            // frmCrudGrillaN
             // 
             this.ClientSize = new System.Drawing.Size(776, 749);
             this.Controls.Add(this.gpbGrupoEstado);
             this.Controls.Add(this.gpbGrupoFecha);
-            this.Controls.Add(this.gpbGrupo3);
             this.Controls.Add(this.gpbGrupo2);
             this.Controls.Add(this.gpbGrupo1);
-            this.Name = "frmCrudGrilla";
+            this.Name = "frmCrudGrillaN";
             this.Load += new System.EventHandler(this.frmCrudGrilla_Load);
-            this.gpbGrupo1.ResumeLayout(false);
-            this.gpbGrupo1.PerformLayout();
-            this.gpbGrupo2.ResumeLayout(false);
-            this.gpbGrupo2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdGrillaEdit1)).EndInit();
-            this.gpbGrupo3.ResumeLayout(false);
             this.gpbGrupoEstado.ResumeLayout(false);
             this.gpbGrupoEstado.PerformLayout();
             this.gpbGrupoFecha.ResumeLayout(false);
             this.gpbGrupoFecha.PerformLayout();
+            this.gpbGrupo2.ResumeLayout(false);
+            this.gpbGrupo2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdGrillaEdit1)).EndInit();
+            this.gpbGrupo3.ResumeLayout(false);
+            this.gpbGrupo1.ResumeLayout(false);
+            this.gpbGrupo1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -356,6 +387,95 @@ namespace FormsAuxiliares
         {
 
         }
-          
+
+        private void btnAceptar1_Click(object sender, EventArgs e)
+        {
+            String v1 = "";
+            foreach (DataGridViewRow row in grdGrillaEdit1.Rows)
+            {
+                if (!row.IsNewRow)
+                    v1 += row.Cells[0].Value.ToString() + row.Cells[grdGrillaEdit1.ColumnCount - 1].Value.ToString() + "  ";
+            }
+            _oCrudGrilla.ActualizaTabla(_Tabla, _campoClave);
+
+
+
+            // obtener el objeto en cuestion para cada elemento modificado usando el id , por ej AreasGetById(columnaClave)
+            // Hacer un porje Areas Update(area obtenida en el paso anterior)
+
+        }
+
+        private void gpbGrupo2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFiltro1_TextChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                _oCrudGrilla.CargarGrilla(_Tabla, _campoClave);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        private void grdGrillaEdit1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+        String temp = "";
+        private void grdGrillaEdit1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            temp = grdGrillaEdit1.CurrentCell.Value.ToString();
+        }
+
+        private void grdGrillaEdit1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            grdGrillaEdit1.CurrentRow.Cells[grdGrillaEdit1.ColumnCount - 1].Value = "2";
+            grdGrillaEdit1.CurrentRow.DefaultCellStyle.BackColor = Color.Red;
+            e.Cancel = true;
+
+        }
+
+        private void grdGrillaEdit1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+        }
+
+        private void grdGrillaEdit1_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            if (!grdGrillaEdit1.CurrentRow.IsNewRow)
+            {
+                grdGrillaEdit1.CurrentRow.Cells[grdGrillaEdit1.ColumnCount - 1].Value = "3";
+                grdGrillaEdit1.CurrentRow.DefaultCellStyle.BackColor = Color.Blue;
+            }
+            else
+            {
+            }
+        }
+
+        private void grdGrillaEdit1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnAceptar2_Click(object sender, EventArgs e)
+        {
+            _oCrudGrilla.MostrarTabla(_Tabla);
+        }
+
+        private void grdGrillaEdit1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (grdGrillaEdit1.CurrentCell.Value.ToString() != temp && grdGrillaEdit1.CurrentRow.Cells[grdGrillaEdit1.ColumnCount - 1].Value == "0")
+            {
+                // se realizo algun cambio y la celda esta sin editar (no esta borrada ni nueva)
+                grdGrillaEdit1.CurrentRow.Cells[grdGrillaEdit1.ColumnCount - 1].Value = "1";
+                grdGrillaEdit1.CurrentRow.DefaultCellStyle.BackColor = Color.Yellow;
+            }
+
+        }
     }
 }
+
