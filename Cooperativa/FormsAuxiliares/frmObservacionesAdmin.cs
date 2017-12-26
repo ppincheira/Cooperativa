@@ -358,7 +358,7 @@ namespace FormsAuxiliares
             try
             {
                 DataGridViewRow row = this.grdGrillaAdmin.CurrentRow;
-                int id = Convert.ToInt32(row.Cells[0].Value);
+                long id = Convert.ToInt64(row.Cells[0].Value);
                 frmObservacionesCrud ofrmObs = new frmObservacionesCrud(id, _tobCodigo, _obsCodigoRegistro, "E");
                 if (ofrmObs.ShowDialog() == DialogResult.OK)
                     _oUIObservaciones.CargarGrilla();

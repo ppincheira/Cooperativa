@@ -3,6 +3,9 @@ using Model;
 using Service;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,7 +39,10 @@ namespace AppProcesos.formsAuxiliares.frmObservaciones
                 _vista.detalle = oObs.ObsDetalle;
                 _vista.tipoObservaciones = oObs.TobCodigo;
                 _vista.fecha = oObs.ObsFechaAlta;
-                _vista.adjunto = oObs.ObsDatoAdjunto;
+                Adjuntos oAdj = new Adjuntos();
+                AdjuntosBus oAdjBus = new AdjuntosBus();
+                oAdj = oAdjBus.AdjuntosGetByCodigoRegistro(long.Parse(_vista.codigo.ToString()));
+                _vista.adjunto = oAdj;
             }
         }
 
@@ -44,20 +50,64 @@ namespace AppProcesos.formsAuxiliares.frmObservaciones
 
         public void Guardar()
         {
-            int rtdo;
+            long rtdo;
             Observaciones oObs = new Observaciones();
             ObservacionesBus oObsBus = new ObservacionesBus();
-
+            Adjuntos oAdjunto = _vista.adjunto;
             oObs.ObsCodigo = _vista.codigo;
             oObs.ObsCodigoRegistro = _vista.codigoRegistro;
             oObs.ObsDetalle = _vista.detalle;
             oObs.ObsFechaAlta = _vista.fecha;
             oObs.TobCodigo = _vista.tipoObservaciones;
-
             if (_vista.codigo == 0)
+               
                 rtdo = oObsBus.ObservacionesAdd(oObs);
             else
                 rtdo = (oObsBus.ObservacionesUpdate(oObs)) ? oObs.ObsCodigo: 0;
+
+            if (_vista.adjunto.AdjNombre != "")
+            {
+                
+                oAdjunto.AdjCodigoRegistro = rtdo.ToString();
+                AdjuntosBus oAdjuntoBus = new AdjuntosBus();
+                if (oAdjuntoBus.AdjuntoExisteByCodigoRegistro(rtdo))
+                    oAdjuntoBus.AdjuntoUpdate(oAdjunto);
+                else
+                    oAdjuntoBus.AdjuntosAdd(oAdjunto);
+            }
+
+        }
+
+
+        public void AgregarImagen()
+        {
+
+            _vista.adjunto = oUtil.Adjunto_AgregarImagen();
+            _vista.adjuntoFileName = _vista.adjunto.AdjNombre;
+
+        }
+
+
+        public void Mostrar()
+        {
+
+            oUtil.Adjunto_Mostrar(_vista.codigo);
+            
+            //ObservacionesBus oObsBus = new ObservacionesBus();
+            
+            //DataTable dtb = oObsBus.ObservacionesGetAdjuntoById(_vista.codigo);
+            //DataRow f = dtb.Rows[0];
+            //byte[] bits = ((byte[])(f.ItemArray[0]));
+
+            //string sFile = "tmp.doc";
+            //FileStream fs = new FileStream(sFile, FileMode.Create);
+
+            //fs.Write(bits, 0, Convert.ToInt32(bits.Length));
+            //fs.Close();
+            //System.Diagnostics.Process obj = new System.Diagnostics.Process();
+            //obj.StartInfo.FileName = sFile;
+            //obj.Start();
+
         }
     }
 }

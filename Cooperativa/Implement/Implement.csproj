@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccionistasImpl.cs" />
+    <Compile Include="AdjuntosImpl.cs" />
     <Compile Include="AuditoriasImpl.cs" />
     <Compile Include="BarriosLocalidadesImpl.cs" />
     <Compile Include="CallesLocalidadesImpl.cs" />

@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccionistasBus.cs" />
+    <Compile Include="AdjuntosBus.cs" />
     <Compile Include="AuditoriasBus.cs" />
     <Compile Include="BarriosLocalidadesBus.cs" />
     <Compile Include="CallesLocalidadesBus.cs" />

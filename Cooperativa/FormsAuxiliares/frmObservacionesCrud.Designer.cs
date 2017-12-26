@@ -30,35 +30,49 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmObservacionesCrud));
             this.gbDatos = new Controles.contenedores.gesGroup();
+            this.txtDescripcionPath = new Controles.textBoxes.txtDescripcionCorta();
             this.dtpFecha = new Controles.Fecha.dtpFecha();
             this.btnAgregar = new Controles.buttons.btnGeneral();
-            this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
-            this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
+            this.lbAdjunto = new Controles.labels.lblEtiqueta();
+            this.lbFecha = new Controles.labels.lblEtiqueta();
             this.txtDetalle = new Controles.textBoxes.txtObservaciones();
-            this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
+            this.lbDetalle = new Controles.labels.lblEtiqueta();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.gesGroup2 = new Controles.contenedores.gesGroup();
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnVer = new Controles.buttons.btnGeneral();
             this.gbDatos.SuspendLayout();
             this.gesGroup2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbDatos
             // 
+            this.gbDatos.Controls.Add(this.btnVer);
+            this.gbDatos.Controls.Add(this.txtDescripcionPath);
             this.gbDatos.Controls.Add(this.dtpFecha);
             this.gbDatos.Controls.Add(this.btnAgregar);
-            this.gbDatos.Controls.Add(this.lblEtiqueta3);
-            this.gbDatos.Controls.Add(this.lblEtiqueta2);
+            this.gbDatos.Controls.Add(this.lbAdjunto);
+            this.gbDatos.Controls.Add(this.lbFecha);
             this.gbDatos.Controls.Add(this.txtDetalle);
-            this.gbDatos.Controls.Add(this.lblEtiqueta1);
+            this.gbDatos.Controls.Add(this.lbDetalle);
             this.gbDatos.Location = new System.Drawing.Point(12, 12);
             this.gbDatos.Name = "gbDatos";
             this.gbDatos.Size = new System.Drawing.Size(504, 254);
             this.gbDatos.TabIndex = 0;
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
+            // 
+            // txtDescripcionPath
+            // 
+            this.txtDescripcionPath.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDescripcionPath.Location = new System.Drawing.Point(174, 218);
+            this.txtDescripcionPath.MaxLength = 20;
+            this.txtDescripcionPath.Name = "txtDescripcionPath";
+            this.txtDescripcionPath.ReadOnly = true;
+            this.txtDescripcionPath.Size = new System.Drawing.Size(269, 20);
+            this.txtDescripcionPath.TabIndex = 12;
             // 
             // dtpFecha
             // 
@@ -78,23 +92,23 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // lblEtiqueta3
+            // lbAdjunto
             // 
-            this.lblEtiqueta3.AutoSize = true;
-            this.lblEtiqueta3.Location = new System.Drawing.Point(39, 226);
-            this.lblEtiqueta3.Name = "lblEtiqueta3";
-            this.lblEtiqueta3.Size = new System.Drawing.Size(62, 13);
-            this.lblEtiqueta3.TabIndex = 10;
-            this.lblEtiqueta3.Text = "lblEtiqueta3";
+            this.lbAdjunto.AutoSize = true;
+            this.lbAdjunto.Location = new System.Drawing.Point(39, 225);
+            this.lbAdjunto.Name = "lbAdjunto";
+            this.lbAdjunto.Size = new System.Drawing.Size(49, 13);
+            this.lbAdjunto.TabIndex = 10;
+            this.lbAdjunto.Text = "Adjuntar:";
             // 
-            // lblEtiqueta2
+            // lbFecha
             // 
-            this.lblEtiqueta2.AutoSize = true;
-            this.lblEtiqueta2.Location = new System.Drawing.Point(39, 34);
-            this.lblEtiqueta2.Name = "lblEtiqueta2";
-            this.lblEtiqueta2.Size = new System.Drawing.Size(62, 13);
-            this.lblEtiqueta2.TabIndex = 3;
-            this.lblEtiqueta2.Text = "lblEtiqueta2";
+            this.lbFecha.AutoSize = true;
+            this.lbFecha.Location = new System.Drawing.Point(39, 34);
+            this.lbFecha.Name = "lbFecha";
+            this.lbFecha.Size = new System.Drawing.Size(40, 13);
+            this.lbFecha.TabIndex = 3;
+            this.lbFecha.Text = "Fecha:";
             // 
             // txtDetalle
             // 
@@ -105,14 +119,14 @@
             this.txtDetalle.Size = new System.Drawing.Size(364, 137);
             this.txtDetalle.TabIndex = 2;
             // 
-            // lblEtiqueta1
+            // lbDetalle
             // 
-            this.lblEtiqueta1.AutoSize = true;
-            this.lblEtiqueta1.Location = new System.Drawing.Point(39, 66);
-            this.lblEtiqueta1.Name = "lblEtiqueta1";
-            this.lblEtiqueta1.Size = new System.Drawing.Size(62, 13);
-            this.lblEtiqueta1.TabIndex = 0;
-            this.lblEtiqueta1.Text = "lblEtiqueta1";
+            this.lbDetalle.AutoSize = true;
+            this.lbDetalle.Location = new System.Drawing.Point(39, 66);
+            this.lbDetalle.Name = "lbDetalle";
+            this.lbDetalle.Size = new System.Drawing.Size(43, 13);
+            this.lbDetalle.TabIndex = 0;
+            this.lbDetalle.Text = "Detalle:";
             // 
             // gesGroup2
             // 
@@ -150,6 +164,16 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // btnVer
+            // 
+            this.btnVer.Location = new System.Drawing.Point(449, 205);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(37, 33);
+            this.btnVer.TabIndex = 13;
+            this.btnVer.Text = "Ver";
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
             // frmObservacionesCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,16 +194,18 @@
         #endregion
 
         private Controles.contenedores.gesGroup gbDatos;
-        private Controles.labels.lblEtiqueta lblEtiqueta2;
+        private Controles.labels.lblEtiqueta lbFecha;
         private Controles.textBoxes.txtObservaciones txtDetalle;
-        private Controles.labels.lblEtiqueta lblEtiqueta1;
+        private Controles.labels.lblEtiqueta lbDetalle;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private Controles.contenedores.gesGroup gesGroup2;
         private Controles.buttons.btnCancelar btnCancelar;
         private Controles.buttons.btnAceptar btnAceptar;
-        private Controles.labels.lblEtiqueta lblEtiqueta3;
+        private Controles.labels.lblEtiqueta lbAdjunto;
         private Controles.buttons.btnGeneral btnAgregar;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private Controles.Fecha.dtpFecha dtpFecha;
+        private Controles.textBoxes.txtDescripcionCorta txtDescripcionPath;
+        private Controles.buttons.btnGeneral btnVer;
     }
 }

@@ -8,7 +8,7 @@ namespace Business
 {
     public class ObservacionesBus
     {
-        public int ObservacionesAdd(Observaciones oObservaciones)
+        public long ObservacionesAdd(Observaciones oObservaciones)
         {
             ObservacionesImpl oObservacionesImpl = new ObservacionesImpl();
             return oObservacionesImpl.ObservacionesAdd(oObservaciones);
@@ -45,5 +45,11 @@ namespace Business
 
         }
 
+        public DataTable ObservacionesGetAdjuntoById(int Id)
+        {
+            ObservacionesImpl oObservacionesImpl = new ObservacionesImpl();
+            return oObservacionesImpl.ObservacionesGetAdjuntoById(Id);
+
         }
+    }
 }

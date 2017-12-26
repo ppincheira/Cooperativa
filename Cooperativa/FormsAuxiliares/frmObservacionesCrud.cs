@@ -10,19 +10,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controles.form;
+using Model;
 
 namespace FormsAuxiliares
 {
 
-    public partial class frmObservacionesCrud : gesForm,IVistaObservacionesCrud
+    public partial class frmObservacionesCrud : gesForm, IVistaObservacionesCrud
     {
         #region << PROPIEDADES >>
         UIObservacionesCrud _oObservacionCrud;
-        Utility oUtility;
-        int _Codigo;
+        Utility oUtil;
+
+        long _Codigo;
         int _TipoObservaciones;
         string _CodigoRegistro;
-        string _Adjunto;
+        Adjuntos _Adjunto;
         string _Accion;
 
         #endregion
@@ -30,15 +32,15 @@ namespace FormsAuxiliares
         #region Implementation of IVistaObservaciones
 
 
-        public int codigo
+        public long codigo
         {
             get { return _Codigo; }
-            set { _Codigo= value; }
+            set { _Codigo = value; }
         }
         public int tipoObservaciones
         {
             get { return _TipoObservaciones; }
-            set { _TipoObservaciones= value; }
+            set { _TipoObservaciones = value; }
         }
 
         public string codigoRegistro
@@ -51,67 +53,118 @@ namespace FormsAuxiliares
             get { return this.dtpFecha.Value; }
             set { this.dtpFecha.Value = value; }
         }
- 
+
         public string detalle
         {
             get { return this.txtDetalle.Text; }
             set { this.txtDetalle.Text = value; }
         }
 
-        public string adjunto
+        public Adjuntos adjunto
         {
             get { return _Adjunto; }
             set { _Adjunto = value; }
         }
+
+        public string adjuntoFileName
+        {
+            get { return this.txtDescripcionPath.Text; }
+            set { this.txtDescripcionPath.Text = value; }
+        }
+
         #endregion
 
         #region << EVENTOS >>
-        public frmObservacionesCrud(int Codigo, int TobCodigo, string CodigoRegistro, string Accion)
+        public frmObservacionesCrud(long Codigo, int TobCodigo, string CodigoRegistro, string Accion)
         {
-            InitializeComponent();
-            _oObservacionCrud = new  UIObservacionesCrud (this);
-            _Codigo = Codigo;
-            _TipoObservaciones = TobCodigo;
-            _CodigoRegistro = CodigoRegistro;
-            _Accion = Accion;
+            try
+            {
+                InitializeComponent();
+                _oObservacionCrud = new UIObservacionesCrud(this);
+                _Codigo = Codigo;
+                _TipoObservaciones = TobCodigo;
+                _CodigoRegistro = CodigoRegistro;
+                _Accion = Accion;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
         }
 
         private void frmObservacionesCrud_Load(object sender, EventArgs e)
         {
-            
-            _oObservacionCrud.Inicializar();
-            oUtility = new Utility();
-            this.dtpFecha.REQUERIDO = "SI";
-            this.txtDetalle.REQUERIDO = "SI";
-            if (_Accion == "V") 
-                this.gbDatos.Enabled = false;
+            try
+            {
+                oUtil = new Utility();
+                _oObservacionCrud.Inicializar();
+                this.dtpFecha.REQUERIDO = "SI";
+                this.txtDetalle.REQUERIDO = "SI";
+                
+                if (_Adjunto.AdjCodigo == 0)
+                    this.btnVer.Enabled = false;
+                if (_Accion == "V")
+                    this.gbDatos.Enabled = false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
+
         }
-       
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
-            oUtility.ValidarFormulario(this, this, 5);
-            if    (this.VALIDARFORM)
+            try
             {
-                DialogResult = DialogResult.OK; 
-                _oObservacionCrud.Guardar();
-                this.Close();
+                oUtil.ValidarFormulario(this, this, 5);
+                if (this.VALIDARFORM)
+                {
+                    DialogResult = DialogResult.OK;
+                    _oObservacionCrud.Guardar();
+
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                _oObservacionCrud.AgregarImagen();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
 
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
-            this.Close();
+            try
+            {
+                DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            _oObservacionCrud.Mostrar();
         }
 
         #endregion
 
-      
+
     }
 }

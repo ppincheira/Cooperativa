@@ -11,5 +11,6 @@ namespace Model {
         public virtual string TabCodigo { get; set; }
         public virtual string TobCodigo { get; set; }
         public virtual string TobDescripcion { get; set; }
+     
     }
 }

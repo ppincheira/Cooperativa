@@ -9,12 +9,11 @@ namespace Model {
         public Observaciones()
         {
         }
-        public virtual int ObsCodigo { get; set; }
+        public virtual long ObsCodigo { get; set; }
         public virtual string ObsCodigoRegistro { get; set; }
         public virtual string ObsDetalle { get; set; }
         public virtual DateTime ObsFechaAlta { get; set;}
         public virtual int TobCodigo { get; set; }
-        public virtual string ObsDatoAdjunto { get; set;}
 
     }
 }
