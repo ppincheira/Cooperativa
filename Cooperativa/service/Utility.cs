@@ -213,12 +213,12 @@ namespace Service
             }
             return oAdjunto;
         }
-        public void Adjunto_Mostrar(long Id)
+        public void Adjunto_Mostrar(long Id, string tabCodigo)
         {
 
             Adjuntos oAdjunto = new Adjuntos();
             AdjuntosBus oAdjuntosBus = new AdjuntosBus();
-            oAdjunto = oAdjuntosBus.AdjuntosGetByCodigoRegistro(Id);
+            oAdjunto = oAdjuntosBus.AdjuntosGetByCodigoRegistro(Id, tabCodigo);
 
             DataTable dtb = oAdjuntosBus.AdjuntoGetAdjuntoById(oAdjunto.AdjCodigo);
             DataRow f = dtb.Rows[0];

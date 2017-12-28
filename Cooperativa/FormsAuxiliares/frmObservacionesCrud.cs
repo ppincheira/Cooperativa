@@ -101,7 +101,7 @@ namespace FormsAuxiliares
                 this.dtpFecha.REQUERIDO = "SI";
                 this.txtDetalle.REQUERIDO = "SI";
                 
-                if (_Adjunto.AdjCodigo == 0)
+                if (_Adjunto==null || _Adjunto.AdjCodigo == 0)
                     this.btnVer.Enabled = false;
                 if (_Accion == "V")
                     this.gbDatos.Enabled = false;

@@ -12,7 +12,8 @@ namespace Model
         {
 
         }
-        public virtual long AdjCodigo { get; set; }
+        public virtual long AdjCodigo { get; set; }  
+        public virtual string TabCodigo { get; set; }
         public virtual string AdjCodigoRegistro { get; set; }
         public virtual string AdjNombre { get; set; }
         public virtual string AdjExtencion { get; set; }

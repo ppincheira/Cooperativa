@@ -22,21 +22,19 @@ namespace Implement
             {
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
-                //MemoryStream ms = new MemoryStream();
-                //FileStream fs = new FileStream(oObs.ObsDatoAdjunto, FileMode.Open, FileAccess.Read);
-                //byte[] blob = new byte[fs.Length];
-                //fs.Read(blob, 0, System.Convert.ToInt32(fs.Length));
-                //fs.Close();
                 cn.Open();
 
                 string query =
 
-
-                    " insert into Observaciones( OBS_CODIGO_REGISTRO, OBS_DETALLE, OBS_FECHA_ALTA, TOB_CODIGO) " +
-                    " values('" + oObs.ObsCodigoRegistro + "'," +
+                    " DECLARE IDTEMP NUMBER(15,0); "+
+                    " BEGIN "+
+                    " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('OBS_CODIGO')) into IDTEMP from dual; "+
+                    " insert into Observaciones( OBS_CODIGO, OBS_CODIGO_REGISTRO, OBS_DETALLE, OBS_FECHA_ALTA, TOB_CODIGO) " +
+                    " values(IDTEMP,'" + oObs.ObsCodigoRegistro + "'," +
                     "'" + oObs.ObsDetalle + "'," +
                     "'" + oObs.ObsFechaAlta.ToString("dd/MM/yyyy") + "'," +
-                    " " + oObs.TobCodigo + ") RETURNING OBS_CODIGO INTO :id";
+                    " " + oObs.TobCodigo + ") RETURNING IDTEMP INTO :id;" +
+                    " END;";
 
                 cmd = new OracleCommand(query, cn);
                 cmd.Parameters.Add(new OracleParameter
@@ -65,9 +63,6 @@ namespace Implement
         {
             try
             {
-
-                
-
 
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();

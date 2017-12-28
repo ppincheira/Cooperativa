@@ -41,7 +41,7 @@ namespace AppProcesos.formsAuxiliares.frmObservaciones
                 _vista.fecha = oObs.ObsFechaAlta;
                 Adjuntos oAdj = new Adjuntos();
                 AdjuntosBus oAdjBus = new AdjuntosBus();
-                oAdj = oAdjBus.AdjuntosGetByCodigoRegistro(long.Parse(_vista.codigo.ToString()));
+                oAdj = oAdjBus.AdjuntosGetByCodigoRegistro(long.Parse(_vista.codigo.ToString()),"OBSE");
                 _vista.adjunto = oAdj;
             }
         }
@@ -65,9 +65,8 @@ namespace AppProcesos.formsAuxiliares.frmObservaciones
             else
                 rtdo = (oObsBus.ObservacionesUpdate(oObs)) ? oObs.ObsCodigo: 0;
 
-            if (_vista.adjunto.AdjNombre != "")
+            if (_vista.adjunto!=null || _vista.adjunto.AdjNombre != "")
             {
-                
                 _vista.adjunto.AdjCodigoRegistro = rtdo.ToString();
                 AdjuntosBus oAdjuntoBus = new AdjuntosBus();
                 if (oAdjuntoBus.AdjuntoExisteByCodigoRegistro(rtdo))
@@ -91,22 +90,8 @@ namespace AppProcesos.formsAuxiliares.frmObservaciones
         public void Mostrar()
         {
 
-            oUtil.Adjunto_Mostrar(_vista.codigo);
+            oUtil.Adjunto_Mostrar(_vista.codigo, "OBSE");
             
-            //ObservacionesBus oObsBus = new ObservacionesBus();
-            
-            //DataTable dtb = oObsBus.ObservacionesGetAdjuntoById(_vista.codigo);
-            //DataRow f = dtb.Rows[0];
-            //byte[] bits = ((byte[])(f.ItemArray[0]));
-
-            //string sFile = "tmp.doc";
-            //FileStream fs = new FileStream(sFile, FileMode.Create);
-
-            //fs.Write(bits, 0, Convert.ToInt32(bits.Length));
-            //fs.Close();
-            //System.Diagnostics.Process obj = new System.Diagnostics.Process();
-            //obj.StartInfo.FileName = sFile;
-            //obj.Start();
 
         }
     }

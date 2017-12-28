@@ -39,10 +39,10 @@ namespace Business
             AdjuntosImpl oAdjuntoImpl = new AdjuntosImpl();
             return oAdjuntoImpl.AdjuntoExisteByCodigoRegistro(Id);
         }
-        public Adjuntos AdjuntosGetByCodigoRegistro(long Id)
+        public Adjuntos AdjuntosGetByCodigoRegistro(long Id, string TabCodigo)
         {
             AdjuntosImpl oAdjuntoImpl = new AdjuntosImpl();
-            return oAdjuntoImpl.AdjuntosGetByCodigoRegistro(Id);
+            return oAdjuntoImpl.AdjuntosGetByCodigoRegistro(Id, TabCodigo);
         }
 
         public DataTable AdjuntoGetAdjuntoById(long Id)

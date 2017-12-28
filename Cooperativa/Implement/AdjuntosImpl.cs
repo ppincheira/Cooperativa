@@ -29,17 +29,30 @@ namespace Implement
                 fs.Read(blob, 0, System.Convert.ToInt32(fs.Length));
                 fs.Close();
                 cn.Open();
-                string query = "insert into ADJUNTOS( ADJ_CODIGO,ADJ_CODIGO_REGISTRO,ADJ_NOMBRE, ADJ_EXTENCION, ADJ_FECHA, ADJ_ADJUNTO)" +
-                    " values(ADJ_NUMERO.NEXTVAL,'" + oAdjunto.AdjCodigoRegistro + "'," +
-                    "'" + oAdjunto.AdjNombre + "'," +
-                    "'" + oAdjunto.AdjExtencion + "'," +
-                    "'" + oAdjunto.AdjFecha.ToString("dd/MM/yyyy") + "'," +
-                    " :BlobParameter) ";
+                string query =
+                      " DECLARE IDTEMP NUMBER(15,0); " +
+                      " BEGIN " +
+                      " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('ADJ_NUMERO')) INTO IDTEMP FROM DUAL; " +
+                      " INSERT INTO ADJUNTOS( ADJ_CODIGO,ADJ_CODIGO_REGISTRO,ADJ_NOMBRE, ADJ_EXTENCION, ADJ_FECHA, TAB_CODIGO, ADJ_ADJUNTO) " +
+                      " values(IDTEMP,'" + oAdjunto.AdjCodigoRegistro + "'," +
+                      "'" + oAdjunto.AdjNombre + "'," +
+                      "'" + oAdjunto.AdjExtencion + "'," +
+                      "'" + oAdjunto.AdjFecha.ToString("dd/MM/yyyy") + "'," +
+                      "'" + oAdjunto.TabCodigo+"',"+
+                      " :BlobParameter) RETURNING IDTEMP INTO :id;" +
+                         " END;";
                 OracleParameter blobParameter = new OracleParameter();
                 blobParameter.OracleDbType = OracleDbType.Blob;
                 blobParameter.ParameterName = "BlobParameter";
                 blobParameter.Value = blob;
                 cmd = new OracleCommand(query, cn);
+
+                cmd.Parameters.Add(new OracleParameter
+                {
+                    ParameterName = ":id",
+                    OracleDbType = OracleDbType.Int64,
+                    Direction = ParameterDirection.Output
+                });
                 cmd.Parameters.Add(blobParameter);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
@@ -71,6 +84,7 @@ namespace Implement
                     " ADJ_NOMBRE='" + oAdjunto.AdjNombre + "'," +
                     " ADJ_EXTENCION='" + oAdjunto.AdjExtencion + "'," +
                     " ADJ_FECHA='" + oAdjunto.AdjFecha.ToString("dd/MM/yyyy") + "'," +
+                    " TAB_CODIGO='" + oAdjunto.TabCodigo + "'," +
                     " ADJ_ADJUNTO=:BlobParameter " +
                     " WHERE ADJ_CODIGO='" + oAdjunto.AdjCodigo + "'";
 
@@ -218,7 +232,7 @@ namespace Implement
             }
         }
 
-        public Adjuntos AdjuntosGetByCodigoRegistro(long Id)
+        public Adjuntos AdjuntosGetByCodigoRegistro(long Id, string TabCodigo)
         {
             try
             {
@@ -227,7 +241,7 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 string sqlSelect = "SELECT * FROM ADJUNTOS " +
-                    "where ADJ_CODIGO_REGISTRO=" + Id;
+                    "where ADJ_CODIGO_REGISTRO=" + Id + " and TAB_CODIGO='"+TabCodigo+"'";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -294,6 +308,7 @@ namespace Implement
                 oObjeto.AdjExtencion = dr["ADJ_EXTENCION"].ToString();
                 oObjeto.AdjAdjunto = dr["ADJ_ADJUNTO"].ToString();
                 oObjeto.AdjFecha=DateTime.Parse( dr["ADJ_FECHA"].ToString());
+                oObjeto.TabCodigo= dr["TAB_CODIGO"].ToString();
                 return oObjeto;
             }
             catch (Exception ex)
