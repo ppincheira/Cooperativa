@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmObservacionesCrud));
             this.gbDatos = new Controles.contenedores.gesGroup();
+            this.btnVer = new Controles.buttons.btnGeneral();
             this.txtDescripcionPath = new Controles.textBoxes.txtDescripcionCorta();
             this.dtpFecha = new Controles.Fecha.dtpFecha();
             this.btnAgregar = new Controles.buttons.btnGeneral();
@@ -42,7 +43,6 @@
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnVer = new Controles.buttons.btnGeneral();
             this.gbDatos.SuspendLayout();
             this.gesGroup2.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +63,16 @@
             this.gbDatos.TabIndex = 0;
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
+            // 
+            // btnVer
+            // 
+            this.btnVer.Location = new System.Drawing.Point(449, 205);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(37, 33);
+            this.btnVer.TabIndex = 13;
+            this.btnVer.Text = "Ver";
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // txtDescripcionPath
             // 
@@ -145,7 +155,6 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 60);
             this.btnCancelar.TabIndex = 4;
-            this.btnCancelar.Text = "btnCancelar1";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -156,23 +165,12 @@
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(80, 60);
             this.btnAceptar.TabIndex = 5;
-            this.btnAceptar.Text = "btnAceptar1";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // btnVer
-            // 
-            this.btnVer.Location = new System.Drawing.Point(449, 205);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(37, 33);
-            this.btnVer.TabIndex = 13;
-            this.btnVer.Text = "Ver";
-            this.btnVer.UseVisualStyleBackColor = true;
-            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // frmObservacionesCrud
             // 

@@ -166,8 +166,34 @@ namespace Service
 
 
 
+        public Adjuntos Adjunto_Agregar(Adjuntos oAdjExistente)
+        {
 
-        public Adjuntos Adjunto_AgregarImagen()
+            Adjuntos oAdjunto = new Adjuntos();
+
+            OpenFileDialog oOpen = new OpenFileDialog();
+            oOpen.Filter = "*.xls;*.doc;*.bmp;*.gif;*.jpg;*.mpg;|*.xls;*.doc;*.bmp;*.gif;*.jpg;*.mpg";
+            oOpen.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            oOpen.Title = "Seleccionar documento a Adjuntar";
+            oOpen.RestoreDirectory = true;
+            if (oOpen.ShowDialog() == DialogResult.OK)
+            {
+                oAdjunto.AdjNombre = oOpen.SafeFileName;
+                oAdjunto.AdjFecha = DateTime.Now;
+                oAdjunto.AdjCodigoRegistro = "0";
+                oAdjunto.AdjExtencion = oOpen.FileName.Substring(oOpen.FileName.IndexOf("."), (oOpen.FileName.Length - oOpen.FileName.IndexOf(".")));
+                oAdjunto.AdjAdjunto = oOpen.FileName;
+                if (oAdjExistente.AdjCodigo!=0)
+                {
+                    oAdjunto.AdjCodigoRegistro = oAdjExistente.AdjCodigoRegistro;
+                    oAdjunto.AdjCodigo = oAdjExistente.AdjCodigo;
+                }
+
+            }
+            return oAdjunto;
+        }
+
+        public Adjuntos Adjunto_Agregar()
         {
 
             Adjuntos oAdjunto = new Adjuntos();

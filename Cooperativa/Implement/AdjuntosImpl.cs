@@ -29,9 +29,6 @@ namespace Implement
                 fs.Read(blob, 0, System.Convert.ToInt32(fs.Length));
                 fs.Close();
                 cn.Open();
-
-
-                ds = new DataSet();
                 string query = "insert into ADJUNTOS( ADJ_CODIGO,ADJ_CODIGO_REGISTRO,ADJ_NOMBRE, ADJ_EXTENCION, ADJ_FECHA, ADJ_ADJUNTO)" +
                     " values(ADJ_NUMERO.NEXTVAL,'" + oAdjunto.AdjCodigoRegistro + "'," +
                     "'" + oAdjunto.AdjNombre + "'," +
@@ -61,16 +58,28 @@ namespace Implement
             {
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
+                MemoryStream ms = new MemoryStream();
+                FileStream fs = new FileStream(oAdjunto.AdjAdjunto, FileMode.Open, FileAccess.Read);
+                byte[] blob = new byte[fs.Length];
+                fs.Read(blob, 0, System.Convert.ToInt32(fs.Length));
+                fs.Close();
                 cn.Open();
-                ds = new DataSet();
-                cmd = new OracleCommand("UPDATE ADJUNTOS " +
-                    "SET ADJ_CODIGO=" + oAdjunto.AdjCodigo + "," +
-                    "ADJ_CODIGO_REGISTRO='" + oAdjunto.AdjCodigoRegistro + "'," +
-                    "ADJ_NOMBRE='" + oAdjunto.AdjNombre + "'," +
-                    "ADJ_EXTENCION='" + oAdjunto.AdjExtencion + "'," +
-                    "ADJ_FECHA='" + oAdjunto.AdjFecha.ToString("dd/MM/yyyy") + "'," +
-                    "ADJ_ADJUNTO=:BlobParamete " +
-                    "WHERE ADJ_CODIGO='" + oAdjunto.AdjCodigo + "'", cn);
+
+                string query = " UPDATE ADJUNTOS " +
+                    " SET ADJ_CODIGO=" + oAdjunto.AdjCodigo + "," +
+                    " ADJ_CODIGO_REGISTRO='" + oAdjunto.AdjCodigoRegistro + "'," +
+                    " ADJ_NOMBRE='" + oAdjunto.AdjNombre + "'," +
+                    " ADJ_EXTENCION='" + oAdjunto.AdjExtencion + "'," +
+                    " ADJ_FECHA='" + oAdjunto.AdjFecha.ToString("dd/MM/yyyy") + "'," +
+                    " ADJ_ADJUNTO=:BlobParameter " +
+                    " WHERE ADJ_CODIGO='" + oAdjunto.AdjCodigo + "'";
+
+                OracleParameter blobParameter = new OracleParameter();
+                blobParameter.OracleDbType = OracleDbType.Blob;
+                blobParameter.ParameterName = "BlobParameter";
+                blobParameter.Value = blob;
+                cmd = new OracleCommand(query, cn);
+                cmd.Parameters.Add(blobParameter);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -279,7 +288,7 @@ namespace Implement
             try
             {
                 Adjuntos oObjeto = new Adjuntos();
-                oObjeto.AdjCodigo = int.Parse(dr["ADJ_CODIGO"].ToString());
+                oObjeto.AdjCodigo = long.Parse(dr["ADJ_CODIGO"].ToString());
                 oObjeto.AdjCodigoRegistro = dr["ADJ_CODIGO_REGISTRO"].ToString();
                 oObjeto.AdjNombre = dr["ADJ_NOMBRE"].ToString();
                 oObjeto.AdjExtencion = dr["ADJ_EXTENCION"].ToString();

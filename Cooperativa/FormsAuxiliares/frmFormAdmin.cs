@@ -11,6 +11,8 @@ using AppProcesos.formsAuxiliares.formAdmin;
 using Controles.datos;
 using Service;
 using Controles.form;
+using System.Windows.Forms;
+
 namespace FormsAuxiliares
 {
     public partial class frmFormAdmin : gesForm, IVistaFormAdmin
@@ -342,7 +344,6 @@ namespace FormsAuxiliares
             // dgBusqueda
             // 
             this.dgBusqueda.DataMember = "";
-            this.dgBusqueda.BackgroundColor = System.Drawing.SystemColors.ControlText;
             this.dgBusqueda.Location = new System.Drawing.Point(6, 19);
             this.dgBusqueda.Name = "dgBusqueda";
             this.dgBusqueda.Size = new System.Drawing.Size(913, 312);
@@ -416,13 +417,19 @@ namespace FormsAuxiliares
         
         public frmFormAdmin(string tabla, PermisosFoms oPerForm)
         {
+            try { 
             InitializeComponent();
             AsignarPermisos(oPerForm);
             _Tabla = tabla;
 
             _oFormAdmin = new UIFormAdmin(this);
-           
         }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
+
+}
         private void frmFormAdmin_Load(object sender, EventArgs e)
         {
             try
@@ -433,14 +440,20 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                Console.WriteLine("{0} Exception caught.", ex);
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
         } 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            try { 
             frmABM  ofrm = new frmABM(_Tabla);
             ofrm.Show();
         }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
+}
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -471,8 +484,14 @@ namespace FormsAuxiliares
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
+            try { 
             _oFormAdmin.CargarGrilla(_Tabla);
         }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
+}
         #endregion
 
         #region << METODOS >>

@@ -160,8 +160,14 @@ namespace FormsAuxiliares
 
         private void btnVer_Click(object sender, EventArgs e)
         {
+            try { 
             _oObservacionCrud.Mostrar();
         }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
+}
 
         #endregion
 

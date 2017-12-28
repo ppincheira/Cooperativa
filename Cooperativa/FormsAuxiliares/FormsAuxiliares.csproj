@@ -87,14 +87,32 @@
     <Compile Include="frmBuscador.Designer.cs">
       <DependentUpon>frmBuscador.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCallesCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCallesCrud.Designer.cs">
+      <DependentUpon>frmCallesCrud.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCrudGrilla.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCrudGrillaN.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmDomiciliosCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDomiciliosCrud.Designer.cs">
+      <DependentUpon>frmDomiciliosCrud.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFormAdmin.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormAdminMini.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFormAdminMini.Designer.cs">
+      <DependentUpon>frmFormAdminMini.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -124,14 +142,23 @@
     <EmbeddedResource Include="frmBuscador.resx">
       <DependentUpon>frmBuscador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCallesCrud.resx">
+      <DependentUpon>frmCallesCrud.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCrudGrilla.resx">
       <DependentUpon>frmCrudGrilla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCrudGrillaN.resx">
       <DependentUpon>frmCrudGrillaN.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDomiciliosCrud.resx">
+      <DependentUpon>frmDomiciliosCrud.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFormAdmin.resx">
       <DependentUpon>frmFormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFormAdminMini.resx">
+      <DependentUpon>frmFormAdminMini.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

@@ -53,7 +53,7 @@ namespace AppProcesos.formsAuxiliares.frmObservaciones
             long rtdo;
             Observaciones oObs = new Observaciones();
             ObservacionesBus oObsBus = new ObservacionesBus();
-            Adjuntos oAdjunto = _vista.adjunto;
+       
             oObs.ObsCodigo = _vista.codigo;
             oObs.ObsCodigoRegistro = _vista.codigoRegistro;
             oObs.ObsDetalle = _vista.detalle;
@@ -68,12 +68,12 @@ namespace AppProcesos.formsAuxiliares.frmObservaciones
             if (_vista.adjunto.AdjNombre != "")
             {
                 
-                oAdjunto.AdjCodigoRegistro = rtdo.ToString();
+                _vista.adjunto.AdjCodigoRegistro = rtdo.ToString();
                 AdjuntosBus oAdjuntoBus = new AdjuntosBus();
                 if (oAdjuntoBus.AdjuntoExisteByCodigoRegistro(rtdo))
-                    oAdjuntoBus.AdjuntoUpdate(oAdjunto);
+                    oAdjuntoBus.AdjuntoUpdate(_vista.adjunto);
                 else
-                    oAdjuntoBus.AdjuntosAdd(oAdjunto);
+                    oAdjuntoBus.AdjuntosAdd(_vista.adjunto);
             }
 
         }
@@ -82,7 +82,7 @@ namespace AppProcesos.formsAuxiliares.frmObservaciones
         public void AgregarImagen()
         {
 
-            _vista.adjunto = oUtil.Adjunto_AgregarImagen();
+            _vista.adjunto = oUtil.Adjunto_Agregar(_vista.adjunto);
             _vista.adjuntoFileName = _vista.adjunto.AdjNombre;
 
         }
