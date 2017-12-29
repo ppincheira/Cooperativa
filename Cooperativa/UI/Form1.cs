@@ -71,7 +71,8 @@ namespace UI
 
         private void buttonCrudGrilla_Click(object sender, EventArgs e)
         {
-            FormsAuxiliares.frmCrudGrillaN frmbus = new FormsAuxiliares.frmCrudGrillaN("AREC","CODIGO");
+            //FormsAuxiliares.frmCrudGrillaN frmbus = new FormsAuxiliares.frmCrudGrillaN("PERC","NUMERO",true);
+            FormsAuxiliares.frmCrudGrillaN frmbus = new FormsAuxiliares.frmCrudGrillaN("AREC", "CODIGO", false);
             frmbus.ShowDialog();
 
         }

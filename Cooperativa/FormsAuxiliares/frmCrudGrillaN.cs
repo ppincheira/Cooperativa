@@ -33,6 +33,7 @@ namespace FormsAuxiliares
         private Controles.labels.lblEtiqueta lblEFechaDesde;
         #region << PROPIEDADES >>
         private string _Tabla, _campoClave;
+        private bool _claveSecuencia;
         private Controles.buttons.btnAceptar btnAceptar2;
         #endregion
 
@@ -87,10 +88,11 @@ namespace FormsAuxiliares
         #endregion
         #region << EVENTOS >>
 
-        public frmCrudGrillaN(string tabla, string campoClave)
+        public frmCrudGrillaN(string tabla, string campoClave, bool claveSecuencia)
         {
             _Tabla = tabla;
             _campoClave = campoClave;
+            _claveSecuencia = claveSecuencia;
             InitializeComponent();
             _oCrudGrilla = new UICrudGrilla(this);
         }
@@ -98,7 +100,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oCrudGrilla.CargarGrilla(_Tabla, _campoClave);
+                _oCrudGrilla.CargarGrilla(_Tabla, _campoClave, _claveSecuencia);
             }
             catch (Exception ex)
             {
@@ -113,7 +115,7 @@ namespace FormsAuxiliares
             try
             {
 
-                _oCrudGrilla.Inicializar(_Tabla, _campoClave);
+                _oCrudGrilla.Inicializar(_Tabla, _campoClave, _claveSecuencia);
             }
             catch (Exception ex)
             {
@@ -390,13 +392,12 @@ namespace FormsAuxiliares
 
         private void btnAceptar1_Click(object sender, EventArgs e)
         {
-            String v1 = "";
+            _oCrudGrilla.ActualizaTabla(_Tabla, _campoClave, _claveSecuencia);
             foreach (DataGridViewRow row in grdGrillaEdit1.Rows)
             {
-                if (!row.IsNewRow)
-                    v1 += row.Cells[0].Value.ToString() + row.Cells[grdGrillaEdit1.ColumnCount - 1].Value.ToString() + "  ";
+                if (!row.IsNewRow && row.Cells[grdGrillaEdit1.ColumnCount - 1].Value=="0")
+                    row.DefaultCellStyle.BackColor = Color.White;
             }
-            _oCrudGrilla.ActualizaTabla(_Tabla, _campoClave);
 
 
 
@@ -414,7 +415,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oCrudGrilla.CargarGrilla(_Tabla, _campoClave);
+                _oCrudGrilla.CargarGrilla(_Tabla, _campoClave, _claveSecuencia);
             }
             catch (Exception ex)
             {
@@ -450,6 +451,9 @@ namespace FormsAuxiliares
             {
                 grdGrillaEdit1.CurrentRow.Cells[grdGrillaEdit1.ColumnCount - 1].Value = "3";
                 grdGrillaEdit1.CurrentRow.DefaultCellStyle.BackColor = Color.Blue;
+                if (!_claveSecuencia) // Permito editar la clave si no es secuencia
+                    grdGrillaEdit1.CurrentRow.Cells[0].ReadOnly = false;
+                grdGrillaEdit1.CurrentRow.Cells[0].Selected = true;
             }
             else
             {

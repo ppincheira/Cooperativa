@@ -19,6 +19,8 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
         private DataTable _dtCombo;
         private string _Fecha;
         public string columnaClave = "";
+        public bool insertarClave = false;
+        public DataTable _estructuraTablaGrilla;
 
         public UICrudGrilla(IVistaCrudGrilla vista)
         {
@@ -27,7 +29,7 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
 
         }
 
-        public void Inicializar(string tabla, string campoClave)
+        public void Inicializar(string tabla, string campoClave, bool claveSecuencia)
         {
             _filtroCampos = "";
             _filtroValores = "";
@@ -78,9 +80,17 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                 //  if (!row.IsNewRow)
                 row.Cells[_vista.grilla.ColumnCount - 1].Value = "0";
             }
+            // Obtengo nombre de la tabla 
+            Tablas otabla = new Tablas();
+            otabla = oTablasBus.TablasGetById(tabla);
+            // Obtengo la estructura de la tabla con la que cargue la grilla
+            _estructuraTablaGrilla= oTablasBus.Estructura(otabla.TabNombre);
+            // Si la clave es secuencia no permito editarla, caso contrario si
+            // La clave se edita unicamente cuando se agrega un nuevo registro, esto se habilita en addnew
+            // cuando doy confirmar cambios se debe validar cada uno de los campos teniendo en cuenta los tipos de datos de la tabla y el mapeo
         }
 
-        public void CargarGrilla(string tabla, string campoClave)
+        public void CargarGrilla(string tabla, string campoClave, bool claveSecuencia)
         {
             _filtroCampos = "";
             _filtroValores = "";
@@ -110,11 +120,12 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
             tablasGrd.MostrarEstructura(Tabla);
         }
 
-        public void ActualizaTabla(string Tabla, string campoClave)
+        public void ActualizaTabla(string Tabla, string campoClave, bool claveSecuencia)
         {
             // Obtener de DetallesColumnasTablas todos los campos de la tabla menos el campo clave
             // Pasar esos campos a un arreglo de campos y valores
             // actualizar
+            bool datosOK = true;
             Tablas otabla = new Tablas();
             TablasBus tablasGrd = new TablasBus();
             otabla = tablasGrd.TablasGetById(Tabla);
@@ -133,23 +144,38 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                     foreach (DetallesColumnasTablas oDetalle in ListDetalle)
                     {
                         posicion++;
-                        if (oDetalle.DctDescripcion != campoClave)
+                        if (oDetalle.DctDescripcion != campoClave ||
+                            (row.Cells[_vista.grilla.ColumnCount - 1].Value.ToString() == "3" && oDetalle.DctDescripcion == campoClave && !claveSecuencia))
                         {
                             Array.Resize(ref nombreCampos, nombreCampos.Length + 1);
                             Array.Resize(ref valoresCampos, valoresCampos.Length + 1);
                             nombreCampos[nombreCampos.Length - 1] = oDetalle.DctColumna;
                             valoresCampos[valoresCampos.Length - 1] = row.Cells[posicion - 1].Value.ToString();
                         }
-                        else
+                        else  
+                            //Agrego un registro y la clave no es secuencia
                         {
                             valorClave = row.Cells[posicion - 1].Value.ToString();
                             columnaClave = oDetalle.DctColumna;
                         }
                     };
+                    // Para cada registro deberia actualizar su estado si se pudo actualizar
                     if (row.Cells[_vista.grilla.ColumnCount - 1].Value.ToString() == "1" && !row.IsNewRow)
                     {
                         // Update
-                        tablasGrd.TablaActualizaGrid(otabla.TabNombre, nombreCampos, valoresCampos, columnaClave + "='" + valorClave + "'", "U");
+                        // Para cada campo validar que tenga el tipo de dato adecuado 
+                        // contra la estructura de la tabla que esta en _estructuraTablaGrilla datatable
+                        // Si todos los campos menos la clave son validos actualizo
+                        foreach (DataRow oCampo in _estructuraTablaGrilla.Rows) {
+                            int pos;
+                            pos = Array.IndexOf(nombreCampos, oCampo.ItemArray[2]);
+                            if (pos>= 0 && datosOK)
+                                datosOK = (oUtil.TipoDatoValido(valoresCampos[pos], oCampo.ItemArray[4].ToString()));
+                                //MessageBox.Show(oCampo.ItemArray[2].ToString()); // campo
+                        }
+                        if (datosOK && tablasGrd.TablaActualizaGrid(otabla.TabNombre, nombreCampos, valoresCampos, columnaClave + "='" + valorClave + "'", "U"))
+                            row.Cells[_vista.grilla.ColumnCount - 1].Value="0";
+
                     }
                     else if (row.Cells[_vista.grilla.ColumnCount - 1].Value.ToString() == "2" && !row.IsNewRow)
                     {
@@ -159,11 +185,26 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                     else if (row.Cells[_vista.grilla.ColumnCount - 1].Value.ToString() == "3" && !row.IsNewRow)
                     {
                         // Insert
-                        tablasGrd.TablaActualizaGrid(otabla.TabNombre, nombreCampos, valoresCampos, columnaClave + "='" + valorClave + "'", "I");
+                        // Para cada campo validar que tenga el tipo de dato adecuado 
+                        // contra la estructura de la tabla que esta en _estructuraTablaGrilla datatable
+                        // Si todos los campos inclusive la clave, si no es secuencia, son validos actualizo
+                        foreach (DataRow oCampo in _estructuraTablaGrilla.Rows) {
+                            int pos;
+                            pos = Array.IndexOf(nombreCampos, oCampo.ItemArray[2]);
+                            if (pos >= 0 && datosOK)
+                            {
+                                datosOK = (oUtil.TipoDatoValido(valoresCampos[pos], oCampo.ItemArray[4].ToString()));
+                                datosOK = valoresCampos[pos].Length > 0 || oCampo.ItemArray[8].ToString() == "Y";
+                            }
+                        }
+                        if (datosOK && tablasGrd.TablaActualizaGrid(otabla.TabNombre, nombreCampos, valoresCampos, columnaClave + "='" + valorClave + "'", "I"))
+                            row.Cells[_vista.grilla.ColumnCount - 1].Value="0";
                     };
                 }
 
             };
+            if (!datosOK)
+                MessageBox.Show("Error al actualizar los datos, Revice las filas resaltadas.");
         }
     }
 }
