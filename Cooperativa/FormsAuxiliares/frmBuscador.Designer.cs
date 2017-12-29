@@ -114,7 +114,7 @@
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(6, 54);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(125, 21);
+            this.cmbEstado.Size = new System.Drawing.Size(125, 24);
             this.cmbEstado.TabIndex = 8;
             this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
@@ -123,7 +123,7 @@
             this.lblEEstado.AutoSize = true;
             this.lblEEstado.Location = new System.Drawing.Point(6, 16);
             this.lblEEstado.Name = "lblEEstado";
-            this.lblEEstado.Size = new System.Drawing.Size(40, 13);
+            this.lblEEstado.Size = new System.Drawing.Size(52, 17);
             this.lblEEstado.TabIndex = 8;
             this.lblEEstado.Text = "Estado";
             // 
@@ -145,7 +145,7 @@
             this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaHasta.Location = new System.Drawing.Point(117, 55);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
-            this.dtpFechaHasta.Size = new System.Drawing.Size(96, 20);
+            this.dtpFechaHasta.Size = new System.Drawing.Size(96, 22);
             this.dtpFechaHasta.TabIndex = 9;
             // 
             // dtpFechaDesde
@@ -153,7 +153,7 @@
             this.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaDesde.Location = new System.Drawing.Point(6, 55);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
-            this.dtpFechaDesde.Size = new System.Drawing.Size(96, 20);
+            this.dtpFechaDesde.Size = new System.Drawing.Size(96, 22);
             this.dtpFechaDesde.TabIndex = 8;
             // 
             // lblEFechaHasta
@@ -161,7 +161,7 @@
             this.lblEFechaHasta.AutoSize = true;
             this.lblEFechaHasta.Location = new System.Drawing.Point(114, 16);
             this.lblEFechaHasta.Name = "lblEFechaHasta";
-            this.lblEFechaHasta.Size = new System.Drawing.Size(68, 13);
+            this.lblEFechaHasta.Size = new System.Drawing.Size(88, 17);
             this.lblEFechaHasta.TabIndex = 7;
             this.lblEFechaHasta.Text = "Fecha Hasta";
             // 
@@ -170,7 +170,7 @@
             this.lblEFechaDesde.AutoSize = true;
             this.lblEFechaDesde.Location = new System.Drawing.Point(6, 16);
             this.lblEFechaDesde.Name = "lblEFechaDesde";
-            this.lblEFechaDesde.Size = new System.Drawing.Size(71, 13);
+            this.lblEFechaDesde.Size = new System.Drawing.Size(92, 17);
             this.lblEFechaDesde.TabIndex = 6;
             this.lblEFechaDesde.Text = "Fecha Desde";
             // 
@@ -179,7 +179,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Location = new System.Drawing.Point(6, 16);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(61, 13);
+            this.lblTitulo.Size = new System.Drawing.Size(81, 17);
             this.lblTitulo.TabIndex = 3;
             this.lblTitulo.Text = "Buscar por:";
             // 
@@ -188,7 +188,7 @@
             this.cmbBuscar.FormattingEnabled = true;
             this.cmbBuscar.Location = new System.Drawing.Point(49, 36);
             this.cmbBuscar.Name = "cmbBuscar";
-            this.cmbBuscar.Size = new System.Drawing.Size(140, 21);
+            this.cmbBuscar.Size = new System.Drawing.Size(140, 24);
             this.cmbBuscar.TabIndex = 2;
             // 
             // txtFiltro
@@ -197,7 +197,7 @@
             this.txtFiltro.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtFiltro.Location = new System.Drawing.Point(49, 74);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(140, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(140, 22);
             this.txtFiltro.TabIndex = 0;
             this.txtFiltro.TextoVacio = "<Descripcion>";
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
@@ -217,14 +217,12 @@
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Location = new System.Drawing.Point(9, 288);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(125, 13);
+            this.lblCantidad.Size = new System.Drawing.Size(169, 17);
             this.lblCantidad.TabIndex = 1;
             this.lblCantidad.Text = "Se econtraron 0 registros";
             // 
             // dgBusqueda
             // 
-            this.dgBusqueda.DataMember = "";
-            this.dgBusqueda.BackgroundColor = System.Drawing.SystemColors.ControlText;
             this.dgBusqueda.Location = new System.Drawing.Point(6, 19);
             this.dgBusqueda.Name = "dgBusqueda";
             this.dgBusqueda.ReadOnly = true;

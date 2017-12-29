@@ -65,8 +65,8 @@
     <Compile Include="formsAuxiliares\buscador\UIBuscador.cs" />
     <Compile Include="formsAuxiliares\formAdmin\IVistaFormAdmin.cs" />
     <Compile Include="formsAuxiliares\formAdmin\UIFormAdmin.cs" />
-    <Compile Include="formsAuxiliares\frmCalles\IVistaCalles.cs" />
-    <Compile Include="formsAuxiliares\frmCalles\UICalles.cs" />
+    <Compile Include="formsAuxiliares\frmCalles\IVistaCallesCrud.cs" />
+    <Compile Include="formsAuxiliares\frmCalles\UICallesCrud.cs" />
     <Compile Include="formsAuxiliares\frmCrudGrilla\IVistaCrudGrilla.cs" />
     <Compile Include="formsAuxiliares\frmCrudGrilla\UICrudGrilla.cs" />
     <Compile Include="formsAuxiliares\frmLogin\IVistaLogin.cs" />

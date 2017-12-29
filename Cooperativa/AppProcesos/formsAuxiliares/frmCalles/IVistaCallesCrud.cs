@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AppProcesos.formsAuxiliares.frmCalles
 {
-    public interface IVistaCalles
+    public interface IVistaCallesCrud
     {
         long codigo { get; set; }
         string codigoProvincia { get; set; }
