@@ -17,8 +17,14 @@ namespace FormsAuxiliares
 {
     public partial class frmFormAdmin : gesForm, IVistaFormAdmin
     {
+
+        #region << PROPIEDADES >>
+
+        private string _Tabla;
         Utility oUtil;
         private UIFormAdmin _oFormAdmin;
+        #endregion
+
         #region Implementation of IVistaBuscador
         public Boolean grupoEstado
         {
@@ -144,9 +150,9 @@ namespace FormsAuxiliares
             // 
             this.txtFiltro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtFiltro.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtFiltro.Location = new System.Drawing.Point(86, 58);
+            this.txtFiltro.Location = new System.Drawing.Point(105, 58);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(289, 22);
+            this.txtFiltro.Size = new System.Drawing.Size(270, 22);
             this.txtFiltro.TabIndex = 3;
             this.txtFiltro.TextoVacio = "<Descripcion>";
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
@@ -154,15 +160,15 @@ namespace FormsAuxiliares
             // cmbBuscar
             // 
             this.cmbBuscar.FormattingEnabled = true;
-            this.cmbBuscar.Location = new System.Drawing.Point(86, 14);
+            this.cmbBuscar.Location = new System.Drawing.Point(105, 16);
             this.cmbBuscar.Name = "cmbBuscar";
-            this.cmbBuscar.Size = new System.Drawing.Size(289, 24);
+            this.cmbBuscar.Size = new System.Drawing.Size(270, 24);
             this.cmbBuscar.TabIndex = 2;
             // 
             // lblEtiqueta2
             // 
             this.lblEtiqueta2.AutoSize = true;
-            this.lblEtiqueta2.Location = new System.Drawing.Point(6, 64);
+            this.lblEtiqueta2.Location = new System.Drawing.Point(42, 61);
             this.lblEtiqueta2.Name = "lblEtiqueta2";
             this.lblEtiqueta2.Size = new System.Drawing.Size(57, 17);
             this.lblEtiqueta2.TabIndex = 1;
@@ -171,7 +177,7 @@ namespace FormsAuxiliares
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(6, 22);
+            this.lblFiltro.Location = new System.Drawing.Point(3, 19);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(99, 17);
             this.lblFiltro.TabIndex = 0;
@@ -211,7 +217,7 @@ namespace FormsAuxiliares
             // dtpFechaHasta
             // 
             this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaHasta.Location = new System.Drawing.Point(81, 58);
+            this.dtpFechaHasta.Location = new System.Drawing.Point(98, 58);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
             this.dtpFechaHasta.Size = new System.Drawing.Size(95, 22);
             this.dtpFechaHasta.TabIndex = 9;
@@ -219,7 +225,7 @@ namespace FormsAuxiliares
             // dtpFechaDesde
             // 
             this.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaDesde.Location = new System.Drawing.Point(81, 17);
+            this.dtpFechaDesde.Location = new System.Drawing.Point(99, 21);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
             this.dtpFechaDesde.Size = new System.Drawing.Size(95, 22);
             this.dtpFechaDesde.TabIndex = 8;
@@ -343,7 +349,6 @@ namespace FormsAuxiliares
             // 
             // dgBusqueda
             // 
-            this.dgBusqueda.DataMember = "";
             this.dgBusqueda.Location = new System.Drawing.Point(6, 19);
             this.dgBusqueda.Name = "dgBusqueda";
             this.dgBusqueda.Size = new System.Drawing.Size(913, 312);
@@ -379,7 +384,7 @@ namespace FormsAuxiliares
             // 
             // frmFormAdmin
             // 
-            this.ClientSize = new System.Drawing.Size(949, 487);
+            this.ClientSize = new System.Drawing.Size(946, 487);
             this.Controls.Add(this.gpbGrupoEstado);
             this.Controls.Add(this.gpbGrupo4);
             this.Controls.Add(this.gpbGrupo3);
@@ -398,19 +403,13 @@ namespace FormsAuxiliares
             this.gpbGrupoEstado.ResumeLayout(false);
             this.gpbGrupoEstado.PerformLayout();
             this.ResumeLayout(false);
-            this.btnNuevo.FUN_CODIGO = "2";
-            this.btnEditar.FUN_CODIGO = "3";
-            this.btnExportar.FUN_CODIGO = "4";
+
         }
 
 
 
 
-        #region << PROPIEDADES >>
-
-        private string _Tabla;
-
-        #endregion
+      
 
         #region << EVENTOS >>
 
@@ -434,7 +433,7 @@ namespace FormsAuxiliares
         {
             try
             {
-            //    _oFormAdmin.Inicializar(_Tabla);
+                _oFormAdmin.Inicializar(_Tabla);
                 oUtil = new Utility();
                 oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA",null);
             }

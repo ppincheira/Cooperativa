@@ -154,7 +154,32 @@ namespace Implement
                 }
             }
 
-            private Localidades CargarLocalidades(DataRow dr)
+        public DataTable LocalidadesGetByProvincia( string Codigo)
+        {
+            try
+            {
+
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "SELECT * FROM LOCALIDADES" +
+                    " WHERE  PRV_CODIGO='"+Codigo+"'";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt = new DataTable();
+                return dt = ds.Tables[0];
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private Localidades CargarLocalidades(DataRow dr)
             {
                 try
                 {

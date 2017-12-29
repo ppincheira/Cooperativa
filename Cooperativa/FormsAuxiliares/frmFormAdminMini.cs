@@ -17,8 +17,14 @@ namespace FormsAuxiliares
     public partial class frmFormAdminMini : gesForm, IVistaFormAdmin
     {
 
+
+        #region << PROPIEDADES >>
+
+        private string _Tabla;
         Utility oUtil;
         private UIFormAdmin _oFormAdmin;
+        #endregion
+
         #region Implementation of IVistaBuscador
         public Boolean grupoEstado
         {
@@ -75,11 +81,29 @@ namespace FormsAuxiliares
 
         private void frmFormAdminMini_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                _oFormAdmin.Inicializar(_Tabla);
+                oUtil = new Utility();
+                oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            try
+            {
+                frmABM ofrm = new frmABM(_Tabla);
+                ofrm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
 
         }
 
@@ -111,6 +135,18 @@ namespace FormsAuxiliares
         private void btnSalir_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _oFormAdmin.CargarGrilla(_Tabla);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
         }
     }
 }

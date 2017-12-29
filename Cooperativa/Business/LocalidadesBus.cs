@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Implement;
 using Model;
-
+using System.Data;
 
 namespace Business
 {
@@ -36,6 +36,11 @@ namespace Business
         {
             LocalidadesImpl oLocalidadesImpl = new LocalidadesImpl();
             return oLocalidadesImpl.LocalidadesGetAll();
+        }
+
+        public DataTable LocalidadesGetByProvincia(string Codigo) {
+            LocalidadesImpl oLocalidadesImpl = new LocalidadesImpl();
+            return oLocalidadesImpl.LocalidadesGetByProvincia(Codigo);
         }
     }
 }
