@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCallesCrud));
             this.gbDatos = new Controles.contenedores.gesGroup();
+            this.cmbLista1 = new Controles.datos.cmbLista();
+            this.txtDescripcionCorta1 = new Controles.textBoxes.txtDescripcionCorta();
             this.lbDescripcion = new Controles.labels.lblEtiqueta();
             this.lbLocalidad = new Controles.labels.lblEtiqueta();
-            this.txtDescripcionCorta1 = new Controles.textBoxes.txtDescripcionCorta();
             this.gesGroup2 = new Controles.contenedores.gesGroup();
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
-            this.cmbLista1 = new Controles.datos.cmbLista();
             this.gbDatos.SuspendLayout();
             this.gesGroup2.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +54,23 @@
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
             // 
+            // cmbLista1
+            // 
+            this.cmbLista1.FormattingEnabled = true;
+            this.cmbLista1.Location = new System.Drawing.Point(111, 66);
+            this.cmbLista1.Name = "cmbLista1";
+            this.cmbLista1.Size = new System.Drawing.Size(234, 21);
+            this.cmbLista1.TabIndex = 5;
+            // 
+            // txtDescripcionCorta1
+            // 
+            this.txtDescripcionCorta1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDescripcionCorta1.Location = new System.Drawing.Point(111, 34);
+            this.txtDescripcionCorta1.MaxLength = 20;
+            this.txtDescripcionCorta1.Name = "txtDescripcionCorta1";
+            this.txtDescripcionCorta1.Size = new System.Drawing.Size(234, 20);
+            this.txtDescripcionCorta1.TabIndex = 4;
+            // 
             // lbDescripcion
             // 
             this.lbDescripcion.AutoSize = true;
@@ -66,20 +83,11 @@
             // lbLocalidad
             // 
             this.lbLocalidad.AutoSize = true;
-            this.lbLocalidad.Location = new System.Drawing.Point(62, 74);
+            this.lbLocalidad.Location = new System.Drawing.Point(49, 74);
             this.lbLocalidad.Name = "lbLocalidad";
-            this.lbLocalidad.Size = new System.Drawing.Size(43, 13);
+            this.lbLocalidad.Size = new System.Drawing.Size(56, 13);
             this.lbLocalidad.TabIndex = 0;
-            this.lbLocalidad.Text = "Detalle:";
-            // 
-            // txtDescripcionCorta1
-            // 
-            this.txtDescripcionCorta1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDescripcionCorta1.Location = new System.Drawing.Point(111, 34);
-            this.txtDescripcionCorta1.MaxLength = 20;
-            this.txtDescripcionCorta1.Name = "txtDescripcionCorta1";
-            this.txtDescripcionCorta1.Size = new System.Drawing.Size(234, 20);
-            this.txtDescripcionCorta1.TabIndex = 4;
+            this.lbLocalidad.Text = "Localidad:";
             // 
             // gesGroup2
             // 
@@ -110,14 +118,6 @@
             this.btnAceptar.TabIndex = 5;
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // cmbLista1
-            // 
-            this.cmbLista1.FormattingEnabled = true;
-            this.cmbLista1.Location = new System.Drawing.Point(111, 66);
-            this.cmbLista1.Name = "cmbLista1";
-            this.cmbLista1.Size = new System.Drawing.Size(234, 21);
-            this.cmbLista1.TabIndex = 5;
             // 
             // frmCallesCrud
             // 
