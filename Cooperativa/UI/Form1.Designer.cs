@@ -39,6 +39,7 @@
             this.btnPersonalizado3 = new Controles.btnPersonalizado();
             this.buttonCrudGrilla = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,11 +150,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(194, 209);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(91, 51);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "RUTAS";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 468);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnPersonalizado3);
             this.Controls.Add(this.buttonCrudGrilla);
@@ -187,6 +199,7 @@
         private Controles.btnPersonalizado btnPersonalizado3;
         private System.Windows.Forms.Button buttonCrudGrilla;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 
