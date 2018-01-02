@@ -232,6 +232,9 @@
     <Compile Include="textBoxes\txtCuit.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="textBoxes\txtDescripcion.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="textBoxes\txtDescripcionCorta.cs">
       <SubType>Component</SubType>
     </Compile>
