@@ -8,6 +8,9 @@ namespace Model {
     public class Domicilios {
         public Domicilios() { }
         public virtual long DomCodigo { get; set; }
+        public virtual string TabCodigo { get; set; }
+        public virtual long DomCodigoRegistro { get; set; }
+        public virtual string TdoCodigo { get; set; }
         public virtual int LocNumero { get; set; }
         public virtual long CalNumero { get; set; }
         public virtual long CalNumeroDesde { get; set; }
@@ -19,7 +22,8 @@ namespace Model {
         public virtual string DomParcela { get; set; }
         public virtual int CplNumero { get; set; }
         public virtual string DomLote { get; set; }
-        public virtual decimal? DomGisX { get; set; }
-        public virtual decimal? DomGisY { get; set; }
+        public virtual decimal DomGisX { get; set; }
+        public virtual decimal DomGisY { get; set; }
+      
     }
 }

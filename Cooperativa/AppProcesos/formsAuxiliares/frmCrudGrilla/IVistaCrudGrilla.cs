@@ -9,7 +9,6 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
         Boolean grupoFecha { get; set; }
         Boolean grupoEstado { get; set; }
         grdGrillaEdit grilla { get; set; }
-
         DateTime fechaDesde { get; set; }
         DateTime fechaHasta { get; set; }
         cmbLista comboBuscar { get; set; }
