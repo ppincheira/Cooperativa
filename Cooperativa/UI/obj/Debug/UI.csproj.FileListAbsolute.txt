@@ -78,34 +78,6 @@ C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.exe
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.pdb
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Service.dll
 C:\Users\ppincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Service.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\UI.exe.config
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\UI.exe
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\UI.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Business.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Controles.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\FormsAuxiliares.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Model.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Implement.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\AppProcesos.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Service.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Oracle.DataAccess.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Business.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Controles.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\FormsAuxiliares.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Model.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Implement.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\AppProcesos.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Service.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.Form1.resources
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.frmLogin.resources
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.Properties.Resources.resources
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.exe
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\UI.exe.config
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\UI.exe
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\UI.pdb
@@ -162,3 +134,8 @@ C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
 C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.exe
 C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.Form1.resources
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.frmLogin.resources
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.Properties.Resources.resources
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
