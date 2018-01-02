@@ -234,10 +234,80 @@ namespace Service
             obj.Start();
 
         }
-
-
-
-
-
+        public bool TipoDatoValido(string valor, string tipo)
+        {
+            switch (tipo) {
+                case "CHAR":
+                    //try
+                    //{
+                    //    string m = String.Parse(valor);
+                    //}
+                    //catch (FormatException e)
+                    //{
+                    //    return false;
+                    //};
+                    break;
+                case "date":
+                    try
+                    {
+                        DateTime m = DateTime.Parse(valor);
+                    }
+                    catch (FormatException e)
+                    {
+                        return false;
+                    };
+                    break;
+                case "FLOAT":
+                    try
+                    {
+                        Decimal m = Decimal.Parse(valor);
+                    }
+                    catch (FormatException e)
+                    {
+                        return false;
+                    };
+                    break;
+                case "INTEGER":
+                    try
+                    {
+                        int m = Int32.Parse(valor);
+                    }
+                    catch (FormatException e)
+                    {
+                        return false;
+                    };
+                    break;
+                case "long":
+                    try
+                    {
+                        long m = long.Parse(valor);
+                    }
+                    catch (FormatException e)
+                    {
+                        return false;
+                    };
+                    break;
+                case "NUMBER":
+                    try
+                    {
+                        Decimal m = Decimal.Parse(valor);
+                    }
+                    catch (FormatException e)
+                    {
+                        return false;
+                    };
+                    break;
+                case "NVARCHAR2":
+                ;
+                break;
+                case "VARCHAR2":
+                ;
+                break;
+                default:
+                    return false;
+            }
+            return true;
+        }
     }
+
 }

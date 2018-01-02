@@ -71,7 +71,8 @@ namespace UI
 
         private void buttonCrudGrilla_Click(object sender, EventArgs e)
         {
-            FormsAuxiliares.frmCrudGrillaN frmbus = new FormsAuxiliares.frmCrudGrillaN("AREC","CODIGO");
+            //FormsAuxiliares.frmCrudGrillaN frmbus = new FormsAuxiliares.frmCrudGrillaN("PERC","NUMERO",true);
+            FormsAuxiliares.frmCrudGrillaN frmbus = new FormsAuxiliares.frmCrudGrillaN("AREC", "CODIGO", false);
             frmbus.ShowDialog();
 
         }
@@ -80,6 +81,13 @@ namespace UI
         {
             FormsAuxiliares.frmObservacionesAdmin frmobs = new FormsAuxiliares.frmObservacionesAdmin("PERS",1,"1");
             frmobs.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PermisosFoms oPermiso = new PermisosFoms("10001", "3", "0", "4", "0");
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("SRUT",oPermiso);
+            frmbus.ShowDialog();
         }
     }
 }

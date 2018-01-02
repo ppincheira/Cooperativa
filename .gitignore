@@ -148,3 +148,8 @@ Cooperativa/Controles/bin/Debug/Controles.dll
 Cooperativa/AppProcesos/obj/Debug/AppProcesos.csprojResolveAssemblyReference.cache
 Cooperativa/Business/bin/Debug/Business.dll
 Cooperativa/Business/obj/Debug/Business.csproj.FileListAbsolute.txt
+*.cache
+Cooperativa/service/obj/Debug/Service.csprojResolveAssemblyReference.cache
+Cooperativa/service/obj/Debug/Service.csprojResolveAssemblyReference.cache
+*.dll
+Cooperativa/AppProcesos/obj/Debug/AppProcesos.csprojResolveAssemblyReference.cache

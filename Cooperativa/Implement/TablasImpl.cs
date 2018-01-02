@@ -308,6 +308,42 @@ namespace Implement
             }
 
         }
+        public DataTable Estructura(string tabla)
+        {
+            try
+            {
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+
+
+                cn.Open();
+                //               Muestra la estructura de la tabla PERSONAS
+                String[] tableRestrictions = new String[2];
+                tableRestrictions[1] = tabla;
+                return  cn.GetSchema("Columns", tableRestrictions);
+                //DataTable table = cn.GetSchema("Columns", tableRestrictions);
+                //DisplayData(table);
+                //VerDataTable(table);
+                //Console.WriteLine("Press any key to continue.");
+                ////             Muestra la columna ARE_CODIGO de la tabla AREAS
+                //tableRestrictions = new String[3];
+                //tableRestrictions[1] = "AREAS";
+                //tableRestrictions[2] = "ARE_CODIGO";
+                //table = cn.GetSchema("Columns", tableRestrictions);
+                //DisplayData(table);
+                //VerDataTable(table);
+                //Console.WriteLine("Press any key to continue.");
+                //Console.ReadKey();
+                //OracleCommand cmd = new OracleCommand(comando, cn);
+                //cmd.ExecuteNonQuery();
+                //return;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
         public bool TablaActualizaGrid(string tabla, string[] columnas, string[] valores, string criterio, string operacion)
         {
             string comando = "";
@@ -334,10 +370,14 @@ namespace Implement
                     string listaValores = "";
                     for (int pos = 0; pos < columnas.Length; pos++)
                     {
-                        listaCampos += columnas[columnas.Length - 1];
-                        listaValores += "'" + valores[valores.Length - 1] + "'";
+                        listaCampos += columnas[pos];
+                        listaValores += "'" + valores[pos] + "'";
                         if (columnas.Length > pos + 1)
-                            comando += ", ";
+                        {
+                            listaCampos += ", ";
+                            listaValores += ", ";
+
+                        }
                     };
                     comando += " ( " + listaCampos + ") values(" + listaValores + ")";
                     break;

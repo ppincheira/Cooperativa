@@ -61,5 +61,10 @@ namespace Business
             oTablasImpl.MostrarEstructura(tabla);
         }
 
+        public DataTable Estructura(string tabla)
+        {
+            TablasImpl oTablasImpl = new TablasImpl();
+            return oTablasImpl.Estructura(tabla);
+        }
     }
 }
