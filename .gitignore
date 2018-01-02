@@ -153,3 +153,11 @@ Cooperativa/service/obj/Debug/Service.csprojResolveAssemblyReference.cache
 Cooperativa/service/obj/Debug/Service.csprojResolveAssemblyReference.cache
 *.dll
 Cooperativa/AppProcesos/obj/Debug/AppProcesos.csprojResolveAssemblyReference.cache
+*.dll
+*.dll
+*.pdb
+*.txt
+Cooperativa/.vs/Cooperativa/v15/.suo
+Cooperativa/.vs/Cooperativa/v15/sqlite3/storage.ide
+*.cache
+Cooperativa/.vs/Cooperativa/v15/sqlite3/storage.ide

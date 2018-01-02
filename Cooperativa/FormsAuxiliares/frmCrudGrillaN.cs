@@ -395,8 +395,10 @@ namespace FormsAuxiliares
             _oCrudGrilla.ActualizaTabla(_Tabla, _campoClave, _claveSecuencia);
             foreach (DataGridViewRow row in grdGrillaEdit1.Rows)
             {
-                if (!row.IsNewRow && row.Cells[grdGrillaEdit1.ColumnCount - 1].Value=="0")
+                if (!row.IsNewRow && row.Cells[grdGrillaEdit1.ColumnCount - 1].Value == "0")
                     row.DefaultCellStyle.BackColor = Color.White;
+                if (!row.IsNewRow && row.DefaultCellStyle.BackColor == Color.Red && row.Cells[grdGrillaEdit1.ColumnCount - 1].Value == "0")
+                    row.Visible = false;
             }
 
 
