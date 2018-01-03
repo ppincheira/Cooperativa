@@ -409,50 +409,68 @@ namespace FormsAuxiliares
 
 
 
-      
+
 
         #region << EVENTOS >>
 
-        
+
         public frmFormAdmin(string tabla, PermisosFoms oPerForm)
         {
-            try { 
-            InitializeComponent();
-            AsignarPermisos(oPerForm);
-            _Tabla = tabla;
+            try
+            {
+                InitializeComponent();
+                AsignarPermisos(oPerForm);
+                _Tabla = tabla;
 
-            _oFormAdmin = new UIFormAdmin(this);
-        }
+                _oFormAdmin = new UIFormAdmin(this);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
 
-}
+        }
         private void frmFormAdmin_Load(object sender, EventArgs e)
         {
             try
             {
                 _oFormAdmin.Inicializar(_Tabla);
                 oUtil = new Utility();
-                oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA",null);
+                oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
+               //No Borrar este comentario es la llama original
+               //oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
+            
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
-        } 
+        }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            try { 
-            frmABM  ofrm = new frmABM(_Tabla);
-            ofrm.Show();
-        }
+            try
+            {
+                switch (_Tabla)
+                {
+                    case "DOMB":
+                        
+                        frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud();
+                        if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+                    case "":
+                        Console.WriteLine("Case 2");
+                        break;
+                   
+                }
+
+
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
-}
+        }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -483,18 +501,20 @@ namespace FormsAuxiliares
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
-            try { 
-            _oFormAdmin.CargarGrilla(_Tabla);
-        }
+            try
+            {
+                _oFormAdmin.CargarGrilla(_Tabla);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
-}
+        }
         #endregion
 
         #region << METODOS >>
-        public void AsignarPermisos(PermisosFoms oPerForm) {
+        public void AsignarPermisos(PermisosFoms oPerForm)
+        {
             this.btnNuevo.FUN_CODIGO = oPerForm.New;
             this.btnEditar.FUN_CODIGO = oPerForm.Edit;
             this.btnExportar.FUN_CODIGO = oPerForm.Exp;

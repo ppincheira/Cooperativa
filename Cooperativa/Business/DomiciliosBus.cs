@@ -8,7 +8,7 @@ namespace Business
     public class DomiciliosBus
     {
 
-        public int DomiciliosAdd(Domicilios oDomicilios)
+        public long DomiciliosAdd(Domicilios oDomicilios)
         {
             DomiciliosImpl oDomiciliosImpl = new DomiciliosImpl();
             return oDomiciliosImpl.DomiciliosAdd(oDomicilios);
