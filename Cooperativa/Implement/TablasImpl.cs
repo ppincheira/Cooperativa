@@ -203,8 +203,9 @@ namespace Implement
                 DataSet ds = new DataSet();
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
-                
+                //CAMPOS DE LA TABLA DE LA BASE DE DATOS
                 string[] filterCamp = System.Text.RegularExpressions.Regex.Split(filterCampos, "&");
+                //VALORES CARGADOS EN EL FORMULARIO
                 string[] filterV = System.Text.RegularExpressions.Regex.Split(filterValores, "&");
                 
                 cn.Open();
