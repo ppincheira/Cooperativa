@@ -414,13 +414,13 @@ namespace FormsAuxiliares
         #region << EVENTOS >>
 
 
-        public frmFormAdmin(string tabla, PermisosFoms oPerForm)
+        public frmFormAdmin(string tabCodigo, FuncionalidadesFoms oPerForm)
         {
             try
             {
                 InitializeComponent();
-                AsignarPermisos(oPerForm);
-                _Tabla = tabla;
+                AsignarFuncionalidad(oPerForm);
+                _Tabla = tabCodigo;
 
                 _oFormAdmin = new UIFormAdmin(this);
             }
@@ -513,8 +513,9 @@ namespace FormsAuxiliares
         #endregion
 
         #region << METODOS >>
-        public void AsignarPermisos(PermisosFoms oPerForm)
+        public void AsignarFuncionalidad(FuncionalidadesFoms oPerForm)
         {
+            //Esta funcion asigna la funcionalidad a los controles de este dinamico
             this.btnNuevo.FUN_CODIGO = oPerForm.New;
             this.btnEditar.FUN_CODIGO = oPerForm.Edit;
             this.btnExportar.FUN_CODIGO = oPerForm.Exp;
