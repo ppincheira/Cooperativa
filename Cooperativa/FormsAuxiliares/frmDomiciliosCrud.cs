@@ -103,11 +103,11 @@ namespace FormsAuxiliares
             get { return this.cmbCalleHasta; }
             set { this.cmbCalleHasta = value; }
         }
-        
-        public int codigoPostal
+
+        public cmbLista cmbiCodigoPostal
         {
-            get { return int.Parse(this.txtCodigoPostal.Text); }
-            set { this.txtCodigoPostal.Text = value.ToString(); }
+            get { return this.cmbCodigoPostal; }
+            set { this.cmbCodigoPostal = value; }
         }
 
         public decimal gisX
@@ -124,18 +124,60 @@ namespace FormsAuxiliares
         #endregion
         public frmDomiciliosCrud()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+                
+                _oDomicilioCrud = new UIDomiciliosCrud(this);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
         }
 
         private void frmDomiciliosCrud_Load(object sender, EventArgs e)
         {
+            try
+            {
+                oUtil = new Utility();
+                _oDomicilioCrud.Inicializar();
+                this.cmbLocalidad.REQUERIDO = "SI";
+                this.cmbCalle.REQUERIDO = "SI";
+                this.cmbCalleDesde.REQUERIDO = "SI";
+                this.cmbCalleHasta.REQUERIDO = "SI";
+                this.txtNumero.REQUERIDO = "SI";
+                this.cmbCodigoPostal.REQUERIDO = "SI";
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
 
 
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                oUtil.ValidarFormulario(this, this, 5);
+                if (this.VALIDARFORM)
+                {
+                    DialogResult = DialogResult.OK;
+                    _oDomicilioCrud.Guardar();
 
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -146,6 +188,7 @@ namespace FormsAuxiliares
         private void cmbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            _oDomicilioCrud.CargarCallesCodigoPostal();
         }
     }
 }

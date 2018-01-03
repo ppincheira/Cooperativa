@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Implement;
 using Model;
-
+using System.Data;
 
 namespace Business
 {
@@ -36,6 +36,13 @@ namespace Business
         {
             CodigosPostalesLocalidadesImpl oCodigosPostalesLocalidadesImpl = new CodigosPostalesLocalidadesImpl();
             return oCodigosPostalesLocalidadesImpl.CodigosPostalesLocalidadesGetAll();
+        }
+
+
+        public DataTable CodigosPostalesLocalidadesGetByLocalidad(int IdLocalidad)
+        {
+            CodigosPostalesLocalidadesImpl oCodigosPostalesLocalidadesImpl = new CodigosPostalesLocalidadesImpl();
+            return oCodigosPostalesLocalidadesImpl.CodigosPostalesLocalidadesGetByLocalidad(IdLocalidad);
         }
     }
 }

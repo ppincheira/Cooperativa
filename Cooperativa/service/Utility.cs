@@ -116,7 +116,35 @@ namespace Service
             }
         }
 
-   
+
+        public void HabilitarAllControlesInTrue(Control contenedor, int usrNumero, string formulario )
+        {
+        
+
+                    foreach (Control control in contenedor.Controls)
+
+                        if (control.Controls.Count > 0) HabilitarAllControlesInTrue(control, usrNumero, formulario);
+                        else
+                        {
+                            if (control is Controles.buttons.btnEditar)
+                                              ((Controles.buttons.btnEditar)control).Enabled = true;
+                            if (control is Controles.buttons.btnNuevo)
+         
+                                    ((Controles.buttons.btnNuevo)control).Enabled = true;
+                            if (control is Controles.buttons.btnEliminar)
+                                
+                                    ((Controles.buttons.btnEliminar)control).Enabled = true;
+                            if (control is Controles.buttons.btnExportar)
+                               
+                                    ((Controles.buttons.btnExportar)control).Enabled = true;
+                            if (control is Controles.buttons.btnGeneral)
+                                
+                                    ((Controles.buttons.btnGeneral)control).Enabled = true;
+                        }
+            
+        }
+
+
         public void ValidarFormulario( gesForm formInicial, Control contenedor, int index)
         {
             

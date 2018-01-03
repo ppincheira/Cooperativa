@@ -1,29 +1,3 @@
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe.config
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Business.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Controles.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\FormsAuxiliares.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Model.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Implement.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\AppProcesos.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Service.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Oracle.DataAccess.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Business.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Controles.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\FormsAuxiliares.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Model.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Implement.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\AppProcesos.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Service.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csprojResolveAssemblyReference.cache
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.controles.forms.frmAdminSuministros.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.Properties.Resources.resources
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.GenerateResource.Cache
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.exe
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.controles.forms.frmAdminSuministros.resources
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.Properties.Resources.resources
@@ -55,3 +29,29 @@ C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.Generat
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.exe
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe.config
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Business.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Controles.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\FormsAuxiliares.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Model.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Implement.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\AppProcesos.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Service.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Business.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Controles.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\FormsAuxiliares.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Model.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Implement.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\AppProcesos.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Service.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csprojResolveAssemblyReference.cache
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.controles.forms.frmAdminSuministros.resources
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.Properties.Resources.resources
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.GenerateResource.Cache
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.exe
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.pdb

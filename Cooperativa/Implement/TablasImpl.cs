@@ -197,7 +197,7 @@ namespace Implement
 
 
         public DataTable TablasBusquedaGetAllFilter(string Tabla, string Campos, string filterCampos, string filterValores )
-        {
+         {
             try
             {
                 DataSet ds = new DataSet();
@@ -210,7 +210,7 @@ namespace Implement
                 
                 cn.Open();
 
-                string sqlSelect = "select "+Campos+" from " + Tabla;
+                string sqlSelect = "SELECT  "+Campos+" FROM " + Tabla;
                 if (filterCampos != "") { 
                      sqlSelect=sqlSelect+" where  1=1";
 
@@ -232,6 +232,7 @@ namespace Implement
                     }
 
                 }
+
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -240,6 +241,10 @@ namespace Implement
 
                 DataTable dt;
                 return dt = ds.Tables[0];
+
+
+
+
             }
             catch (Exception ex)
             {
