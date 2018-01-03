@@ -32,8 +32,8 @@ namespace Implement
                 cn.Open();
 
                 ds = new DataSet();
-                cmd = new OracleCommand("insert into TABLAS(TAB_CODIGO, TAB_NOMBRE, TAB_DESCRIPCION) " +
-                    "values('"+oTablas.TabCodigo+"', '"+oTablas.TabNombre+"', '"+oTablas.TabDescripcion+"')",cn);
+                cmd = new OracleCommand("insert into TABLAS(TAB_CODIGO, TAB_NOMBRE, TAB_DESCRIPCION, TAB_QUERY_JOIN) " +
+                    "values('"+oTablas.TabCodigo+"', '"+oTablas.TabNombre+"', '"+oTablas.TabDescripcion+"','"+oTablas.TabQueryJoin+"')",cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -187,6 +187,7 @@ namespace Implement
                 oObjeto.TabCodigo = dr["TAB_CODIGO"].ToString();
                 oObjeto.TabNombre = dr["TAB_NOMBRE"].ToString();
                 oObjeto.TabDescripcion = dr["TAB_DESCRIPCION"].ToString();
+                oObjeto.TabQueryJoin = dr["TAB_QUERY_JOIN"].ToString();
 				return oObjeto;
 			}
 			catch(Exception ex)
