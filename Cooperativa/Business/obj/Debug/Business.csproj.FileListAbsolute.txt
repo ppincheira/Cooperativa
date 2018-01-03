@@ -1,13 +1,3 @@
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Business.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Business.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Implement.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Model.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Oracle.DataAccess.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Implement.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Model.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\obj\Debug\Business.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\obj\Debug\Business.pdb
 C:\GitHub\Cooperativa\Cooperativa\Business\bin\Debug\Business.dll
 C:\GitHub\Cooperativa\Cooperativa\Business\bin\Debug\Business.pdb
 C:\GitHub\Cooperativa\Cooperativa\Business\bin\Debug\Implement.dll
@@ -29,3 +19,13 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Business\bin\D
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Business.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Business.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Implement.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Model.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Oracle.DataAccess.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Implement.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\bin\Debug\Model.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\obj\Debug\Business.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Business\obj\Debug\Business.pdb

@@ -42,7 +42,7 @@ namespace UI
 
         private void btnPersonalizado2_Click(object sender, EventArgs e)
         {
-            PermisosFoms oPermiso = new PermisosFoms("2", "3", "0", "4", "0"); 
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0"); 
             FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("DOMB", oPermiso);
             frmbus.ShowDialog();
 
@@ -85,7 +85,9 @@ namespace UI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            PermisosFoms oPermiso = new PermisosFoms("2", "3", "0", "4", "0");
+            //Aqui se utiliza una clase para asignar la funcionalidad a formularios admin cargados dinamicamente
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0");
+            //Se instancia un objeto de la clase formulario admin al cual se le pasa por parametro el COD_TABLA
             FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("SRUT",oPermiso);
             frmbus.ShowDialog();
         }
