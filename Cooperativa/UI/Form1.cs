@@ -91,5 +91,12 @@ namespace UI
             FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("SRUT",oPermiso);
             frmbus.ShowDialog();
         }
+
+        private void btnPersonalizado4_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("CALL", oPermiso);
+            frmbus.ShowDialog();
+        }
     }
 }
