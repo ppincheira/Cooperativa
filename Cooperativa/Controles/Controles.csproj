@@ -228,7 +228,6 @@
     <Compile Include="textBoxes\gesTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="textBoxes\txtCuit.cs" />
     <Compile Include="textBoxes\txtDescripcionCorta.cs">
       <SubType>Component</SubType>
     </Compile>

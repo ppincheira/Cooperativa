@@ -43,7 +43,7 @@ namespace UI
         private void btnPersonalizado2_Click(object sender, EventArgs e)
         {
             PermisosFoms oPermiso = new PermisosFoms("2", "3", "0", "4", "0"); 
-            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("PERB", oPermiso);
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("DOMI", oPermiso);
             frmbus.ShowDialog();
 
         }
