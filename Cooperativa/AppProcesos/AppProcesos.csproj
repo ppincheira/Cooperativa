@@ -103,6 +103,12 @@
     <Folder Include="adminComprobantes\" />
     <Folder Include="adminSuministros\" />
     <Folder Include="cuentasCorrientes\" />
+    <Folder Include="gesServicios\frmCategoriasCrud\" />
+    <Folder Include="gesServicios\frmMedidoresCrud\" />
+    <Folder Include="gesServicios\frmMedidoresTiposCrud\" />
+    <Folder Include="gesServicios\frmRutasCrud\" />
+    <Folder Include="gesServicios\frmSuministrosAdmin\" />
+    <Folder Include="gesServicios\frmSuministrosCrud\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

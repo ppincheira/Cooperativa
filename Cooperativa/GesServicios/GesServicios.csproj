@@ -41,18 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="controles\forms\frmAdminSuministros.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="controles\forms\frmAdminSuministros.Designer.cs">
-      <DependentUpon>frmAdminSuministros.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="controles\forms\frmAdminSuministros.resx">
-      <DependentUpon>frmAdminSuministros.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="controles\forms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -85,7 +85,7 @@ namespace UI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            PermisosFoms oPermiso = new PermisosFoms("10001", "3", "0", "4", "0");
+            PermisosFoms oPermiso = new PermisosFoms("2", "3", "0", "4", "0");
             FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("SRUT",oPermiso);
             frmbus.ShowDialog();
         }
