@@ -28,20 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblPersonalizado1 = new Controles.lblPersonalizado();
-            this.numericTextBox1 = new Controles.NumericTextBox();
-            this.txtPersonalizado1 = new Controles.txtFiltro();
-            this.btnPersonalizado1 = new Controles.btnPersonalizado();
-            this.btnPersonalizado2 = new Controles.btnPersonalizado();
             this.dgvTest = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnPersonalizado3 = new Controles.btnPersonalizado();
             this.buttonCrudGrilla = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnPersonalizado4 = new Controles.btnPersonalizado();
+            this.btnPersonalizado3 = new Controles.btnPersonalizado();
+            this.btnPersonalizado2 = new Controles.btnPersonalizado();
+            this.btnPersonalizado1 = new Controles.btnPersonalizado();
+            this.lblPersonalizado1 = new Controles.lblPersonalizado();
+            this.numericTextBox1 = new Controles.NumericTextBox();
+            this.txtPersonalizado1 = new Controles.txtFiltro();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvTest
+            // 
+            this.dgvTest.Location = new System.Drawing.Point(12, 306);
+            this.dgvTest.Name = "dgvTest";
+            this.dgvTest.Size = new System.Drawing.Size(240, 150);
+            this.dgvTest.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(342, 214);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 28);
+            this.button1.TabIndex = 8;
+            this.button1.Text = " BUSCADOR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonCrudGrilla
+            // 
+            this.buttonCrudGrilla.Location = new System.Drawing.Point(342, 248);
+            this.buttonCrudGrilla.Name = "buttonCrudGrilla";
+            this.buttonCrudGrilla.Size = new System.Drawing.Size(125, 32);
+            this.buttonCrudGrilla.TabIndex = 8;
+            this.buttonCrudGrilla.Text = "CrudGrilla";
+            this.buttonCrudGrilla.UseVisualStyleBackColor = true;
+            this.buttonCrudGrilla.Click += new System.EventHandler(this.buttonCrudGrilla_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(342, 168);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(125, 40);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "OBSERVACIONES";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(342, 286);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(125, 27);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "RUTAS";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnPersonalizado4
+            // 
+            this.btnPersonalizado4.ForeColor = System.Drawing.Color.Green;
+            this.btnPersonalizado4.Location = new System.Drawing.Point(342, 139);
+            this.btnPersonalizado4.Name = "btnPersonalizado4";
+            this.btnPersonalizado4.Size = new System.Drawing.Size(125, 23);
+            this.btnPersonalizado4.TabIndex = 12;
+            this.btnPersonalizado4.Text = "CALLES";
+            this.btnPersonalizado4.UseVisualStyleBackColor = true;
+            this.btnPersonalizado4.Click += new System.EventHandler(this.btnPersonalizado4_Click);
+            // 
+            // btnPersonalizado3
+            // 
+            this.btnPersonalizado3.ForeColor = System.Drawing.Color.Green;
+            this.btnPersonalizado3.Location = new System.Drawing.Point(12, 263);
+            this.btnPersonalizado3.Name = "btnPersonalizado3";
+            this.btnPersonalizado3.Size = new System.Drawing.Size(100, 37);
+            this.btnPersonalizado3.TabIndex = 9;
+            this.btnPersonalizado3.Text = "observaciones";
+            this.btnPersonalizado3.UseVisualStyleBackColor = true;
+            this.btnPersonalizado3.Click += new System.EventHandler(this.btnPersonalizado3_Click);
+            // 
+            // btnPersonalizado2
+            // 
+            this.btnPersonalizado2.ForeColor = System.Drawing.Color.Green;
+            this.btnPersonalizado2.Location = new System.Drawing.Point(342, 110);
+            this.btnPersonalizado2.Name = "btnPersonalizado2";
+            this.btnPersonalizado2.Size = new System.Drawing.Size(125, 23);
+            this.btnPersonalizado2.TabIndex = 7;
+            this.btnPersonalizado2.Text = "DOMICILIOS";
+            this.btnPersonalizado2.UseVisualStyleBackColor = true;
+            this.btnPersonalizado2.Click += new System.EventHandler(this.btnPersonalizado2_Click);
+            // 
+            // btnPersonalizado1
+            // 
+            this.btnPersonalizado1.ForeColor = System.Drawing.Color.Green;
+            this.btnPersonalizado1.Location = new System.Drawing.Point(12, 86);
+            this.btnPersonalizado1.Name = "btnPersonalizado1";
+            this.btnPersonalizado1.Size = new System.Drawing.Size(129, 23);
+            this.btnPersonalizado1.TabIndex = 6;
+            this.btnPersonalizado1.Text = "btnPersonalizado1";
+            this.btnPersonalizado1.UseVisualStyleBackColor = true;
+            this.btnPersonalizado1.Click += new System.EventHandler(this.btnPersonalizado1_Click);
             // 
             // lblPersonalizado1
             // 
@@ -70,97 +161,6 @@
             this.txtPersonalizado1.Size = new System.Drawing.Size(146, 20);
             this.txtPersonalizado1.TabIndex = 0;
             this.txtPersonalizado1.TextoVacio = "<Descripcion>";
-            // 
-            // btnPersonalizado1
-            // 
-            this.btnPersonalizado1.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado1.Location = new System.Drawing.Point(274, 81);
-            this.btnPersonalizado1.Name = "btnPersonalizado1";
-            this.btnPersonalizado1.Size = new System.Drawing.Size(129, 23);
-            this.btnPersonalizado1.TabIndex = 6;
-            this.btnPersonalizado1.Text = "btnPersonalizado1";
-            this.btnPersonalizado1.UseVisualStyleBackColor = true;
-            this.btnPersonalizado1.Click += new System.EventHandler(this.btnPersonalizado1_Click);
-            // 
-            // btnPersonalizado2
-            // 
-            this.btnPersonalizado2.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado2.Location = new System.Drawing.Point(376, 110);
-            this.btnPersonalizado2.Name = "btnPersonalizado2";
-            this.btnPersonalizado2.Size = new System.Drawing.Size(100, 23);
-            this.btnPersonalizado2.TabIndex = 7;
-            this.btnPersonalizado2.Text = "DOMICILIOS";
-            this.btnPersonalizado2.UseVisualStyleBackColor = true;
-            this.btnPersonalizado2.Click += new System.EventHandler(this.btnPersonalizado2_Click);
-            // 
-            // dgvTest
-            // 
-            this.dgvTest.Location = new System.Drawing.Point(107, 279);
-            this.dgvTest.Name = "dgvTest";
-            this.dgvTest.Size = new System.Drawing.Size(240, 150);
-            this.dgvTest.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(372, 308);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 51);
-            this.button1.TabIndex = 8;
-            this.button1.Text = " BUSCADOR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnPersonalizado3
-            // 
-            this.btnPersonalizado3.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado3.Location = new System.Drawing.Point(47, 227);
-            this.btnPersonalizado3.Name = "btnPersonalizado3";
-            this.btnPersonalizado3.Size = new System.Drawing.Size(100, 37);
-            this.btnPersonalizado3.TabIndex = 9;
-            this.btnPersonalizado3.Text = "observaciones";
-            this.btnPersonalizado3.UseVisualStyleBackColor = true;
-            this.btnPersonalizado3.Click += new System.EventHandler(this.btnPersonalizado3_Click);
-            // 
-            // buttonCrudGrilla
-            // 
-            this.buttonCrudGrilla.Location = new System.Drawing.Point(372, 365);
-            this.buttonCrudGrilla.Name = "buttonCrudGrilla";
-            this.buttonCrudGrilla.Size = new System.Drawing.Size(91, 51);
-            this.buttonCrudGrilla.TabIndex = 8;
-            this.buttonCrudGrilla.Text = "CrudGrilla";
-            this.buttonCrudGrilla.UseVisualStyleBackColor = true;
-            this.buttonCrudGrilla.Click += new System.EventHandler(this.buttonCrudGrilla_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(376, 227);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 51);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "OBSERVACIONES";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(194, 209);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 51);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "RUTAS";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnPersonalizado4
-            // 
-            this.btnPersonalizado4.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado4.Location = new System.Drawing.Point(376, 139);
-            this.btnPersonalizado4.Name = "btnPersonalizado4";
-            this.btnPersonalizado4.Size = new System.Drawing.Size(100, 23);
-            this.btnPersonalizado4.TabIndex = 12;
-            this.btnPersonalizado4.Text = "CALLES";
-            this.btnPersonalizado4.UseVisualStyleBackColor = true;
-            this.btnPersonalizado4.Click += new System.EventHandler(this.btnPersonalizado4_Click);
             // 
             // Form1
             // 
