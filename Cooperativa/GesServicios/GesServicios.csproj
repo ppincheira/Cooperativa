@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,14 +47,35 @@
     <Compile Include="controles\forms\frmCategoriasCrud.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="controles\forms\frmRutasCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmRutasCrud.Designer.cs">
+      <DependentUpon>frmRutasCrud.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\AppProcesos\AppProcesos.csproj">
+      <Project>{713451e2-581c-4099-b5ca-15e95f3f0a16}</Project>
+      <Name>AppProcesos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Controles\Controles.csproj">
       <Project>{2b8d11ae-a2f8-4dd8-97a7-9e722b57182e}</Project>
       <Name>Controles</Name>
     </ProjectReference>
+    <ProjectReference Include="..\service\Service.csproj">
+      <Project>{86fb2f28-828e-4d75-8656-fe5f83fa1d11}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="controles\forms\frmCategoriasCrud.resx">
+      <DependentUpon>frmCategoriasCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmRutasCrud.resx">
+      <DependentUpon>frmRutasCrud.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
