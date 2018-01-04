@@ -1,6 +1,6 @@
 ﻿namespace FormsAuxiliares
 {
-    partial class frmObservacionesCrud
+    partial class frmRutasCrud
     {
         /// <summary>
         /// Required designer variable.
@@ -11,14 +11,14 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing && (components != null))
+        //    {
+        //        components.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
 
         #region Windows Form Designer generated code
 
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmObservacionesCrud));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRutasCrud));
             this.gbDatos = new Controles.contenedores.gesGroup();
             this.btnVer = new Controles.buttons.btnGeneral();
             this.txtDescripcionPath = new Controles.textBoxes.txtDescripcionCorta();
@@ -43,32 +43,18 @@
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
-            this.txtObservaciones1 = new Controles.textBoxes.txtObservaciones();
-            this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
-            this.btnGeneral1 = new Controles.buttons.btnGeneral();
-            this.dtpFecha1 = new Controles.Fecha.dtpFecha();
-            this.txtDescripcionCorta1 = new Controles.textBoxes.txtDescripcionCorta();
-            this.btnGeneral2 = new Controles.buttons.btnGeneral();
             this.gbDatos.SuspendLayout();
             this.gesGroup2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbDatos
             // 
-            this.gbDatos.Controls.Add(this.btnGeneral2);
             this.gbDatos.Controls.Add(this.btnVer);
-            this.gbDatos.Controls.Add(this.txtDescripcionCorta1);
             this.gbDatos.Controls.Add(this.txtDescripcionPath);
-            this.gbDatos.Controls.Add(this.dtpFecha1);
-            this.gbDatos.Controls.Add(this.btnGeneral1);
             this.gbDatos.Controls.Add(this.dtpFecha);
-            this.gbDatos.Controls.Add(this.lblEtiqueta2);
             this.gbDatos.Controls.Add(this.btnAgregar);
             this.gbDatos.Controls.Add(this.lbAdjunto);
-            this.gbDatos.Controls.Add(this.txtObservaciones1);
             this.gbDatos.Controls.Add(this.lbFecha);
-            this.gbDatos.Controls.Add(this.lblEtiqueta1);
             this.gbDatos.Controls.Add(this.txtDetalle);
             this.gbDatos.Controls.Add(this.lbDetalle);
             this.gbDatos.Location = new System.Drawing.Point(12, 12);
@@ -161,6 +147,7 @@
             this.gesGroup2.Size = new System.Drawing.Size(504, 89);
             this.gesGroup2.TabIndex = 1;
             this.gesGroup2.TabStop = false;
+            this.gesGroup2.Enter += new System.EventHandler(this.gesGroup2_Enter);
             // 
             // btnCancelar
             // 
@@ -186,71 +173,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // lblEtiqueta1
-            // 
-            this.lblEtiqueta1.AutoSize = true;
-            this.lblEtiqueta1.Location = new System.Drawing.Point(39, 65);
-            this.lblEtiqueta1.Name = "lblEtiqueta1";
-            this.lblEtiqueta1.Size = new System.Drawing.Size(43, 13);
-            this.lblEtiqueta1.TabIndex = 0;
-            this.lblEtiqueta1.Text = "Detalle:";
-            // 
-            // txtObservaciones1
-            // 
-            this.txtObservaciones1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtObservaciones1.Location = new System.Drawing.Point(122, 62);
-            this.txtObservaciones1.Multiline = true;
-            this.txtObservaciones1.Name = "txtObservaciones1";
-            this.txtObservaciones1.Size = new System.Drawing.Size(364, 137);
-            this.txtObservaciones1.TabIndex = 2;
-            // 
-            // lblEtiqueta2
-            // 
-            this.lblEtiqueta2.AutoSize = true;
-            this.lblEtiqueta2.Location = new System.Drawing.Point(39, 224);
-            this.lblEtiqueta2.Name = "lblEtiqueta2";
-            this.lblEtiqueta2.Size = new System.Drawing.Size(49, 13);
-            this.lblEtiqueta2.TabIndex = 10;
-            this.lblEtiqueta2.Text = "Adjuntar:";
-            // 
-            // btnGeneral1
-            // 
-            this.btnGeneral1.Location = new System.Drawing.Point(122, 205);
-            this.btnGeneral1.Name = "btnGeneral1";
-            this.btnGeneral1.Size = new System.Drawing.Size(37, 33);
-            this.btnGeneral1.TabIndex = 3;
-            this.btnGeneral1.Text = "...";
-            this.btnGeneral1.UseVisualStyleBackColor = true;
-            this.btnGeneral1.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // dtpFecha1
-            // 
-            this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1.Location = new System.Drawing.Point(122, 27);
-            this.dtpFecha1.Name = "dtpFecha1";
-            this.dtpFecha1.Size = new System.Drawing.Size(105, 20);
-            this.dtpFecha1.TabIndex = 11;
-            // 
-            // txtDescripcionCorta1
-            // 
-            this.txtDescripcionCorta1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDescripcionCorta1.Location = new System.Drawing.Point(174, 217);
-            this.txtDescripcionCorta1.MaxLength = 20;
-            this.txtDescripcionCorta1.Name = "txtDescripcionCorta1";
-            this.txtDescripcionCorta1.ReadOnly = true;
-            this.txtDescripcionCorta1.Size = new System.Drawing.Size(269, 20);
-            this.txtDescripcionCorta1.TabIndex = 12;
-            // 
-            // btnGeneral2
-            // 
-            this.btnGeneral2.Location = new System.Drawing.Point(449, 204);
-            this.btnGeneral2.Name = "btnGeneral2";
-            this.btnGeneral2.Size = new System.Drawing.Size(37, 33);
-            this.btnGeneral2.TabIndex = 13;
-            this.btnGeneral2.Text = "Ver";
-            this.btnGeneral2.UseVisualStyleBackColor = true;
-            this.btnGeneral2.Click += new System.EventHandler(this.btnVer_Click);
-            // 
             // frmObservacionesCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,7 +182,7 @@
             this.Controls.Add(this.gbDatos);
             this.Name = "frmObservacionesCrud";
             this.Text = "frmObservacionesCrud";
-            this.Load += new System.EventHandler(this.frmObservacionesCrud_Load);
+            this.Load += new System.EventHandler(this.frmRutasCrud_Load);
             this.gbDatos.ResumeLayout(false);
             this.gbDatos.PerformLayout();
             this.gesGroup2.ResumeLayout(false);
@@ -270,26 +192,19 @@
 
         #endregion
 
-        private Controles.contenedores.gesGroup gbDatos;
-        private Controles.labels.lblEtiqueta lbFecha;
-        private Controles.textBoxes.txtObservaciones txtDetalle;
-        private Controles.labels.lblEtiqueta lbDetalle;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private Controles.contenedores.gesGroup gesGroup2;
-        private Controles.buttons.btnCancelar btnCancelar;
-        private Controles.buttons.btnAceptar btnAceptar;
-        private Controles.labels.lblEtiqueta lbAdjunto;
-        private Controles.buttons.btnGeneral btnAgregar;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private Controles.Fecha.dtpFecha dtpFecha;
-        private Controles.textBoxes.txtDescripcionCorta txtDescripcionPath;
-        private Controles.buttons.btnGeneral btnVer;
-        private Controles.buttons.btnGeneral btnGeneral2;
-        private Controles.textBoxes.txtDescripcionCorta txtDescripcionCorta1;
-        private Controles.Fecha.dtpFecha dtpFecha1;
-        private Controles.buttons.btnGeneral btnGeneral1;
-        private Controles.labels.lblEtiqueta lblEtiqueta2;
-        private Controles.textBoxes.txtObservaciones txtObservaciones1;
-        private Controles.labels.lblEtiqueta lblEtiqueta1;
+        //private Controles.contenedores.gesGroup gbDatos;
+        //private Controles.labels.lblEtiqueta lbFecha;
+        //private Controles.textBoxes.txtObservaciones txtDetalle;
+        //private Controles.labels.lblEtiqueta lbDetalle;
+        //private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        //private Controles.contenedores.gesGroup gesGroup2;
+        //private Controles.buttons.btnCancelar btnCancelar;
+        //private Controles.buttons.btnAceptar btnAceptar;
+        //private Controles.labels.lblEtiqueta lbAdjunto;
+        //private Controles.buttons.btnGeneral btnAgregar;
+        //private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        //private Controles.Fecha.dtpFecha dtpFecha;
+        //private Controles.textBoxes.txtDescripcionCorta txtDescripcionPath;
+        //private Controles.buttons.btnGeneral btnVer;
     }
 }

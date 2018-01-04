@@ -79,6 +79,8 @@
     <Compile Include="formsAuxiliares\frmObservaciones\UIObservacionesCrud.cs" />
     <Compile Include="formsAuxiliares\principal\IVistaPrincipal.cs" />
     <Compile Include="formsAuxiliares\principal\UIPrincipal.cs" />
+    <Compile Include="gesServicios\frmRutasCrud\IVistaRutasCrud.cs" />
+    <Compile Include="gesServicios\frmRutasCrud\UIRutasCrud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -106,7 +108,6 @@
     <Folder Include="gesServicios\frmCategoriasCrud\" />
     <Folder Include="gesServicios\frmMedidoresCrud\" />
     <Folder Include="gesServicios\frmMedidoresTiposCrud\" />
-    <Folder Include="gesServicios\frmRutasCrud\" />
     <Folder Include="gesServicios\frmSuministrosAdmin\" />
     <Folder Include="gesServicios\frmSuministrosCrud\" />
   </ItemGroup>
