@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class PermisosFoms
+    public class FuncionalidadesFoms
     {
 
 
-        public PermisosFoms(string PNew, string PEdit, string PDel, string PExp, string PImp)
+        public FuncionalidadesFoms(string PNew, string PEdit, string PDel, string PExp, string PImp)
         {
             this.New = PNew;
             this.Edit = PEdit;

@@ -14,33 +14,55 @@ namespace Implement
         private OracleDataAdapter adapter;
         private OracleCommand cmd;
         private DataSet ds;
-        private int response;
-        public int DomiciliosAdd(Domicilios oDom)
+        private long response;
+        public long DomiciliosAdd(Domicilios oDom)
 		{
-			try
-			{
+            try
+            {
+
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                // Clave Secuencia DOM_CODIGO
-                ds = new DataSet();
-                cmd = new OracleCommand("insert into Domicilios(LOC_NUMERO, CAL_NUMERO, " +
+
+                string query =
+
+                    " DECLARE IDTEMP NUMBER(15,0); " +
+                    " BEGIN " +
+                    " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('DOM_CODIGO')) into IDTEMP from dual; " +
+                    "INSERT INTO DOMICILIOS(DOM_CODIGO,LOC_NUMERO, CAL_NUMERO, " +
                     "CAL_NUMERO_DESDE, CAL_NUMERO_HASTA, DOM_NUMERO, DOM_BLOQUE, DOM_PISO, " +
-                    "DOM_DEPARTAMENTO, DOM_PARCELA, CPL_NUMERO, DOM_LOTE, DOM_GIS_X, DOM_GIS_Y) " +
-                    "values("+oDom.LocNumero + ", "+oDom.CalNumero + ", "+oDom.CalNumeroDesde + ", "+
-                    oDom.CalNumeroHasta + ", "+ oDom.DomNumero + ", '" + oDom.DomBloque + "', '" + 
-                    oDom.DomPiso + "', '" + oDom.DomDepartamento + "', '" + oDom.DomParcela + "', " + 
-                    oDom.CplNumero + ", '"+ oDom.DomLote + "', " + oDom.DomGisX + ", " + oDom.DomGisY + ")", cn);
-                adapter = new OracleDataAdapter(cmd);
-                response = cmd.ExecuteNonQuery();
+                    "DOM_DEPARTAMENTO, DOM_PARCELA, CPL_NUMERO, DOM_LOTE, DOM_GIS_X, DOM_GIS_Y)"+
+                    " VALUES(IDTEMP," +oDom.LocNumero + ", " + oDom.CalNumero + ", " + oDom.CalNumeroDesde + ", " +
+                    oDom.CalNumeroHasta + ", " + oDom.DomNumero + ", '" + oDom.DomBloque + "', '" +
+                    oDom.DomPiso + "', '" + oDom.DomDepartamento + "', '" + oDom.DomParcela + "', " +
+                    oDom.CplNumero + ", '" + oDom.DomLote + "', " + oDom.DomGisX + ", " + oDom.DomGisY + 
+                     ") RETURNING IDTEMP INTO :id;" +
+                    " END;";
+
+                cmd = new OracleCommand(query, cn);
+                cmd.Parameters.Add(new OracleParameter
+                {
+                    ParameterName = ":id",
+                    OracleDbType = OracleDbType.Int64,
+                    Direction = ParameterDirection.Output
+                });
+
+
+
+
+                cmd.ExecuteNonQuery();
+                response = long.Parse(cmd.Parameters[":id"].Value.ToString());
                 cn.Close();
+
                 return response;
             }
-			catch(Exception ex)
-			{
-				throw ex;
-			}
-		}
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
 
         public bool DomiciliosUpdate(Domicilios oDom)
 		{

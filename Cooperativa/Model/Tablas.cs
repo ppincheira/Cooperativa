@@ -16,6 +16,7 @@ namespace Model
         private string _TabCodigo;
         private string _TabNombre;
         private string _TabDescripcion;
+        private string _TabQueryJoin;
         
         #endregion
 
@@ -55,7 +56,13 @@ namespace Model
             get { return _TabDescripcion; }
             set {_TabDescripcion = value; }
         }
-        
+
+        public string TabQueryJoin
+        {
+            get { return _TabQueryJoin; }
+            set { _TabQueryJoin = value; }
+        }
+
         #endregion
     }
 }

@@ -168,7 +168,33 @@ namespace Implement
 			}
 		}
 
-		#endregion
 
-	}
+
+        public DataTable CodigosPostalesLocalidadesGetByLocalidad(int IdLocalidad)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "select * from Codigos_Postales_Localidades " +
+                    "WHERE LOC_NUMERO=" + IdLocalidad.ToString();
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt;
+                return dt = ds.Tables[0];
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+    }
 }

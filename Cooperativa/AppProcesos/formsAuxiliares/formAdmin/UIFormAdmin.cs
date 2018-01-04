@@ -21,6 +21,7 @@ namespace AppProcesos.formsAuxiliares.formAdmin
         private DataTable _dtCombo;
         private string _Fecha;
 
+
         public UIFormAdmin(IVistaFormAdmin vista)
         {
             _vista = vista;
@@ -94,5 +95,8 @@ namespace AppProcesos.formsAuxiliares.formAdmin
             _vista.cantidad = "Se encontraron " + _vista.grilla.RowCount + " registros";
 
         }
+
+
+        
     }
 }

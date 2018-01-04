@@ -164,7 +164,32 @@ namespace Implement
 			}
 		}
 
-		#endregion
 
-	}
+        public DataTable CallesLocalidadesGetByLocalidad(int IdProvincia)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "SELECT * FROM CALLES_LOCALIDADES " +
+                    "WHERE LOC_NUMERO=" + IdProvincia.ToString();
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt;
+                return   dt = ds.Tables[0];
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+    }
 }

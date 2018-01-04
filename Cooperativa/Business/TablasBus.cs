@@ -46,7 +46,7 @@ namespace Business
             Tablas oTabla = new Tablas();
             oTabla = TablasGetById(Codigo);
             TablasImpl oTablasImpl = new TablasImpl();
-            return oTablasImpl.TablasBusquedaGetAllFilter(oTabla.TabNombre, Campos, filterCampos, filterValores);
+            return oTablasImpl.TablasBusquedaGetAllFilter(oTabla.TabQueryJoin, Campos, filterCampos, filterValores);
 
         }
         public bool TablaActualizaGrid(string tabla, string[] columnas, string[] valores, string criterio, string operacion)

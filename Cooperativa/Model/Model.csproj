@@ -110,7 +110,7 @@
     <Compile Include="Observaciones.cs" />
     <Compile Include="Paises.cs" />
     <Compile Include="ParametrosGenerales.cs" />
-    <Compile Include="PermisosFoms.cs" />
+    <Compile Include="FuncionalidadesFoms.cs" />
     <Compile Include="Personas.cs" />
     <Compile Include="PersonasSectores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

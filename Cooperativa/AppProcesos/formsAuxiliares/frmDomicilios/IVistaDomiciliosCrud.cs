@@ -22,7 +22,7 @@ namespace AppProcesos.formsAuxiliares.frmDomicilios
         string parcela { get; set; }
         cmbLista cmbiCalleDesde { get; set; }
         cmbLista cmbiCalleHasta { get; set; }
-        int codigoPostal { get; set; }
+        cmbLista cmbiCodigoPostal { get; set; }
         decimal gisX { get; set; }
         decimal gisY { get; set; }
 

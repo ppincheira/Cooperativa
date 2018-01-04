@@ -6,11 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using Model;
+using Controles;
 using AppProcesos.formsAuxiliares.formAdmin;
-using Controles.form;
 using Controles.datos;
 using Service;
+using Controles.form;
+using System.Windows.Forms;
 
 namespace FormsAuxiliares
 {
@@ -74,9 +76,20 @@ namespace FormsAuxiliares
         }
 
         #endregion
-        public frmFormAdminMini()
+        public frmFormAdminMini(string tabCodigo, FuncionalidadesFoms oPerForm)
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+                AsignarFuncionalidad(oPerForm);
+                _Tabla = tabCodigo;
+
+                _oFormAdmin = new UIFormAdmin(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
         }
 
         private void frmFormAdminMini_Load(object sender, EventArgs e)
@@ -148,5 +161,17 @@ namespace FormsAuxiliares
                 MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
         }
+
+        #region << METODOS >>
+        public void AsignarFuncionalidad(FuncionalidadesFoms oPerForm)
+        {
+            //Esta funcion asigna la funcionalidad a los controles de este dinamico
+            this.btnNuevo.FUN_CODIGO = oPerForm.New;
+            this.btnEditar.FUN_CODIGO = oPerForm.Edit;
+            this.btnExportar.FUN_CODIGO = oPerForm.Exp;
+            this.btnEliminar.FUN_CODIGO = oPerForm.Del;
+            this.btnImprimir.FUN_CODIGO = oPerForm.Imp;
+        }
+        #endregion
     }
 }
