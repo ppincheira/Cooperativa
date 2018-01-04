@@ -114,10 +114,9 @@ namespace FormsAuxiliares
             {
                 switch (_Tabla)
                 {
-                    case "DOMB":
-
-                        frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(0);
-                        if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
+                    case "CALB":
+                        frmCallesCrud oFrmCalCrud = new frmCallesCrud(0,"NQ");
+                        if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
                     case "":
@@ -143,9 +142,9 @@ namespace FormsAuxiliares
                 long id = Convert.ToInt64(row.Cells[0].Value);
                 switch (_Tabla)
                 {
-                    case "DOMB":
-                        frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(id);
-                        if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
+                    case "CALB":
+                        frmCallesCrud oFrmCalCrud = new frmCallesCrud(id,"NQ");
+                        if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
                     case "":
@@ -172,11 +171,10 @@ namespace FormsAuxiliares
                 long id = Convert.ToInt64(row.Cells[0].Value);
                 switch (_Tabla)
                 {
-                    case "DOMB":
-
-                        frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(id);
-                        oFrmDomCrud.gbDatos.Enabled = false;
-                        if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
+                    case "CALB":
+                        frmCallesCrud oFrmCalCrud = new frmCallesCrud(id, "NQ");
+                        oFrmCalCrud.gbDatos.Enabled = false;
+                        if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
 
                         break;
@@ -237,10 +235,5 @@ namespace FormsAuxiliares
             this.btnImprimir.FUN_CODIGO = oPerForm.Imp;
         }
         #endregion
-
-        private void gpbGrupo4_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

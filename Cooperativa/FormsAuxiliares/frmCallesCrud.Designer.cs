@@ -149,7 +149,7 @@
 
         #endregion
 
-        private Controles.contenedores.gesGroup gbDatos;
+        public Controles.contenedores.gesGroup gbDatos;
         private Controles.labels.lblEtiqueta lbDescripcion;
         private Controles.labels.lblEtiqueta lbLocalidad;
         private Controles.textBoxes.txtDescripcionCorta txtDescripcionCorta;

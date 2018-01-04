@@ -96,7 +96,7 @@ namespace UI
         {
 
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("CALB", oPermiso);
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("CALB", oPermiso);
             frmbus.ShowDialog();
         }
     }

@@ -22,15 +22,16 @@ namespace FormsAuxiliares
         Utility oUtil;
         long _codigo;
         string _codigoProvincia;
-        string _accion;
+    
         #endregion
-        public frmCallesCrud(long codigo, string codigoProvincia, string accion)
+        public frmCallesCrud(long codigo, string codigoProvincia)
         {
             try { 
             InitializeComponent();
             _codigo = codigo;
             _codigoProvincia = codigoProvincia;
-            _accion = accion;
+            _oCallesCrud = new UICallesCrud(this);
+           
             }
             catch (Exception ex)
             {
@@ -68,10 +69,11 @@ namespace FormsAuxiliares
 
         private void frmCallesCrud_Load(object sender, EventArgs e)
         {
-            try { 
-            this.txtDescripcionCorta.REQUERIDO = "SI";
-            this.cmbLista.REQUERIDO = "SI";
-            _oCallesCrud.Inicializar();
+            try {
+                oUtil = new Utility();
+                _oCallesCrud.Inicializar();
+                this.txtDescripcionCorta.REQUERIDO = "SI";
+                this.cmbLista.REQUERIDO = "SI";
             }
             catch (Exception ex)
             {

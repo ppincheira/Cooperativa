@@ -8,7 +8,7 @@ namespace Business
     public class CallesLocalidadesBus
     {
 
-        public int CallesLocalidadesAdd(CallesLocalidades oCallesLocalidades)
+        public long CallesLocalidadesAdd(CallesLocalidades oCallesLocalidades)
         {
             CallesLocalidadesImpl oCallesLocalidadesImpl = new CallesLocalidadesImpl();
             return oCallesLocalidadesImpl.CallesLocalidadesAdd(oCallesLocalidades);

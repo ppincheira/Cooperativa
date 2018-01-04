@@ -15,10 +15,48 @@ namespace Implement
         private OracleDataAdapter adapter;
         private OracleCommand cmd;
         private DataSet ds;
-        private int response;
-        public int CallesLocalidadesAdd(CallesLocalidades oCalleLocalidad)
+        private long response;
+        public long  CallesLocalidadesAdd(CallesLocalidades oCalleLocalidad)
 		{
-			try
+            try
+            {
+
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+
+                string query =
+
+                    " DECLARE IDTEMP NUMBER(15,0); " +
+                    " BEGIN " +
+                    " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('CAL_NUMERO')) into IDTEMP from dual; " +
+                    "insert into Calles_Localidades(CAL_NUMERO, CAL_DESCRIPCION, LOC_NUMERO)" +
+                    " VALUES(IDTEMP,'" + oCalleLocalidad.CalDescripcion+"',"+oCalleLocalidad.LocNumero+
+                     ") RETURNING IDTEMP INTO :id;" +
+                    " END;";
+
+                cmd = new OracleCommand(query, cn);
+                cmd.Parameters.Add(new OracleParameter
+                {
+                    ParameterName = ":id",
+                    OracleDbType = OracleDbType.Int64,
+                    Direction = ParameterDirection.Output
+                });
+
+
+
+
+                cmd.ExecuteNonQuery();
+                response = long.Parse(cmd.Parameters[":id"].Value.ToString());
+                cn.Close();
+
+                return response;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            try
 			{
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();

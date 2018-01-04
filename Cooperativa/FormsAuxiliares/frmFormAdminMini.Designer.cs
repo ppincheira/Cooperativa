@@ -99,7 +99,7 @@
             this.gpbGrupo4.TabIndex = 10;
             this.gpbGrupo4.TabStop = false;
             this.gpbGrupo4.Text = "Datos";
-            this.gpbGrupo4.Enter += new System.EventHandler(this.gpbGrupo4_Enter);
+           
             // 
             // lblCantidad
             // 

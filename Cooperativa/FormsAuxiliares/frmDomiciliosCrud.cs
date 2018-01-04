@@ -181,7 +181,15 @@ namespace FormsAuxiliares
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
         }
 
         private void cmbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
