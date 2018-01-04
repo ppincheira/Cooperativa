@@ -65,17 +65,20 @@ namespace FormsAuxiliares
             get { return this.cmbCalle; }
             set { this.cmbCalle = value; }
         }
-
         public int numero
         {
             get { return int.Parse(this.txtNumero.Text); }
             set { this.txtNumero.Text = value.ToString(); }
         }
-
         public string bloque
         {
             get { return this.txtBloque.Text; }
             set { this.txtBloque.Text = value; }
+        }
+        public string lote
+        {
+            get { return this.txtLote.Text; }
+            set { this.txtLote.Text = value; }
         }
         public string departamento
         {
@@ -92,7 +95,6 @@ namespace FormsAuxiliares
             get { return this.txtParcela.Text; }
             set { this.txtParcela.Text = value; }
         }
-
         public cmbLista cmbiCalleDesde
         {
             get { return this.cmbCalleDesde; }
@@ -122,12 +124,12 @@ namespace FormsAuxiliares
             set { this.txtGisY.Text = value.ToString(); }
         }
         #endregion
-        public frmDomiciliosCrud()
+        public frmDomiciliosCrud(long domCodigo)
         {
             try
             {
                 InitializeComponent();
-                
+                _DomCodigo = domCodigo;
                 _oDomicilioCrud = new UIDomiciliosCrud(this);
                 
             }
@@ -149,9 +151,6 @@ namespace FormsAuxiliares
                 this.cmbCalleHasta.REQUERIDO = "SI";
                 this.txtNumero.REQUERIDO = "SI";
                 this.cmbCodigoPostal.REQUERIDO = "SI";
-
-
-
             }
             catch (Exception ex)
             {

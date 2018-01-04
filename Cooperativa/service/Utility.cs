@@ -128,19 +128,21 @@ namespace Service
                         {
                             if (control is Controles.buttons.btnEditar)
                                               ((Controles.buttons.btnEditar)control).Enabled = true;
+
                             if (control is Controles.buttons.btnNuevo)
-         
                                     ((Controles.buttons.btnNuevo)control).Enabled = true;
+
                             if (control is Controles.buttons.btnEliminar)
-                                
                                     ((Controles.buttons.btnEliminar)control).Enabled = true;
+
                             if (control is Controles.buttons.btnExportar)
-                               
                                     ((Controles.buttons.btnExportar)control).Enabled = true;
-                            if (control is Controles.buttons.btnGeneral)
-                                
+
+                            if (control is Controles.buttons.btnGeneral)    
                                     ((Controles.buttons.btnGeneral)control).Enabled = true;
-                        }
+                    if (control is Controles.buttons.btnVer)
+                        ((Controles.buttons.btnVer)control).Enabled = true;
+                }
             
         }
 

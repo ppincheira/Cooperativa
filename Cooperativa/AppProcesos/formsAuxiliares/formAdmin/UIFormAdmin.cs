@@ -87,7 +87,7 @@ namespace AppProcesos.formsAuxiliares.formAdmin
             if (_vista.grupoEstado)
                 _filtroValores = _vista.comboEstado.Text + "&";
 
-            _filtroCampos = _filtroCampos + _vista.comboBuscar.SelectedValue.ToString() + "&";
+             _filtroCampos = _filtroCampos + _vista.comboBuscar.SelectedValue.ToString() + "&";
             _filtroValores = _filtroValores + _vista.filtro + "&";
 
             TablasBus oTablasBus = new TablasBus();

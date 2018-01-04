@@ -73,18 +73,18 @@ namespace Implement
                 cn.Open();
                 ds = new DataSet();
                 cmd = new OracleCommand("update Domicilios " +
-                    "SET LOC_NUMERO=" + oDom.LocNumero + "," +
-                    "CAL_NUMERO=" + oDom.CalNumero + "," +
-                    "CAL_NUMERO_DESDE=" + oDom.CalNumeroDesde + "," +
-                    "CAL_NUMERO_HASTA=" + oDom.CalNumeroHasta + "," +
-                    "DOM_NUMERO=" + oDom.DomNumero + "," +
-                    "DOM_BLOQUE='" + oDom.DomBloque + "'," +
-                    "DOM_PISO='" + oDom.DomPiso + "'," +
-                    "DOM_DEPARTAMENTO='" + oDom.DomDepartamento + "'," +
-                    "DOM_PARCELA='" + oDom.DomParcela + "'," +
-                    "CPL_NUMERO=" + oDom.CplNumero + "," +
-                    "DOM_LOTE='" + oDom.DomLote + "'," +
-                    "DOM_GIS_X=" + oDom.DomGisX + "," +
+                    "SET LOC_NUMERO=" + oDom.LocNumero + ", " +
+                    "CAL_NUMERO=" + oDom.CalNumero + ", " +
+                    "CAL_NUMERO_DESDE=" + oDom.CalNumeroDesde + ", " +
+                    "CAL_NUMERO_HASTA=" + oDom.CalNumeroHasta + ", " +
+                    "DOM_NUMERO=" + oDom.DomNumero + ", " +
+                    "DOM_BLOQUE='" + oDom.DomBloque + "', " +
+                    "DOM_PISO='" + oDom.DomPiso + "', " +
+                    "DOM_DEPARTAMENTO='" + oDom.DomDepartamento + "', " +
+                    "DOM_PARCELA='" + oDom.DomParcela + "', " +
+                    "CPL_NUMERO=" + oDom.CplNumero + ", " +
+                    "DOM_LOTE='" + oDom.DomLote + "', " +
+                    "DOM_GIS_X=" + oDom.DomGisX + ", " +
                     "DOM_GIS_Y=" + oDom.DomGisY +
                     " WHERE DOM_CODIGO=" + oDom.DomCodigo, cn);
                 adapter = new OracleDataAdapter(cmd);
@@ -200,12 +200,12 @@ namespace Implement
                 oObjeto.DomPiso = dr["DOM_PISO"].ToString();
                 oObjeto.DomDepartamento = dr["DOM_DEPARTAMENTO"].ToString();
                 oObjeto.DomParcela = dr["DOM_PARCELA"].ToString();
-                if (dr[""].ToString() != "CPL_NUMERO")
+                if (dr["CPL_NUMERO"].ToString() != "")
                     oObjeto.CplNumero = int.Parse(dr["CPL_NUMERO"].ToString());
                 oObjeto.DomLote = dr["DOM_LOTE"].ToString();
-                if (dr[""].ToString() != "DOM_GIS_X")
+                if (dr["DOM_GIS_X"].ToString() != "")
                     oObjeto.DomGisX = decimal.Parse(dr["DOM_GIS_X"].ToString());
-                if (dr[""].ToString() != "DOM_GIS_Y")
+                if (dr["DOM_GIS_Y"].ToString() != "")
                     oObjeto.DomGisY = decimal.Parse(dr["DOM_GIS_Y"].ToString());
                 return oObjeto;
 			}

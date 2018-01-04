@@ -44,6 +44,7 @@ namespace AppProcesos.formsAuxiliares.frmDomicilios
                 _vista.numero = oDomicilio.DomNumero;
                 _vista.parcela = oDomicilio.DomParcela;
                 _vista.piso = oDomicilio.DomPiso;
+                _vista.lote = oDomicilio.DomLote;
             }
 
         }
@@ -65,22 +66,20 @@ namespace AppProcesos.formsAuxiliares.frmDomicilios
             long rtdo;
             Domicilios oDomicilio = new Domicilios();
             DomiciliosBus oDomicilioBus = new DomiciliosBus();
+            oDomicilio.DomCodigo = _vista.domCodigo;
             oDomicilio.CalNumero =long.Parse( _vista.cmbiCalle.SelectedValue.ToString());
             oDomicilio.CalNumeroDesde = long.Parse(_vista.cmbiCalleDesde.SelectedValue.ToString());
             oDomicilio.CalNumeroHasta = long.Parse(_vista.cmbiCalleHasta.SelectedValue.ToString());
-            oDomicilio.CplNumero = int.Parse(_vista.cmbiLocalidad.SelectedValue.ToString());
+            oDomicilio.CplNumero = int.Parse(_vista.cmbiCodigoPostal.SelectedValue.ToString());
             oDomicilio.DomBloque = _vista.bloque;
             oDomicilio.DomDepartamento = _vista.departamento;
             oDomicilio.DomGisX = _vista.gisX;
             oDomicilio.DomGisY = _vista.gisY;
-            oDomicilio.DomLote = "";
+            oDomicilio.DomLote = _vista.lote;
             oDomicilio.DomNumero = _vista.numero;
             oDomicilio.DomParcela = _vista.parcela;
             oDomicilio.DomPiso = _vista.piso;
-            oDomicilio.LocNumero = _vista.numero;
-           
-
-            
+            oDomicilio.LocNumero = int.Parse(_vista.cmbiLocalidad.SelectedValue.ToString());
             if (_vista.domCodigo == 0)
 
                 rtdo = oDomicilioBus.DomiciliosAdd(oDomicilio);

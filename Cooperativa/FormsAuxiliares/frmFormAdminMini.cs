@@ -23,7 +23,7 @@ namespace FormsAuxiliares
         #region << PROPIEDADES >>
 
         private string _Tabla;
-        Utility oUtil;
+        Utility _oUtil;
         private UIFormAdmin _oFormAdmin;
         #endregion
 
@@ -78,18 +78,19 @@ namespace FormsAuxiliares
         #endregion
         public frmFormAdminMini(string tabCodigo, FuncionalidadesFoms oPerForm)
         {
+          
             try
             {
                 InitializeComponent();
                 AsignarFuncionalidad(oPerForm);
                 _Tabla = tabCodigo;
-
                 _oFormAdmin = new UIFormAdmin(this);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
+
         }
 
         private void frmFormAdminMini_Load(object sender, EventArgs e)
@@ -97,8 +98,9 @@ namespace FormsAuxiliares
             try
             {
                 _oFormAdmin.Inicializar(_Tabla);
-                oUtil = new Utility();
-                oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
+                _oUtil = new Utility();
+                _oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
+                //_oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
             }
             catch (Exception ex)
             {
@@ -110,8 +112,21 @@ namespace FormsAuxiliares
         {
             try
             {
-                frmABM ofrm = new frmABM(_Tabla);
-                ofrm.Show();
+                switch (_Tabla)
+                {
+                    case "DOMB":
+
+                        frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(0);
+                        if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+                    case "":
+                        Console.WriteLine("Case 2");
+                        break;
+
+                }
+
+
             }
             catch (Exception ex)
             {
@@ -122,7 +137,26 @@ namespace FormsAuxiliares
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                DataGridViewRow row = this.dgBusqueda.CurrentRow;
+                long id = Convert.ToInt64(row.Cells[0].Value);
+                switch (_Tabla)
+                {
+                    case "DOMB":
+                        frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(id);
+                        if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+                    case "":
+                        Console.WriteLine("Case 2");
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -132,12 +166,42 @@ namespace FormsAuxiliares
 
         private void btnVer_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DataGridViewRow row = this.dgBusqueda.CurrentRow;
+                long id = Convert.ToInt64(row.Cells[0].Value);
+                switch (_Tabla)
+                {
+                    case "DOMB":
 
+                        frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(id);
+                        oFrmDomCrud.gbDatos.Enabled = false;
+                        if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+
+                        break;
+                    case "":
+                        Console.WriteLine("Case 2");
+                        break;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
         }
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                _oUtil.ExportarDataGridViewExcel(this.dgBusqueda);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
@@ -147,7 +211,7 @@ namespace FormsAuxiliares
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)

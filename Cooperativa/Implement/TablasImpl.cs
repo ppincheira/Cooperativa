@@ -210,14 +210,11 @@ namespace Implement
                 string[] filterV = System.Text.RegularExpressions.Regex.Split(filterValores, "&");
                 
                 cn.Open();
-
                 string sqlSelect = "SELECT  "+Campos+" FROM " + Tabla;
                 if (filterCampos != "") { 
-                     sqlSelect=sqlSelect+" where  1=1";
-
+                    sqlSelect=sqlSelect+" where  1=1";
                     for (int i = 0; i < filterCamp.Length; i++)
                     {
-
                         if  (filterV[i].Contains("%"))
                         {
                             string[] filterFecha = System.Text.RegularExpressions.Regex.Split(filterV[i], "%");
@@ -231,18 +228,13 @@ namespace Implement
                                sqlSelect += " AND "+filterCamp[i] + " like '%" + filterV[i]+"%'";
                         }
                     }
-
                 }
-
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
                 adapter.Fill(ds);
-
-
-                DataTable dt;
+                DataTable dt = new DataTable();
                 return dt = ds.Tables[0];
-
 
 
 

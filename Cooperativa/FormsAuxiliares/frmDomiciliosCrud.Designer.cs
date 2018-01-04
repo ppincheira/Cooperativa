@@ -33,6 +33,7 @@
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.gbDatos = new Controles.contenedores.gesGroup();
+            this.cmbCodigoPostal = new Controles.datos.cmbLista();
             this.lblEtiqueta11 = new Controles.labels.lblEtiqueta();
             this.cmbCalleHasta = new Controles.datos.cmbLista();
             this.cmbCalleDesde = new Controles.datos.cmbLista();
@@ -58,7 +59,6 @@
             this.cmbLocalidad = new Controles.datos.cmbLista();
             this.lbLocalidad = new Controles.labels.lblEtiqueta();
             this.lbCalle = new Controles.labels.lblEtiqueta();
-            this.cmbCodigoPostal = new Controles.datos.cmbLista();
             this.gesGroup2.SuspendLayout();
             this.gbDatos.SuspendLayout();
             this.SuspendLayout();
@@ -68,9 +68,9 @@
             this.gesGroup2.Controls.Add(this.btnCancelar);
             this.gesGroup2.Controls.Add(this.btnAceptar);
             this.gesGroup2.Location = new System.Drawing.Point(11, 335);
-            this.gesGroup2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gesGroup2.Margin = new System.Windows.Forms.Padding(4);
             this.gesGroup2.Name = "gesGroup2";
-            this.gesGroup2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gesGroup2.Padding = new System.Windows.Forms.Padding(4);
             this.gesGroup2.Size = new System.Drawing.Size(731, 110);
             this.gesGroup2.TabIndex = 3;
             this.gesGroup2.TabStop = false;
@@ -79,10 +79,10 @@
             // 
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.Location = new System.Drawing.Point(456, 20);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(107, 74);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 14;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -90,10 +90,10 @@
             // 
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.Location = new System.Drawing.Point(583, 20);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(107, 74);
-            this.btnAceptar.TabIndex = 5;
+            this.btnAceptar.TabIndex = 15;
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
@@ -126,13 +126,24 @@
             this.gbDatos.Controls.Add(this.lbLocalidad);
             this.gbDatos.Controls.Add(this.lbCalle);
             this.gbDatos.Location = new System.Drawing.Point(11, 4);
-            this.gbDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbDatos.Margin = new System.Windows.Forms.Padding(4);
             this.gbDatos.Name = "gbDatos";
-            this.gbDatos.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbDatos.Padding = new System.Windows.Forms.Padding(4);
             this.gbDatos.Size = new System.Drawing.Size(731, 324);
             this.gbDatos.TabIndex = 2;
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
+            // 
+            // cmbCodigoPostal
+            // 
+            this.cmbCodigoPostal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbCodigoPostal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbCodigoPostal.FormattingEnabled = true;
+            this.cmbCodigoPostal.Location = new System.Drawing.Point(121, 210);
+            this.cmbCodigoPostal.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbCodigoPostal.Name = "cmbCodigoPostal";
+            this.cmbCodigoPostal.Size = new System.Drawing.Size(309, 24);
+            this.cmbCodigoPostal.TabIndex = 10;
             // 
             // lblEtiqueta11
             // 
@@ -150,10 +161,10 @@
             this.cmbCalleHasta.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCalleHasta.FormattingEnabled = true;
             this.cmbCalleHasta.Location = new System.Drawing.Point(375, 166);
-            this.cmbCalleHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCalleHasta.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCalleHasta.Name = "cmbCalleHasta";
             this.cmbCalleHasta.Size = new System.Drawing.Size(219, 24);
-            this.cmbCalleHasta.TabIndex = 34;
+            this.cmbCalleHasta.TabIndex = 9;
             // 
             // cmbCalleDesde
             // 
@@ -161,10 +172,10 @@
             this.cmbCalleDesde.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCalleDesde.FormattingEnabled = true;
             this.cmbCalleDesde.Location = new System.Drawing.Point(121, 166);
-            this.cmbCalleDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCalleDesde.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCalleDesde.Name = "cmbCalleDesde";
             this.cmbCalleDesde.Size = new System.Drawing.Size(219, 24);
-            this.cmbCalleDesde.TabIndex = 33;
+            this.cmbCalleDesde.TabIndex = 8;
             // 
             // lblEntre
             // 
@@ -190,11 +201,11 @@
             // 
             this.txtGisY.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtGisY.Location = new System.Drawing.Point(347, 283);
-            this.txtGisY.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGisY.Margin = new System.Windows.Forms.Padding(4);
             this.txtGisY.MaxLength = 20;
             this.txtGisY.Name = "txtGisY";
-            this.txtGisY.Size = new System.Drawing.Size(84, 22);
-            this.txtGisY.TabIndex = 30;
+            this.txtGisY.Size = new System.Drawing.Size(141, 22);
+            this.txtGisY.TabIndex = 13;
             // 
             // lblGisX
             // 
@@ -210,21 +221,21 @@
             // 
             this.txtGisX.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtGisX.Location = new System.Drawing.Point(121, 283);
-            this.txtGisX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGisX.Margin = new System.Windows.Forms.Padding(4);
             this.txtGisX.MaxLength = 20;
             this.txtGisX.Name = "txtGisX";
-            this.txtGisX.Size = new System.Drawing.Size(84, 22);
-            this.txtGisX.TabIndex = 28;
+            this.txtGisX.Size = new System.Drawing.Size(159, 22);
+            this.txtGisX.TabIndex = 12;
             // 
             // txtLote
             // 
             this.txtLote.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtLote.Location = new System.Drawing.Point(121, 245);
-            this.txtLote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtLote.MaxLength = 20;
+            this.txtLote.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLote.MaxLength = 15;
             this.txtLote.Name = "txtLote";
             this.txtLote.Size = new System.Drawing.Size(219, 22);
-            this.txtLote.TabIndex = 27;
+            this.txtLote.TabIndex = 11;
             // 
             // lblLote
             // 
@@ -250,11 +261,11 @@
             // 
             this.txtParcela.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtParcela.Location = new System.Drawing.Point(121, 127);
-            this.txtParcela.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtParcela.MaxLength = 20;
+            this.txtParcela.Margin = new System.Windows.Forms.Padding(4);
+            this.txtParcela.MaxLength = 15;
             this.txtParcela.Name = "txtParcela";
             this.txtParcela.Size = new System.Drawing.Size(472, 22);
-            this.txtParcela.TabIndex = 23;
+            this.txtParcela.TabIndex = 7;
             // 
             // lblParcela
             // 
@@ -280,11 +291,11 @@
             // 
             this.txtDepartamento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDepartamento.Location = new System.Drawing.Point(347, 91);
-            this.txtDepartamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtDepartamento.MaxLength = 20;
+            this.txtDepartamento.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDepartamento.MaxLength = 4;
             this.txtDepartamento.Name = "txtDepartamento";
             this.txtDepartamento.Size = new System.Drawing.Size(84, 22);
-            this.txtDepartamento.TabIndex = 20;
+            this.txtDepartamento.TabIndex = 5;
             // 
             // lblPiso
             // 
@@ -300,11 +311,11 @@
             // 
             this.txtPiso.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPiso.Location = new System.Drawing.Point(509, 91);
-            this.txtPiso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPiso.MaxLength = 20;
+            this.txtPiso.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPiso.MaxLength = 4;
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Size = new System.Drawing.Size(84, 22);
-            this.txtPiso.TabIndex = 18;
+            this.txtPiso.TabIndex = 6;
             // 
             // lblBloque
             // 
@@ -330,21 +341,21 @@
             // 
             this.txtBloque.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBloque.Location = new System.Drawing.Point(121, 91);
-            this.txtBloque.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtBloque.MaxLength = 20;
+            this.txtBloque.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBloque.MaxLength = 4;
             this.txtBloque.Name = "txtBloque";
             this.txtBloque.Size = new System.Drawing.Size(84, 22);
-            this.txtBloque.TabIndex = 14;
+            this.txtBloque.TabIndex = 4;
             // 
             // txtNumero
             // 
             this.txtNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumero.Location = new System.Drawing.Point(509, 57);
-            this.txtNumero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtNumero.MaxLength = 20;
+            this.txtNumero.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumero.MaxLength = 8;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(84, 22);
-            this.txtNumero.TabIndex = 13;
+            this.txtNumero.TabIndex = 3;
             // 
             // cmbCalle
             // 
@@ -352,10 +363,10 @@
             this.cmbCalle.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCalle.FormattingEnabled = true;
             this.cmbCalle.Location = new System.Drawing.Point(121, 57);
-            this.cmbCalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCalle.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCalle.Name = "cmbCalle";
             this.cmbCalle.Size = new System.Drawing.Size(309, 24);
-            this.cmbCalle.TabIndex = 12;
+            this.cmbCalle.TabIndex = 2;
             // 
             // cmbLocalidad
             // 
@@ -363,10 +374,10 @@
             this.cmbLocalidad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbLocalidad.FormattingEnabled = true;
             this.cmbLocalidad.Location = new System.Drawing.Point(121, 23);
-            this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(4);
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(309, 24);
-            this.cmbLocalidad.TabIndex = 11;
+            this.cmbLocalidad.TabIndex = 1;
             this.cmbLocalidad.SelectedIndexChanged += new System.EventHandler(this.cmbLocalidad_SelectedIndexChanged);
             // 
             // lbLocalidad
@@ -389,17 +400,6 @@
             this.lbCalle.TabIndex = 0;
             this.lbCalle.Text = "Calle:";
             // 
-            // cmbCodigoPostal
-            // 
-            this.cmbCodigoPostal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbCodigoPostal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbCodigoPostal.FormattingEnabled = true;
-            this.cmbCodigoPostal.Location = new System.Drawing.Point(121, 210);
-            this.cmbCodigoPostal.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbCodigoPostal.Name = "cmbCodigoPostal";
-            this.cmbCodigoPostal.Size = new System.Drawing.Size(309, 24);
-            this.cmbCodigoPostal.TabIndex = 36;
-            // 
             // frmDomiciliosCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -407,7 +407,7 @@
             this.ClientSize = new System.Drawing.Size(753, 458);
             this.Controls.Add(this.gesGroup2);
             this.Controls.Add(this.gbDatos);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDomiciliosCrud";
             this.Text = "frmDomiciliosCrud";
             this.Load += new System.EventHandler(this.frmDomiciliosCrud_Load);
@@ -423,7 +423,7 @@
         private Controles.contenedores.gesGroup gesGroup2;
         private Controles.buttons.btnCancelar btnCancelar;
         private Controles.buttons.btnAceptar btnAceptar;
-        private Controles.contenedores.gesGroup gbDatos;
+        public Controles.contenedores.gesGroup gbDatos;
         private Controles.labels.lblEtiqueta lblGisY;
         private Controles.textBoxes.txtDescripcionCorta txtGisY;
         private Controles.labels.lblEtiqueta lblGisX;

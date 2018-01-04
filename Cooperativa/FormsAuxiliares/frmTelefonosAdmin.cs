@@ -127,6 +127,7 @@ namespace FormsAuxiliares
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
             this.btnNuevo.TabIndex = 0;
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // gpbGrupo1
             // 
@@ -143,7 +144,7 @@ namespace FormsAuxiliares
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Location = new System.Drawing.Point(3, 312);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
+            this.lblCantidad.Size = new System.Drawing.Size(64, 17);
             this.lblCantidad.TabIndex = 1;
             this.lblCantidad.Text = "Cantidad";
             // 
@@ -166,6 +167,11 @@ namespace FormsAuxiliares
             this.gpbGrupo1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdGrillaAdmin)).EndInit();
             this.ResumeLayout(false);
+
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
 
         }
     }

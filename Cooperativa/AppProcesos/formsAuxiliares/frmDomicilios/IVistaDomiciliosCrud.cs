@@ -20,6 +20,7 @@ namespace AppProcesos.formsAuxiliares.frmDomicilios
         string departamento { get; set; }
         string piso { get; set; }
         string parcela { get; set; }
+        string lote { get; set; }
         cmbLista cmbiCalleDesde { get; set; }
         cmbLista cmbiCalleHasta { get; set; }
         cmbLista cmbiCodigoPostal { get; set; }

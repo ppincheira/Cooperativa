@@ -21,20 +21,20 @@ namespace FormsAuxiliares
         #region << PROPIEDADES >>
 
         private string _Tabla;
-        Utility oUtil;
+        Utility _oUtil;
         private UIFormAdmin _oFormAdmin;
         #endregion
 
         #region Implementation of IVistaBuscador
         public Boolean grupoEstado
         {
-            get { return this.gpbGrupoEstado.Visible; }
-            set { this.gpbGrupoEstado.Visible = value; }
+            get { return this.gpbGrupoEstado.Enabled; }
+            set { this.gpbGrupoEstado.Enabled = value; }
         }
         public Boolean grupoFecha
         {
-            get { return this.gpbFecha.Visible; }
-            set { this.gpbFecha.Visible = value; }
+            get { return this.gpbFecha.Enabled; }
+            set { this.gpbFecha.Enabled = value; }
         }
 
         public grdGrillaAdmin grilla
@@ -255,6 +255,7 @@ namespace FormsAuxiliares
             this.btnEliminar1.Size = new System.Drawing.Size(40, 40);
             this.btnEliminar1.TabIndex = 7;
             this.btnEliminar1.UseVisualStyleBackColor = true;
+            this.btnEliminar1.Click += new System.EventHandler(this.btnEliminar1_Click);
             // 
             // btnSalir
             // 
@@ -349,10 +350,12 @@ namespace FormsAuxiliares
             // 
             // dgBusqueda
             // 
+            this.dgBusqueda.AllowUserToAddRows = false;
             this.dgBusqueda.Location = new System.Drawing.Point(6, 19);
             this.dgBusqueda.Name = "dgBusqueda";
             this.dgBusqueda.Size = new System.Drawing.Size(913, 312);
             this.dgBusqueda.TabIndex = 0;
+            this.dgBusqueda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgBusqueda_CellContentClick);
             // 
             // gpbGrupoEstado
             // 
@@ -435,8 +438,8 @@ namespace FormsAuxiliares
             try
             {
                 _oFormAdmin.Inicializar(_Tabla);
-                oUtil = new Utility();
-                oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
+                _oUtil = new Utility();
+                _oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
                //No Borrar este comentario es la llama original
                //oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
             
@@ -454,7 +457,7 @@ namespace FormsAuxiliares
                 {
                     case "DOMB":
                         
-                        frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud();
+                        frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(0);
                         if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
@@ -474,11 +477,57 @@ namespace FormsAuxiliares
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DataGridViewRow row = this.dgBusqueda.CurrentRow;
+                long id = Convert.ToInt64(row.Cells[0].Value);
+
+                switch (_Tabla)
+                {
+                    case "DOMB":
+
+                        frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(id);
+                        if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+                    case "":
+                        Console.WriteLine("Case 2");
+                        break;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
 
         }
         private void btnVer_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DataGridViewRow row = this.dgBusqueda.CurrentRow;
+                long id = Convert.ToInt64(row.Cells[0].Value);
+                switch (_Tabla)
+                {
+                    case "DOMB":
 
+                        frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(id);
+                        oFrmDomCrud.gbDatos.Enabled = false;
+                        if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                            
+                        break;
+                    case "":
+                        Console.WriteLine("Case 2");
+                        break;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
         }
         private void btnImprimir_Click(object sender, EventArgs e)
         {
@@ -486,7 +535,14 @@ namespace FormsAuxiliares
         }
         private void btnExportar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                _oUtil.ExportarDataGridViewExcel(this.dgBusqueda);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
@@ -496,7 +552,7 @@ namespace FormsAuxiliares
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
@@ -521,8 +577,18 @@ namespace FormsAuxiliares
             this.btnExportar.FUN_CODIGO = oPerForm.Exp;
             this.btnEliminar1.FUN_CODIGO = oPerForm.Del;
             this.btnImprimir.FUN_CODIGO = oPerForm.Imp;
+            this.btnVer.FUN_CODIGO = oPerForm.Ver;
         }
         #endregion
 
+        private void dgBusqueda_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnEliminar1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
