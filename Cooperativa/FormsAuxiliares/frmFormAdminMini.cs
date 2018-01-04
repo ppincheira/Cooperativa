@@ -237,5 +237,10 @@ namespace FormsAuxiliares
             this.btnImprimir.FUN_CODIGO = oPerForm.Imp;
         }
         #endregion
+
+        private void gpbGrupo4_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
