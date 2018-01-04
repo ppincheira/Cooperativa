@@ -10,13 +10,13 @@ namespace Model
     {
 
 
-        public FuncionalidadesFoms(string PNew, string PEdit, string PDel, string PExp, string PImp)
+        public FuncionalidadesFoms(string FNew, string FEdit, string FDel, string FExp, string FImp)
         {
-            this.New = PNew;
-            this.Edit = PEdit;
-            this.Del = PDel;
-            this.Exp = PExp;
-            this.Imp = PImp;
+            this.New = FNew;
+            this.Edit = FEdit;
+            this.Del = FDel;
+            this.Exp = FExp;
+            this.Imp = FImp;
         }
         public virtual string New { get; set; }
         public virtual string Edit { get; set; }
