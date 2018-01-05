@@ -70,7 +70,7 @@ namespace AppProcesos.formsAuxiliares.frmDomicilios
             oDomicilio.CalNumero =long.Parse( _vista.cmbiCalle.SelectedValue.ToString());
             oDomicilio.CalNumeroDesde = long.Parse(_vista.cmbiCalleDesde.SelectedValue.ToString());
             oDomicilio.CalNumeroHasta = long.Parse(_vista.cmbiCalleHasta.SelectedValue.ToString());
-            oDomicilio.CplNumero = int.Parse(_vista.cmbiCodigoPostal.SelectedValue.ToString());
+            oDomicilio.CplNumero = long.Parse(_vista.cmbiCodigoPostal.SelectedValue.ToString());
             oDomicilio.DomBloque = _vista.bloque;
             oDomicilio.DomDepartamento = _vista.departamento;
             oDomicilio.DomGisX = _vista.gisX;
