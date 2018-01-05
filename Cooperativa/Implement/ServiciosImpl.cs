@@ -99,7 +99,7 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 string sqlSelect = "select * from Servicios " +
-                    "WHERE SEC_CODIGO='" + Id + "'";
+                    "WHERE SRV_CODIGO='" + Id + "'";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -166,7 +166,7 @@ namespace Implement
                 if (dr["SRV_FECHA_CARGA"].ToString() != "")
                     oObjeto.SrvFechaCarga = DateTime.Parse(dr["SRV_FECHA_CARGA"].ToString());
                 oObjeto.UsrNumero = int.Parse(dr["USR_NUMERO"].ToString());
-                oObjeto.SrvRequiereMedidor = dr["SRV_REQUIERE_MEDIDR"].ToString();
+                oObjeto.SrvRequiereMedidor = dr["SRV_REQUIERE_MEDIDOR"].ToString();
                 return oObjeto;
             }
             catch (Exception ex)

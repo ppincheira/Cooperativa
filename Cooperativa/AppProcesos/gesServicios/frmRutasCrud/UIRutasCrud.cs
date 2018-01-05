@@ -1,6 +1,7 @@
 ﻿using Business;
 using Model;
 using Service;
+using System.Collections.Generic;
 
 namespace AppProcesos.gesServicios.frmRutasCrud
 {
@@ -19,7 +20,15 @@ namespace AppProcesos.gesServicios.frmRutasCrud
         public void Inicializar()
         {
             ServiciosBus oServiciosBus = new ServiciosBus();
+
+            //List<Servicios> lista = oServiciosBus.ServiciosGetAll();
+            //foreach (Servicios item in lista)
+            //{
+            //    string valor = item.SrvCodigo;
+            //}
             _vista.srvCodigo.DataSource = oServiciosBus.ServiciosGetAll();
+            _vista.srvCodigo.DisplayMember = "SrvDescripcion";
+            _vista.srvCodigo.ValueMember = "SrvCodigo";
 
             if (_vista.sruNumero != 0)
             {
@@ -48,7 +57,8 @@ namespace AppProcesos.gesServicios.frmRutasCrud
             oSRu.EstCodigo = _vista.estCodigo;
             oSRu.SrvCodigo = _vista.srvCodigo.SelectedValue.ToString();
             if (_vista.sruNumero == 0)
-                rtdo = oSRuBus.ServiciosRutasAdd(oSRu);
+                rtdo = oSRuBus.ServiciosRutasAdd(oSRu)
+                ;
             else
                 rtdo = (oSRuBus.ServiciosRutasUpdate(oSRu)) ? oSRu.SruNumero : 0;
 

@@ -3,18 +3,11 @@ using Controles.datos;
 using Controles.form;
 using Service;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FormsAuxiliares
+namespace GesServicios.controles.forms
 {
-    public partial class frmRutasCrud: gesForm, IVistaRutasCrud
+    public partial class frmRutasCrud : gesForm, IVistaRutasCrud
     {
 
         #region << PROPIEDADES >>
@@ -24,10 +17,6 @@ namespace FormsAuxiliares
 
         long _SruNumero;
         string _EstCodigo;
-        long _DomCodigoRegistro;
-        string _TdoCodigo;
-      
-
 
         #endregion
         #region Implementation of IVistaRutasCrud
@@ -62,35 +51,70 @@ namespace FormsAuxiliares
             set { this.cmbServicio = value; }
         }
         #endregion
-        public frmRutasCrud()
+        public frmRutasCrud(long SRuta, string Estado)
+            //SRuta, Estado 
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+                _SruNumero=SRuta;
+                _EstCodigo = Estado;
+                _oRutasCrud = new UIRutasCrud(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
         }
 
         private void frmRutasCrud_Load(object sender, EventArgs e)
         {
-
-
+            try
+            {
+                oUtil = new Utility();
+                _oRutasCrud.Inicializar();
+                this.txtDescripcionCorta.REQUERIDO = "SI";
+                this.cmbServicio.REQUERIDO = "SI";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                oUtil.ValidarFormulario(this, this, 5);
+                if (this.VALIDARFORM)
+                {
+                    DialogResult = DialogResult.OK;
+                    _oRutasCrud.Guardar();
+
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
 
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+            }
 
         }
 
-        private void cmbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbCalle_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

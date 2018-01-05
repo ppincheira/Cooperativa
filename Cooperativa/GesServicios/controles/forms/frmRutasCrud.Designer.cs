@@ -1,4 +1,4 @@
-﻿namespace FormsAuxiliares
+﻿namespace GesServicios.controles.forms
 {
     partial class frmRutasCrud
     {
@@ -142,17 +142,16 @@
             this.lbDescripcion.Size = new System.Drawing.Size(66, 13);
             this.lbDescripcion.TabIndex = 0;
             this.lbDescripcion.Text = "Descripción:";
-            this.lbDescripcion.Click += new System.EventHandler(this.lbCalle_Click);
             // 
-            // frmDomiciliosCrud
+            // frmRutasCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 335);
             this.Controls.Add(this.gesGroup2);
             this.Controls.Add(this.gbDatos);
-            this.Name = "frmDomiciliosCrud";
-            this.Text = "frmDomiciliosCrud";
+            this.Name = "frmRutasCrud";
+            this.Text = "frmRutasCrud";
             this.Load += new System.EventHandler(this.frmRutasCrud_Load);
             this.gesGroup2.ResumeLayout(false);
             this.gbDatos.ResumeLayout(false);
@@ -166,12 +165,12 @@
         private Controles.contenedores.gesGroup gesGroup2;
         private Controles.buttons.btnCancelar btnCancelar;
         private Controles.buttons.btnAceptar btnAceptar;
-        private Controles.contenedores.gesGroup gbDatos;
         private Controles.labels.lblEtiqueta lblParcela;
         private Controles.labels.lblEtiqueta lblDescripcionCorta;
         private Controles.textBoxes.txtDescripcionCorta txtDescripcionCorta;
         private Controles.textBoxes.txtDescripcionCorta txtDescripcion;
         private Controles.labels.lblEtiqueta lbDescripcion;
         private Controles.datos.cmbLista cmbServicio;
+        public Controles.contenedores.gesGroup gbDatos;
     }
 }

@@ -114,5 +114,10 @@ namespace FormsAuxiliares
                 MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
         }
+
+        private void gesGroup2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

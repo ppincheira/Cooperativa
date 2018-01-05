@@ -13,8 +13,8 @@ namespace Implement
         private OracleDataAdapter adapter;
         private OracleCommand cmd;
         private DataSet ds;
-        private int response;
-        public int ServiciosRutasAdd(ServiciosRutas oSRu)
+        private long response;
+        public long ServiciosRutasAdd(ServiciosRutas oSRu)
         {
             try
             {
@@ -23,12 +23,26 @@ namespace Implement
                 cn.Open();
                 // Clave Secuencia SRU_NUMERO
                 ds = new DataSet();
-                cmd = new OracleCommand("insert into Servicios_Rutas " +
-                    "(SRU_DESCRIPCION, SRU_DESCRIPCION_CORTA, SRV_CODIGO, EST_CODIGO) " +
-                    "values('" + oSRu.SruDescripcion + "', '" +oSRu.SruDescripcionCorta + "', '" +
-                    oSRu.SrvCodigo + "', '" + oSRu.EstCodigo + "')", cn);
+                string query =
+
+                    " DECLARE IDTEMP NUMBER(10,0); " +
+                    " BEGIN " +
+                    " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('SRU_NUMERO')) into IDTEMP from dual; " +
+                    " insert into Servicios_Rutas " +
+                    "(SRU_NUMERO, SRU_DESCRIPCION, SRU_DESCRIPCION_CORTA, SRV_CODIGO, EST_CODIGO) " +
+                    "values(IDTEMP,'" + oSRu.SruDescripcion + "', '" + oSRu.SruDescripcionCorta + "', '" +
+                    oSRu.SrvCodigo + "', '" + oSRu.EstCodigo + "') RETURNING IDTEMP INTO :id;" +
+                    " END;";
+                cmd = new OracleCommand(query, cn);
+                cmd.Parameters.Add(new OracleParameter
+                {
+                    ParameterName = ":id",
+                    OracleDbType = OracleDbType.Int64,
+                    Direction = ParameterDirection.Output
+                });
                 adapter = new OracleDataAdapter(cmd);
-                response = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+                response = long.Parse(cmd.Parameters[":id"].Value.ToString());
                 cn.Close();
                 return response;
             }
@@ -49,9 +63,9 @@ namespace Implement
                 cmd = new OracleCommand("update Servicios_Rutas " +
                     "SET SRU_DESCRIPCION='" + oSRu.SruDescripcion + "', " +
                     "SRU_DESCRIPCION_CORTA='" + oSRu.SruDescripcionCorta + "', " +
-                    "SRV_CODIGO='" + oSRu.SrvCodigo + "', '" +
+                    "SRV_CODIGO='" + oSRu.SrvCodigo + "', " +
                     "EST_CODIGO='" + oSRu.EstCodigo + "' " +
-                    "WHERE SRU_NUMERO=" + oSRu.SrvCodigo, cn);
+                    "WHERE SRU_NUMERO=" + oSRu.SruNumero , cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Model;
 using Controles;
 using AppProcesos.formsAuxiliares.formAdmin;
+using GesServicios.controles.forms;
 using Controles.datos;
 using Service;
 using Controles.form;
@@ -115,8 +116,14 @@ namespace FormsAuxiliares
                 switch (_Tabla)
                 {
                     case "CALB":
-                        frmCallesCrud oFrmCalCrud = new frmCallesCrud(0,"NQ");
+                        frmCallesCrud oFrmCalCrud = new frmCallesCrud(0, "NQ");
                         if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+                    case "SRUT":
+                        frmRutasCrud oFrmRutCrud = new frmRutasCrud(0, "H");
+
+                        if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
                     case "":
@@ -145,6 +152,11 @@ namespace FormsAuxiliares
                     case "CALB":
                         frmCallesCrud oFrmCalCrud = new frmCallesCrud(id,"NQ");
                         if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+                    case "SRUT":
+                        frmRutasCrud oFrmRutCrud = new frmRutasCrud(id, "H");
+                        if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
                     case "":
@@ -177,6 +189,12 @@ namespace FormsAuxiliares
                         if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
 
+                        break;
+                    case "SRUT":
+                        frmRutasCrud oFrmRutCrud = new frmRutasCrud(id, "H");
+                        oFrmRutCrud.gbDatos .Enabled = false;
+                        if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
                         break;
                     case "":
                         Console.WriteLine("Case 2");

@@ -88,7 +88,7 @@ namespace UI
             //Aqui se utiliza una clase para asignar la funcionalidad a formularios admin cargados dinamicamente
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0","0");
             //Se instancia un objeto de la clase formulario admin al cual se le pasa por parametro el COD_TABLA
-            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("SRUT",oPermiso);
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("SRUT",oPermiso);
             frmbus.ShowDialog();
         }
 
