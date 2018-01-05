@@ -8,7 +8,7 @@ namespace Business
     public class CodigosPostalesLocalidadesBus
     {
 
-        public int CodigosPostalesLocalidadesAdd(CodigosPostalesLocalidades oCodigosPostalesLocalidades)
+        public long CodigosPostalesLocalidadesAdd(CodigosPostalesLocalidades oCodigosPostalesLocalidades)
         {
             CodigosPostalesLocalidadesImpl oCodigosPostalesLocalidadesImpl = new CodigosPostalesLocalidadesImpl();
             return oCodigosPostalesLocalidadesImpl.CodigosPostalesLocalidadesAdd(oCodigosPostalesLocalidades);
@@ -26,7 +26,7 @@ namespace Business
             return oCodigosPostalesLocalidadesImpl.CodigosPostalesLocalidadesDelete(Id);
         }
 
-        public CodigosPostalesLocalidades CodigosPostalesLocalidadesGetById(int Id)
+        public CodigosPostalesLocalidades CodigosPostalesLocalidadesGetById(long Id)
         {
             CodigosPostalesLocalidadesImpl oCodigosPostalesLocalidadesImpl = new CodigosPostalesLocalidadesImpl();
             return oCodigosPostalesLocalidadesImpl.CodigosPostalesLocalidadesGetById(Id);

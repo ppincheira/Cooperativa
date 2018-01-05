@@ -112,18 +112,20 @@ namespace FormsAuxiliares
             set { this.cmbCodigoPostal = value; }
         }
 
-        public decimal gisX
+        public decimal? gisX
         {
-            get { return decimal.Parse(this.txtGisX.Text); }
+            get { return string.IsNullOrEmpty(this.txtGisX.Text) ? null : (decimal?)Convert.ToDecimal(this.txtGisX.Text);}
             set { this.txtGisX.Text = value.ToString(); }
         }
 
-        public decimal gisY
+        public decimal? gisY
         {
-            get { return decimal.Parse(this.txtGisY.Text); }
+            get { return string.IsNullOrEmpty(this.txtGisY.Text) ? null : (decimal?)Convert.ToDecimal(this.txtGisY.Text); }
             set { this.txtGisY.Text = value.ToString(); }
         }
         #endregion
+
+        #region << EVENTOS >>
         public frmDomiciliosCrud(long domCodigo)
         {
             try
@@ -164,6 +166,7 @@ namespace FormsAuxiliares
         {
             try
             {
+                this.VALIDARFORM = true;
                 oUtil.ValidarFormulario(this, this, 5);
                 if (this.VALIDARFORM)
                 {
@@ -197,5 +200,6 @@ namespace FormsAuxiliares
 
             _oDomicilioCrud.CargarCallesCodigoPostal();
         }
+        #endregion
     }
 }

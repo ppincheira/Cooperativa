@@ -15,23 +15,46 @@ namespace Implement
         private OracleDataAdapter adapter;
         private OracleCommand cmd;
         private DataSet ds;
-        private int response;
-        public int CodigosPostalesLocalidadesAdd(CodigosPostalesLocalidades oCalleLocalidad)
+        private long response;
+        public long CodigosPostalesLocalidadesAdd(CodigosPostalesLocalidades oCodigoPostal)
 		{
-			try
+
+           
+            try
 			{
+             
+
+
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                // Clave Secuencia CPL_NUMERO
-                ds = new DataSet();
-                cmd = new OracleCommand("insert into Codigos_Postales_Localidades(CPL_DESCRIPCION, " +
-                    "CPL_CODIGO_POSTAL, LOC_NUMERO) " +
-                    "values('"+oCalleLocalidad.CplDescripcion + "', '"+
-                    oCalleLocalidad.CplCodigoPostal + "', " + oCalleLocalidad.LocNumero + "')", cn);
-                adapter = new OracleDataAdapter(cmd);
-                response = cmd.ExecuteNonQuery();
+
+                string query =
+
+                    " DECLARE IDTEMP NUMBER(15,0); " +
+                    " BEGIN " +
+                    " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('CPL_NUMERO')) into IDTEMP from dual; " +
+                    "insert into Codigos_Postales_Localidades(CPL_NUMERO,CPL_DESCRIPCION, " +
+                    "CPL_CODIGO_POSTAL, LOC_NUMERO)" +
+                    " VALUES(IDTEMP,'" + oCodigoPostal.CplDescripcion + "','" + oCodigoPostal.CplCodigoPostal +"',"+
+                    oCodigoPostal.LocNumero + ") RETURNING IDTEMP INTO :id;" +
+                    " END;";
+
+                cmd = new OracleCommand(query, cn);
+                cmd.Parameters.Add(new OracleParameter
+                {
+                    ParameterName = ":id",
+                    OracleDbType = OracleDbType.Int64,
+                    Direction = ParameterDirection.Output
+                });
+
+
+
+
+                cmd.ExecuteNonQuery();
+                response = long.Parse(cmd.Parameters[":id"].Value.ToString());
                 cn.Close();
+
                 return response;
             }
 			catch(Exception ex)
@@ -49,7 +72,7 @@ namespace Implement
                 cn.Open();
                 ds = new DataSet();
                 cmd = new OracleCommand("update Codigos_Postales_Localidades " +
-                    "SET CAL_DESCRIPCION='" + oCPL.CplDescripcion + 
+                    "SET CPL_DESCRIPCION='" + oCPL.CplDescripcion + 
                     "', CPL_CODIGO_POSTAL='" + oCPL.CplCodigoPostal + "' " + 
                     ", LOC_NUMERO=" + oCPL.LocNumero + 
                     " WHERE CPL_NUMERO=" + oCPL.CplNumero.ToString(), cn);
@@ -86,7 +109,7 @@ namespace Implement
                 }
 		}
 
-        public CodigosPostalesLocalidades CodigosPostalesLocalidadesGetById(int Id)
+        public CodigosPostalesLocalidades CodigosPostalesLocalidadesGetById(long Id)
 		{
 			try
 			{
@@ -156,8 +179,8 @@ namespace Implement
 			try
 			{
                 CodigosPostalesLocalidades oObjeto = new CodigosPostalesLocalidades();
-                oObjeto.CplNumero = int.Parse(dr["CPL_NUMERO"].ToString());
-                oObjeto.CplDescripcion = dr["CAL_DESCRIPCION"].ToString();
+                oObjeto.CplNumero = long.Parse(dr["CPL_NUMERO"].ToString());
+                oObjeto.CplDescripcion = dr["CPL_DESCRIPCION"].ToString();
                 oObjeto.CplCodigoPostal = dr["CPL_CODIGO_POSTAL"].ToString();
                 oObjeto.LocNumero = int.Parse(dr["LOC_NUMERO"].ToString());
                 return oObjeto;

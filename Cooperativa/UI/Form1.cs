@@ -105,5 +105,13 @@ namespace UI
             FormsAuxiliares.frmTelefonosAdmin frmobs = new FormsAuxiliares.frmTelefonosAdmin("PERS", "1");
             frmobs.ShowDialog();
         }
+
+        private void btnPersonalizado6_Click(object sender, EventArgs e)
+        {
+
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("COPB", oPermiso);
+            frmbus.ShowDialog();
+        }
     }
 }

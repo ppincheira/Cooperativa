@@ -120,6 +120,7 @@ namespace FormsAuxiliares
                         if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
+<<<<<<< HEAD
                     case "SRUT":
                         frmRutasCrud oFrmRutCrud = new frmRutasCrud(0, "H");
 
@@ -128,6 +129,13 @@ namespace FormsAuxiliares
                         break;
                     case "":
                         Console.WriteLine("Case 2");
+=======
+                    case "COPB":
+                        
+                        frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(0, "NQ");
+                        if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+>>>>>>> 86bf4384de0ea63cf90b07244f7187b4a26dbcf0
                         break;
 
                 }
@@ -146,14 +154,16 @@ namespace FormsAuxiliares
             try
             {
                 DataGridViewRow row = this.dgBusqueda.CurrentRow;
-                long id = Convert.ToInt64(row.Cells[0].Value);
+                
                 switch (_Tabla)
                 {
                     case "CALB":
-                        frmCallesCrud oFrmCalCrud = new frmCallesCrud(id,"NQ");
+                        long idCalle = Convert.ToInt64(row.Cells[0].Value);
+                        frmCallesCrud oFrmCalCrud = new frmCallesCrud(idCalle, "NQ");
                         if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
+<<<<<<< HEAD
                     case "SRUT":
                         frmRutasCrud oFrmRutCrud = new frmRutasCrud(id, "H");
                         if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
@@ -161,6 +171,13 @@ namespace FormsAuxiliares
                         break;
                     case "":
                         Console.WriteLine("Case 2");
+=======
+                    case "COPB":
+                        long idCodPostal = Convert.ToInt64(row.Cells[0].Value);
+                        frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
+                        if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+>>>>>>> 86bf4384de0ea63cf90b07244f7187b4a26dbcf0
                         break;
                 }
             }
@@ -180,16 +197,18 @@ namespace FormsAuxiliares
             try
             {
                 DataGridViewRow row = this.dgBusqueda.CurrentRow;
-                long id = Convert.ToInt64(row.Cells[0].Value);
+               
                 switch (_Tabla)
                 {
                     case "CALB":
-                        frmCallesCrud oFrmCalCrud = new frmCallesCrud(id, "NQ");
+                        long idCalle = Convert.ToInt64(row.Cells[0].Value);
+                        frmCallesCrud oFrmCalCrud = new frmCallesCrud(idCalle, "NQ");
                         oFrmCalCrud.gbDatos.Enabled = false;
                         if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
 
                         break;
+<<<<<<< HEAD
                     case "SRUT":
                         frmRutasCrud oFrmRutCrud = new frmRutasCrud(id, "H");
                         oFrmRutCrud.gbDatos .Enabled = false;
@@ -198,6 +217,14 @@ namespace FormsAuxiliares
                         break;
                     case "":
                         Console.WriteLine("Case 2");
+=======
+                    case "COPB":
+                        int idCodPostal = Convert.ToInt32(row.Cells[0].Value);
+                        frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
+                        oFrmCodPostalCrud.gbDatos.Enabled = false;
+                        if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+>>>>>>> 86bf4384de0ea63cf90b07244f7187b4a26dbcf0
                         break;
 
                 }
