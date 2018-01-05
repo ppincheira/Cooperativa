@@ -15,8 +15,8 @@ namespace Implement
         private OracleDataAdapter adapter;
         private OracleCommand cmd;
         private DataSet ds;
-        private int response;
-        public int CodigosPostalesLocalidadesAdd(CodigosPostalesLocalidades oCodigoPostal)
+        private long response;
+        public long CodigosPostalesLocalidadesAdd(CodigosPostalesLocalidades oCodigoPostal)
 		{
 
            
@@ -52,7 +52,7 @@ namespace Implement
 
 
                 cmd.ExecuteNonQuery();
-                response = int.Parse(cmd.Parameters[":id"].Value.ToString());
+                response = long.Parse(cmd.Parameters[":id"].Value.ToString());
                 cn.Close();
 
                 return response;
@@ -72,7 +72,7 @@ namespace Implement
                 cn.Open();
                 ds = new DataSet();
                 cmd = new OracleCommand("update Codigos_Postales_Localidades " +
-                    "SET CAL_DESCRIPCION='" + oCPL.CplDescripcion + 
+                    "SET CPL_DESCRIPCION='" + oCPL.CplDescripcion + 
                     "', CPL_CODIGO_POSTAL='" + oCPL.CplCodigoPostal + "' " + 
                     ", LOC_NUMERO=" + oCPL.LocNumero + 
                     " WHERE CPL_NUMERO=" + oCPL.CplNumero.ToString(), cn);
@@ -109,7 +109,7 @@ namespace Implement
                 }
 		}
 
-        public CodigosPostalesLocalidades CodigosPostalesLocalidadesGetById(int Id)
+        public CodigosPostalesLocalidades CodigosPostalesLocalidadesGetById(long Id)
 		{
 			try
 			{
@@ -179,8 +179,8 @@ namespace Implement
 			try
 			{
                 CodigosPostalesLocalidades oObjeto = new CodigosPostalesLocalidades();
-                oObjeto.CplNumero = int.Parse(dr["CPL_NUMERO"].ToString());
-                oObjeto.CplDescripcion = dr["CAL_DESCRIPCION"].ToString();
+                oObjeto.CplNumero = long.Parse(dr["CPL_NUMERO"].ToString());
+                oObjeto.CplDescripcion = dr["CPL_DESCRIPCION"].ToString();
                 oObjeto.CplCodigoPostal = dr["CPL_CODIGO_POSTAL"].ToString();
                 oObjeto.LocNumero = int.Parse(dr["LOC_NUMERO"].ToString());
                 return oObjeto;

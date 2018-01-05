@@ -22,7 +22,7 @@ namespace FormsAuxiliares
         UICodigoPostalCrud _oCodPostalCrud;
         Utility oUtil;
         string _codigoProvincia;
-        int _cplNumero;
+        long _cplNumero;
 
 
 
@@ -32,7 +32,7 @@ namespace FormsAuxiliares
         #region Implementation of IVistaCallesCrud
 
 
-        public int cplNumero
+        public long cplNumero
         {
             get { return _cplNumero; }
             set { _cplNumero = value; }
@@ -65,7 +65,7 @@ namespace FormsAuxiliares
         #endregion
 
         #region << EVENTOS >>
-        public frmCodigoPostalCrud(int cplNumero, string codigoProvincia)
+        public frmCodigoPostalCrud(long cplNumero, string codigoProvincia)
         {
             InitializeComponent();
             _cplNumero = cplNumero;

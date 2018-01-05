@@ -152,7 +152,7 @@ namespace FormsAuxiliares
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
                     case "COPB":
-                        int idCodPostal = Convert.ToInt32(row.Cells[0].Value);
+                        long idCodPostal = Convert.ToInt64(row.Cells[0].Value);
                         frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
                         if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);

@@ -9,7 +9,7 @@ namespace AppProcesos.formsAuxiliares.frmCodigoPostal
 {
     public interface IVistaCodigoPostalCrud
     {
-        int cplNumero { get; set; }
+        long cplNumero { get; set; }
         string txtiDescripcion { get; set; }
         string txtiCodigoPostal { get; set; }
         cmbLista cmbiLocalidad { get; set; }
