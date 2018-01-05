@@ -24,8 +24,8 @@ namespace AppProcesos.formsAuxiliares.frmDomicilios
         cmbLista cmbiCalleDesde { get; set; }
         cmbLista cmbiCalleHasta { get; set; }
         cmbLista cmbiCodigoPostal { get; set; }
-        decimal gisX { get; set; }
-        decimal gisY { get; set; }
+        decimal? gisX { get; set; }
+        decimal? gisY { get; set; }
 
 
     }

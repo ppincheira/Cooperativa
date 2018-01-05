@@ -107,6 +107,7 @@ namespace FormsAuxiliares
         {
             try
             {
+                this.VALIDARFORM = true;
                 oUtil.ValidarFormulario(this, this, 5);
                 if (this.VALIDARFORM)
                 {

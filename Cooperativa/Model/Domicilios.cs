@@ -19,8 +19,8 @@ namespace Model {
         public virtual string DomParcela { get; set; }
         public virtual long CplNumero { get; set; }
         public virtual string DomLote { get; set; }
-        public virtual decimal DomGisX { get; set; }
-        public virtual decimal DomGisY { get; set; }
+        public virtual decimal? DomGisX { get; set; }
+        public virtual decimal? DomGisY { get; set; }
       
     }
 }

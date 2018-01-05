@@ -35,7 +35,7 @@ namespace Implement
                     " VALUES(IDTEMP," +oDom.LocNumero + ", " + oDom.CalNumero + ", " + oDom.CalNumeroDesde + ", " +
                     oDom.CalNumeroHasta + ", " + oDom.DomNumero + ", '" + oDom.DomBloque + "', '" +
                     oDom.DomPiso + "', '" + oDom.DomDepartamento + "', '" + oDom.DomParcela + "', " +
-                    oDom.CplNumero + ", '" + oDom.DomLote + "', " + oDom.DomGisX + ", " + oDom.DomGisY + 
+                    oDom.CplNumero + ", '" + oDom.DomLote + "', " + (oDom.DomGisX == null ? "null" : oDom.DomGisX.ToString()) + ", " + (oDom.DomGisY == null ? "null" : oDom.DomGisY.ToString()) + 
                      ") RETURNING IDTEMP INTO :id;" +
                     " END;";
 
@@ -84,8 +84,8 @@ namespace Implement
                     "DOM_PARCELA='" + oDom.DomParcela + "', " +
                     "CPL_NUMERO=" + oDom.CplNumero + ", " +
                     "DOM_LOTE='" + oDom.DomLote + "', " +
-                    "DOM_GIS_X=" + oDom.DomGisX + ", " +
-                    "DOM_GIS_Y=" + oDom.DomGisY +
+                    "DOM_GIS_X=" + (oDom.DomGisX==null?"null": oDom.DomGisX.ToString() )+ ", " +
+                    "DOM_GIS_Y=" +( oDom.DomGisY==null?"null":oDom.DomGisY.ToString() )+
                     " WHERE DOM_CODIGO=" + oDom.DomCodigo, cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
