@@ -38,3 +38,15 @@ C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateR
 C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
 C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.pdb
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Model.dll
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Model.pdb
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csprojResolveAssemblyReference.cache
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.datos.gesComboBox.resources
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.form.gesForm.resources
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.Resources.Iconos.resources
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
