@@ -119,8 +119,11 @@ namespace FormsAuxiliares
                         if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
-                    case "":
-                        Console.WriteLine("Case 2");
+                    case "COPB":
+                        
+                        frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(0, "NQ");
+                        if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
                         break;
 
                 }
@@ -139,16 +142,20 @@ namespace FormsAuxiliares
             try
             {
                 DataGridViewRow row = this.dgBusqueda.CurrentRow;
-                long id = Convert.ToInt64(row.Cells[0].Value);
+                
                 switch (_Tabla)
                 {
                     case "CALB":
-                        frmCallesCrud oFrmCalCrud = new frmCallesCrud(id,"NQ");
+                        long idCalle = Convert.ToInt64(row.Cells[0].Value);
+                        frmCallesCrud oFrmCalCrud = new frmCallesCrud(idCalle, "NQ");
                         if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
-                    case "":
-                        Console.WriteLine("Case 2");
+                    case "COPB":
+                        int idCodPostal = Convert.ToInt32(row.Cells[0].Value);
+                        frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
+                        if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
                         break;
                 }
             }
@@ -168,18 +175,23 @@ namespace FormsAuxiliares
             try
             {
                 DataGridViewRow row = this.dgBusqueda.CurrentRow;
-                long id = Convert.ToInt64(row.Cells[0].Value);
+               
                 switch (_Tabla)
                 {
                     case "CALB":
-                        frmCallesCrud oFrmCalCrud = new frmCallesCrud(id, "NQ");
+                        long idCalle = Convert.ToInt64(row.Cells[0].Value);
+                        frmCallesCrud oFrmCalCrud = new frmCallesCrud(idCalle, "NQ");
                         oFrmCalCrud.gbDatos.Enabled = false;
                         if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
 
                         break;
-                    case "":
-                        Console.WriteLine("Case 2");
+                    case "COPB":
+                        int idCodPostal = Convert.ToInt32(row.Cells[0].Value);
+                        frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
+                        oFrmCodPostalCrud.gbDatos.Enabled = false;
+                        if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
                         break;
 
                 }

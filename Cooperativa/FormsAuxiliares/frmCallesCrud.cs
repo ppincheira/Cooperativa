@@ -66,7 +66,7 @@ namespace FormsAuxiliares
         }
 
         #endregion
-
+        #region << EVENTOS >>
         private void frmCallesCrud_Load(object sender, EventArgs e)
         {
             try {
@@ -114,5 +114,6 @@ namespace FormsAuxiliares
                 MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
         }
+        #endregion
     }
 }

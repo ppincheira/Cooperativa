@@ -124,6 +124,8 @@ namespace FormsAuxiliares
             set { this.txtGisY.Text = value.ToString(); }
         }
         #endregion
+
+        #region << EVENTOS >>
         public frmDomiciliosCrud(long domCodigo)
         {
             try
@@ -197,5 +199,6 @@ namespace FormsAuxiliares
 
             _oDomicilioCrud.CargarCallesCodigoPostal();
         }
+#endregion
     }
 }

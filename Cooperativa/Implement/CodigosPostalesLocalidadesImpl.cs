@@ -16,22 +16,45 @@ namespace Implement
         private OracleCommand cmd;
         private DataSet ds;
         private int response;
-        public int CodigosPostalesLocalidadesAdd(CodigosPostalesLocalidades oCalleLocalidad)
+        public int CodigosPostalesLocalidadesAdd(CodigosPostalesLocalidades oCodigoPostal)
 		{
-			try
+
+           
+            try
 			{
+             
+
+
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                // Clave Secuencia CPL_NUMERO
-                ds = new DataSet();
-                cmd = new OracleCommand("insert into Codigos_Postales_Localidades(CPL_DESCRIPCION, " +
-                    "CPL_CODIGO_POSTAL, LOC_NUMERO) " +
-                    "values('"+oCalleLocalidad.CplDescripcion + "', '"+
-                    oCalleLocalidad.CplCodigoPostal + "', " + oCalleLocalidad.LocNumero + "')", cn);
-                adapter = new OracleDataAdapter(cmd);
-                response = cmd.ExecuteNonQuery();
+
+                string query =
+
+                    " DECLARE IDTEMP NUMBER(15,0); " +
+                    " BEGIN " +
+                    " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('CPL_NUMERO')) into IDTEMP from dual; " +
+                    "insert into Codigos_Postales_Localidades(CPL_NUMERO,CPL_DESCRIPCION, " +
+                    "CPL_CODIGO_POSTAL, LOC_NUMERO)" +
+                    " VALUES(IDTEMP,'" + oCodigoPostal.CplDescripcion + "','" + oCodigoPostal.CplCodigoPostal +"',"+
+                    oCodigoPostal.LocNumero + ") RETURNING IDTEMP INTO :id;" +
+                    " END;";
+
+                cmd = new OracleCommand(query, cn);
+                cmd.Parameters.Add(new OracleParameter
+                {
+                    ParameterName = ":id",
+                    OracleDbType = OracleDbType.Int64,
+                    Direction = ParameterDirection.Output
+                });
+
+
+
+
+                cmd.ExecuteNonQuery();
+                response = int.Parse(cmd.Parameters[":id"].Value.ToString());
                 cn.Close();
+
                 return response;
             }
 			catch(Exception ex)
