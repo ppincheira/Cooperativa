@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Implement;
 using Model;
+using System.Data;
 
 namespace Business
 {
@@ -35,6 +36,11 @@ namespace Business
         {
             DominiosImpl oDominiosImpl = new DominiosImpl();
             return oDominiosImpl.DominiosGetAll();
+        }
+        public DataTable DominiosGetByFilter(string dmnCodigo)
+        {
+            DominiosImpl oDominiodImpl = new DominiosImpl();
+            return oDominiodImpl.DominiosGetByFilter(dmnCodigo);
         }
     }
 }

@@ -170,24 +170,56 @@ namespace Implement
                 }
             }
 
+        public DataTable DominiosGetByFilter(string dmnCodigo)
+        {
 
-            //public DataTable DominiosGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
-            //{
-            //    try
-            //    {
-            //        DataTable DTPartes;
-            //        DataSet DSPartes = SqlHelper.ExecuteDataset(SqlImplHelper.getConnectionString(), "DominiosGetAllByFilter", Periodo, Empresa, IdPresentacion,Tipo);
-            //        DTPartes = DSPartes.Tables[0];
-            //        DSPartes.Tables.RemoveAt(0);
-            //        return DTPartes;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        throw ex;
-            //    }
-            //}
-            #endregion
+            try
+            {
 
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = " SELECT dmn_valor, " +
+                                   "        dmn_descripcion " +                                 
+                                   " FROM   dominios  " +
+                                   " WHERE  dmn_activo = 'S' " +
+                                   " AND    dmn_codigo ='" + dmnCodigo + "' " ;
+
+                Console.WriteLine("sql");
+                Console.WriteLine("--" + sqlSelect);
+                Console.WriteLine("sql");
+
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+
+                DataTable dt;
+                return dt = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
+        //public DataTable DominiosGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
+        //{
+        //    try
+        //    {
+        //        DataTable DTPartes;
+        //        DataSet DSPartes = SqlHelper.ExecuteDataset(SqlImplHelper.getConnectionString(), "DominiosGetAllByFilter", Periodo, Empresa, IdPresentacion,Tipo);
+        //        DTPartes = DSPartes.Tables[0];
+        //        DSPartes.Tables.RemoveAt(0);
+        //        return DTPartes;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
+        #endregion
+
+    }
 }
 

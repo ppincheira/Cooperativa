@@ -99,5 +99,11 @@ namespace UI
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("CALB", oPermiso);
             frmbus.ShowDialog();
         }
+
+        private void btnPersonalizado5_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmTelefonosAdmin frmobs = new FormsAuxiliares.frmTelefonosAdmin("PERS", "1");
+            frmobs.ShowDialog();
+        }
     }
 }

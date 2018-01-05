@@ -49,9 +49,9 @@ namespace Implement
                                               "'" + oExcepciones.SbsCodigo + "', " +
                                               "'" + oExcepciones.TerNumero + "', " +
                                               "'" + oExcepciones.ExcDescripcion + "')";
-                //Console.WriteLine("sql" );
-                //Console.WriteLine("sql"+sql);
-                //Console.WriteLine("sql");
+                Console.WriteLine("sql");
+                Console.WriteLine("sql  " + sql);
+                Console.WriteLine("sql");
                 cmd = new OracleCommand(sql, cn);
 
                 adapter = new OracleDataAdapter(cmd);

@@ -3,11 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AppProcesos.formsAuxiliares.frmTelefonos;
+using Controles.datos;
 using Controles.form;
+using System.Windows.Forms;
+using Service;
+
 namespace FormsAuxiliares
 {
-    public partial class frmTelefonosAdmin: gesForm
+    public partial class frmTelefonosAdmin : gesForm, IVistaTelefonos
     {
+        #region << PROPIEDADES >>
+        private UITelefonos _oUITelefonos;
+        string _tabCodigo;
+        string _telCodigoRegistro;
+        private Utility _oUtility;
+
+        #endregion
+
         private Controles.contenedores.gpbGrupo gpbGrupo4;
         private Controles.buttons.btnImprimir btnImprimir;
         private Controles.buttons.btnVer btnVer;
@@ -20,8 +33,38 @@ namespace FormsAuxiliares
         private Controles.labels.lblEtiqueta lblCantidad;
         private Controles.datos.grdGrillaAdmin grdGrillaAdmin;
 
-        public frmTelefonosAdmin() {
+        #region Implementation of IVistaTelefonos
 
+        public string tabCodigo
+        {
+            get { return this._tabCodigo; }
+            set { this._tabCodigo = value; }
+        }
+
+        public string telCodigoRegistro
+        {
+            get { return this._telCodigoRegistro; }
+            set { this._telCodigoRegistro = value; }
+        }
+        public grdGrillaAdmin grilla
+        {
+            get { return this.grdGrillaAdmin; }
+            set { this.grdGrillaAdmin = value; }
+        }
+
+        public string cantidad
+        {
+            set { this.lblCantidad.Text = value; }
+
+        }
+        #endregion
+
+        public frmTelefonosAdmin(string tabCodigo, string telCodigoRegistro)
+        {
+            InitializeComponent();
+            _oUITelefonos = new UITelefonos(this);
+            _tabCodigo = tabCodigo;
+            _telCodigoRegistro = telCodigoRegistro;
         }
 
         private void InitializeComponent()
@@ -67,6 +110,7 @@ namespace FormsAuxiliares
             this.btnImprimir.Size = new System.Drawing.Size(40, 40);
             this.btnImprimir.TabIndex = 6;
             this.btnImprimir.UseVisualStyleBackColor = true;
+
             // 
             // btnVer
             // 
@@ -77,6 +121,7 @@ namespace FormsAuxiliares
             this.btnVer.Size = new System.Drawing.Size(40, 40);
             this.btnVer.TabIndex = 5;
             this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // btnExportar
             // 
@@ -87,16 +132,18 @@ namespace FormsAuxiliares
             this.btnExportar.Size = new System.Drawing.Size(40, 40);
             this.btnExportar.TabIndex = 4;
             this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEliminar.Location = new System.Drawing.Point(99, 20);
-            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Name = "btnEliminar";            
             this.btnEliminar.Size = new System.Drawing.Size(40, 40);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);            
             // 
             // btnSalir
             // 
@@ -107,6 +154,7 @@ namespace FormsAuxiliares
             this.btnSalir.Size = new System.Drawing.Size(40, 40);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnEditar
             // 
@@ -117,6 +165,7 @@ namespace FormsAuxiliares
             this.btnEditar.Size = new System.Drawing.Size(40, 40);
             this.btnEditar.TabIndex = 1;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -144,7 +193,7 @@ namespace FormsAuxiliares
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Location = new System.Drawing.Point(3, 312);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(64, 17);
+            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
             this.lblCantidad.TabIndex = 1;
             this.lblCantidad.Text = "Cantidad";
             // 
@@ -162,6 +211,7 @@ namespace FormsAuxiliares
             this.Controls.Add(this.gpbGrupo4);
             this.Controls.Add(this.gpbGrupo1);
             this.Name = "frmTelefonosAdmin";
+            this.Load += new System.EventHandler(this.frmTelefonosAdmin_Load);
             this.gpbGrupo4.ResumeLayout(false);
             this.gpbGrupo1.ResumeLayout(false);
             this.gpbGrupo1.PerformLayout();
@@ -170,9 +220,137 @@ namespace FormsAuxiliares
 
         }
 
+        private void frmTelefonosAdmin_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                _oUITelefonos.Inicializar();
+                _oUtility = new Utility();
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                _oUtility.ExportarDataGridViewExcel(this.grdGrillaAdmin);
+                Cursor.Current = Cursors.Default;
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+        }
+
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            try
+            {
+                frmTelefonosCrud ofrmTel = new frmTelefonosCrud(0, _tabCodigo, _telCodigoRegistro, "I");
+                if (ofrmTel.ShowDialog() == DialogResult.OK)
+                    _oUITelefonos.CargarGrilla();
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+        }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = this.grdGrillaAdmin.CurrentRow;
+                long id = Convert.ToInt64(row.Cells[0].Value);
+                frmTelefonosCrud ofrmTel = new frmTelefonosCrud(id, _tabCodigo, _telCodigoRegistro, "E");
+                if (ofrmTel.ShowDialog() == DialogResult.OK)
+                    _oUITelefonos.CargarGrilla();
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {               
+                DataGridViewRow row = this.grdGrillaAdmin.CurrentRow;
+                long id = Convert.ToInt64(row.Cells[0].Value);
+
+                if(MessageBox.Show("Desea eliminar el Telefono Código: " + id + " ?", "Cooperativa", MessageBoxButtons.YesNo)==DialogResult.Yes)
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    _oUITelefonos.EliminarTelefono(id);
+                    _oUITelefonos.CargarGrilla();
+                    Cursor.Current = Cursors.Default;
+                }                
+                
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = this.grdGrillaAdmin.CurrentRow;
+                long id = Convert.ToInt64(row.Cells[0].Value);
+                frmTelefonosCrud ofrmObs = new frmTelefonosCrud(id, _tabCodigo, _telCodigoRegistro, "V");
+                ofrmObs.Show();
+            }
+            catch (Exception ex)
+            {
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

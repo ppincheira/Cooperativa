@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace Controles.textBoxes
 {
-    public partial class txtDescripcion:gesTextBox
+    public partial class txtDescripcion : gesTextBox
     {
-        public txtDescripcion() {
+        public txtDescripcion()
+        {
+            this.MaxLength = 50;
+            this.Width = 150;
+            this.Height = 40;
         }
     }
 }

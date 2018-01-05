@@ -40,6 +40,7 @@
             this.lblPersonalizado1 = new Controles.lblPersonalizado();
             this.numericTextBox1 = new Controles.NumericTextBox();
             this.txtPersonalizado1 = new Controles.txtFiltro();
+            this.btnPersonalizado5 = new Controles.btnPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,11 +163,23 @@
             this.txtPersonalizado1.TabIndex = 0;
             this.txtPersonalizado1.TextoVacio = "<Descripcion>";
             // 
+            // btnPersonalizado5
+            // 
+            this.btnPersonalizado5.ForeColor = System.Drawing.Color.Green;
+            this.btnPersonalizado5.Location = new System.Drawing.Point(342, 68);
+            this.btnPersonalizado5.Name = "btnPersonalizado5";
+            this.btnPersonalizado5.Size = new System.Drawing.Size(125, 23);
+            this.btnPersonalizado5.TabIndex = 13;
+            this.btnPersonalizado5.Text = "Telefonos";
+            this.btnPersonalizado5.UseVisualStyleBackColor = true;
+            this.btnPersonalizado5.Click += new System.EventHandler(this.btnPersonalizado5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 468);
+            this.Controls.Add(this.btnPersonalizado5);
             this.Controls.Add(this.btnPersonalizado4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -202,6 +215,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private Controles.btnPersonalizado btnPersonalizado4;
+        private Controles.btnPersonalizado btnPersonalizado5;
     }
 }
 
