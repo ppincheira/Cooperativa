@@ -44,7 +44,6 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Model.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Implement.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\AppProcesos.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Service.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\obj\Debug\UI.Form1.resources
@@ -110,3 +109,5 @@ C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.exe
 C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.pdb
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.dll
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.pdb

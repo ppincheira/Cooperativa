@@ -18,3 +18,4 @@ C:\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.csprojResolveAssemblyRef
 C:\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.dll
 C:\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

@@ -115,14 +115,11 @@ namespace FormsAuxiliares
                 MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
         }
-<<<<<<< HEAD
-
         private void gesGroup2_Enter(object sender, EventArgs e)
         {
 
         }
-=======
         #endregion
->>>>>>> 86bf4384de0ea63cf90b07244f7187b4a26dbcf0
+
     }
 }

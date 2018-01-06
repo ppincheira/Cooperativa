@@ -120,7 +120,6 @@ namespace FormsAuxiliares
                         if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
-<<<<<<< HEAD
                     case "SRUT":
                         frmRutasCrud oFrmRutCrud = new frmRutasCrud(0, "H");
 
@@ -129,13 +128,12 @@ namespace FormsAuxiliares
                         break;
                     case "":
                         Console.WriteLine("Case 2");
-=======
+                        break;
                     case "COPB":
                         
                         frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(0, "NQ");
                         if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
->>>>>>> 86bf4384de0ea63cf90b07244f7187b4a26dbcf0
                         break;
 
                 }
@@ -163,21 +161,21 @@ namespace FormsAuxiliares
                         if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
-<<<<<<< HEAD
+
                     case "SRUT":
-                        frmRutasCrud oFrmRutCrud = new frmRutasCrud(id, "H");
+                        long idRuta = Convert.ToInt64(row.Cells[0].Value);
+                        frmRutasCrud oFrmRutCrud = new frmRutasCrud(idRuta, "H");
                         if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
                     case "":
                         Console.WriteLine("Case 2");
-=======
+                        break;
                     case "COPB":
                         long idCodPostal = Convert.ToInt64(row.Cells[0].Value);
                         frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
                         if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
->>>>>>> 86bf4384de0ea63cf90b07244f7187b4a26dbcf0
                         break;
                 }
             }
@@ -206,25 +204,23 @@ namespace FormsAuxiliares
                         oFrmCalCrud.gbDatos.Enabled = false;
                         if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
-
                         break;
-<<<<<<< HEAD
                     case "SRUT":
-                        frmRutasCrud oFrmRutCrud = new frmRutasCrud(id, "H");
+                        long idRuta = Convert.ToInt64(row.Cells[0].Value);
+                        frmRutasCrud oFrmRutCrud = new frmRutasCrud(idRuta, "H");
                         oFrmRutCrud.gbDatos .Enabled = false;
                         if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
                     case "":
                         Console.WriteLine("Case 2");
-=======
+                        break;
                     case "COPB":
                         int idCodPostal = Convert.ToInt32(row.Cells[0].Value);
                         frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
                         oFrmCodPostalCrud.gbDatos.Enabled = false;
                         if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
->>>>>>> 86bf4384de0ea63cf90b07244f7187b4a26dbcf0
                         break;
 
                 }
