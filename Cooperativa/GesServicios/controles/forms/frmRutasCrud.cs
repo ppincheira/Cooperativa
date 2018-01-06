@@ -63,7 +63,12 @@ namespace GesServicios.controles.forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
         }
 
@@ -73,12 +78,18 @@ namespace GesServicios.controles.forms
             {
                 oUtil = new Utility();
                 _oRutasCrud.Inicializar();
+                this.txtDescripcion.REQUERIDO = "SI";
                 this.txtDescripcionCorta.REQUERIDO = "SI";
                 this.cmbServicio.REQUERIDO = "SI";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
         }
 
@@ -86,7 +97,7 @@ namespace GesServicios.controles.forms
         {
             try
             {
-                oUtil.ValidarFormulario(this, this, 5);
+                oUtil.ValidarFormulario(this, this, 3);
                 if (this.VALIDARFORM)
                 {
                     DialogResult = DialogResult.OK;
@@ -97,7 +108,12 @@ namespace GesServicios.controles.forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
 
         }
@@ -111,7 +127,12 @@ namespace GesServicios.controles.forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
 
         }

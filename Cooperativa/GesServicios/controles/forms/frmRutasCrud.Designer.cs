@@ -96,7 +96,7 @@
             this.cmbServicio.Location = new System.Drawing.Point(149, 111);
             this.cmbServicio.Name = "cmbServicio";
             this.cmbServicio.Size = new System.Drawing.Size(165, 21);
-            this.cmbServicio.TabIndex = 33;
+            this.cmbServicio.TabIndex = 3;
             // 
             // lblParcela
             // 
@@ -123,7 +123,7 @@
             this.txtDescripcionCorta.MaxLength = 20;
             this.txtDescripcionCorta.Name = "txtDescripcionCorta";
             this.txtDescripcionCorta.Size = new System.Drawing.Size(165, 20);
-            this.txtDescripcionCorta.TabIndex = 20;
+            this.txtDescripcionCorta.TabIndex = 2;
             // 
             // txtDescripcion
             // 
@@ -132,7 +132,7 @@
             this.txtDescripcion.MaxLength = 20;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(165, 20);
-            this.txtDescripcion.TabIndex = 14;
+            this.txtDescripcion.TabIndex = 1;
             // 
             // lbDescripcion
             // 

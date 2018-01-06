@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using AppProcesos.formsAuxiliares.frmCrudGrilla;
 using Controles.datos;
 using Controles.form;
-
+using Service;
 
 namespace FormsAuxiliares
 {
@@ -14,27 +14,26 @@ namespace FormsAuxiliares
         private UICrudGrilla _oCrudGrilla;
         private Controles.contenedores.gpbGrupo gpbGrupo1;
         private Controles.txtFiltro txtFiltro1;
-        private Controles.datos.cmbLista cmbLista1;
+        private cmbLista cmbLista1;
         private Controles.labels.lblEtiqueta lblEtiqueta3;
         private Controles.labels.lblEtiqueta lblEtiqueta2;
         private Controles.contenedores.gpbGrupo gpbGrupo2;
-        private Controles.datos.grdGrillaEdit grdGrillaEdit1;
+        private grdGrillaEdit grdGrillaEdit1;
         private Controles.contenedores.gpbGrupo gpbGrupo3;
         private Controles.buttons.btnCancelar btnCancelar1;
         private Controles.buttons.btnAceptar btnAceptar1;
         private Controles.labels.lblEtiqueta lblCantidad;
         private Controles.contenedores.gpbGrupo gpbGrupoEstado;
-        private Controles.datos.cmbLista cmbEstado;
+        private cmbLista cmbEstado;
         private Controles.labels.lblEtiqueta lblEEstado;
         private Controles.contenedores.gpbGrupo gpbGrupoFecha;
-        private System.Windows.Forms.DateTimePicker dtpFechaHasta;
-        private System.Windows.Forms.DateTimePicker dtpFechaDesde;
+        private DateTimePicker dtpFechaHasta;
+        private DateTimePicker dtpFechaDesde;
         private Controles.labels.lblEtiqueta lblEFechaHasta;
         private Controles.labels.lblEtiqueta lblEFechaDesde;
         #region << PROPIEDADES >>
         private string _Tabla, _campoClave;
         private bool _claveSecuencia;
-        private Controles.buttons.btnAceptar btnAceptar2;
         #endregion
 
         #region Implementation of IVistaCrudGrilla
@@ -129,15 +128,15 @@ namespace FormsAuxiliares
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCrudGrillaN));
             this.gpbGrupoEstado = new Controles.contenedores.gpbGrupo();
-            this.cmbEstado = new Controles.datos.cmbLista();
+            this.cmbEstado = new cmbLista();
             this.lblEEstado = new Controles.labels.lblEtiqueta();
             this.gpbGrupoFecha = new Controles.contenedores.gpbGrupo();
-            this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
-            this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaHasta = new DateTimePicker();
+            this.dtpFechaDesde = new DateTimePicker();
             this.lblEFechaHasta = new Controles.labels.lblEtiqueta();
             this.lblEFechaDesde = new Controles.labels.lblEtiqueta();
             this.gpbGrupo2 = new Controles.contenedores.gpbGrupo();
-            this.grdGrillaEdit1 = new Controles.datos.grdGrillaEdit();
+            this.grdGrillaEdit1 = new grdGrillaEdit();
             this.lblCantidad = new Controles.labels.lblEtiqueta();
             this.gpbGrupo3 = new Controles.contenedores.gpbGrupo();
             this.btnCancelar1 = new Controles.buttons.btnCancelar();
@@ -146,8 +145,7 @@ namespace FormsAuxiliares
             this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
             this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
             this.txtFiltro1 = new Controles.txtFiltro();
-            this.cmbLista1 = new Controles.datos.cmbLista();
-            this.btnAceptar2 = new Controles.buttons.btnAceptar();
+            this.cmbLista1 = new cmbLista();
             this.gpbGrupoEstado.SuspendLayout();
             this.gpbGrupoFecha.SuspendLayout();
             this.gpbGrupo2.SuspendLayout();
@@ -160,9 +158,9 @@ namespace FormsAuxiliares
             // 
             this.gpbGrupoEstado.Controls.Add(this.cmbEstado);
             this.gpbGrupoEstado.Controls.Add(this.lblEEstado);
-            this.gpbGrupoEstado.Location = new System.Drawing.Point(584, 7);
+            this.gpbGrupoEstado.Location = new Point(584, 7);
             this.gpbGrupoEstado.Name = "gpbGrupoEstado";
-            this.gpbGrupoEstado.Size = new System.Drawing.Size(176, 98);
+            this.gpbGrupoEstado.Size = new Size(176, 98);
             this.gpbGrupoEstado.TabIndex = 9;
             this.gpbGrupoEstado.TabStop = false;
             this.gpbGrupoEstado.Visible = false;
@@ -170,17 +168,17 @@ namespace FormsAuxiliares
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(6, 54);
+            this.cmbEstado.Location = new Point(6, 54);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(164, 21);
+            this.cmbEstado.Size = new Size(164, 21);
             this.cmbEstado.TabIndex = 8;
             // 
             // lblEEstado
             // 
             this.lblEEstado.AutoSize = true;
-            this.lblEEstado.Location = new System.Drawing.Point(6, 16);
+            this.lblEEstado.Location = new Point(6, 16);
             this.lblEEstado.Name = "lblEEstado";
-            this.lblEEstado.Size = new System.Drawing.Size(40, 13);
+            this.lblEEstado.Size = new Size(40, 13);
             this.lblEEstado.TabIndex = 8;
             this.lblEEstado.Text = "Estado";
             // 
@@ -190,81 +188,75 @@ namespace FormsAuxiliares
             this.gpbGrupoFecha.Controls.Add(this.dtpFechaDesde);
             this.gpbGrupoFecha.Controls.Add(this.lblEFechaHasta);
             this.gpbGrupoFecha.Controls.Add(this.lblEFechaDesde);
-            this.gpbGrupoFecha.Location = new System.Drawing.Point(352, 7);
+            this.gpbGrupoFecha.Location = new Point(352, 7);
             this.gpbGrupoFecha.Name = "gpbGrupoFecha";
-            this.gpbGrupoFecha.Size = new System.Drawing.Size(226, 98);
+            this.gpbGrupoFecha.Size = new Size(226, 98);
             this.gpbGrupoFecha.TabIndex = 8;
             this.gpbGrupoFecha.TabStop = false;
             this.gpbGrupoFecha.Visible = false;
-            this.gpbGrupoFecha.Enter += new System.EventHandler(this.gpbGrupoFecha_Enter);
             // 
             // dtpFechaHasta
             // 
-            this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaHasta.Location = new System.Drawing.Point(117, 55);
+            this.dtpFechaHasta.Format = DateTimePickerFormat.Short;
+            this.dtpFechaHasta.Location = new Point(117, 55);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
-            this.dtpFechaHasta.Size = new System.Drawing.Size(96, 20);
+            this.dtpFechaHasta.Size = new Size(96, 20);
             this.dtpFechaHasta.TabIndex = 9;
             // 
             // dtpFechaDesde
             // 
-            this.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaDesde.Location = new System.Drawing.Point(6, 55);
+            this.dtpFechaDesde.Format = DateTimePickerFormat.Short;
+            this.dtpFechaDesde.Location = new Point(6, 55);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
-            this.dtpFechaDesde.Size = new System.Drawing.Size(96, 20);
+            this.dtpFechaDesde.Size = new Size(96, 20);
             this.dtpFechaDesde.TabIndex = 8;
             // 
             // lblEFechaHasta
             // 
             this.lblEFechaHasta.AutoSize = true;
-            this.lblEFechaHasta.Location = new System.Drawing.Point(114, 16);
+            this.lblEFechaHasta.Location = new Point(114, 16);
             this.lblEFechaHasta.Name = "lblEFechaHasta";
-            this.lblEFechaHasta.Size = new System.Drawing.Size(68, 13);
+            this.lblEFechaHasta.Size = new Size(68, 13);
             this.lblEFechaHasta.TabIndex = 7;
             this.lblEFechaHasta.Text = "Fecha Hasta";
             // 
             // lblEFechaDesde
             // 
             this.lblEFechaDesde.AutoSize = true;
-            this.lblEFechaDesde.Location = new System.Drawing.Point(6, 16);
+            this.lblEFechaDesde.Location = new Point(6, 16);
             this.lblEFechaDesde.Name = "lblEFechaDesde";
-            this.lblEFechaDesde.Size = new System.Drawing.Size(71, 13);
+            this.lblEFechaDesde.Size = new Size(71, 13);
             this.lblEFechaDesde.TabIndex = 6;
             this.lblEFechaDesde.Text = "Fecha Desde";
             // 
             // gpbGrupo2
             // 
             this.gpbGrupo2.Controls.Add(this.grdGrillaEdit1);
-            this.gpbGrupo2.Controls.Add(this.btnAceptar2);
             this.gpbGrupo2.Controls.Add(this.lblCantidad);
             this.gpbGrupo2.Controls.Add(this.gpbGrupo3);
-            this.gpbGrupo2.Location = new System.Drawing.Point(12, 111);
+            this.gpbGrupo2.Location = new Point(12, 111);
             this.gpbGrupo2.Name = "gpbGrupo2";
-            this.gpbGrupo2.Size = new System.Drawing.Size(748, 831);
+            this.gpbGrupo2.Size = new Size(748, 831);
             this.gpbGrupo2.TabIndex = 1;
             this.gpbGrupo2.TabStop = false;
-            this.gpbGrupo2.Enter += new System.EventHandler(this.gpbGrupo2_Enter);
             // 
             // grdGrillaEdit1
             // 
-            this.grdGrillaEdit1.Location = new System.Drawing.Point(6, 25);
+            this.grdGrillaEdit1.Location = new Point(6, 25);
             this.grdGrillaEdit1.Name = "grdGrillaEdit1";
-            this.grdGrillaEdit1.Size = new System.Drawing.Size(650, 500);
+            this.grdGrillaEdit1.Size = new Size(650, 500);
             this.grdGrillaEdit1.TabIndex = 3;
-            this.grdGrillaEdit1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.grdGrillaEdit1_CellBeginEdit);
-            this.grdGrillaEdit1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdGrillaEdit1_CellContentClick);
-            this.grdGrillaEdit1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdGrillaEdit1_CellEndEdit);
-            this.grdGrillaEdit1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdGrillaEdit1_CellValueChanged);
-            this.grdGrillaEdit1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grdGrillaEdit1_RowsAdded);
-            this.grdGrillaEdit1.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.grdGrillaEdit1_UserAddedRow);
-            this.grdGrillaEdit1.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.grdGrillaEdit1_UserDeletingRow);
+            this.grdGrillaEdit1.CellBeginEdit += new DataGridViewCellCancelEventHandler(this.grdGrillaEdit1_CellBeginEdit);
+            this.grdGrillaEdit1.CellEndEdit += new DataGridViewCellEventHandler(this.grdGrillaEdit1_CellEndEdit);
+            this.grdGrillaEdit1.UserAddedRow += new DataGridViewRowEventHandler(this.grdGrillaEdit1_UserAddedRow);
+            this.grdGrillaEdit1.UserDeletingRow += new DataGridViewRowCancelEventHandler(this.grdGrillaEdit1_UserDeletingRow);
             // 
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(7, 791);
+            this.lblCantidad.Location = new Point(7, 791);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
+            this.lblCantidad.Size = new Size(49, 13);
             this.lblCantidad.TabIndex = 2;
             this.lblCantidad.Text = "Cantidad";
             // 
@@ -272,30 +264,30 @@ namespace FormsAuxiliares
             // 
             this.gpbGrupo3.Controls.Add(this.btnCancelar1);
             this.gpbGrupo3.Controls.Add(this.btnAceptar1);
-            this.gpbGrupo3.Location = new System.Drawing.Point(288, 531);
+            this.gpbGrupo3.Location = new Point(288, 531);
             this.gpbGrupo3.Name = "gpbGrupo3";
-            this.gpbGrupo3.Size = new System.Drawing.Size(189, 84);
+            this.gpbGrupo3.Size = new Size(189, 84);
             this.gpbGrupo3.TabIndex = 1;
             this.gpbGrupo3.TabStop = false;
             // 
             // btnCancelar1
             // 
             this.btnCancelar1.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar1.Image")));
-            this.btnCancelar1.Location = new System.Drawing.Point(100, 14);
+            this.btnCancelar1.Location = new Point(100, 14);
             this.btnCancelar1.Name = "btnCancelar1";
-            this.btnCancelar1.Size = new System.Drawing.Size(80, 60);
+            this.btnCancelar1.Size = new Size(80, 60);
             this.btnCancelar1.TabIndex = 1;
             this.btnCancelar1.UseVisualStyleBackColor = true;
             // 
             // btnAceptar1
             // 
             this.btnAceptar1.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar1.Image")));
-            this.btnAceptar1.Location = new System.Drawing.Point(9, 14);
+            this.btnAceptar1.Location = new Point(9, 14);
             this.btnAceptar1.Name = "btnAceptar1";
-            this.btnAceptar1.Size = new System.Drawing.Size(80, 60);
+            this.btnAceptar1.Size = new Size(80, 60);
             this.btnAceptar1.TabIndex = 0;
             this.btnAceptar1.UseVisualStyleBackColor = true;
-            this.btnAceptar1.Click += new System.EventHandler(this.btnAceptar1_Click);
+            this.btnAceptar1.Click += new EventHandler(this.btnAceptar1_Click);
             // 
             // gpbGrupo1
             // 
@@ -303,28 +295,27 @@ namespace FormsAuxiliares
             this.gpbGrupo1.Controls.Add(this.lblEtiqueta2);
             this.gpbGrupo1.Controls.Add(this.txtFiltro1);
             this.gpbGrupo1.Controls.Add(this.cmbLista1);
-            this.gpbGrupo1.Location = new System.Drawing.Point(12, 6);
+            this.gpbGrupo1.Location = new Point(12, 6);
             this.gpbGrupo1.Name = "gpbGrupo1";
-            this.gpbGrupo1.Size = new System.Drawing.Size(334, 99);
+            this.gpbGrupo1.Size = new Size(334, 99);
             this.gpbGrupo1.TabIndex = 0;
             this.gpbGrupo1.TabStop = false;
-            this.gpbGrupo1.Enter += new System.EventHandler(this.gpbGrupo1_Enter);
             // 
             // lblEtiqueta3
             // 
             this.lblEtiqueta3.AutoSize = true;
-            this.lblEtiqueta3.Location = new System.Drawing.Point(7, 61);
+            this.lblEtiqueta3.Location = new Point(7, 61);
             this.lblEtiqueta3.Name = "lblEtiqueta3";
-            this.lblEtiqueta3.Size = new System.Drawing.Size(45, 13);
+            this.lblEtiqueta3.Size = new Size(45, 13);
             this.lblEtiqueta3.TabIndex = 7;
             this.lblEtiqueta3.Text = "FILTRO";
             // 
             // lblEtiqueta2
             // 
             this.lblEtiqueta2.AutoSize = true;
-            this.lblEtiqueta2.Location = new System.Drawing.Point(6, 23);
+            this.lblEtiqueta2.Location = new Point(6, 23);
             this.lblEtiqueta2.Name = "lblEtiqueta2";
-            this.lblEtiqueta2.Size = new System.Drawing.Size(78, 13);
+            this.lblEtiqueta2.Size = new Size(78, 13);
             this.lblEtiqueta2.TabIndex = 6;
             this.lblEtiqueta2.Text = "FILTRAR POR";
             // 
@@ -332,40 +323,30 @@ namespace FormsAuxiliares
             // 
             this.txtFiltro1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtFiltro1.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtFiltro1.Location = new System.Drawing.Point(127, 58);
+            this.txtFiltro1.Location = new Point(127, 58);
             this.txtFiltro1.Name = "txtFiltro1";
-            this.txtFiltro1.Size = new System.Drawing.Size(175, 20);
+            this.txtFiltro1.Size = new Size(175, 20);
             this.txtFiltro1.TabIndex = 5;
             this.txtFiltro1.TextoVacio = "<Descripcion>";
-            this.txtFiltro1.TextChanged += new System.EventHandler(this.txtFiltro1_TextChanged_1);
+            this.txtFiltro1.TextChanged += new EventHandler(this.txtFiltro1_TextChanged_1);
             // 
             // cmbLista1
             // 
             this.cmbLista1.FormattingEnabled = true;
-            this.cmbLista1.Location = new System.Drawing.Point(127, 15);
+            this.cmbLista1.Location = new Point(127, 15);
             this.cmbLista1.Name = "cmbLista1";
-            this.cmbLista1.Size = new System.Drawing.Size(175, 21);
+            this.cmbLista1.Size = new Size(175, 21);
             this.cmbLista1.TabIndex = 4;
-            // 
-            // btnAceptar2
-            // 
-            this.btnAceptar2.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar2.Image")));
-            this.btnAceptar2.Location = new System.Drawing.Point(109, 545);
-            this.btnAceptar2.Name = "btnAceptar2";
-            this.btnAceptar2.Size = new System.Drawing.Size(80, 60);
-            this.btnAceptar2.TabIndex = 0;
-            this.btnAceptar2.UseVisualStyleBackColor = true;
-            this.btnAceptar2.Click += new System.EventHandler(this.btnAceptar2_Click);
             // 
             // frmCrudGrillaN
             // 
-            this.ClientSize = new System.Drawing.Size(776, 749);
+            this.ClientSize = new Size(776, 749);
             this.Controls.Add(this.gpbGrupoEstado);
             this.Controls.Add(this.gpbGrupoFecha);
             this.Controls.Add(this.gpbGrupo2);
             this.Controls.Add(this.gpbGrupo1);
             this.Name = "frmCrudGrillaN";
-            this.Load += new System.EventHandler(this.frmCrudGrilla_Load);
+            this.Load += new EventHandler(this.frmCrudGrilla_Load);
             this.gpbGrupoEstado.ResumeLayout(false);
             this.gpbGrupoEstado.PerformLayout();
             this.gpbGrupoFecha.ResumeLayout(false);
@@ -380,16 +361,6 @@ namespace FormsAuxiliares
 
         }
 
-        private void gpbGrupo1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gpbGrupoFecha_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAceptar1_Click(object sender, EventArgs e)
         {
             _oCrudGrilla.ActualizaTabla(_Tabla, _campoClave, _claveSecuencia);
@@ -400,16 +371,8 @@ namespace FormsAuxiliares
                 if (!row.IsNewRow && row.DefaultCellStyle.BackColor == Color.Red && row.Cells[grdGrillaEdit1.ColumnCount - 1].Value == "0")
                     row.Visible = false;
             }
-
-
-
             // obtener el objeto en cuestion para cada elemento modificado usando el id , por ej AreasGetById(columnaClave)
             // Hacer un porje Areas Update(area obtenida en el paso anterior)
-
-        }
-
-        private void gpbGrupo2_Enter(object sender, EventArgs e)
-        {
 
         }
 
@@ -421,13 +384,14 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                throw ex;
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
 
-        }
-
-        private void grdGrillaEdit1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
         }
         String temp = "";
         private void grdGrillaEdit1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
@@ -443,10 +407,6 @@ namespace FormsAuxiliares
 
         }
 
-        private void grdGrillaEdit1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-        }
-
         private void grdGrillaEdit1_UserAddedRow(object sender, DataGridViewRowEventArgs e)
         {
             if (!grdGrillaEdit1.CurrentRow.IsNewRow)
@@ -457,14 +417,6 @@ namespace FormsAuxiliares
                     grdGrillaEdit1.CurrentRow.Cells[0].ReadOnly = false;
                 grdGrillaEdit1.CurrentRow.Cells[0].Selected = true;
             }
-            else
-            {
-            }
-        }
-
-        private void grdGrillaEdit1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnAceptar2_Click(object sender, EventArgs e)

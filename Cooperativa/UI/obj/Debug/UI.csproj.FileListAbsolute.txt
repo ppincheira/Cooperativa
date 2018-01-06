@@ -79,6 +79,8 @@ C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.exe
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.pdb
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.dll
+D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.pdb
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\UI.exe.config
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\UI.exe
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\UI.pdb
@@ -89,6 +91,7 @@ C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Model.dll
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Implement.dll
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\AppProcesos.dll
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Service.dll
+C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.dll
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Oracle.DataAccess.dll
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Business.pdb
@@ -98,6 +101,7 @@ C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Model.pdb
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Implement.pdb
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\AppProcesos.pdb
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Service.pdb
+C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.pdb
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
 C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.Form1.resources
@@ -107,7 +111,3 @@ C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
 C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.exe
 C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.pdb
-C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.dll
-C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.pdb
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.dll
-D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.pdb

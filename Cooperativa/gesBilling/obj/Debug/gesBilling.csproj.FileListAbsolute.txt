@@ -86,6 +86,7 @@ C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Model.dll
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Implement.dll
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\AppProcesos.dll
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Service.dll
+C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\GesServicios.dll
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Oracle.DataAccess.dll
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Business.pdb
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Controles.pdb
@@ -94,6 +95,7 @@ C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Model.pdb
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Implement.pdb
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\AppProcesos.pdb
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Service.pdb
+C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\GesServicios.pdb
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csprojResolveAssemblyReference.cache
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.controles.forms.frmAdminSuministros.resources
