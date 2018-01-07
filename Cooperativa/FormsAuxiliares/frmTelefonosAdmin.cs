@@ -8,6 +8,7 @@ using Controles.datos;
 using Controles.form;
 using System.Windows.Forms;
 using Service;
+using Model;
 
 namespace FormsAuxiliares
 {
@@ -17,7 +18,7 @@ namespace FormsAuxiliares
         private UITelefonos _oUITelefonos;
         string _tabCodigo;
         string _telCodigoRegistro;
-        private Utility _oUtility;
+        private Utility _oUtil;
 
         #endregion
 
@@ -59,9 +60,10 @@ namespace FormsAuxiliares
         }
         #endregion
 
-        public frmTelefonosAdmin(string tabCodigo, string telCodigoRegistro)
+        public frmTelefonosAdmin(string tabCodigo, string telCodigoRegistro, FuncionalidadesFoms oPerForm)
         {
             InitializeComponent();
+            AsignarFuncionalidad(oPerForm);
             _oUITelefonos = new UITelefonos(this);
             _tabCodigo = tabCodigo;
             _telCodigoRegistro = telCodigoRegistro;
@@ -226,7 +228,8 @@ namespace FormsAuxiliares
             {
                 Cursor.Current = Cursors.WaitCursor;
                 _oUITelefonos.Inicializar();
-                _oUtility = new Utility();
+                _oUtil = new Utility();
+                _oUtil.HabilitarAllControlesInTrue(this, 1, "frmTelefonos");
                 Cursor.Current = Cursors.Default;
             }
             catch (Exception ex)
@@ -245,7 +248,7 @@ namespace FormsAuxiliares
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                _oUtility.ExportarDataGridViewExcel(this.grdGrillaAdmin);
+                _oUtil.ExportarDataGridViewExcel(this.grdGrillaAdmin);
                 Cursor.Current = Cursors.Default;
             }
             catch (Exception ex)
@@ -352,5 +355,17 @@ namespace FormsAuxiliares
             DialogResult = DialogResult.Cancel;
             this.Close();
         }
+        #region << METODOS >>
+        public void AsignarFuncionalidad(FuncionalidadesFoms oPerForm)
+        {
+            //Esta funcion asigna la funcionalidad a los controles de este dinamico
+            this.btnNuevo.FUN_CODIGO = oPerForm.New;
+            this.btnEditar.FUN_CODIGO = oPerForm.Edit;
+            this.btnExportar.FUN_CODIGO = oPerForm.Exp;
+            this.btnEliminar.FUN_CODIGO = oPerForm.Del;
+            this.btnImprimir.FUN_CODIGO = oPerForm.Imp;
+            this.btnVer.FUN_CODIGO = oPerForm.Ver;
+        }
+        #endregion
     }
 }

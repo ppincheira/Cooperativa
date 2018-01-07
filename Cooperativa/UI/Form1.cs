@@ -102,7 +102,8 @@ namespace UI
 
         private void btnPersonalizado5_Click(object sender, EventArgs e)
         {
-            FormsAuxiliares.frmTelefonosAdmin frmobs = new FormsAuxiliares.frmTelefonosAdmin("PERS", "1");
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmTelefonosAdmin frmobs = new FormsAuxiliares.frmTelefonosAdmin("PERS", "1", oPermiso);
             frmobs.ShowDialog();
         }
 
