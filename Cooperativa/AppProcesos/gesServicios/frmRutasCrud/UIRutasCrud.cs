@@ -64,6 +64,14 @@ namespace AppProcesos.gesServicios.frmRutasCrud
 
         }
 
+        public bool EliminarRuta(long idRuta)
+        {
+            ServiciosRutasBus oSRuBus = new ServiciosRutasBus();
+            ServiciosRutas oSRu = oSRuBus.ServiciosRutasGetById(idRuta);
+            oSRu.EstCodigo = "B";
+            return oSRuBus.ServiciosRutasUpdate(oSRu);
+       }
+
 
     }
 }

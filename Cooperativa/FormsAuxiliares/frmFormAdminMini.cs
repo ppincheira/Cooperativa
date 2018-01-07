@@ -14,6 +14,7 @@ using Controles.datos;
 using Service;
 using Controles.form;
 using System.Windows.Forms;
+using AppProcesos.gesServicios.frmRutasCrud;
 
 namespace FormsAuxiliares
 {
@@ -79,7 +80,7 @@ namespace FormsAuxiliares
         #endregion
         public frmFormAdminMini(string tabCodigo, FuncionalidadesFoms oPerForm)
         {
-          
+
             try
             {
                 InitializeComponent();
@@ -130,7 +131,7 @@ namespace FormsAuxiliares
                         Console.WriteLine("Case 2");
                         break;
                     case "COPB":
-                        
+
                         frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(0, "NQ");
                         if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
@@ -152,7 +153,7 @@ namespace FormsAuxiliares
             try
             {
                 DataGridViewRow row = this.dgBusqueda.CurrentRow;
-                
+
                 switch (_Tabla)
                 {
                     case "CALB":
@@ -187,6 +188,29 @@ namespace FormsAuxiliares
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DataGridViewRow row = this.dgBusqueda.CurrentRow;
+                switch (_Tabla)
+                {
+                    case "SRUT": 
+                        long idRuta = Convert.ToInt64(row.Cells[0].Value);
+                        frmRutasCrud oFrmRutCrud = new frmRutasCrud(idRuta, "B");
+                        _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex, e.ToString(),
+                    ((Control) sender).Name,
+                    this.FindForm().Name);
+            }
+
 
         }
 

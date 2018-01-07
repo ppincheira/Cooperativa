@@ -54,22 +54,29 @@ namespace GesServicios.controles.forms
         public frmRutasCrud(long SRuta, string Estado)
             //SRuta, Estado 
         {
-            try
-            {
-                InitializeComponent();
-                _SruNumero=SRuta;
+            //try
+            //{
+               _SruNumero=SRuta;
                 _EstCodigo = Estado;
-                _oRutasCrud = new UIRutasCrud(this);
-            }
-            catch (Exception ex)
-            {
-                Cursor.Current = Cursors.Default;
-                ManejarError Err = new ManejarError();
-                Err.CargarError(ex,
-                                e.ToString(),
-                                ((Control)sender).Name,
-                                this.FindForm().Name);
-            }
+               _oRutasCrud = new UIRutasCrud(this);
+                    InitializeComponent();
+            if (Estado == "B")
+                if (MessageBox.Show("Desea eliminar La Ruta Código: " + SRuta + " ?", "Cooperativa", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    _oRutasCrud.EliminarRuta(SRuta);
+                    this.Close();
+                }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Cursor.Current = Cursors.Default;
+            //    ManejarError Err = new ManejarError();
+            //    Err.CargarError(ex,
+            //                    e.ToString(),
+            //                    ((Control)sender).Name,
+            //                    this.FindForm().Name);
+            //}
         }
 
         private void frmRutasCrud_Load(object sender, EventArgs e)
