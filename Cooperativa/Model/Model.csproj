@@ -101,6 +101,8 @@
     <Compile Include="Funcionalidades.cs" />
     <Compile Include="FuncionalidadesFormularios.cs" />
     <Compile Include="FuncionalidadesUsuarios.cs" />
+    <Compile Include="Grupos.cs" />
+    <Compile Include="GruposDetalles.cs" />
     <Compile Include="Help.cs" />
     <Compile Include="Localidades.cs" />
     <Compile Include="Medidores.cs" />
@@ -129,6 +131,7 @@
     <Compile Include="Telefonos.cs" />
     <Compile Include="TipoConexionServicios.cs" />
     <Compile Include="TiposBarriosLocalidades.cs" />
+    <Compile Include="TiposGrupos.cs" />
     <Compile Include="TiposIva.cs" />
     <Compile Include="TiposLocalidades.cs" />
     <Compile Include="TiposMedidores.cs" />

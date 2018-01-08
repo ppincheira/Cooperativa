@@ -81,6 +81,12 @@ C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.exe
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.pdb
+C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.Form1.resources
+C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.frmLogin.resources
+C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.Properties.Resources.resources
+C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\UI.exe.config
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\UI.exe
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\UI.pdb
@@ -103,11 +109,5 @@ C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\AppProcesos.pdb
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Service.pdb
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.pdb
 C:\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
-C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.Form1.resources
-C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.frmLogin.resources
-C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.Properties.Resources.resources
-C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
-C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.exe
 C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.pdb

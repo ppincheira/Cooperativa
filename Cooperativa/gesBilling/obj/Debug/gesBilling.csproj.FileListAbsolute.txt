@@ -75,6 +75,11 @@ C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\Ge
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.CoreCompileInputs.cache
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.exe
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.pdb
+C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csprojResolveAssemblyReference.cache
+C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.controles.forms.frmAdminSuministros.resources
+C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.Properties.Resources.resources
+C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.GenerateResource.Cache
+C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe.config
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.pdb
@@ -97,10 +102,5 @@ C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\AppProcesos.pdb
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Service.pdb
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\GesServicios.pdb
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
-C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csprojResolveAssemblyReference.cache
-C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.controles.forms.frmAdminSuministros.resources
-C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.Properties.Resources.resources
-C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.GenerateResource.Cache
-C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.exe
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.pdb

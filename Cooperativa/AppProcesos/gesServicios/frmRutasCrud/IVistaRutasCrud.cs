@@ -10,6 +10,9 @@ namespace AppProcesos.gesServicios.frmRutasCrud
         string DescripcionCorta { get; set; }
         string estCodigo { get; set; }
         Controles.datos.cmbLista srvCodigo { get; set; }
+        long grdCodigo { get; set; } 
+        Controles.datos.cmbLista grupo { get; set; }
+        string grdCodigoRegistro { get; set; }
 
     }
 }

@@ -21,14 +21,15 @@ namespace AppProcesos.gesServicios.frmRutasCrud
         {
             ServiciosBus oServiciosBus = new ServiciosBus();
 
-            //List<Servicios> lista = oServiciosBus.ServiciosGetAll();
-            //foreach (Servicios item in lista)
-            //{
-            //    string valor = item.SrvCodigo;
-            //}
             _vista.srvCodigo.DataSource = oServiciosBus.ServiciosGetAll();
             _vista.srvCodigo.DisplayMember = "SrvDescripcion";
             _vista.srvCodigo.ValueMember = "SrvCodigo";
+
+            // Obtengo los grupos del Tipo_grupo "2" que es Zonas
+            GruposBus oGrupos = new GruposBus();
+            _vista.grupo.DataSource = oGrupos.GruposGetbyTipoGrupo("2");
+            _vista.grupo.DisplayMember = "GrpDescripcion";
+            _vista.grupo.ValueMember = "GrpCodigo";
 
             if (_vista.sruNumero != 0)
             {
@@ -40,6 +41,14 @@ namespace AppProcesos.gesServicios.frmRutasCrud
                 _vista.Descripcion = oSRutas.SruDescripcion;
                 _vista.DescripcionCorta = oSRutas.SruDescripcionCorta;
                 _vista.estCodigo = oSRutas.EstCodigo;
+
+                // Obtengo el Objeto Gupo_detalle cuyo codigo:registro=sruNumero
+                GruposDetalles oGrD = new GruposDetalles();
+                GruposDetallesBus oGrDBus = new GruposDetallesBus();
+                oGrD = oGrDBus.GruposDetallesGetByCodReg(_vista.sruNumero.ToString());
+                _vista.grdCodigo = oGrD.GrdCodigo;
+                _vista.grdCodigoRegistro = oGrD.GrdCodigoRegistro;
+                _vista.grupo.SelectedValue = oGrD.GrpCodigo;
             }
         }
 
@@ -50,18 +59,32 @@ namespace AppProcesos.gesServicios.frmRutasCrud
             long rtdo;
             ServiciosRutas oSRu = new ServiciosRutas();
             ServiciosRutasBus oSRuBus = new ServiciosRutasBus();
+            GruposDetalles oGrD = new GruposDetalles();
+            GruposDetallesBus oGrDBus = new GruposDetallesBus();
 
             oSRu.SruNumero = _vista.sruNumero;
             oSRu.SruDescripcion = _vista.Descripcion;
             oSRu.SruDescripcionCorta = _vista.DescripcionCorta;
             oSRu.EstCodigo = _vista.estCodigo;
             oSRu.SrvCodigo = _vista.srvCodigo.SelectedValue.ToString();
-            if (_vista.sruNumero == 0)
-                rtdo = oSRuBus.ServiciosRutasAdd(oSRu)
-                ;
-            else
-                rtdo = (oSRuBus.ServiciosRutasUpdate(oSRu)) ? oSRu.SruNumero : 0;
 
+            GruposDetalles oGDe = new GruposDetalles();
+            GruposDetallesBus oGDeBus = new GruposDetallesBus();
+            oGDe.GrpCodigo =long.Parse(_vista.grupo.SelectedValue.ToString());
+
+            if (_vista.sruNumero == 0)
+            {
+                rtdo = oSRuBus.ServiciosRutasAdd(oSRu);
+                //Creo un registro en Grupos_detalles con el grp_codigo seleccionado y el servicio de ruta en grd_codigo_registro
+                oGDe.GrdCodigoRegistro = oSRu.SruNumero.ToString();
+                rtdo = oGDeBus.GruposDetallesAdd(oGDe);
+            }
+            else
+            {
+                rtdo = (oSRuBus.ServiciosRutasUpdate(oSRu)) ? oSRu.SruNumero : 0;
+                // Actualizo en Grupos_detalles para el grd_codigo actual el grp_codigo nuevo
+                rtdo = (oGDeBus.GruposDetallesUpdate(oGDe)) ? oGDe.GrdCodigo : 0;
+            }
         }
 
         public bool EliminarRuta(long idRuta)

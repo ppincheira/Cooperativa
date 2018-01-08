@@ -17,6 +17,8 @@ namespace GesServicios.controles.forms
 
         long _SruNumero;
         string _EstCodigo;
+        long _GrdCodigo, _GrpCodigo;
+        string _GrdCodigoRegistro;
 
         #endregion
         #region Implementation of IVistaRutasCrud
@@ -41,8 +43,8 @@ namespace GesServicios.controles.forms
 
         public string estCodigo
         {
-            get { return _EstCodigo; }
-            set { _EstCodigo = value; }
+            get { return this.chkEstado.Checked?"H":"I"; }
+            set { this.chkEstado.Checked= (value=="H"); }
         }
 
         public cmbLista srvCodigo
@@ -50,16 +52,31 @@ namespace GesServicios.controles.forms
             get { return this.cmbServicio; }
             set { this.cmbServicio = value; }
         }
+        public long grdCodigo
+        {
+            get { return _GrdCodigo; }
+            set { _GrdCodigo = value; }
+        }
+        public cmbLista grupo
+        {
+            get { return this.cmbGrupo; }
+            set { this.cmbGrupo = value; }
+        }
+        public string grdCodigoRegistro
+        {
+            get { return _GrdCodigoRegistro; }
+            set { _GrdCodigoRegistro = value; }
+        }
         #endregion
         public frmRutasCrud(long SRuta, string Estado)
             //SRuta, Estado 
         {
             //try
             //{
-               _SruNumero=SRuta;
+                _SruNumero=SRuta;
                 _EstCodigo = Estado;
-               _oRutasCrud = new UIRutasCrud(this);
-                    InitializeComponent();
+                _oRutasCrud = new UIRutasCrud(this);
+                InitializeComponent();
             if (Estado == "B")
                 if (MessageBox.Show("Desea eliminar La Ruta Código: " + SRuta + " ?", "Cooperativa", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -88,6 +105,8 @@ namespace GesServicios.controles.forms
                 this.txtDescripcion.REQUERIDO = "SI";
                 this.txtDescripcionCorta.REQUERIDO = "SI";
                 this.cmbServicio.REQUERIDO = "SI";
+                this.cmbGrupo.REQUERIDO = "SI";
+                this.chkEstado.REQUERIDO = "NO";
             }
             catch (Exception ex)
             {
