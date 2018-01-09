@@ -71,10 +71,12 @@ namespace AppProcesos.gesServicios.frmRutasCrud
             GruposDetalles oGDe = new GruposDetalles();
             GruposDetallesBus oGDeBus = new GruposDetallesBus();
             oGDe.GrpCodigo =long.Parse(_vista.grupo.SelectedValue.ToString());
-
+            oGDe.GrdCodigo = _vista.grdCodigo;
+            oGDe.GrdCodigoRegistro = _vista.grdCodigoRegistro;
             if (_vista.sruNumero == 0)
             {
                 rtdo = oSRuBus.ServiciosRutasAdd(oSRu);
+                oSRu.SruNumero = rtdo;
                 //Creo un registro en Grupos_detalles con el grp_codigo seleccionado y el servicio de ruta en grd_codigo_registro
                 oGDe.GrdCodigoRegistro = oSRu.SruNumero.ToString();
                 rtdo = oGDeBus.GruposDetallesAdd(oGDe);

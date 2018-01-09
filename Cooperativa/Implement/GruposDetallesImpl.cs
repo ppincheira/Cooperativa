@@ -234,7 +234,7 @@ namespace Implement
             {
                 GruposDetalles oObjeto = new GruposDetalles();
                 oObjeto.GrdCodigo = long.Parse(dr["GRD_CODIGO"].ToString());
-                oObjeto.GrdCodigoRegistro = dr["GRP_CODIGO_REGISTRO"].ToString();
+                oObjeto.GrdCodigoRegistro = dr["GRD_CODIGO_REGISTRO"].ToString();
                 oObjeto.GrpCodigo = long.Parse(dr["GRP_CODIGO"].ToString());
                 return oObjeto;
             }
