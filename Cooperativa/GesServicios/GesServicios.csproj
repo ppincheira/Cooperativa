@@ -48,6 +48,12 @@
     <Compile Include="controles\forms\frmCategoriasCrud.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="controles\forms\frmModelosMedidoresCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmModelosMedidoresCrud.Designer.cs">
+      <DependentUpon>frmModelosMedidoresCrud.cs</DependentUpon>
+    </Compile>
     <Compile Include="controles\forms\frmRutasCrud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
   <ItemGroup>
     <EmbeddedResource Include="controles\forms\frmCategoriasCrud.resx">
       <DependentUpon>frmCategoriasCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmModelosMedidoresCrud.resx">
+      <DependentUpon>frmModelosMedidoresCrud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controles\forms\frmRutasCrud.resx">
       <DependentUpon>frmRutasCrud.cs</DependentUpon>

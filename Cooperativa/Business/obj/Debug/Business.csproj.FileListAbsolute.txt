@@ -29,7 +29,6 @@ C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Busi
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.dll
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.pdb
-C:\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\Business\bin\Debug\Business.dll
 C:\GitHub\Cooperativa\Cooperativa\Business\bin\Debug\Business.pdb
 C:\GitHub\Cooperativa\Cooperativa\Business\bin\Debug\Implement.dll
@@ -38,5 +37,6 @@ C:\GitHub\Cooperativa\Cooperativa\Business\bin\Debug\Oracle.DataAccess.dll
 C:\GitHub\Cooperativa\Cooperativa\Business\bin\Debug\Implement.pdb
 C:\GitHub\Cooperativa\Cooperativa\Business\bin\Debug\Model.pdb
 C:\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+C:\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.dll
 C:\GitHub\Cooperativa\Cooperativa\Business\obj\Debug\Business.pdb
