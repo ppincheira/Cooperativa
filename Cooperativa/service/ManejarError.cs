@@ -29,7 +29,7 @@ namespace Service
                 oExcepciones.ExcNombreControl = sNombreControl;
                 oExcepciones.ExcNombreFormulario = sNombreFormulario;
                 oExcepciones.UsrNumero = 1;//falta definir variable global
-                oExcepciones.SbsCodigo = "BILL";//falta definir variable global
+                oExcepciones.SbsCodigo = "ALL";//falta definir variable global
                 oExcepciones.TerNumero = 1;//falta definir variable global
                 oExcepciones.ExcDescripcion = sException.Message;
                 ExcepcionesBus oExcepcionesBus = new ExcepcionesBus();

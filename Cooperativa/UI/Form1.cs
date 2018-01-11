@@ -114,5 +114,18 @@ namespace UI
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("COPB", oPermiso);
             frmbus.ShowDialog();
         }
+
+        private void btnPersonalizado7_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10021", "10022", "10023", "10025", "10026", "10024");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("TME", oPermiso);
+            frmbus.ShowDialog();
+        }
+
+        private void btnPersonalizado8_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrillaN frmbus = new FormsAuxiliares.frmCrudGrillaN("DIS", "NUMERO", true);
+            frmbus.ShowDialog();
+        }
     }
 }

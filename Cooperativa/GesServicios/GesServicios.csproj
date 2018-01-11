@@ -60,6 +60,12 @@
     <Compile Include="controles\forms\frmRutasCrud.Designer.cs">
       <DependentUpon>frmRutasCrud.cs</DependentUpon>
     </Compile>
+    <Compile Include="controles\forms\frmTiposMedidoresCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmTiposMedidoresCrud.designer.cs">
+      <DependentUpon>frmTiposMedidoresCrud.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controles\forms\frmRutasCrud.resx">
       <DependentUpon>frmRutasCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmTiposMedidoresCrud.resx">
+      <DependentUpon>frmTiposMedidoresCrud.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
