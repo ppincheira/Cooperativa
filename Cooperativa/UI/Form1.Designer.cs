@@ -43,6 +43,7 @@
             this.btnPersonalizado5 = new Controles.btnPersonalizado();
             this.btnPersonalizado6 = new Controles.btnPersonalizado();
             this.btnPersonalizado7 = new Controles.btnPersonalizado();
+            this.btnPersonalizado8 = new Controles.btnPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,11 +199,23 @@
             this.btnPersonalizado7.UseVisualStyleBackColor = true;
             this.btnPersonalizado7.Click += new System.EventHandler(this.btnPersonalizado7_Click);
             // 
+            // btnPersonalizado8
+            // 
+            this.btnPersonalizado8.ForeColor = System.Drawing.Color.Green;
+            this.btnPersonalizado8.Location = new System.Drawing.Point(342, 348);
+            this.btnPersonalizado8.Name = "btnPersonalizado8";
+            this.btnPersonalizado8.Size = new System.Drawing.Size(125, 23);
+            this.btnPersonalizado8.TabIndex = 16;
+            this.btnPersonalizado8.Text = "Distritos";
+            this.btnPersonalizado8.UseVisualStyleBackColor = true;
+            this.btnPersonalizado8.Click += new System.EventHandler(this.btnPersonalizado8_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 468);
+            this.Controls.Add(this.btnPersonalizado8);
             this.Controls.Add(this.btnPersonalizado7);
             this.Controls.Add(this.btnPersonalizado6);
             this.Controls.Add(this.btnPersonalizado5);
@@ -244,6 +257,7 @@
         private Controles.btnPersonalizado btnPersonalizado5;
         private Controles.btnPersonalizado btnPersonalizado6;
         private Controles.btnPersonalizado btnPersonalizado7;
+        private Controles.btnPersonalizado btnPersonalizado8;
     }
 }
 

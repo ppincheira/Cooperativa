@@ -121,5 +121,11 @@ namespace UI
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("TME", oPermiso);
             frmbus.ShowDialog();
         }
+
+        private void btnPersonalizado8_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrillaN frmbus = new FormsAuxiliares.frmCrudGrillaN("DIS", "NUMERO", true);
+            frmbus.ShowDialog();
+        }
     }
 }
