@@ -34,7 +34,7 @@ namespace UI
             try
             {
                 PruebaBus oPrueba = new PruebaBus();
-                this.lblPersonalizado1.Text=oPrueba.GetAllDT().Rows.Count.ToString();
+              
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
@@ -117,15 +117,19 @@ namespace UI
 
         private void btnPersonalizado7_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10021", "10022", "10023", "10025", "10026", "10024");
-            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("TME", oPermiso);
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("CLIB", oPermiso);
             frmbus.ShowDialog();
         }
 
-        private void btnPersonalizado8_Click(object sender, EventArgs e)
+        private void gesTextBox1_TextChanged(object sender, EventArgs e)
         {
-            FormsAuxiliares.frmCrudGrillaN frmbus = new FormsAuxiliares.frmCrudGrillaN("DIS", "NUMERO", true);
-            frmbus.ShowDialog();
+
+        }
+
+        private void gesTextBox1_Leave(object sender, EventArgs e)
+        {
+
         }
     }
 }

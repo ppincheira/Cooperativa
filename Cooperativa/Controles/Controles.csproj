@@ -181,6 +181,9 @@
     <Compile Include="datos\gesGrid.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="datos\gesRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="datos\gesTreeView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -188,6 +191,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="datos\grdGrillaEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datos\radioBtn.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="datos\trvMenu.cs">
@@ -260,6 +266,9 @@
   <ItemGroup>
     <EmbeddedResource Include="datos\gesComboBox.resx">
       <DependentUpon>gesComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="datos\gesGrid.resx">
+      <DependentUpon>gesGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\gesForm.resx">
       <DependentUpon>gesForm.cs</DependentUpon>
