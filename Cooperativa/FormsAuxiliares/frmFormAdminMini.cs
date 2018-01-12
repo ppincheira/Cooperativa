@@ -169,9 +169,7 @@ namespace FormsAuxiliares
                         if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
-                    case "":
-                        Console.WriteLine("Case 2");
-                        break;
+                    
                     case "COPB":
                         long idCodPostal = Convert.ToInt64(row.Cells[0].Value);
                         frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
@@ -236,9 +234,7 @@ namespace FormsAuxiliares
                         if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
-                    case "":
-                        Console.WriteLine("Case 2");
-                        break;
+                    
                     case "COPB":
                         int idCodPostal = Convert.ToInt32(row.Cells[0].Value);
                         frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
