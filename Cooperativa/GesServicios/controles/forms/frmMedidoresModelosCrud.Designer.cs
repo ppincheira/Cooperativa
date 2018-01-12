@@ -1,6 +1,6 @@
 ﻿namespace GesServicios.controles.forms
 {
-    partial class frmModelosMedidoresCrud
+    partial class frmMedidoresModelosCrud
     {
         /// <summary>
         /// Required designer variable.
@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModelosMedidoresCrud));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMedidoresModelosCrud));
             this.gesGroup2 = new Controles.contenedores.gesGroup();
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.gbDatos = new Controles.contenedores.gesGroup();
             this.dtpFechaCarga = new Controles.Fecha.dtpFecha();
-            this.TextBoxTipoConexion = new Controles.textBoxes.gesTextBox();
-            this.TextBoxTipoContador = new Controles.textBoxes.gesTextBox();
             this.lblTipoMedidor = new Controles.labels.lblEtiqueta();
             this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
+            this.cmbTipoConexion = new Controles.datos.cmbLista();
             this.cmbTipoMedidor = new Controles.datos.cmbLista();
             this.TextBoxAmperaje = new Controles.textBoxes.gesTextBox();
             this.TextBoxRegistrador = new Controles.NumericTextBox();
             this.TextBoxKWVueltas = new Controles.NumericTextBox();
-            this.numericTextBox1 = new Controles.NumericTextBox();
+            this.TextBoxDecimales = new Controles.NumericTextBox();
             this.TextBoxClase = new Controles.NumericTextBox();
             this.TextBoxCantHilos = new Controles.NumericTextBox();
             this.TextBoxDigitos = new Controles.NumericTextBox();
             this.lblRegistrador = new Controles.labels.lblEtiqueta();
             this.chkEstado = new Controles.datos.chkBox();
             this.lblKWVueltas = new Controles.labels.lblEtiqueta();
+            this.cmbTipoContador = new Controles.datos.cmbLista();
             this.cmbFabricante = new Controles.datos.cmbLista();
             this.lblTipoConexion = new Controles.labels.lblEtiqueta();
             this.lblDecimales = new Controles.labels.lblEtiqueta();
@@ -71,7 +71,7 @@
             // 
             this.gesGroup2.Controls.Add(this.btnCancelar);
             this.gesGroup2.Controls.Add(this.btnAceptar);
-            this.gesGroup2.Location = new System.Drawing.Point(8, 396);
+            this.gesGroup2.Location = new System.Drawing.Point(155, 373);
             this.gesGroup2.Name = "gesGroup2";
             this.gesGroup2.Size = new System.Drawing.Size(451, 89);
             this.gesGroup2.TabIndex = 3;
@@ -100,21 +100,21 @@
             // gbDatos
             // 
             this.gbDatos.Controls.Add(this.dtpFechaCarga);
-            this.gbDatos.Controls.Add(this.TextBoxTipoConexion);
-            this.gbDatos.Controls.Add(this.TextBoxTipoContador);
             this.gbDatos.Controls.Add(this.lblTipoMedidor);
             this.gbDatos.Controls.Add(this.lblEtiqueta1);
+            this.gbDatos.Controls.Add(this.cmbTipoConexion);
             this.gbDatos.Controls.Add(this.cmbTipoMedidor);
             this.gbDatos.Controls.Add(this.TextBoxAmperaje);
             this.gbDatos.Controls.Add(this.TextBoxRegistrador);
             this.gbDatos.Controls.Add(this.TextBoxKWVueltas);
-            this.gbDatos.Controls.Add(this.numericTextBox1);
+            this.gbDatos.Controls.Add(this.TextBoxDecimales);
             this.gbDatos.Controls.Add(this.TextBoxClase);
             this.gbDatos.Controls.Add(this.TextBoxCantHilos);
             this.gbDatos.Controls.Add(this.TextBoxDigitos);
             this.gbDatos.Controls.Add(this.lblRegistrador);
             this.gbDatos.Controls.Add(this.chkEstado);
             this.gbDatos.Controls.Add(this.lblKWVueltas);
+            this.gbDatos.Controls.Add(this.cmbTipoContador);
             this.gbDatos.Controls.Add(this.cmbFabricante);
             this.gbDatos.Controls.Add(this.lblTipoConexion);
             this.gbDatos.Controls.Add(this.lblDecimales);
@@ -131,37 +131,17 @@
             this.gbDatos.Controls.Add(this.lbDescripcion);
             this.gbDatos.Location = new System.Drawing.Point(8, 3);
             this.gbDatos.Name = "gbDatos";
-            this.gbDatos.Size = new System.Drawing.Size(598, 387);
+            this.gbDatos.Size = new System.Drawing.Size(598, 351);
             this.gbDatos.TabIndex = 2;
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
             // 
             // dtpFechaCarga
             // 
-            this.dtpFechaCarga.Location = new System.Drawing.Point(110, 314);
+            this.dtpFechaCarga.Location = new System.Drawing.Point(110, 273);
             this.dtpFechaCarga.Name = "dtpFechaCarga";
             this.dtpFechaCarga.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaCarga.TabIndex = 27;
-            // 
-            // TextBoxTipoConexion
-            // 
-            this.TextBoxTipoConexion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TextBoxTipoConexion.Location = new System.Drawing.Point(433, 200);
-            this.TextBoxTipoConexion.MaxLength = 15;
-            this.TextBoxTipoConexion.Name = "TextBoxTipoConexion";
-            this.TextBoxTipoConexion.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxTipoConexion.TabIndex = 26;
-            this.TextBoxTipoConexion.TextChanged += new System.EventHandler(this.gesTextBox1_TextChanged);
-            // 
-            // TextBoxTipoContador
-            // 
-            this.TextBoxTipoContador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TextBoxTipoContador.Location = new System.Drawing.Point(110, 200);
-            this.TextBoxTipoContador.MaxLength = 15;
-            this.TextBoxTipoContador.Name = "TextBoxTipoContador";
-            this.TextBoxTipoContador.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxTipoContador.TabIndex = 26;
-            this.TextBoxTipoContador.TextChanged += new System.EventHandler(this.gesTextBox1_TextChanged);
+            this.dtpFechaCarga.TabIndex = 13;
             // 
             // lblTipoMedidor
             // 
@@ -175,11 +155,21 @@
             // lblEtiqueta1
             // 
             this.lblEtiqueta1.AutoSize = true;
-            this.lblEtiqueta1.Location = new System.Drawing.Point(13, 314);
+            this.lblEtiqueta1.Location = new System.Drawing.Point(13, 273);
             this.lblEtiqueta1.Name = "lblEtiqueta1";
             this.lblEtiqueta1.Size = new System.Drawing.Size(86, 13);
             this.lblEtiqueta1.TabIndex = 24;
             this.lblEtiqueta1.Text = "Fecha de Carga:";
+            // 
+            // cmbTipoConexion
+            // 
+            this.cmbTipoConexion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbTipoConexion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbTipoConexion.FormattingEnabled = true;
+            this.cmbTipoConexion.Location = new System.Drawing.Point(433, 200);
+            this.cmbTipoConexion.Name = "cmbTipoConexion";
+            this.cmbTipoConexion.Size = new System.Drawing.Size(165, 21);
+            this.cmbTipoConexion.TabIndex = 10;
             // 
             // cmbTipoMedidor
             // 
@@ -189,7 +179,7 @@
             this.cmbTipoMedidor.Location = new System.Drawing.Point(433, 236);
             this.cmbTipoMedidor.Name = "cmbTipoMedidor";
             this.cmbTipoMedidor.Size = new System.Drawing.Size(165, 21);
-            this.cmbTipoMedidor.TabIndex = 4;
+            this.cmbTipoMedidor.TabIndex = 12;
             // 
             // TextBoxAmperaje
             // 
@@ -198,7 +188,7 @@
             this.TextBoxAmperaje.MaxLength = 15;
             this.TextBoxAmperaje.Name = "TextBoxAmperaje";
             this.TextBoxAmperaje.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxAmperaje.TabIndex = 26;
+            this.TextBoxAmperaje.TabIndex = 6;
             // 
             // TextBoxRegistrador
             // 
@@ -206,8 +196,7 @@
             this.TextBoxRegistrador.Location = new System.Drawing.Point(433, 165);
             this.TextBoxRegistrador.Name = "TextBoxRegistrador";
             this.TextBoxRegistrador.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxRegistrador.TabIndex = 25;
-            this.TextBoxRegistrador.TextChanged += new System.EventHandler(this.numericTextBox3_TextChanged);
+            this.TextBoxRegistrador.TabIndex = 8;
             // 
             // TextBoxKWVueltas
             // 
@@ -215,16 +204,15 @@
             this.TextBoxKWVueltas.Location = new System.Drawing.Point(433, 97);
             this.TextBoxKWVueltas.Name = "TextBoxKWVueltas";
             this.TextBoxKWVueltas.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxKWVueltas.TabIndex = 25;
-            this.TextBoxKWVueltas.TextChanged += new System.EventHandler(this.numericTextBox3_TextChanged);
+            this.TextBoxKWVueltas.TabIndex = 6;
             // 
-            // numericTextBox1
+            // TextBoxDecimales
             // 
-            this.numericTextBox1.AllowSpace = false;
-            this.numericTextBox1.Location = new System.Drawing.Point(433, 61);
-            this.numericTextBox1.Name = "numericTextBox1";
-            this.numericTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.numericTextBox1.TabIndex = 25;
+            this.TextBoxDecimales.AllowSpace = false;
+            this.TextBoxDecimales.Location = new System.Drawing.Point(433, 61);
+            this.TextBoxDecimales.Name = "TextBoxDecimales";
+            this.TextBoxDecimales.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxDecimales.TabIndex = 4;
             // 
             // TextBoxClase
             // 
@@ -232,8 +220,7 @@
             this.TextBoxClase.Location = new System.Drawing.Point(110, 165);
             this.TextBoxClase.Name = "TextBoxClase";
             this.TextBoxClase.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxClase.TabIndex = 25;
-            this.TextBoxClase.TextChanged += new System.EventHandler(this.numericTextBox2_TextChanged);
+            this.TextBoxClase.TabIndex = 7;
             // 
             // TextBoxCantHilos
             // 
@@ -241,8 +228,7 @@
             this.TextBoxCantHilos.Location = new System.Drawing.Point(110, 97);
             this.TextBoxCantHilos.Name = "TextBoxCantHilos";
             this.TextBoxCantHilos.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxCantHilos.TabIndex = 25;
-            this.TextBoxCantHilos.TextChanged += new System.EventHandler(this.numericTextBox2_TextChanged);
+            this.TextBoxCantHilos.TabIndex = 5;
             // 
             // TextBoxDigitos
             // 
@@ -250,7 +236,7 @@
             this.TextBoxDigitos.Location = new System.Drawing.Point(110, 61);
             this.TextBoxDigitos.Name = "TextBoxDigitos";
             this.TextBoxDigitos.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxDigitos.TabIndex = 25;
+            this.TextBoxDigitos.TabIndex = 3;
             // 
             // lblRegistrador
             // 
@@ -260,17 +246,16 @@
             this.lblRegistrador.Size = new System.Drawing.Size(64, 13);
             this.lblRegistrador.TabIndex = 22;
             this.lblRegistrador.Text = "Registrador:";
-            this.lblRegistrador.Click += new System.EventHandler(this.lblEtiqueta2_Click);
             // 
             // chkEstado
             // 
             this.chkEstado.AutoSize = true;
             this.chkEstado.Checked = true;
             this.chkEstado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEstado.Location = new System.Drawing.Point(113, 348);
+            this.chkEstado.Location = new System.Drawing.Point(110, 313);
             this.chkEstado.Name = "chkEstado";
             this.chkEstado.Size = new System.Drawing.Size(73, 17);
-            this.chkEstado.TabIndex = 5;
+            this.chkEstado.TabIndex = 14;
             this.chkEstado.Text = "Habilitado";
             this.chkEstado.UseVisualStyleBackColor = true;
             // 
@@ -282,7 +267,16 @@
             this.lblKWVueltas.Size = new System.Drawing.Size(79, 13);
             this.lblKWVueltas.TabIndex = 22;
             this.lblKWVueltas.Text = "KW por Vuelta:";
-            this.lblKWVueltas.Click += new System.EventHandler(this.lblEtiqueta2_Click);
+            // 
+            // cmbTipoContador
+            // 
+            this.cmbTipoContador.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbTipoContador.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbTipoContador.FormattingEnabled = true;
+            this.cmbTipoContador.Location = new System.Drawing.Point(110, 200);
+            this.cmbTipoContador.Name = "cmbTipoContador";
+            this.cmbTipoContador.Size = new System.Drawing.Size(165, 21);
+            this.cmbTipoContador.TabIndex = 9;
             // 
             // cmbFabricante
             // 
@@ -292,7 +286,7 @@
             this.cmbFabricante.Location = new System.Drawing.Point(110, 236);
             this.cmbFabricante.Name = "cmbFabricante";
             this.cmbFabricante.Size = new System.Drawing.Size(165, 21);
-            this.cmbFabricante.TabIndex = 3;
+            this.cmbFabricante.TabIndex = 11;
             // 
             // lblTipoConexion
             // 
@@ -302,7 +296,6 @@
             this.lblTipoConexion.Size = new System.Drawing.Size(93, 13);
             this.lblTipoConexion.TabIndex = 22;
             this.lblTipoConexion.Text = "Tipo de Conexión:";
-            this.lblTipoConexion.Click += new System.EventHandler(this.lblEtiqueta1_Click);
             // 
             // lblDecimales
             // 
@@ -321,7 +314,6 @@
             this.lblTipoContador.Size = new System.Drawing.Size(92, 13);
             this.lblTipoContador.TabIndex = 22;
             this.lblTipoContador.Text = "Tipo de Contador:";
-            this.lblTipoContador.Click += new System.EventHandler(this.lblEtiqueta1_Click);
             // 
             // lblClase
             // 
@@ -331,7 +323,6 @@
             this.lblClase.Size = new System.Drawing.Size(36, 13);
             this.lblClase.TabIndex = 22;
             this.lblClase.Text = "Clase:";
-            this.lblClase.Click += new System.EventHandler(this.lblEtiqueta1_Click);
             // 
             // lblAmperaje
             // 
@@ -341,7 +332,6 @@
             this.lblAmperaje.Size = new System.Drawing.Size(54, 13);
             this.lblAmperaje.TabIndex = 22;
             this.lblAmperaje.Text = "Amperaje:";
-            this.lblAmperaje.Click += new System.EventHandler(this.lblEtiqueta1_Click);
             // 
             // lblCantHilos
             // 
@@ -351,12 +341,11 @@
             this.lblCantHilos.Size = new System.Drawing.Size(91, 13);
             this.lblCantHilos.TabIndex = 22;
             this.lblCantHilos.Text = "Cantidad de hilos:";
-            this.lblCantHilos.Click += new System.EventHandler(this.lblEtiqueta1_Click);
             // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(16, 348);
+            this.lblEstado.Location = new System.Drawing.Point(13, 313);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(43, 13);
             this.lblEstado.TabIndex = 22;
@@ -374,7 +363,7 @@
             // lblParcela
             // 
             this.lblParcela.AutoSize = true;
-            this.lblParcela.Location = new System.Drawing.Point(13, 244);
+            this.lblParcela.Location = new System.Drawing.Point(13, 239);
             this.lblParcela.Name = "lblParcela";
             this.lblParcela.Size = new System.Drawing.Size(60, 13);
             this.lblParcela.TabIndex = 22;
@@ -406,7 +395,6 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(165, 20);
             this.txtDescripcion.TabIndex = 1;
-            this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             // 
             // lbDescripcion
             // 
@@ -417,16 +405,16 @@
             this.lbDescripcion.TabIndex = 0;
             this.lbDescripcion.Text = "Descripción:";
             // 
-            // frmModelosMedidoresCrud
+            // frmMedidoresModelosCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 488);
+            this.ClientSize = new System.Drawing.Size(618, 469);
             this.Controls.Add(this.gesGroup2);
             this.Controls.Add(this.gbDatos);
-            this.Name = "frmModelosMedidoresCrud";
+            this.Name = "frmMedidoresModelosCrud";
             this.Text = "frmModelosMedidoresCrud";
-            this.Load += new System.EventHandler(this.frmModelosMedidoresCrud_Load);
+            this.Load += new System.EventHandler(this.frmMedidoresModelosCrud_Load);
             this.gesGroup2.ResumeLayout(false);
             this.gbDatos.ResumeLayout(false);
             this.gbDatos.PerformLayout();
@@ -449,7 +437,7 @@
         private Controles.datos.chkBox chkEstado;
         private Controles.labels.lblEtiqueta lblEstado;
         private Controles.NumericTextBox TextBoxKWVueltas;
-        private Controles.NumericTextBox numericTextBox1;
+        private Controles.NumericTextBox TextBoxDecimales;
         private Controles.NumericTextBox TextBoxCantHilos;
         private Controles.NumericTextBox TextBoxDigitos;
         private Controles.labels.lblEtiqueta lblKWVueltas;
@@ -462,13 +450,13 @@
         private Controles.labels.lblEtiqueta lblRegistrador;
         private Controles.labels.lblEtiqueta lblClase;
         private Controles.labels.lblEtiqueta lblAmperaje;
-        private Controles.textBoxes.gesTextBox TextBoxTipoContador;
         private Controles.labels.lblEtiqueta lblTipoContador;
-        private Controles.textBoxes.gesTextBox TextBoxTipoConexion;
         private Controles.labels.lblEtiqueta lblTipoConexion;
         private Controles.labels.lblEtiqueta lblTipoMedidor;
         private Controles.datos.cmbLista cmbTipoMedidor;
         private Controles.Fecha.dtpFecha dtpFechaCarga;
         private Controles.labels.lblEtiqueta lblEtiqueta1;
+        private Controles.datos.cmbLista cmbTipoConexion;
+        private Controles.datos.cmbLista cmbTipoContador;
     }
 }

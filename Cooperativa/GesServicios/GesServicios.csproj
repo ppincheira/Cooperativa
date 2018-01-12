@@ -48,23 +48,17 @@
     <Compile Include="controles\forms\frmCategoriasCrud.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="controles\forms\frmModelosMedidoresCrud.cs">
+    <Compile Include="controles\forms\frmMedidoresModelosCrud.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="controles\forms\frmModelosMedidoresCrud.Designer.cs">
-      <DependentUpon>frmModelosMedidoresCrud.cs</DependentUpon>
+    <Compile Include="controles\forms\frmMedidoresModelosCrud.Designer.cs">
+      <DependentUpon>frmMedidoresModelosCrud.cs</DependentUpon>
     </Compile>
     <Compile Include="controles\forms\frmRutasCrud.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="controles\forms\frmRutasCrud.Designer.cs">
       <DependentUpon>frmRutasCrud.cs</DependentUpon>
-    </Compile>
-    <Compile Include="controles\forms\frmTiposMedidoresCrud.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="controles\forms\frmTiposMedidoresCrud.designer.cs">
-      <DependentUpon>frmTiposMedidoresCrud.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -86,14 +80,11 @@
     <EmbeddedResource Include="controles\forms\frmCategoriasCrud.resx">
       <DependentUpon>frmCategoriasCrud.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="controles\forms\frmModelosMedidoresCrud.resx">
-      <DependentUpon>frmModelosMedidoresCrud.cs</DependentUpon>
+    <EmbeddedResource Include="controles\forms\frmMedidoresModelosCrud.resx">
+      <DependentUpon>frmMedidoresModelosCrud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controles\forms\frmRutasCrud.resx">
       <DependentUpon>frmRutasCrud.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="controles\forms\frmTiposMedidoresCrud.resx">
-      <DependentUpon>frmTiposMedidoresCrud.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

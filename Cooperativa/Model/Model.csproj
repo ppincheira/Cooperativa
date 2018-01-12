@@ -88,7 +88,7 @@
     <Compile Include="DetallesAuditoria.cs" />
     <Compile Include="DetallesColumnasTablas.cs" />
     <Compile Include="DetallesIva.cs" />
-    <Compile Include="DetallesModelosMedidores.cs" />
+    <Compile Include="MedidoresModelos.cs" />
     <Compile Include="Distritos.cs" />
     <Compile Include="Domicilios.cs" />
     <Compile Include="DomiciliosEntidades.cs" />

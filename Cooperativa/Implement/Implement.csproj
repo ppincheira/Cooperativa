@@ -90,7 +90,7 @@
     <Compile Include="DetallesAuditoriaImpl.cs" />
     <Compile Include="DetallesColumnasTablasImpl.cs" />
     <Compile Include="DetallesIvaImpl.cs" />
-    <Compile Include="DetallesModelosMedidoresImpl.cs" />
+    <Compile Include="MedidoresModelosImpl.cs" />
     <Compile Include="DistritosImpl.cs" />
     <Compile Include="DomiciliosEntidadesImpl.cs" />
     <Compile Include="DomiciliosImpl.cs" />

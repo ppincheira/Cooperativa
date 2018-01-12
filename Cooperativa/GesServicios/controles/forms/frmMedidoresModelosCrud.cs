@@ -1,4 +1,4 @@
-﻿using AppProcesos.gesServicios.frmModelosMedidoresCrud;
+﻿using AppProcesos.gesServicios.frmMedidoresModelosCrud;
 using Controles.datos;
 using Controles.form;
 using Service;
@@ -7,27 +7,25 @@ using System.Windows.Forms;
 
 namespace GesServicios.controles.forms
 {
-    public partial class frmModelosMedidoresCrud : gesForm, IVistaModelosMedidoresCrud
+    public partial class frmMedidoresModelosCrud : gesForm, IVistaMedidoresModelosCrud
     {
 
         #region << PROPIEDADES >>
 
-        UIModelosMedidoresCrud _oModelosMedidoresCrud;
+        UIMedidoresModelosCrud _oMedidoresModelosCrud;
         Utility oUtil;
 
-        long _SruNumero;
+        long _usrNumero, _MmoCodigo;
         string _EstCodigo;
-        long _GrdCodigo, _GrpCodigo;
-        string _GrdCodigoRegistro;
 
         #endregion
-        #region Implementation of IVistaModelosMedidoresCrud
+        #region Implementation of IVistaMedidoresModelosCrud
 
 
-        public long sruNumero
+        public long Codigo
         {
-            get { return _SruNumero; }
-            set { _SruNumero = value; }
+            get { return _MmoCodigo; }
+            set { _MmoCodigo = value; }
         }
         public string Descripcion
         {
@@ -41,47 +39,95 @@ namespace GesServicios.controles.forms
             set { this.txtDescripcionCorta.Text = value; }
         }
 
-        public string estCodigo
+        public long Digitos
         {
-            get { return this.chkEstado.Checked?"H":"I"; }
-            set { this.chkEstado.Checked= (value=="H"); }
+            get { return long.Parse(TextBoxDigitos.Text); }
+            set { TextBoxDigitos.Text = value.ToString(); }
         }
 
-        public cmbLista srvCodigo
+        public long Decimales
+        {
+            get { return long.Parse(TextBoxDecimales.Text); }
+            set { TextBoxDecimales.Text = value.ToString(); }
+        }
+
+        public long CantHilos
+        {
+            get { return long.Parse(TextBoxCantHilos.Text); }
+            set { TextBoxCantHilos.Text = value.ToString(); }
+        }
+
+        public long KWVueltas
+        {
+            get { return long.Parse(TextBoxKWVueltas.Text); }
+            set { TextBoxKWVueltas.Text = value.ToString(); }
+        }
+
+        public string Amperaje
+        {
+            get { return this.TextBoxAmperaje.Text; }
+            set { this.TextBoxAmperaje.Text = value; }
+        }
+
+        public long Clase
+        {
+            get { return long.Parse(TextBoxClase.Text); }
+            set { TextBoxClase.Text = value.ToString(); }
+        }
+
+        public long Registrador
+        {
+            get { return long.Parse(TextBoxRegistrador.Text); }
+            set { TextBoxRegistrador.Text = value.ToString(); }
+        }
+
+        public cmbLista TipoContador
+        {
+            get { return this.cmbTipoContador; }
+            set { this.cmbTipoContador = value; }
+        }
+        public cmbLista TipoConexion
+        {
+            get { return this.cmbTipoConexion; }
+            set { this.cmbTipoConexion = value; }
+        }
+        public cmbLista FabNumero
         {
             get { return this.cmbFabricante; }
             set { this.cmbFabricante = value; }
         }
-        public long grdCodigo
+        public cmbLista TMeCodigo
         {
-            get { return _GrdCodigo; }
-            set { _GrdCodigo = value; }
+            get { return this.cmbTipoMedidor; }
+            set { this.cmbTipoMedidor = value; }
         }
-        public cmbLista grupo
+        public DateTime FechaCarga
         {
-            get { return this.cmbUsuario; }
-            set { this.cmbUsuario = value; }
+            get { return DateTime.Parse(dtpFechaCarga.Text); }
+            set { dtpFechaCarga.Text = value.ToString(); }
         }
-        public string grdCodigoRegistro
+        public string estCodigo
         {
-            get { return _GrdCodigoRegistro; }
-            set { _GrdCodigoRegistro = value; }
+            get { return this.chkEstado.Checked ? "H" : "I"; }
+            set { this.chkEstado.Checked = (value == "H"); }
         }
+
         #endregion
-        public frmModelosMedidoresCrud(long SRuta, string Estado)
+        public frmMedidoresModelosCrud(long ModeloMedidor, string Estado, long Usuario)
             //SRuta, Estado 
         {
             //try
             //{
-                _SruNumero=SRuta;
+                _MmoCodigo=ModeloMedidor;
                 _EstCodigo = Estado;
-                _oModelosMedidoresCrud = new UIModelosMedidoresCrud(this);
+                _usrNumero = Usuario;
+                _oMedidoresModelosCrud = new UIMedidoresModelosCrud(this);
                 InitializeComponent();
             if (Estado == "B")
-                if (MessageBox.Show("Desea eliminar La Ruta Código: " + SRuta + " ?", "Cooperativa", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Desea eliminar el Modelo de Medidor Código: " + ModeloMedidor + " ?", "Cooperativa", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Cursor.Current = Cursors.WaitCursor;
-                    _oModelosMedidoresCrud.EliminarRuta(SRuta);
+                    //_oMedidoresModelosCrud.EliminarModeloMedidor(ModeloMedidor);
                     this.Close();
                 }
             //}
@@ -96,16 +142,18 @@ namespace GesServicios.controles.forms
             //}
         }
 
-        private void frmModelosMedidoresCrud_Load(object sender, EventArgs e)
+        private void frmMedidoresModelosCrud_Load(object sender, EventArgs e)
         {
             try
             {
                 oUtil = new Utility();
-                _oModelosMedidoresCrud.Inicializar();
+                _oMedidoresModelosCrud.Inicializar();
                 this.txtDescripcion.REQUERIDO = "SI";
                 this.txtDescripcionCorta.REQUERIDO = "SI";
+                this.TextBoxAmperaje.REQUERIDO = "SI";
                 this.cmbFabricante.REQUERIDO = "SI";
-                this.cmbUsuario.REQUERIDO = "SI";
+                this.cmbTipoMedidor.REQUERIDO = "SI";
+                this.dtpFechaCarga.REQUERIDO = "SI";
                 this.chkEstado.REQUERIDO = "NO";
             }
             catch (Exception ex)
@@ -128,7 +176,7 @@ namespace GesServicios.controles.forms
                 if (this.VALIDARFORM)
                 {
                     DialogResult = DialogResult.OK;
-                    _oModelosMedidoresCrud.Guardar();
+                    _oMedidoresModelosCrud.Guardar();
 
                     this.Close();
                 }
@@ -142,36 +190,6 @@ namespace GesServicios.controles.forms
                                 ((Control)sender).Name,
                                 this.FindForm().Name);
             }
-
-        }
-
-        private void txtDescripcion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEtiqueta1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEtiqueta2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericTextBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gesTextBox1_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
