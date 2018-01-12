@@ -131,5 +131,10 @@ namespace UI
         {
 
         }
+
+        private void gesTextBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

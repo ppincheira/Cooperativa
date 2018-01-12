@@ -187,33 +187,34 @@
             this.gesTextBox1.ColorTextoVacio = System.Drawing.Color.Gray;
             this.gesTextBox1.Location = new System.Drawing.Point(196, 135);
             this.gesTextBox1.Name = "gesTextBox1";
-            this.gesTextBox1.Requerido = Controles.textBoxes.gesTextBox.enumRequerido.SI;
+            this.gesTextBox1.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.gesTextBox1.Size = new System.Drawing.Size(100, 22);
             this.gesTextBox1.TabIndex = 16;
             this.gesTextBox1.TextoVacio = "<Descripcion>";
-            this.gesTextBox1.TipoControl = Controles.textBoxes.gesTextBox.enumTipos.Fecha;
+            this.gesTextBox1.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            this.gesTextBox1.TextChanged += new System.EventHandler(this.gesTextBox1_TextChanged_1);
             // 
             // gesTextBox2
             // 
             this.gesTextBox2.ColorTextoVacio = System.Drawing.Color.Gray;
             this.gesTextBox2.Location = new System.Drawing.Point(218, 176);
             this.gesTextBox2.Name = "gesTextBox2";
-            this.gesTextBox2.Requerido = Controles.textBoxes.gesTextBox.enumRequerido.NO;
+            this.gesTextBox2.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.gesTextBox2.Size = new System.Drawing.Size(100, 22);
             this.gesTextBox2.TabIndex = 17;
             this.gesTextBox2.TextoVacio = "<Descripcion>";
-            this.gesTextBox2.TipoControl = Controles.textBoxes.gesTextBox.enumTipos.TelefonoConArea;
+            this.gesTextBox2.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // gesTextBox3
             // 
             this.gesTextBox3.ColorTextoVacio = System.Drawing.Color.Gray;
             this.gesTextBox3.Location = new System.Drawing.Point(218, 207);
             this.gesTextBox3.Name = "gesTextBox3";
-            this.gesTextBox3.Requerido = Controles.textBoxes.gesTextBox.enumRequerido.NO;
+            this.gesTextBox3.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.gesTextBox3.Size = new System.Drawing.Size(100, 22);
             this.gesTextBox3.TabIndex = 18;
             this.gesTextBox3.TextoVacio = "<Descripcion>";
-            this.gesTextBox3.TipoControl = Controles.textBoxes.gesTextBox.enumTipos.Email;
+            this.gesTextBox3.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // Form1
             // 

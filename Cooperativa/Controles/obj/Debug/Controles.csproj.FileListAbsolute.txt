@@ -50,3 +50,4 @@ C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateR
 C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
 C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.datos.gesGrid.resources
