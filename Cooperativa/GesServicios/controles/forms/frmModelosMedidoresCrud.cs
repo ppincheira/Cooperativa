@@ -1,4 +1,4 @@
-﻿using AppProcesos.gesServicios.frmRutasCrud;
+﻿using AppProcesos.gesServicios.frmModelosMedidoresCrud;
 using Controles.datos;
 using Controles.form;
 using Service;
@@ -7,12 +7,12 @@ using System.Windows.Forms;
 
 namespace GesServicios.controles.forms
 {
-    public partial class frmRutasCrud : gesForm, IVistaRutasCrud
+    public partial class frmModelosMedidoresCrud : gesForm, IVistaModelosMedidoresCrud
     {
 
         #region << PROPIEDADES >>
 
-        UIRutasCrud _oRutasCrud;
+        UIModelosMedidoresCrud _oModelosMedidoresCrud;
         Utility oUtil;
 
         long _SruNumero;
@@ -21,7 +21,7 @@ namespace GesServicios.controles.forms
         string _GrdCodigoRegistro;
 
         #endregion
-        #region Implementation of IVistaRutasCrud
+        #region Implementation of IVistaModelosMedidoresCrud
 
 
         public long sruNumero
@@ -49,8 +49,8 @@ namespace GesServicios.controles.forms
 
         public cmbLista srvCodigo
         {
-            get { return this.cmbServicio; }
-            set { this.cmbServicio = value; }
+            get { return this.cmbFabricante; }
+            set { this.cmbFabricante = value; }
         }
         public long grdCodigo
         {
@@ -59,8 +59,8 @@ namespace GesServicios.controles.forms
         }
         public cmbLista grupo
         {
-            get { return this.cmbGrupo; }
-            set { this.cmbGrupo = value; }
+            get { return this.cmbUsuario; }
+            set { this.cmbUsuario = value; }
         }
         public string grdCodigoRegistro
         {
@@ -68,20 +68,20 @@ namespace GesServicios.controles.forms
             set { _GrdCodigoRegistro = value; }
         }
         #endregion
-        public frmRutasCrud(long SRuta, string Estado)
+        public frmModelosMedidoresCrud(long SRuta, string Estado)
             //SRuta, Estado 
         {
             //try
             //{
                 _SruNumero=SRuta;
                 _EstCodigo = Estado;
-                _oRutasCrud = new UIRutasCrud(this);
+                _oModelosMedidoresCrud = new UIModelosMedidoresCrud(this);
                 InitializeComponent();
             if (Estado == "B")
                 if (MessageBox.Show("Desea eliminar La Ruta Código: " + SRuta + " ?", "Cooperativa", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Cursor.Current = Cursors.WaitCursor;
-                    _oRutasCrud.EliminarRuta(SRuta);
+                    _oModelosMedidoresCrud.EliminarRuta(SRuta);
                     this.Close();
                 }
             //}
@@ -96,16 +96,16 @@ namespace GesServicios.controles.forms
             //}
         }
 
-        private void frmRutasCrud_Load(object sender, EventArgs e)
+        private void frmModelosMedidoresCrud_Load(object sender, EventArgs e)
         {
             try
             {
                 oUtil = new Utility();
-                _oRutasCrud.Inicializar();
+                _oModelosMedidoresCrud.Inicializar();
                 this.txtDescripcion.REQUERIDO = "SI";
                 this.txtDescripcionCorta.REQUERIDO = "SI";
-                this.cmbServicio.REQUERIDO = "SI";
-                this.cmbGrupo.REQUERIDO = "SI";
+                this.cmbFabricante.REQUERIDO = "SI";
+                this.cmbUsuario.REQUERIDO = "SI";
                 this.chkEstado.REQUERIDO = "NO";
             }
             catch (Exception ex)
@@ -128,7 +128,7 @@ namespace GesServicios.controles.forms
                 if (this.VALIDARFORM)
                 {
                     DialogResult = DialogResult.OK;
-                    _oRutasCrud.Guardar();
+                    _oModelosMedidoresCrud.Guardar();
 
                     this.Close();
                 }
@@ -142,6 +142,36 @@ namespace GesServicios.controles.forms
                                 ((Control)sender).Name,
                                 this.FindForm().Name);
             }
+
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEtiqueta1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEtiqueta2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericTextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gesTextBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
 

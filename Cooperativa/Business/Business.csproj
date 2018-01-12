@@ -100,6 +100,8 @@
     <Compile Include="FuncionalidadesBus.cs" />
     <Compile Include="FuncionalidadesFormulariosBus.cs" />
     <Compile Include="FuncionalidadesUsuariosBus.cs" />
+    <Compile Include="TiposGruposBus.cs" />
+    <Compile Include="GruposDetallesBus.cs" />
     <Compile Include="LocalidadesBus.cs" />
     <Compile Include="MedidoresBus.cs" />
     <Compile Include="MedidoresSuministrosBus.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="ServiciosBus.cs" />
     <Compile Include="ServiciosCategoriasBus.cs" />
     <Compile Include="ServiciosRutasBus.cs" />
+    <Compile Include="GruposBus.cs" />
     <Compile Include="ServiciosZonasBus.cs" />
     <Compile Include="SubsistemaBus.cs" />
     <Compile Include="SuministrosBus.cs" />

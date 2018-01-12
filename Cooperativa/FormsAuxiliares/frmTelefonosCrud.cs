@@ -127,6 +127,7 @@ namespace FormsAuxiliares
             {
                 if (this.txtEmail.emailValido())
                 {
+                    this.VALIDARFORM = true;
                     oUtility.ValidarFormulario(this, this, 6);
                     if (this.VALIDARFORM)
                     {

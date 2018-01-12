@@ -85,6 +85,8 @@
     <Compile Include="formsAuxiliares\frmTelefonos\UITelefonosCrud.cs" />
     <Compile Include="formsAuxiliares\principal\IVistaPrincipal.cs" />
     <Compile Include="formsAuxiliares\principal\UIPrincipal.cs" />
+    <Compile Include="gesServicios\frmModelosMedidores\IVistaModelosMedidoresCrud.cs" />
+    <Compile Include="gesServicios\frmModelosMedidores\UIModelosMedidoresCrud.cs" />
     <Compile Include="gesServicios\frmRutasCrud\IVistaRutasCrud.cs" />
     <Compile Include="gesServicios\frmRutasCrud\UIRutasCrud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

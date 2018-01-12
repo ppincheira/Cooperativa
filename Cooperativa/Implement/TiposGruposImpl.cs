@@ -6,28 +6,28 @@ using Oracle.DataAccess.Client;
 using Model;
 namespace Implement
 {
-    public class ServiciosImpl
+    public class TiposGruposImpl
     {
-        #region Servicios methods
+        #region TiposGrupos methods
 
         private OracleDataAdapter adapter;
         private OracleCommand cmd;
         private DataSet ds;
-        private int response;
-        public int ServiciosAdd(Servicios oSer)
+        private long response;
+        public long TiposGruposAdd(TiposGrupos oTGr)
         {
             try
             {
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                // Clave Srv_CODIGO
+                // Clave Secuencia GRP_CODIGO
                 ds = new DataSet();
-                cmd = new OracleCommand("insert into Servicios (SRV_CODIGO, SRV_DESCRIPCION, " +
-                    "SRV_DESCRIPCION_CORTA, SRV_FECHA_CARGA, USR_NUMERO, SRV_REQUIERE_MEDIDR) " +
-                    "values('" + oSer.SrvCodigo + "', '" +oSer.SrvDescripcion + "', '" +
-                    oSer.SrvDescripcionCorta + "'," + oSer.SrvFechaCarga + "," + 
-                    oSer.UsrNumero + ",'" + oSer.SrvRequiereMedidor+"')", cn);
+                string query =" insert into Tipos_Grupos " +
+                    "(TGR_CODIGO, TGR_DESCRIPCION, TAB_CODIGO) " +
+                    "values ('" + oTGr.TgrCodigo +"', '" + oTGr.TgrDescripcion + "', '" +
+                    oTGr.TabCodigo + "')";
+                cmd = new OracleCommand(query, cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -39,7 +39,7 @@ namespace Implement
             }
         }
 
-        public bool ServiciosUpdate(Servicios oSer)
+        public bool TiposGruposUpdate(TiposGrupos oTGr)
         {
             try
             {
@@ -47,13 +47,10 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 ds = new DataSet();
-                cmd = new OracleCommand("update Servicios " +
-                    "SET SRV_DESCRIPCION='" + oSer.SrvDescripcion + "', " +
-                    "SRV_DESCRIPCION_CORTA='" + oSer.SrvDescripcionCorta + "', " +
-                    "SRV_FECHA_CARGA=" + oSer.SrvFechaCarga + ", " +
-                    "USR_NUMERO=" + oSer.UsrNumero + ", " +
-                    "SRV_REQUIERE_MEDIDR='" + oSer.UsrNumero + "' " +
-                    "WHERE SRV_CODIGO='" + oSer.SrvCodigo + "'", cn);
+                cmd = new OracleCommand("update Tipos_Grupos " +
+                    "SET TGR_DESCRIPCION='" + oTGr.TgrDescripcion + "', " +
+                    "TAB_CODIGO='" + oTGr.TabCodigo + "' " +
+                    "WHERE TGR_CODIGO='" + oTGr.TgrCodigo +"'", cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -65,7 +62,7 @@ namespace Implement
             }
         }
 
-        public bool ServiciosDelete(string Id)
+        public bool TiposGruposDelete(string Id)
         {
 
 
@@ -75,8 +72,8 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 ds = new DataSet();
-                cmd = new OracleCommand("DELETE Servicios " +
-                      "WHERE SRV_CODIGO='" + Id + "'", cn);
+                cmd = new OracleCommand("DELETE Tipos_Grupos " +
+                      "WHERE TGR_CODIGO='" + Id+"'", cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -90,7 +87,7 @@ namespace Implement
 
         }
 
-        public Servicios ServiciosGetById(string Id)
+        public TiposGrupos TiposGruposGetById(string Id)
         {
             try
             {
@@ -98,19 +95,19 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select * from Servicios " +
-                    "WHERE SRV_CODIGO='" + Id + "'";
+                string sqlSelect = "select * from Tipos_Grupos " +
+                    "WHERE TGR_CODIGO='" + Id+"'";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
                 adapter.Fill(ds);
                 DataTable dt;
                 dt = ds.Tables[0];
-                Servicios NewEnt = new Servicios();
+                TiposGrupos NewEnt = new TiposGrupos();
                 if (dt.Rows.Count > 0)
                 {
                     DataRow dr = dt.Rows[0];
-                    NewEnt = CargarServicios(dr);
+                    NewEnt = CargarTiposGrupos(dr);
                 }
                 return NewEnt;
             }
@@ -120,9 +117,9 @@ namespace Implement
             }
         }
 
-        public List<Servicios> ServiciosGetAll()
+        public List<TiposGrupos> TiposGruposGetAll()
         {
-            List<Servicios> lstServicios = new List<Servicios>();
+            List<TiposGrupos> lstTiposGrupos = new List<TiposGrupos>();
             try
             {
 
@@ -130,7 +127,7 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select * from Servicios ";
+                string sqlSelect = "select * from Tipos_Grupos ";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -142,21 +139,21 @@ namespace Implement
                     for (int i = 0; dt.Rows.Count > i; i++)
                     {
                         DataRow dr = dt.Rows[i];
-                        Servicios NewEnt = new Servicios();
-                        NewEnt = CargarServicios(dr);
-                        lstServicios.Add(NewEnt);
+                        TiposGrupos NewEnt = new TiposGrupos();
+                        NewEnt = CargarTiposGrupos(dr);
+                        lstTiposGrupos.Add(NewEnt);
                     }
                 }
-                return lstServicios;
+                return lstTiposGrupos;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public List<Servicios> ServiciosMedidosGetAll()
+        public List<TiposGrupos> TiposGruposGetbyTabla(string TipoTGrpo)
         {
-            List<Servicios> lstServicios = new List<Servicios>();
+            List<TiposGrupos> lstTiposGrupos = new List<TiposGrupos>();
             try
             {
 
@@ -164,7 +161,7 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select * from Servicios where SRV_REQUIERE_MEDIDOR = 'S' ";
+                string sqlSelect = "select * from Tipos_Grupos where TAB_CODIGO='" + TipoTGrpo + "'";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -176,30 +173,27 @@ namespace Implement
                     for (int i = 0; dt.Rows.Count > i; i++)
                     {
                         DataRow dr = dt.Rows[i];
-                        Servicios NewEnt = new Servicios();
-                        NewEnt = CargarServicios(dr);
-                        lstServicios.Add(NewEnt);
+                        TiposGrupos NewEnt = new TiposGrupos();
+                        NewEnt = CargarTiposGrupos(dr);
+                        lstTiposGrupos.Add(NewEnt);
                     }
                 }
-                return lstServicios;
+                return lstTiposGrupos;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        private Servicios CargarServicios(DataRow dr)
+
+        private TiposGrupos CargarTiposGrupos(DataRow dr)
         {
             try
             {
-                Servicios oObjeto = new Servicios();
-                oObjeto.SrvCodigo =dr["SRV_CODIGO"].ToString();
-                oObjeto.SrvDescripcion = dr["SRV_DESCRIPCION"].ToString();
-                oObjeto.SrvDescripcionCorta = dr["SRV_DESCRIPCION_CORTA"].ToString();
-                if (dr["SRV_FECHA_CARGA"].ToString() != "")
-                    oObjeto.SrvFechaCarga = DateTime.Parse(dr["SRV_FECHA_CARGA"].ToString());
-                oObjeto.UsrNumero = int.Parse(dr["USR_NUMERO"].ToString());
-                oObjeto.SrvRequiereMedidor = dr["SRV_REQUIERE_MEDIDOR"].ToString();
+                TiposGrupos oObjeto = new TiposGrupos();
+                oObjeto.TgrCodigo = dr["TGR_CODIGO"].ToString();
+                oObjeto.TgrDescripcion = dr["GRP_DESCRIPCION"].ToString();
+                oObjeto.TabCodigo = dr["TAB_CODIGO"].ToString();
                 return oObjeto;
             }
             catch (Exception ex)
@@ -208,12 +202,12 @@ namespace Implement
             }
         }
 
-        //public DataTable ServiciosGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
+        //public DataTable TiposGruposGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
         //{
         //    try
         //    {
         //        DataTable DTPartes;
-        //        DataSet DSPartes = SqlHelper.ExecuteDataset(SqlImplHelper.getConnectionString(), "ServiciosGetAllByFilter", Periodo, Empresa, IdPresentacion,Tipo);
+        //        DataSet DSPartes = SqlHelper.ExecuteDataset(SqlImplHelper.getConnectionString(), "TiposGruposGetAllByFilter", Periodo, Empresa, IdPresentacion,Tipo);
         //        DTPartes = DSPartes.Tables[0];
         //        DSPartes.Tables.RemoveAt(0);
         //        return DTPartes;

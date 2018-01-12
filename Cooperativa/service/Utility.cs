@@ -196,7 +196,8 @@ namespace Service
                             formInicial.VALIDARFORM = false;
                         }
                         else
-                            ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Empty;
+                            ((Controles.datos.chkBox)control).BackColor = System.Drawing.Color.Empty;
+                            //((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Empty;
                 }
 
             }
