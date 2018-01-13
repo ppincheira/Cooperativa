@@ -100,9 +100,17 @@
             this.gesTextBox3.Location = new System.Drawing.Point(164, 168);
             this.gesTextBox3.Margin = new System.Windows.Forms.Padding(2);
             this.gesTextBox3.Name = "gesTextBox3";
+<<<<<<< HEAD
             this.gesTextBox3.Size = new System.Drawing.Size(76, 20);
             this.gesTextBox3.TabIndex = 18;
             this.gesTextBox3.TextoVacio = "<Descripcion>";
+=======
+            this.gesTextBox3.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.gesTextBox3.Size = new System.Drawing.Size(76, 20);
+            this.gesTextBox3.TabIndex = 18;
+            this.gesTextBox3.TextoVacio = "<Descripcion>";
+            this.gesTextBox3.TipoControl = Controles.util.Enumerados.enumTipos.Email;
+>>>>>>> 6c713c915796a6be2d1057dbd4dc22fa43dea8df
             // 
             // gesTextBox2
             // 
@@ -110,9 +118,17 @@
             this.gesTextBox2.Location = new System.Drawing.Point(164, 143);
             this.gesTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.gesTextBox2.Name = "gesTextBox2";
+<<<<<<< HEAD
             this.gesTextBox2.Size = new System.Drawing.Size(76, 20);
             this.gesTextBox2.TabIndex = 17;
             this.gesTextBox2.TextoVacio = "<Descripcion>";
+=======
+            this.gesTextBox2.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.gesTextBox2.Size = new System.Drawing.Size(76, 20);
+            this.gesTextBox2.TabIndex = 17;
+            this.gesTextBox2.TextoVacio = "<Descripcion>";
+            this.gesTextBox2.TipoControl = Controles.util.Enumerados.enumTipos.TelefonoConArea;
+>>>>>>> 6c713c915796a6be2d1057dbd4dc22fa43dea8df
             // 
             // gesTextBox1
             // 
@@ -120,9 +136,17 @@
             this.gesTextBox1.Location = new System.Drawing.Point(147, 110);
             this.gesTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.gesTextBox1.Name = "gesTextBox1";
+<<<<<<< HEAD
             this.gesTextBox1.Size = new System.Drawing.Size(76, 20);
             this.gesTextBox1.TabIndex = 16;
             this.gesTextBox1.TextoVacio = "<Descripcion>";
+=======
+            this.gesTextBox1.Requerido = Controles.util.Enumerados.enumRequerido.SI;
+            this.gesTextBox1.Size = new System.Drawing.Size(76, 20);
+            this.gesTextBox1.TabIndex = 16;
+            this.gesTextBox1.TextoVacio = "<Descripcion>";
+            this.gesTextBox1.TipoControl = Controles.util.Enumerados.enumTipos.Fecha;
+>>>>>>> 6c713c915796a6be2d1057dbd4dc22fa43dea8df
             // 
             // btnPersonalizado7
             // 
