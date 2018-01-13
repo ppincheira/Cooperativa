@@ -25,21 +25,21 @@ namespace Implement
                     // Clave MMO_CODIGO
                     ds = new DataSet();
                     string query =
-                        " DECLARE IDTEMP NUMBER(10,0); " +
+                        " DECLARE IDTEMP NUMBER(4,0); " +
                         " BEGIN " +
                         " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('MMO_CODIGO')) into IDTEMP from dual; " +
-                        " insert into Modelos_Medidores" +
+                        " insert into Medidores_Modelos" +
                         "(MMO_CODIGO, MMO_DESCRIPCION, MMO_DESCRIPCION_CORTA, MMO_DIGITOS, " +
                         "MMO_DECIMALES, MMO_CANT_HILOS, MMO_KW_VUELTAS, MMO_AMPERAJE, " +
                         "MMO_CLASE, MMO_REGISTRADOR, MMO_TIPO_CONTADOR, MMO_TIPO_CONEXION, " +
                         "FAB_NUMERO, TME_CODIGO, USR_NUMERO, MMO_FECHA_CARGA, EST_CODIGO) " +
-                        "values('" + oMMO.MMoCodigo + "','" + oMMO.MMoDescripcion + "','" +
+                        "values(IDTEMP,'" + oMMO.MMoDescripcion + "','" +
                         oMMO.MMoDescripcionCorta + "'," + oMMO.MMoDigitos + "," +
                         oMMO.MMoDecimales + "," + oMMO.MMoCantHilos + "," + oMMO.MMoKwVueltas + ",'" +
                         oMMO.MMoAmperaje + "'," + oMMO.MMoClase + "," + oMMO.MMoRegistrador + ",'" +
                         oMMO.MMoTipoContador + "','" + oMMO.MMoTipoConexion + "'," +
-                        oMMO.FabNumero + ",'" + oMMO.TmeCodigo + "'," + oMMO.UsrNumero + "," +
-                        oMMO.MMoFechaCarga + ",'" + oMMO.EstCodigo + "') RETURNING IDTEMP INTO :id;" +
+                        oMMO.FabNumero + "," + oMMO.TmeCodigo + "," + oMMO.UsrNumero + ",'" +
+                        oMMO.MMoFechaCarga.ToString("dd/MM/yyyy") + "','" + oMMO.EstCodigo + "') RETURNING IDTEMP INTO :id;" +
                         " END;";
                     cmd = new OracleCommand(query, cn);
                     cmd.Parameters.Add(new OracleParameter
@@ -68,7 +68,7 @@ namespace Implement
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
                     ds = new DataSet();
-                    cmd = new OracleCommand("update Modelos_Medidores " +
+                    cmd = new OracleCommand("update Medidores_Modelos " +
                         "SET MMO_DESCRIPCION='" + oMMO.MMoDescripcion +
                         "', MMO_DESCRIPCION_CORTA='" + oMMO.MMoDescripcionCorta +
                         ", MMO_DIGITOS=" + oMMO.MMoDigitos +
@@ -81,8 +81,8 @@ namespace Implement
                         ", MMO_TIPO_CONTADOR='" + oMMO.MMoTipoContador +
                         "', MMO_TIPO_CONEXION='" + oMMO.MMoTipoConexion +
                         "', FAB_NUMERO=" + oMMO.FabNumero +
-                        ", TME_CODIGO='" + oMMO.TmeCodigo +
-                        "', USR_NUMERO=" + oMMO.UsrNumero +
+                        ", TME_CODIGO=" + oMMO.TmeCodigo +
+                        ", USR_NUMERO=" + oMMO.UsrNumero +
                         ", MMO_FECHA_CARGA=" + oMMO.MMoFechaCarga +
                         ", EST_CODIGO='" + oMMO.EstCodigo + "' " +
                         " WHERE MMO_CODIGO=" + oMMO.MMoCodigo, cn);
@@ -105,7 +105,7 @@ namespace Implement
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
                     ds = new DataSet();
-                    cmd = new OracleCommand("DELETE Modelos_Medidores " +
+                    cmd = new OracleCommand("DELETE Medidores_Modelos " +
                         "WHERE MMO_CODIGO=" +Id, cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
@@ -128,7 +128,7 @@ namespace Implement
                     Conexion oConexion = new Conexion();
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
-                    string sqlSelect = "select * from Modelos_Medidores " +
+                    string sqlSelect = "select * from Medidores_Modelos " +
                          "WHERE MMO_CODIGO = " +Id;
                     cmd = new OracleCommand(sqlSelect, cn);
                     adapter = new OracleDataAdapter(cmd);
@@ -160,7 +160,7 @@ namespace Implement
                     Conexion oConexion = new Conexion();
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
-                    string sqlSelect = "select * from Modelos_Medidores ";
+                    string sqlSelect = "select * from Medidores_Modelos ";
                     cmd = new OracleCommand(sqlSelect, cn);
                     adapter = new OracleDataAdapter(cmd);
                     cmd.ExecuteNonQuery();
@@ -209,7 +209,7 @@ namespace Implement
                     oObjeto.MMoTipoContador = dr["MMO_TIPO_CONTADOR"].ToString();
                     oObjeto.MMoTipoConexion = dr["MMO_TIPO_CONEXION"].ToString();
                     oObjeto.FabNumero = int.Parse(dr["FAB_NUMERO"].ToString());
-                    oObjeto.TmeCodigo = dr["TME_CODIGO"].ToString();
+                    oObjeto.TmeCodigo = int.Parse(dr["TME_CODIGO"].ToString());
                     oObjeto.UsrNumero = int.Parse(dr["USR_NUMERO"].ToString());
                     if (dr["MMO_FECHA_CARGA"].ToString() != "")
                         oObjeto.MMoFechaCarga = DateTime.Parse(dr["MMO_FECHA_CARGA"].ToString());

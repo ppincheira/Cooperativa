@@ -188,7 +188,7 @@ namespace Service
                              formInicial.VALIDARFORM = false;
                         }
                         else
-                            ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Empty;
+                            ((Controles.Fecha.dtpFecha)control).BackColor = System.Drawing.Color.Empty;
                     if (control is Controles.datos.chkBox)
                         if (((Controles.datos.chkBox)control).REQUERIDO == "SI" && ((Controles.datos.chkBox)control).Text == "" && ((Controles.datos.chkBox)control).TabIndex <= index)
                         {

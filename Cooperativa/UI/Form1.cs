@@ -131,5 +131,13 @@ namespace UI
         {
 
         }
+
+        private void btnPersonalizado8_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10031", "10032", "10033", "10035", "10036", "10034");
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("MEM", oPermiso);
+            frmbus.ShowDialog();
+
+        }
     }
 }

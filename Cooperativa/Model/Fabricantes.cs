@@ -12,7 +12,7 @@ namespace Model {
   */      }
         public virtual int FabNumero { get; set; }
         public virtual string FabDescripcion { get; set; }
-        public virtual string FabHabilitado { get; set; }
+        public virtual string EstCodigo { get; set; }
         public virtual long EmpNumero { get; set; }
         public virtual int UsrNumero { get; set; }
         public virtual DateTime FabFechaCarga { get; set; }

@@ -15,7 +15,8 @@ namespace GesServicios.controles.forms
         UIMedidoresModelosCrud _oMedidoresModelosCrud;
         Utility oUtil;
 
-        long _usrNumero, _MmoCodigo;
+        long _MmoCodigo;
+        int _usrNumero;
         string _EstCodigo;
 
         #endregion
@@ -39,27 +40,27 @@ namespace GesServicios.controles.forms
             set { this.txtDescripcionCorta.Text = value; }
         }
 
-        public long Digitos
+        public int? Digitos
         {
-            get { return long.Parse(TextBoxDigitos.Text); }
+            get { return int.Parse(TextBoxDigitos.Text); }
             set { TextBoxDigitos.Text = value.ToString(); }
         }
 
-        public long Decimales
+        public int? Decimales
         {
-            get { return long.Parse(TextBoxDecimales.Text); }
+            get { return int.Parse(TextBoxDecimales.Text); }
             set { TextBoxDecimales.Text = value.ToString(); }
         }
 
-        public long CantHilos
+        public int? CantHilos
         {
-            get { return long.Parse(TextBoxCantHilos.Text); }
+            get { return int.Parse(TextBoxCantHilos.Text); }
             set { TextBoxCantHilos.Text = value.ToString(); }
         }
 
-        public long KWVueltas
+        public int? KWVueltas
         {
-            get { return long.Parse(TextBoxKWVueltas.Text); }
+            get { return int.Parse(TextBoxKWVueltas.Text); }
             set { TextBoxKWVueltas.Text = value.ToString(); }
         }
 
@@ -69,15 +70,15 @@ namespace GesServicios.controles.forms
             set { this.TextBoxAmperaje.Text = value; }
         }
 
-        public long Clase
+        public int? Clase
         {
-            get { return long.Parse(TextBoxClase.Text); }
+            get { return int.Parse(TextBoxClase.Text); }
             set { TextBoxClase.Text = value.ToString(); }
         }
 
-        public long Registrador
+        public decimal? Registrador
         {
-            get { return long.Parse(TextBoxRegistrador.Text); }
+            get { return int.Parse(TextBoxRegistrador.Text); }
             set { TextBoxRegistrador.Text = value.ToString(); }
         }
 
@@ -106,14 +107,19 @@ namespace GesServicios.controles.forms
             get { return DateTime.Parse(dtpFechaCarga.Text); }
             set { dtpFechaCarga.Text = value.ToString(); }
         }
-        public string estCodigo
+        public string EstCodigo
         {
             get { return this.chkEstado.Checked ? "H" : "I"; }
             set { this.chkEstado.Checked = (value == "H"); }
         }
+        public int UsrNumero
+        {
+            get { return _usrNumero; }
+            set { _usrNumero = value; }
+        }
 
         #endregion
-        public frmMedidoresModelosCrud(long ModeloMedidor, string Estado, long Usuario)
+        public frmMedidoresModelosCrud(long ModeloMedidor, string Estado, int Usuario)
             //SRuta, Estado 
         {
             //try

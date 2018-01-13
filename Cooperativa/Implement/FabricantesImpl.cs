@@ -25,8 +25,8 @@ namespace Implement
                     // Clave Secuencia FAB_NUMERO
                     ds = new DataSet();
                     cmd = new OracleCommand("insert into Fabricantes (FAB_DESCRIPCION, " +
-                        "FAB_HABILITADO, EMP_NUMERO, USR_NUMERO, FAB_FECHA_CARGA) " +
-                        "values('" + oFab.FabDescripcion + "','" + oFab.FabHabilitado + "'," +
+                        "EST_CODIGO, EMP_NUMERO, USR_NUMERO, FAB_FECHA_CARGA) " +
+                        "values('" + oFab.FabDescripcion + "','" + oFab.EstCodigo + "'," +
                         oFab.EmpNumero + ","+ oFab.UsrNumero  + ","+ oFab.FabFechaCarga+ ")", cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
@@ -49,7 +49,7 @@ namespace Implement
                     ds = new DataSet();
                     cmd = new OracleCommand("update Fabricantes " +
                         "SET FAB_DESCRIPCION='" + oFab.FabDescripcion +
-                        "', FAB_HABILITADO='" + oFab.FabHabilitado +
+                        "', EST_CODIGO='" + oFab.EstCodigo +
                         "', EMP_NUMERO='" + oFab.EmpNumero +
                         "', USR_NUMERO='" + oFab.UsrNumero +
                         "', FAB_FECHA_CARGA='" + oFab.FabFechaCarga +
@@ -160,8 +160,9 @@ namespace Implement
                     Fabricantes oObjeto = new Fabricantes();
                     oObjeto.FabNumero = int.Parse(dr["FAB_NUMERO"].ToString());
                     oObjeto.FabDescripcion = dr["FAB_DESCRIPCION"].ToString();
-                    oObjeto.FabHabilitado = dr["FAB_HABILITADO"].ToString();
-                    oObjeto.EmpNumero = long.Parse(dr["EMP_NUMERO"].ToString());
+                    oObjeto.EstCodigo = dr["EST_CODIGO"].ToString();
+                    if (dr["EMP_NUMERO"].ToString() != "")
+                        oObjeto.EmpNumero = long.Parse(dr["EMP_NUMERO"].ToString());
                     oObjeto.UsrNumero = int.Parse(dr["USR_NUMERO"].ToString());
                     oObjeto.FabFechaCarga = DateTime.Parse(dr["FAB_FECHA_CARGA"].ToString());
                     return oObjeto;

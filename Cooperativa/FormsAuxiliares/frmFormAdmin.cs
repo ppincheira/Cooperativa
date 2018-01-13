@@ -12,6 +12,7 @@ using Controles.datos;
 using Service;
 using Controles.form;
 using System.Windows.Forms;
+using GesServicios.controles.forms;
 
 namespace FormsAuxiliares
 {
@@ -459,6 +460,12 @@ namespace FormsAuxiliares
                         
                         frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(0);
                         if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+                    case "MEM":
+
+                        frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(0, "H", 1);
+                        if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
                     case "":
