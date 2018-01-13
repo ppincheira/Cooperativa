@@ -36,6 +36,7 @@ D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Contro
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateResource.Cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.datos.gesGrid.resources
 C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.dll
 C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Controles.pdb
 C:\GitHub\Cooperativa\Cooperativa\Controles\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
@@ -51,4 +52,3 @@ C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.GenerateR
 C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.dll
 C:\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Controles\obj\Debug\Controles.datos.gesGrid.resources

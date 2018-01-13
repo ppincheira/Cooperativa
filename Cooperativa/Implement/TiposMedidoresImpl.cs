@@ -156,7 +156,7 @@ namespace Implement
                 try
                 {
                     TiposMedidores oObjeto = new TiposMedidores();
-                    oObjeto.TmeCodigo = dr["TME_CODIGO"].ToString();
+                    oObjeto.TmeCodigo = int.Parse(dr["TME_CODIGO"].ToString());
                     oObjeto.TmeDescripcion = dr["TME_DESCRIPCION"].ToString();
                     oObjeto.TmeDescripcionCorta = dr["TME_DESCRIPCION_CORTA"].ToString();
                     if (dr["TME_FECHA_CARGA"].ToString() != "")

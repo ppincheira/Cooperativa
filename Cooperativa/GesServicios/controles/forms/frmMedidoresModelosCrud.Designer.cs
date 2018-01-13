@@ -135,6 +135,7 @@
             this.gbDatos.TabIndex = 2;
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
+            this.gbDatos.Enter += new System.EventHandler(this.gbDatos_Enter);
             // 
             // dtpFechaCarga
             // 
@@ -181,19 +182,21 @@
             this.cmbTipoMedidor.Name = "cmbTipoMedidor";
             this.cmbTipoMedidor.Size = new System.Drawing.Size(165, 21);
             this.cmbTipoMedidor.TabIndex = 13;
+            this.cmbTipoMedidor.SelectedIndexChanged += new System.EventHandler(this.cmbTipoMedidor_SelectedIndexChanged);
             // 
             // TextBoxAmperaje
             // 
+            this.TextBoxAmperaje.BackColor = System.Drawing.Color.White;
             this.TextBoxAmperaje.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TextBoxAmperaje.ColorTextoVacio = System.Drawing.Color.Gray;
             this.TextBoxAmperaje.Location = new System.Drawing.Point(110, 130);
             this.TextBoxAmperaje.MaxLength = 15;
             this.TextBoxAmperaje.Name = "TextBoxAmperaje";
-            this.TextBoxAmperaje.Requerido = Controles.textBoxes.gesTextBox.enumRequerido.NO;
+            this.TextBoxAmperaje.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.TextBoxAmperaje.Size = new System.Drawing.Size(100, 20);
             this.TextBoxAmperaje.TabIndex = 7;
             this.TextBoxAmperaje.TextoVacio = "<Descripcion>";
-            this.TextBoxAmperaje.TipoControl = Controles.textBoxes.gesTextBox.enumTipos.Ninguna;
+            this.TextBoxAmperaje.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // TextBoxRegistrador
             // 
@@ -385,29 +388,31 @@
             // 
             // txtDescripcionCorta
             // 
+            this.txtDescripcionCorta.BackColor = System.Drawing.Color.White;
             this.txtDescripcionCorta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescripcionCorta.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtDescripcionCorta.Location = new System.Drawing.Point(433, 22);
             this.txtDescripcionCorta.MaxLength = 10;
             this.txtDescripcionCorta.Name = "txtDescripcionCorta";
-            this.txtDescripcionCorta.Requerido = Controles.textBoxes.gesTextBox.enumRequerido.NO;
+            this.txtDescripcionCorta.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDescripcionCorta.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcionCorta.TabIndex = 2;
             this.txtDescripcionCorta.TextoVacio = "<Descripcion>";
-            this.txtDescripcionCorta.TipoControl = Controles.textBoxes.gesTextBox.enumTipos.Ninguna;
+            this.txtDescripcionCorta.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.White;
             this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescripcion.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtDescripcion.Location = new System.Drawing.Point(110, 25);
             this.txtDescripcion.MaxLength = 30;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Requerido = Controles.textBoxes.gesTextBox.enumRequerido.NO;
+            this.txtDescripcion.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDescripcion.Size = new System.Drawing.Size(165, 20);
             this.txtDescripcion.TabIndex = 1;
             this.txtDescripcion.TextoVacio = "<Descripcion>";
-            this.txtDescripcion.TipoControl = Controles.textBoxes.gesTextBox.enumTipos.Ninguna;
+            this.txtDescripcion.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // lbDescripcion
             // 

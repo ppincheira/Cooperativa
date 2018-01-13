@@ -133,7 +133,7 @@ namespace GesServicios.controles.forms
                 if (MessageBox.Show("Desea eliminar el Modelo de Medidor Código: " + ModeloMedidor + " ?", "Cooperativa", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Cursor.Current = Cursors.WaitCursor;
-                    //_oMedidoresModelosCrud.EliminarModeloMedidor(ModeloMedidor);
+                    _oMedidoresModelosCrud.EliminarModeloMedidor(ModeloMedidor);
                     this.Close();
                 }
             //}
@@ -175,15 +175,19 @@ namespace GesServicios.controles.forms
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if (!this.gbDatos.Enabled)
+            {
+                this.Close();
+                return;
+            }
             try
             {
-                this.VALIDARFORM = true;
+                this.VALIDARFORM = true ;
                 oUtil.ValidarFormulario(this, this, 4);
                 if (this.VALIDARFORM)
                 {
                     DialogResult = DialogResult.OK;
                     _oMedidoresModelosCrud.Guardar();
-
                     this.Close();
                 }
             }
@@ -218,5 +222,14 @@ namespace GesServicios.controles.forms
 
         }
 
+        private void gbDatos_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbTipoMedidor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

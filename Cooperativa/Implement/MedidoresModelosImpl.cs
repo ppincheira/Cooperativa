@@ -71,7 +71,7 @@ namespace Implement
                     cmd = new OracleCommand("update Medidores_Modelos " +
                         "SET MMO_DESCRIPCION='" + oMMO.MMoDescripcion +
                         "', MMO_DESCRIPCION_CORTA='" + oMMO.MMoDescripcionCorta +
-                        ", MMO_DIGITOS=" + oMMO.MMoDigitos +
+                        "', MMO_DIGITOS=" + oMMO.MMoDigitos +
                         ", MMO_DECIMALES=" + oMMO.MMoDecimales +
                         ", MMO_CANT_HILOS=" + oMMO.MMoCantHilos +
                         ", MMO_KW_VUELTAS=" + oMMO.MMoKwVueltas +
@@ -83,8 +83,8 @@ namespace Implement
                         "', FAB_NUMERO=" + oMMO.FabNumero +
                         ", TME_CODIGO=" + oMMO.TmeCodigo +
                         ", USR_NUMERO=" + oMMO.UsrNumero +
-                        ", MMO_FECHA_CARGA=" + oMMO.MMoFechaCarga +
-                        ", EST_CODIGO='" + oMMO.EstCodigo + "' " +
+                        ", MMO_FECHA_CARGA='" + oMMO.MMoFechaCarga.ToString("dd/MM/yyyy") +
+                        "', EST_CODIGO='" + oMMO.EstCodigo + "' " +
                         " WHERE MMO_CODIGO=" + oMMO.MMoCodigo, cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
@@ -196,11 +196,11 @@ namespace Implement
                     if (dr["MMO_DIGITOS"].ToString() != "")
                         oObjeto.MMoDigitos = int.Parse(dr["MMO_DIGITOS"].ToString());
                     if (dr["MMO_DECIMALES"].ToString() != "")
-                        oObjeto.MMoDecimales = int.Parse(dr[""].ToString());
+                        oObjeto.MMoDecimales = int.Parse(dr["MMO_DECIMALES"].ToString());
                     if (dr["MMO_CANT_HILOS"].ToString() != "")
                         oObjeto.MMoCantHilos = int.Parse(dr["MMO_CANT_HILOS"].ToString());
                     if (dr["MMO_KW_VUELTAS"].ToString() != "")
-                        oObjeto.MMoKwVueltas = int.Parse(dr[""].ToString());
+                        oObjeto.MMoKwVueltas = int.Parse(dr["MMO_KW_VUELTAS"].ToString());
                     oObjeto.MMoAmperaje = dr["MMO_AMPERAJE"].ToString();
                     if (dr["MMO_CLASE"].ToString() != "")
                         oObjeto.MMoClase = int.Parse(dr["MMO_CLASE"].ToString());

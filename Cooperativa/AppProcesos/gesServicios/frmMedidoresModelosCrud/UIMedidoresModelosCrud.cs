@@ -100,7 +100,7 @@ namespace AppProcesos.gesServicios.frmMedidoresModelosCrud
                 rtdo = (oMMOBus.MedidoresModelosUpdate(oMMO)) ? oMMO.MMoCodigo : 0;
         }
 
-        public bool EliminarRuta(long idMedidor)
+        public bool EliminarModeloMedidor(long idMedidor)
         {
             MedidoresModelosBus oMMOBus = new MedidoresModelosBus();
             MedidoresModelos oMMO = oMMOBus.MedidoresModelosGetById(idMedidor);
