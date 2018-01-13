@@ -189,11 +189,11 @@
             this.TextBoxAmperaje.Location = new System.Drawing.Point(110, 130);
             this.TextBoxAmperaje.MaxLength = 15;
             this.TextBoxAmperaje.Name = "TextBoxAmperaje";
-            this.TextBoxAmperaje.Requerido = Controles.textBoxes.gesTextBox.enumRequerido.NO;
+            this.TextBoxAmperaje.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.TextBoxAmperaje.Size = new System.Drawing.Size(100, 20);
             this.TextBoxAmperaje.TabIndex = 7;
             this.TextBoxAmperaje.TextoVacio = "<Descripcion>";
-            this.TextBoxAmperaje.TipoControl = Controles.textBoxes.gesTextBox.enumTipos.Ninguna;
+            this.TextBoxAmperaje.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // TextBoxRegistrador
             // 
@@ -390,11 +390,11 @@
             this.txtDescripcionCorta.Location = new System.Drawing.Point(433, 22);
             this.txtDescripcionCorta.MaxLength = 10;
             this.txtDescripcionCorta.Name = "txtDescripcionCorta";
-            this.txtDescripcionCorta.Requerido = Controles.textBoxes.gesTextBox.enumRequerido.NO;
+            this.txtDescripcionCorta.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDescripcionCorta.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcionCorta.TabIndex = 2;
             this.txtDescripcionCorta.TextoVacio = "<Descripcion>";
-            this.txtDescripcionCorta.TipoControl = Controles.textBoxes.gesTextBox.enumTipos.Ninguna;
+            this.txtDescripcionCorta.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // txtDescripcion
             // 
@@ -403,11 +403,11 @@
             this.txtDescripcion.Location = new System.Drawing.Point(110, 25);
             this.txtDescripcion.MaxLength = 30;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Requerido = Controles.textBoxes.gesTextBox.enumRequerido.NO;
+            this.txtDescripcion.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDescripcion.Size = new System.Drawing.Size(165, 20);
             this.txtDescripcion.TabIndex = 1;
             this.txtDescripcion.TextoVacio = "<Descripcion>";
-            this.txtDescripcion.TipoControl = Controles.textBoxes.gesTextBox.enumTipos.Ninguna;
+            this.txtDescripcion.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // lbDescripcion
             // 
