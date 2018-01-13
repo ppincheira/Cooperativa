@@ -147,12 +147,14 @@ namespace FormsAuxiliares
             {
                 oUtil = new Utility();
                 _oDomicilioCrud.Inicializar();
-                this.cmbLocalidad.REQUERIDO = "SI";
-                this.cmbCalle.REQUERIDO = "SI";
-                this.cmbCalleDesde.REQUERIDO = "SI";
-                this.cmbCalleHasta.REQUERIDO = "SI";
-                this.txtNumero.REQUERIDO = "SI";
-                this.cmbCodigoPostal.REQUERIDO = "SI";
+           
+
+                //this.cmbLocalidad.REQUERIDO = "SI";
+                //this.cmbCalle.REQUERIDO = "SI";
+                //this.cmbCalleDesde.REQUERIDO = "SI";
+                //this.cmbCalleHasta.REQUERIDO = "SI";
+             
+                //this.cmbCodigoPostal.REQUERIDO = "SI";
             }
             catch (Exception ex)
             {
@@ -166,6 +168,7 @@ namespace FormsAuxiliares
         {
             try
             {
+
                 this.VALIDARFORM = true;
                 oUtil.ValidarFormulario(this, this, 5);
                 if (this.VALIDARFORM)

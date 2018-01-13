@@ -200,12 +200,16 @@
             // txtGisY
             // 
             this.txtGisY.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtGisY.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtGisY.Location = new System.Drawing.Point(347, 283);
             this.txtGisY.Margin = new System.Windows.Forms.Padding(4);
             this.txtGisY.MaxLength = 20;
             this.txtGisY.Name = "txtGisY";
+            this.txtGisY.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtGisY.Size = new System.Drawing.Size(141, 22);
             this.txtGisY.TabIndex = 13;
+            this.txtGisY.TextoVacio = "<Descripcion>";
+            this.txtGisY.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // lblGisX
             // 
@@ -220,22 +224,30 @@
             // txtGisX
             // 
             this.txtGisX.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtGisX.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtGisX.Location = new System.Drawing.Point(121, 283);
             this.txtGisX.Margin = new System.Windows.Forms.Padding(4);
             this.txtGisX.MaxLength = 20;
             this.txtGisX.Name = "txtGisX";
+            this.txtGisX.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtGisX.Size = new System.Drawing.Size(159, 22);
             this.txtGisX.TabIndex = 12;
+            this.txtGisX.TextoVacio = "<Descripcion>";
+            this.txtGisX.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // txtLote
             // 
             this.txtLote.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtLote.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtLote.Location = new System.Drawing.Point(121, 245);
             this.txtLote.Margin = new System.Windows.Forms.Padding(4);
             this.txtLote.MaxLength = 15;
             this.txtLote.Name = "txtLote";
+            this.txtLote.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtLote.Size = new System.Drawing.Size(219, 22);
             this.txtLote.TabIndex = 11;
+            this.txtLote.TextoVacio = "<Descripcion>";
+            this.txtLote.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // lblLote
             // 
@@ -260,12 +272,16 @@
             // txtParcela
             // 
             this.txtParcela.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtParcela.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtParcela.Location = new System.Drawing.Point(121, 127);
             this.txtParcela.Margin = new System.Windows.Forms.Padding(4);
             this.txtParcela.MaxLength = 15;
             this.txtParcela.Name = "txtParcela";
+            this.txtParcela.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtParcela.Size = new System.Drawing.Size(472, 22);
             this.txtParcela.TabIndex = 7;
+            this.txtParcela.TextoVacio = "<Descripcion>";
+            this.txtParcela.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // lblParcela
             // 
@@ -290,12 +306,16 @@
             // txtDepartamento
             // 
             this.txtDepartamento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDepartamento.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtDepartamento.Location = new System.Drawing.Point(347, 91);
             this.txtDepartamento.Margin = new System.Windows.Forms.Padding(4);
             this.txtDepartamento.MaxLength = 4;
             this.txtDepartamento.Name = "txtDepartamento";
+            this.txtDepartamento.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDepartamento.Size = new System.Drawing.Size(84, 22);
             this.txtDepartamento.TabIndex = 5;
+            this.txtDepartamento.TextoVacio = "<Descripcion>";
+            this.txtDepartamento.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // lblPiso
             // 
@@ -310,12 +330,16 @@
             // txtPiso
             // 
             this.txtPiso.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPiso.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtPiso.Location = new System.Drawing.Point(509, 91);
             this.txtPiso.Margin = new System.Windows.Forms.Padding(4);
             this.txtPiso.MaxLength = 4;
             this.txtPiso.Name = "txtPiso";
+            this.txtPiso.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtPiso.Size = new System.Drawing.Size(84, 22);
             this.txtPiso.TabIndex = 6;
+            this.txtPiso.TextoVacio = "<Descripcion>";
+            this.txtPiso.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // lblBloque
             // 
@@ -340,22 +364,30 @@
             // txtBloque
             // 
             this.txtBloque.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBloque.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtBloque.Location = new System.Drawing.Point(121, 91);
             this.txtBloque.Margin = new System.Windows.Forms.Padding(4);
             this.txtBloque.MaxLength = 4;
             this.txtBloque.Name = "txtBloque";
+            this.txtBloque.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtBloque.Size = new System.Drawing.Size(84, 22);
             this.txtBloque.TabIndex = 4;
+            this.txtBloque.TextoVacio = "<Bloque>";
+            this.txtBloque.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // txtNumero
             // 
             this.txtNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNumero.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtNumero.Location = new System.Drawing.Point(509, 57);
             this.txtNumero.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumero.MaxLength = 8;
             this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.txtNumero.Size = new System.Drawing.Size(84, 22);
             this.txtNumero.TabIndex = 3;
+            this.txtNumero.TextoVacio = "<Numero>";
+            this.txtNumero.TipoControl = Controles.util.Enumerados.enumTipos.Numero;
             // 
             // cmbCalle
             // 

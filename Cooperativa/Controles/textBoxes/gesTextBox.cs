@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 using System.Data;
 using System.Text.RegularExpressions;
-
+using static Controles.util.Enumerados;
 
 namespace Controles.textBoxes
 {
@@ -25,11 +25,7 @@ namespace Controles.textBoxes
         private int digitPos = 0;
         public string REQUERIDO = "NO";
 
-        public enum enumRequerido { NO, SI };
-
-        //Nuevas propiedades
-
-        public enum enumTipos { Ninguna, Fecha, TelefonoConArea, Decimal, Numero, Letra, Email };
+       
 
         //Nuevas propiedades
         private string textoVacio;
@@ -91,25 +87,29 @@ namespace Controles.textBoxes
             // 
             this.errorProvider2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             // 
-            
+           
             //this.BackColor = System.Drawing.Color.White;
-            //this.Layout += new System.Windows.Forms.LayoutEventHandler(this.MaskedTextBox_Layout);
-            // this.Leave += new System.EventHandler(this.OnLeave); 
+            this.Layout += new System.Windows.Forms.LayoutEventHandler(this.GesTextBox_Layout);
+           // this.Leave += new System.EventHandler(this.Validarting); 
             this.Validating += new CancelEventHandler(this.Validarting);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
-            this.Enter += new System.EventHandler(this.MaskedTextBox_Enter);
+            this.Enter += new System.EventHandler(this.GesTextBox_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            this.VisibleChanged += new EventHandler(this.Validarting);
             this.ResumeLayout(false);
 
         }
         #endregion
 
-        private void MaskedTextBox_Layout(object sender, LayoutEventArgs e)
+    
+        private void GesTextBox_Layout(object sender, LayoutEventArgs e)
         {
+            if (this.Text.Length>0)
+            errorProvider2.Clear();
 
         }
-        private void MaskedTextBox_Enter(object sender, EventArgs e)
+        private void GesTextBox_Enter(object sender, EventArgs e)
         {
             //cambio el color de fondo al txt para que el usuario distinga cual se esta editando    
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -130,20 +130,30 @@ namespace Controles.textBoxes
         //Creamos un metodo que nos ayudara a verificar si se inserta el texto vacio o no
         private void VerificaTextoVacio()
         {
-            if (this.Text.Length > 0)
-                bndTextoVacio = false; // como el textbox tiene contenido desactivamos el textoVacio
-            else
-                bndTextoVacio = true; // en caso contrario activamos la bandera
 
-            this.SetStyle(ControlStyles.UserPaint, bndTextoVacio);//Esto nos permitira poder acceder al evento Paint del TextBox segun la bandera
+            if (this.Text.Length > 0)
+                errorProvider2.Clear();
+            // en caso contrario activamos la bandera
+
+        
             this.Refresh();//Refrescamos el textbox
+            //if (this.Text.Length > 0)
+            //    bndTextoVacio = false; // como el textbox tiene contenido desactivamos el textoVacio
+            //else
+            //    bndTextoVacio = true; // en caso contrario activamos la bandera
+
+            //this.SetStyle(ControlStyles.UserPaint, bndTextoVacio);//Esto nos permitira poder acceder al evento Paint del TextBox segun la bandera
+            //this.Refresh();//Refrescamos el textbox
         }
+
         //Sobreescrivimos los metodos del textbox
-        //protected override void OnCreateControl()//Cuando se crea el control en el Form
-        //{
-        //    base.OnCreateControl();
-        //    VerificaTextoVacio();//Verificamos si debe activarse el TextoVacio
-        //}
+        protected override void OnCreateControl()//Cuando se crea el control en el Form
+        {
+            base.OnCreateControl();
+            //VerificaTextoVacio();//Verificamos si debe activarse el TextoVacio
+            //errorProvider2.Clear();
+            //errorProvider1.Clear();
+        }
 
         protected override void Dispose(bool disposing)
         {
@@ -164,6 +174,7 @@ namespace Controles.textBoxes
 		private void Validarting(object sender, EventArgs e)
         {
             errorProvider1.Clear();
+            errorProvider2.Clear();
             //vuelvo a setear el color
             //cambio el color de fondo al txt para que el usuario distinga cual se esta editando    
             //this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -195,14 +206,32 @@ namespace Controles.textBoxes
                     {
                         regStr = new Regex(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
                         if (!regStr.IsMatch(sd.Text))
+                        { 
                             errorProvider1.SetError(this, "El Email no es válido; xxxxxx@xxxx");
-                        error = true;
+                            error = true;
+                        }
                     }
                     break;
 
                 case enumTipos.Decimal:
+                    {
+                        regStr = new Regex(@"[0-9]{1,9}(\.[0-9]{0,2})?$");
+                        if (!regStr.IsMatch(sd.Text))
+                        {
+                            errorProvider1.SetError(this, "El valor debe ser numerico");
+                            error = true;
+                        }
+                    }
                     break;
                 case enumTipos.Numero:
+                    {
+                        regStr = new Regex(@"[0-9]{1,9}(\.[0-9]{0,2})?$");
+                        if (!regStr.IsMatch(sd.Text))
+                        {
+                            errorProvider1.SetError(this, "El valor debe ser numerico");
+                            error = true;
+                        }
+                    }
                     break;
             }
 
@@ -212,6 +241,7 @@ namespace Controles.textBoxes
                 this.BackColor = System.Drawing.Color.Red;
                 sd.SelectNextControl(sd, true, true, true, true);
             }
+
         }
 
         protected void OnKeyPress(object sender, KeyPressEventArgs e)
@@ -238,6 +268,7 @@ namespace Controles.textBoxes
                     //    errorProvider1.SetError(this, "El Email no es válido; xxxxxx@xxxx");
                     break;
             }
+
         }
 
         private void Numero(KeyPressEventArgs e)

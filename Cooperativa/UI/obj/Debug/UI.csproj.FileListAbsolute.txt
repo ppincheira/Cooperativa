@@ -111,3 +111,5 @@ C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
 C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.exe
 C:\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\GesServicios.pdb
