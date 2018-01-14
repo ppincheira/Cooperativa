@@ -43,6 +43,7 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
                 _vista.tmeFechaCarga = oSMedidor.TmeFechaCarga;
                 _vista.usrNumero = oSMedidor.UsrNumero;
                 _vista.estCodigo = oSMedidor.EstCodigo;
+                
             }
         }
 

@@ -99,12 +99,17 @@
             // 
             // txtTMEDescripcionCorta
             // 
+            this.txtTMEDescripcionCorta.BackColor = System.Drawing.Color.White;
             this.txtTMEDescripcionCorta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtTMEDescripcionCorta.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtTMEDescripcionCorta.Location = new System.Drawing.Point(12, 38);
             this.txtTMEDescripcionCorta.MaxLength = 5;
             this.txtTMEDescripcionCorta.Name = "txtTMEDescripcionCorta";
+            this.txtTMEDescripcionCorta.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtTMEDescripcionCorta.Size = new System.Drawing.Size(224, 20);
             this.txtTMEDescripcionCorta.TabIndex = 1;
+            this.txtTMEDescripcionCorta.TextoVacio = "<Descripcion>";
+            this.txtTMEDescripcionCorta.TipoControl = Controles.util.Enumerados.enumTipos.Letra;
             // 
             // lblFechaCarga
             // 
@@ -133,13 +138,18 @@
             // 
             // txtTMEDescripcion
             // 
+            this.txtTMEDescripcion.BackColor = System.Drawing.Color.White;
             this.txtTMEDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtTMEDescripcion.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtTMEDescripcion.Location = new System.Drawing.Point(12, 77);
             this.txtTMEDescripcion.MaxLength = 50;
             this.txtTMEDescripcion.Multiline = true;
             this.txtTMEDescripcion.Name = "txtTMEDescripcion";
+            this.txtTMEDescripcion.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtTMEDescripcion.Size = new System.Drawing.Size(224, 21);
             this.txtTMEDescripcion.TabIndex = 2;
+            this.txtTMEDescripcion.TextoVacio = "<Descripcion>";
+            this.txtTMEDescripcion.TipoControl = Controles.util.Enumerados.enumTipos.Letra;
             // 
             // lblDescripcion
             // 

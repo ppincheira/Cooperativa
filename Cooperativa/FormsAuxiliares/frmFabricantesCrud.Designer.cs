@@ -124,6 +124,7 @@
             this.chkHabilitado.TabIndex = 24;
             this.chkHabilitado.Text = "Habilitado";
             this.chkHabilitado.UseVisualStyleBackColor = true;
+            this.chkHabilitado.CheckedChanged += new System.EventHandler(this.chkHabilitado_CheckedChanged);
             // 
             // dtpFechaCarga
             // 

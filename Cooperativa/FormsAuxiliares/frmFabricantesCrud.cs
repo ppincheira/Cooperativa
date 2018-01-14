@@ -41,8 +41,17 @@ namespace GesServicios.controles.forms
             try
             {
             InitializeComponent();
-            _fabNumero = numero;
-            _oFabricantesCrud = new UIFabricantesCrud(this);
+            this._fabNumero = numero;      
+            if(Estado == "H")
+            {
+                    this.chkHabilitado.Checked = true ;
+            } 
+            else
+                    if (Estado == "I")
+                {
+                    this.chkHabilitado.Checked = false;
+                }
+                    _oFabricantesCrud = new UIFabricantesCrud(this);
                 if (Estado == "B")
                     if (MessageBox.Show("Desea eliminar El Tipo de Medidor Código: " + _fabNumero + " ?", "Cooperativa", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
@@ -100,6 +109,7 @@ namespace GesServicios.controles.forms
                 //oUtil.ValidarFormulario(this, this, 4);
 
                 bool control = this.chkHabilitado.Checked;
+             
                 if (this.VALIDARFORM)
 
                 {
@@ -113,6 +123,17 @@ namespace GesServicios.controles.forms
             {
                 MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
+        }
+
+        private void chkHabilitado_CheckedChanged(object sender, EventArgs e)
+        {
+          /*  if (this.chkHabilitado.Checked == true)
+            {
+                this.chkHabilitado.Checked = false;
+            }
+            else
+                this.chkHabilitado.Checked = true;*/
+                this.chkHabilitado.Checked = ((chkBox)sender).Checked;
         }
     }
 }

@@ -30,28 +30,9 @@ namespace GesServicios.controles.forms
             public DateTime tmeFechaCarga { get {return this.dtpFechaCarga.Value; } set {this.dtpFechaCarga.Value = value; } }
             public cmbLista srvCodigo { get {return this.cmbSRVCodigo; } set {this.cmbSRVCodigo = value; } }
             public int usrNumero { get {return this._UsrNumero; } set {this._UsrNumero = value; } }
-            public string estCodigo { get
-            {
-                if (this.chkEstado.Checked)
-                {
-                    return this._EstCodigo = "H";
-                }
-                else
-                    return this._EstCodigo = "I";
-            }
-            set
-            {
-                this._EstCodigo = value;
-                if (this._EstCodigo == "H")
-                    this.chkEstado.Checked = true;
-                else
-                     if (this._EstCodigo == "I")
-                    this.chkEstado.Checked = false;
-            }
+            public string estCodigo { get { return this._EstCodigo;} set { this._EstCodigo = value;}
         }
         #endregion
-
-
 
         public frmTiposMedidoresCrud(long SMedidorTipo, string Estado)
         {
@@ -59,6 +40,17 @@ namespace GesServicios.controles.forms
             _EstCodigo = Estado;
             _oMedidoresTipoCrud = new UITiposMedidoresCrud(this);
             InitializeComponent();
+            if (this._EstCodigo == "H")
+            {
+                this.chkEstado.Checked = true;
+            }
+            else
+            if (this._EstCodigo == "I")
+            {
+                this.chkEstado.Checked = false;
+            }
+
+
             if (Estado == "B")
                 if (MessageBox.Show("Desea eliminar El Tipo de Medidor Código: " + SMedidorTipo + " ?", "Cooperativa", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -99,7 +91,13 @@ namespace GesServicios.controles.forms
             try
             {
                 usrNumero = 1;
-                oUtil.ValidarFormulario(this, this, 3);
+                if (this.chkEstado.Checked == true)
+                {
+                    this._EstCodigo = "H";
+                }
+                else
+                    this._EstCodigo = "I";
+ //               oUtil.ValidarFormulario(this, this, 3);
                 if (this.VALIDARFORM)
                 {
                     DialogResult = DialogResult.OK;

@@ -10,11 +10,8 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
         string tmeDescripcion { get; set; }                        //N
         string tmeDescripcionCorta { get; set; }                   //N
         DateTime tmeFechaCarga { get; set; }                       //N
-
         cmbLista srvCodigo { get; set; }                           //N
-
         int usrNumero { get; set; }                                //N
-
         string estCodigo { get; set; }                             //Y
 
     }

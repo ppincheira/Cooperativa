@@ -25,7 +25,7 @@ namespace AppProcesos.formsAuxiliares.frmFabricantesCrud
         public void Inicializar()
         {
 
-            EmpresasBus empresa = new EmpresasBus();
+
 
             // ACA SE DEVERIA CARGAR LOS VALORES DEL COMBOBOX
             /* DataTable test = new DataTable(empresa.EmpresasGetAll());
@@ -67,7 +67,7 @@ namespace AppProcesos.formsAuxiliares.frmFabricantesCrud
             oFabricante.FabDescripcion = _vista.fabDescripcion;
             oFabricante.FabFechaCarga = _vista.fabFechaCarga.Value;
 
-            if (_vista.fabHabilitado.Checked)
+            if (_vista.fabHabilitado.Checked == true)
             {
                 oFabricante.FabHabilitado = "H";
             }
