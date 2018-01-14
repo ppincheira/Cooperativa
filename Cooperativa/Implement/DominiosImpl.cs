@@ -186,6 +186,10 @@ namespace Implement
                                    " WHERE  dmn_activo = 'S' " +
                                    " AND    dmn_codigo ='" + dmnCodigo + "' " ;
 
+                Console.WriteLine("sql");
+                Console.WriteLine("--" + sqlSelect);
+                Console.WriteLine("sql");
+
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -193,43 +197,6 @@ namespace Implement
 
                 DataTable dt;
                 return dt = ds.Tables[0];
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        public List<Dominios> DominiosGetListByFilter(string dmnCodigo)
-        {
-            List<Dominios> lstDominios = new List<Dominios>();
-            try
-            {
-                ds = new DataSet();
-                Conexion oConexion = new Conexion();
-                OracleConnection cn = oConexion.getConexion();
-                cn.Open();
-                string sqlSelect = " SELECT * FROM dominios  " +
-                                   " WHERE  dmn_activo = 'S' " +
-                                   " AND dmn_codigo ='" + dmnCodigo + "' " ;
-
-                cmd = new OracleCommand(sqlSelect, cn);
-                adapter = new OracleDataAdapter(cmd);
-                cmd.ExecuteNonQuery();
-                adapter.Fill(ds);
-
-                DataTable dt;
-                dt = ds.Tables[0];
-                if (dt.Rows.Count > 0)
-                {
-                    for (int i = 0; dt.Rows.Count > i; i++)
-                    {
-                        DataRow dr = dt.Rows[i];
-                        Dominios NewEnt = new Dominios();
-                        NewEnt = CargarDominios(dr);
-                        lstDominios.Add(NewEnt);
-                    }
-                }
-                return lstDominios;
             }
             catch (Exception ex)
             {

@@ -136,6 +136,19 @@ namespace FormsAuxiliares
                         if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
+                    case "TME":
+
+                        frmTiposMedidoresCrud oFrmTiposMedidores = new frmTiposMedidoresCrud(0, "");
+                        if (oFrmTiposMedidores.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+
+                    case "FAB":
+
+                        frmFabricantesCrud oFrmFabricantes = new frmFabricantesCrud(0, "");
+                        if (oFrmFabricantes.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
 
                 }
 
@@ -176,6 +189,25 @@ namespace FormsAuxiliares
                         if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
+                    case "TME":
+                        long idMedidor = Convert.ToInt64(row.Cells[0].Value);
+                        string estadoMedidor = row.Cells[5].Value.ToString();
+                        frmTiposMedidoresCrud oTiposMedidoresCrud = new frmTiposMedidoresCrud(idMedidor, estadoMedidor);
+                        if(!oTiposMedidoresCrud.IsDisposed)// ESTE CONTROL SE HACE HASTA QUE LA GRILLA DEJE DE TRAER LOS REGISTROS QUE TENGAN EL ESTADO "B"
+                        { 
+                            if (oTiposMedidoresCrud.ShowDialog() == DialogResult.OK)
+                                _oFormAdmin.CargarGrilla(_Tabla);
+                        }
+                        break;
+                    case "FAB":
+                        long idFabricante = Convert.ToInt64(row.Cells[0].Value);
+                        string estadoFabricante = row.Cells[2].Value.ToString();
+                        frmFabricantesCrud oFabricantesCrud = new frmFabricantesCrud(idFabricante, estadoFabricante);
+
+                        if(!oFabricantesCrud.IsDisposed)
+                            if (oFabricantesCrud.ShowDialog() == DialogResult.OK)
+                                _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
                 }
             }
             catch (Exception ex)
@@ -196,7 +228,17 @@ namespace FormsAuxiliares
                         frmRutasCrud oFrmRutCrud = new frmRutasCrud(idRuta, "B");
                         _oFormAdmin.CargarGrilla(_Tabla);
                         break;
+                    case "FAB":
+                        long idFabricantes = Convert.ToInt64(row.Cells[0].Value);
+                        frmFabricantesCrud oFrmFabricantesCrud = new frmFabricantesCrud(idFabricantes, "B");
+                        _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
 
+                    case "TME":
+                        long idTme = Convert.ToInt64(row.Cells[0].Value);
+                        frmTiposMedidoresCrud oFrmMedidorCrud = new frmTiposMedidoresCrud(idTme, "B");
+                        _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
                 }
 
             }

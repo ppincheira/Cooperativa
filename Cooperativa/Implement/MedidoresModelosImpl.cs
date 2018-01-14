@@ -25,21 +25,21 @@ namespace Implement
                     // Clave MMO_CODIGO
                     ds = new DataSet();
                     string query =
-                        " DECLARE IDTEMP NUMBER(4,0); " +
+                        " DECLARE IDTEMP NUMBER(10,0); " +
                         " BEGIN " +
                         " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('MMO_CODIGO')) into IDTEMP from dual; " +
-                        " insert into Medidores_Modelos" +
+                        " insert into Modelos_Medidores" +
                         "(MMO_CODIGO, MMO_DESCRIPCION, MMO_DESCRIPCION_CORTA, MMO_DIGITOS, " +
                         "MMO_DECIMALES, MMO_CANT_HILOS, MMO_KW_VUELTAS, MMO_AMPERAJE, " +
                         "MMO_CLASE, MMO_REGISTRADOR, MMO_TIPO_CONTADOR, MMO_TIPO_CONEXION, " +
                         "FAB_NUMERO, TME_CODIGO, USR_NUMERO, MMO_FECHA_CARGA, EST_CODIGO) " +
-                        "values(IDTEMP,'" + oMMO.MMoDescripcion + "','" +
+                        "values('" + oMMO.MMoCodigo + "','" + oMMO.MMoDescripcion + "','" +
                         oMMO.MMoDescripcionCorta + "'," + oMMO.MMoDigitos + "," +
                         oMMO.MMoDecimales + "," + oMMO.MMoCantHilos + "," + oMMO.MMoKwVueltas + ",'" +
                         oMMO.MMoAmperaje + "'," + oMMO.MMoClase + "," + oMMO.MMoRegistrador + ",'" +
                         oMMO.MMoTipoContador + "','" + oMMO.MMoTipoConexion + "'," +
-                        oMMO.FabNumero + "," + oMMO.TmeCodigo + "," + oMMO.UsrNumero + ",'" +
-                        oMMO.MMoFechaCarga.ToString("dd/MM/yyyy") + "','" + oMMO.EstCodigo + "') RETURNING IDTEMP INTO :id;" +
+                        oMMO.FabNumero + ",'" + oMMO.TmeCodigo + "'," + oMMO.UsrNumero + "," +
+                        oMMO.MMoFechaCarga + ",'" + oMMO.EstCodigo + "') RETURNING IDTEMP INTO :id;" +
                         " END;";
                     cmd = new OracleCommand(query, cn);
                     cmd.Parameters.Add(new OracleParameter
@@ -68,10 +68,10 @@ namespace Implement
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
                     ds = new DataSet();
-                    cmd = new OracleCommand("update Medidores_Modelos " +
+                    cmd = new OracleCommand("update Modelos_Medidores " +
                         "SET MMO_DESCRIPCION='" + oMMO.MMoDescripcion +
                         "', MMO_DESCRIPCION_CORTA='" + oMMO.MMoDescripcionCorta +
-                        "', MMO_DIGITOS=" + oMMO.MMoDigitos +
+                        ", MMO_DIGITOS=" + oMMO.MMoDigitos +
                         ", MMO_DECIMALES=" + oMMO.MMoDecimales +
                         ", MMO_CANT_HILOS=" + oMMO.MMoCantHilos +
                         ", MMO_KW_VUELTAS=" + oMMO.MMoKwVueltas +
@@ -81,10 +81,10 @@ namespace Implement
                         ", MMO_TIPO_CONTADOR='" + oMMO.MMoTipoContador +
                         "', MMO_TIPO_CONEXION='" + oMMO.MMoTipoConexion +
                         "', FAB_NUMERO=" + oMMO.FabNumero +
-                        ", TME_CODIGO=" + oMMO.TmeCodigo +
-                        ", USR_NUMERO=" + oMMO.UsrNumero +
-                        ", MMO_FECHA_CARGA='" + oMMO.MMoFechaCarga.ToString("dd/MM/yyyy") +
-                        "', EST_CODIGO='" + oMMO.EstCodigo + "' " +
+                        ", TME_CODIGO='" + oMMO.TmeCodigo +
+                        "', USR_NUMERO=" + oMMO.UsrNumero +
+                        ", MMO_FECHA_CARGA=" + oMMO.MMoFechaCarga +
+                        ", EST_CODIGO='" + oMMO.EstCodigo + "' " +
                         " WHERE MMO_CODIGO=" + oMMO.MMoCodigo, cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
@@ -105,7 +105,7 @@ namespace Implement
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
                     ds = new DataSet();
-                    cmd = new OracleCommand("DELETE Medidores_Modelos " +
+                    cmd = new OracleCommand("DELETE Modelos_Medidores " +
                         "WHERE MMO_CODIGO=" +Id, cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
@@ -128,7 +128,7 @@ namespace Implement
                     Conexion oConexion = new Conexion();
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
-                    string sqlSelect = "select * from Medidores_Modelos " +
+                    string sqlSelect = "select * from Modelos_Medidores " +
                          "WHERE MMO_CODIGO = " +Id;
                     cmd = new OracleCommand(sqlSelect, cn);
                     adapter = new OracleDataAdapter(cmd);
@@ -160,7 +160,7 @@ namespace Implement
                     Conexion oConexion = new Conexion();
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
-                    string sqlSelect = "select * from Medidores_Modelos ";
+                    string sqlSelect = "select * from Modelos_Medidores ";
                     cmd = new OracleCommand(sqlSelect, cn);
                     adapter = new OracleDataAdapter(cmd);
                     cmd.ExecuteNonQuery();
@@ -196,11 +196,11 @@ namespace Implement
                     if (dr["MMO_DIGITOS"].ToString() != "")
                         oObjeto.MMoDigitos = int.Parse(dr["MMO_DIGITOS"].ToString());
                     if (dr["MMO_DECIMALES"].ToString() != "")
-                        oObjeto.MMoDecimales = int.Parse(dr["MMO_DECIMALES"].ToString());
+                        oObjeto.MMoDecimales = int.Parse(dr[""].ToString());
                     if (dr["MMO_CANT_HILOS"].ToString() != "")
                         oObjeto.MMoCantHilos = int.Parse(dr["MMO_CANT_HILOS"].ToString());
                     if (dr["MMO_KW_VUELTAS"].ToString() != "")
-                        oObjeto.MMoKwVueltas = int.Parse(dr["MMO_KW_VUELTAS"].ToString());
+                        oObjeto.MMoKwVueltas = int.Parse(dr[""].ToString());
                     oObjeto.MMoAmperaje = dr["MMO_AMPERAJE"].ToString();
                     if (dr["MMO_CLASE"].ToString() != "")
                         oObjeto.MMoClase = int.Parse(dr["MMO_CLASE"].ToString());
@@ -209,7 +209,7 @@ namespace Implement
                     oObjeto.MMoTipoContador = dr["MMO_TIPO_CONTADOR"].ToString();
                     oObjeto.MMoTipoConexion = dr["MMO_TIPO_CONEXION"].ToString();
                     oObjeto.FabNumero = int.Parse(dr["FAB_NUMERO"].ToString());
-                    oObjeto.TmeCodigo = int.Parse(dr["TME_CODIGO"].ToString());
+                    oObjeto.TmeCodigo = dr["TME_CODIGO"].ToString();
                     oObjeto.UsrNumero = int.Parse(dr["USR_NUMERO"].ToString());
                     if (dr["MMO_FECHA_CARGA"].ToString() != "")
                         oObjeto.MMoFechaCarga = DateTime.Parse(dr["MMO_FECHA_CARGA"].ToString());
