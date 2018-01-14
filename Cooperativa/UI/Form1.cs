@@ -136,5 +136,19 @@ namespace UI
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("TME", oPermiso);
+            frmbus.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("FAB", oPermiso);
+            frmbus.ShowDialog();
+        }
     }
 }

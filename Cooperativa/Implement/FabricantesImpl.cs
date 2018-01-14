@@ -14,8 +14,8 @@ namespace Implement
         private OracleDataAdapter adapter;
             private OracleCommand cmd;
             private DataSet ds;
-            private int response;
-            public int FabricantesAdd(Fabricantes oFab)
+            private long response;
+            public long FabricantesAdd(Fabricantes oFab)
             {
                 try
                 {
@@ -24,14 +24,46 @@ namespace Implement
                     cn.Open();
                     // Clave Secuencia FAB_NUMERO
                     ds = new DataSet();
-                    cmd = new OracleCommand("insert into Fabricantes (FAB_DESCRIPCION, " +
-                        "FAB_HABILITADO, EMP_NUMERO, USR_NUMERO, FAB_FECHA_CARGA) " +
-                        "values('" + oFab.FabDescripcion + "','" + oFab.FabHabilitado + "'," +
-                        oFab.EmpNumero + ","+ oFab.UsrNumero  + ","+ oFab.FabFechaCarga+ ")", cn);
-                    adapter = new OracleDataAdapter(cmd);
-                    response = cmd.ExecuteNonQuery();
-                    cn.Close();
-                    return response;
+
+                string query = " DECLARE IDTEMP NUMBER(10,0); " +
+                " BEGIN " +
+                " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('FAB_NUMERO')) into IDTEMP from dual; " +
+                "insert into Fabricantes (FAB_NUMERO,FAB_DESCRIPCION, " +
+                    "EST_CODIGO, USR_NUMERO, FAB_FECHA_CARGA) " +
+                    "values(IDTEMP,'" + oFab.FabDescripcion + "','" + oFab.FabHabilitado +
+                     "'," + oFab.UsrNumero + ",'" + oFab.FabFechaCarga.ToShortDateString() + "')RETURNING IDTEMP INTO :id;END;";
+
+                /*
+                ACA ESTARIA LA IMPLEMENTACION PARA CUANDO SE ULTILICE EL NUMERO DE LA EMPRESA
+
+                string query = " DECLARE IDTEMP NUMBER(10,0); " +
+                " BEGIN " +
+                " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('FAB_NUMERO')) into IDTEMP from dual; " +
+                "insert into Fabricantes (FAB_NUMERO,FAB_DESCRIPCION, " +
+                    "EST_CODIGO, EMP_NUMERO, USR_NUMERO, FAB_FECHA_CARGA) " +
+                    "values(IDTEMP,'" + oFab.FabDescripcion + "','" + oFab.FabHabilitado + "'," +
+                    oFab.EmpNumero + "," + oFab.UsrNumero + ",'" + oFab.FabFechaCarga.ToShortDateString() + "')RETURNING IDTEMP INTO :id;END;";
+                 */
+
+
+                cmd = new OracleCommand(query,cn);
+                adapter = new OracleDataAdapter(cmd);
+
+
+                cmd.Parameters.Add(new OracleParameter
+                {
+                    ParameterName = ":id",
+                    OracleDbType = OracleDbType.Int64,
+                    Direction = ParameterDirection.Output
+                });
+
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                response = long.Parse(cmd.Parameters[":id"].Value.ToString());
+
+                
+                 cn.Close();
+                return response;
                 }
                 catch (Exception ex)
                 {
@@ -47,13 +79,14 @@ namespace Implement
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
                     ds = new DataSet();
-                    cmd = new OracleCommand("update Fabricantes " +
+                    cmd = new OracleCommand(
+                        "update Fabricantes " +
                         "SET FAB_DESCRIPCION='" + oFab.FabDescripcion +
-                        "', FAB_HABILITADO='" + oFab.FabHabilitado +
-                        "', EMP_NUMERO='" + oFab.EmpNumero +
+                        "', EST_CODIGO='" + oFab.FabHabilitado +
+                        //"', EMP_NUMERO='" + oFab.EmpNumero +
                         "', USR_NUMERO='" + oFab.UsrNumero +
-                        "', FAB_FECHA_CARGA='" + oFab.FabFechaCarga +
-                        "' WHERE FAB_NUMERO=" + oFab.FabNumero , cn);
+                        "', FAB_FECHA_CARGA='" + oFab.FabFechaCarga.ToShortDateString() +
+                        "' WHERE FAB_NUMERO=" + oFab.FabNumero  , cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
                     cn.Close();
@@ -88,7 +121,7 @@ namespace Implement
 
             }
 
-            public Fabricantes FabricantesGetById(int Id)
+            public Fabricantes FabricantesGetById(long Id)
             {
                 try
                 {
@@ -160,8 +193,10 @@ namespace Implement
                     Fabricantes oObjeto = new Fabricantes();
                     oObjeto.FabNumero = int.Parse(dr["FAB_NUMERO"].ToString());
                     oObjeto.FabDescripcion = dr["FAB_DESCRIPCION"].ToString();
-                    oObjeto.FabHabilitado = dr["FAB_HABILITADO"].ToString();
+                    oObjeto.FabHabilitado = dr["EST_CODIGO"].ToString();
+                    if(dr["EMP_NUMERO"].ToString() != "")
                     oObjeto.EmpNumero = long.Parse(dr["EMP_NUMERO"].ToString());
+
                     oObjeto.UsrNumero = int.Parse(dr["USR_NUMERO"].ToString());
                     oObjeto.FabFechaCarga = DateTime.Parse(dr["FAB_FECHA_CARGA"].ToString());
                     return oObjeto;

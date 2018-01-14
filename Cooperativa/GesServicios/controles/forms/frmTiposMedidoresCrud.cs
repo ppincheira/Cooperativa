@@ -20,74 +20,42 @@ namespace GesServicios.controles.forms
         #region << PROPIEDADES >>
             UITiposMedidoresCrud _oMedidoresTipoCrud;
             Utility oUtil;
-            string _SruNumero;
+            int _UsrNumero;
+            long _TmeCodigo;
             string _EstCodigo;
-        #endregion
 
-
-
-        #region Implementation of IVistaTiposMedidoresCrud
-            public string tmeCodigo
+            public long tmeCodigo { get { return this._TmeCodigo; } set {this._TmeCodigo = value; } }
+            public string tmeDescripcion { get {return this.txtTMEDescripcion.Text; } set {this.txtTMEDescripcion.Text = value; } }
+            public string tmeDescripcionCorta { get { return this.txtTMEDescripcionCorta.Text; } set { this.txtTMEDescripcionCorta.Text = value; } }
+            public DateTime tmeFechaCarga { get {return this.dtpFechaCarga.Value; } set {this.dtpFechaCarga.Value = value; } }
+            public cmbLista srvCodigo { get {return this.cmbSRVCodigo; } set {this.cmbSRVCodigo = value; } }
+            public int usrNumero { get {return this._UsrNumero; } set {this._UsrNumero = value; } }
+            public string estCodigo { get
             {
-            get { return this.txtTMECodigo.Text; }
-            set { this.txtTMECodigo.Text = value; }
-            }
-         
-            public string descripcion
-        {
-            get { return this.txtTMECodigo.Text; }
-            set { this.txtTMECodigo.Text = value; }
-        }
-        public string descripcionCorta
-        {
-            get { return this.txtTMECodigo.Text; }
-            set { this.txtTMECodigo.Text = value; }
-        }
-        public DateTime fechaCarga
-        {
-            get { return this.dtpFechaCarga.Value; }
-
-            set
-            {                
-                this.dtpFechaCarga.Value= value;
-            }
-        }
-        public cmbLista srvCodigo
-        {
-            get { return this.cmbSRVCodigo; }
-            set { this.cmbSRVCodigo = value; }
-        }
-        public int usrNumero
-        {
-            get { return usrNumero; }
-            set { usrNumero = value; }
-        }
-        public string estCodigo
-        {
-            get
-            {
-                if (this.chkEstado.Checked == true)
-                    return "H";
-                else
-                { 
-                if (this.chkEstado.Checked == false)
-                    return "I";
+                if (this.chkEstado.Checked)
+                {
+                    return this._EstCodigo = "H";
                 }
-                return null;
+                else
+                    return this._EstCodigo = "I";
             }
             set
             {
-                if (value == "H")
+                this._EstCodigo = value;
+                if (this._EstCodigo == "H")
                     this.chkEstado.Checked = true;
-                if (value == "I")
+                else
+                     if (this._EstCodigo == "I")
                     this.chkEstado.Checked = false;
             }
         }
         #endregion
 
-        public frmTiposMedidoresCrud(string SMedidorTipo, string Estado)
+
+
+        public frmTiposMedidoresCrud(long SMedidorTipo, string Estado)
         {
-            _SruNumero = SMedidorTipo;
+            _TmeCodigo = SMedidorTipo;
             _EstCodigo = Estado;
             _oMedidoresTipoCrud = new UITiposMedidoresCrud(this);
             InitializeComponent();
@@ -95,7 +63,7 @@ namespace GesServicios.controles.forms
                 if (MessageBox.Show("Desea eliminar El Tipo de Medidor Código: " + SMedidorTipo + " ?", "Cooperativa", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Cursor.Current = Cursors.WaitCursor;
-                    _oMedidoresTipoCrud.EliminarMedidor(SMedidorTipo);
+                    _oMedidoresTipoCrud.EliminarMedidor(_TmeCodigo);
                     this.Close();
                 }
 
@@ -107,7 +75,6 @@ namespace GesServicios.controles.forms
             {
                 oUtil = new Utility();
                 _oMedidoresTipoCrud.Inicializar();
-                this.txtTMECodigo.REQUERIDO = "SI";
                 this.txtTMEDescripcion.REQUERIDO = "SI";
                 this.txtTMEDescripcionCorta.REQUERIDO = "SI";
                 this.dtpFechaCarga.REQUERIDO = "SI";
@@ -148,6 +115,7 @@ namespace GesServicios.controles.forms
                                 e.ToString(),
                                 ((Control)sender).Name,
                                 this.FindForm().Name);
+             
             }
         }
 
@@ -166,6 +134,19 @@ namespace GesServicios.controles.forms
                                 e.ToString(),
                                 ((Control)sender).Name,
                                 this.FindForm().Name);
+            }
+
+        }
+
+        private void chkEstado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkEstado.Checked)
+            {
+                this._EstCodigo = "H";
+            }
+            else
+            {
+                this._EstCodigo = "I";
             }
 
         }

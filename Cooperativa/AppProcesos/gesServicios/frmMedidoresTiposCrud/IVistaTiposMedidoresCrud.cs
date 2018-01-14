@@ -1,19 +1,21 @@
-﻿using System;
+﻿using Controles.datos;
+using System;
 
 namespace AppProcesos.gesServicios.frmMedidoresCrud
 {
     public interface IVistaTiposMedidoresCrud
     {
-                                                                // Permite valores nullos? y / n 
-        string tmeCodigo { get; set; }                          //N
+                                                                   // Permite valores nullos? y / n 
+        long tmeCodigo { get; set; }                               //N
+        string tmeDescripcion { get; set; }                        //N
+        string tmeDescripcionCorta { get; set; }                   //N
+        DateTime tmeFechaCarga { get; set; }                       //N
 
-        string descripcion { get; set; }                        //N
-        string descripcionCorta { get; set; }                   //N
-        DateTime fechaCarga { get; set; }                       //N
-        Controles.datos.cmbLista srvCodigo { get; set; }        //N
-        int usrNumero { get; set; }                             //N
+        cmbLista srvCodigo { get; set; }                           //N
 
-        string estCodigo { get; set; }                          //Y
+        int usrNumero { get; set; }                                //N
+
+        string estCodigo { get; set; }                             //Y
 
     }
 }

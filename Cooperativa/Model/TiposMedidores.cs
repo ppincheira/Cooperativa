@@ -10,7 +10,7 @@ namespace Model {
 /*			DetallesModelosMedidores = new List<DetallesModelosMedidore>();
 			TiposMedidoresFabricantes = new List<TiposMedidoresFabricante>();
 */        }
-        public virtual string TmeCodigo { get; set; }
+        public virtual long TmeCodigo { get; set; }
         public virtual string TmeDescripcion { get; set; }
         public virtual string TmeDescripcionCorta { get; set; }
         public virtual DateTime TmeFechaCarga { get; set; }

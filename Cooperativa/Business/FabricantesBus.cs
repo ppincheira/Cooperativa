@@ -10,7 +10,7 @@ namespace Business
 {
     public class FabricantesBus
     {
-        public int FabricantesAdd(Fabricantes oFabricantes)
+        public long FabricantesAdd(Fabricantes oFabricantes)
         {
             FabricantesImpl oFabricantesImpl = new FabricantesImpl();
             return oFabricantesImpl.FabricantesAdd(oFabricantes);
@@ -28,7 +28,7 @@ namespace Business
             return oFabricantesImpl.FabricantesDelete(Id);
         }
 
-        public Fabricantes FabricantesGetById(int Id)
+        public Fabricantes FabricantesGetById(long Id)
         {
             FabricantesImpl oFabricantesImpl = new FabricantesImpl();
             return oFabricantesImpl.FabricantesGetById(Id);
