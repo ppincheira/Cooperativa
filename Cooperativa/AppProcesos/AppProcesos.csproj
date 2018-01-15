@@ -85,6 +85,8 @@
     <Compile Include="formsAuxiliares\frmTelefonos\UITelefonosCrud.cs" />
     <Compile Include="formsAuxiliares\principal\IVistaPrincipal.cs" />
     <Compile Include="formsAuxiliares\principal\UIPrincipal.cs" />
+    <Compile Include="gesServicios\frmMedidoresCrud\IVistaMedidoresCrud.cs" />
+    <Compile Include="gesServicios\frmMedidoresCrud\UIMedidoresCrud.cs" />
     <Compile Include="gesServicios\frmMedidoresModelosCrud\IVistaMedidoresModelosCrud.cs" />
     <Compile Include="gesServicios\frmMedidoresModelosCrud\UIMedidoresModelosCrud.cs" />
     <Compile Include="gesServicios\frmRutasCrud\IVistaRutasCrud.cs" />
@@ -114,7 +116,6 @@
     <Folder Include="adminSuministros\" />
     <Folder Include="cuentasCorrientes\" />
     <Folder Include="gesServicios\frmCategoriasCrud\" />
-    <Folder Include="gesServicios\frmMedidoresCrud\" />
     <Folder Include="gesServicios\frmMedidoresTiposCrud\" />
     <Folder Include="gesServicios\frmSuministrosAdmin\" />
     <Folder Include="gesServicios\frmSuministrosCrud\" />

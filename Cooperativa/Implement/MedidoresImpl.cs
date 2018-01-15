@@ -14,25 +14,39 @@ namespace Implement
         private OracleDataAdapter adapter;
             private OracleCommand cmd;
             private DataSet ds;
-            private int response;
-            public int MedidoresAdd(Medidores oMed)
+            private long response;
+            public long MedidoresAdd(Medidores oMed)
             {
                 try
                 {
                     Conexion oConexion = new Conexion();
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
-                    // Clave MED_NUMERO
+                    // Clave Secuencia MED_NUMERO
                     ds = new DataSet();
-                    cmd = new OracleCommand("insert into Medidores" +
-                        "(MED_NUMEROSERIE, EMP_NUMERO_PROVEEDOR, MED_REGISTRADOR, MED_DIGITOS, MED_ESTADO, " +
-                        "MED_FACTOR_CALIB, GIS_X, GIS_Y, DME_CODIGO, USR_NUMERO, MED_FECHA_CARGA) " +
-                        "values('" + oMed.MedNumeroserie + "',"+ oMed.EmpNumeroProveedor + ","+ 
-                        oMed.MedRegistrador + "," +  oMed.MedDigitos + ",'" + oMed.MedEstado + "'," + 
-                        oMed.MedFactorCalib + "," + oMed.GisX + "," + oMed.GisY + ",'" + 
-                        oMed.DmeCodigo + "'," + oMed.UsrNumero + "," + oMed.MedFechaCarga + ")", cn);
+                    string query =
+                        " DECLARE IDTEMP NUMBER(10,0); " +
+                        " BEGIN " +
+                        " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('MED_NUMERO')) into IDTEMP from dual; " +
+                        "insert into Medidores" +
+                        "(MED_NUMEROSERIE, EMP_NUMERO_PROVEEDOR, MED_REGISTRADOR, MED_DIGITOS, EST_CODIGO, " +
+                        "MED_FACTOR_CALIB, GIS_X, GIS_Y, DME_CODIGO, USR_NUMERO, MED_FECHA_CARGA, MMO_CODIGO) " +
+                        "values('" + oMed.MedNumeroserie + "'," + oMed.EmpNumeroProveedor + "," +
+                        oMed.MedRegistrador + "," + oMed.MedDigitos + ",'" + oMed.EstCodigo + "'," +
+                        oMed.MedFactorCalib + "," + oMed.GisX + "," + oMed.GisY + ",'" + oMed.DmeCodigo + "'," + 
+                        oMed.UsrNumero + ",'" + oMed.MedFechaCarga.ToString("dd/MM/yyyy") + "'," + oMed.MmoCodigo +
+                        ") RETURNING IDTEMP INTO :id;" +
+                        " END;";
+                    cmd = new OracleCommand(query, cn);
+                    cmd.Parameters.Add(new OracleParameter
+                    {
+                        ParameterName = ":id",
+                        OracleDbType = OracleDbType.Int64,
+                        Direction = ParameterDirection.Output
+                    });
                     adapter = new OracleDataAdapter(cmd);
-                    response = cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
+                    response = long.Parse(cmd.Parameters[":id"].Value.ToString());
                     cn.Close();
                     return response;
                 }
@@ -55,14 +69,15 @@ namespace Implement
                         "', EMP_NUMERO_PROVEEDOR=" + oMed.EmpNumeroProveedor +
                         ", MED_REGISTRADOR=" + oMed.MedRegistrador +
                         ", MED_DIGITOS=" + oMed.MedDigitos +
-                        ", MED_ESTADO='" + oMed.MedEstado +
+                        ", EST_CODIGO='" + oMed.EstCodigo +
                         "', MED_FACTOR_CALIB=" + oMed.MedFactorCalib +
                         ", GIS_X=" + oMed.GisX +
                         ", GIS_Y=" + oMed.GisY +
                         ", DME_CODIGO=" + oMed.DmeCodigo +
                         ", USR_NUMERO=" + oMed.UsrNumero +
-                        ", MED_FECHA_CARGA=" + oMed.MedFechaCarga +
-                        " WHERE MED_NUMERO=" + oMed.DmeCodigo.ToString(), cn);
+                        ", MED_FECHA_CARGA='" + oMed.MedFechaCarga.ToString("dd/MM/yyyy") +
+                        "', MMO_CODIGO=" + oMed.MmoCodigo +
+                        " WHERE MED_NUMERO=" + oMed.MedNumero, cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
                     cn.Close();
@@ -171,7 +186,7 @@ namespace Implement
                 oObjeto.EmpNumeroProveedor = long.Parse(dr["EMP_NUMERO_PROVEEDOR"].ToString());
                 oObjeto.MedRegistrador = decimal.Parse(dr["MED_REGISTRADOR"].ToString());
                 oObjeto.MedDigitos = int.Parse(dr["MED_DIGITOS"].ToString());
-                oObjeto.MedEstado = dr["MED_ESTADO"].ToString();
+                oObjeto.EstCodigo = dr["EST_CODIGO"].ToString();
                 oObjeto.MedFactorCalib = double.Parse(dr["MED_FACTOR_CALIB"].ToString());
                 if (dr["GIS_X"].ToString() != "")
                     oObjeto.GisX = decimal.Parse(dr["GIS_X"].ToString());
@@ -181,6 +196,8 @@ namespace Implement
                 oObjeto.UsrNumero = int.Parse(dr["USR_NUMERO"].ToString());
                 if (dr["MED_FECHA_CARGA"].ToString() != "")
                     oObjeto.MedFechaCarga = DateTime.Parse(dr["MED_FECHA_CARGA"].ToString());
+                if (dr["MMO_CODIGO"].ToString() != "")
+                    oObjeto.MmoCodigo = short.Parse(dr["MMO_CODIGO"].ToString());
                 return oObjeto;
             }
             catch (Exception ex)
