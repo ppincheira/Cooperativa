@@ -1,4 +1,5 @@
 ﻿using Business;
+using Controles.datos;
 using Model;
 using Service;
 using System;
@@ -29,19 +30,20 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
             _vista.srvCodigo.DisplayMember = "SrvDescripcion";
             _vista.srvCodigo.ValueMember = "SrvCodigo";
     
-            if (_vista.tmeCodigo != "")
+            if (_vista.tmeCodigo != 0)
                 {
                 TiposMedidores oSMedidor = new TiposMedidores();
                 TiposMedidoresBus oSMedidorBus = new TiposMedidoresBus();
 
-                oSMedidor = oSMedidorBus.TiposMedidoresGetById(_vista.tmeCodigo);
+                oSMedidor = oSMedidorBus.TiposMedidoresGetById(_vista.tmeCodigo.ToString());
                 _vista.tmeCodigo = oSMedidor.TmeCodigo;
                 _vista.srvCodigo.SelectedValue = oSMedidor.SrvCodigo;
-                _vista.descripcion = oSMedidor.TmeDescripcion;
-                _vista.descripcionCorta = oSMedidor.TmeDescripcionCorta;
-                _vista.fechaCarga = oSMedidor.TmeFechaCarga;
+                _vista.tmeDescripcion = oSMedidor.TmeDescripcion;
+                _vista.tmeDescripcionCorta = oSMedidor.TmeDescripcionCorta;
+                _vista.tmeFechaCarga = oSMedidor.TmeFechaCarga;
                 _vista.usrNumero = oSMedidor.UsrNumero;
                 _vista.estCodigo = oSMedidor.EstCodigo;
+                
             }
         }
 
@@ -52,23 +54,23 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
             TiposMedidoresBus oSMeBus = new TiposMedidoresBus();
 
             oSMedidor.UsrNumero = _vista.usrNumero;
-            oSMedidor.TmeDescripcion = _vista.descripcion;
-            oSMedidor.TmeDescripcionCorta = _vista.descripcionCorta;
-            oSMedidor.EstCodigo = _vista.estCodigo;
+            oSMedidor.TmeDescripcion = _vista.tmeDescripcion;
+            oSMedidor.TmeDescripcionCorta = _vista.tmeDescripcionCorta;
             oSMedidor.SrvCodigo = _vista.srvCodigo.SelectedValue.ToString();
-            oSMedidor.TmeFechaCarga = _vista.fechaCarga;
+            oSMedidor.TmeFechaCarga = _vista.tmeFechaCarga;
+            oSMedidor.TmeCodigo = _vista.tmeCodigo;
+            oSMedidor.EstCodigo = _vista.estCodigo;
 
-
-            if (_vista.tmeCodigo == "")
+            if (_vista.tmeCodigo == 0)
                 rtdo = oSMeBus.TiposMedidoresAdd(oSMedidor);
-     //       else
-  //              rtdo = (oSMeBus.TiposMedidoresUpdate(oSMedidor)) ? oSMedidor.TmeCodigo : 0;
+            else
+                 oSMeBus.TiposMedidoresUpdate(oSMedidor);
         }
 
-        public bool EliminarMedidor(string idMedidor)
+        public bool EliminarMedidor(long idMedidor)
         {
             TiposMedidoresBus oSMeBus = new TiposMedidoresBus();            
-            TiposMedidores oSMe = oSMeBus.TiposMedidoresGetById(idMedidor);
+            TiposMedidores oSMe = oSMeBus.TiposMedidoresGetById(idMedidor.ToString());
             oSMe.EstCodigo = "B";
             return oSMeBus.TiposMedidoresUpdate(oSMe);
         }

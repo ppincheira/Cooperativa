@@ -15,8 +15,7 @@ namespace GesServicios.controles.forms
         UIMedidoresModelosCrud _oMedidoresModelosCrud;
         Utility oUtil;
 
-        long _MmoCodigo;
-        int _usrNumero;
+        long _usrNumero, _MmoCodigo;
         string _EstCodigo;
 
         #endregion
@@ -40,27 +39,27 @@ namespace GesServicios.controles.forms
             set { this.txtDescripcionCorta.Text = value; }
         }
 
-        public int? Digitos
+        public long Digitos
         {
-            get { return int.Parse(TextBoxDigitos.Text); }
+            get { return long.Parse(TextBoxDigitos.Text); }
             set { TextBoxDigitos.Text = value.ToString(); }
         }
 
-        public int? Decimales
+        public long Decimales
         {
-            get { return int.Parse(TextBoxDecimales.Text); }
+            get { return long.Parse(TextBoxDecimales.Text); }
             set { TextBoxDecimales.Text = value.ToString(); }
         }
 
-        public int? CantHilos
+        public long CantHilos
         {
-            get { return int.Parse(TextBoxCantHilos.Text); }
+            get { return long.Parse(TextBoxCantHilos.Text); }
             set { TextBoxCantHilos.Text = value.ToString(); }
         }
 
-        public int? KWVueltas
+        public long KWVueltas
         {
-            get { return int.Parse(TextBoxKWVueltas.Text); }
+            get { return long.Parse(TextBoxKWVueltas.Text); }
             set { TextBoxKWVueltas.Text = value.ToString(); }
         }
 
@@ -70,15 +69,15 @@ namespace GesServicios.controles.forms
             set { this.TextBoxAmperaje.Text = value; }
         }
 
-        public int? Clase
+        public long Clase
         {
-            get { return int.Parse(TextBoxClase.Text); }
+            get { return long.Parse(TextBoxClase.Text); }
             set { TextBoxClase.Text = value.ToString(); }
         }
 
-        public decimal? Registrador
+        public long Registrador
         {
-            get { return int.Parse(TextBoxRegistrador.Text); }
+            get { return long.Parse(TextBoxRegistrador.Text); }
             set { TextBoxRegistrador.Text = value.ToString(); }
         }
 
@@ -107,19 +106,14 @@ namespace GesServicios.controles.forms
             get { return DateTime.Parse(dtpFechaCarga.Text); }
             set { dtpFechaCarga.Text = value.ToString(); }
         }
-        public string EstCodigo
+        public string estCodigo
         {
             get { return this.chkEstado.Checked ? "H" : "I"; }
             set { this.chkEstado.Checked = (value == "H"); }
         }
-        public int UsrNumero
-        {
-            get { return _usrNumero; }
-            set { _usrNumero = value; }
-        }
 
         #endregion
-        public frmMedidoresModelosCrud(long ModeloMedidor, string Estado, int Usuario)
+        public frmMedidoresModelosCrud(long ModeloMedidor, string Estado, long Usuario)
             //SRuta, Estado 
         {
             //try
@@ -133,7 +127,7 @@ namespace GesServicios.controles.forms
                 if (MessageBox.Show("Desea eliminar el Modelo de Medidor Código: " + ModeloMedidor + " ?", "Cooperativa", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Cursor.Current = Cursors.WaitCursor;
-                    _oMedidoresModelosCrud.EliminarModeloMedidor(ModeloMedidor);
+                    //_oMedidoresModelosCrud.EliminarModeloMedidor(ModeloMedidor);
                     this.Close();
                 }
             //}
@@ -175,19 +169,15 @@ namespace GesServicios.controles.forms
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (!this.gbDatos.Enabled)
-            {
-                this.Close();
-                return;
-            }
             try
             {
-                this.VALIDARFORM = true ;
+                this.VALIDARFORM = true;
                 oUtil.ValidarFormulario(this, this, 4);
                 if (this.VALIDARFORM)
                 {
                     DialogResult = DialogResult.OK;
                     _oMedidoresModelosCrud.Guardar();
+
                     this.Close();
                 }
             }
@@ -222,14 +212,5 @@ namespace GesServicios.controles.forms
 
         }
 
-        private void gbDatos_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbTipoMedidor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

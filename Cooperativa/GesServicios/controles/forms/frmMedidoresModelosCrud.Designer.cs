@@ -135,15 +135,13 @@
             this.gbDatos.TabIndex = 2;
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
-            this.gbDatos.Enter += new System.EventHandler(this.gbDatos_Enter);
             // 
             // dtpFechaCarga
             // 
-            this.dtpFechaCarga.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaCarga.Location = new System.Drawing.Point(110, 273);
             this.dtpFechaCarga.Name = "dtpFechaCarga";
-            this.dtpFechaCarga.Size = new System.Drawing.Size(165, 20);
-            this.dtpFechaCarga.TabIndex = 14;
+            this.dtpFechaCarga.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaCarga.TabIndex = 13;
             // 
             // lblTipoMedidor
             // 
@@ -171,7 +169,7 @@
             this.cmbTipoConexion.Location = new System.Drawing.Point(433, 200);
             this.cmbTipoConexion.Name = "cmbTipoConexion";
             this.cmbTipoConexion.Size = new System.Drawing.Size(165, 21);
-            this.cmbTipoConexion.TabIndex = 11;
+            this.cmbTipoConexion.TabIndex = 10;
             // 
             // cmbTipoMedidor
             // 
@@ -181,23 +179,21 @@
             this.cmbTipoMedidor.Location = new System.Drawing.Point(433, 236);
             this.cmbTipoMedidor.Name = "cmbTipoMedidor";
             this.cmbTipoMedidor.Size = new System.Drawing.Size(165, 21);
-            this.cmbTipoMedidor.TabIndex = 13;
-            this.cmbTipoMedidor.SelectedIndexChanged += new System.EventHandler(this.cmbTipoMedidor_SelectedIndexChanged);
+            this.cmbTipoMedidor.TabIndex = 12;
             // 
             // TextBoxAmperaje
             // 
-            this.TextBoxAmperaje.BackColor = System.Drawing.Color.White;
             this.TextBoxAmperaje.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TextBoxAmperaje.ColorTextoVacio = System.Drawing.Color.Gray;
             this.TextBoxAmperaje.Location = new System.Drawing.Point(110, 130);
             this.TextBoxAmperaje.MaxLength = 15;
             this.TextBoxAmperaje.Name = "TextBoxAmperaje";
+<<<<<<< HEAD
             this.TextBoxAmperaje.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.TextBoxAmperaje.Requerido = Controles.util.Enumerados.enumRequerido.SI;
+=======
+>>>>>>> ace1f2deb870a45a5d8fbc87e8c570538f4ad4e8
             this.TextBoxAmperaje.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxAmperaje.TabIndex = 7;
-            this.TextBoxAmperaje.TextoVacio = "<Descripcion>";
-            this.TextBoxAmperaje.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            this.TextBoxAmperaje.TabIndex = 6;
             // 
             // TextBoxRegistrador
             // 
@@ -205,7 +201,7 @@
             this.TextBoxRegistrador.Location = new System.Drawing.Point(433, 165);
             this.TextBoxRegistrador.Name = "TextBoxRegistrador";
             this.TextBoxRegistrador.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxRegistrador.TabIndex = 9;
+            this.TextBoxRegistrador.TabIndex = 8;
             // 
             // TextBoxKWVueltas
             // 
@@ -229,7 +225,7 @@
             this.TextBoxClase.Location = new System.Drawing.Point(110, 165);
             this.TextBoxClase.Name = "TextBoxClase";
             this.TextBoxClase.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxClase.TabIndex = 8;
+            this.TextBoxClase.TabIndex = 7;
             // 
             // TextBoxCantHilos
             // 
@@ -264,7 +260,7 @@
             this.chkEstado.Location = new System.Drawing.Point(110, 313);
             this.chkEstado.Name = "chkEstado";
             this.chkEstado.Size = new System.Drawing.Size(73, 17);
-            this.chkEstado.TabIndex = 15;
+            this.chkEstado.TabIndex = 14;
             this.chkEstado.Text = "Habilitado";
             this.chkEstado.UseVisualStyleBackColor = true;
             // 
@@ -285,7 +281,7 @@
             this.cmbTipoContador.Location = new System.Drawing.Point(110, 200);
             this.cmbTipoContador.Name = "cmbTipoContador";
             this.cmbTipoContador.Size = new System.Drawing.Size(165, 21);
-            this.cmbTipoContador.TabIndex = 10;
+            this.cmbTipoContador.TabIndex = 9;
             // 
             // cmbFabricante
             // 
@@ -295,7 +291,7 @@
             this.cmbFabricante.Location = new System.Drawing.Point(110, 236);
             this.cmbFabricante.Name = "cmbFabricante";
             this.cmbFabricante.Size = new System.Drawing.Size(165, 21);
-            this.cmbFabricante.TabIndex = 12;
+            this.cmbFabricante.TabIndex = 11;
             // 
             // lblTipoConexion
             // 
@@ -389,31 +385,21 @@
             // 
             // txtDescripcionCorta
             // 
-            this.txtDescripcionCorta.BackColor = System.Drawing.Color.White;
             this.txtDescripcionCorta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDescripcionCorta.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtDescripcionCorta.Location = new System.Drawing.Point(433, 22);
             this.txtDescripcionCorta.MaxLength = 10;
             this.txtDescripcionCorta.Name = "txtDescripcionCorta";
-            this.txtDescripcionCorta.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDescripcionCorta.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcionCorta.TabIndex = 2;
-            this.txtDescripcionCorta.TextoVacio = "<Descripcion>";
-            this.txtDescripcionCorta.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.BackColor = System.Drawing.Color.White;
             this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDescripcion.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtDescripcion.Location = new System.Drawing.Point(110, 25);
             this.txtDescripcion.MaxLength = 30;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDescripcion.Size = new System.Drawing.Size(165, 20);
             this.txtDescripcion.TabIndex = 1;
-            this.txtDescripcion.TextoVacio = "<Descripcion>";
-            this.txtDescripcion.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // lbDescripcion
             // 

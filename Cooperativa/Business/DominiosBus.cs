@@ -42,10 +42,5 @@ namespace Business
             DominiosImpl oDominiodImpl = new DominiosImpl();
             return oDominiodImpl.DominiosGetByFilter(dmnCodigo);
         }
-        public List<Dominios> DominiosGetListByFilter(string dmnCodigo)
-        {
-            DominiosImpl oDominiodImpl = new DominiosImpl();
-            return oDominiodImpl.DominiosGetListByFilter(dmnCodigo);
-        }
     }
 }

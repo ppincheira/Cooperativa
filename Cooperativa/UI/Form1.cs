@@ -132,12 +132,28 @@ namespace UI
 
         }
 
-        private void btnPersonalizado8_Click(object sender, EventArgs e)
+        private void gesTextBox1_TextChanged_1(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10100", "10101", "10102", "10104", "10105", "10103");
             FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("MED", oPermiso);
-            frmbus.ShowDialog();
+=======
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("TME", oPermiso);
+>>>>>>> ace1f2deb870a45a5d8fbc87e8c570538f4ad4e8
+            frmbus.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("FAB", oPermiso);
+            frmbus.ShowDialog();
         }
     }
 }

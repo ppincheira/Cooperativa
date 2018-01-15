@@ -12,7 +12,6 @@ using Controles.datos;
 using Service;
 using Controles.form;
 using System.Windows.Forms;
-using GesServicios.controles.forms;
 
 namespace FormsAuxiliares
 {
@@ -462,11 +461,6 @@ namespace FormsAuxiliares
                         if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
-                    case "MEM":
-                        frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(0, "H", 1);
-                        if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
                     case "":
                         Console.WriteLine("Case 2");
                         break;
@@ -496,11 +490,6 @@ namespace FormsAuxiliares
                         if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
-                    case "MEM":
-                        frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(id, "H", 1);
-                        if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
                     case "":
                         Console.WriteLine("Case 2");
                         break;
@@ -528,12 +517,6 @@ namespace FormsAuxiliares
                         if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                             
-                        break;
-                    case "MEM":
-                        frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(id, "H", 1);
-                        oFrmMedModCrud.gbDatos.Enabled = false;
-                        if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
                         break;
                     case "":
                         Console.WriteLine("Case 2");
@@ -605,26 +588,7 @@ namespace FormsAuxiliares
 
         private void btnEliminar1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DataGridViewRow row = this.dgBusqueda.CurrentRow;
-                long id = Convert.ToInt64(row.Cells[0].Value);
-                switch (_Tabla)
-                {
-                    case "MEM":
-                        frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(id, "B", 1);
-                        _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                Cursor.Current = Cursors.Default;
-                ManejarError Err = new ManejarError();
-                Err.CargarError(ex, e.ToString(),
-                    ((Control)sender).Name,
-                    this.FindForm().Name);
-            }
+
         }
     }
 }
