@@ -184,15 +184,15 @@ namespace Service
                     if (control is Controles.Fecha.dtpFecha)
                             if (((Controles.Fecha.dtpFecha)control).REQUERIDO == "SI" && ((Controles.Fecha.dtpFecha)control).Text == "" && ((Controles.Fecha.dtpFecha)control).TabIndex <= index)
                             {
-                             ((Controles.textBoxes.txtPassword)control).BackColor = System.Drawing.Color.Red;
+                             ((Controles.Fecha.dtpFecha)control).BackColor = System.Drawing.Color.Red;
                              formInicial.VALIDARFORM = false;
                         }
                         else
-                            ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Empty;
+                            ((Controles.Fecha.dtpFecha)control).BackColor = System.Drawing.Color.Empty;
                     if (control is Controles.datos.chkBox)
                         if (((Controles.datos.chkBox)control).REQUERIDO == "SI" && ((Controles.datos.chkBox)control).Text == "" && ((Controles.datos.chkBox)control).TabIndex <= index)
                         {
-                            ((Controles.textBoxes.txtPassword)control).BackColor = System.Drawing.Color.Red;
+                            ((Controles.datos.chkBox)control).BackColor = System.Drawing.Color.Red;
                             formInicial.VALIDARFORM = false;
                         }
                         else

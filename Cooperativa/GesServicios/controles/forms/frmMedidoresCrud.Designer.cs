@@ -33,7 +33,6 @@
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.gbDatos = new Controles.contenedores.gesGroup();
-            this.gesTextBoxDmeCodigo = new Controles.textBoxes.gesTextBox();
             this.gesTextBoxFactorCalib = new Controles.textBoxes.gesTextBox();
             this.gesTextBoxDigitos = new Controles.textBoxes.gesTextBox();
             this.dtpFechaCarga = new Controles.Fecha.dtpFecha();
@@ -47,7 +46,6 @@
             this.lblMmoCodigo = new Controles.labels.lblEtiqueta();
             this.lblDecimales = new Controles.labels.lblEtiqueta();
             this.lblNumeroProv = new Controles.labels.lblEtiqueta();
-            this.lblClase = new Controles.labels.lblEtiqueta();
             this.lblGisX = new Controles.labels.lblEtiqueta();
             this.lblEstado = new Controles.labels.lblEtiqueta();
             this.lblDigitos = new Controles.labels.lblEtiqueta();
@@ -89,7 +87,6 @@
             // 
             // gbDatos
             // 
-            this.gbDatos.Controls.Add(this.gesTextBoxDmeCodigo);
             this.gbDatos.Controls.Add(this.gesTextBoxFactorCalib);
             this.gbDatos.Controls.Add(this.gesTextBoxDigitos);
             this.gbDatos.Controls.Add(this.dtpFechaCarga);
@@ -103,7 +100,6 @@
             this.gbDatos.Controls.Add(this.lblMmoCodigo);
             this.gbDatos.Controls.Add(this.lblDecimales);
             this.gbDatos.Controls.Add(this.lblNumeroProv);
-            this.gbDatos.Controls.Add(this.lblClase);
             this.gbDatos.Controls.Add(this.lblGisX);
             this.gbDatos.Controls.Add(this.lblEstado);
             this.gbDatos.Controls.Add(this.lblDigitos);
@@ -115,18 +111,6 @@
             this.gbDatos.TabIndex = 4;
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
-            // 
-            // gesTextBoxDmeCodigo
-            // 
-            this.gesTextBoxDmeCodigo.BackColor = System.Drawing.Color.White;
-            this.gesTextBoxDmeCodigo.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.gesTextBoxDmeCodigo.Location = new System.Drawing.Point(110, 133);
-            this.gesTextBoxDmeCodigo.Name = "gesTextBoxDmeCodigo";
-            this.gesTextBoxDmeCodigo.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.gesTextBoxDmeCodigo.Size = new System.Drawing.Size(100, 20);
-            this.gesTextBoxDmeCodigo.TabIndex = 7;
-            this.gesTextBoxDmeCodigo.TextoVacio = "<Descripcion>";
-            this.gesTextBoxDmeCodigo.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // gesTextBoxFactorCalib
             // 
@@ -174,7 +158,7 @@
             this.cmbMmoCodigo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbMmoCodigo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbMmoCodigo.FormattingEnabled = true;
-            this.cmbMmoCodigo.Location = new System.Drawing.Point(427, 136);
+            this.cmbMmoCodigo.Location = new System.Drawing.Point(110, 133);
             this.cmbMmoCodigo.Name = "cmbMmoCodigo";
             this.cmbMmoCodigo.Size = new System.Drawing.Size(165, 21);
             this.cmbMmoCodigo.TabIndex = 8;
@@ -229,7 +213,7 @@
             // lblMmoCodigo
             // 
             this.lblMmoCodigo.AutoSize = true;
-            this.lblMmoCodigo.Location = new System.Drawing.Point(323, 140);
+            this.lblMmoCodigo.Location = new System.Drawing.Point(6, 137);
             this.lblMmoCodigo.Name = "lblMmoCodigo";
             this.lblMmoCodigo.Size = new System.Drawing.Size(98, 13);
             this.lblMmoCodigo.TabIndex = 22;
@@ -252,15 +236,6 @@
             this.lblNumeroProv.Size = new System.Drawing.Size(109, 13);
             this.lblNumeroProv.TabIndex = 22;
             this.lblNumeroProv.Text = "Empresa Proveedora;";
-            // 
-            // lblClase
-            // 
-            this.lblClase.AutoSize = true;
-            this.lblClase.Location = new System.Drawing.Point(13, 136);
-            this.lblClase.Name = "lblClase";
-            this.lblClase.Size = new System.Drawing.Size(70, 13);
-            this.lblClase.TabIndex = 22;
-            this.lblClase.Text = "Codigo DME:";
             // 
             // lblGisX
             // 
@@ -346,13 +321,11 @@
         private Controles.labels.lblEtiqueta lblMmoCodigo;
         private Controles.labels.lblEtiqueta lblDecimales;
         private Controles.labels.lblEtiqueta lblNumeroProv;
-        private Controles.labels.lblEtiqueta lblClase;
         private Controles.labels.lblEtiqueta lblGisX;
         private Controles.labels.lblEtiqueta lblEstado;
         private Controles.labels.lblEtiqueta lblDigitos;
         private Controles.textBoxes.txtDescripcionCorta txtNumeroSerie;
         private Controles.labels.lblEtiqueta lbDescripcion;
-        private Controles.textBoxes.gesTextBox gesTextBoxDmeCodigo;
         private Controles.textBoxes.gesTextBox gesTextBoxFactorCalib;
         private Controles.textBoxes.gesTextBox gesTextBoxDigitos;
     }

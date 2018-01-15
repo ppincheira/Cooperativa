@@ -28,7 +28,7 @@ namespace Implement
                         " DECLARE IDTEMP NUMBER(10,0); " +
                         " BEGIN " +
                         " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('MMO_CODIGO')) into IDTEMP from dual; " +
-                        " insert into Modelos_Medidores" +
+                        " insert into Medidores_Modelos" +
                         "(MMO_CODIGO, MMO_DESCRIPCION, MMO_DESCRIPCION_CORTA, MMO_DIGITOS, " +
                         "MMO_DECIMALES, MMO_CANT_HILOS, MMO_KW_VUELTAS, MMO_AMPERAJE, " +
                         "MMO_CLASE, MMO_REGISTRADOR, MMO_TIPO_CONTADOR, MMO_TIPO_CONEXION, " +
@@ -68,7 +68,7 @@ namespace Implement
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
                     ds = new DataSet();
-                    cmd = new OracleCommand("update Modelos_Medidores " +
+                    cmd = new OracleCommand("update Medidores_Modelos " +
                         "SET MMO_DESCRIPCION='" + oMMO.MMoDescripcion +
                         "', MMO_DESCRIPCION_CORTA='" + oMMO.MMoDescripcionCorta +
                         ", MMO_DIGITOS=" + oMMO.MMoDigitos +
@@ -105,7 +105,7 @@ namespace Implement
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
                     ds = new DataSet();
-                    cmd = new OracleCommand("DELETE Modelos_Medidores " +
+                    cmd = new OracleCommand("DELETE Medidores_Modelos " +
                         "WHERE MMO_CODIGO=" +Id, cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
@@ -128,7 +128,7 @@ namespace Implement
                     Conexion oConexion = new Conexion();
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
-                    string sqlSelect = "select * from Modelos_Medidores " +
+                    string sqlSelect = "select * from Medidores_Modelos " +
                          "WHERE MMO_CODIGO = " +Id;
                     cmd = new OracleCommand(sqlSelect, cn);
                     adapter = new OracleDataAdapter(cmd);
@@ -160,7 +160,7 @@ namespace Implement
                     Conexion oConexion = new Conexion();
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
-                    string sqlSelect = "select * from Modelos_Medidores ";
+                    string sqlSelect = "select * from Medidores_Modelos ";
                     cmd = new OracleCommand(sqlSelect, cn);
                     adapter = new OracleDataAdapter(cmd);
                     cmd.ExecuteNonQuery();
@@ -196,11 +196,11 @@ namespace Implement
                     if (dr["MMO_DIGITOS"].ToString() != "")
                         oObjeto.MMoDigitos = int.Parse(dr["MMO_DIGITOS"].ToString());
                     if (dr["MMO_DECIMALES"].ToString() != "")
-                        oObjeto.MMoDecimales = int.Parse(dr[""].ToString());
+                        oObjeto.MMoDecimales = int.Parse(dr["MMO_DECIMALES"].ToString());
                     if (dr["MMO_CANT_HILOS"].ToString() != "")
                         oObjeto.MMoCantHilos = int.Parse(dr["MMO_CANT_HILOS"].ToString());
                     if (dr["MMO_KW_VUELTAS"].ToString() != "")
-                        oObjeto.MMoKwVueltas = int.Parse(dr[""].ToString());
+                        oObjeto.MMoKwVueltas = int.Parse(dr["MMO_KW_VUELTAS"].ToString());
                     oObjeto.MMoAmperaje = dr["MMO_AMPERAJE"].ToString();
                     if (dr["MMO_CLASE"].ToString() != "")
                         oObjeto.MMoClase = int.Parse(dr["MMO_CLASE"].ToString());

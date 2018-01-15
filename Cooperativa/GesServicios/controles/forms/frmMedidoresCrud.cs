@@ -52,8 +52,8 @@ namespace GesServicios.controles.forms
 
         public double FactorCalib
         {
-            get { return double.Parse(gesTextBoxDmeCodigo.Text); }
-            set { gesTextBoxDmeCodigo.Text = value.ToString(); }
+            get { return double.Parse(gesTextBoxFactorCalib.Text); }
+            set { gesTextBoxFactorCalib.Text = value.ToString(); }
         }
 
         public decimal? GisX
@@ -66,12 +66,6 @@ namespace GesServicios.controles.forms
         {
             get { return decimal.Parse(TextBoxGisY.Text); }
             set { TextBoxGisY.Text = value.ToString(); }
-        }
-
-        public string DmeCodigo
-        {
-            get { return this.gesTextBoxDmeCodigo.Text; }
-            set { this.gesTextBoxDmeCodigo.Text = value; }
         }
 
         public int UsrNumero

@@ -24,19 +24,27 @@ namespace Implement
                 cn.Open();
                 // Clave Secuencia EMP_NUMERO
                 ds = new DataSet();
-                cmd = new OracleCommand("insert into Empresas(EMP_RAZON_SOCIAL, EMP_DENOMINACION_COMERCIAL, " +
+                string query =
+                    " DECLARE IDTEMP NUMBER(10,0); " +
+                    " BEGIN " +
+                    " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('EMP_NUMERO')) into IDTEMP from dual; " +
+                    "insert into Empresas(EMP_NUMERO, EMP_RAZON_SOCIAL, EMP_DENOMINACION_COMERCIAL, " +
                     "EMP_CUIT, TIV_CODIGO, EMP_FECHA_ALTA_PRO, EMP_FECHA_BAJA_PRO, EMP_OBSERVACION, " +
                     "EMP_TITULAR_CHEQUES, EMP_PROPIA, EMP_PROVEEDOR, EMP_CLIENTE, EMP_FECHA_ALTA_CLI, " +
-                    "EMP_FECHA_BAJA_CLI, EMP_CATEGORIA_MONOTRIBUTO, EMP_TIPO_DNI, EMP_DNI_NUMERO, " +
-                    "EMP_FECHA_ALTA, USR_NUMERO_CARGA, APELLIDOS, NOMBRES, EST_CODIGO_PRO, EST_CODIGO_CLI) " +
-                    "values('"+oEmp.EmpRazonSocial + "', '"+oEmp.EmpDenominacionComercial + "', '"+
-                    oEmp.EmpCuit + "', '"+ oEmp.TivCodigo + "', "+ oEmp.EmpFechaAltaPro + ", " + 
-                    oEmp.EmpFechaBajaPro + ", '" + oEmp.EmpObservacion + "', '" + oEmp.EmpTitularCheques + "', '" + 
-                    oEmp.EmpPropia + "', '" + oEmp.EmpProveedor + "', '"+ oEmp.EmpCliente + "', " + 
-                    oEmp.EmpFechaAltaCli + ", " + oEmp.EmpFechaBajaCli + ", '" + oEmp.EmpCategoriaMonotributo + "', '" + 
-                    oEmp.EmpTipoDni + "', '" + oEmp.EmpDniNumero + "', " + oEmp.EmpFechaAlta + ", " + 
-                    oEmp.UsrNumeroCarga + ", '" + oEmp.Apellidos + "', '" + oEmp.Nombres + "', '" + 
-                    oEmp.EstCodigoPro + "', '" + oEmp.EstCodigoCli +"')", cn);
+                    "EMP_FECHA_BAJA_CLI, EMP_CATEGORIA_MONOTRIBUTO, TID_CODIGO, EMP_DOCUMENTO_NUMERO, " +
+                    "EMP_FECHA_ALTA, USR_NUMERO_CARGA, EMO_APELLIDOS, EMP_NOMBRES, EST_CODIGO_PRO, EST_CODIGO_CLI, " +
+                    "EMP_LIMITE_CREDITO, EST_CODIGO_CREDITO, EMP_NUMERO_TRANSPORTE, PRS_NUMERO) " +
+                    "values("+ oEmp.EmpNumero + ", '" + oEmp.EmpRazonSocial + "', '"+
+                    oEmp.EmpDenominacionComercial + "', '"+oEmp.EmpCuit + "', '"+ oEmp.TivCodigo + "', "+ 
+                    oEmp.EmpFechaAltaPro + ", " + oEmp.EmpFechaBajaPro + ", '" + oEmp.EmpObservacion + "', '" + 
+                    oEmp.EmpTitularCheques + "', '" + oEmp.EmpPropia + "', '" + oEmp.EmpProveedor + "', '" + 
+                    oEmp.EmpCliente + "', " + oEmp.EmpFechaAltaCli + ", " + oEmp.EmpFechaBajaCli + ", '" + 
+                    oEmp.EmpCategoriaMonotributo + "', '" + oEmp.TidCodigo + "', '" + oEmp.EmpDocumentoNumero + "', " + 
+                    oEmp.EmpFechaAlta + ", " + oEmp.UsrNumeroCarga + ", '" + oEmp.EmpApellidos + "', '" + 
+                    oEmp.EmpNombres + "', '" + oEmp.EstCodigoPro + "', '" + oEmp.EstCodigoCli + "', " + 
+                    oEmp.EmpLimiteCredito +", '" +oEmp.EstCodigoCredito + "', " + oEmp.EmpNumeroTransporte + ", " + 
+                    oEmp.PrsNumero + ")RETURNING IDTEMP INTO :id;" +
+                        " END;";
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -71,14 +79,18 @@ namespace Implement
                     "EMP_FECHA_ALTA_CLI=" + oEmp.EmpFechaAltaCli + "," +
                     "EMP_FECHA_BAJA_CLI=" + oEmp.EmpFechaBajaCli +
                     "EMP_CATEGORIA_MONOTRIBUTO='" + oEmp.EmpCategoriaMonotributo + "'," +
-                    "EMP_TIPO_DNI='" + oEmp.EmpTipoDni + "'," +
-                    "EMP_DNI_NUMERO='" + oEmp.EmpDniNumero + "'," +
+                    "TID_CODIGO='" + oEmp.TidCodigo + "'," +
+                    "EMP_DOCUMENTO_NUMERO='" + oEmp.EmpDocumentoNumero + "'," +
                     "EMP_FECHA_ALTA=" + oEmp.EmpFechaAlta + "," +
                     "USR_NUMERO_CARGA=" + oEmp.UsrNumeroCarga + "," +
-                    "APELLIDOS='" + oEmp.Apellidos + "'," +
-                    "NOMBRES='" + oEmp.Nombres + "'," +
+                    "EMP_APELLIDOS='" + oEmp.EmpApellidos + "'," +
+                    "EMP_NOMBRES='" + oEmp.EmpNombres + "'," +
                     "EST_CODIGO_PRO='" + oEmp.EstCodigoPro + "'," +
-                    "EST_CODIGO_CLI='" + oEmp.EstCodigoCli + "'" +
+                    "EST_CODIGO_CLI='" + oEmp.EstCodigoCli + "'," +
+                    "EMP_LIMITE_CREDITO=" + oEmp.EmpLimiteCredito + "," +
+                    "EST_CODIGO_CREDITO='" + oEmp.EstCodigoCredito + "'," +
+                    "EMP_NUMERO_TRANSPORTE=" + oEmp.EmpNumeroTransporte + "," +
+                    "PRS_NUMERO=" + oEmp.PrsNumero + 
                     " WHERE EMP_NUMERO=" + oEmp.EmpNumero, cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
@@ -202,15 +214,19 @@ namespace Implement
                 if (dr["EMP_FECHA_BAJA_CLI"].ToString() != "")
                     oObjeto.EmpFechaBajaCli = DateTime.Parse(dr["EMP_FECHA_BAJA_CLI"].ToString());
                 oObjeto.EmpCategoriaMonotributo = dr["EMP_CATEGORIA_MONOTRIBUTO"].ToString();
-                oObjeto.EmpTipoDni = dr["EMP_TIPO_DNI"].ToString();
-                oObjeto.EmpDniNumero = dr["EMP_DNI_numero"].ToString();
+                oObjeto.TidCodigo = dr["TID_CODIGO"].ToString();
+                oObjeto.EmpDocumentoNumero = dr["EMP_DOCUMENTO_numero"].ToString();
                 if (dr["EMP_FECHA_ALTA"].ToString() != "")
                     oObjeto.EmpFechaAlta = DateTime.Parse(dr["EMP_FECHA_ALTA"].ToString());
                 oObjeto.UsrNumeroCarga = int.Parse(dr["USR_NUMERO_CARGA"].ToString());
-                oObjeto.Apellidos = dr["APELLIDOS"].ToString();
-                oObjeto.Nombres = dr["NOMBRES"].ToString();
+                oObjeto.EmpApellidos = dr["EMP_APELLIDOS"].ToString();
+                oObjeto.EmpNombres = dr["EMP_NOMBRES"].ToString();
                 oObjeto.EstCodigoPro = dr["EST_CODIGO_PRO"].ToString();
                 oObjeto.EstCodigoCli = dr["EST_CODIGO_CLI"].ToString();
+                oObjeto.EmpLimiteCredito = double.Parse(dr["EMP_LIMITE_CREDITO"].ToString());
+                oObjeto.EstCodigoCredito = dr["EMP_CODIGO_CREDITO"].ToString();
+                oObjeto.EmpNumeroTransporte = long.Parse(dr["EMP_NUMERO_TRANSPORTE"].ToString());
+                oObjeto.PrsNumero = int.Parse(dr["PRS_NUMERO"].ToString());
                 return oObjeto;
  			}
 
