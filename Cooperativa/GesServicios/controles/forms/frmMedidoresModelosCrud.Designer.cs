@@ -187,11 +187,8 @@
             this.TextBoxAmperaje.Location = new System.Drawing.Point(110, 130);
             this.TextBoxAmperaje.MaxLength = 15;
             this.TextBoxAmperaje.Name = "TextBoxAmperaje";
-<<<<<<< HEAD
             this.TextBoxAmperaje.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.TextBoxAmperaje.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-=======
->>>>>>> ace1f2deb870a45a5d8fbc87e8c570538f4ad4e8
             this.TextBoxAmperaje.Size = new System.Drawing.Size(100, 20);
             this.TextBoxAmperaje.TabIndex = 6;
             // 

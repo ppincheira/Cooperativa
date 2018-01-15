@@ -8,10 +8,13 @@ using Business;
 using Model;
 using Controles;
 using AppProcesos.formsAuxiliares.formAdmin;
+using AppProcesos.gesServicios.frmMedidoresCrud;
+using AppProcesos.gesServicios.frmMedidoresModelosCrud;
 using Controles.datos;
 using Service;
 using Controles.form;
 using System.Windows.Forms;
+using GesServicios.controles.forms;
 
 namespace FormsAuxiliares
 {
@@ -446,7 +449,12 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
         }
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -461,17 +469,30 @@ namespace FormsAuxiliares
                         if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
+                    case "MEM":
+                        frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(0,"H",1);
+                        if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+                    case "MED":
+                        frmMedidoresCrud oFrmMedCrud = new frmMedidoresCrud(0,"H",1);
+                        if (oFrmMedCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
                     case "":
                         Console.WriteLine("Case 2");
                         break;
                    
                 }
-
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
         }
 
@@ -490,6 +511,16 @@ namespace FormsAuxiliares
                         if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
+                    case "MEM":
+                        frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(id, "H", 1);
+                        if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+                    case "MED":
+                        frmMedidoresCrud oFrmMedCrud = new frmMedidoresCrud(id, "H", 1);
+                        if (oFrmMedCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
                     case "":
                         Console.WriteLine("Case 2");
                         break;
@@ -498,7 +529,12 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
 
         }
@@ -518,6 +554,18 @@ namespace FormsAuxiliares
                             _oFormAdmin.CargarGrilla(_Tabla);
                             
                         break;
+                    case "MEM":
+                        frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(id, "H", 1);
+                        oFrmMedModCrud.gbDatos.Enabled = false;
+                        if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+                    case "MED":
+                        frmMedidoresCrud oFrmMedCrud = new frmMedidoresCrud(id, "H", 1);
+                        oFrmMedCrud.gbDatos.Enabled = false;
+                        if (oFrmMedCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
                     case "":
                         Console.WriteLine("Case 2");
                         break;
@@ -526,7 +574,12 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
         }
         private void btnImprimir_Click(object sender, EventArgs e)
@@ -541,13 +594,44 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                DataGridViewRow row = this.dgBusqueda.CurrentRow;
+                long id = Convert.ToInt64(row.Cells[0].Value);
+                switch (_Tabla)
+                {
+                    case "MEM":
+                        frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(id, "B", 1);
+                        //if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+                    case "MED":
+                        frmMedidoresCrud oFrmMedCrud = new frmMedidoresCrud(id, "B", 1);
+                        if (oFrmMedCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -563,7 +647,12 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
         }
         #endregion

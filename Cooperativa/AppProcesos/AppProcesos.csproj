@@ -83,12 +83,16 @@
     <Compile Include="formsAuxiliares\frmTelefonos\IVistaTelefonosCrud.cs" />
     <Compile Include="formsAuxiliares\frmTelefonos\UITelefonos.cs" />
     <Compile Include="formsAuxiliares\frmTelefonos\UITelefonosCrud.cs" />
+    <Compile Include="formsAuxiliares\frmFabricantes\IVistaFabricantesCrud.cs" />
     <Compile Include="formsAuxiliares\principal\IVistaPrincipal.cs" />
     <Compile Include="formsAuxiliares\principal\UIPrincipal.cs" />
+    <Compile Include="formsAuxiliares\frmFabricantes\UIFabricantesCrud.cs" />
     <Compile Include="gesServicios\frmMedidoresCrud\IVistaMedidoresCrud.cs" />
     <Compile Include="gesServicios\frmMedidoresCrud\UIMedidoresCrud.cs" />
     <Compile Include="gesServicios\frmMedidoresModelosCrud\IVistaMedidoresModelosCrud.cs" />
     <Compile Include="gesServicios\frmMedidoresModelosCrud\UIMedidoresModelosCrud.cs" />
+    <Compile Include="gesServicios\frmMedidoresTiposCrud\IVistaTiposMedidoresCrud.cs" />
+    <Compile Include="gesServicios\frmMedidoresTiposCrud\UITiposMedidoresCrud.cs" />
     <Compile Include="gesServicios\frmRutasCrud\IVistaRutasCrud.cs" />
     <Compile Include="gesServicios\frmRutasCrud\UIRutasCrud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,7 +120,6 @@
     <Folder Include="adminSuministros\" />
     <Folder Include="cuentasCorrientes\" />
     <Folder Include="gesServicios\frmCategoriasCrud\" />
-    <Folder Include="gesServicios\frmMedidoresTiposCrud\" />
     <Folder Include="gesServicios\frmSuministrosAdmin\" />
     <Folder Include="gesServicios\frmSuministrosCrud\" />
   </ItemGroup>

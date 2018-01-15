@@ -134,10 +134,8 @@ namespace UI
 
         private void gesTextBox1_TextChanged_1(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10100", "10101", "10102", "10104", "10105", "10103");
             FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("MED", oPermiso);
-=======
 
         }
 
@@ -145,7 +143,6 @@ namespace UI
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("TME", oPermiso);
->>>>>>> ace1f2deb870a45a5d8fbc87e8c570538f4ad4e8
             frmbus.ShowDialog();
         }
 
@@ -154,6 +151,21 @@ namespace UI
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("FAB", oPermiso);
             frmbus.ShowDialog();
+        }
+
+        private void btnMedidoresModelos_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10031", "10032", "10033", "10035", "10036", "10034");
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("MEM", oPermiso);
+            frmbus.ShowDialog();
+        }
+
+        private void btnMedidores_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10101", "10102", "10103", "10105", "10106", "10104");
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("MED", oPermiso);
+            frmbus.ShowDialog();
+
         }
     }
 }
