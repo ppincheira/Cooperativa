@@ -28,10 +28,10 @@ namespace GesServicios.controles.forms
             get { return _MmoNumero; }
             set { _MmoNumero = value; }
         }
-        public string NumeroSerie
+        public long NumeroSerie
         {
-            get { return this.txtNumeroSerie.Text; }
-            set { this.txtNumeroSerie.Text = value; }
+            get { return long.Parse(this.gesTextBoxNumeroSerie.Text); }
+            set { this.gesTextBoxNumeroSerie.Text = value.ToString(); }
         }
 
         public cmbLista NumeroProv
@@ -58,14 +58,14 @@ namespace GesServicios.controles.forms
 
         public decimal? GisX
         {
-            get { return decimal.Parse(TextBoxGisX.Text); }
-            set { TextBoxGisX.Text = value.ToString(); }
+            get { return decimal.Parse(gesTextBoxGisX.Text); }
+            set { gesTextBoxGisX.Text = value.ToString(); }
         }
 
         public decimal? GisY
         {
-            get { return decimal.Parse(TextBoxGisY.Text); }
-            set { TextBoxGisY.Text = value.ToString(); }
+            get { return decimal.Parse(gesTextBoxGisY.Text); }
+            set { gesTextBoxGisY.Text = value.ToString(); }
         }
 
         public int UsrNumero
@@ -85,7 +85,7 @@ namespace GesServicios.controles.forms
             set { this.cmbMmoCodigo = value; }
         }
 
-        public decimal Registrador { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        //public decimal Registrador { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         #endregion
         public frmMedidoresCrud(long NumeroMedidor, string Estado, int Usuario)

@@ -34,7 +34,7 @@ namespace Implement
                     "EMP_FECHA_BAJA_CLI, EMP_CATEGORIA_MONOTRIBUTO, TID_CODIGO, EMP_DOCUMENTO_NUMERO, " +
                     "EMP_FECHA_ALTA, USR_NUMERO_CARGA, EMO_APELLIDOS, EMP_NOMBRES, EST_CODIGO_PRO, EST_CODIGO_CLI, " +
                     "EMP_LIMITE_CREDITO, EST_CODIGO_CREDITO, EMP_NUMERO_TRANSPORTE, PRS_NUMERO) " +
-                    "values("+ oEmp.EmpNumero + ", '" + oEmp.EmpRazonSocial + "', '"+
+                    "values(IDTEMP, " + oEmp.EmpRazonSocial + "', '"+
                     oEmp.EmpDenominacionComercial + "', '"+oEmp.EmpCuit + "', '"+ oEmp.TivCodigo + "', "+ 
                     oEmp.EmpFechaAltaPro + ", " + oEmp.EmpFechaBajaPro + ", '" + oEmp.EmpObservacion + "', '" + 
                     oEmp.EmpTitularCheques + "', '" + oEmp.EmpPropia + "', '" + oEmp.EmpProveedor + "', '" + 
@@ -223,10 +223,13 @@ namespace Implement
                 oObjeto.EmpNombres = dr["EMP_NOMBRES"].ToString();
                 oObjeto.EstCodigoPro = dr["EST_CODIGO_PRO"].ToString();
                 oObjeto.EstCodigoCli = dr["EST_CODIGO_CLI"].ToString();
-                oObjeto.EmpLimiteCredito = double.Parse(dr["EMP_LIMITE_CREDITO"].ToString());
-                oObjeto.EstCodigoCredito = dr["EMP_CODIGO_CREDITO"].ToString();
-                oObjeto.EmpNumeroTransporte = long.Parse(dr["EMP_NUMERO_TRANSPORTE"].ToString());
-                oObjeto.PrsNumero = int.Parse(dr["PRS_NUMERO"].ToString());
+                if (dr["EMP_LIMITE_CREDITO"].ToString() != "")
+                    oObjeto.EmpLimiteCredito = double.Parse(dr["EMP_LIMITE_CREDITO"].ToString());
+                oObjeto.EstCodigoCredito = dr["EST_CODIGO_CREDITO"].ToString();
+                if (dr["EMP_NUMERO_TRANSPORTE"].ToString() != "")
+                    oObjeto.EmpNumeroTransporte = long.Parse(dr["EMP_NUMERO_TRANSPORTE"].ToString());
+                if (dr["PRS_NUMERO"].ToString() != "")
+                    oObjeto.PrsNumero = int.Parse(dr["PRS_NUMERO"].ToString());
                 return oObjeto;
  			}
 

@@ -34,12 +34,13 @@
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.gbDatos = new Controles.contenedores.gesGroup();
             this.gesTextBoxFactorCalib = new Controles.textBoxes.gesTextBox();
+            this.gesTextBoxNumeroSerie = new Controles.textBoxes.gesTextBox();
+            this.gesTextBoxGisY = new Controles.textBoxes.gesTextBox();
+            this.gesTextBoxGisX = new Controles.textBoxes.gesTextBox();
             this.gesTextBoxDigitos = new Controles.textBoxes.gesTextBox();
             this.dtpFechaCarga = new Controles.Fecha.dtpFecha();
             this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
             this.cmbMmoCodigo = new Controles.datos.cmbLista();
-            this.TextBoxGisY = new Controles.NumericTextBox();
-            this.TextBoxGisX = new Controles.NumericTextBox();
             this.chkEstado = new Controles.datos.chkBox();
             this.lblGisY = new Controles.labels.lblEtiqueta();
             this.cmbNumeroProv = new Controles.datos.cmbLista();
@@ -49,7 +50,6 @@
             this.lblGisX = new Controles.labels.lblEtiqueta();
             this.lblEstado = new Controles.labels.lblEtiqueta();
             this.lblDigitos = new Controles.labels.lblEtiqueta();
-            this.txtNumeroSerie = new Controles.textBoxes.txtDescripcionCorta();
             this.lbDescripcion = new Controles.labels.lblEtiqueta();
             this.gesGroup2.SuspendLayout();
             this.gbDatos.SuspendLayout();
@@ -88,12 +88,13 @@
             // gbDatos
             // 
             this.gbDatos.Controls.Add(this.gesTextBoxFactorCalib);
+            this.gbDatos.Controls.Add(this.gesTextBoxNumeroSerie);
+            this.gbDatos.Controls.Add(this.gesTextBoxGisY);
+            this.gbDatos.Controls.Add(this.gesTextBoxGisX);
             this.gbDatos.Controls.Add(this.gesTextBoxDigitos);
             this.gbDatos.Controls.Add(this.dtpFechaCarga);
             this.gbDatos.Controls.Add(this.lblEtiqueta1);
             this.gbDatos.Controls.Add(this.cmbMmoCodigo);
-            this.gbDatos.Controls.Add(this.TextBoxGisY);
-            this.gbDatos.Controls.Add(this.TextBoxGisX);
             this.gbDatos.Controls.Add(this.chkEstado);
             this.gbDatos.Controls.Add(this.lblGisY);
             this.gbDatos.Controls.Add(this.cmbNumeroProv);
@@ -103,7 +104,6 @@
             this.gbDatos.Controls.Add(this.lblGisX);
             this.gbDatos.Controls.Add(this.lblEstado);
             this.gbDatos.Controls.Add(this.lblDigitos);
-            this.gbDatos.Controls.Add(this.txtNumeroSerie);
             this.gbDatos.Controls.Add(this.lbDescripcion);
             this.gbDatos.Location = new System.Drawing.Point(12, 12);
             this.gbDatos.Name = "gbDatos";
@@ -124,11 +124,47 @@
             this.gesTextBoxFactorCalib.TextoVacio = "<Descripcion>";
             this.gesTextBoxFactorCalib.TipoControl = Controles.util.Enumerados.enumTipos.Numero;
             // 
+            // gesTextBoxNumeroSerie
+            // 
+            this.gesTextBoxNumeroSerie.BackColor = System.Drawing.Color.Red;
+            this.gesTextBoxNumeroSerie.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.gesTextBoxNumeroSerie.Location = new System.Drawing.Point(117, 28);
+            this.gesTextBoxNumeroSerie.Name = "gesTextBoxNumeroSerie";
+            this.gesTextBoxNumeroSerie.Requerido = Controles.util.Enumerados.enumRequerido.SI;
+            this.gesTextBoxNumeroSerie.Size = new System.Drawing.Size(165, 20);
+            this.gesTextBoxNumeroSerie.TabIndex = 1;
+            this.gesTextBoxNumeroSerie.TextoVacio = "<Descripcion>";
+            this.gesTextBoxNumeroSerie.TipoControl = Controles.util.Enumerados.enumTipos.Numero;
+            // 
+            // gesTextBoxGisY
+            // 
+            this.gesTextBoxGisY.BackColor = System.Drawing.Color.Red;
+            this.gesTextBoxGisY.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.gesTextBoxGisY.Location = new System.Drawing.Point(427, 93);
+            this.gesTextBoxGisY.Name = "gesTextBoxGisY";
+            this.gesTextBoxGisY.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.gesTextBoxGisY.Size = new System.Drawing.Size(155, 20);
+            this.gesTextBoxGisY.TabIndex = 6;
+            this.gesTextBoxGisY.TextoVacio = "<Descripcion>";
+            this.gesTextBoxGisY.TipoControl = Controles.util.Enumerados.enumTipos.Decimal;
+            // 
+            // gesTextBoxGisX
+            // 
+            this.gesTextBoxGisX.BackColor = System.Drawing.Color.Red;
+            this.gesTextBoxGisX.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.gesTextBoxGisX.Location = new System.Drawing.Point(117, 93);
+            this.gesTextBoxGisX.Name = "gesTextBoxGisX";
+            this.gesTextBoxGisX.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.gesTextBoxGisX.Size = new System.Drawing.Size(155, 20);
+            this.gesTextBoxGisX.TabIndex = 5;
+            this.gesTextBoxGisX.TextoVacio = "<Descripcion>";
+            this.gesTextBoxGisX.TipoControl = Controles.util.Enumerados.enumTipos.Decimal;
+            // 
             // gesTextBoxDigitos
             // 
             this.gesTextBoxDigitos.BackColor = System.Drawing.Color.Red;
             this.gesTextBoxDigitos.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.gesTextBoxDigitos.Location = new System.Drawing.Point(110, 57);
+            this.gesTextBoxDigitos.Location = new System.Drawing.Point(117, 57);
             this.gesTextBoxDigitos.Name = "gesTextBoxDigitos";
             this.gesTextBoxDigitos.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.gesTextBoxDigitos.Size = new System.Drawing.Size(100, 20);
@@ -139,7 +175,7 @@
             // dtpFechaCarga
             // 
             this.dtpFechaCarga.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaCarga.Location = new System.Drawing.Point(110, 171);
+            this.dtpFechaCarga.Location = new System.Drawing.Point(117, 171);
             this.dtpFechaCarga.Name = "dtpFechaCarga";
             this.dtpFechaCarga.Size = new System.Drawing.Size(165, 20);
             this.dtpFechaCarga.TabIndex = 9;
@@ -158,33 +194,17 @@
             this.cmbMmoCodigo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbMmoCodigo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbMmoCodigo.FormattingEnabled = true;
-            this.cmbMmoCodigo.Location = new System.Drawing.Point(110, 133);
+            this.cmbMmoCodigo.Location = new System.Drawing.Point(117, 133);
             this.cmbMmoCodigo.Name = "cmbMmoCodigo";
             this.cmbMmoCodigo.Size = new System.Drawing.Size(165, 21);
             this.cmbMmoCodigo.TabIndex = 8;
-            // 
-            // TextBoxGisY
-            // 
-            this.TextBoxGisY.AllowSpace = false;
-            this.TextBoxGisY.Location = new System.Drawing.Point(427, 97);
-            this.TextBoxGisY.Name = "TextBoxGisY";
-            this.TextBoxGisY.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxGisY.TabIndex = 6;
-            // 
-            // TextBoxGisX
-            // 
-            this.TextBoxGisX.AllowSpace = false;
-            this.TextBoxGisX.Location = new System.Drawing.Point(110, 97);
-            this.TextBoxGisX.Name = "TextBoxGisX";
-            this.TextBoxGisX.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxGisX.TabIndex = 5;
             // 
             // chkEstado
             // 
             this.chkEstado.AutoSize = true;
             this.chkEstado.Checked = true;
             this.chkEstado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEstado.Location = new System.Drawing.Point(110, 207);
+            this.chkEstado.Location = new System.Drawing.Point(117, 207);
             this.chkEstado.Name = "chkEstado";
             this.chkEstado.Size = new System.Drawing.Size(73, 17);
             this.chkEstado.TabIndex = 10;
@@ -213,11 +233,11 @@
             // lblMmoCodigo
             // 
             this.lblMmoCodigo.AutoSize = true;
-            this.lblMmoCodigo.Location = new System.Drawing.Point(6, 137);
+            this.lblMmoCodigo.Location = new System.Drawing.Point(13, 136);
             this.lblMmoCodigo.Name = "lblMmoCodigo";
-            this.lblMmoCodigo.Size = new System.Drawing.Size(98, 13);
+            this.lblMmoCodigo.Size = new System.Drawing.Size(101, 13);
             this.lblMmoCodigo.TabIndex = 22;
-            this.lblMmoCodigo.Text = "Modelo de Medidor";
+            this.lblMmoCodigo.Text = "Modelo de Medidor:";
             // 
             // lblDecimales
             // 
@@ -264,20 +284,6 @@
             this.lblDigitos.TabIndex = 22;
             this.lblDigitos.Text = "Dígitos:";
             // 
-            // txtNumeroSerie
-            // 
-            this.txtNumeroSerie.BackColor = System.Drawing.Color.White;
-            this.txtNumeroSerie.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNumeroSerie.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtNumeroSerie.Location = new System.Drawing.Point(110, 25);
-            this.txtNumeroSerie.MaxLength = 30;
-            this.txtNumeroSerie.Name = "txtNumeroSerie";
-            this.txtNumeroSerie.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.txtNumeroSerie.Size = new System.Drawing.Size(165, 20);
-            this.txtNumeroSerie.TabIndex = 1;
-            this.txtNumeroSerie.TextoVacio = "<Descripcion>";
-            this.txtNumeroSerie.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
-            // 
             // lbDescripcion
             // 
             this.lbDescripcion.AutoSize = true;
@@ -313,8 +319,6 @@
         private Controles.Fecha.dtpFecha dtpFechaCarga;
         private Controles.labels.lblEtiqueta lblEtiqueta1;
         private Controles.datos.cmbLista cmbMmoCodigo;
-        private Controles.NumericTextBox TextBoxGisY;
-        private Controles.NumericTextBox TextBoxGisX;
         private Controles.datos.chkBox chkEstado;
         private Controles.labels.lblEtiqueta lblGisY;
         private Controles.datos.cmbLista cmbNumeroProv;
@@ -324,9 +328,11 @@
         private Controles.labels.lblEtiqueta lblGisX;
         private Controles.labels.lblEtiqueta lblEstado;
         private Controles.labels.lblEtiqueta lblDigitos;
-        private Controles.textBoxes.txtDescripcionCorta txtNumeroSerie;
         private Controles.labels.lblEtiqueta lbDescripcion;
         private Controles.textBoxes.gesTextBox gesTextBoxFactorCalib;
         private Controles.textBoxes.gesTextBox gesTextBoxDigitos;
+        private Controles.textBoxes.gesTextBox gesTextBoxNumeroSerie;
+        private Controles.textBoxes.gesTextBox gesTextBoxGisY;
+        private Controles.textBoxes.gesTextBox gesTextBoxGisX;
     }
 }

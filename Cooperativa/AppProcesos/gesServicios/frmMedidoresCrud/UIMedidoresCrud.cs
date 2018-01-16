@@ -67,7 +67,6 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
             oMMO.MedFactorCalib = _vista.FactorCalib;
             oMMO.GisX = _vista.GisX;
             oMMO.GisY = _vista.GisY;
-            oMMO.DmeCodigo = _vista.DmeCodigo;
             oMMO.UsrNumero = _vista.UsrNumero;
             oMMO.MedFechaCarga = _vista.FechaCarga;
             oMMO.MmoCodigo = short.Parse(_vista.MmoCodigo.SelectedValue.ToString());

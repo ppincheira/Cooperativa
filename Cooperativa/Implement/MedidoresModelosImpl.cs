@@ -33,7 +33,7 @@ namespace Implement
                         "MMO_DECIMALES, MMO_CANT_HILOS, MMO_KW_VUELTAS, MMO_AMPERAJE, " +
                         "MMO_CLASE, MMO_REGISTRADOR, MMO_TIPO_CONTADOR, MMO_TIPO_CONEXION, " +
                         "FAB_NUMERO, TME_CODIGO, USR_NUMERO, MMO_FECHA_CARGA, EST_CODIGO) " +
-                        "values('" + oMMO.MMoCodigo + "','" + oMMO.MMoDescripcion + "','" +
+                        "values(IDTEMP," + oMMO.MMoDescripcion + "','" +
                         oMMO.MMoDescripcionCorta + "'," + oMMO.MMoDigitos + "," +
                         oMMO.MMoDecimales + "," + oMMO.MMoCantHilos + "," + oMMO.MMoKwVueltas + ",'" +
                         oMMO.MMoAmperaje + "'," + oMMO.MMoClase + "," + oMMO.MMoRegistrador + ",'" +
