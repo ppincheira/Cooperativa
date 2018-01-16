@@ -132,12 +132,47 @@ namespace UI
 
         }
 
-        private void btnPersonalizado8_Click(object sender, EventArgs e)
+        private void gesTextBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10100", "10101", "10102", "10104", "10105", "10103");
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("MED", oPermiso);
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("TME", oPermiso);
+            frmbus.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("FAB", oPermiso);
+            frmbus.ShowDialog();
+        }
+
+        private void btnMedidoresModelos_Click(object sender, EventArgs e)
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10031", "10032", "10033", "10035", "10036", "10034");
             FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("MEM", oPermiso);
             frmbus.ShowDialog();
+        }
 
+        private void btnMedidores_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10101", "10102", "10103", "10105", "10106", "10104");
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("MED", oPermiso);
+            frmbus.ShowDialog();
+
+        }
+
+        private void categorias_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("SCAT", oPermiso);
+            frmbus.ShowDialog();
         }
     }
 }

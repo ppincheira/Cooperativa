@@ -210,7 +210,7 @@ namespace Implement
                 cn.Open();
                 string sqlSelect = " SELECT * FROM dominios  " +
                                    " WHERE  dmn_activo = 'S' " +
-                                   " AND dmn_codigo ='" + dmnCodigo + "' " ;
+                                   " AND dmn_codigo ='" + dmnCodigo + "' ";
 
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
@@ -236,6 +236,7 @@ namespace Implement
                 throw ex;
             }
         }
+
         //public DataTable DominiosGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
         //{
         //    try

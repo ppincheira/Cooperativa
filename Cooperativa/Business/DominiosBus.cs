@@ -47,5 +47,6 @@ namespace Business
             DominiosImpl oDominiodImpl = new DominiosImpl();
             return oDominiodImpl.DominiosGetListByFilter(dmnCodigo);
         }
+
     }
 }

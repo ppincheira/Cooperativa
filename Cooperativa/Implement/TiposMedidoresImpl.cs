@@ -24,15 +24,41 @@ namespace Implement
                     cn.Open();
                 //Clave TME_CODIGO
                 ds = new DataSet();
-                    cmd = new OracleCommand("insert into Tipos_Medidores(TME_CODIGO, TME_DESCRIPCION, " +
-                        "TME_DESCRIPCION_CORTA, TME_FECHA_CARGA, SRV_CODIGO, USR_NUMERO) " +
-                        "values('" + oTMe.TmeCodigo + "','" + oTMe.TmeDescripcion + "','" + oTMe.TmeDescripcionCorta + "'," + 
-                        oTMe.TmeFechaCarga + ",'" + oTMe.SrvCodigo + "'," + oTMe.UsrNumero + ")", cn);
-                    adapter = new OracleDataAdapter(cmd);
-                    response = cmd.ExecuteNonQuery();
-                    cn.Close();
-                    return response;
-                }
+
+                string query = " DECLARE IDTEMP NUMBER(10,0); " +
+                " BEGIN " +
+                " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('TME_CODIGO')) into IDTEMP from dual; " +
+                "insert into Tipos_Medidores(TME_CODIGO, TME_DESCRIPCION, " +
+                        "TME_DESCRIPCION_CORTA, TME_FECHA_CARGA, SRV_CODIGO,EST_CODIGO, USR_NUMERO) " +
+                        "values(IDTEMP,'" + oTMe.TmeDescripcion + "','" + oTMe.TmeDescripcionCorta + "','" +
+                        oTMe.TmeFechaCarga.ToShortDateString() + "','" + oTMe.SrvCodigo + "','" + oTMe.EstCodigo + "'," + oTMe.UsrNumero + ")"+ "RETURNING IDTEMP INTO :id;END;";
+
+
+
+                /*
+                                cmd = new OracleCommand("insert into Tipos_Medidores(TME_CODIGO, TME_DESCRIPCION, " +
+                                        "TME_DESCRIPCION_CORTA, TME_FECHA_CARGA, SRV_CODIGO,EST_CODIGO, USR_NUMERO) " +
+                                        "values('" + oTMe.TmeCodigo + "','" + oTMe.TmeDescripcion + "','" + oTMe.TmeDescripcionCorta + "','" + 
+                                        oTMe.TmeFechaCarga.ToShortDateString() + "','" + oTMe.SrvCodigo + "','"+oTMe.EstCodigo +"',"+ oTMe.UsrNumero + ")", cn);*/
+                cmd = new OracleCommand(query, cn);
+                adapter = new OracleDataAdapter(cmd);
+
+
+                cmd.Parameters.Add(new OracleParameter
+                {
+                    ParameterName = ":id",
+                    OracleDbType = OracleDbType.Int64,
+                    Direction = ParameterDirection.Output
+                });
+
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                response = int.Parse(cmd.Parameters[":id"].Value.ToString());
+
+
+                cn.Close();
+                return response;
+            }
                 catch (Exception ex)
                 {
                     throw ex;
@@ -50,10 +76,11 @@ namespace Implement
                     cmd = new OracleCommand("update Tipos_Medidores " +
                         "SET TME_DESCRIPCION='" + oTMe.TmeDescripcion + "', " +
                         "TME_DESCRIPCION_CORTA='" + oTMe.TmeDescripcionCorta + "', " +
-                        "TME_FECHA_CARGA=" + oTMe.TmeFechaCarga + ", " +
+                        "TME_FECHA_CARGA='" + oTMe.TmeFechaCarga.ToShortDateString() + "', " +
                         "SRV_CODIGO='" + oTMe.SrvCodigo + "', " +
-                        "USR_NUMERO=" + oTMe.UsrNumero + " " +
-                        "WHERE TME_CODIGO='" + oTMe.TmeCodigo + "'", cn);
+                        "USR_NUMERO=" + oTMe.UsrNumero + ", " +
+                        "EST_CODIGO='" + oTMe.EstCodigo+ "' " +
+                        "WHERE TME_CODIGO=" + oTMe.TmeCodigo , cn);
                     adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
                     cn.Close();
@@ -156,7 +183,7 @@ namespace Implement
                 try
                 {
                     TiposMedidores oObjeto = new TiposMedidores();
-                    oObjeto.TmeCodigo = int.Parse(dr["TME_CODIGO"].ToString());
+                    oObjeto.TmeCodigo = long.Parse(dr["TME_CODIGO"].ToString());
                     oObjeto.TmeDescripcion = dr["TME_DESCRIPCION"].ToString();
                     oObjeto.TmeDescripcionCorta = dr["TME_DESCRIPCION_CORTA"].ToString();
                     if (dr["TME_FECHA_CARGA"].ToString() != "")

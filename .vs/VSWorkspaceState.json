@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Cooperativa",
+    "\\Cooperativa\\AppProcesos",
+    "\\Cooperativa\\AppProcesos\\formsAuxiliares"
   ],
+  "SelectedNode": "\\Cooperativa\\AppProcesos\\formsAuxiliares\\frmFabricantesCrud",
   "PreviewInSolutionExplorer": false
 }

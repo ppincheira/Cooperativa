@@ -6,7 +6,7 @@ namespace Business
 {
     public class ServiciosCategoriasBus
     {
-        public int ServiciosCategoriasAdd(ServiciosCategorias oServiciosCategorias)
+        public long ServiciosCategoriasAdd(ServiciosCategorias oServiciosCategorias)
         {
             ServiciosCategoriasImpl oServiciosCategoriasImpl = new ServiciosCategoriasImpl();
             return oServiciosCategoriasImpl.ServiciosCategoriasAdd(oServiciosCategorias);

@@ -165,6 +165,15 @@ namespace Service
                         }else
                             ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Empty;
 
+                    if (control is Controles.textBoxes.txtDescripcion)
+                        if (((Controles.textBoxes.txtDescripcion)control).REQUERIDO == "SI" && ((Controles.textBoxes.txtDescripcion)control).Text == "" && ((Controles.textBoxes.txtDescripcion)control).TabIndex <= index)
+                        {
+                            ((Controles.textBoxes.txtDescripcion)control).BackColor = System.Drawing.Color.Red;
+                            formInicial.VALIDARFORM = false;
+                        }
+                        else
+                            ((Controles.textBoxes.txtDescripcion)control).BackColor = System.Drawing.Color.Empty;
+
                     if (control is Controles.textBoxes.txtObservaciones)
                             if (((Controles.textBoxes.txtObservaciones)control).REQUERIDO == "SI" && ((Controles.textBoxes.txtObservaciones)control).Text == "" && ((Controles.textBoxes.txtObservaciones)control).TabIndex <= index)
                             { 
@@ -184,7 +193,7 @@ namespace Service
                     if (control is Controles.Fecha.dtpFecha)
                             if (((Controles.Fecha.dtpFecha)control).REQUERIDO == "SI" && ((Controles.Fecha.dtpFecha)control).Text == "" && ((Controles.Fecha.dtpFecha)control).TabIndex <= index)
                             {
-                             ((Controles.textBoxes.txtPassword)control).BackColor = System.Drawing.Color.Red;
+                             ((Controles.Fecha.dtpFecha)control).BackColor = System.Drawing.Color.Red;
                              formInicial.VALIDARFORM = false;
                         }
                         else
@@ -192,7 +201,7 @@ namespace Service
                     if (control is Controles.datos.chkBox)
                         if (((Controles.datos.chkBox)control).REQUERIDO == "SI" && ((Controles.datos.chkBox)control).Text == "" && ((Controles.datos.chkBox)control).TabIndex <= index)
                         {
-                            ((Controles.textBoxes.txtPassword)control).BackColor = System.Drawing.Color.Red;
+                            ((Controles.datos.chkBox)control).BackColor = System.Drawing.Color.Red;
                             formInicial.VALIDARFORM = false;
                         }
                         else

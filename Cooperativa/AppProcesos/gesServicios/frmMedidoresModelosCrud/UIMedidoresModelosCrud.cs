@@ -51,8 +51,6 @@ namespace AppProcesos.gesServicios.frmMedidoresModelosCrud
                 oMedidoresModelos = oMedidoresModelosBus.MedidoresModelosGetById(_vista.Codigo);
                 _vista.TipoContador.SelectedValue = oMedidoresModelos.MMoTipoContador;
                 _vista.TipoConexion.SelectedValue = oMedidoresModelos.MMoTipoConexion;
-                _vista.FabNumero.SelectedValue = oMedidoresModelos.FabNumero;
-                _vista.TMeCodigo.SelectedValue = oMedidoresModelos.TmeCodigo;
                 _vista.Descripcion = oMedidoresModelos.MMoDescripcion;
                 _vista.DescripcionCorta = oMedidoresModelos.MMoDescripcionCorta;
                 _vista.Decimales = oMedidoresModelos.MMoDecimales;

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Implement;
 using Model;
+using System.Data;
 
 namespace Business
 {
@@ -34,6 +35,11 @@ namespace Business
         {
             ServiciosImpl oServiciosImpl = new ServiciosImpl();
             return oServiciosImpl.ServiciosGetAll();
+        }
+        public DataTable ServiciosGetByFilter()
+        {
+            ServiciosImpl oServiciosImpl = new ServiciosImpl();
+            return oServiciosImpl.ServiciosGetByFilter();
         }
     }
 }

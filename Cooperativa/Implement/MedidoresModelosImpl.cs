@@ -68,25 +68,25 @@ namespace Implement
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
                     ds = new DataSet();
-                    cmd = new OracleCommand("update Medidores_Modelos " +
-                        "SET MMO_DESCRIPCION='" + oMMO.MMoDescripcion +
-                        "', MMO_DESCRIPCION_CORTA='" + oMMO.MMoDescripcionCorta +
-                        "', MMO_DIGITOS=" + oMMO.MMoDigitos +
-                        ", MMO_DECIMALES=" + oMMO.MMoDecimales +
-                        ", MMO_CANT_HILOS=" + oMMO.MMoCantHilos +
-                        ", MMO_KW_VUELTAS=" + oMMO.MMoKwVueltas +
-                        ", MMO_AMPERAJE='" + oMMO.MMoAmperaje +
-                        "', MMO_CLASE=" + oMMO.MMoClase +
-                        ", MMO_REGISTRADOR=" + oMMO.MMoRegistrador +
-                        ", MMO_TIPO_CONTADOR='" + oMMO.MMoTipoContador +
-                        "', MMO_TIPO_CONEXION='" + oMMO.MMoTipoConexion +
-                        "', FAB_NUMERO=" + oMMO.FabNumero +
-                        ", TME_CODIGO=" + oMMO.TmeCodigo +
-                        ", USR_NUMERO=" + oMMO.UsrNumero +
-                        ", MMO_FECHA_CARGA='" + oMMO.MMoFechaCarga.ToString("dd/MM/yyyy") +
-                        "', EST_CODIGO='" + oMMO.EstCodigo + "' " +
-                        " WHERE MMO_CODIGO=" + oMMO.MMoCodigo, cn);
-                    adapter = new OracleDataAdapter(cmd);
+                cmd = new OracleCommand("update Medidores_Modelos " +
+                    "SET MMO_DESCRIPCION='" + oMMO.MMoDescripcion +
+                    "', MMO_DESCRIPCION_CORTA='" + oMMO.MMoDescripcionCorta +
+                    "', MMO_DIGITOS=" + oMMO.MMoDigitos +
+                    ", MMO_DECIMALES=" + oMMO.MMoDecimales +
+                    ", MMO_CANT_HILOS=" + oMMO.MMoCantHilos +
+                    ", MMO_KW_VUELTAS=" + oMMO.MMoKwVueltas +
+                    ", MMO_AMPERAJE='" + oMMO.MMoAmperaje +
+                    "', MMO_CLASE=" + oMMO.MMoClase +
+                    ", MMO_REGISTRADOR=" + oMMO.MMoRegistrador +
+                    ", MMO_TIPO_CONTADOR='" + oMMO.MMoTipoContador +
+                    "', MMO_TIPO_CONEXION='" + oMMO.MMoTipoConexion +
+                    "', FAB_NUMERO=" + oMMO.FabNumero +
+                    ", TME_CODIGO=" + oMMO.TmeCodigo +
+                    ", USR_NUMERO=" + oMMO.UsrNumero +
+                    ", MMO_FECHA_CARGA='" + oMMO.MMoFechaCarga.ToString("dd/MM/yyyy") +
+                    "', EST_CODIGO='" + oMMO.EstCodigo + "' " +
+                    " WHERE MMO_CODIGO=" + oMMO.MMoCodigo, cn);
+                adapter = new OracleDataAdapter(cmd);
                     response = cmd.ExecuteNonQuery();
                     cn.Close();
                     return response > 0;

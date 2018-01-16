@@ -20,7 +20,7 @@ namespace AppProcesos.gesServicios.frmMedidoresModelosCrud
         Controles.datos.cmbLista TipoConexion { get; set; }
         Controles.datos.cmbLista FabNumero { get; set; }
         Controles.datos.cmbLista TMeCodigo { get; set; }
-        int UsrNumero { get; set; } 
+        int UsrNumero { get; set; }
         DateTime FechaCarga { get; set; }
         string EstCodigo { get; set; }
 

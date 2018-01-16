@@ -117,6 +117,12 @@
     <Compile Include="frmDomiciliosCrud.Designer.cs">
       <DependentUpon>frmDomiciliosCrud.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFabricantesCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFabricantesCrud.Designer.cs">
+      <DependentUpon>frmFabricantesCrud.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDomiciliosCrud.resx">
       <DependentUpon>frmDomiciliosCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFabricantesCrud.resx">
+      <DependentUpon>frmFabricantesCrud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFormAdmin.resx">
       <DependentUpon>frmFormAdmin.cs</DependentUpon>

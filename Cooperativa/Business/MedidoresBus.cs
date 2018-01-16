@@ -6,7 +6,7 @@ namespace Business
 {
     public class MedidoresBus
     {
-        public int MedidoresAdd(Medidores oMedidores)
+        public long MedidoresAdd(Medidores oMedidores)
         {
             MedidoresImpl oMedidoresImpl = new MedidoresImpl();
             return oMedidoresImpl.MedidoresAdd(oMedidores);

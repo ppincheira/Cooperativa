@@ -144,12 +144,17 @@
             // 
             // txtNombreContacto
             // 
+            this.txtNombreContacto.BackColor = System.Drawing.Color.White;
             this.txtNombreContacto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNombreContacto.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtNombreContacto.Location = new System.Drawing.Point(100, 133);
             this.txtNombreContacto.MaxLength = 50;
             this.txtNombreContacto.Name = "txtNombreContacto";
+            this.txtNombreContacto.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtNombreContacto.Size = new System.Drawing.Size(167, 20);
             this.txtNombreContacto.TabIndex = 4;
+            this.txtNombreContacto.TextoVacio = "<Descripcion>";
+            this.txtNombreContacto.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // lblEtiqueta3
             // 
@@ -180,12 +185,17 @@
             // 
             // txtNumeroTelefono
             // 
+            this.txtNumeroTelefono.BackColor = System.Drawing.Color.White;
             this.txtNumeroTelefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNumeroTelefono.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtNumeroTelefono.Location = new System.Drawing.Point(100, 19);
             this.txtNumeroTelefono.MaxLength = 20;
             this.txtNumeroTelefono.Name = "txtNumeroTelefono";
+            this.txtNumeroTelefono.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtNumeroTelefono.Size = new System.Drawing.Size(167, 20);
             this.txtNumeroTelefono.TabIndex = 1;
+            this.txtNumeroTelefono.TextoVacio = "<Descripcion>";
+            this.txtNumeroTelefono.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // lblNumeroTelefono
             // 
@@ -202,6 +212,7 @@
             this.Controls.Add(this.gesControles);
             this.Controls.Add(this.gesDatos);
             this.Name = "frmTelefonosCrud";
+            this.Text = "Telefonos";
             this.Load += new System.EventHandler(this.frmTelefonosCrud_Load);
             this.gesControles.ResumeLayout(false);
             this.gesDatos.ResumeLayout(false);
