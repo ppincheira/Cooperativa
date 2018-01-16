@@ -23,7 +23,7 @@ namespace Implement
                 cn.Open();
                 // Clave TCS_CODIGO
                 ds = new DataSet();
-                cmd = new OracleCommand("insert into Tipo_Conexion_Servicios " +
+                cmd = new OracleCommand("insert into Tipos_Conexiones_Servicios " +
                     "(TCS_CODIGO, TCS_DESCRIPCION, TCS_DESCRIPCION_CORTA, SRV_CODIGO) " +
                     "values('" + oTCS.TcsCodigo + "', '" +oTCS.TcsDescripcion + "', '" +
                     oTCS.TcsDescripcionCorta + "','" + oTCS.SrvCodigo + "')", cn);
@@ -46,7 +46,7 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 ds = new DataSet();
-                cmd = new OracleCommand("update Tipo_Conexion_Servicios " +
+                cmd = new OracleCommand("update Tipos_Conexiones_Servicios " +
                     "SET TCS_DESCRIPCION='" + oTCS.TcsDescripcion + "', " +
                     "TCS_DESCRIPCION_CORTA='" + oTCS.TcsDescripcionCorta + "', " +
                     "SRV_CODIGO='" + oTCS.SrvCodigo + "' " +
@@ -72,7 +72,7 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 ds = new DataSet();
-                cmd = new OracleCommand("DELETE Tipo_Conexion_Servicios " +
+                cmd = new OracleCommand("DELETE Tipos_Conexiones_Servicios " +
                       "WHERE TCS_CODIGO='" + Id + "'", cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
@@ -95,7 +95,7 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select * from Tipo_Conexion_Servicios " +
+                string sqlSelect = "select * from Tipos_Conexiones_Servicios " +
                     "WHERE TCS_CODIGO='" + Id + "'";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
@@ -127,7 +127,7 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select * from Tipo_Conexion_Servicios ";
+                string sqlSelect = "select * from Tipos_Conexiones_Servicios ";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();

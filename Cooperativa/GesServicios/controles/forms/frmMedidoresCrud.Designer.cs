@@ -177,6 +177,7 @@
             this.dtpFechaCarga.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaCarga.Location = new System.Drawing.Point(117, 171);
             this.dtpFechaCarga.Name = "dtpFechaCarga";
+            this.dtpFechaCarga.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.dtpFechaCarga.Size = new System.Drawing.Size(165, 20);
             this.dtpFechaCarga.TabIndex = 9;
             // 
@@ -196,8 +197,10 @@
             this.cmbMmoCodigo.FormattingEnabled = true;
             this.cmbMmoCodigo.Location = new System.Drawing.Point(117, 133);
             this.cmbMmoCodigo.Name = "cmbMmoCodigo";
+            this.cmbMmoCodigo.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbMmoCodigo.Size = new System.Drawing.Size(165, 21);
             this.cmbMmoCodigo.TabIndex = 8;
+            this.cmbMmoCodigo.Text = "<Seleccione Modelo>";
             // 
             // chkEstado
             // 
@@ -206,6 +209,7 @@
             this.chkEstado.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkEstado.Location = new System.Drawing.Point(117, 207);
             this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.chkEstado.Size = new System.Drawing.Size(73, 17);
             this.chkEstado.TabIndex = 10;
             this.chkEstado.Text = "Habilitado";
@@ -227,6 +231,7 @@
             this.cmbNumeroProv.FormattingEnabled = true;
             this.cmbNumeroProv.Location = new System.Drawing.Point(427, 25);
             this.cmbNumeroProv.Name = "cmbNumeroProv";
+            this.cmbNumeroProv.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbNumeroProv.Size = new System.Drawing.Size(165, 21);
             this.cmbNumeroProv.TabIndex = 2;
             // 

@@ -178,7 +178,7 @@ namespace GesServicios.controles.forms
             try
             {
                 this.VALIDARFORM = true;
-                oUtil.ValidarFormulario(this, this, 4);
+                oUtil.ValidarFormularioEP(this, this, 4);
                 if (this.VALIDARFORM)
                 {
                     DialogResult = DialogResult.OK;
