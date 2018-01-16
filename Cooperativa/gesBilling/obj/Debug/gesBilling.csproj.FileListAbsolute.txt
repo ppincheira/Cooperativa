@@ -81,6 +81,7 @@ C:\Users\nicoc\Desktop\Versiones\Cooperativa 14 01 2018 subir\Cooperativa\gesBil
 C:\Users\nicoc\Desktop\Versiones\Cooperativa 14 01 2018 subir\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.CoreCompileInputs.cache
 C:\Users\nicoc\Desktop\Versiones\Cooperativa 14 01 2018 subir\Cooperativa\gesBilling\obj\Debug\gesBilling.exe
 C:\Users\nicoc\Desktop\Versiones\Cooperativa 14 01 2018 subir\Cooperativa\gesBilling\obj\Debug\gesBilling.pdb
+<<<<<<< HEAD
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.pdb
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Business.dll
@@ -112,6 +113,8 @@ C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.controles.form
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.Properties.Resources.resources
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.GenerateResource.Cache
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.CoreCompileInputs.cache
+=======
+>>>>>>> 8e8c700e923ede5c8bc8a21d588d1fcbc7a8e4e2
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.pdb
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Business.dll
@@ -133,5 +136,36 @@ C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\AppProcesos.pdb
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Service.pdb
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\GesServicios.pdb
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
+C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csprojResolveAssemblyReference.cache
+C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.controles.forms.frmAdminSuministros.resources
+C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.Properties.Resources.resources
+C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.GenerateResource.Cache
+C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.exe
 C:\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.pdb
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.exe
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\gesBilling.pdb
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Business.dll
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Controles.dll
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\FormsAuxiliares.dll
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Model.dll
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Implement.dll
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\AppProcesos.dll
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Service.dll
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\GesServicios.dll
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Business.pdb
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Controles.pdb
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\FormsAuxiliares.pdb
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Model.pdb
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Implement.pdb
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\AppProcesos.pdb
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\Service.pdb
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\bin\Debug\GesServicios.pdb
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csprojResolveAssemblyReference.cache
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.controles.forms.frmAdminSuministros.resources
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.Properties.Resources.resources
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.GenerateResource.Cache
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\GesBilling.csproj.CoreCompileInputs.cache
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.exe
+C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\gesBilling\obj\Debug\gesBilling.pdb
