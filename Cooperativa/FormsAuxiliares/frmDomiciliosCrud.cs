@@ -170,7 +170,8 @@ namespace FormsAuxiliares
             {
 
                 this.VALIDARFORM = true;
-                oUtil.ValidarFormulario(this, this, 5);
+
+                oUtil.ValidarFormularioEP(this,this,14);
                 if (this.VALIDARFORM)
                 {
                     DialogResult = DialogResult.OK;

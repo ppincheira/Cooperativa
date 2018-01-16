@@ -67,6 +67,14 @@ namespace Controles.textBoxes
             }
            
         }
+
+        public gesTextBox()
+        {//Iniciamos los valores por defecto
+            InitializeComponent();
+            colorTextoVacio = Color.Gray;
+            textoVacio = "<Descripcion>";
+
+        }
         #region Component Designer generated code
         private void InitializeComponent()
         {
@@ -90,7 +98,7 @@ namespace Controles.textBoxes
            
             //this.BackColor = System.Drawing.Color.White;
             this.Layout += new System.Windows.Forms.LayoutEventHandler(this.GesTextBox_Layout);
-           // this.Leave += new System.EventHandler(this.Validarting); 
+            //this.Leave += new System.EventHandler(this.Validarting); 
             this.Validating += new CancelEventHandler(this.Validarting);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
             this.Enter += new System.EventHandler(this.GesTextBox_Enter);
@@ -120,13 +128,7 @@ namespace Controles.textBoxes
         //Variables privadas
         bool bndTextoVacio = false;//Bandera que nos indica si esta activo el TextoVacio
                                    //Constructor
-        public gesTextBox()
-        {//Iniciamos los valores por defecto
-            InitializeComponent();
-            colorTextoVacio = Color.Gray;
-            textoVacio = "<Descripcion>";
-
-        }
+  
         //Creamos un metodo que nos ayudara a verificar si se inserta el texto vacio o no
         private void VerificaTextoVacio()
         {
