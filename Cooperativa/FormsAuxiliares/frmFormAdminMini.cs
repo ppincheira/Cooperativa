@@ -90,7 +90,12 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                "frmFormAdminMini",
+                                "frmFormAdminMini",
+                                this.FindForm().Name);
             }
 
         }
@@ -103,10 +108,23 @@ namespace FormsAuxiliares
                 _oUtil = new Utility();
                 _oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
                 //_oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
+                switch (_Tabla)
+                {
+                    case "SCAT":
+                        this.dgBusqueda.Columns["DESCRIPCION"].Visible = false;
+                        this.Text = "Categorias";
+                        break;
+
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
         }
 
@@ -149,6 +167,11 @@ namespace FormsAuxiliares
                         if (oFrmFabricantes.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
+                    case "SCAT":                        
+                        frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(0, "I");
+                        if (oFrmCatCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
 
                 }
 
@@ -156,7 +179,12 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
 
         }
@@ -182,7 +210,7 @@ namespace FormsAuxiliares
                         if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
-                    
+
                     case "COPB":
                         long idCodPostal = Convert.ToInt64(row.Cells[0].Value);
                         frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
@@ -193,8 +221,8 @@ namespace FormsAuxiliares
                         long idMedidor = Convert.ToInt64(row.Cells[0].Value);
                         string estadoMedidor = row.Cells[5].Value.ToString();
                         frmTiposMedidoresCrud oTiposMedidoresCrud = new frmTiposMedidoresCrud(idMedidor, estadoMedidor);
-                        if(!oTiposMedidoresCrud.IsDisposed)// ESTE CONTROL SE HACE HASTA QUE LA GRILLA DEJE DE TRAER LOS REGISTROS QUE TENGAN EL ESTADO "B"
-                        { 
+                        if (!oTiposMedidoresCrud.IsDisposed)// ESTE CONTROL SE HACE HASTA QUE LA GRILLA DEJE DE TRAER LOS REGISTROS QUE TENGAN EL ESTADO "B"
+                        {
                             if (oTiposMedidoresCrud.ShowDialog() == DialogResult.OK)
                                 _oFormAdmin.CargarGrilla(_Tabla);
                         }
@@ -204,15 +232,26 @@ namespace FormsAuxiliares
                         string estadoFabricante = row.Cells[2].Value.ToString();
                         frmFabricantesCrud oFabricantesCrud = new frmFabricantesCrud(idFabricante, estadoFabricante);
 
-                        if(!oFabricantesCrud.IsDisposed)
+                        if (!oFabricantesCrud.IsDisposed)
                             if (oFabricantesCrud.ShowDialog() == DialogResult.OK)
                                 _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+                    case "SCAT":
+                        long id = Convert.ToInt64(row.Cells[0].Value);
+                        frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(id, "E");
+                        if (oFrmCatCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
                         break;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
         }
 
@@ -237,6 +276,11 @@ namespace FormsAuxiliares
                     case "TME":
                         long idTme = Convert.ToInt64(row.Cells[0].Value);
                         frmTiposMedidoresCrud oFrmMedidorCrud = new frmTiposMedidoresCrud(idTme, "B");
+                        _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+                    case "SCAT":
+                        long id = Convert.ToInt64(row.Cells[0].Value);
+                        frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(id, "B");
                         _oFormAdmin.CargarGrilla(_Tabla);
                         break;
                 }
@@ -285,11 +329,22 @@ namespace FormsAuxiliares
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
 
+                    case "SCAT":
+                        long id = Convert.ToInt64(row.Cells[0].Value);
+                        frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(id, "V");
+                        if (oFrmCatCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
         }
 
@@ -301,7 +356,12 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
         }
 
@@ -323,7 +383,12 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
         }
 

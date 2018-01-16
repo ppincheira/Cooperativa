@@ -49,6 +49,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btnMedidoresModelos = new Controles.btnPersonalizado();
             this.btnMedidores = new Controles.btnPersonalizado();
+            this.categorias = new Controles.btnPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -277,11 +278,23 @@
             this.btnMedidores.UseVisualStyleBackColor = true;
             this.btnMedidores.Click += new System.EventHandler(this.btnMedidores_Click);
             // 
+            // categorias
+            // 
+            this.categorias.ForeColor = System.Drawing.Color.Green;
+            this.categorias.Location = new System.Drawing.Point(211, 22);
+            this.categorias.Name = "categorias";
+            this.categorias.Size = new System.Drawing.Size(125, 23);
+            this.categorias.TabIndex = 22;
+            this.categorias.Text = "CATEGORIAS";
+            this.categorias.UseVisualStyleBackColor = true;
+            this.categorias.Click += new System.EventHandler(this.categorias_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 468);
+            this.Controls.Add(this.categorias);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.gesTextBox3);
@@ -334,6 +347,7 @@
         private System.Windows.Forms.Button button5;
         private Controles.btnPersonalizado btnMedidoresModelos;
         private Controles.btnPersonalizado btnMedidores;
+        private Controles.btnPersonalizado categorias;
     }
 }
 

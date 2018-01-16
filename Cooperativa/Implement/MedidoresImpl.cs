@@ -29,12 +29,12 @@ namespace Implement
                         " BEGIN " +
                         " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('MED_NUMERO')) into IDTEMP from dual; " +
                         "insert into Medidores" +
-                        "(MED_NUMEROSERIE, EMP_NUMERO_PROVEEDOR, MED_REGISTRADOR, MED_DIGITOS, EST_CODIGO, " +
-                        "MED_FACTOR_CALIB, GIS_X, GIS_Y, DME_CODIGO, USR_NUMERO, MED_FECHA_CARGA, MMO_CODIGO) " +
-                        "values('" + oMed.MedNumeroserie + "'," + oMed.EmpNumeroProveedor + "," +
-                        oMed.MedRegistrador + "," + oMed.MedDigitos + ",'" + oMed.EstCodigo + "'," +
-                        oMed.MedFactorCalib + "," + oMed.GisX + "," + oMed.GisY + ",'" + oMed.DmeCodigo + "'," + 
-                        oMed.UsrNumero + ",'" + oMed.MedFechaCarga.ToString("dd/MM/yyyy") + "'," + oMed.MmoCodigo +
+                        "(MED_NUMERO, MED_NUMEROSERIE, EMP_NUMERO_PROVEEDOR, MED_DIGITOS, EST_CODIGO, " +
+                        "MED_FACTOR_CALIB, GIS_X, GIS_Y, USR_NUMERO, MED_FECHA_CARGA, MMO_CODIGO) " +
+                        "values(IDTEMP," + oMed.MedNumeroserie + "," + oMed.EmpNumeroProveedor + "," +
+                        oMed.MedDigitos + ",'" + oMed.EstCodigo + "'," + oMed.MedFactorCalib + "," + 
+                        oMed.GisX + "," + oMed.GisY + "," + oMed.UsrNumero + ",'" + 
+                        oMed.MedFechaCarga.ToString("dd/MM/yyyy") + "'," + oMed.MmoCodigo +
                         ") RETURNING IDTEMP INTO :id;" +
                         " END;";
                     cmd = new OracleCommand(query, cn);
@@ -67,13 +67,11 @@ namespace Implement
                     cmd = new OracleCommand("update Medidores " +
                         "SET MED_NUMEROSERIE='" + oMed.MedNumeroserie +
                         "', EMP_NUMERO_PROVEEDOR=" + oMed.EmpNumeroProveedor +
-                        ", MED_REGISTRADOR=" + oMed.MedRegistrador +
                         ", MED_DIGITOS=" + oMed.MedDigitos +
                         ", EST_CODIGO='" + oMed.EstCodigo +
                         "', MED_FACTOR_CALIB=" + oMed.MedFactorCalib +
                         ", GIS_X=" + oMed.GisX +
                         ", GIS_Y=" + oMed.GisY +
-                        ", DME_CODIGO=" + oMed.DmeCodigo +
                         ", USR_NUMERO=" + oMed.UsrNumero +
                         ", MED_FECHA_CARGA='" + oMed.MedFechaCarga.ToString("dd/MM/yyyy") +
                         "', MMO_CODIGO=" + oMed.MmoCodigo +
@@ -182,9 +180,8 @@ namespace Implement
             {
                 Medidores oObjeto = new Medidores();
                 oObjeto.MedNumero = long.Parse(dr["MED_NUMERO"].ToString());
-                oObjeto.MedNumeroserie = dr["MED_NUMEROSERIE"].ToString();
+                oObjeto.MedNumeroserie = long.Parse(dr["MED_NUMEROSERIE"].ToString());
                 oObjeto.EmpNumeroProveedor = long.Parse(dr["EMP_NUMERO_PROVEEDOR"].ToString());
-                oObjeto.MedRegistrador = decimal.Parse(dr["MED_REGISTRADOR"].ToString());
                 oObjeto.MedDigitos = int.Parse(dr["MED_DIGITOS"].ToString());
                 oObjeto.EstCodigo = dr["EST_CODIGO"].ToString();
                 oObjeto.MedFactorCalib = double.Parse(dr["MED_FACTOR_CALIB"].ToString());
@@ -192,7 +189,6 @@ namespace Implement
                     oObjeto.GisX = decimal.Parse(dr["GIS_X"].ToString());
                 if (dr["GIS_Y"].ToString() != "")
                     oObjeto.GisY = decimal.Parse(dr["GIS_Y"].ToString());
-                oObjeto.DmeCodigo = dr["DME_CODIGO"].ToString();
                 oObjeto.UsrNumero = int.Parse(dr["USR_NUMERO"].ToString());
                 if (dr["MED_FECHA_CARGA"].ToString() != "")
                     oObjeto.MedFechaCarga = DateTime.Parse(dr["MED_FECHA_CARGA"].ToString());
