@@ -19,11 +19,9 @@ namespace Implement
 		{
             try
             {
-
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-
                 string query =
 
                     " DECLARE IDTEMP NUMBER(15,0); " +

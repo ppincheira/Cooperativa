@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDomiciliosCrud));
             this.gesGroup2 = new Controles.contenedores.gesGroup();
             this.btnCancelar = new Controles.buttons.btnCancelar();
@@ -59,8 +60,10 @@
             this.cmbLocalidad = new Controles.datos.cmbLista();
             this.lbLocalidad = new Controles.labels.lblEtiqueta();
             this.lbCalle = new Controles.labels.lblEtiqueta();
+            this.epError = new System.Windows.Forms.ErrorProvider(this.components);
             this.gesGroup2.SuspendLayout();
             this.gbDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
             this.SuspendLayout();
             // 
             // gesGroup2
@@ -142,6 +145,7 @@
             this.cmbCodigoPostal.Location = new System.Drawing.Point(121, 210);
             this.cmbCodigoPostal.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCodigoPostal.Name = "cmbCodigoPostal";
+            this.cmbCodigoPostal.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbCodigoPostal.Size = new System.Drawing.Size(309, 24);
             this.cmbCodigoPostal.TabIndex = 10;
             // 
@@ -163,6 +167,7 @@
             this.cmbCalleHasta.Location = new System.Drawing.Point(375, 166);
             this.cmbCalleHasta.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCalleHasta.Name = "cmbCalleHasta";
+            this.cmbCalleHasta.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbCalleHasta.Size = new System.Drawing.Size(219, 24);
             this.cmbCalleHasta.TabIndex = 9;
             // 
@@ -174,6 +179,7 @@
             this.cmbCalleDesde.Location = new System.Drawing.Point(121, 166);
             this.cmbCalleDesde.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCalleDesde.Name = "cmbCalleDesde";
+            this.cmbCalleDesde.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbCalleDesde.Size = new System.Drawing.Size(219, 24);
             this.cmbCalleDesde.TabIndex = 8;
             // 
@@ -199,6 +205,7 @@
             // 
             // txtGisY
             // 
+            this.txtGisY.BackColor = System.Drawing.Color.White;
             this.txtGisY.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtGisY.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtGisY.Location = new System.Drawing.Point(347, 283);
@@ -223,6 +230,7 @@
             // 
             // txtGisX
             // 
+            this.txtGisX.BackColor = System.Drawing.Color.White;
             this.txtGisX.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtGisX.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtGisX.Location = new System.Drawing.Point(121, 283);
@@ -237,6 +245,7 @@
             // 
             // txtLote
             // 
+            this.txtLote.BackColor = System.Drawing.Color.White;
             this.txtLote.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtLote.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtLote.Location = new System.Drawing.Point(121, 245);
@@ -271,6 +280,7 @@
             // 
             // txtParcela
             // 
+            this.txtParcela.BackColor = System.Drawing.Color.White;
             this.txtParcela.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtParcela.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtParcela.Location = new System.Drawing.Point(121, 127);
@@ -305,6 +315,7 @@
             // 
             // txtDepartamento
             // 
+            this.txtDepartamento.BackColor = System.Drawing.Color.White;
             this.txtDepartamento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDepartamento.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtDepartamento.Location = new System.Drawing.Point(347, 91);
@@ -329,6 +340,7 @@
             // 
             // txtPiso
             // 
+            this.txtPiso.BackColor = System.Drawing.Color.White;
             this.txtPiso.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPiso.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtPiso.Location = new System.Drawing.Point(509, 91);
@@ -363,6 +375,7 @@
             // 
             // txtBloque
             // 
+            this.txtBloque.BackColor = System.Drawing.Color.White;
             this.txtBloque.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBloque.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtBloque.Location = new System.Drawing.Point(121, 91);
@@ -377,6 +390,7 @@
             // 
             // txtNumero
             // 
+            this.txtNumero.BackColor = System.Drawing.Color.Red;
             this.txtNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumero.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtNumero.Location = new System.Drawing.Point(509, 57);
@@ -397,6 +411,7 @@
             this.cmbCalle.Location = new System.Drawing.Point(121, 57);
             this.cmbCalle.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCalle.Name = "cmbCalle";
+            this.cmbCalle.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbCalle.Size = new System.Drawing.Size(309, 24);
             this.cmbCalle.TabIndex = 2;
             // 
@@ -408,6 +423,7 @@
             this.cmbLocalidad.Location = new System.Drawing.Point(121, 23);
             this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(4);
             this.cmbLocalidad.Name = "cmbLocalidad";
+            this.cmbLocalidad.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbLocalidad.Size = new System.Drawing.Size(309, 24);
             this.cmbLocalidad.TabIndex = 1;
             this.cmbLocalidad.SelectedIndexChanged += new System.EventHandler(this.cmbLocalidad_SelectedIndexChanged);
@@ -432,6 +448,10 @@
             this.lbCalle.TabIndex = 0;
             this.lbCalle.Text = "Calle:";
             // 
+            // epError
+            // 
+            this.epError.ContainerControl = this;
+            // 
             // frmDomiciliosCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -446,6 +466,7 @@
             this.gesGroup2.ResumeLayout(false);
             this.gbDatos.ResumeLayout(false);
             this.gbDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -482,5 +503,6 @@
         private Controles.datos.cmbLista cmbCalleHasta;
         private Controles.labels.lblEtiqueta lblEtiqueta11;
         private Controles.datos.cmbLista cmbCodigoPostal;
+        private System.Windows.Forms.ErrorProvider epError;
     }
 }

@@ -11,11 +11,13 @@ using Model;
 using Business;
 using Controles.form;
 using System.IO;
+using Controles.util;
 
 namespace Service
 {
     public class Utility
     {
+        private System.Windows.Forms.ErrorProvider errorProvider1;
         public int CargarGrilla(Controles.datos.grdGrillaAdmin grilla, DataTable dt) {
             grilla.DataSource = dt;
       
@@ -37,6 +39,17 @@ namespace Service
             combo.DisplayMember = Text;
         }
 
+        public void CargarCombo(Controles.datos.cmbLista combo, DataTable dt, string Value, string Text, string strPrimero)
+        {
+            DataRow drPrimer;
+            drPrimer = dt.NewRow();
+            drPrimer[Value] =0;
+            drPrimer[Text] = strPrimero;
+            dt.Rows.InsertAt(drPrimer,0);
+            combo.DataSource = dt;
+            combo.ValueMember = Value;
+            combo.DisplayMember = Text;
+        }
 
         public void borrarContenidoControles(Control contenedor)
         {
@@ -160,59 +173,146 @@ namespace Service
                     if (control is Controles.textBoxes.txtDescripcionCorta)
                         if (((Controles.textBoxes.txtDescripcionCorta)control).REQUERIDO == "SI" && ((Controles.textBoxes.txtDescripcionCorta)control).Text == "" && ((Controles.textBoxes.txtDescripcionCorta)control).TabIndex <= index)
                         {
+                            errorProvider1.SetIconPadding(((Controles.textBoxes.txtDescripcionCorta)control), 5);
                             ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Red;
                             formInicial.VALIDARFORM = false;
                         }else
                             ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Empty;
 
-                    if (control is Controles.textBoxes.txtDescripcion)
-                        if (((Controles.textBoxes.txtDescripcion)control).REQUERIDO == "SI" && ((Controles.textBoxes.txtDescripcion)control).Text == "" && ((Controles.textBoxes.txtDescripcion)control).TabIndex <= index)
-                        {
-                            ((Controles.textBoxes.txtDescripcion)control).BackColor = System.Drawing.Color.Red;
-                            formInicial.VALIDARFORM = false;
-                        }
-                        else
-                            ((Controles.textBoxes.txtDescripcion)control).BackColor = System.Drawing.Color.Empty;
 
                     if (control is Controles.textBoxes.txtObservaciones)
                             if (((Controles.textBoxes.txtObservaciones)control).REQUERIDO == "SI" && ((Controles.textBoxes.txtObservaciones)control).Text == "" && ((Controles.textBoxes.txtObservaciones)control).TabIndex <= index)
-                            { 
+                            {
+                                errorProvider1.SetIconPadding(((Controles.textBoxes.txtObservaciones)control), 5);
                                 ((Controles.textBoxes.txtObservaciones)control).BackColor = System.Drawing.Color.Red;
                                 formInicial.VALIDARFORM = false;
                         }
                         else
-                            ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Empty;
+                            ((Controles.textBoxes.txtObservaciones)control).BackColor = System.Drawing.Color.Empty;
+
+
                     if (control is Controles.textBoxes.txtPassword)
                             if (((Controles.textBoxes.txtPassword)control).REQUERIDO == "SI" && ((Controles.textBoxes.txtPassword)control).Text == "" && ((Controles.textBoxes.txtPassword)control).TabIndex <= index)
                             {
+                                errorProvider1.SetIconPadding(((Controles.textBoxes.txtPassword)control), 5);
                                 ((Controles.textBoxes.txtPassword)control).BackColor = System.Drawing.Color.Red;
                                 formInicial.VALIDARFORM = false;
-                        }
+                            }
                         else
-                            ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Empty;
+                            ((Controles.textBoxes.txtPassword)control).BackColor = System.Drawing.Color.Empty;
+
+
                     if (control is Controles.Fecha.dtpFecha)
                             if (((Controles.Fecha.dtpFecha)control).REQUERIDO == "SI" && ((Controles.Fecha.dtpFecha)control).Text == "" && ((Controles.Fecha.dtpFecha)control).TabIndex <= index)
                             {
-                             ((Controles.Fecha.dtpFecha)control).BackColor = System.Drawing.Color.Red;
+                            errorProvider1.SetIconPadding((Controles.Fecha.dtpFecha)control, 5);
+                            ((Controles.Fecha.dtpFecha)control).BackColor = System.Drawing.Color.Red;
                              formInicial.VALIDARFORM = false;
                         }
                         else
-                            ((Controles.Fecha.dtpFecha)control).BackColor = System.Drawing.Color.Empty;
+                            ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Empty;
+
+
+
                     if (control is Controles.datos.chkBox)
                         if (((Controles.datos.chkBox)control).REQUERIDO == "SI" && ((Controles.datos.chkBox)control).Text == "" && ((Controles.datos.chkBox)control).TabIndex <= index)
                         {
+                            errorProvider1.SetIconPadding((Controles.datos.chkBox)control, 5);
                             ((Controles.datos.chkBox)control).BackColor = System.Drawing.Color.Red;
                             formInicial.VALIDARFORM = false;
                         }
                         else
                             ((Controles.datos.chkBox)control).BackColor = System.Drawing.Color.Empty;
-                            //((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Empty;
+                            
                 }
 
             }
           
         }
 
+        public void ValidarFormularioEP(gesForm formInicial, Control contenedor, int index)
+        {
+
+
+            foreach (Control control in contenedor.Controls)
+            {
+
+                if (control.Controls.Count > 0)
+                    ValidarFormularioEP(formInicial, control, index);
+                else
+                {
+                    if (control is Controles.textBoxes.txtDescripcionCorta)
+                        if (((Controles.textBoxes.txtDescripcionCorta)control).Requerido ==Enumerados.enumRequerido.SI  && ((Controles.textBoxes.txtDescripcionCorta)control).Text == "" && ((Controles.textBoxes.txtDescripcionCorta)control).TabIndex <= index)
+                        {
+                           
+                            ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Red;
+                            formInicial.VALIDARFORM = false;
+                        }
+                        else
+                            ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Empty;
+
+                    if (control is Controles.textBoxes.txtObservaciones)
+                        if (((Controles.textBoxes.txtObservaciones)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.textBoxes.txtObservaciones)control).Text == "" && ((Controles.textBoxes.txtObservaciones)control).TabIndex <= index)
+                        {
+                            
+                            ((Controles.textBoxes.txtObservaciones)control).BackColor = System.Drawing.Color.Red;
+                            formInicial.VALIDARFORM = false;
+                        }
+                        else
+                            ((Controles.textBoxes.txtObservaciones)control).BackColor = System.Drawing.Color.Empty;
+
+
+                    if (control is Controles.textBoxes.txtPassword)
+                        if (((Controles.textBoxes.txtPassword)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.textBoxes.txtPassword)control).Text == "" && ((Controles.textBoxes.txtPassword)control).TabIndex <= index)
+                        {
+                           
+                            ((Controles.textBoxes.txtPassword)control).BackColor = System.Drawing.Color.Red;
+                            formInicial.VALIDARFORM = false;
+                        }
+                        else
+                            ((Controles.textBoxes.txtPassword)control).BackColor = System.Drawing.Color.Empty;
+
+                    if (control is Controles.Fecha.dtpFecha)
+                        if (((Controles.Fecha.dtpFecha)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.Fecha.dtpFecha)control).Text == "" && ((Controles.Fecha.dtpFecha)control).TabIndex <= index)
+                        {
+                           
+                            ((Controles.Fecha.dtpFecha)control).BackColor = System.Drawing.Color.Red;
+                            formInicial.VALIDARFORM = false;
+                        }
+                        else
+                            ((Controles.Fecha.dtpFecha)control).BackColor = System.Drawing.Color.Empty;
+
+
+                    if (control is Controles.datos.chkBox)
+                        if (((Controles.datos.chkBox)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.datos.chkBox)control).Text == "" && ((Controles.datos.chkBox)control).TabIndex <= index)
+                        {
+                           
+                            ((Controles.datos.chkBox)control).BackColor = System.Drawing.Color.Red;
+                            formInicial.VALIDARFORM = false;
+                        }
+                        else
+                            ((Controles.datos.chkBox)control).BackColor = System.Drawing.Color.Empty;
+
+
+
+                    if (control is Controles.datos.cmbLista)
+                        if (((Controles.datos.cmbLista)control).Requerido == Enumerados.enumRequerido.SI  && ((Controles.datos.cmbLista)control).TabIndex <= index
+                             && (((Controles.datos.cmbLista)control).Text == "" || ((Controles.datos.cmbLista)control).SelectedIndex == 0 ))
+                        {
+
+                            ((Controles.datos.cmbLista)control).BackColor = System.Drawing.Color.Red;
+                            formInicial.VALIDARFORM = false;
+                        }
+                        else
+                            ((Controles.datos.cmbLista)control).BackColor = System.Drawing.Color.Empty;
+
+
+                }
+
+
+            }
+
+        }
 
 
         public Adjuntos Adjunto_Agregar(Adjuntos oAdjExistente)
