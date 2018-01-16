@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Data;
 using System.Collections.Generic;
 using Oracle.DataAccess.Client;
@@ -13,22 +12,46 @@ namespace Implement
         private OracleDataAdapter adapter;
         private OracleCommand cmd;
         private DataSet ds;
-        private int response;
-        public int ServiciosCategoriasAdd(ServiciosCategorias oSCa)
+        private long response;
+        private string sql;
+
+        public long ServiciosCategoriasAdd(ServiciosCategorias oSCa)
         {
             try
             {
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                // Clave Secuencia SCA_NUMERO
+                // Clave Secuencia 
                 ds = new DataSet();
-                cmd = new OracleCommand("insert into Servicios_Categorias " +
-                    "(SCA_DESCRIPCION, SCA_DESCRIPCION_CORTA, SRV_CODIGO, EST_CODIGO) " +
-                    "values('" + oSCa.ScaDescripcion + "', '" +oSCa.ScaDescripcionCorta + "', '" +
-                    oSCa.SrvCodigo + "', '" + oSCa.EstCodigo + "')", cn);
+                string query = " DECLARE " +
+                               " idtemp NUMBER(10,0); " +
+                               " BEGIN " +
+                               " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('SCA_NUMERO')) " +
+                               " INTO idtemp " +
+                               " FROM dual; " +
+                               " INSERT INTO servicios_categorias (sca_numero, " +
+                                                                  "sca_descripcion, " +
+                                                                  "sca_descripcion_corta, " +
+                                                                  "srv_codigo, " +
+                                                                  "est_codigo) " +
+                                                          "VALUES(idtemp, " +
+                                                                " '" + oSCa.ScaDescripcion + "', " +
+                                                                " '" + oSCa.ScaDescripcionCorta + "', " +
+                                                                " '" + oSCa.SrvCodigo + "', " +
+                                                                " '" + oSCa.EstCodigo + "')" +
+                                " RETURNING IDTEMP INTO :id;" +
+                                " END;";
+                cmd = new OracleCommand(query, cn);
+                cmd.Parameters.Add(new OracleParameter
+                {
+                    ParameterName = ":id",
+                    OracleDbType = OracleDbType.Int64,
+                    Direction = ParameterDirection.Output
+                });
                 adapter = new OracleDataAdapter(cmd);
-                response = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+                response = long.Parse(cmd.Parameters[":id"].Value.ToString());
                 cn.Close();
                 return response;
             }
@@ -46,12 +69,16 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 ds = new DataSet();
-                cmd = new OracleCommand("update Servicios_Categorias " +
-                    "SET SCA_DESCRIPCION='" + oSCa.ScaDescripcion + "', " +
-                    "SCA_DESCRIPCION_CORTA='" + oSCa.ScaDescripcionCorta + "', " +
-                    "SRV_CODIGO='" + oSCa.SrvCodigo + "', '" +
-                    "EST_CODIGO='" + oSCa.EstCodigo + "' " +
-                    "WHERE SCA_NUMERO=" + oSCa.SrvCodigo, cn);
+                sql = "UPDATE servicios_categorias SET sca_descripcion = '" + oSCa.ScaDescripcion + "', " +
+                                                      "sca_descripcion_corta = '" + oSCa.ScaDescripcionCorta + "', " +
+                                                      "srv_codigo = '" + oSCa.SrvCodigo + "', " +
+                                                      "est_codigo = '" + oSCa.EstCodigo + "' " +
+                                               "WHERE  sca_numero = '" + oSCa.ScaNumero + "' ";
+                Console.WriteLine("sql");
+                Console.WriteLine("sql  " + sql);
+                Console.WriteLine("sql");
+
+                cmd = new OracleCommand(sql, cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -73,8 +100,8 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 ds = new DataSet();
-                cmd = new OracleCommand("DELETE Servicios_Categorias " +
-                      "WHERE SCA_NUMERO=" + Id, cn);
+                cmd = new OracleCommand("DELETE servicios_categorias " +
+                                        "WHERE sca_numero=" + Id, cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -96,8 +123,8 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select * from Servicios_Categorias " +
-                    "WHERE SCA_NUMERO=" + Id;
+                string sqlSelect = "SELECT * FROM servicios_categorias " +
+                                   "WHERE sca_numero=" + Id;
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -128,7 +155,7 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select * from Servicios_Categorias ";
+                string sqlSelect = "SELECT * FROM servicios_categorias ";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -161,8 +188,8 @@ namespace Implement
                 oObjeto.ScaNumero = long.Parse(dr["SCA_NUMERO"].ToString());
                 oObjeto.ScaDescripcion = dr["SCA_DESCRIPCION"].ToString();
                 oObjeto.ScaDescripcionCorta = dr["SCA_DESCRIPCION_CORTA"].ToString();
-                oObjeto.SrvCodigo =dr["SRV_CODIGO"].ToString();
-                oObjeto.EstCodigo =dr["EST_CODIGO"].ToString();
+                oObjeto.SrvCodigo = dr["SRV_CODIGO"].ToString();
+                oObjeto.EstCodigo = dr["EST_CODIGO"].ToString();
                 return oObjeto;
             }
             catch (Exception ex)
@@ -190,3 +217,4 @@ namespace Implement
 
     }
 }
+

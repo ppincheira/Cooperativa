@@ -167,5 +167,12 @@ namespace UI
             frmbus.ShowDialog();
 
         }
+
+        private void categorias_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("SCAT", oPermiso);
+            frmbus.ShowDialog();
+        }
     }
 }

@@ -87,6 +87,8 @@
     <Compile Include="formsAuxiliares\principal\IVistaPrincipal.cs" />
     <Compile Include="formsAuxiliares\principal\UIPrincipal.cs" />
     <Compile Include="formsAuxiliares\frmFabricantes\UIFabricantesCrud.cs" />
+    <Compile Include="gesServicios\frmCategoriasCrud\IVistaCategoriasCrud.cs" />
+    <Compile Include="gesServicios\frmCategoriasCrud\UICategoriasCrud.cs" />
     <Compile Include="gesServicios\frmMedidoresCrud\IVistaMedidoresCrud.cs" />
     <Compile Include="gesServicios\frmMedidoresCrud\UIMedidoresCrud.cs" />
     <Compile Include="gesServicios\frmMedidoresModelosCrud\IVistaMedidoresModelosCrud.cs" />
@@ -119,7 +121,6 @@
     <Folder Include="adminComprobantes\" />
     <Folder Include="adminSuministros\" />
     <Folder Include="cuentasCorrientes\" />
-    <Folder Include="gesServicios\frmCategoriasCrud\" />
     <Folder Include="gesServicios\frmSuministrosAdmin\" />
     <Folder Include="gesServicios\frmSuministrosCrud\" />
   </ItemGroup>
