@@ -207,7 +207,35 @@ namespace Implement
                 throw ex;
             }
         }
+        public DataTable ServiciosGetByFilter()
+        {
+            try
+            {
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = " SELECT srv_codigo, " +
+                                   "        srv_descripcion " +
+                                   " FROM   servicios  ";
 
+                Console.WriteLine("sql");
+                Console.WriteLine("--" + sqlSelect);
+                Console.WriteLine("sql");
+
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+
+                DataTable dt;
+                return dt = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         //public DataTable ServiciosGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
         //{
         //    try
