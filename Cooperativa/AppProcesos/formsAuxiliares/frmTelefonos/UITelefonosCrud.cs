@@ -27,8 +27,11 @@ namespace AppProcesos.formsAuxiliares.frmTelefonos
             //MessageBox.Show("paso 1 SelectedValue " + _vista.telCargo.SelectedValue , "Cooperativa");
             //MessageBox.Show("paso 1 TelCargo " + oTel.TelCargo, "Cooperativa");
             DominiosBus oDonBus = new DominiosBus();
-            oUtil.CargarCombo(_vista.telCargo, oDonBus.DominiosGetByFilter("CARGO_CONTACTO_TEL"), "dmn_valor", "dmn_descripcion");
-            oUtil.CargarCombo(_vista.telTipo, oDonBus.DominiosGetByFilter("TIPO_TELEFONO"), "dmn_valor", "dmn_descripcion");
+            oUtil.CargarCombo(_vista.telCargo, oDonBus.DominiosGetByFilter("CARGO_CONTACTO_TEL"), "dmn_valor", "dmn_descripcion", "Seleccione Cargo");
+            oUtil.CargarCombo(_vista.telTipo, oDonBus.DominiosGetByFilter("TIPO_TELEFONO"), "dmn_valor", "dmn_descripcion", "Seleccione Tipo");
+            _vista.telCargo.DropDownStyle = ComboBoxStyle.DropDownList;
+            _vista.telTipo.DropDownStyle = ComboBoxStyle.DropDownList;
+
             if (_vista.telCodigo != 0)
             {                
                 Telefonos oTel = new Telefonos();

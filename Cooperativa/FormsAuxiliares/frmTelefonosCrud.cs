@@ -100,12 +100,7 @@ namespace FormsAuxiliares
                 this.tttEtiqueta.SetToolTip(this.chkPorDefecto, "Indica si el numero para llamar por defecto");
                 this.tttEtiqueta.SetToolTip(this.cmbCargo, "Cargo del contacto");
                 this.tttEtiqueta.SetToolTip(this.cmbTipo, "Tipo de numero de telefono");
-                cmbCargo.DropDownStyle = ComboBoxStyle.DropDownList;
-                cmbTipo.DropDownStyle = ComboBoxStyle.DropDownList;
-
-                // verificar que campos
-                this.txtNumeroTelefono.REQUERIDO = "SI";
-
+                                
                 if (_Accion == "V")
                 {
                     this.gesDatos.Enabled = false;
@@ -130,7 +125,7 @@ namespace FormsAuxiliares
                 if (this.txtEmail.emailValido())
                 {
                     this.VALIDARFORM = true;
-                    oUtility.ValidarFormulario(this, this, 6);
+                    oUtility.ValidarFormularioEP(this, this, 6);
                     if (this.VALIDARFORM)
                     {
                         DialogResult = DialogResult.OK;
