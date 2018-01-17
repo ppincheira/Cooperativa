@@ -67,6 +67,8 @@
     <Compile Include="formsAuxiliares\formAdmin\UIFormAdmin.cs" />
     <Compile Include="formsAuxiliares\frmCalles\IVistaCallesCrud.cs" />
     <Compile Include="formsAuxiliares\frmCalles\UICallesCrud.cs" />
+    <Compile Include="formsAuxiliares\frmClientes\UIClientesCrud.cs" />
+    <Compile Include="formsAuxiliares\frmClientes\IVistaClientesCrud.cs" />
     <Compile Include="formsAuxiliares\frmCodigoPostal\IVistaCodigoPostalCrud.cs" />
     <Compile Include="formsAuxiliares\frmCodigoPostal\UICodigoPostalCrud.cs" />
     <Compile Include="formsAuxiliares\frmCrudGrilla\IVistaCrudGrilla.cs" />

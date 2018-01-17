@@ -16,5 +16,10 @@ namespace FormsAuxiliares
         {
             InitializeComponent();
         }
+
+        private void frmClientesCrud_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
