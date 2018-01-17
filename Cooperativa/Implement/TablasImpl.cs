@@ -33,7 +33,7 @@ namespace Implement
 
                 ds = new DataSet();
                 cmd = new OracleCommand("insert into TABLAS(TAB_CODIGO, TAB_NOMBRE, TAB_DESCRIPCION, TAB_QUERY_JOIN) " +
-                    "values('"+oTablas.TabCodigo+"', '"+oTablas.TabNombre+"', '"+oTablas.TabDescripcion+"','"+oTablas.TabQueryJoin+"')",cn);
+                    "values('"+oTablas.TabCodigo+"', '"+oTablas.TabNombre+"', '"+oTablas.TabDescripcion+"','"+oTablas.TabQueryJoin+"','"+oTablas.TabQueryFilter + "')",cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -57,6 +57,7 @@ namespace Implement
                     "SET TAB_CODIGO='" + oTablas.TabCodigo + "',"+
                     "TAB_NOMBRE='"+ oTablas.TabNombre + "'," +
                     "TAB_DESCRIPCION= '" + oTablas.TabDescripcion + "' " +
+
                     "WHERE TAB_CODIGO='" + oTablas.TabCodigo + "'", cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
@@ -188,7 +189,8 @@ namespace Implement
                 oObjeto.TabNombre = dr["TAB_NOMBRE"].ToString();
                 oObjeto.TabDescripcion = dr["TAB_DESCRIPCION"].ToString();
                 oObjeto.TabQueryJoin = dr["TAB_QUERY_JOIN"].ToString();
-				return oObjeto;
+                oObjeto.TabQueryFilter = dr["TAB_QUERY_FILTER"].ToString();
+                return oObjeto;
 			}
 			catch(Exception ex)
 			{
@@ -197,7 +199,7 @@ namespace Implement
 		}
 
 
-        public DataTable TablasBusquedaGetAllFilter(string Tabla, string Campos, string filterCampos, string filterValores )
+        public DataTable TablasBusquedaGetAllFilter(string Tabla, string Campos, string filterCampos, string filterValores, string filterTabla )
          {
             try
             {
@@ -211,7 +213,7 @@ namespace Implement
                 
                 cn.Open();
                 string sqlSelect = "SELECT  "+Campos+" FROM " + Tabla;
-                if (filterCampos != "") { 
+                 
                     sqlSelect=sqlSelect+" where  1=1";
                     for (int i = 0; i < filterCamp.Length; i++)
                     {
@@ -228,7 +230,10 @@ namespace Implement
                                sqlSelect += " AND "+filterCamp[i] + " like '%" + filterV[i]+"%'";
                         }
                     }
-                }
+                    sqlSelect = sqlSelect + " AND " + filterTabla; 
+
+
+                
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -320,22 +325,7 @@ namespace Implement
                 String[] tableRestrictions = new String[2];
                 tableRestrictions[1] = tabla;
                 return  cn.GetSchema("Columns", tableRestrictions);
-                //DataTable table = cn.GetSchema("Columns", tableRestrictions);
-                //DisplayData(table);
-                //VerDataTable(table);
-                //Console.WriteLine("Press any key to continue.");
-                ////             Muestra la columna ARE_CODIGO de la tabla AREAS
-                //tableRestrictions = new String[3];
-                //tableRestrictions[1] = "AREAS";
-                //tableRestrictions[2] = "ARE_CODIGO";
-                //table = cn.GetSchema("Columns", tableRestrictions);
-                //DisplayData(table);
-                //VerDataTable(table);
-                //Console.WriteLine("Press any key to continue.");
-                //Console.ReadKey();
-                //OracleCommand cmd = new OracleCommand(comando, cn);
-                //cmd.ExecuteNonQuery();
-                //return;
+  
             }
             catch (Exception ex)
             {
@@ -395,7 +385,7 @@ namespace Implement
             catch (Exception ex)
             {
                 throw ex;
-                return false;
+                
             }
 
         }

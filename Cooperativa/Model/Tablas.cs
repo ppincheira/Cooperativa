@@ -17,6 +17,7 @@ namespace Model
         private string _TabNombre;
         private string _TabDescripcion;
         private string _TabQueryJoin;
+        private string _TabQueryFilter;
         
         #endregion
 
@@ -27,13 +28,14 @@ namespace Model
 
         }
 
-        public Tablas(string TabCodigo, string TabNombre, string TabDescripcion)
+        public Tablas(string TabCodigo, string TabNombre, string TabDescripcion, string tabQueryJoin, string tabQueryFilter )
         {
             _TabCodigo = TabCodigo;
             _TabNombre = TabNombre;
             _TabDescripcion = TabDescripcion;
-            
-        }
+            _TabQueryJoin= tabQueryJoin;
+            _TabQueryFilter = tabQueryFilter;
+    }
 
         #endregion
 
@@ -63,6 +65,11 @@ namespace Model
             set { _TabQueryJoin = value; }
         }
 
+        public string TabQueryFilter
+        {
+            get { return _TabQueryFilter; }
+            set { _TabQueryFilter = value; }
+        }
         #endregion
     }
 }
