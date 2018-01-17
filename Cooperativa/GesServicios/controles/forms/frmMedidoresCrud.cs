@@ -89,7 +89,6 @@ namespace GesServicios.controles.forms
 
         #endregion
         public frmMedidoresCrud(long NumeroMedidor, string Estado, int Usuario)
-        //SRuta, Estado 
         {
             //try
             //{
@@ -123,9 +122,6 @@ namespace GesServicios.controles.forms
             {
                 oUtil = new Utility();
                 _oMedidoresCrud.Inicializar();
-                this.cmbNumeroProv.REQUERIDO = "SI";
-                this.dtpFechaCarga.REQUERIDO = "SI";
-                this.chkEstado.REQUERIDO = "NO";
             }
             catch (Exception ex)
             {

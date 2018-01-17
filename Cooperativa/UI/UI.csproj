@@ -160,6 +160,10 @@
       <Project>{26ff4718-4f3b-48e5-9cc6-513e266de5ce}</Project>
       <Name>FormsAuxiliares</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GesServicios\GesServicios.csproj">
+      <Project>{6E6E3656-EED9-4B5F-832C-A0CC3264872B}</Project>
+      <Name>GesServicios</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{30b38eed-bf12-4118-8492-53051e87d716}</Project>
       <Name>Model</Name>

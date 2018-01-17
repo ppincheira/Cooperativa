@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Business;
+using GesServicios.controles.forms;
 using Model;
 
 namespace UI
@@ -173,6 +174,15 @@ namespace UI
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("SCAT", oPermiso);
             frmbus.ShowDialog();
+        }
+
+        private void btnPersonalizado10_Click(object sender, EventArgs e)
+        {
+            frmMedidoresMasivosCrud oFrmMedCrud = new frmMedidoresMasivosCrud(0, "H", 1);
+            oFrmMedCrud.ShowDialog();
+            //if ( == DialogResult.OK)
+            //    _oFormAdmin.CargarGrilla(_Tabla);
+
         }
     }
 }

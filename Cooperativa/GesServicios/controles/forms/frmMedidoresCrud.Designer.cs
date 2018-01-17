@@ -107,7 +107,7 @@
             this.gbDatos.Controls.Add(this.lbDescripcion);
             this.gbDatos.Location = new System.Drawing.Point(12, 12);
             this.gbDatos.Name = "gbDatos";
-            this.gbDatos.Size = new System.Drawing.Size(598, 288);
+            this.gbDatos.Size = new System.Drawing.Size(599, 288);
             this.gbDatos.TabIndex = 4;
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
@@ -116,7 +116,7 @@
             // 
             this.gesTextBoxFactorCalib.BackColor = System.Drawing.Color.Red;
             this.gesTextBoxFactorCalib.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.gesTextBoxFactorCalib.Location = new System.Drawing.Point(427, 61);
+            this.gesTextBoxFactorCalib.Location = new System.Drawing.Point(427, 101);
             this.gesTextBoxFactorCalib.Name = "gesTextBoxFactorCalib";
             this.gesTextBoxFactorCalib.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.gesTextBoxFactorCalib.Size = new System.Drawing.Size(100, 20);
@@ -128,7 +128,7 @@
             // 
             this.gesTextBoxNumeroSerie.BackColor = System.Drawing.Color.Red;
             this.gesTextBoxNumeroSerie.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.gesTextBoxNumeroSerie.Location = new System.Drawing.Point(117, 28);
+            this.gesTextBoxNumeroSerie.Location = new System.Drawing.Point(128, 26);
             this.gesTextBoxNumeroSerie.Name = "gesTextBoxNumeroSerie";
             this.gesTextBoxNumeroSerie.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.gesTextBoxNumeroSerie.Size = new System.Drawing.Size(165, 20);
@@ -140,7 +140,7 @@
             // 
             this.gesTextBoxGisY.BackColor = System.Drawing.Color.Red;
             this.gesTextBoxGisY.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.gesTextBoxGisY.Location = new System.Drawing.Point(427, 93);
+            this.gesTextBoxGisY.Location = new System.Drawing.Point(427, 133);
             this.gesTextBoxGisY.Name = "gesTextBoxGisY";
             this.gesTextBoxGisY.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.gesTextBoxGisY.Size = new System.Drawing.Size(155, 20);
@@ -152,7 +152,7 @@
             // 
             this.gesTextBoxGisX.BackColor = System.Drawing.Color.Red;
             this.gesTextBoxGisX.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.gesTextBoxGisX.Location = new System.Drawing.Point(117, 93);
+            this.gesTextBoxGisX.Location = new System.Drawing.Point(128, 133);
             this.gesTextBoxGisX.Name = "gesTextBoxGisX";
             this.gesTextBoxGisX.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.gesTextBoxGisX.Size = new System.Drawing.Size(155, 20);
@@ -164,7 +164,7 @@
             // 
             this.gesTextBoxDigitos.BackColor = System.Drawing.Color.Red;
             this.gesTextBoxDigitos.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.gesTextBoxDigitos.Location = new System.Drawing.Point(117, 57);
+            this.gesTextBoxDigitos.Location = new System.Drawing.Point(128, 97);
             this.gesTextBoxDigitos.Name = "gesTextBoxDigitos";
             this.gesTextBoxDigitos.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.gesTextBoxDigitos.Size = new System.Drawing.Size(100, 20);
@@ -175,16 +175,16 @@
             // dtpFechaCarga
             // 
             this.dtpFechaCarga.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaCarga.Location = new System.Drawing.Point(117, 171);
+            this.dtpFechaCarga.Location = new System.Drawing.Point(128, 213);
             this.dtpFechaCarga.Name = "dtpFechaCarga";
-            this.dtpFechaCarga.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.dtpFechaCarga.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.dtpFechaCarga.Size = new System.Drawing.Size(165, 20);
             this.dtpFechaCarga.TabIndex = 9;
             // 
             // lblEtiqueta1
             // 
             this.lblEtiqueta1.AutoSize = true;
-            this.lblEtiqueta1.Location = new System.Drawing.Point(13, 171);
+            this.lblEtiqueta1.Location = new System.Drawing.Point(13, 211);
             this.lblEtiqueta1.Name = "lblEtiqueta1";
             this.lblEtiqueta1.Size = new System.Drawing.Size(86, 13);
             this.lblEtiqueta1.TabIndex = 24;
@@ -195,7 +195,7 @@
             this.cmbMmoCodigo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbMmoCodigo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbMmoCodigo.FormattingEnabled = true;
-            this.cmbMmoCodigo.Location = new System.Drawing.Point(117, 133);
+            this.cmbMmoCodigo.Location = new System.Drawing.Point(128, 173);
             this.cmbMmoCodigo.Name = "cmbMmoCodigo";
             this.cmbMmoCodigo.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbMmoCodigo.Size = new System.Drawing.Size(165, 21);
@@ -207,9 +207,9 @@
             this.chkEstado.AutoSize = true;
             this.chkEstado.Checked = true;
             this.chkEstado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEstado.Location = new System.Drawing.Point(117, 207);
+            this.chkEstado.Location = new System.Drawing.Point(128, 249);
             this.chkEstado.Name = "chkEstado";
-            this.chkEstado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.chkEstado.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.chkEstado.Size = new System.Drawing.Size(73, 17);
             this.chkEstado.TabIndex = 10;
             this.chkEstado.Text = "Habilitado";
@@ -218,7 +218,7 @@
             // lblGisY
             // 
             this.lblGisY.AutoSize = true;
-            this.lblGisY.Location = new System.Drawing.Point(336, 100);
+            this.lblGisY.Location = new System.Drawing.Point(314, 140);
             this.lblGisY.Name = "lblGisY";
             this.lblGisY.Size = new System.Drawing.Size(35, 13);
             this.lblGisY.TabIndex = 22;
@@ -229,16 +229,16 @@
             this.cmbNumeroProv.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbNumeroProv.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbNumeroProv.FormattingEnabled = true;
-            this.cmbNumeroProv.Location = new System.Drawing.Point(427, 25);
+            this.cmbNumeroProv.Location = new System.Drawing.Point(128, 62);
             this.cmbNumeroProv.Name = "cmbNumeroProv";
-            this.cmbNumeroProv.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.cmbNumeroProv.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbNumeroProv.Size = new System.Drawing.Size(165, 21);
             this.cmbNumeroProv.TabIndex = 2;
             // 
             // lblMmoCodigo
             // 
             this.lblMmoCodigo.AutoSize = true;
-            this.lblMmoCodigo.Location = new System.Drawing.Point(13, 136);
+            this.lblMmoCodigo.Location = new System.Drawing.Point(13, 176);
             this.lblMmoCodigo.Name = "lblMmoCodigo";
             this.lblMmoCodigo.Size = new System.Drawing.Size(101, 13);
             this.lblMmoCodigo.TabIndex = 22;
@@ -247,7 +247,7 @@
             // lblDecimales
             // 
             this.lblDecimales.AutoSize = true;
-            this.lblDecimales.Location = new System.Drawing.Point(314, 64);
+            this.lblDecimales.Location = new System.Drawing.Point(314, 104);
             this.lblDecimales.Name = "lblDecimales";
             this.lblDecimales.Size = new System.Drawing.Size(110, 13);
             this.lblDecimales.TabIndex = 22;
@@ -256,7 +256,7 @@
             // lblNumeroProv
             // 
             this.lblNumeroProv.AutoSize = true;
-            this.lblNumeroProv.Location = new System.Drawing.Point(312, 28);
+            this.lblNumeroProv.Location = new System.Drawing.Point(13, 63);
             this.lblNumeroProv.Name = "lblNumeroProv";
             this.lblNumeroProv.Size = new System.Drawing.Size(109, 13);
             this.lblNumeroProv.TabIndex = 22;
@@ -265,7 +265,7 @@
             // lblGisX
             // 
             this.lblGisX.AutoSize = true;
-            this.lblGisX.Location = new System.Drawing.Point(13, 100);
+            this.lblGisX.Location = new System.Drawing.Point(13, 140);
             this.lblGisX.Name = "lblGisX";
             this.lblGisX.Size = new System.Drawing.Size(38, 13);
             this.lblGisX.TabIndex = 22;
@@ -274,7 +274,7 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(13, 207);
+            this.lblEstado.Location = new System.Drawing.Point(13, 247);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(43, 13);
             this.lblEstado.TabIndex = 22;
@@ -283,7 +283,7 @@
             // lblDigitos
             // 
             this.lblDigitos.AutoSize = true;
-            this.lblDigitos.Location = new System.Drawing.Point(13, 64);
+            this.lblDigitos.Location = new System.Drawing.Point(13, 104);
             this.lblDigitos.Name = "lblDigitos";
             this.lblDigitos.Size = new System.Drawing.Size(44, 13);
             this.lblDigitos.TabIndex = 22;
@@ -292,7 +292,7 @@
             // lbDescripcion
             // 
             this.lbDescripcion.AutoSize = true;
-            this.lbDescripcion.Location = new System.Drawing.Point(13, 33);
+            this.lbDescripcion.Location = new System.Drawing.Point(13, 29);
             this.lbDescripcion.Name = "lbDescripcion";
             this.lbDescripcion.Size = new System.Drawing.Size(89, 13);
             this.lbDescripcion.TabIndex = 0;
