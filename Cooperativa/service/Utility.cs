@@ -179,6 +179,15 @@ namespace Service
                         }else
                             ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Empty;
 
+                    if (control is Controles.textBoxes.txtDescripcion)
+                        if (((Controles.textBoxes.txtDescripcion)control).REQUERIDO == "SI" && ((Controles.textBoxes.txtDescripcion)control).Text == "" && ((Controles.textBoxes.txtDescripcion)control).TabIndex <= index)
+                        {
+                            errorProvider1.SetIconPadding(((Controles.textBoxes.txtDescripcion)control), 5);
+                            ((Controles.textBoxes.txtDescripcion)control).BackColor = System.Drawing.Color.Red;
+                            formInicial.VALIDARFORM = false;
+                        }
+                        else
+                            ((Controles.textBoxes.txtDescripcion)control).BackColor = System.Drawing.Color.Empty;
 
                     if (control is Controles.textBoxes.txtObservaciones)
                             if (((Controles.textBoxes.txtObservaciones)control).REQUERIDO == "SI" && ((Controles.textBoxes.txtObservaciones)control).Text == "" && ((Controles.textBoxes.txtObservaciones)control).TabIndex <= index)
@@ -251,6 +260,16 @@ namespace Service
                         else
                             ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Empty;
 
+                    if (control is Controles.textBoxes.txtDescripcion)
+                        if (((Controles.textBoxes.txtDescripcion)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.textBoxes.txtDescripcion)control).Text == "" && ((Controles.textBoxes.txtDescripcion)control).TabIndex <= index)
+                        {
+
+                            ((Controles.textBoxes.txtDescripcion)control).BackColor = System.Drawing.Color.Red;
+                            formInicial.VALIDARFORM = false;
+                        }
+                        else
+                            ((Controles.textBoxes.txtDescripcion)control).BackColor = System.Drawing.Color.Empty;
+
                     if (control is Controles.textBoxes.txtObservaciones)
                         if (((Controles.textBoxes.txtObservaciones)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.textBoxes.txtObservaciones)control).Text == "" && ((Controles.textBoxes.txtObservaciones)control).TabIndex <= index)
                         {
@@ -297,7 +316,7 @@ namespace Service
 
                     if (control is Controles.datos.cmbLista)
                         if (((Controles.datos.cmbLista)control).Requerido == Enumerados.enumRequerido.SI  && ((Controles.datos.cmbLista)control).TabIndex <= index
-                             && (((Controles.datos.cmbLista)control).Text == "" || ((Controles.datos.cmbLista)control).SelectedIndex == 0 ))
+                             && (((Controles.datos.cmbLista)control).Text == "" || ((Controles.datos.cmbLista)control).SelectedIndex < 0 ))
                         {
 
                             ((Controles.datos.cmbLista)control).BackColor = System.Drawing.Color.Red;

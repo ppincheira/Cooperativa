@@ -112,6 +112,7 @@
             this.cmbCargo.FormattingEnabled = true;
             this.cmbCargo.Location = new System.Drawing.Point(100, 52);
             this.cmbCargo.Name = "cmbCargo";
+            this.cmbCargo.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbCargo.Size = new System.Drawing.Size(167, 21);
             this.cmbCargo.TabIndex = 2;
             // 
@@ -129,6 +130,7 @@
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Location = new System.Drawing.Point(360, 56);
             this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbTipo.Size = new System.Drawing.Size(121, 21);
             this.cmbTipo.TabIndex = 6;
             // 
@@ -137,6 +139,7 @@
             this.chkPorDefecto.AutoSize = true;
             this.chkPorDefecto.Location = new System.Drawing.Point(300, 21);
             this.chkPorDefecto.Name = "chkPorDefecto";
+            this.chkPorDefecto.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.chkPorDefecto.Size = new System.Drawing.Size(83, 17);
             this.chkPorDefecto.TabIndex = 5;
             this.chkPorDefecto.Text = "Por Defecto";
@@ -191,7 +194,7 @@
             this.txtNumeroTelefono.Location = new System.Drawing.Point(100, 19);
             this.txtNumeroTelefono.MaxLength = 20;
             this.txtNumeroTelefono.Name = "txtNumeroTelefono";
-            this.txtNumeroTelefono.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtNumeroTelefono.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.txtNumeroTelefono.Size = new System.Drawing.Size(167, 20);
             this.txtNumeroTelefono.TabIndex = 1;
             this.txtNumeroTelefono.TextoVacio = "<Descripcion>";

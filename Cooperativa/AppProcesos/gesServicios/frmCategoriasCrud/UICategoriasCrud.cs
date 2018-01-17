@@ -1,6 +1,7 @@
 ﻿using Business;
 using Model;
 using Service;
+using System.Windows.Forms;
 
 namespace AppProcesos.gesServicios.frmCategoriasCrud
 {
@@ -18,12 +19,13 @@ namespace AppProcesos.gesServicios.frmCategoriasCrud
         public void Inicializar()
         {
             ServiciosBus oServiciosBus = new ServiciosBus();
-            oUtil.CargarCombo(_vista.srvCodigo, oServiciosBus.ServiciosGetByFilter(), "srv_codigo", "srv_descripcion");
+            oUtil.CargarCombo(_vista.srvCodigo, oServiciosBus.ServiciosGetByFilter(), "srv_codigo", "srv_descripcion", "Seleccione un Servicio");
 
-            GruposBus oGrupos = new GruposBus();
-            _vista.Grupo.DataSource = oGrupos.GruposGetbyTipoGrupo("1");
-            _vista.Grupo.DisplayMember = "GrpDescripcion";
-            _vista.Grupo.ValueMember = "GrpCodigo";
+            GruposBus oGruposBus = new GruposBus();
+            oUtil.CargarCombo(_vista.Grupo, oGruposBus.GruposGetByFilter("1"), "grp_codigo", "grp_descripcion", "Seleccione un Grupo");
+
+            _vista.srvCodigo.DropDownStyle = ComboBoxStyle.DropDownList;
+            _vista.Grupo.DropDownStyle = ComboBoxStyle.DropDownList;
 
             if (_vista.scaNumero != 0)
             {

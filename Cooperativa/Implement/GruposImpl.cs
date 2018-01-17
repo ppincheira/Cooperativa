@@ -214,23 +214,50 @@ namespace Implement
                 throw ex;
             }
         }
+        public DataTable GruposGetByFilter(string TipoGrupo)
+        {
+            try
+            {
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = " SELECT grp_codigo,grp_descripcion " +
+                                   " FROM   grupos  " +
+                                   " WHERE  tgr_codigo ='" + TipoGrupo + "'";
+                Console.WriteLine("sql");
+                Console.WriteLine("--" + sqlSelect);
+                Console.WriteLine("sql");
 
-        //public DataTable GruposGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
-        //{
-        //    try
-        //    {
-        //        DataTable DTPartes;
-        //        DataSet DSPartes = SqlHelper.ExecuteDataset(SqlImplHelper.getConnectionString(), "GruposGetAllByFilter", Periodo, Empresa, IdPresentacion,Tipo);
-        //        DTPartes = DSPartes.Tables[0];
-        //        DSPartes.Tables.RemoveAt(0);
-        //        return DTPartes;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-        #endregion
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
 
-    }
+                DataTable dt;
+                return dt = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+            //public DataTable GruposGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
+            //{
+            //    try
+            //    {
+            //        DataTable DTPartes;
+            //        DataSet DSPartes = SqlHelper.ExecuteDataset(SqlImplHelper.getConnectionString(), "GruposGetAllByFilter", Periodo, Empresa, IdPresentacion,Tipo);
+            //        DTPartes = DSPartes.Tables[0];
+            //        DSPartes.Tables.RemoveAt(0);
+            //        return DTPartes;
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        throw ex;
+            //    }
+            //}
+            #endregion
+
+        }
 }

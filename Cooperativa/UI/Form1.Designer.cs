@@ -50,6 +50,7 @@
             this.btnMedidoresModelos = new Controles.btnPersonalizado();
             this.btnMedidores = new Controles.btnPersonalizado();
             this.categorias = new Controles.btnPersonalizado();
+            this.btnPersonalizado10 = new Controles.btnPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -200,7 +201,7 @@
             // 
             this.gesTextBox1.BackColor = System.Drawing.Color.White;
             this.gesTextBox1.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.gesTextBox1.Location = new System.Drawing.Point(147, 110);
+            this.gesTextBox1.Location = new System.Drawing.Point(35, 125);
             this.gesTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.gesTextBox1.Name = "gesTextBox1";
             this.gesTextBox1.Requerido = Controles.util.Enumerados.enumRequerido.NO;
@@ -214,7 +215,7 @@
             // 
             this.gesTextBox2.BackColor = System.Drawing.Color.White;
             this.gesTextBox2.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.gesTextBox2.Location = new System.Drawing.Point(164, 143);
+            this.gesTextBox2.Location = new System.Drawing.Point(52, 158);
             this.gesTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.gesTextBox2.Name = "gesTextBox2";
             this.gesTextBox2.Requerido = Controles.util.Enumerados.enumRequerido.NO;
@@ -227,7 +228,7 @@
             // 
             this.gesTextBox3.BackColor = System.Drawing.Color.White;
             this.gesTextBox3.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.gesTextBox3.Location = new System.Drawing.Point(164, 168);
+            this.gesTextBox3.Location = new System.Drawing.Point(52, 183);
             this.gesTextBox3.Margin = new System.Windows.Forms.Padding(2);
             this.gesTextBox3.Name = "gesTextBox3";
             this.gesTextBox3.Requerido = Controles.util.Enumerados.enumRequerido.NO;
@@ -270,7 +271,7 @@
             // btnMedidores
             // 
             this.btnMedidores.ForeColor = System.Drawing.Color.Green;
-            this.btnMedidores.Location = new System.Drawing.Point(342, 209);
+            this.btnMedidores.Location = new System.Drawing.Point(211, 51);
             this.btnMedidores.Name = "btnMedidores";
             this.btnMedidores.Size = new System.Drawing.Size(125, 23);
             this.btnMedidores.TabIndex = 12;
@@ -289,6 +290,17 @@
             this.categorias.UseVisualStyleBackColor = true;
             this.categorias.Click += new System.EventHandler(this.categorias_Click);
             // 
+            // btnPersonalizado10
+            // 
+            this.btnPersonalizado10.ForeColor = System.Drawing.Color.Green;
+            this.btnPersonalizado10.Location = new System.Drawing.Point(211, 80);
+            this.btnPersonalizado10.Name = "btnPersonalizado10";
+            this.btnPersonalizado10.Size = new System.Drawing.Size(125, 39);
+            this.btnPersonalizado10.TabIndex = 12;
+            this.btnPersonalizado10.Text = "ALTA MASIVA DE MEDIDORES";
+            this.btnPersonalizado10.UseVisualStyleBackColor = true;
+            this.btnPersonalizado10.Click += new System.EventHandler(this.btnPersonalizado10_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,6 +315,7 @@
             this.Controls.Add(this.btnPersonalizado7);
             this.Controls.Add(this.btnPersonalizado6);
             this.Controls.Add(this.btnPersonalizado5);
+            this.Controls.Add(this.btnPersonalizado10);
             this.Controls.Add(this.btnMedidores);
             this.Controls.Add(this.btnMedidoresModelos);
             this.Controls.Add(this.btnPersonalizado4);
@@ -348,6 +361,7 @@
         private Controles.btnPersonalizado btnMedidoresModelos;
         private Controles.btnPersonalizado btnMedidores;
         private Controles.btnPersonalizado categorias;
+        private Controles.btnPersonalizado btnPersonalizado10;
     }
 }
 

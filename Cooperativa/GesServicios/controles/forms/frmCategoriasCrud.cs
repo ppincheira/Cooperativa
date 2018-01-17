@@ -112,12 +112,7 @@ namespace GesServicios.controles.forms
                 this.tttEtiqueta.SetToolTip(this.txtDescripcionCorta, "Abreviaura de la Categoria");
                 this.tttEtiqueta.SetToolTip(this.cmbServicio, "Servicio de la Categoria");
                 this.tttEtiqueta.SetToolTip(this.chkHabilitado, "Indica si esta Habilitada la Categoria");
-                this.tttEtiqueta.SetToolTip(this.cmbGrupo, "Tipo de Grupo");
-                cmbServicio.DropDownStyle = ComboBoxStyle.DropDownList;
-                cmbGrupo.DropDownStyle = ComboBoxStyle.DropDownList;
-                // verificar que campos
-                this.txtDescripcion.REQUERIDO = "SI";
-                this.txtDescripcionCorta.REQUERIDO = "SI";
+                this.tttEtiqueta.SetToolTip(this.cmbGrupo, "Tipo de Grupo");                
 
                 if (_Accion == "V")
                 {
@@ -142,7 +137,7 @@ namespace GesServicios.controles.forms
             {               
                     this.VALIDARFORM = true;
                     //Console.WriteLine("ValidarFormulario  " + this.VALIDARFORM);
-                    oUtility.ValidarFormulario(this, this, 4);
+                    oUtility.ValidarFormularioEP(this, this, 4);
                     //Console.WriteLine("ValidarFormulario  " + this.VALIDARFORM);
                     if (this.VALIDARFORM)
                     {

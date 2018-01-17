@@ -32,8 +32,9 @@ namespace Implement
                         "(MED_NUMERO, MED_NUMEROSERIE, EMP_NUMERO_PROVEEDOR, MED_DIGITOS, EST_CODIGO, " +
                         "MED_FACTOR_CALIB, GIS_X, GIS_Y, USR_NUMERO, MED_FECHA_CARGA, MMO_CODIGO) " +
                         "values(IDTEMP," + oMed.MedNumeroserie + "," + oMed.EmpNumeroProveedor + "," +
-                        oMed.MedDigitos + ",'" + oMed.EstCodigo + "'," + oMed.MedFactorCalib + "," + 
-                        oMed.GisX + "," + oMed.GisY + "," + oMed.UsrNumero + ",'" + 
+                        oMed.MedDigitos + ",'" + oMed.EstCodigo + "'," + oMed.MedFactorCalib + "," +
+                        (oMed.GisX == null ? "null" : oMed.GisX.ToString()) + "," + 
+                        (oMed.GisY == null ? "null" : oMed.GisY.ToString()) + "," + oMed.UsrNumero + ",'" + 
                         oMed.MedFechaCarga.ToString("dd/MM/yyyy") + "'," + oMed.MmoCodigo +
                         ") RETURNING IDTEMP INTO :id;" +
                         " END;";
@@ -65,13 +66,13 @@ namespace Implement
                     cn.Open();
                     ds = new DataSet();
                     cmd = new OracleCommand("update Medidores " +
-                        "SET MED_NUMEROSERIE='" + oMed.MedNumeroserie +
-                        "', EMP_NUMERO_PROVEEDOR=" + oMed.EmpNumeroProveedor +
+                        "SET MED_NUMEROSERIE=" + oMed.MedNumeroserie +
+                        ", EMP_NUMERO_PROVEEDOR=" + oMed.EmpNumeroProveedor +
                         ", MED_DIGITOS=" + oMed.MedDigitos +
                         ", EST_CODIGO='" + oMed.EstCodigo +
                         "', MED_FACTOR_CALIB=" + oMed.MedFactorCalib +
-                        ", GIS_X=" + oMed.GisX +
-                        ", GIS_Y=" + oMed.GisY +
+                        ", GIS_X=" + (oMed.GisX == null ? "null" : oMed.GisX.ToString()) +
+                        ", GIS_Y=" + (oMed.GisY == null ? "null" : oMed.GisY.ToString()) +
                         ", USR_NUMERO=" + oMed.UsrNumero +
                         ", MED_FECHA_CARGA='" + oMed.MedFechaCarga.ToString("dd/MM/yyyy") +
                         "', MMO_CODIGO=" + oMed.MmoCodigo +

@@ -20,10 +20,9 @@ namespace Model
         public virtual string MMoTipoContador { get; set; }
         public virtual string MMoTipoConexion { get; set; }
         public virtual int FabNumero { get; set; }
-        public virtual string TmeCodigo { get; set; }
+        public virtual int TmeCodigo { get; set; }
         public virtual int UsrNumero { get; set; }
         public virtual DateTime MMoFechaCarga { get; set; }
         public virtual string EstCodigo { get; set; }
-        //        public virtual IList<Medidore> medidores { get; set; }
     }
 }

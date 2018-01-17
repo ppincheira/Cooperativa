@@ -58,13 +58,13 @@ namespace GesServicios.controles.forms
 
         public decimal? GisX
         {
-            get { return decimal.Parse(gesTextBoxGisX.Text); }
+            get { return string.IsNullOrEmpty(gesTextBoxGisX.Text) ? null : (decimal?)Convert.ToDecimal(gesTextBoxGisX.Text); }
             set { gesTextBoxGisX.Text = value.ToString(); }
         }
 
         public decimal? GisY
         {
-            get { return decimal.Parse(gesTextBoxGisY.Text); }
+            get { return string.IsNullOrEmpty(gesTextBoxGisY.Text) ? null : (decimal?)Convert.ToDecimal(gesTextBoxGisY.Text); }
             set { gesTextBoxGisY.Text = value.ToString(); }
         }
 
@@ -89,7 +89,6 @@ namespace GesServicios.controles.forms
 
         #endregion
         public frmMedidoresCrud(long NumeroMedidor, string Estado, int Usuario)
-        //SRuta, Estado 
         {
             //try
             //{
@@ -123,9 +122,6 @@ namespace GesServicios.controles.forms
             {
                 oUtil = new Utility();
                 _oMedidoresCrud.Inicializar();
-                this.cmbNumeroProv.REQUERIDO = "SI";
-                this.dtpFechaCarga.REQUERIDO = "SI";
-                this.chkEstado.REQUERIDO = "NO";
             }
             catch (Exception ex)
             {
@@ -149,7 +145,7 @@ namespace GesServicios.controles.forms
             try
             {
                 this.VALIDARFORM = true;
-                oUtil.ValidarFormulario(this, this, 11);
+                oUtil.ValidarFormularioEP(this, this, 11);
                 if (this.VALIDARFORM)
                 {
                     DialogResult = DialogResult.OK;

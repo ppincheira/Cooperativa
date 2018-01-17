@@ -38,7 +38,6 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
                 //Obtengo datos de la entidad principal que trabajo
                 oMedidores = oMedidoresBus.MedidoresGetById(_vista.Numero);
                 _vista.NumeroSerie = oMedidores.MedNumeroserie;
-                _vista.NumeroProv.SelectedValue = oMedidores.EmpNumeroProveedor;
                 _vista.Digitos = oMedidores.MedDigitos;
                 _vista.EstCodigo = oMedidores.EstCodigo;
                 _vista.FactorCalib = oMedidores.MedFactorCalib;
@@ -46,7 +45,6 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
                 _vista.GisY = oMedidores.GisY;
                 _vista.UsrNumero = oMedidores.UsrNumero;
                 _vista.FechaCarga = oMedidores.MedFechaCarga;
-                _vista.MmoCodigo.SelectedValue = oMedidores.MmoCodigo;
             }
         }
 
