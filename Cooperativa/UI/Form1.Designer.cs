@@ -50,7 +50,8 @@
             this.btnMedidoresModelos = new Controles.btnPersonalizado();
             this.btnMedidores = new Controles.btnPersonalizado();
             this.categorias = new Controles.btnPersonalizado();
-            this.btnPersonalizado10 = new Controles.btnPersonalizado();
+            this.btnMedidoresMasivos = new Controles.btnPersonalizado();
+            this.btnTiposConexiones = new Controles.btnPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -290,16 +291,27 @@
             this.categorias.UseVisualStyleBackColor = true;
             this.categorias.Click += new System.EventHandler(this.categorias_Click);
             // 
-            // btnPersonalizado10
+            // btnMedidoresMasivos
             // 
-            this.btnPersonalizado10.ForeColor = System.Drawing.Color.Green;
-            this.btnPersonalizado10.Location = new System.Drawing.Point(211, 80);
-            this.btnPersonalizado10.Name = "btnPersonalizado10";
-            this.btnPersonalizado10.Size = new System.Drawing.Size(125, 39);
-            this.btnPersonalizado10.TabIndex = 12;
-            this.btnPersonalizado10.Text = "ALTA MASIVA DE MEDIDORES";
-            this.btnPersonalizado10.UseVisualStyleBackColor = true;
-            this.btnPersonalizado10.Click += new System.EventHandler(this.btnPersonalizado10_Click);
+            this.btnMedidoresMasivos.ForeColor = System.Drawing.Color.Green;
+            this.btnMedidoresMasivos.Location = new System.Drawing.Point(211, 80);
+            this.btnMedidoresMasivos.Name = "btnMedidoresMasivos";
+            this.btnMedidoresMasivos.Size = new System.Drawing.Size(125, 39);
+            this.btnMedidoresMasivos.TabIndex = 12;
+            this.btnMedidoresMasivos.Text = "ALTA MASIVA DE MEDIDORES";
+            this.btnMedidoresMasivos.UseVisualStyleBackColor = true;
+            this.btnMedidoresMasivos.Click += new System.EventHandler(this.btnMedidoresMasivos_Click);
+            // 
+            // btnTiposConexiones
+            // 
+            this.btnTiposConexiones.ForeColor = System.Drawing.Color.Green;
+            this.btnTiposConexiones.Location = new System.Drawing.Point(211, 125);
+            this.btnTiposConexiones.Name = "btnTiposConexiones";
+            this.btnTiposConexiones.Size = new System.Drawing.Size(125, 23);
+            this.btnTiposConexiones.TabIndex = 12;
+            this.btnTiposConexiones.Text = "Tipos de Conexiones";
+            this.btnTiposConexiones.UseVisualStyleBackColor = true;
+            this.btnTiposConexiones.Click += new System.EventHandler(this.btnTiposConexiones_Click);
             // 
             // Form1
             // 
@@ -315,7 +327,8 @@
             this.Controls.Add(this.btnPersonalizado7);
             this.Controls.Add(this.btnPersonalizado6);
             this.Controls.Add(this.btnPersonalizado5);
-            this.Controls.Add(this.btnPersonalizado10);
+            this.Controls.Add(this.btnMedidoresMasivos);
+            this.Controls.Add(this.btnTiposConexiones);
             this.Controls.Add(this.btnMedidores);
             this.Controls.Add(this.btnMedidoresModelos);
             this.Controls.Add(this.btnPersonalizado4);
@@ -361,7 +374,8 @@
         private Controles.btnPersonalizado btnMedidoresModelos;
         private Controles.btnPersonalizado btnMedidores;
         private Controles.btnPersonalizado categorias;
-        private Controles.btnPersonalizado btnPersonalizado10;
+        private Controles.btnPersonalizado btnMedidoresMasivos;
+        private Controles.btnPersonalizado btnTiposConexiones;
     }
 }
 

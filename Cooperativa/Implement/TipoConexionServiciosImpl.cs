@@ -24,9 +24,9 @@ namespace Implement
                 // Clave TCS_CODIGO
                 ds = new DataSet();
                 cmd = new OracleCommand("insert into Tipos_Conexiones_Servicios " +
-                    "(TCS_CODIGO, TCS_DESCRIPCION, TCS_DESCRIPCION_CORTA, SRV_CODIGO) " +
+                    "(TCS_CODIGO, TCS_DESCRIPCION, TCS_DESCRIPCION_CORTA, SRV_CODIGO, EST_CODIGO) " +
                     "values('" + oTCS.TcsCodigo + "', '" +oTCS.TcsDescripcion + "', '" +
-                    oTCS.TcsDescripcionCorta + "','" + oTCS.SrvCodigo + "')", cn);
+                    oTCS.TcsDescripcionCorta + "','" + oTCS.SrvCodigo +  "', '" +oTCS.EstCodigo + "')", cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -50,6 +50,7 @@ namespace Implement
                     "SET TCS_DESCRIPCION='" + oTCS.TcsDescripcion + "', " +
                     "TCS_DESCRIPCION_CORTA='" + oTCS.TcsDescripcionCorta + "', " +
                     "SRV_CODIGO='" + oTCS.SrvCodigo + "' " +
+                    "EST_CODIGO='" + oTCS.EstCodigo + "' " +
                     "WHERE TCS_CODIGO='" + oTCS.TcsCodigo + "'", cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
@@ -161,6 +162,7 @@ namespace Implement
                 oObjeto.TcsDescripcion = dr["TCS_DESCRIPCION"].ToString();
                 oObjeto.TcsDescripcionCorta = dr["TCS_DESCRIPCION_CORTA"].ToString();
                 oObjeto.SrvCodigo = dr["SRV_CODIGO"].ToString();
+                oObjeto.EstCodigo = dr["EST_CODIGO"].ToString();
                 return oObjeto;
             }
             catch (Exception ex)

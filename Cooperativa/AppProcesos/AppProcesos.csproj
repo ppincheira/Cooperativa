@@ -99,6 +99,8 @@
     <Compile Include="gesServicios\frmMedidoresTiposCrud\UITiposMedidoresCrud.cs" />
     <Compile Include="gesServicios\frmRutasCrud\IVistaRutasCrud.cs" />
     <Compile Include="gesServicios\frmRutasCrud\UIRutasCrud.cs" />
+    <Compile Include="gesServicios\frmTiposConexionesCrud\IVistaTiposConexionesCrud.cs" />
+    <Compile Include="gesServicios\frmTiposConexionesCrud\UITiposConexionesCrud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

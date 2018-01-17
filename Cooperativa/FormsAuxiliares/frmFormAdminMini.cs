@@ -145,6 +145,12 @@ namespace FormsAuxiliares
                         if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
+                    case "TCS":
+                        frmTiposConexionesCrud oFrmTCSCrud = new frmTiposConexionesCrud("", "H");
+
+                        if (oFrmTCSCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
                     case "":
                         Console.WriteLine("Case 2");
                         break;
@@ -210,7 +216,12 @@ namespace FormsAuxiliares
                         if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
-
+                    case "TCS":
+                        string idTCS = row.Cells[0].Value.ToString();
+                        frmTiposConexionesCrud oFrmTCSCrud = new frmTiposConexionesCrud(idTCS, "H");
+                        if (oFrmTCSCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
                     case "COPB":
                         long idCodPostal = Convert.ToInt64(row.Cells[0].Value);
                         frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
@@ -267,6 +278,12 @@ namespace FormsAuxiliares
                         frmRutasCrud oFrmRutCrud = new frmRutasCrud(idRuta, "B");
                         _oFormAdmin.CargarGrilla(_Tabla);
                         break;
+                    case "TCS":
+                        string idTCS = row.Cells[0].Value.ToString();
+                        frmTiposConexionesCrud oFrmTCSCrud = new frmTiposConexionesCrud(idTCS, "B");
+                        if (oFrmTCSCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
                     case "FAB":
                         long idFabricantes = Convert.ToInt64(row.Cells[0].Value);
                         frmFabricantesCrud oFrmFabricantesCrud = new frmFabricantesCrud(idFabricantes, "B");
@@ -320,7 +337,13 @@ namespace FormsAuxiliares
                         if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
-                    
+                    case "TCS":
+                        string idTCS = row.Cells[0].Value.ToString();
+                        frmTiposConexionesCrud oFrmTCSCrud = new frmTiposConexionesCrud(idTCS, "H");
+                        oFrmTCSCrud.gbDatos .Enabled = false;
+                        if (oFrmTCSCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
                     case "COPB":
                         int idCodPostal = Convert.ToInt32(row.Cells[0].Value);
                         frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");

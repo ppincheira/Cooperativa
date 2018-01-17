@@ -176,13 +176,18 @@ namespace UI
             frmbus.ShowDialog();
         }
 
-        private void btnPersonalizado10_Click(object sender, EventArgs e)
+        private void btnTiposConexiones_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10111", "10112", "10113", "10115", "10116", "10114");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("TCS", oPermiso);
+            frmbus.ShowDialog();
+
+        }
+
+        private void btnMedidoresMasivos_Click(object sender, EventArgs e)
         {
             frmMedidoresMasivosCrud oFrmMedCrud = new frmMedidoresMasivosCrud(0, "H", 1);
             oFrmMedCrud.ShowDialog();
-            //if ( == DialogResult.OK)
-            //    _oFormAdmin.CargarGrilla(_Tabla);
-
         }
     }
 }
