@@ -13,5 +13,6 @@ namespace Model {
         public virtual string TcsDescripcion { get; set; }
         public virtual string TcsDescripcionCorta { get; set; }
         public virtual string SrvCodigo { get; set; }
+        public virtual string EstCodigo { get; set; }
     }
 }
