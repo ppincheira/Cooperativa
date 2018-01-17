@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Implement;
 using Model;
+using System.Data;
 
 namespace Business
 {
@@ -39,6 +40,11 @@ namespace Business
         {
             GruposImpl oGruposImpl = new GruposImpl();
             return oGruposImpl.GruposGetbyTipoGrupo(TipoGrupo);
+        }
+        public DataTable GruposGetByFilter(string TipoGrupo)
+        {
+            GruposImpl oGruposImpl = new GruposImpl();
+            return oGruposImpl.GruposGetByFilter(TipoGrupo);
         }
     }
 }

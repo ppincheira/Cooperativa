@@ -260,6 +260,16 @@ namespace Service
                         else
                             ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Empty;
 
+                    if (control is Controles.textBoxes.txtDescripcion)
+                        if (((Controles.textBoxes.txtDescripcion)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.textBoxes.txtDescripcion)control).Text == "" && ((Controles.textBoxes.txtDescripcion)control).TabIndex <= index)
+                        {
+
+                            ((Controles.textBoxes.txtDescripcion)control).BackColor = System.Drawing.Color.Red;
+                            formInicial.VALIDARFORM = false;
+                        }
+                        else
+                            ((Controles.textBoxes.txtDescripcion)control).BackColor = System.Drawing.Color.Empty;
+
                     if (control is Controles.textBoxes.txtObservaciones)
                         if (((Controles.textBoxes.txtObservaciones)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.textBoxes.txtObservaciones)control).Text == "" && ((Controles.textBoxes.txtObservaciones)control).TabIndex <= index)
                         {

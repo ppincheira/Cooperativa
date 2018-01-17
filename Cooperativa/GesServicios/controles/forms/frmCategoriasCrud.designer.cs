@@ -113,6 +113,7 @@
             this.cmbGrupo.FormattingEnabled = true;
             this.cmbGrupo.Location = new System.Drawing.Point(149, 116);
             this.cmbGrupo.Name = "cmbGrupo";
+            this.cmbGrupo.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbGrupo.Size = new System.Drawing.Size(260, 21);
             this.cmbGrupo.TabIndex = 4;
             // 
@@ -130,6 +131,7 @@
             this.chkHabilitado.AutoSize = true;
             this.chkHabilitado.Location = new System.Drawing.Point(149, 148);
             this.chkHabilitado.Name = "chkHabilitado";
+            this.chkHabilitado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
             this.chkHabilitado.TabIndex = 5;
             this.chkHabilitado.Text = "Habilitado";
@@ -142,6 +144,7 @@
             this.cmbServicio.FormattingEnabled = true;
             this.cmbServicio.Location = new System.Drawing.Point(149, 82);
             this.cmbServicio.Name = "cmbServicio";
+            this.cmbServicio.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbServicio.Size = new System.Drawing.Size(260, 21);
             this.cmbServicio.TabIndex = 3;
             // 
@@ -165,21 +168,31 @@
             // 
             // txtDescripcionCorta
             // 
+            this.txtDescripcionCorta.BackColor = System.Drawing.Color.White;
             this.txtDescripcionCorta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDescripcionCorta.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtDescripcionCorta.Location = new System.Drawing.Point(149, 51);
             this.txtDescripcionCorta.MaxLength = 20;
             this.txtDescripcionCorta.Name = "txtDescripcionCorta";
+            this.txtDescripcionCorta.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.txtDescripcionCorta.Size = new System.Drawing.Size(165, 20);
             this.txtDescripcionCorta.TabIndex = 2;
+            this.txtDescripcionCorta.TextoVacio = "<Descripcion>";
+            this.txtDescripcionCorta.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.White;
             this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDescripcion.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtDescripcion.Location = new System.Drawing.Point(149, 17);
             this.txtDescripcion.MaxLength = 20;
             this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.txtDescripcion.Size = new System.Drawing.Size(165, 20);
             this.txtDescripcion.TabIndex = 1;
+            this.txtDescripcion.TextoVacio = "<Descripcion>";
+            this.txtDescripcion.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // lbDescripcion
             // 
