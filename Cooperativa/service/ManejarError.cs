@@ -31,7 +31,7 @@ namespace Service
                 oExcepciones.UsrNumero = 1;//falta definir variable global
                 oExcepciones.SbsCodigo = "ALL";//falta definir variable global
                 oExcepciones.TerNumero = 1;//falta definir variable global
-                oExcepciones.ExcDescripcion = sException.Message;
+                oExcepciones.ExcDescripcion = sException.Message.Replace("'", " ");
                 ExcepcionesBus oExcepcionesBus = new ExcepcionesBus();
                 oExcepcionesBus.ExcepcionesAdd(oExcepciones);
                 ////sale el mensaje de error hacia el formulario
