@@ -109,7 +109,9 @@ namespace GesServicios.controles.forms
                 //oUtil.ValidarFormulario(this, this, 4);
 
                 bool control = this.chkHabilitado.Checked;
-             
+               
+
+
                 if (this.VALIDARFORM)
 
                 {
@@ -125,15 +127,9 @@ namespace GesServicios.controles.forms
             }
         }
 
-        private void chkHabilitado_CheckedChanged(object sender, EventArgs e)
+        public void bloquearFecha()
         {
-          /*  if (this.chkHabilitado.Checked == true)
-            {
-                this.chkHabilitado.Checked = false;
-            }
-            else
-                this.chkHabilitado.Checked = true;*/
-                this.chkHabilitado.Checked = ((chkBox)sender).Checked;
+            this.dtpFechaCarga.Enabled = false;
         }
     }
 }

@@ -232,6 +232,7 @@ namespace FormsAuxiliares
                         long idMedidor = Convert.ToInt64(row.Cells[0].Value);
                         string estadoMedidor = row.Cells[5].Value.ToString();
                         frmTiposMedidoresCrud oTiposMedidoresCrud = new frmTiposMedidoresCrud(idMedidor, estadoMedidor);
+                        oTiposMedidoresCrud.bloquearFecha();
                         if (!oTiposMedidoresCrud.IsDisposed)// ESTE CONTROL SE HACE HASTA QUE LA GRILLA DEJE DE TRAER LOS REGISTROS QUE TENGAN EL ESTADO "B"
                         {
                             if (oTiposMedidoresCrud.ShowDialog() == DialogResult.OK)
@@ -242,7 +243,7 @@ namespace FormsAuxiliares
                         long idFabricante = Convert.ToInt64(row.Cells[0].Value);
                         string estadoFabricante = row.Cells[2].Value.ToString();
                         frmFabricantesCrud oFabricantesCrud = new frmFabricantesCrud(idFabricante, estadoFabricante);
-
+                        oFabricantesCrud.bloquearFecha();
                         if (!oFabricantesCrud.IsDisposed)
                             if (oFabricantesCrud.ShowDialog() == DialogResult.OK)
                                 _oFormAdmin.CargarGrilla(_Tabla);
@@ -426,5 +427,7 @@ namespace FormsAuxiliares
             this.btnImprimir.FUN_CODIGO = oPerForm.Imp;
         }
         #endregion
+
+
     }
 }

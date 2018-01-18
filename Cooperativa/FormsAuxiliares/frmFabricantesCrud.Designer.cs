@@ -69,6 +69,7 @@
             this.cmbEMPNumero.FormattingEnabled = true;
             this.cmbEMPNumero.Location = new System.Drawing.Point(101, 71);
             this.cmbEMPNumero.Name = "cmbEMPNumero";
+            this.cmbEMPNumero.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbEMPNumero.Size = new System.Drawing.Size(200, 21);
             this.cmbEMPNumero.TabIndex = 2;
             this.cmbEMPNumero.Visible = false;
@@ -89,7 +90,7 @@
             this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescripcion.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtDescripcion.Location = new System.Drawing.Point(101, 13);
-            this.txtDescripcion.MaxLength = 4;
+            this.txtDescripcion.MaxLength = 30;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDescripcion.Size = new System.Drawing.Size(200, 20);
@@ -120,16 +121,18 @@
             this.chkHabilitado.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkHabilitado.Location = new System.Drawing.Point(7, 240);
             this.chkHabilitado.Name = "chkHabilitado";
+            this.chkHabilitado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
             this.chkHabilitado.TabIndex = 24;
             this.chkHabilitado.Text = "Habilitado";
             this.chkHabilitado.UseVisualStyleBackColor = true;
-            this.chkHabilitado.CheckedChanged += new System.EventHandler(this.chkHabilitado_CheckedChanged);
+        
             // 
             // dtpFechaCarga
             // 
             this.dtpFechaCarga.Location = new System.Drawing.Point(101, 161);
             this.dtpFechaCarga.Name = "dtpFechaCarga";
+            this.dtpFechaCarga.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.dtpFechaCarga.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaCarga.TabIndex = 3;
             // 

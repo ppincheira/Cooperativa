@@ -38,11 +38,7 @@ namespace AppProcesos.formsAuxiliares.frmFabricantesCrud
                 oFabricante = oFabreicanteBus.FabricantesGetById(_vista.fabNumero);
 
 
-                _vista.fabDescripcion = oFabricante.FabDescripcion;
-
-                Controles.datos.chkBox auxFbHabilitado = new Controles.datos.chkBox();
-                auxFbHabilitado.Text = "Habilitado";
-                _vista.fabHabilitado = auxFbHabilitado;
+                _vista.fabDescripcion = oFabricante.FabDescripcion;  
                 switch (oFabricante.FabHabilitado)
                 {
                     case "H": _vista.fabHabilitado.Checked = true;
