@@ -121,6 +121,8 @@ namespace GesServicios.controles.forms
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if (!gbDatos.Enabled)
+                Close();
             try
             {
                 this.VALIDARFORM = true;
@@ -130,7 +132,7 @@ namespace GesServicios.controles.forms
                     DialogResult = DialogResult.OK;
                     _oRutasCrud.Guardar();
 
-                    this.Close();
+                    Close();
                 }
             }
             catch (Exception ex)

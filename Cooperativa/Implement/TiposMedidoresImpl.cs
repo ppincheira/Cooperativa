@@ -177,6 +177,28 @@ namespace Implement
                     throw ex;
                 }
             }
+            public DataTable TiposMedidoresGetAllDT()
+            {
+                List<TiposMedidores> lstTiposMedidores = new List<TiposMedidores>();
+                try
+                {
+
+                    ds = new DataSet();
+                    Conexion oConexion = new Conexion();
+                    OracleConnection cn = oConexion.getConexion();
+                    cn.Open();
+                    string sqlSelect = "select * from Tipos_Medidores ";
+                    cmd = new OracleCommand(sqlSelect, cn);
+                    adapter = new OracleDataAdapter(cmd);
+                    cmd.ExecuteNonQuery();
+                    adapter.Fill(ds);
+                    return ds.Tables[0];
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
 
             private TiposMedidores CargarTiposMedidores(DataRow dr)
             {

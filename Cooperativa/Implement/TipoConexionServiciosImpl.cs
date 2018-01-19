@@ -49,7 +49,7 @@ namespace Implement
                 cmd = new OracleCommand("update Tipos_Conexiones_Servicios " +
                     "SET TCS_DESCRIPCION='" + oTCS.TcsDescripcion + "', " +
                     "TCS_DESCRIPCION_CORTA='" + oTCS.TcsDescripcionCorta + "', " +
-                    "SRV_CODIGO='" + oTCS.SrvCodigo + "' " +
+                    "SRV_CODIGO='" + oTCS.SrvCodigo + "', " +
                     "EST_CODIGO='" + oTCS.EstCodigo + "' " +
                     "WHERE TCS_CODIGO='" + oTCS.TcsCodigo + "'", cn);
                 adapter = new OracleDataAdapter(cmd);
@@ -153,7 +153,29 @@ namespace Implement
             }
         }
 
-        private TipoConexionServicios CargarTipoConexionServicios(DataRow dr)
+         public DataTable TipoConexionServiciosGetAllDT()
+        {
+            List<TipoConexionServicios> lstTipoConexionServicios = new List<TipoConexionServicios>();
+            try
+            {
+
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "select * from Tipos_Conexiones_Servicios ";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                return ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+       private TipoConexionServicios CargarTipoConexionServicios(DataRow dr)
         {
             try
             {

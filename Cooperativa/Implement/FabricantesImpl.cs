@@ -185,6 +185,28 @@ namespace Implement
                     throw ex;
                 }
             }
+            public DataTable FabricantesGetAllDT()
+            {
+                List<Fabricantes> lstFabricantes = new List<Fabricantes>();
+                try
+                {
+
+                    ds = new DataSet();
+                    Conexion oConexion = new Conexion();
+                    OracleConnection cn = oConexion.getConexion();
+                    cn.Open();
+                    string sqlSelect = "select * from Fabricantes ";
+                    cmd = new OracleCommand(sqlSelect, cn);
+                    adapter = new OracleDataAdapter(cmd);
+                    cmd.ExecuteNonQuery();
+                    adapter.Fill(ds);
+                    return ds.Tables[0];
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
 
             private Fabricantes CargarFabricantes(DataRow dr)
             {

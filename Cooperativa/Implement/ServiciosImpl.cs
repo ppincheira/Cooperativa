@@ -154,6 +154,28 @@ namespace Implement
                 throw ex;
             }
         }
+        public DataTable ServiciosGetAllDT()
+        {
+            List<Servicios> lstServicios = new List<Servicios>();
+            try
+            {
+
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "select * from Servicios ";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                return ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public List<Servicios> ServiciosMedidosGetAll()
         {
             List<Servicios> lstServicios = new List<Servicios>();

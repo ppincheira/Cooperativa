@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using Implement;
 using Model;
 
@@ -37,5 +38,10 @@ namespace Business
             return oTiposMedidoresImpl.TiposMedidoresGetAll();
         }
 
+        public DataTable TiposMedidoresGetAllDT()
+        {
+            TiposMedidoresImpl oTiposMedidoresImpl = new TiposMedidoresImpl();
+            return oTiposMedidoresImpl.TiposMedidoresGetAllDT();
+        }
     }
 }
