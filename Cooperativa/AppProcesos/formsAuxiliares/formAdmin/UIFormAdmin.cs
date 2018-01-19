@@ -79,12 +79,12 @@ namespace AppProcesos.formsAuxiliares.formAdmin
             _filtroCampos = "";
             _filtroValores = "";
 
-            if (_vista.grupoFecha)
+            if (_vista.grupoFecha && _Fecha != null)
             {
                 _filtroValores = _vista.fechaDesde.ToString("dd/MM/yyyy") + "%" + _vista.fechaHasta.ToString("dd/MM/yyyy") + "&";
                 _filtroCampos = _Fecha;
             }
-            if (_vista.grupoEstado)
+            if (_vista.grupoEstado && _vista.comboEstado.Text != "")
                 _filtroValores = _vista.comboEstado.Text + "&";
 
             _filtroCampos = _filtroCampos + _vista.comboBuscar.SelectedValue.ToString() + "&";
@@ -97,6 +97,26 @@ namespace AppProcesos.formsAuxiliares.formAdmin
         }
 
 
-        
+        public void CargarGrilla(string tabla,string filtroCampo, string filtroValor)
+        {
+            _filtroCampos = filtroCampo;
+            _filtroValores = filtroValor;
+
+            if (_vista.grupoFecha)
+            {
+                _filtroValores = _vista.fechaDesde.ToString("dd/MM/yyyy") + "%" + _vista.fechaHasta.ToString("dd/MM/yyyy") + "&";
+                _filtroCampos = _Fecha;
+            }
+            if (_vista.grupoEstado)
+                _filtroValores = _filtroValores + " & " + _vista.comboEstado.Text + "&";
+
+            _filtroCampos = _filtroCampos + _vista.comboBuscar.SelectedValue.ToString() + "&";
+            _filtroValores = _filtroValores + _vista.filtro + "&";
+
+            TablasBus oTablasBus = new TablasBus();
+            _vista.grilla.DataSource = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo, _filtroCampos, _filtroValores);
+            _vista.cantidad = "Se encontraron " + _vista.grilla.RowCount + " registros";
+
+        }
     }
 }

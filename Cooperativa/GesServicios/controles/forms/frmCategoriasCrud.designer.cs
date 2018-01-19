@@ -172,7 +172,7 @@
             this.txtDescripcionCorta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescripcionCorta.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtDescripcionCorta.Location = new System.Drawing.Point(149, 51);
-            this.txtDescripcionCorta.MaxLength = 20;
+            this.txtDescripcionCorta.MaxLength = 10;
             this.txtDescripcionCorta.Name = "txtDescripcionCorta";
             this.txtDescripcionCorta.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.txtDescripcionCorta.Size = new System.Drawing.Size(165, 20);
@@ -186,7 +186,7 @@
             this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescripcion.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtDescripcion.Location = new System.Drawing.Point(149, 17);
-            this.txtDescripcion.MaxLength = 20;
+            this.txtDescripcion.MaxLength = 50;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.txtDescripcion.Size = new System.Drawing.Size(165, 20);

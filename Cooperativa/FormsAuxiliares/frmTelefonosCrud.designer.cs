@@ -102,7 +102,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(100, 95);
-            this.txtEmail.MaxLength = 50;
+            this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(167, 20);
             this.txtEmail.TabIndex = 16;
@@ -151,7 +151,7 @@
             this.txtNombreContacto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombreContacto.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtNombreContacto.Location = new System.Drawing.Point(100, 133);
-            this.txtNombreContacto.MaxLength = 50;
+            this.txtNombreContacto.MaxLength = 200;
             this.txtNombreContacto.Name = "txtNombreContacto";
             this.txtNombreContacto.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtNombreContacto.Size = new System.Drawing.Size(167, 20);
@@ -192,7 +192,7 @@
             this.txtNumeroTelefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNumeroTelefono.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtNumeroTelefono.Location = new System.Drawing.Point(100, 19);
-            this.txtNumeroTelefono.MaxLength = 20;
+            this.txtNumeroTelefono.MaxLength = 25;
             this.txtNumeroTelefono.Name = "txtNumeroTelefono";
             this.txtNumeroTelefono.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.txtNumeroTelefono.Size = new System.Drawing.Size(167, 20);

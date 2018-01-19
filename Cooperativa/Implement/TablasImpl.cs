@@ -217,7 +217,8 @@ namespace Implement
                     sqlSelect=sqlSelect+" where  1=1";
                     for (int i = 0; i < filterCamp.Length; i++)
                     {
-                        if  (filterV[i].Contains("%"))
+
+                        if  (filterV[i].Contains("%") && filterV[i] != "")
                         {
                             string[] filterFecha = System.Text.RegularExpressions.Regex.Split(filterV[i], "%");
 
@@ -231,8 +232,6 @@ namespace Implement
                         }
                     }
                     sqlSelect = sqlSelect + " AND " + filterTabla; 
-
-
                 
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
@@ -240,9 +239,6 @@ namespace Implement
                 adapter.Fill(ds);
                 DataTable dt = new DataTable();
                 return dt = ds.Tables[0];
-
-
-
             }
             catch (Exception ex)
             {

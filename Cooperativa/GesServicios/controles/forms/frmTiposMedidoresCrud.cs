@@ -148,5 +148,9 @@ namespace GesServicios.controles.forms
             }
 
         }
+        public void bloquearFecha()
+        {
+            this.dtpFechaCarga.Enabled = false;
+        }
     }
 }

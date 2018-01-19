@@ -71,6 +71,7 @@
             this.chkEstado.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkEstado.Location = new System.Drawing.Point(6, 218);
             this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.chkEstado.Size = new System.Drawing.Size(73, 17);
             this.chkEstado.TabIndex = 39;
             this.chkEstado.Text = "Habilitado";
@@ -94,6 +95,7 @@
             "Agua"});
             this.cmbSRVCodigo.Location = new System.Drawing.Point(12, 117);
             this.cmbSRVCodigo.Name = "cmbSRVCodigo";
+            this.cmbSRVCodigo.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbSRVCodigo.Size = new System.Drawing.Size(224, 21);
             this.cmbSRVCodigo.TabIndex = 3;
             // 
@@ -131,8 +133,10 @@
             // 
             // dtpFechaCarga
             // 
+            this.dtpFechaCarga.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaCarga.Location = new System.Drawing.Point(12, 157);
             this.dtpFechaCarga.Name = "dtpFechaCarga";
+            this.dtpFechaCarga.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.dtpFechaCarga.Size = new System.Drawing.Size(224, 20);
             this.dtpFechaCarga.TabIndex = 30;
             // 
