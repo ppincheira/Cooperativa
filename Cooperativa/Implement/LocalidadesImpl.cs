@@ -97,7 +97,7 @@ namespace Implement
                     Conexion oConexion = new Conexion();
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
-                    string sqlSelect = "select * from Localidades " +
+                    string sqlSelect = "select  LOC_NUMERO, LOC_DESCRIPCION, PRV_CODIGO, TLO_CODIGO  from Localidades " +
                         "WHERE LOC_NUMERO=" + Id.ToString();
                     cmd = new OracleCommand(sqlSelect, cn);
                     adapter = new OracleDataAdapter(cmd);
@@ -129,7 +129,7 @@ namespace Implement
                     Conexion oConexion = new Conexion();
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
-                    string sqlSelect = "select * from Localidades ";
+                    string sqlSelect = "SELECT LOC_NUMERO, LOC_DESCRIPCION, PRV_CODIGO, TLO_CODIGO FROM LOCALIDADES ";
                     cmd = new OracleCommand(sqlSelect, cn);
                     adapter = new OracleDataAdapter(cmd);
                     cmd.ExecuteNonQuery();
@@ -163,7 +163,7 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "SELECT * FROM LOCALIDADES" +
+                string sqlSelect = "SELECT LOC_NUMERO, LOC_DESCRIPCION, PRV_CODIGO, TLO_CODIGO  FROM LOCALIDADES" +
                     " WHERE  PRV_CODIGO='"+Codigo+"'";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);

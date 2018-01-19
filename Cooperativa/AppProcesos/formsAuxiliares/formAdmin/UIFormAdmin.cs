@@ -64,7 +64,7 @@ namespace AppProcesos.formsAuxiliares.formAdmin
                 }
             }
 
-            oUtil.CargarCombo(_vista.comboBuscar, _dtCombo, "DctColumna", "DctDescripcion");
+            oUtil.CargarCombo(_vista.comboBuscar, _dtCombo, "DctColumna", "DctDescripcion" ,"SELECCIONE..");
             if (_Campo.Length > 0)
                 _Campo = _Campo.Substring(0, _Campo.Length - 1);
             TablasBus oTablasBus = new TablasBus();
@@ -87,13 +87,13 @@ namespace AppProcesos.formsAuxiliares.formAdmin
             if (_vista.grupoEstado)
                 _filtroValores = _vista.comboEstado.Text + "&";
 
-             _filtroCampos = _filtroCampos + _vista.comboBuscar.SelectedValue.ToString() + "&";
+            _filtroCampos = _filtroCampos + _vista.comboBuscar.SelectedValue.ToString() + "&";
             _filtroValores = _filtroValores + _vista.filtro + "&";
 
             TablasBus oTablasBus = new TablasBus();
             _vista.grilla.DataSource = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo, _filtroCampos, _filtroValores);
             _vista.cantidad = "Se encontraron " + _vista.grilla.RowCount + " registros";
-
+            
         }
 
 

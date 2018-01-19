@@ -58,8 +58,8 @@ namespace Controles.datos
 
         private void GesComboBox_Layout(object sender, LayoutEventArgs e)
         {
-          //  if (this.SelectedIndex >= 0)
-          //    errorProvider2.Clear();
+          //if (this.SelectedIndex >= 0)
+              errorProvider2.Clear();
 
 
         }
@@ -68,9 +68,44 @@ namespace Controles.datos
             if (this.SelectedIndex > 0) {
                 errorProvider2.Clear();
                 this.BackColor = System.Drawing.Color.White;
+            }
+
+            Boolean estaCodigo= false;
+            for (int i = 0; i <= this.Items.Count-1; i++)
+            {
+                if (((System.Data.DataRowView)this.Items[i]).Row.ItemArray[1].ToString() == this.Text)
+                {
+                    estaCodigo = true;
+                    break;
+                }
 
             }
- 
+
+      
+
+            if (!estaCodigo)
+            {
+                this.BackColor = System.Drawing.Color.Red;
+                errorProvider2.SetError(this, "El valor seleccionado no existe");
+                this.SelectAll();
+                this.Focus();
+            }
+            else
+            {
+                this.BackColor = System.Drawing.Color.White;
+                errorProvider2.Clear();
+            }
+
+            if ((this.Requerido == enumRequerido.SI) && (this.SelectedIndex == 0))
+            {
+                this.BackColor = System.Drawing.Color.Red;
+                errorProvider2.SetError(this, "El campo es Requerido");
+                this.SelectAll();
+                this.Focus();
+
+
+            }
+
 
         }
     }

@@ -375,7 +375,11 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oUtil.ExportarDataGridViewExcel(this.dgBusqueda);
+                if (_oUtil.ExportarDataGridViewExcel(this.dgBusqueda))
+                    MessageBox.Show("Se completo la exportación a Excel", "APP");
+
+
+
             }
             catch (Exception ex)
             {

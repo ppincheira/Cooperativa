@@ -67,9 +67,9 @@
             this.gpbGrupoEstado.Controls.Add(this.lblEEstado);
             this.gpbGrupoEstado.Enabled = false;
             this.gpbGrupoEstado.Location = new System.Drawing.Point(501, 105);
-            this.gpbGrupoEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbGrupoEstado.Margin = new System.Windows.Forms.Padding(4);
             this.gpbGrupoEstado.Name = "gpbGrupoEstado";
-            this.gpbGrupoEstado.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbGrupoEstado.Padding = new System.Windows.Forms.Padding(4);
             this.gpbGrupoEstado.Size = new System.Drawing.Size(277, 50);
             this.gpbGrupoEstado.TabIndex = 13;
             this.gpbGrupoEstado.TabStop = false;
@@ -78,8 +78,9 @@
             // 
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(73, 16);
-            this.cmbEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEstado.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbEstado.Size = new System.Drawing.Size(189, 24);
             this.cmbEstado.TabIndex = 8;
             // 
@@ -98,9 +99,9 @@
             this.gpbGrupo4.Controls.Add(this.lblCantidad);
             this.gpbGrupo4.Controls.Add(this.dgBusqueda);
             this.gpbGrupo4.Location = new System.Drawing.Point(13, 162);
-            this.gpbGrupo4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbGrupo4.Margin = new System.Windows.Forms.Padding(4);
             this.gpbGrupo4.Name = "gpbGrupo4";
-            this.gpbGrupo4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbGrupo4.Padding = new System.Windows.Forms.Padding(4);
             this.gpbGrupo4.Size = new System.Drawing.Size(765, 432);
             this.gpbGrupo4.TabIndex = 10;
             this.gpbGrupo4.TabStop = false;
@@ -120,7 +121,7 @@
             // 
             this.dgBusqueda.AllowUserToAddRows = false;
             this.dgBusqueda.Location = new System.Drawing.Point(8, 23);
-            this.dgBusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgBusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.dgBusqueda.Name = "dgBusqueda";
             this.dgBusqueda.Size = new System.Drawing.Size(744, 384);
             this.dgBusqueda.TabIndex = 0;
@@ -135,9 +136,9 @@
             this.gpbGrupo3.Controls.Add(this.btnEditar);
             this.gpbGrupo3.Controls.Add(this.btnNuevo);
             this.gpbGrupo3.Location = new System.Drawing.Point(336, 10);
-            this.gpbGrupo3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbGrupo3.Margin = new System.Windows.Forms.Padding(4);
             this.gpbGrupo3.Name = "gpbGrupo3";
-            this.gpbGrupo3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbGrupo3.Padding = new System.Windows.Forms.Padding(4);
             this.gpbGrupo3.Size = new System.Drawing.Size(443, 91);
             this.gpbGrupo3.TabIndex = 11;
             this.gpbGrupo3.TabStop = false;
@@ -148,7 +149,7 @@
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEliminar.Enabled = false;
             this.btnEliminar.Location = new System.Drawing.Point(131, 25);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(53, 49);
             this.btnEliminar.TabIndex = 7;
@@ -160,7 +161,7 @@
             this.btnSalir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.BackgroundImage")));
             this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSalir.Location = new System.Drawing.Point(376, 23);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(53, 49);
             this.btnSalir.TabIndex = 6;
@@ -173,7 +174,7 @@
             this.btnExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExportar.Enabled = false;
             this.btnExportar.Location = new System.Drawing.Point(253, 23);
-            this.btnExportar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExportar.Margin = new System.Windows.Forms.Padding(4);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(53, 49);
             this.btnExportar.TabIndex = 4;
@@ -186,7 +187,7 @@
             this.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnImprimir.Enabled = false;
             this.btnImprimir.Location = new System.Drawing.Point(315, 23);
-            this.btnImprimir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(4);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(53, 49);
             this.btnImprimir.TabIndex = 3;
@@ -199,7 +200,7 @@
             this.btnVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVer.Enabled = false;
             this.btnVer.Location = new System.Drawing.Point(192, 23);
-            this.btnVer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVer.Margin = new System.Windows.Forms.Padding(4);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(53, 49);
             this.btnVer.TabIndex = 2;
@@ -212,7 +213,7 @@
             this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEditar.Enabled = false;
             this.btnEditar.Location = new System.Drawing.Point(69, 25);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(53, 49);
             this.btnEditar.TabIndex = 1;
@@ -225,7 +226,7 @@
             this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNuevo.Enabled = false;
             this.btnNuevo.Location = new System.Drawing.Point(8, 25);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(53, 49);
             this.btnNuevo.TabIndex = 0;
@@ -240,9 +241,9 @@
             this.gpbFecha.Controls.Add(this.dtpFechaDesde);
             this.gpbFecha.Enabled = false;
             this.gpbFecha.Location = new System.Drawing.Point(13, 105);
-            this.gpbFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbFecha.Margin = new System.Windows.Forms.Padding(4);
             this.gpbFecha.Name = "gpbFecha";
-            this.gpbFecha.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbFecha.Padding = new System.Windows.Forms.Padding(4);
             this.gpbFecha.Size = new System.Drawing.Size(480, 52);
             this.gpbFecha.TabIndex = 12;
             this.gpbFecha.TabStop = false;
@@ -271,8 +272,9 @@
             // 
             this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaHasta.Location = new System.Drawing.Point(341, 16);
-            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
+            this.dtpFechaHasta.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.dtpFechaHasta.Size = new System.Drawing.Size(125, 22);
             this.dtpFechaHasta.TabIndex = 9;
             // 
@@ -280,8 +282,9 @@
             // 
             this.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaDesde.Location = new System.Drawing.Point(108, 15);
-            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
+            this.dtpFechaDesde.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.dtpFechaDesde.Size = new System.Drawing.Size(125, 22);
             this.dtpFechaDesde.TabIndex = 8;
             // 
@@ -292,31 +295,36 @@
             this.gpbFiltro.Controls.Add(this.lblEtiqueta2);
             this.gpbFiltro.Controls.Add(this.lblFiltro);
             this.gpbFiltro.Location = new System.Drawing.Point(13, 10);
-            this.gpbFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.gpbFiltro.Name = "gpbFiltro";
-            this.gpbFiltro.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbFiltro.Padding = new System.Windows.Forms.Padding(4);
             this.gpbFiltro.Size = new System.Drawing.Size(315, 91);
             this.gpbFiltro.TabIndex = 9;
             this.gpbFiltro.TabStop = false;
             // 
             // txtFiltro
             // 
+            this.txtFiltro.BackColor = System.Drawing.Color.White;
             this.txtFiltro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtFiltro.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtFiltro.Location = new System.Drawing.Point(115, 50);
-            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtFiltro.Size = new System.Drawing.Size(184, 22);
             this.txtFiltro.TabIndex = 3;
             this.txtFiltro.TextoVacio = "<Descripcion>";
+            this.txtFiltro.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // cmbBuscar
             // 
+            this.cmbBuscar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbBuscar.FormattingEnabled = true;
             this.cmbBuscar.Location = new System.Drawing.Point(115, 17);
-            this.cmbBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBuscar.Name = "cmbBuscar";
+            this.cmbBuscar.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbBuscar.Size = new System.Drawing.Size(184, 24);
             this.cmbBuscar.TabIndex = 2;
             // 
@@ -350,7 +358,7 @@
             this.Controls.Add(this.gpbGrupo3);
             this.Controls.Add(this.gpbFecha);
             this.Controls.Add(this.gpbFiltro);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmFormAdminMini";
             this.Text = "frmFormAdminMini";
             this.Load += new System.EventHandler(this.frmFormAdminMini_Load);

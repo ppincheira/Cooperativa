@@ -242,6 +242,7 @@ namespace Controles.textBoxes
                 this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
                 this.BackColor = System.Drawing.Color.Red;
                 sd.SelectNextControl(sd, true, true, true, true);
+
             }
 
         }

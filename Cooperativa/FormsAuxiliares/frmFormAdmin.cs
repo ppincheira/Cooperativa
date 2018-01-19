@@ -145,7 +145,7 @@ namespace FormsAuxiliares
             this.gpbFiltro.Controls.Add(this.lblFiltro);
             this.gpbFiltro.Location = new System.Drawing.Point(12, 1);
             this.gpbFiltro.Name = "gpbFiltro";
-            this.gpbFiltro.Size = new System.Drawing.Size(381, 101);
+            this.gpbFiltro.Size = new System.Drawing.Size(386, 101);
             this.gpbFiltro.TabIndex = 0;
             this.gpbFiltro.TabStop = false;
             // 
@@ -157,7 +157,7 @@ namespace FormsAuxiliares
             this.txtFiltro.Location = new System.Drawing.Point(105, 58);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtFiltro.Size = new System.Drawing.Size(270, 20);
+            this.txtFiltro.Size = new System.Drawing.Size(256, 22);
             this.txtFiltro.TabIndex = 3;
             this.txtFiltro.TextoVacio = "<Descripcion>";
             this.txtFiltro.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
@@ -165,10 +165,13 @@ namespace FormsAuxiliares
             // 
             // cmbBuscar
             // 
+            this.cmbBuscar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbBuscar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbBuscar.FormattingEnabled = true;
             this.cmbBuscar.Location = new System.Drawing.Point(105, 16);
             this.cmbBuscar.Name = "cmbBuscar";
-            this.cmbBuscar.Size = new System.Drawing.Size(270, 21);
+            this.cmbBuscar.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.cmbBuscar.Size = new System.Drawing.Size(256, 24);
             this.cmbBuscar.TabIndex = 2;
             // 
             // lblEtiqueta2
@@ -176,7 +179,7 @@ namespace FormsAuxiliares
             this.lblEtiqueta2.AutoSize = true;
             this.lblEtiqueta2.Location = new System.Drawing.Point(42, 61);
             this.lblEtiqueta2.Name = "lblEtiqueta2";
-            this.lblEtiqueta2.Size = new System.Drawing.Size(45, 13);
+            this.lblEtiqueta2.Size = new System.Drawing.Size(57, 17);
             this.lblEtiqueta2.TabIndex = 1;
             this.lblEtiqueta2.Text = "FILTRO";
             // 
@@ -185,7 +188,7 @@ namespace FormsAuxiliares
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Location = new System.Drawing.Point(3, 19);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(78, 13);
+            this.lblFiltro.Size = new System.Drawing.Size(99, 17);
             this.lblFiltro.TabIndex = 0;
             this.lblFiltro.Text = "FILTRAR POR";
             // 
@@ -205,35 +208,37 @@ namespace FormsAuxiliares
             // lblEFechaHasta
             // 
             this.lblEFechaHasta.AutoSize = true;
-            this.lblEFechaHasta.Location = new System.Drawing.Point(4, 65);
+            this.lblEFechaHasta.Location = new System.Drawing.Point(8, 61);
             this.lblEFechaHasta.Name = "lblEFechaHasta";
-            this.lblEFechaHasta.Size = new System.Drawing.Size(68, 13);
+            this.lblEFechaHasta.Size = new System.Drawing.Size(88, 17);
             this.lblEFechaHasta.TabIndex = 11;
             this.lblEFechaHasta.Text = "Fecha Hasta";
             // 
             // lblEFechaDesde
             // 
             this.lblEFechaDesde.AutoSize = true;
-            this.lblEFechaDesde.Location = new System.Drawing.Point(4, 23);
+            this.lblEFechaDesde.Location = new System.Drawing.Point(5, 23);
             this.lblEFechaDesde.Name = "lblEFechaDesde";
-            this.lblEFechaDesde.Size = new System.Drawing.Size(71, 13);
+            this.lblEFechaDesde.Size = new System.Drawing.Size(92, 17);
             this.lblEFechaDesde.TabIndex = 10;
             this.lblEFechaDesde.Text = "Fecha Desde";
             // 
             // dtpFechaHasta
             // 
             this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaHasta.Location = new System.Drawing.Point(98, 58);
+            this.dtpFechaHasta.Location = new System.Drawing.Point(97, 58);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
-            this.dtpFechaHasta.Size = new System.Drawing.Size(95, 20);
+            this.dtpFechaHasta.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.dtpFechaHasta.Size = new System.Drawing.Size(94, 22);
             this.dtpFechaHasta.TabIndex = 9;
             // 
             // dtpFechaDesde
             // 
             this.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaDesde.Location = new System.Drawing.Point(99, 21);
+            this.dtpFechaDesde.Location = new System.Drawing.Point(97, 21);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
-            this.dtpFechaDesde.Size = new System.Drawing.Size(95, 20);
+            this.dtpFechaDesde.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.dtpFechaDesde.Size = new System.Drawing.Size(95, 22);
             this.dtpFechaDesde.TabIndex = 8;
             // 
             // gpbGrupo3
@@ -350,7 +355,7 @@ namespace FormsAuxiliares
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Location = new System.Drawing.Point(7, 333);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
+            this.lblCantidad.Size = new System.Drawing.Size(64, 17);
             this.lblCantidad.TabIndex = 2;
             this.lblCantidad.Text = "Cantidad";
             // 
@@ -379,7 +384,8 @@ namespace FormsAuxiliares
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(55, 13);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(188, 21);
+            this.cmbEstado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.cmbEstado.Size = new System.Drawing.Size(188, 24);
             this.cmbEstado.TabIndex = 8;
             // 
             // lblEEstado
@@ -387,7 +393,7 @@ namespace FormsAuxiliares
             this.lblEEstado.AutoSize = true;
             this.lblEEstado.Location = new System.Drawing.Point(6, 16);
             this.lblEEstado.Name = "lblEEstado";
-            this.lblEEstado.Size = new System.Drawing.Size(40, 13);
+            this.lblEEstado.Size = new System.Drawing.Size(52, 17);
             this.lblEEstado.TabIndex = 8;
             this.lblEEstado.Text = "Estado";
             // 
@@ -593,7 +599,9 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oUtil.ExportarDataGridViewExcel(this.dgBusqueda);
+
+              if (  _oUtil.ExportarDataGridViewExcel(this.dgBusqueda))
+                    MessageBox.Show("Se completo la exportación a Excel", "APP");
             }
             catch (Exception ex)
             {
@@ -682,5 +690,7 @@ namespace FormsAuxiliares
         {
 
         }
+
+    
     }
 }
