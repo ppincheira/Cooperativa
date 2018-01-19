@@ -18,7 +18,6 @@ namespace Implement
 	public class TablasImpl
     {
         #region Tablas methods
-     
         private OracleDataAdapter adapter;
         private OracleCommand cmd;
         private DataSet ds;
@@ -231,8 +230,12 @@ namespace Implement
                                sqlSelect += " AND "+filterCamp[i] + " like '%" + filterV[i]+"%'";
                         }
                     }
-                    sqlSelect = sqlSelect + " AND " + filterTabla; 
-                
+
+
+                if ((filterTabla != null) && (filterTabla != ""))
+                    sqlSelect = sqlSelect + " AND " + filterTabla;
+
+
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();

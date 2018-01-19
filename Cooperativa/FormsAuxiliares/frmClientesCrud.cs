@@ -21,5 +21,10 @@ namespace FormsAuxiliares
         {
 
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
