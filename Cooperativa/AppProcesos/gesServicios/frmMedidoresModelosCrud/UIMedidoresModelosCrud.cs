@@ -20,27 +20,31 @@ namespace AppProcesos.gesServicios.frmMedidoresModelosCrud
         {
             //Obtengo los tipos de contadores
             DominiosBus oDominios = new DominiosBus();
-            _vista.TipoContador.DataSource = oDominios.DominiosGetListByFilter("TIPO_CONTADOR");
-            _vista.TipoContador.DisplayMember = "DmnDescripcion";
-            _vista.TipoContador.ValueMember = "DmnValor";
+            //_vista.TipoContador.DataSource = oDominios.DominiosGetListByFilter("TIPO_CONTADOR");
+            //_vista.TipoContador.DisplayMember = "DmnDescripcion";
+            //_vista.TipoContador.ValueMember = "DmnValor";
+            oUtil.CargarCombo(_vista.TipoContador, oDominios.DominiosGetByFilter("TIPO_CONTADOR"), "DMN_VALOR", "DMN_DESCRIPCION", "SELECCIONE..");
 
             // Obtengo los grupos del Tipo de conexiones
             TipoConexionServiciosBus oTiposConexiones = new TipoConexionServiciosBus();
-            _vista.TipoConexion.DataSource = oTiposConexiones.TipoConexionServiciosGetAll();
-            _vista.TipoConexion.DisplayMember = "TcsDescripcion";
-            _vista.TipoConexion.ValueMember = "TcsCodigo";
+            //_vista.TipoConexion.DataSource = oTiposConexiones.TipoConexionServiciosGetAll();
+            //_vista.TipoConexion.DisplayMember = "TcsDescripcion";
+            //_vista.TipoConexion.ValueMember = "TcsCodigo";
+            oUtil.CargarCombo(_vista.TipoConexion, oTiposConexiones.TipoConexionServiciosGetAllDT(), "TCS_CODIGO", "TCS_DESCRIPCION", "SELECCIONE..");
 
             // Obtengo los Fabricantes
             FabricantesBus oFabricantes = new FabricantesBus();
             _vista.FabNumero.DataSource = oFabricantes.FabricantesGetAll();
             _vista.FabNumero.DisplayMember = "FabDescripcion";
             _vista.FabNumero.ValueMember = "FabNumero";
+            //oUtil.CargarCombo(_vista.FabNumero, oFabricantes.FabricantesGetAllDT(), "FAB_NUMERO", "FAB_DESCRIPCION", "SELECCIONE..");
 
             // Obtengo los grupos del Tipo de medidores
             TiposMedidoresBus oTiposMedidores = new TiposMedidoresBus();
-            _vista.TMeCodigo.DataSource = oTiposMedidores.TiposMedidoresGetAll();
-            _vista.TMeCodigo.DisplayMember = "TMeDescripcion";
-            _vista.TMeCodigo.ValueMember = "TMeCodigo";
+            //_vista.TMeCodigo.DataSource = oTiposMedidores.TiposMedidoresGetAll();
+            //_vista.TMeCodigo.DisplayMember = "TMeDescripcion";
+            //_vista.TMeCodigo.ValueMember = "TMeCodigo";
+            oUtil.CargarCombo(_vista.TMeCodigo, oTiposMedidores.TiposMedidoresGetAllDT(), "TME_CODIGO", "TME_DESCRIPCION", "SELECCIONE..");
 
             if (_vista.Codigo != 0)
             {

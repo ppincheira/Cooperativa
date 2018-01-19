@@ -36,6 +36,11 @@ namespace Business
             ServiciosImpl oServiciosImpl = new ServiciosImpl();
             return oServiciosImpl.ServiciosGetAll();
         }
+        public DataTable ServiciosGetAllDT()
+        {
+            ServiciosImpl oServiciosImpl = new ServiciosImpl();
+            return oServiciosImpl.ServiciosGetAllDT();
+        }
         public DataTable ServiciosGetByFilter()
         {
             ServiciosImpl oServiciosImpl = new ServiciosImpl();

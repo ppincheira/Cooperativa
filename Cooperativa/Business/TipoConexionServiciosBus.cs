@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using Implement;
 using Model;
 
@@ -34,6 +35,11 @@ namespace Business
         {
             TipoConexionServiciosImpl oTipoConexionServiciosImpl = new TipoConexionServiciosImpl();
             return oTipoConexionServiciosImpl.TipoConexionServiciosGetAll();
+        }
+        public DataTable TipoConexionServiciosGetAllDT()
+        {
+            TipoConexionServiciosImpl oTipoConexionServiciosImpl = new TipoConexionServiciosImpl();
+            return oTipoConexionServiciosImpl.TipoConexionServiciosGetAllDT();
         }
     }
 }

@@ -20,8 +20,8 @@ namespace GesServicios.controles.forms
         #region << IMPLEMENTACION >>
         public string tcsCodigo
         {
-            get { return _TcsCodigo; }
-            set { _TcsCodigo = value; }
+            get { return  _TcsCodigo; }
+            set { gesTextBoxCodigo.Text= value; }
         }
         public string tcsDescripcion
         {
@@ -73,10 +73,12 @@ namespace GesServicios.controles.forms
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if(!gbDatos.Enabled)
+                this.Close();
             try
             {
                 usrNumero = 1;
-                if (this.VALIDARFORM)
+                if (VALIDARFORM)
                 {
                     DialogResult = DialogResult.OK;
                     _oTiposConexionesCrud.Guardar();

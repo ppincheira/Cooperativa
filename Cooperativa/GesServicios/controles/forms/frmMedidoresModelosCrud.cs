@@ -175,6 +175,8 @@ namespace GesServicios.controles.forms
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if (!gbDatos.Enabled)
+                Close();
             try
             {
                 this.VALIDARFORM = true;

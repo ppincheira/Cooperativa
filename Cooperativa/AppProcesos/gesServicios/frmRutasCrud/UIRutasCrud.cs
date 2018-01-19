@@ -21,15 +21,11 @@ namespace AppProcesos.gesServicios.frmRutasCrud
         {
             ServiciosBus oServiciosBus = new ServiciosBus();
 
-            _vista.srvCodigo.DataSource = oServiciosBus.ServiciosGetAll();
-            _vista.srvCodigo.DisplayMember = "SrvDescripcion";
-            _vista.srvCodigo.ValueMember = "SrvCodigo";
+            oUtil.CargarCombo(_vista.srvCodigo, oServiciosBus.ServiciosGetAllDT(), "SRV_CODIGO", "SRV_DESCRIPCION", "SELECCIONE..");
 
             // Obtengo los grupos del Tipo_grupo "2" que es Zonas
             GruposBus oGrupos = new GruposBus();
-            _vista.grupo.DataSource = oGrupos.GruposGetbyTipoGrupo("2");
-            _vista.grupo.DisplayMember = "GrpDescripcion";
-            _vista.grupo.ValueMember = "GrpCodigo";
+            oUtil.CargarCombo(_vista.grupo, oGrupos.GruposGetByFilter("2"), "GRP_CODIGO", "GRP_DESCRIPCION", "SELECCIONE..");
 
             if (_vista.sruNumero != 0)
             {

@@ -137,10 +137,9 @@ namespace GesServicios.controles.forms
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (!this.gbDatos.Enabled)
+            if (!gbDatos.Enabled)
             {
-                this.Close();
-                return;
+                Close();
             }
             try
             {

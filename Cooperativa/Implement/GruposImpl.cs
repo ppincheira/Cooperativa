@@ -225,17 +225,13 @@ namespace Implement
                 string sqlSelect = " SELECT grp_codigo,grp_descripcion " +
                                    " FROM   grupos  " +
                                    " WHERE  tgr_codigo ='" + TipoGrupo + "'";
-                Console.WriteLine("sql");
-                Console.WriteLine("--" + sqlSelect);
-                Console.WriteLine("sql");
 
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
                 adapter.Fill(ds);
 
-                DataTable dt;
-                return dt = ds.Tables[0];
+                return ds.Tables[0];
             }
             catch (Exception ex)
             {

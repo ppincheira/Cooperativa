@@ -20,9 +20,7 @@ namespace AppProcesos.gesServicios.frmTiposConexionesCrud
         {
             ServiciosBus oServiciosBus = new ServiciosBus();
        
-            _vista.srvCodigo.DataSource = oServiciosBus.ServiciosGetAll();
-            _vista.srvCodigo.DisplayMember = "SrvDescripcion";
-            _vista.srvCodigo.ValueMember = "SrvCodigo";
+            oUtil.CargarCombo(_vista.srvCodigo, oServiciosBus.ServiciosGetAllDT(), "SRV_CODIGO", "SRV_DESCRIPCION", "SELECCIONE..");
 
             if (!string.IsNullOrEmpty(_vista.tcsCodigo) || _vista.tcsCodigo!="")
             {
@@ -30,7 +28,7 @@ namespace AppProcesos.gesServicios.frmTiposConexionesCrud
                 TipoConexionServiciosBus oSConexionBus = new TipoConexionServiciosBus();
 
                 oSConexion = oSConexionBus.TipoConexionServiciosGetById(_vista.tcsCodigo);
-                //_vista.tcsCodigo = oSConexion.TcsCodigo;
+                _vista.tcsCodigo = oSConexion.TcsCodigo;
                 _vista.srvCodigo.SelectedValue = oSConexion.SrvCodigo;
                 _vista.tcsDescripcion = oSConexion.TcsDescripcion;
                 _vista.tcsDescripcionCorta = oSConexion.TcsDescripcionCorta;
