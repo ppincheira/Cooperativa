@@ -140,6 +140,7 @@
             // 
             this.dtpFechaCarga.Location = new System.Drawing.Point(110, 273);
             this.dtpFechaCarga.Name = "dtpFechaCarga";
+            this.dtpFechaCarga.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.dtpFechaCarga.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaCarga.TabIndex = 13;
             // 
@@ -168,6 +169,7 @@
             this.cmbTipoConexion.FormattingEnabled = true;
             this.cmbTipoConexion.Location = new System.Drawing.Point(433, 200);
             this.cmbTipoConexion.Name = "cmbTipoConexion";
+            this.cmbTipoConexion.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbTipoConexion.Size = new System.Drawing.Size(165, 21);
             this.cmbTipoConexion.TabIndex = 10;
             // 
@@ -178,19 +180,23 @@
             this.cmbTipoMedidor.FormattingEnabled = true;
             this.cmbTipoMedidor.Location = new System.Drawing.Point(433, 236);
             this.cmbTipoMedidor.Name = "cmbTipoMedidor";
+            this.cmbTipoMedidor.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbTipoMedidor.Size = new System.Drawing.Size(165, 21);
             this.cmbTipoMedidor.TabIndex = 12;
             // 
             // TextBoxAmperaje
             // 
+            this.TextBoxAmperaje.BackColor = System.Drawing.Color.White;
             this.TextBoxAmperaje.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TextBoxAmperaje.ColorTextoVacio = System.Drawing.Color.Gray;
             this.TextBoxAmperaje.Location = new System.Drawing.Point(110, 130);
             this.TextBoxAmperaje.MaxLength = 15;
             this.TextBoxAmperaje.Name = "TextBoxAmperaje";
-            this.TextBoxAmperaje.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.TextBoxAmperaje.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.TextBoxAmperaje.Size = new System.Drawing.Size(100, 20);
             this.TextBoxAmperaje.TabIndex = 6;
+            this.TextBoxAmperaje.TextoVacio = "<Descripcion>";
+            this.TextBoxAmperaje.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // TextBoxRegistrador
             // 
@@ -256,6 +262,7 @@
             this.chkEstado.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkEstado.Location = new System.Drawing.Point(110, 313);
             this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.chkEstado.Size = new System.Drawing.Size(73, 17);
             this.chkEstado.TabIndex = 14;
             this.chkEstado.Text = "Habilitado";
@@ -277,6 +284,7 @@
             this.cmbTipoContador.FormattingEnabled = true;
             this.cmbTipoContador.Location = new System.Drawing.Point(110, 200);
             this.cmbTipoContador.Name = "cmbTipoContador";
+            this.cmbTipoContador.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbTipoContador.Size = new System.Drawing.Size(165, 21);
             this.cmbTipoContador.TabIndex = 9;
             // 
@@ -287,6 +295,7 @@
             this.cmbFabricante.FormattingEnabled = true;
             this.cmbFabricante.Location = new System.Drawing.Point(110, 236);
             this.cmbFabricante.Name = "cmbFabricante";
+            this.cmbFabricante.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbFabricante.Size = new System.Drawing.Size(165, 21);
             this.cmbFabricante.TabIndex = 11;
             // 
@@ -382,21 +391,31 @@
             // 
             // txtDescripcionCorta
             // 
+            this.txtDescripcionCorta.BackColor = System.Drawing.Color.White;
             this.txtDescripcionCorta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDescripcionCorta.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtDescripcionCorta.Location = new System.Drawing.Point(433, 22);
             this.txtDescripcionCorta.MaxLength = 10;
             this.txtDescripcionCorta.Name = "txtDescripcionCorta";
+            this.txtDescripcionCorta.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.txtDescripcionCorta.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcionCorta.TabIndex = 2;
+            this.txtDescripcionCorta.TextoVacio = "<Descripcion>";
+            this.txtDescripcionCorta.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.White;
             this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDescripcion.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtDescripcion.Location = new System.Drawing.Point(110, 25);
             this.txtDescripcion.MaxLength = 30;
             this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.txtDescripcion.Size = new System.Drawing.Size(165, 20);
             this.txtDescripcion.TabIndex = 1;
+            this.txtDescripcion.TextoVacio = "<Descripcion>";
+            this.txtDescripcion.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // lbDescripcion
             // 

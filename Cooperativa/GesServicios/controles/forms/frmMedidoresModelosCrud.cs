@@ -154,13 +154,6 @@ namespace GesServicios.controles.forms
             {
                 oUtil = new Utility();
                 _oMedidoresModelosCrud.Inicializar();
-                this.txtDescripcion.REQUERIDO = "SI";
-                this.txtDescripcionCorta.REQUERIDO = "SI";
-                this.TextBoxAmperaje.REQUERIDO = "SI";
-                this.cmbFabricante.REQUERIDO = "SI";
-                this.cmbTipoMedidor.REQUERIDO = "SI";
-                this.dtpFechaCarga.REQUERIDO = "SI";
-                this.chkEstado.REQUERIDO = "NO";
             }
             catch (Exception ex)
             {
