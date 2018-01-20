@@ -29,8 +29,8 @@ namespace AppProcesos.formsAuxiliares.frmTelefonos
             DominiosBus oDonBus = new DominiosBus();
             oUtil.CargarCombo(_vista.telCargo, oDonBus.DominiosGetByFilter("CARGO_CONTACTO_TEL"), "dmn_valor", "dmn_descripcion", "Seleccione Cargo");
             oUtil.CargarCombo(_vista.telTipo, oDonBus.DominiosGetByFilter("TIPO_TELEFONO"), "dmn_valor", "dmn_descripcion", "Seleccione Tipo");
-            _vista.telCargo.DropDownStyle = ComboBoxStyle.DropDownList;
-            _vista.telTipo.DropDownStyle = ComboBoxStyle.DropDownList;
+           // _vista.telCargo.DropDownStyle = ComboBoxStyle.DropDownList;
+           // _vista.telTipo.DropDownStyle = ComboBoxStyle.DropDownList;
 
             if (_vista.telCodigo != 0)
             {                
