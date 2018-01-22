@@ -123,15 +123,6 @@ namespace UI
             frmbus.ShowDialog();
         }
 
-        private void gesTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gesTextBox1_Leave(object sender, EventArgs e)
-        {
-
-        }
 
         private void gesTextBox1_TextChanged_1(object sender, EventArgs e)
         {
@@ -144,6 +135,7 @@ namespace UI
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("TME", oPermiso);
+            frmbus.Text = "Administrador Tipos de Medidores";
             frmbus.ShowDialog();
         }
 
@@ -151,6 +143,7 @@ namespace UI
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("FAB", oPermiso);
+            frmbus.Text = "Administrador Fabricantes";
             frmbus.ShowDialog();
         }
 
@@ -188,6 +181,14 @@ namespace UI
         {
             frmMedidoresMasivosCrud oFrmMedCrud = new frmMedidoresMasivosCrud(0, "H", 1);
             oFrmMedCrud.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("LEC", oPermiso);
+            frmbus.Text = "Administrador Lecturas Conceptos";
+            frmbus.ShowDialog();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using Implement;
 using Model;
 
@@ -34,6 +35,11 @@ namespace Business
         {
             EmpresasImpl oEmpresasImpl = new EmpresasImpl();
             return oEmpresasImpl.EmpresasGetAll();
+        }
+        public DataTable EmpresasGetAllDT()
+        {
+            EmpresasImpl oEmpresasImpl = new EmpresasImpl();
+            return oEmpresasImpl.EmpresasGetAllDT();
         }
     }
 }

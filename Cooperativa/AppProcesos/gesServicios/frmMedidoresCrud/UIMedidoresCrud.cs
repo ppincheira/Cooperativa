@@ -20,15 +20,11 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
         {
             //Obtengo los Modelos de medidores
             MedidoresModelosBus oMModelo = new MedidoresModelosBus();
-            _vista.MmoCodigo.DataSource = oMModelo.MedidoresModelosGetAll();
-            _vista.MmoCodigo.DisplayMember = "MmoDescripcion";
-            _vista.MmoCodigo.ValueMember = "MmoCodigo";
+            oUtil.CargarCombo(_vista.MmoCodigo, oMModelo.MedidoresModelosGetAllDT(), "MMO_CODIGO", "MMO_DESCRIPCION", "SELECCIONE..");
 
             // Obtengo las empresas Proveedoras
-            EmpresasBus oTiposConexiones = new EmpresasBus();
-            _vista.NumeroProv.DataSource = oTiposConexiones.EmpresasGetAll();
-            _vista.NumeroProv.DisplayMember = "EmpRazonSocial";
-            _vista.NumeroProv.ValueMember = "EmpNumero";
+            EmpresasBus oEmpresas = new EmpresasBus();
+            oUtil.CargarCombo(_vista.NumeroProv, oEmpresas.EmpresasGetAllDT(), "EMP_NUMERO", "EMP_RAZON_SOCIAL", "SELECCIONE..");
 
 
             if (_vista.Numero != 0)
@@ -37,6 +33,8 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
                 MedidoresBus oMedidoresBus = new MedidoresBus();
                 //Obtengo datos de la entidad principal que trabajo
                 oMedidores = oMedidoresBus.MedidoresGetById(_vista.Numero);
+                _vista.NumeroProv.SelectedValue = oMedidores.EmpNumeroProveedor;
+                _vista.MmoCodigo.SelectedValue = oMedidores.MmoCodigo;
                 _vista.NumeroSerie = oMedidores.MedNumeroserie;
                 _vista.Digitos = oMedidores.MedDigitos;
                 _vista.EstCodigo = oMedidores.EstCodigo;

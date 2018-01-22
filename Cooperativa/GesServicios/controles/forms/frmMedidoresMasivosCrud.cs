@@ -101,23 +101,6 @@ namespace GesServicios.controles.forms
             _usrNumero = Usuario;
             _oMedidoresCrud = new UIMedidoresMasivosCrud(this);
             InitializeComponent();
-            //if (Estado == "B")
-            //    if (MessageBox.Show("Desea eliminar el Numero de Medidor Código: " + NumeroMedidor + " ?", "Cooperativa", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            //    {
-            //        Cursor.Current = Cursors.WaitCursor;
-            //        _oMedidoresCrud.EliminarModeloMedidor(NumeroMedidor);
-            //        this.Close();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Cursor.Current = Cursors.Default;
-            //    ManejarError Err = new ManejarError();
-            //    Err.CargarError(ex,
-            //                    e.ToString(),
-            //                    ((Control)sender).Name,
-            //                    this.FindForm().Name);
-            //}
         }
 
         private void frmMedidoresMasivosCrud_Load(object sender, EventArgs e)

@@ -52,6 +52,7 @@
             this.categorias = new Controles.btnPersonalizado();
             this.btnMedidoresMasivos = new Controles.btnPersonalizado();
             this.btnTiposConexiones = new Controles.btnPersonalizado();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -313,11 +314,22 @@
             this.btnTiposConexiones.UseVisualStyleBackColor = true;
             this.btnTiposConexiones.Click += new System.EventHandler(this.btnTiposConexiones_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(342, 463);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(125, 27);
+            this.button6.TabIndex = 23;
+            this.button6.Text = "Lecturas Conceptos";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 468);
+            this.ClientSize = new System.Drawing.Size(479, 500);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.categorias);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -376,6 +388,7 @@
         private Controles.btnPersonalizado categorias;
         private Controles.btnPersonalizado btnMedidoresMasivos;
         private Controles.btnPersonalizado btnTiposConexiones;
+        private System.Windows.Forms.Button button6;
     }
 }
 

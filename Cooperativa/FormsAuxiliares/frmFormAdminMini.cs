@@ -178,6 +178,11 @@ namespace FormsAuxiliares
                         if (oFrmCatCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
+                    case "LEC":
+                        frmLecturasConceptosCrud oFrmLecCrud = new frmLecturasConceptosCrud(0, "");
+                        if (oFrmLecCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
 
                 }
 
@@ -254,6 +259,14 @@ namespace FormsAuxiliares
                         if (oFrmCatCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
+
+                    case "LEC":
+                        long idLec = Convert.ToInt64(row.Cells[0].Value);
+                        frmLecturasConceptosCrud oFrmLecCrud = new frmLecturasConceptosCrud(idLec, "E");
+                        oFrmLecCrud.bloquearFecha();
+                        if (oFrmLecCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
                 }
             }
             catch (Exception ex)
@@ -299,6 +312,11 @@ namespace FormsAuxiliares
                     case "SCAT":
                         long id = Convert.ToInt64(row.Cells[0].Value);
                         frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(id, "B");
+                        _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+                    case "LEC":
+                        long idLec = Convert.ToInt64(row.Cells[0].Value);
+                        frmLecturasConceptosCrud oFrmLecCrud = new frmLecturasConceptosCrud(idLec, "B");
                         _oFormAdmin.CargarGrilla(_Tabla);
                         break;
                 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using Implement;
 using Model;
 
@@ -34,6 +35,11 @@ namespace Business
         {
             MedidoresImpl oMedidoresImpl = new MedidoresImpl();
             return oMedidoresImpl.MedidoresGetAll();
+        }
+        public DataTable MedidoresGetAllDT()
+        {
+            MedidoresImpl oMedidoresImpl = new MedidoresImpl();
+            return oMedidoresImpl.MedidoresGetAllDT();
         }
     }
 }

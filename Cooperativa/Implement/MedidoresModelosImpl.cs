@@ -184,6 +184,28 @@ namespace Implement
                     throw ex;
                 }
             }
+            public DataTable MedidoresModelosGetAllDT()
+            {
+                List<MedidoresModelos> lstMedidoresModelos = new List<MedidoresModelos>();
+                try
+                {
+
+                    ds = new DataSet();
+                    Conexion oConexion = new Conexion();
+                    OracleConnection cn = oConexion.getConexion();
+                    cn.Open();
+                    string sqlSelect = "select * from Medidores_Modelos ";
+                    cmd = new OracleCommand(sqlSelect, cn);
+                    adapter = new OracleDataAdapter(cmd);
+                    cmd.ExecuteNonQuery();
+                    adapter.Fill(ds);
+                    return ds.Tables[0];
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
 
         private MedidoresModelos CargarMedidoresModelos(DataRow dr)
             {
