@@ -15,23 +15,22 @@ namespace Implement
             private OracleCommand cmd;
             private DataSet ds;
             private int response;
-            public int TiposMedidoresAdd(TiposMedidores oTMe)
+        public int TiposMedidoresAdd(TiposMedidores oTMe)
             {
                 try
                 {
                     Conexion oConexion = new Conexion();
                     OracleConnection cn = oConexion.getConexion();
                     cn.Open();
-                //Clave TME_CODIGO
-                ds = new DataSet();
+                    ds = new DataSet();
 
-                string query = " DECLARE IDTEMP NUMBER(10,0); " +
-                " BEGIN " +
-                " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('TME_CODIGO')) into IDTEMP from dual; " +
-                "insert into Tipos_Medidores(TME_CODIGO, TME_DESCRIPCION, " +
-                        "TME_DESCRIPCION_CORTA, TME_FECHA_CARGA, SRV_CODIGO,EST_CODIGO, USR_NUMERO) " +
-                        "values(IDTEMP,'" + oTMe.TmeDescripcion + "','" + oTMe.TmeDescripcionCorta + "','" +
-                        oTMe.TmeFechaCarga.ToShortDateString() + "','" + oTMe.SrvCodigo + "','" + oTMe.EstCodigo + "'," + oTMe.UsrNumero + ")"+ "RETURNING IDTEMP INTO :id;END;";
+                    string query = " DECLARE IDTEMP NUMBER(10,0); " +
+                    " BEGIN " +
+                    " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('TME_CODIGO')) into IDTEMP from dual; " +
+                    "insert into Tipos_Medidores(TME_CODIGO, TME_DESCRIPCION, " +
+                            "TME_DESCRIPCION_CORTA, TME_FECHA_CARGA, SRV_CODIGO,EST_CODIGO, USR_NUMERO) " +
+                            "values(IDTEMP,'" + oTMe.TmeDescripcion + "','" + oTMe.TmeDescripcionCorta + "','" +
+                            oTMe.TmeFechaCarga.ToShortDateString() + "','" + oTMe.SrvCodigo + "','" + oTMe.EstCodigo + "'," + oTMe.UsrNumero + ")"+ "RETURNING IDTEMP INTO :id;END;";
 
 
 
@@ -42,20 +41,15 @@ namespace Implement
                                         oTMe.TmeFechaCarga.ToShortDateString() + "','" + oTMe.SrvCodigo + "','"+oTMe.EstCodigo +"',"+ oTMe.UsrNumero + ")", cn);*/
                 cmd = new OracleCommand(query, cn);
                 adapter = new OracleDataAdapter(cmd);
-
-
                 cmd.Parameters.Add(new OracleParameter
                 {
                     ParameterName = ":id",
                     OracleDbType = OracleDbType.Int64,
                     Direction = ParameterDirection.Output
                 });
-
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
                 response = int.Parse(cmd.Parameters[":id"].Value.ToString());
-
-
                 cn.Close();
                 return response;
             }
@@ -65,7 +59,7 @@ namespace Implement
                 }
             }
 
-            public bool TiposMedidoresUpdate(TiposMedidores oTMe)
+        public bool TiposMedidoresUpdate(TiposMedidores oTMe)
             {
                 try
                 {
@@ -113,7 +107,7 @@ namespace Implement
                 }
             }
 
-            public TiposMedidores TiposMedidoresGetById(string Id)
+        public TiposMedidores TiposMedidoresGetById(string Id)
             {
                 try
                 {
@@ -143,7 +137,7 @@ namespace Implement
                 }
             }
 
-            public List<TiposMedidores> TiposMedidoresGetAll()
+        public List<TiposMedidores> TiposMedidoresGetAll()
             {
                 List<TiposMedidores> lstTiposMedidores = new List<TiposMedidores>();
                 try
@@ -177,7 +171,8 @@ namespace Implement
                     throw ex;
                 }
             }
-            public DataTable TiposMedidoresGetAllDT()
+
+        public DataTable TiposMedidoresGetAllDT()
             {
                 List<TiposMedidores> lstTiposMedidores = new List<TiposMedidores>();
                 try
@@ -200,8 +195,8 @@ namespace Implement
                 }
             }
 
-            private TiposMedidores CargarTiposMedidores(DataRow dr)
-            {
+        private TiposMedidores CargarTiposMedidores(DataRow dr)
+        {
                 try
                 {
                     TiposMedidores oObjeto = new TiposMedidores();
@@ -218,7 +213,7 @@ namespace Implement
                 {
                     throw ex;
                 }
-            }
+        }
  
             //public DataTable TiposMedidoresGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
             //{
