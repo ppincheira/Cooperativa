@@ -10,7 +10,7 @@ using static Controles.util.Enumerados;
 namespace Controles.datos
 {
 
-    public class gesComboBox: System.Windows.Forms.ComboBox
+    public class gesComboBox : System.Windows.Forms.ComboBox
     {
         public string REQUERIDO = "NO";
 
@@ -50,6 +50,9 @@ namespace Controles.datos
 
             this.Layout += new System.Windows.Forms.LayoutEventHandler(this.GesComboBox_Layout);
             this.Leave += new EventHandler(GesComboBox_Leave);
+            this.KeyPress += new KeyPressEventHandler(GesComboBox_KeyPress);
+
+
             this.SuspendLayout();
             this.errorProvider2.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.ResumeLayout(false);
@@ -58,22 +61,34 @@ namespace Controles.datos
 
         private void GesComboBox_Layout(object sender, LayoutEventArgs e)
         {
-          //if (this.SelectedIndex >= 0)
-              errorProvider2.Clear();
-
-
+            //if (this.SelectedIndex >= 0)
+            errorProvider2.Clear();
         }
+
+        private void GesComboBox_KeyPress(object sender, EventArgs e)
+        {
+            //agrego para que se pliege la lista cuando se escribe
+            //Console.WriteLine("droppe xxxxxxx " + this.DroppedDown);
+            if (this.DroppedDown)
+                this.DroppedDown = false;
+        }
+
         private void GesComboBox_Leave(object sender, EventArgs e)
         {
-            if (this.SelectedIndex > 0) {
+            if (this.SelectedIndex > 0)
+            {
                 errorProvider2.Clear();
                 this.BackColor = System.Drawing.Color.White;
             }
 
-            Boolean estaCodigo= false;
-            for (int i = 0; i <= this.Items.Count-1; i++)
+
+
+
+            Boolean estaCodigo = false;
+            for (int i = 0; i <= this.Items.Count - 1; i++)
             {
-                if (((System.Data.DataRowView)this.Items[i]).Row.ItemArray[1].ToString() == this.Text)
+                // agrego para que no importe si se escribe en mayuscula o minuscula
+                if (((System.Data.DataRowView)this.Items[i]).Row.ItemArray[1].ToString().ToUpper() == this.Text.ToUpper())
                 {
                     estaCodigo = true;
                     break;
@@ -81,7 +96,7 @@ namespace Controles.datos
 
             }
 
-      
+
 
             if (!estaCodigo)
             {
