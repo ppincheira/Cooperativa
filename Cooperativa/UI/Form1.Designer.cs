@@ -32,7 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.buttonCrudGrilla = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonRutas = new System.Windows.Forms.Button();
             this.btnPersonalizado4 = new Controles.btnPersonalizado();
             this.btnPersonalizado3 = new Controles.btnPersonalizado();
             this.btnPersonalizado2 = new Controles.btnPersonalizado();
@@ -45,18 +45,15 @@
             this.gesTextBox1 = new Controles.textBoxes.gesTextBox();
             this.gesTextBox2 = new Controles.textBoxes.gesTextBox();
             this.gesTextBox3 = new Controles.textBoxes.gesTextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonTiposMedidores = new System.Windows.Forms.Button();
+            this.buttonFabricantes = new System.Windows.Forms.Button();
             this.btnMedidoresModelos = new Controles.btnPersonalizado();
             this.btnMedidores = new Controles.btnPersonalizado();
             this.categorias = new Controles.btnPersonalizado();
             this.btnMedidoresMasivos = new Controles.btnPersonalizado();
             this.btnTiposConexiones = new Controles.btnPersonalizado();
-<<<<<<< HEAD
             this.buttonDeptos = new System.Windows.Forms.Button();
-=======
-            this.button6 = new System.Windows.Forms.Button();
->>>>>>> 7c02b624f6daf21cfb4e2c2bac29302e278ded23
+            this.buttonLectura = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,15 +94,15 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // buttonRutas
             // 
-            this.button3.Location = new System.Drawing.Point(342, 364);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 27);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "RUTAS";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonRutas.Location = new System.Drawing.Point(342, 364);
+            this.buttonRutas.Name = "buttonRutas";
+            this.buttonRutas.Size = new System.Drawing.Size(125, 27);
+            this.buttonRutas.TabIndex = 11;
+            this.buttonRutas.Text = "RUTAS";
+            this.buttonRutas.UseVisualStyleBackColor = true;
+            this.buttonRutas.Click += new System.EventHandler(this.buttonRutas_Click);
             // 
             // btnPersonalizado4
             // 
@@ -243,25 +240,25 @@
             this.gesTextBox3.TextoVacio = "<Descripcion>";
             this.gesTextBox3.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
-            // button4
+            // buttonTiposMedidores
             // 
-            this.button4.Location = new System.Drawing.Point(342, 397);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(125, 27);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Tipos de Medidores";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonTiposMedidores.Location = new System.Drawing.Point(342, 397);
+            this.buttonTiposMedidores.Name = "buttonTiposMedidores";
+            this.buttonTiposMedidores.Size = new System.Drawing.Size(125, 27);
+            this.buttonTiposMedidores.TabIndex = 19;
+            this.buttonTiposMedidores.Text = "Tipos de Medidores";
+            this.buttonTiposMedidores.UseVisualStyleBackColor = true;
+            this.buttonTiposMedidores.Click += new System.EventHandler(this.buttonTiposMedidores_Click);
             // 
-            // button5
+            // buttonFabricantes
             // 
-            this.button5.Location = new System.Drawing.Point(342, 430);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(125, 27);
-            this.button5.TabIndex = 20;
-            this.button5.Text = "Fabricantes";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.buttonFabricantes.Location = new System.Drawing.Point(342, 430);
+            this.buttonFabricantes.Name = "buttonFabricantes";
+            this.buttonFabricantes.Size = new System.Drawing.Size(125, 27);
+            this.buttonFabricantes.TabIndex = 20;
+            this.buttonFabricantes.Text = "Fabricantes";
+            this.buttonFabricantes.UseVisualStyleBackColor = true;
+            this.buttonFabricantes.Click += new System.EventHandler(this.buttonFabricantes_Click);
             // 
             // btnMedidoresModelos
             // 
@@ -318,37 +315,35 @@
             this.btnTiposConexiones.UseVisualStyleBackColor = true;
             this.btnTiposConexiones.Click += new System.EventHandler(this.btnTiposConexiones_Click);
             // 
-<<<<<<< HEAD
             // buttonDeptos
             // 
-            this.buttonDeptos.Location = new System.Drawing.Point(196, 235);
+            this.buttonDeptos.Location = new System.Drawing.Point(211, 158);
             this.buttonDeptos.Name = "buttonDeptos";
             this.buttonDeptos.Size = new System.Drawing.Size(125, 24);
             this.buttonDeptos.TabIndex = 8;
             this.buttonDeptos.Text = "Departamentos";
             this.buttonDeptos.UseVisualStyleBackColor = true;
             this.buttonDeptos.Click += new System.EventHandler(this.buttonDeptos_Click);
-=======
-            // button6
             // 
-            this.button6.Location = new System.Drawing.Point(342, 463);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(125, 27);
-            this.button6.TabIndex = 23;
-            this.button6.Text = "Lecturas Conceptos";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
->>>>>>> 7c02b624f6daf21cfb4e2c2bac29302e278ded23
+            // buttonLectura
+            // 
+            this.buttonLectura.Location = new System.Drawing.Point(342, 461);
+            this.buttonLectura.Name = "buttonLectura";
+            this.buttonLectura.Size = new System.Drawing.Size(125, 27);
+            this.buttonLectura.TabIndex = 20;
+            this.buttonLectura.Text = "Lecturas de Conceptos";
+            this.buttonLectura.UseVisualStyleBackColor = true;
+            this.buttonLectura.Click += new System.EventHandler(this.buttonLectura_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 500);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.categorias);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.buttonLectura);
+            this.Controls.Add(this.buttonFabricantes);
+            this.Controls.Add(this.buttonTiposMedidores);
             this.Controls.Add(this.gesTextBox3);
             this.Controls.Add(this.gesTextBox2);
             this.Controls.Add(this.gesTextBox1);
@@ -360,7 +355,7 @@
             this.Controls.Add(this.btnMedidores);
             this.Controls.Add(this.btnMedidoresModelos);
             this.Controls.Add(this.btnPersonalizado4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonRutas);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnPersonalizado3);
             this.Controls.Add(this.buttonDeptos);
@@ -388,7 +383,7 @@
         private Controles.btnPersonalizado btnPersonalizado3;
         private System.Windows.Forms.Button buttonCrudGrilla;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonRutas;
         private Controles.btnPersonalizado btnPersonalizado4;
         private Controles.btnPersonalizado btnPersonalizado5;
         private Controles.btnPersonalizado btnPersonalizado6;
@@ -398,18 +393,15 @@
         private Controles.textBoxes.gesTextBox gesTextBox3;
         private Controles.btnPersonalizado btnPersonalizado8;
         private Controles.btnPersonalizado btnPersonalizado9;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonTiposMedidores;
+        private System.Windows.Forms.Button buttonFabricantes;
         private Controles.btnPersonalizado btnMedidoresModelos;
         private Controles.btnPersonalizado btnMedidores;
         private Controles.btnPersonalizado categorias;
         private Controles.btnPersonalizado btnMedidoresMasivos;
         private Controles.btnPersonalizado btnTiposConexiones;
-<<<<<<< HEAD
         private System.Windows.Forms.Button buttonDeptos;
-=======
-        private System.Windows.Forms.Button button6;
->>>>>>> 7c02b624f6daf21cfb4e2c2bac29302e278ded23
+        private System.Windows.Forms.Button buttonLectura;
     }
 }
 

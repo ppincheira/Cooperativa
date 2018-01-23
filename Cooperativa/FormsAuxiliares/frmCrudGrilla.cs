@@ -279,6 +279,7 @@ namespace FormsAuxiliares
             this.btnCancelar1.Size = new System.Drawing.Size(80, 60);
             this.btnCancelar1.TabIndex = 1;
             this.btnCancelar1.UseVisualStyleBackColor = true;
+            this.btnCancelar1.Click += new System.EventHandler(this.btnCancelar1_Click);
             // 
             // btnAceptar1
             // 
@@ -430,6 +431,25 @@ namespace FormsAuxiliares
         private void btnAceptar2_Click(object sender, EventArgs e)
         {
             _oCrudGrilla.MostrarTabla(_Tabla);
+        }
+
+        private void btnCancelar1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+
         }
 
         private void grdGrillaEdit1_CellEndEdit(object sender, DataGridViewCellEventArgs e)

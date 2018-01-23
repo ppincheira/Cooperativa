@@ -11,7 +11,7 @@ namespace UI
         public Form1()
         {
             InitializeComponent();
-           
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace UI
             try
             {
                 PruebaBus oPrueba = new PruebaBus();
-              
+
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
@@ -43,7 +43,7 @@ namespace UI
 
         private void btnPersonalizado2_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0","0"); 
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("DOMB", oPermiso);
             frmbus.ShowDialog();
 
@@ -57,11 +57,11 @@ namespace UI
             //AreasBus oAreaBus = new AreasBus();
             //oAreaBus.AreasAdd(oArea);
             //Controles.forms.frmBuscador frmbus = new Controles.forms.frmBuscador("AREB");
-           FormsAuxiliares.frmBuscador frmbus = new FormsAuxiliares.frmBuscador("PERB");
+            FormsAuxiliares.frmBuscador frmbus = new FormsAuxiliares.frmBuscador("PERB");
             frmbus.ShowDialog();
 
-          
-  
+
+
         }
 
         private void btnPersonalizado3_Click(object sender, EventArgs e)
@@ -80,17 +80,8 @@ namespace UI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormsAuxiliares.frmObservacionesAdmin frmobs = new FormsAuxiliares.frmObservacionesAdmin("PERS",1,"1");
+            FormsAuxiliares.frmObservacionesAdmin frmobs = new FormsAuxiliares.frmObservacionesAdmin("PERS", 1, "1");
             frmobs.ShowDialog();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //Aqui se utiliza una clase para asignar la funcionalidad a formularios admin cargados dinamicamente
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10001", "10002", "10003", "10005", "10006","10004");
-            //Se instancia un objeto de la clase formulario admin al cual se le pasa por parametro el COD_TABLA
-            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("SRUT",oPermiso);
-            frmbus.ShowDialog();
         }
 
         private void btnPersonalizado4_Click(object sender, EventArgs e)
@@ -131,22 +122,6 @@ namespace UI
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("TME", oPermiso);
-            frmbus.Text = "Administrador Tipos de Medidores";
-            frmbus.ShowDialog();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("FAB", oPermiso);
-            frmbus.Text = "Administrador Fabricantes";
-            frmbus.ShowDialog();
-        }
-
         private void btnMedidoresModelos_Click(object sender, EventArgs e)
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10031", "10032", "10033", "10035", "10036", "10034");
@@ -183,18 +158,46 @@ namespace UI
             oFrmMedCrud.ShowDialog();
         }
 
-<<<<<<< HEAD
         private void buttonDeptos_Click(object sender, EventArgs e)
         {
             FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("DEPC", "DEP_NUMERO", false);
-=======
-        private void button6_Click(object sender, EventArgs e)
+            frmbus.ShowDialog();
+        }
+
+        private void buttonLectura_Click(object sender, EventArgs e)
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("LEC", oPermiso);
             frmbus.Text = "Administrador Lecturas Conceptos";
->>>>>>> 7c02b624f6daf21cfb4e2c2bac29302e278ded23
+            frmbus.ShowDialog();
+
+        }
+
+        private void buttonRutas_Click(object sender, EventArgs e)
+        {
+            //Aqui se utiliza una clase para asignar la funcionalidad a formularios admin cargados dinamicamente
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10001", "10002", "10003", "10005", "10006", "10004");
+            //Se instancia un objeto de la clase formulario admin al cual se le pasa por parametro el COD_TABLA
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("SRUT", oPermiso);
             frmbus.ShowDialog();
         }
+
+        private void buttonTiposMedidores_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("TME", oPermiso);
+            frmbus.Text = "Administrador Tipos de Medidores";
+            frmbus.ShowDialog();
+        }
+
+        private void buttonFabricantes_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("FAB", oPermiso);
+            frmbus.Text = "Administrador Fabricantes";
+            frmbus.ShowDialog();
+
+        }
+
     }
 }
