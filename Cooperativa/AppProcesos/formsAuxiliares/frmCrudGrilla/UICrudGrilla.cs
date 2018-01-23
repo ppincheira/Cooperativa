@@ -13,7 +13,7 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
         private IVistaCrudGrilla _vista;
         Utility oUtil;
 
-        private string _Campo;
+        private string _Campo, _Combos;
         private string _filtroCampos;
         private string _filtroValores;
         private DataTable _dtCombo;
@@ -22,6 +22,7 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
         public bool insertarClave = false;
         public DataTable _estructuraTablaGrilla;
 
+        
         public UICrudGrilla(IVistaCrudGrilla vista)
         {
             _vista = vista;
@@ -40,8 +41,10 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
             List<DetallesColumnasTablas> ListDetalle = oDetalleBus.DetallesColumnasTablasGetByCodigo(tabla);
             foreach (DetallesColumnasTablas oDetalle in ListDetalle)
             {
-
-                _Campo = _Campo + ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
+                if (oDetalle.DctTipoControl=="COMBO")
+                    _Combos = _Combos + ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
+                //else
+                    _Campo = _Campo + ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
                 if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl != "FECHA") && oDetalle.DctTipoControl != "ESTADO")
                 {
                     _dtCombo.Rows.Add(oDetalle.DctColumna, oDetalle.DctDescripcion);
@@ -71,7 +74,38 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                 _Campo = _Campo.Substring(0, _Campo.Length - 1);
             TablasBus oTablasBus = new TablasBus();
             DataTable dt = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo, _filtroCampos, _filtroValores);
-            _vista.cantidad = "Se encontraron " + oUtil.CargarGrilla(_vista.grilla, dt) + " registros";
+            _vista.cantidad = oUtil.CargarGrilla(_vista.grilla, dt) + " registros";
+            
+            int indice = 0;
+            foreach (DetallesColumnasTablas oDetalle in ListDetalle)
+            {
+                if (oDetalle.DctTipoControl == "COMBO")
+                {
+                    DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
+                    cmb.HeaderText = oDetalle.DctDescripcion;
+                    cmb.Name = oDetalle.DctColumna;
+                    // CARGAR LA LISTA DE VALORES DEL COMBO
+                    switch (oDetalle.DctListaValores)
+                    {
+                        case "AREAS":
+                        {
+                            AreasBus oAreaBusCombo = new AreasBus();
+
+                            cmb.DataSource = oAreaBusCombo.AreasGetAll();
+                            cmb.DisplayMember = "AreDescripcion";
+                            cmb.ValueMember = "AreCodigo";
+                            break;
+                        }
+                        default: break;
+                    }
+                    _vista.grilla.Columns.Add(cmb);
+                    foreach (DataGridViewRow row in _vista.grilla.Rows)
+                        row.Cells[_vista.grilla.ColumnCount - 1].Value = row.Cells[indice].Value;
+                    _vista.grilla.Columns[indice].Visible = false;
+                }
+                indice++;
+            }
+
             _vista.grilla.Columns.Add("Estado", "");
             _vista.grilla.Columns[campoClave].ReadOnly = true;
             _vista.grilla.Columns[_vista.grilla.ColumnCount - 1].Visible = false;
@@ -150,7 +184,18 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                             Array.Resize(ref nombreCampos, nombreCampos.Length + 1);
                             Array.Resize(ref valoresCampos, valoresCampos.Length + 1);
                             nombreCampos[nombreCampos.Length - 1] = oDetalle.DctColumna;
-                            valoresCampos[valoresCampos.Length - 1] = row.Cells[posicion - 1].Value.ToString();
+                            // Si la columna a actualizzar no es visible tiene una homonima visible
+                            // Busco la homonima visible y tomo su valor que es el que debo tener en cuenta para actualizar
+
+                            if (row.Cells[posicion - 1].Visible)
+                                valoresCampos[valoresCampos.Length - 1] = row.Cells[posicion - 1].Value.ToString();
+                            else
+                            {
+                                for (int pos = posicion; pos < row.Cells.Count; pos ++)
+                                    if (_vista.grilla.Columns[posicion-1].Name==_vista.grilla.Columns[pos].Name)
+                                        valoresCampos[valoresCampos.Length - 1] = row.Cells[pos].Value.ToString();
+
+                            }
                         }
                         else  
                             //Agrego un registro y la clave no es secuencia

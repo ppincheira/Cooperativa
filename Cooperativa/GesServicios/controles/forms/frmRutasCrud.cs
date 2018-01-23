@@ -17,7 +17,7 @@ namespace GesServicios.controles.forms
 
         long _SruNumero;
         string _EstCodigo;
-        long _GrdCodigo, _GrpCodigo;
+        long _GrdCodigo;
         string _GrdCodigoRegistro;
 
         #endregion

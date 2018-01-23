@@ -52,6 +52,7 @@
             this.categorias = new Controles.btnPersonalizado();
             this.btnMedidoresMasivos = new Controles.btnPersonalizado();
             this.btnTiposConexiones = new Controles.btnPersonalizado();
+            this.buttonDeptos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,9 +75,9 @@
             // 
             // buttonCrudGrilla
             // 
-            this.buttonCrudGrilla.Location = new System.Drawing.Point(342, 326);
+            this.buttonCrudGrilla.Location = new System.Drawing.Point(342, 321);
             this.buttonCrudGrilla.Name = "buttonCrudGrilla";
-            this.buttonCrudGrilla.Size = new System.Drawing.Size(125, 32);
+            this.buttonCrudGrilla.Size = new System.Drawing.Size(125, 24);
             this.buttonCrudGrilla.TabIndex = 8;
             this.buttonCrudGrilla.Text = "CrudGrilla";
             this.buttonCrudGrilla.UseVisualStyleBackColor = true;
@@ -313,6 +314,16 @@
             this.btnTiposConexiones.UseVisualStyleBackColor = true;
             this.btnTiposConexiones.Click += new System.EventHandler(this.btnTiposConexiones_Click);
             // 
+            // buttonDeptos
+            // 
+            this.buttonDeptos.Location = new System.Drawing.Point(196, 235);
+            this.buttonDeptos.Name = "buttonDeptos";
+            this.buttonDeptos.Size = new System.Drawing.Size(125, 24);
+            this.buttonDeptos.TabIndex = 8;
+            this.buttonDeptos.Text = "Departamentos";
+            this.buttonDeptos.UseVisualStyleBackColor = true;
+            this.buttonDeptos.Click += new System.EventHandler(this.buttonDeptos_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,6 +346,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnPersonalizado3);
+            this.Controls.Add(this.buttonDeptos);
             this.Controls.Add(this.buttonCrudGrilla);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvTest);
@@ -376,6 +388,7 @@
         private Controles.btnPersonalizado categorias;
         private Controles.btnPersonalizado btnMedidoresMasivos;
         private Controles.btnPersonalizado btnTiposConexiones;
+        private System.Windows.Forms.Button buttonDeptos;
     }
 }
 

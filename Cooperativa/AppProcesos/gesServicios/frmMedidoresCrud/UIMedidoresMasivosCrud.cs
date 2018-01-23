@@ -32,7 +32,6 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
 
         public void Guardar()
         {
-            long rtdo;
             Medidores oMMO = new Medidores();
             MedidoresBus oMMOBus = new MedidoresBus();
             //Cargar los datos ingresados al objeto

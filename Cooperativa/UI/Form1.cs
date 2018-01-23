@@ -73,7 +73,7 @@ namespace UI
         private void buttonCrudGrilla_Click(object sender, EventArgs e)
         {
             //FormsAuxiliares.frmCrudGrillaN frmbus = new FormsAuxiliares.frmCrudGrillaN("PERC","NUMERO",true);
-            FormsAuxiliares.frmCrudGrillaN frmbus = new FormsAuxiliares.frmCrudGrillaN("AREC", "CODIGO", false);
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("AREC", "CODIGO", false);
             frmbus.ShowDialog();
 
         }
@@ -188,6 +188,12 @@ namespace UI
         {
             frmMedidoresMasivosCrud oFrmMedCrud = new frmMedidoresMasivosCrud(0, "H", 1);
             oFrmMedCrud.ShowDialog();
+        }
+
+        private void buttonDeptos_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("DEPC", "DEP_NUMERO", false);
+            frmbus.ShowDialog();
         }
     }
 }
