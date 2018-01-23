@@ -91,6 +91,8 @@
     <Compile Include="formsAuxiliares\frmFabricantes\UIFabricantesCrud.cs" />
     <Compile Include="gesServicios\frmCategoriasCrud\IVistaCategoriasCrud.cs" />
     <Compile Include="gesServicios\frmCategoriasCrud\UICategoriasCrud.cs" />
+    <Compile Include="gesServicios\frmLecturasConceptosCrud\IVistaLecturasConceptosCrud.cs" />
+    <Compile Include="gesServicios\frmLecturasConceptosCrud\UILecturasConceptosCrud.cs" />
     <Compile Include="gesServicios\frmMedidoresCrud\IVistaMedidoresMasivosCrud.cs" />
     <Compile Include="gesServicios\frmMedidoresCrud\IVistaMedidoresCrud.cs" />
     <Compile Include="gesServicios\frmMedidoresCrud\UIMedidoresMasivosCrud.cs" />

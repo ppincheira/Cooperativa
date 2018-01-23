@@ -123,15 +123,6 @@ namespace UI
             frmbus.ShowDialog();
         }
 
-        private void gesTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gesTextBox1_Leave(object sender, EventArgs e)
-        {
-
-        }
 
         private void gesTextBox1_TextChanged_1(object sender, EventArgs e)
         {
@@ -144,6 +135,7 @@ namespace UI
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("TME", oPermiso);
+            frmbus.Text = "Administrador Tipos de Medidores";
             frmbus.ShowDialog();
         }
 
@@ -151,6 +143,7 @@ namespace UI
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("FAB", oPermiso);
+            frmbus.Text = "Administrador Fabricantes";
             frmbus.ShowDialog();
         }
 
@@ -190,9 +183,17 @@ namespace UI
             oFrmMedCrud.ShowDialog();
         }
 
+<<<<<<< HEAD
         private void buttonDeptos_Click(object sender, EventArgs e)
         {
             FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("DEPC", "DEP_NUMERO", false);
+=======
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("LEC", oPermiso);
+            frmbus.Text = "Administrador Lecturas Conceptos";
+>>>>>>> 7c02b624f6daf21cfb4e2c2bac29302e278ded23
             frmbus.ShowDialog();
         }
     }

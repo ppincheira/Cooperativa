@@ -24,8 +24,8 @@ namespace AppProcesos.gesServicios.frmCategoriasCrud
             GruposBus oGruposBus = new GruposBus();
             oUtil.CargarCombo(_vista.Grupo, oGruposBus.GruposGetByFilter("1"), "grp_codigo", "grp_descripcion", "Seleccione un Grupo");
 
-            _vista.srvCodigo.DropDownStyle = ComboBoxStyle.DropDownList;
-            _vista.Grupo.DropDownStyle = ComboBoxStyle.DropDownList;
+           // _vista.srvCodigo.DropDownStyle = ComboBoxStyle.DropDownList;
+           // _vista.Grupo.DropDownStyle = ComboBoxStyle.DropDownList;
 
             if (_vista.scaNumero != 0)
             {
