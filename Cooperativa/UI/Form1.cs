@@ -199,5 +199,18 @@ namespace UI
 
         }
 
+        private void buttonTiposIva_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("TIV", "TIV_CODIGO", false);
+            frmbus.ShowDialog();
+
+        }
+
+        private void btnServicios_Click(object sender, EventArgs e)
+        {
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("SRV", "SRV_CODIGO", false);
+            frmbus.ShowDialog();
+
+        }
     }
 }

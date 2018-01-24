@@ -13,7 +13,7 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
         private IVistaCrudGrilla _vista;
         Utility oUtil;
 
-        private string _Campo, _Combos;
+        private string _Campo, _Combos, _Checks;
         private string _filtroCampos;
         private string _filtroValores;
         private DataTable _dtCombo;
@@ -34,6 +34,9 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
         {
             _filtroCampos = "";
             _filtroValores = "";
+            _Campo = "";
+            _Checks = "";
+            _Combos = "";
             _dtCombo = new DataTable();
             _dtCombo.Columns.Add("DctColumna", typeof(string));
             _dtCombo.Columns.Add("DctDescripcion", typeof(string));
@@ -42,9 +45,11 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
             foreach (DetallesColumnasTablas oDetalle in ListDetalle)
             {
                 if (oDetalle.DctTipoControl=="COMBO")
-                    _Combos = _Combos + ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
+                    _Combos += ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
+                if (oDetalle.DctTipoControl=="CHECK")
+                    _Checks += ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
                 //else
-                    _Campo = _Campo + ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
+                _Campo = _Campo + ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
                 if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl != "FECHA") && oDetalle.DctTipoControl != "ESTADO")
                 {
                     _dtCombo.Rows.Add(oDetalle.DctColumna, oDetalle.DctDescripcion);
@@ -102,6 +107,19 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                     foreach (DataGridViewRow row in _vista.grilla.Rows)
                         row.Cells[_vista.grilla.ColumnCount - 1].Value = row.Cells[indice].Value;
                     _vista.grilla.Columns[indice].Visible = false;
+                }
+                if (oDetalle.DctTipoControl == "CHECK")
+                {
+                    DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+                    chk.HeaderText = oDetalle.DctDescripcion;
+                    chk.Name = oDetalle.DctColumna;
+                    _vista.grilla.Columns.Add(chk);
+                    foreach (DataGridViewRow row in _vista.grilla.Rows)
+                    {
+                        row.Cells[_vista.grilla.ColumnCount - 1].Value = Equals(row.Cells[indice].Value, "S");
+                    }
+                    _vista.grilla.Columns[indice].Visible = false;
+
                 }
                 indice++;
             }
@@ -184,16 +202,22 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                             Array.Resize(ref nombreCampos, nombreCampos.Length + 1);
                             Array.Resize(ref valoresCampos, valoresCampos.Length + 1);
                             nombreCampos[nombreCampos.Length - 1] = oDetalle.DctColumna;
-                            // Si la columna a actualizzar no es visible tiene una homonima visible
-                            // Busco la homonima visible y tomo su valor que es el que debo tener en cuenta para actualizar
 
                             if (row.Cells[posicion - 1].Visible)
                                 valoresCampos[valoresCampos.Length - 1] = row.Cells[posicion - 1].Value.ToString();
                             else
+                            // Si la columna a actualizar no es visible tiene una homonima visible
+                            // Busco la homonima visible y tomo su valor que es el que debo tener en cuenta para actualizar
                             {
                                 for (int pos = posicion; pos < row.Cells.Count; pos ++)
-                                    if (_vista.grilla.Columns[posicion-1].Name==_vista.grilla.Columns[pos].Name)
-                                        valoresCampos[valoresCampos.Length - 1] = row.Cells[pos].Value.ToString();
+                                    if (_vista.grilla.Columns[posicion - 1].Name == _vista.grilla.Columns[pos].Name)
+                                    {
+                                        if(_vista.grilla.Columns[pos].ValueType==typeof(string))
+                                            valoresCampos[valoresCampos.Length - 1] = row.Cells[pos].Value.ToString();
+                                        else //Es un checkbox
+                                            valoresCampos[valoresCampos.Length - 1] = row.Cells[pos].Value.Equals(true) ? "S" : "N";
+
+                                    }
 
                             }
                         }

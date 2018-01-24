@@ -379,6 +379,7 @@ namespace FormsAuxiliares
             }
             // obtener el objeto en cuestion para cada elemento modificado usando el id , por ej AreasGetById(columnaClave)
             // Hacer un porje Areas Update(area obtenida en el paso anterior)
+            this.Close();
 
         }
 
@@ -426,11 +427,6 @@ namespace FormsAuxiliares
                     grdGrillaEdit1.CurrentRow.Cells[0].ReadOnly = false;
                 grdGrillaEdit1.CurrentRow.Cells[0].Selected = true;
             }
-        }
-
-        private void btnAceptar2_Click(object sender, EventArgs e)
-        {
-            _oCrudGrilla.MostrarTabla(_Tabla);
         }
 
         private void btnCancelar1_Click(object sender, EventArgs e)

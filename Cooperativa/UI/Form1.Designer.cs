@@ -54,6 +54,8 @@
             this.btnTiposConexiones = new Controles.btnPersonalizado();
             this.buttonDeptos = new System.Windows.Forms.Button();
             this.buttonLectura = new System.Windows.Forms.Button();
+            this.buttonTiposIva = new System.Windows.Forms.Button();
+            this.btnServicios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -335,6 +337,26 @@
             this.buttonLectura.UseVisualStyleBackColor = true;
             this.buttonLectura.Click += new System.EventHandler(this.buttonLectura_Click);
             // 
+            // buttonTiposIva
+            // 
+            this.buttonTiposIva.Location = new System.Drawing.Point(211, 197);
+            this.buttonTiposIva.Name = "buttonTiposIva";
+            this.buttonTiposIva.Size = new System.Drawing.Size(125, 24);
+            this.buttonTiposIva.TabIndex = 8;
+            this.buttonTiposIva.Text = "Tipos de Iva";
+            this.buttonTiposIva.UseVisualStyleBackColor = true;
+            this.buttonTiposIva.Click += new System.EventHandler(this.buttonTiposIva_Click);
+            // 
+            // btnServicios
+            // 
+            this.btnServicios.Location = new System.Drawing.Point(211, 227);
+            this.btnServicios.Name = "btnServicios";
+            this.btnServicios.Size = new System.Drawing.Size(125, 24);
+            this.btnServicios.TabIndex = 8;
+            this.btnServicios.Text = "Servicios";
+            this.btnServicios.UseVisualStyleBackColor = true;
+            this.btnServicios.Click += new System.EventHandler(this.btnServicios_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,6 +380,8 @@
             this.Controls.Add(this.buttonRutas);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnPersonalizado3);
+            this.Controls.Add(this.btnServicios);
+            this.Controls.Add(this.buttonTiposIva);
             this.Controls.Add(this.buttonDeptos);
             this.Controls.Add(this.buttonCrudGrilla);
             this.Controls.Add(this.button1);
@@ -402,6 +426,8 @@
         private Controles.btnPersonalizado btnTiposConexiones;
         private System.Windows.Forms.Button buttonDeptos;
         private System.Windows.Forms.Button buttonLectura;
+        private System.Windows.Forms.Button buttonTiposIva;
+        private System.Windows.Forms.Button btnServicios;
     }
 }
 
