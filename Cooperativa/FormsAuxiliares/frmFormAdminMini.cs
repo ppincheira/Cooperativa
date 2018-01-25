@@ -32,7 +32,7 @@ namespace FormsAuxiliares
         private UIFormAdmin _oFormAdmin;
         #endregion
 
-        #region Implementation of IVistaBuscador
+        #region Implementation of IVistaAdminMini
         public Boolean grupoEstado
         {
             get { return this.gpbGrupoEstado.Visible; }
@@ -83,7 +83,7 @@ namespace FormsAuxiliares
         #endregion
 
         #region << EVENTOS >>
-        public frmFormAdminMini(string tabCodigo, FuncionalidadesFoms oPerForm)
+        public frmFormAdminMini(string tabCodigo , string codigoRegistro, FuncionalidadesFoms oPerForm)
         {
 
             try

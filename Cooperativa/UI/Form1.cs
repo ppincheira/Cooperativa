@@ -72,8 +72,8 @@ namespace UI
 
         private void buttonCrudGrilla_Click(object sender, EventArgs e)
         {
-            //FormsAuxiliares.frmCrudGrillaN frmbus = new FormsAuxiliares.frmCrudGrillaN("PERC","NUMERO",true);
-            FormsAuxiliares.frmCrudGrillaN frmbus = new FormsAuxiliares.frmCrudGrillaN("AREC", "CODIGO", false);
+
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("AREC", "CODIGO", false);
             frmbus.ShowDialog();
 
         }
@@ -192,6 +192,21 @@ namespace UI
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("LEC", "", oPermiso);
             frmbus.Text = "Administrador Lecturas Conceptos";
             frmbus.ShowDialog();
+        }
+
+        private void buttonDeptos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonTiposIva_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnServicios_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
