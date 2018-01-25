@@ -341,7 +341,7 @@ namespace Implement
                     comando = "update " + tabla + " set ";
                     for (int pos = 0; pos < columnas.Length; pos++)
                     {
-                        comando += columnas[columnas.Length - 1] + " = '" + valores[valores.Length - 1] + "'";
+                        comando += columnas[pos] + " = '" + valores[pos] + "'";
                         if (columnas.Length > pos + 1)
                             comando += ", ";
                     };

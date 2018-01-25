@@ -24,9 +24,9 @@ namespace Implement
                 // Clave Srv_CODIGO
                 ds = new DataSet();
                 cmd = new OracleCommand("insert into Servicios (SRV_CODIGO, SRV_DESCRIPCION, " +
-                    "SRV_DESCRIPCION_CORTA, SRV_FECHA_CARGA, USR_NUMERO, SRV_REQUIERE_MEDIDR) " +
+                    "SRV_DESCRIPCION_CORTA, SRV_FECHA_CARGA, USR_NUMERO, SRV_REQUIERE_MEDIDOR) " +
                     "values('" + oSer.SrvCodigo + "', '" +oSer.SrvDescripcion + "', '" +
-                    oSer.SrvDescripcionCorta + "'," + oSer.SrvFechaCarga + "," + 
+                    oSer.SrvDescripcionCorta + "','" + oSer.SrvFechaCarga.ToString("dd/MM/yyyy") + "'," + 
                     oSer.UsrNumero + ",'" + oSer.SrvRequiereMedidor+"')", cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
@@ -50,9 +50,9 @@ namespace Implement
                 cmd = new OracleCommand("update Servicios " +
                     "SET SRV_DESCRIPCION='" + oSer.SrvDescripcion + "', " +
                     "SRV_DESCRIPCION_CORTA='" + oSer.SrvDescripcionCorta + "', " +
-                    "SRV_FECHA_CARGA=" + oSer.SrvFechaCarga + ", " +
+                    "SRV_FECHA_CARGA='" + oSer.SrvFechaCarga.ToString("dd/MM/yyyy") + "', " +
                     "USR_NUMERO=" + oSer.UsrNumero + ", " +
-                    "SRV_REQUIERE_MEDIDR='" + oSer.UsrNumero + "' " +
+                    "SRV_REQUIERE_MEDIDOR='" + oSer.SrvRequiereMedidor + "' " +
                     "WHERE SRV_CODIGO='" + oSer.SrvCodigo + "'", cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();

@@ -17,7 +17,7 @@ namespace GesServicios.controles.forms
 
         long _SruNumero;
         string _EstCodigo;
-        long _GrdCodigo, _GrpCodigo;
+        long _GrdCodigo;
         string _GrdCodigoRegistro;
 
         #endregion
@@ -102,11 +102,6 @@ namespace GesServicios.controles.forms
             {
                 oUtil = new Utility();
                 _oRutasCrud.Inicializar();
-                this.txtDescripcion.REQUERIDO = "SI";
-                this.txtDescripcionCorta.REQUERIDO = "SI";
-                this.cmbServicio.REQUERIDO = "SI";
-                this.cmbGrupo.REQUERIDO = "SI";
-                this.chkEstado.REQUERIDO = "NO";
             }
             catch (Exception ex)
             {
