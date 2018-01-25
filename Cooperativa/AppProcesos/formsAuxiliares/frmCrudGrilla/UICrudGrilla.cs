@@ -204,15 +204,22 @@ namespace AppProcesos.formsAuxiliares.frmCrudGrilla
                             nombreCampos[nombreCampos.Length - 1] = oDetalle.DctColumna;
 
                             if (row.Cells[posicion - 1].Visible)
-                                valoresCampos[valoresCampos.Length - 1] = row.Cells[posicion - 1].Value.ToString();
+                                if (row.Cells[posicion - 1].ValueType == typeof(DateTime))
+                                {
+                                    String fechatmp;
+                                    fechatmp = row.Cells[posicion - 1].FormattedValue.ToString();
+                                    valoresCampos[valoresCampos.Length - 1] = fechatmp;
+                                }
+                                else
+                                    valoresCampos[valoresCampos.Length - 1] = row.Cells[posicion - 1].Value.ToString();
                             else
                             // Si la columna a actualizar no es visible tiene una homonima visible
                             // Busco la homonima visible y tomo su valor que es el que debo tener en cuenta para actualizar
                             {
-                                for (int pos = posicion; pos < row.Cells.Count; pos ++)
+                                for (int pos = posicion; pos < row.Cells.Count; pos++)
                                     if (_vista.grilla.Columns[posicion - 1].Name == _vista.grilla.Columns[pos].Name)
                                     {
-                                        if(_vista.grilla.Columns[pos].ValueType==typeof(string))
+                                        if (_vista.grilla.Columns[pos].ValueType == typeof(string))
                                             valoresCampos[valoresCampos.Length - 1] = row.Cells[pos].Value.ToString();
                                         else //Es un checkbox
                                             valoresCampos[valoresCampos.Length - 1] = row.Cells[pos].Value.Equals(true) ? "S" : "N";

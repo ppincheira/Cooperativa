@@ -429,7 +429,7 @@ namespace Service
                     //    return false;
                     //};
                     break;
-                case "date":
+                case "DATE":
                     try
                     {
                         DateTime m = DateTime.Parse(valor);
