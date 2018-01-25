@@ -104,6 +104,7 @@
     <Compile Include="FuncionalidadesImpl.cs" />
     <Compile Include="FuncionalidadesUsuariosImpl.cs" />
     <Compile Include="GruposDetallesImpl.cs" />
+    <Compile Include="TelefonosEntidadesImpl.cs" />
     <Compile Include="TiposGruposImpl.cs" />
     <Compile Include="LocalidadesImpl.cs" />
     <Compile Include="MedidoresImpl.cs" />

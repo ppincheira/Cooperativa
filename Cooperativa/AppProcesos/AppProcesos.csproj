@@ -77,6 +77,8 @@
     <Compile Include="formsAuxiliares\frmDomicilios\UIDomiciliosCrud.cs" />
     <Compile Include="formsAuxiliares\frmLogin\IVistaLogin.cs" />
     <Compile Include="formsAuxiliares\frmLogin\UILogin.cs" />
+    <Compile Include="formsAuxiliares\frmMiniListado\UIMiniListado.cs" />
+    <Compile Include="formsAuxiliares\frmMiniListado\IVistaMiniListado.cs" />
     <Compile Include="formsAuxiliares\frmObservaciones\IVistaObservaciones.cs" />
     <Compile Include="formsAuxiliares\frmObservaciones\IVistaObservacionesCrud.cs" />
     <Compile Include="formsAuxiliares\frmObservaciones\UIObservaciones.cs" />

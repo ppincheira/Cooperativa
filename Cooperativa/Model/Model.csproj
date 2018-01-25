@@ -130,6 +130,7 @@
     <Compile Include="Suministros.cs" />
     <Compile Include="Tablas.cs" />
     <Compile Include="Telefonos.cs" />
+    <Compile Include="TelefonosEntidades.cs" />
     <Compile Include="TipoConexionServicios.cs" />
     <Compile Include="TiposBarriosLocalidades.cs" />
     <Compile Include="TiposGrupos.cs" />

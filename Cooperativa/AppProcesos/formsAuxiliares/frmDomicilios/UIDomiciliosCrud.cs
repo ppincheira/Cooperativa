@@ -26,22 +26,23 @@ namespace AppProcesos.formsAuxiliares.frmDomicilios
         {
             LocalidadesBus oLocalidadesBus = new LocalidadesBus();
             CallesLocalidadesBus oCallesLocBus = new CallesLocalidadesBus();
-
+            DominiosBus oDominioBus = new DominiosBus();
             oUtil.CargarCombo(_vista.cmbiLocalidad,oLocalidadesBus.LocalidadesGetByProvincia("NQ"),"LOC_NUMERO","LOC_DESCRIPCION","SELECCIONE..");
+            oUtil.CargarCombo(_vista.cmbiTipo, oDominioBus.DominiosGetByFilter("TIPO_DOMICILIO"), "DMN_VALOR", "DMN_DESCRIPCION", "SELECCIONE TIPO DE DOMICILIO");
             if (_vista.domCodigo != 0)
             {
                 Domicilios oDomicilio = new Domicilios();
                 DomiciliosBus oDomicilioBus = new DomiciliosBus();
-               
-
+                CodigosPostalesLocalidadesBus oCodPosLocBus = new CodigosPostalesLocalidadesBus();
+                BarriosLocalidadesBus oBarrioLocBus = new BarriosLocalidadesBus();
                 oDomicilio = oDomicilioBus.DomiciliosGetById(_vista.domCodigo);
                 _vista.bloque = oDomicilio.DomBloque;
                 _vista.cmbiLocalidad.SelectedValue = oDomicilio.LocNumero;
-
                 oUtil.CargarCombo(_vista.cmbiCalle, oCallesLocBus.CallesLocalidadesGetByLocalidad(int.Parse(_vista.cmbiLocalidad.SelectedValue.ToString())), "CAL_NUMERO", "CAL_DESCRIPCION", "SELECCIONE CALLE..");
                 oUtil.CargarCombo(_vista.cmbiCalleDesde, oCallesLocBus.CallesLocalidadesGetByLocalidad(int.Parse(_vista.cmbiLocalidad.SelectedValue.ToString())), "CAL_NUMERO", "CAL_DESCRIPCION", "SELECCIONE CALLE..");
                 oUtil.CargarCombo(_vista.cmbiCalleHasta, oCallesLocBus.CallesLocalidadesGetByLocalidad(int.Parse(_vista.cmbiLocalidad.SelectedValue.ToString())), "CAL_NUMERO", "CAL_DESCRIPCION", "SELECCIONE CALLE..");
-
+                oUtil.CargarCombo(_vista.cmbiCodigoPostal, oCodPosLocBus.CodigosPostalesLocalidadesGetByLocalidad(int.Parse(_vista.cmbiLocalidad.SelectedValue.ToString())), "CPL_NUMERO", "CPL_DESCRIPCION", "SELECCIONE LOCALIDAD..");
+                oUtil.CargarCombo(_vista.cmbiBarrio, oBarrioLocBus.BarriosLocalidadesGetByLocalidad(int.Parse(_vista.cmbiLocalidad.SelectedValue.ToString())),"BAR_NUMERO","BAR_DESCRIPCION","SELECCIONE BARRIO.."); 
                 _vista.cmbiCalle.SelectedValue = oDomicilio.CalNumero;
                 _vista.cmbiCalleDesde.SelectedValue = oDomicilio.CalNumeroDesde;
                 _vista.cmbiCalleHasta.SelectedValue = oDomicilio.CalNumeroHasta;
@@ -62,9 +63,12 @@ namespace AppProcesos.formsAuxiliares.frmDomicilios
             if (_vista.cmbiLocalidad.SelectedIndex > 0) { 
                 CallesLocalidadesBus oCalleBus = new CallesLocalidadesBus();
                 CodigosPostalesLocalidadesBus oCodPosLocBus = new CodigosPostalesLocalidadesBus();
+                BarriosLocalidadesBus oBarrioLocBus = new BarriosLocalidadesBus();
                 oUtil.CargarCombo(_vista.cmbiCalle,oCalleBus.CallesLocalidadesGetByLocalidad(int.Parse(_vista.cmbiLocalidad.SelectedValue.ToString())), "CAL_NUMERO", "CAL_DESCRIPCION", "SELECCIONE CALLE..");
                 oUtil.CargarCombo(_vista.cmbiCalleDesde, oCalleBus.CallesLocalidadesGetByLocalidad(int.Parse(_vista.cmbiLocalidad.SelectedValue.ToString())), "CAL_NUMERO", "CAL_DESCRIPCION", "SELECCIONE CALLE..");
                 oUtil.CargarCombo(_vista.cmbiCalleHasta, oCalleBus.CallesLocalidadesGetByLocalidad(int.Parse(_vista.cmbiLocalidad.SelectedValue.ToString())), "CAL_NUMERO", "CAL_DESCRIPCION", "SELECCIONE CALLE..");
+                oUtil.CargarCombo(_vista.cmbiCodigoPostal, oCodPosLocBus.CodigosPostalesLocalidadesGetByLocalidad(int.Parse(_vista.cmbiLocalidad.SelectedValue.ToString())),"CPL_NUMERO", "CPL_DESCRIPCION", "SELECCIONE LOCALIDAD..");
+                oUtil.CargarCombo(_vista.cmbiBarrio, oBarrioLocBus.BarriosLocalidadesGetByLocalidad(int.Parse(_vista.cmbiLocalidad.SelectedValue.ToString())), "BAR_NUMERO", "BAR_DESCRIPCION", "SELECCIONE BARRIO..");
             }
         }
 

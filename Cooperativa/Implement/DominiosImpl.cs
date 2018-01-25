@@ -11,7 +11,7 @@ namespace Implement
         {
         #region Dominios methods
 
-        private OracleDataAdapter adapter;
+            private OracleDataAdapter adapter;
             private OracleCommand cmd;
             private DataSet ds;
             private int response;

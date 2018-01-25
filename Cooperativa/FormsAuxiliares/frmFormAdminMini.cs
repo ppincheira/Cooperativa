@@ -24,7 +24,10 @@ namespace FormsAuxiliares
 
         #region << PROPIEDADES >>
 
+
+        
         private string _Tabla;
+        string _CodigoRegistro;
         Utility _oUtil;
         private UIFormAdmin _oFormAdmin;
         #endregion
@@ -78,6 +81,8 @@ namespace FormsAuxiliares
         }
 
         #endregion
+
+        #region << EVENTOS >>
         public frmFormAdminMini(string tabCodigo, FuncionalidadesFoms oPerForm)
         {
 
@@ -181,6 +186,11 @@ namespace FormsAuxiliares
                     case "LEC":
                         frmLecturasConceptosCrud oFrmLecCrud = new frmLecturasConceptosCrud(0, "");
                         if (oFrmLecCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_Tabla);
+                        break;
+                    case "TETE":
+                        frmTelefonosCrud ofrmTel = new frmTelefonosCrud(0, _Tabla, _CodigoRegistro, "I");
+                        if (ofrmTel.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_Tabla);
                         break;
 
@@ -437,7 +447,7 @@ namespace FormsAuxiliares
                                 this.FindForm().Name);
             }
         }
-
+        #endregion
         #region << METODOS >>
         public void AsignarFuncionalidad(FuncionalidadesFoms oPerForm)
         {

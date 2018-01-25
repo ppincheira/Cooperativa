@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,28 @@ namespace FormsAuxiliares
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnDomicilio_Click(object sender, EventArgs e)
+        {
+                FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+                FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("DOMB", oPermiso);
+                frmbus.ShowDialog();
+        }
+
+        private void btnTelefono_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("TETE", oPermiso);
+            frmbus.ShowDialog();
+        }
+
+        private void btnEmail_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("TEEM", oPermiso);
+            frmbus.ShowDialog();
 
         }
     }
