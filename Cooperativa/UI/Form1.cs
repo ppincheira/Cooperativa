@@ -209,7 +209,6 @@ namespace UI
             oFrmMedCrud.ShowDialog();
         }
 
-<<<<<<< HEAD
         private void btnDeptos_Click(object sender, EventArgs e)
         {
             FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("DEPC", "DEP_NUMERO", false);
@@ -217,9 +216,6 @@ namespace UI
         }
 
         private void buttonLectura_Click(object sender, EventArgs e)
-=======
-        private void button6_Click(object sender, EventArgs e)
->>>>>>> 570fb739bb043c673ebc9206f29560da88978e1f
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();

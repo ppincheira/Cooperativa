@@ -338,7 +338,6 @@
             // 
             // btnDeptos
             // 
-<<<<<<< HEAD
             this.btnDeptos.Location = new System.Drawing.Point(211, 158);
             this.btnDeptos.Name = "btnDeptos";
             this.btnDeptos.Size = new System.Drawing.Size(125, 24);
@@ -346,16 +345,6 @@
             this.btnDeptos.Text = "Departamentos";
             this.btnDeptos.UseVisualStyleBackColor = true;
             this.btnDeptos.Click += new System.EventHandler(this.btnDeptos_Click);
-=======
-            this.buttonDeptos.Location = new System.Drawing.Point(281, 194);
-            this.buttonDeptos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonDeptos.Name = "buttonDeptos";
-            this.buttonDeptos.Size = new System.Drawing.Size(167, 30);
-            this.buttonDeptos.TabIndex = 8;
-            this.buttonDeptos.Text = "Departamentos";
-            this.buttonDeptos.UseVisualStyleBackColor = true;
-            this.buttonDeptos.Click += new System.EventHandler(this.buttonDeptos_Click);
->>>>>>> 570fb739bb043c673ebc9206f29560da88978e1f
             // 
             // buttonLectura
             // 
@@ -369,7 +358,6 @@
             // 
             // btnTiposIva
             // 
-<<<<<<< HEAD
             this.btnTiposIva.Location = new System.Drawing.Point(211, 197);
             this.btnTiposIva.Name = "btnTiposIva";
             this.btnTiposIva.Size = new System.Drawing.Size(125, 24);
@@ -377,16 +365,6 @@
             this.btnTiposIva.Text = "Tipos de Iva";
             this.btnTiposIva.UseVisualStyleBackColor = true;
             this.btnTiposIva.Click += new System.EventHandler(this.btnTiposIva_Click);
-=======
-            this.buttonTiposIva.Location = new System.Drawing.Point(281, 242);
-            this.buttonTiposIva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonTiposIva.Name = "buttonTiposIva";
-            this.buttonTiposIva.Size = new System.Drawing.Size(167, 30);
-            this.buttonTiposIva.TabIndex = 8;
-            this.buttonTiposIva.Text = "Tipos de Iva";
-            this.buttonTiposIva.UseVisualStyleBackColor = true;
-            this.buttonTiposIva.Click += new System.EventHandler(this.buttonTiposIva_Click);
->>>>>>> 570fb739bb043c673ebc9206f29560da88978e1f
             // 
             // btnServicios
             // 
