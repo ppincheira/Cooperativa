@@ -19,5 +19,6 @@ namespace AppProcesos.formsAuxiliares.formAdmin
         string filtro { get; set; }
         cmbLista comboEstado { get; set; }
         string cantidad { set; }
+        string striRdoCodigo { get; set; }
     }
 }

@@ -18,21 +18,15 @@ namespace FormsAuxiliares
     {
 
         #region << PROPIEDADES >>
-
         UIDomiciliosCrud _oDomicilioCrud;
         Utility oUtil;
-
         long _DomCodigo;
         string _TabCodigo;
         long _DomCodigoRegistro;
         string _TdoCodigo;
-      
-
-
         #endregion
-        #region Implementation of IVistaObservacionesCrud
 
-
+        #region Implementation of IVistaDomiciliosCrud
         public long domCodigo
         {
             get { return _DomCodigo; }
@@ -43,7 +37,6 @@ namespace FormsAuxiliares
             get { return _TabCodigo; }
             set { _TabCodigo = value; }
         }
-
         public long  domCodigoRegistro
         {
             get { return _DomCodigoRegistro; }
@@ -64,6 +57,16 @@ namespace FormsAuxiliares
         {
             get { return this.cmbCalle; }
             set { this.cmbCalle = value; }
+        }
+        public cmbLista cmbiBarrio
+        {
+            get { return this.cmbBarrio; }
+            set { this.cmbBarrio = value; }
+        }
+        public cmbLista cmbiTipo
+        {
+            get { return this.cmbTipo; }
+            set { this.cmbTipo = value; }
         }
         public int numero
         {
@@ -105,19 +108,16 @@ namespace FormsAuxiliares
             get { return this.cmbCalleHasta; }
             set { this.cmbCalleHasta = value; }
         }
-
         public cmbLista cmbiCodigoPostal
         {
             get { return this.cmbCodigoPostal; }
             set { this.cmbCodigoPostal = value; }
         }
-
         public decimal? gisX
         {
             get { return string.IsNullOrEmpty(this.txtGisX.Text) ? null : (decimal?)Convert.ToDecimal(this.txtGisX.Text);}
             set { this.txtGisX.Text = value.ToString(); }
         }
-
         public decimal? gisY
         {
             get { return string.IsNullOrEmpty(this.txtGisY.Text) ? null : (decimal?)Convert.ToDecimal(this.txtGisY.Text); }
@@ -147,13 +147,10 @@ namespace FormsAuxiliares
             {
                 oUtil = new Utility();
                 _oDomicilioCrud.Inicializar();
-           
-
                 //this.cmbLocalidad.REQUERIDO = "SI";
                 //this.cmbCalle.REQUERIDO = "SI";
                 //this.cmbCalleDesde.REQUERIDO = "SI";
                 //this.cmbCalleHasta.REQUERIDO = "SI";
-             
                 //this.cmbCodigoPostal.REQUERIDO = "SI";
             }
             catch (Exception ex)
@@ -168,15 +165,12 @@ namespace FormsAuxiliares
         {
             try
             {
-
                 this.VALIDARFORM = true;
-
                 oUtil.ValidarFormularioEP(this,this,14);
                 if (this.VALIDARFORM)
                 {
                     DialogResult = DialogResult.OK;
                     _oDomicilioCrud.Guardar();
-
                     this.Close();
                 }
             }
@@ -201,7 +195,6 @@ namespace FormsAuxiliares
 
         private void cmbLocalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             _oDomicilioCrud.CargarCallesCodigoPostal();
         }
         #endregion

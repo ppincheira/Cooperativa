@@ -13,6 +13,8 @@ namespace AppProcesos.formsAuxiliares.frmDomicilios
         string tabCodigo { get; set; }
         long domCodigoRegistro { get; set; }
         string tdoCodigo { get; set; }
+        cmbLista cmbiBarrio { get; set; }
+        cmbLista cmbiTipo { get; set; }
         cmbLista cmbiLocalidad { get; set; } 
         cmbLista cmbiCalle { get; set; }
         int numero { get; set; }

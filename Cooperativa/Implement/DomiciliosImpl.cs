@@ -199,7 +199,7 @@ namespace Implement
                 oObjeto.DomDepartamento = dr["DOM_DEPARTAMENTO"].ToString();
                 oObjeto.DomParcela = dr["DOM_PARCELA"].ToString();
                 if (dr["CPL_NUMERO"].ToString() != "")
-                    oObjeto.CplNumero = int.Parse(dr["CPL_NUMERO"].ToString());
+                    oObjeto.CplNumero = long.Parse(dr["CPL_NUMERO"].ToString());
                 oObjeto.DomLote = dr["DOM_LOTE"].ToString();
                 if (dr["DOM_GIS_X"].ToString() != "")
                     oObjeto.DomGisX = decimal.Parse(dr["DOM_GIS_X"].ToString());

@@ -132,6 +132,12 @@
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMiniListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMiniListado.Designer.cs">
+      <DependentUpon>frmMiniListado.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmObservacionesAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMiniListado.resx">
+      <DependentUpon>frmMiniListado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmObservacionesAdmin.resx">
       <DependentUpon>frmObservacionesAdmin.cs</DependentUpon>

@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="Accionistas.cs" />
     <Compile Include="Adjuntos.cs" />
+    <Compile Include="Admin.cs" />
     <Compile Include="Areas.cs" />
     <Compile Include="Auditorias.cs" />
     <Compile Include="BarriosLocalidades.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="Suministros.cs" />
     <Compile Include="Tablas.cs" />
     <Compile Include="Telefonos.cs" />
+    <Compile Include="TelefonosEntidades.cs" />
     <Compile Include="TipoConexionServicios.cs" />
     <Compile Include="TiposBarriosLocalidades.cs" />
     <Compile Include="TiposGrupos.cs" />

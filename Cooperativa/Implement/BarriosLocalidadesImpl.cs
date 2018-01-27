@@ -167,7 +167,31 @@ namespace Implement
 			}
 		}
 
-		#endregion
+        public DataTable BarriosLocalidadesGetByLocalidad(long locNumero) 
+        {
+            try
+            {
 
-	}
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "select * from Barrios_Localidades ";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt = new DataTable();
+                dt = ds.Tables[0];
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+    }
 }

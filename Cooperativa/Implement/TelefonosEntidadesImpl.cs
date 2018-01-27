@@ -1,21 +1,25 @@
-﻿
-using System;
-using System.Data;
-using System.Collections.Generic;
+﻿using Model;
 using Oracle.DataAccess.Client;
-using Model;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Implement
 {
-    public class TelefonosImpl
+    public class TelefonosEntidadesImpl
     {
-        #region Telefonos methods
+
+        #region TelefonosEntidades methods
 
         private OracleDataAdapter adapter;
         private OracleCommand cmd;
         private DataSet ds;
         private int response;
 
-        public int TelefonosAdd(Telefonos oTel)
+        public int TelefonosEntidadesAdd(TelefonosEntidades oTelEntidad)
         {
             try
             {
@@ -32,22 +36,10 @@ namespace Implement
                                                           "tab_codigo," +
                                                           "tel_codigo_registro," +
                                                           "tel_nombre_contacto) " +
-                                                  "VALUES (pkg_secuencias.fnc_prox_secuencia('TEL_CODIGO'),'" +
-                                                           oTel.TelNumero + "','" +
-                                                           oTel.TelCargo + "','" +
-                                                           oTel.TelTipo + "','" +
-                                                           oTel.TelDefecto + "','" +
-                                                           oTel.TelEmail + "','" +
-                                                           oTel.TabCodigo + "','" +
-                                                           oTel.TelCodigoRegistro + "','" +
-                                                           oTel.TelNombreContacto + "')";
-
-                Console.WriteLine("sql");
-                Console.WriteLine("--" + sqlSelect);
-                Console.WriteLine("sql");
+                                                  "VALUES (pkg_secuencias.fnc_prox_secuencia('TEL_CODIGO'),'";
 
                 cmd = new OracleCommand(sqlSelect, cn);
-                adapter = new OracleDataAdapter(cmd);               
+                adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
                 cmd.Dispose();
@@ -59,8 +51,8 @@ namespace Implement
                 throw ex;
             }
         }
-        
-        public bool TelefonosUpdate(Telefonos oTel)
+
+        public bool TelefonosEntidadesUpdate(TelefonosEntidades oTelEntidad)
         {
             try
             {
@@ -68,16 +60,13 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 ds = new DataSet();
-                string sqlSelect = "UPDATE telefonos SET " +
-                                          "tel_numero='" + oTel.TelNumero + "', " +
-                                          "tel_cargo='" + oTel.TelCargo + "', " +
-                                          "tel_tipo='" + oTel.TelTipo + "', " +
-                                          "tel_defecto='" + oTel.TelDefecto + "', " +
-                                          "tel_email='" + oTel.TelEmail + "', " +
-                                          "tab_codigo='" + oTel.TabCodigo + "', " +
-                                          "tel_codigo_registro='" + oTel.TelCodigoRegistro + "', " +
-                                          "tel_nombre_contacto='" + oTel.TelNombreContacto + "' " +
-                                    "WHERE tel_codigo='" + oTel.TelCodigo + "'";
+                string sqlSelect = "UPDATE TELEFONOS_ENTIDADES SET " +
+                                          "TEE_NUMERO='" + oTelEntidad.TeeNumero + "', " +
+                                          "TTE_NUMERO='" + oTelEntidad.TteNumero + "', " +
+                                          "TEL_CODIGO_REGISTRO='" + oTelEntidad.TelCodigoRegistro + "', " +
+                                          "TEL_CODIGO='" + oTelEntidad.TelCodigo + "', " +
+                                          "TAB_CODIGO='" + oTelEntidad.TabCodigo + "', " +
+                                    "WHERE tel_codigo='" + oTelEntidad.TeeNumero + "'";
 
                 Console.WriteLine("sql");
                 Console.WriteLine("--" + sqlSelect);
@@ -95,7 +84,7 @@ namespace Implement
             }
         }
 
-        public bool TelefonosDelete(long Id)
+        public bool TelefonosEntidadesDelete(long Id)
         {
             try
             {
@@ -117,7 +106,7 @@ namespace Implement
             }
         }
 
-        public Telefonos TelefonosGetById(long Id)
+        public TelefonosEntidades TelefonosEntidadesGetById(long Id)
         {
             try
             {
@@ -134,11 +123,11 @@ namespace Implement
                 adapter.Fill(ds);
                 DataTable dt;
                 dt = ds.Tables[0];
-                Telefonos NewEnt = new Telefonos();
+                TelefonosEntidades NewEnt = new TelefonosEntidades();
                 if (dt.Rows.Count > 0)
                 {
                     DataRow dr = dt.Rows[0];
-                    NewEnt = CargarTelefonos(dr);
+                    NewEnt = CargarTelefonosEntidades(dr);
                 }
                 return NewEnt;
             }
@@ -148,9 +137,9 @@ namespace Implement
             }
         }
 
-        public List<Telefonos> TelefonosGetAll()
+        public List<TelefonosEntidades> TelefonosEntidadesGetAll()
         {
-            List<Telefonos> lstTelefonos = new List<Telefonos>();
+            List<TelefonosEntidades> lstTelEntidades = new List<TelefonosEntidades>();
             try
             {
 
@@ -171,12 +160,12 @@ namespace Implement
                     for (int i = 0; dt.Rows.Count > i; i++)
                     {
                         DataRow dr = dt.Rows[i];
-                        Telefonos NewEnt = new Telefonos();
-                        NewEnt = CargarTelefonos(dr);
-                        lstTelefonos.Add(NewEnt);
+                        TelefonosEntidades NewEnt = new TelefonosEntidades();
+                        NewEnt = CargarTelefonosEntidades(dr);
+                        lstTelEntidades.Add(NewEnt);
                     }
                 }
-                return lstTelefonos;
+                return lstTelEntidades;
             }
             catch (Exception ex)
             {
@@ -184,20 +173,16 @@ namespace Implement
             }
         }
 
-        private Telefonos CargarTelefonos(DataRow dr)
+        private TelefonosEntidades CargarTelefonosEntidades(DataRow dr)
         {
             try
             {
-                Telefonos oObjeto = new Telefonos();
-                oObjeto.TelCodigo = long.Parse(dr["tel_codigo"].ToString());
-                oObjeto.TelNumero = dr["tel_numero"].ToString();                           
-                oObjeto.TelCargo = dr["tel_cargo"].ToString();
-                oObjeto.TelTipo = dr["tel_tipo"].ToString();
-                oObjeto.TelDefecto = dr["tel_defecto"].ToString();
-                oObjeto.TelEmail = dr["tel_email"].ToString();
-                oObjeto.TabCodigo = dr["tab_codigo"].ToString();
-                oObjeto.TelCodigoRegistro = dr["tel_codigo_registro"].ToString();
-                oObjeto.TelNombreContacto = dr["tel_nombre_contacto"].ToString();
+                TelefonosEntidades oObjeto = new TelefonosEntidades();
+                oObjeto.TeeNumero = long.Parse(dr["TEE_NUMERO"].ToString());
+                oObjeto.TteNumero = dr["TTE_NUMERO"].ToString();
+                oObjeto.TelCodigoRegistro = dr["TEL_CODIGO_REGISTRO"].ToString();
+                oObjeto.TelCodigo = long.Parse(dr["TEL_CODIGO"].ToString());
+                oObjeto.TabCodigo = dr["TAB_CODIGO"].ToString();
                 return oObjeto;
             }
             catch (Exception ex)
@@ -206,7 +191,7 @@ namespace Implement
             }
         }
 
-        public DataTable TelefonosGetByFilter(string tabCodigo, string telCodigoRegistro)
+        public DataTable TelefonosEntidadesGetByFilter(string tabCodigo, string telCodigoRegistro)
         {
 
             try
@@ -216,20 +201,19 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "  SELECT tel_codigo," +
-                                   "         tel_numero," +
-                                   "         pkg_general.fnc_obtener_dsp_dominio('CARGO_CONTACTO_TEL',tel_cargo) tel_cargo," +
-                                   "         pkg_general.fnc_obtener_dsp_dominio('TIPO_TELEFONO',tel_tipo) tel_tipo," +
-                                   "         tel_defecto," +
-                                   "         tel_email," +
-                                   "         tel_nombre_contacto," +                                 
-                                   "         tel_codigo_registro," +
-                                   "         tab_codigo" +
-                                   "  FROM   telefonos  " +                                         
-                                   "  WHERE  tab_codigo ='" + tabCodigo + "' " +                                   
-                                   "  AND    tel_codigo_registro='" + telCodigoRegistro + "'";
+                string sqlSelect = " SELECT tel_codigo," +
+                                   "        tel_numero," +
+                                   "        pkg_general.fnc_obtener_dsp_dominio('CARGO_CONTACTO_TEL',tel_cargo) tel_cargo," +
+                                   "        pkg_general.fnc_obtener_dsp_dominio('TIPO_TELEFONO',tel_tipo) tel_tipo," +
+                                   "        tel_defecto," +
+                                   "        tel_email," +
+                                   "        tel_nombre_contacto," +
+                                   "        tel_codigo_registro," +
+                                   "        tab_codigo" +
+                                   " FROM   telefonos  " +
+                                   " WHERE  tab_codigo ='" + tabCodigo + "' " +
+                                   " AND    tel_codigo_registro='" + telCodigoRegistro + "'";
 
-                
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
@@ -245,6 +229,5 @@ namespace Implement
             }
         }
         #endregion
-
     }
 }

@@ -23,12 +23,15 @@ namespace FormsAuxiliares
 
         #region << PROPIEDADES >>
 
-        private string _Tabla;
+        private Admin _oAdmin;
         Utility _oUtil;
+        public string _strRdoCodigo;
         private UIFormAdmin _oFormAdmin;
         #endregion
 
-        #region Implementation of IVistaBuscador
+        #region Implementation of IVistaFormAdmin
+
+
         public Boolean grupoEstado
         {
             get { return this.gpbGrupoEstado.Enabled; }
@@ -74,6 +77,11 @@ namespace FormsAuxiliares
         {
 
             set { this.lblCantidad.Text = value; }
+        }
+        public string striRdoCodigo
+        {
+            get { return _strRdoCodigo; }
+            set { _strRdoCodigo = value; }
         }
 
         #endregion
@@ -429,14 +437,13 @@ namespace FormsAuxiliares
         #region << EVENTOS >>
 
 
-        public frmFormAdmin(string tabCodigo, FuncionalidadesFoms oPerForm)
+        public frmFormAdmin(Admin oAdmin, FuncionalidadesFoms oPerForm)
         {
             try
             {
                 InitializeComponent();
                 AsignarFuncionalidad(oPerForm);
-                _Tabla = tabCodigo;
-
+                _oAdmin = oAdmin;
                 _oFormAdmin = new UIFormAdmin(this);
             }
             catch (Exception ex)
@@ -449,7 +456,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oFormAdmin.Inicializar(_Tabla);
+                _oFormAdmin.Inicializar(_oAdmin.TabCodigo);
                 _oUtil = new Utility();
                 _oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
                //No Borrar este comentario es la llama original
@@ -470,23 +477,23 @@ namespace FormsAuxiliares
         {
             try
             {
-                switch (_Tabla)
+                switch (_oAdmin.TabCodigo)
                 {
                     case "DOMB":
                         
                         frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(0);
                         if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
+                            _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                         break;
                     case "MEM":
                         frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(0,"H",1);
                         if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
+                            _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                         break;
                     case "MED":
                         frmMedidoresCrud oFrmMedCrud = new frmMedidoresCrud(0,"H",1);
                         if (oFrmMedCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
+                            _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                         break;
                     case "":
                         Console.WriteLine("Case 2");
@@ -512,23 +519,23 @@ namespace FormsAuxiliares
                 DataGridViewRow row = this.dgBusqueda.CurrentRow;
                 long id = Convert.ToInt64(row.Cells[0].Value);
 
-                switch (_Tabla)
+                switch (_oAdmin.TabCodigo)
                 {
                     case "DOMB":
 
                         frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(id);
                         if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
+                            _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                         break;
                     case "MEM":
                         frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(id, "H", 1);
                         if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
+                            _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                         break;
                     case "MED":
                         frmMedidoresCrud oFrmMedCrud = new frmMedidoresCrud(id, "H", 1);
                         if (oFrmMedCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
+                            _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                         break;
                     case "":
                         Console.WriteLine("Case 2");
@@ -553,27 +560,27 @@ namespace FormsAuxiliares
             {
                 DataGridViewRow row = this.dgBusqueda.CurrentRow;
                 long id = Convert.ToInt64(row.Cells[0].Value);
-                switch (_Tabla)
+                switch (_oAdmin.TabCodigo)
                 {
                     case "DOMB":
 
                         frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(id);
                         oFrmDomCrud.gbDatos.Enabled = false;
                         if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
+                            _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                             
                         break;
                     case "MEM":
                         frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(id, "H", 1);
                         oFrmMedModCrud.gbDatos.Enabled = false;
                         if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
+                            _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                         break;
                     case "MED":
                         frmMedidoresCrud oFrmMedCrud = new frmMedidoresCrud(id, "H", 1);
                         oFrmMedCrud.gbDatos.Enabled = false;
                         if (oFrmMedCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
+                            _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                         break;
                     case "":
                         Console.WriteLine("Case 2");
@@ -620,17 +627,17 @@ namespace FormsAuxiliares
             {
                 DataGridViewRow row = this.dgBusqueda.CurrentRow;
                 long id = Convert.ToInt64(row.Cells[0].Value);
-                switch (_Tabla)
+                switch (_oAdmin.TabCodigo)
                 {
                     case "MEM":
                         frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(id, "B", 1);
                         //if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_Tabla);
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                         break;
                     case "MED":
                         frmMedidoresCrud oFrmMedCrud = new frmMedidoresCrud(id, "B", 1);
                         //if (oFrmMedCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
+                            _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                         break;
                 }
             }
@@ -654,7 +661,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oFormAdmin.CargarGrilla(_Tabla);
+                _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
             }
             catch (Exception ex)
             {

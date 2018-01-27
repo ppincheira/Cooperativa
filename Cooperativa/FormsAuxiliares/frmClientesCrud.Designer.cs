@@ -34,10 +34,10 @@
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.gbDatos = new Controles.contenedores.gesGroup();
             this.pnlPanelContenedor1 = new Controles.contenedores.pnlPanelContenedor();
-            this.btnGeneral2 = new Controles.buttons.btnGeneral();
+            this.btnEmail = new Controles.buttons.btnGeneral();
             this.txtDescripcion8 = new Controles.textBoxes.txtDescripcion();
             this.lblEtiqueta8 = new Controles.labels.lblEtiqueta();
-            this.btnGeneral1 = new Controles.buttons.btnGeneral();
+            this.btnTelefono = new Controles.buttons.btnGeneral();
             this.txtDescripcion7 = new Controles.textBoxes.txtDescripcion();
             this.lblEtiqueta7 = new Controles.labels.lblEtiqueta();
             this.btnDomicilio = new Controles.buttons.btnGeneral();
@@ -124,10 +124,10 @@
             // 
             // pnlPanelContenedor1
             // 
-            this.pnlPanelContenedor1.Controls.Add(this.btnGeneral2);
+            this.pnlPanelContenedor1.Controls.Add(this.btnEmail);
             this.pnlPanelContenedor1.Controls.Add(this.txtDescripcion8);
             this.pnlPanelContenedor1.Controls.Add(this.lblEtiqueta8);
-            this.pnlPanelContenedor1.Controls.Add(this.btnGeneral1);
+            this.pnlPanelContenedor1.Controls.Add(this.btnTelefono);
             this.pnlPanelContenedor1.Controls.Add(this.txtDescripcion7);
             this.pnlPanelContenedor1.Controls.Add(this.lblEtiqueta7);
             this.pnlPanelContenedor1.Controls.Add(this.btnDomicilio);
@@ -148,14 +148,15 @@
             this.pnlPanelContenedor1.Size = new System.Drawing.Size(733, 220);
             this.pnlPanelContenedor1.TabIndex = 10;
             // 
-            // btnGeneral2
+            // btnEmail
             // 
-            this.btnGeneral2.Location = new System.Drawing.Point(696, 5);
-            this.btnGeneral2.Name = "btnGeneral2";
-            this.btnGeneral2.Size = new System.Drawing.Size(28, 23);
-            this.btnGeneral2.TabIndex = 21;
-            this.btnGeneral2.Text = "...";
-            this.btnGeneral2.UseVisualStyleBackColor = true;
+            this.btnEmail.Location = new System.Drawing.Point(696, 5);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(28, 23);
+            this.btnEmail.TabIndex = 21;
+            this.btnEmail.Text = "...";
+            this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
             // txtDescripcion8
             // 
@@ -179,14 +180,15 @@
             this.lblEtiqueta8.TabIndex = 19;
             this.lblEtiqueta8.Text = "Email:";
             // 
-            // btnGeneral1
+            // btnTelefono
             // 
-            this.btnGeneral1.Location = new System.Drawing.Point(382, 167);
-            this.btnGeneral1.Name = "btnGeneral1";
-            this.btnGeneral1.Size = new System.Drawing.Size(28, 23);
-            this.btnGeneral1.TabIndex = 15;
-            this.btnGeneral1.Text = "...";
-            this.btnGeneral1.UseVisualStyleBackColor = true;
+            this.btnTelefono.Location = new System.Drawing.Point(381, 167);
+            this.btnTelefono.Name = "btnTelefono";
+            this.btnTelefono.Size = new System.Drawing.Size(28, 23);
+            this.btnTelefono.TabIndex = 15;
+            this.btnTelefono.Text = "...";
+            this.btnTelefono.UseVisualStyleBackColor = true;
+            this.btnTelefono.Click += new System.EventHandler(this.btnTelefono_Click);
             // 
             // txtDescripcion7
             // 
@@ -218,6 +220,7 @@
             this.btnDomicilio.TabIndex = 12;
             this.btnDomicilio.Text = "...";
             this.btnDomicilio.UseVisualStyleBackColor = true;
+            this.btnDomicilio.Click += new System.EventHandler(this.btnDomicilio_Click);
             // 
             // lblEtiqueta6
             // 
@@ -532,10 +535,10 @@
         private Controles.labels.lblEtiqueta lblEtiqueta2;
         private Controles.textBoxes.txtDescripcion txtDescripcion1;
         private Controles.labels.lblEtiqueta lblEtiqueta1;
-        private Controles.buttons.btnGeneral btnGeneral2;
+        private Controles.buttons.btnGeneral btnEmail;
         private Controles.textBoxes.txtDescripcion txtDescripcion8;
         private Controles.labels.lblEtiqueta lblEtiqueta8;
-        private Controles.buttons.btnGeneral btnGeneral1;
+        private Controles.buttons.btnGeneral btnTelefono;
         private Controles.textBoxes.txtDescripcion txtDescripcion7;
         private Controles.labels.lblEtiqueta lblEtiqueta7;
         private Controles.buttons.btnGeneral btnDomicilio;
