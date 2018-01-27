@@ -62,9 +62,6 @@ namespace UI
             //Controles.forms.frmBuscador frmbus = new Controles.forms.frmBuscador("AREB");
            FormsAuxiliares.frmBuscador frmbus = new FormsAuxiliares.frmBuscador("PERB");
             frmbus.ShowDialog();
-
-          
-  
         }
 
         private void btnPersonalizado3_Click(object sender, EventArgs e)
@@ -87,7 +84,7 @@ namespace UI
             frmobs.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnRutas_Click(object sender, EventArgs e)
         {
             //Aqui se utiliza una clase para asignar la funcionalidad a formularios admin cargados dinamicamente
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10001", "10002", "10003", "10005", "10006","10004");
@@ -145,7 +142,7 @@ namespace UI
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnTiposMedidores_Click(object sender, EventArgs e)
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();
@@ -155,7 +152,7 @@ namespace UI
             frmbus.ShowDialog();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnFabricantes_Click(object sender, EventArgs e)
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();
@@ -215,7 +212,7 @@ namespace UI
             frmbus.ShowDialog();
         }
 
-        private void buttonLectura_Click(object sender, EventArgs e)
+        private void btnLectura_Click(object sender, EventArgs e)
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();
@@ -225,19 +222,17 @@ namespace UI
             frmbus.ShowDialog();
         }
 
-        private void buttonDeptos_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnTiposIva_Click(object sender, EventArgs e)
         {
-
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("TIV", "TIV_CODIGO", false);
+            frmbus.ShowDialog();
         }
 
         private void btnServicios_Click(object sender, EventArgs e)
         {
-
+            FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("SRV", "SRV_CODIGO", false);
+            frmbus.ShowDialog();
         }
 
         private void btnSuministros_Click(object sender, EventArgs e)

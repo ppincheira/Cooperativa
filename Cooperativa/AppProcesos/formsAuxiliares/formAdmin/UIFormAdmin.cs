@@ -70,7 +70,7 @@ namespace AppProcesos.formsAuxiliares.formAdmin
             TablasBus oTablasBus = new TablasBus();
             DataTable dt = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo, _filtroCampos, _filtroValores);
             _vista.cantidad = "Se encontraron " + oUtil.CargarGrilla(_vista.grilla, dt) + " registros";
-            _vista.grilla.Columns["CODIGO"].Visible = false;
+            //_vista.grilla.Columns["CODIGO"].Visible = false;
 
         }
 
