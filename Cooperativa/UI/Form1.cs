@@ -158,7 +158,7 @@ namespace UI
             oFrmMedCrud.ShowDialog();
         }
 
-        private void buttonDeptos_Click(object sender, EventArgs e)
+        private void btnDeptos_Click(object sender, EventArgs e)
         {
             FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("DEPC", "DEP_NUMERO", false);
             frmbus.ShowDialog();
@@ -199,7 +199,7 @@ namespace UI
 
         }
 
-        private void buttonTiposIva_Click(object sender, EventArgs e)
+        private void btnTiposIva_Click(object sender, EventArgs e)
         {
             FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("TIV", "TIV_CODIGO", false);
             frmbus.ShowDialog();
@@ -209,6 +209,15 @@ namespace UI
         private void btnServicios_Click(object sender, EventArgs e)
         {
             FormsAuxiliares.frmCrudGrilla frmbus = new FormsAuxiliares.frmCrudGrilla("SRV", "SRV_CODIGO", false);
+            frmbus.ShowDialog();
+
+        }
+
+        private void btnSuministros_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10001", "10002", "10003", "10005", "10006", "10004");
+            //Se instancia un objeto de la clase formulario admin al cual se le pasa por parametro el COD_TABLA
+            frmSuministrosAdmin frmbus = new frmSuministrosAdmin("SUM", oPermiso);
             frmbus.ShowDialog();
 
         }

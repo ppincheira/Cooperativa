@@ -52,10 +52,11 @@
             this.categorias = new Controles.btnPersonalizado();
             this.btnMedidoresMasivos = new Controles.btnPersonalizado();
             this.btnTiposConexiones = new Controles.btnPersonalizado();
-            this.buttonDeptos = new System.Windows.Forms.Button();
+            this.btnDeptos = new System.Windows.Forms.Button();
             this.buttonLectura = new System.Windows.Forms.Button();
-            this.buttonTiposIva = new System.Windows.Forms.Button();
+            this.btnTiposIva = new System.Windows.Forms.Button();
             this.btnServicios = new System.Windows.Forms.Button();
+            this.btnSuministros = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -317,15 +318,15 @@
             this.btnTiposConexiones.UseVisualStyleBackColor = true;
             this.btnTiposConexiones.Click += new System.EventHandler(this.btnTiposConexiones_Click);
             // 
-            // buttonDeptos
+            // btnDeptos
             // 
-            this.buttonDeptos.Location = new System.Drawing.Point(211, 158);
-            this.buttonDeptos.Name = "buttonDeptos";
-            this.buttonDeptos.Size = new System.Drawing.Size(125, 24);
-            this.buttonDeptos.TabIndex = 8;
-            this.buttonDeptos.Text = "Departamentos";
-            this.buttonDeptos.UseVisualStyleBackColor = true;
-            this.buttonDeptos.Click += new System.EventHandler(this.buttonDeptos_Click);
+            this.btnDeptos.Location = new System.Drawing.Point(211, 158);
+            this.btnDeptos.Name = "btnDeptos";
+            this.btnDeptos.Size = new System.Drawing.Size(125, 24);
+            this.btnDeptos.TabIndex = 8;
+            this.btnDeptos.Text = "Departamentos";
+            this.btnDeptos.UseVisualStyleBackColor = true;
+            this.btnDeptos.Click += new System.EventHandler(this.btnDeptos_Click);
             // 
             // buttonLectura
             // 
@@ -337,15 +338,15 @@
             this.buttonLectura.UseVisualStyleBackColor = true;
             this.buttonLectura.Click += new System.EventHandler(this.buttonLectura_Click);
             // 
-            // buttonTiposIva
+            // btnTiposIva
             // 
-            this.buttonTiposIva.Location = new System.Drawing.Point(211, 197);
-            this.buttonTiposIva.Name = "buttonTiposIva";
-            this.buttonTiposIva.Size = new System.Drawing.Size(125, 24);
-            this.buttonTiposIva.TabIndex = 8;
-            this.buttonTiposIva.Text = "Tipos de Iva";
-            this.buttonTiposIva.UseVisualStyleBackColor = true;
-            this.buttonTiposIva.Click += new System.EventHandler(this.buttonTiposIva_Click);
+            this.btnTiposIva.Location = new System.Drawing.Point(211, 197);
+            this.btnTiposIva.Name = "btnTiposIva";
+            this.btnTiposIva.Size = new System.Drawing.Size(125, 24);
+            this.btnTiposIva.TabIndex = 8;
+            this.btnTiposIva.Text = "Tipos de Iva";
+            this.btnTiposIva.UseVisualStyleBackColor = true;
+            this.btnTiposIva.Click += new System.EventHandler(this.btnTiposIva_Click);
             // 
             // btnServicios
             // 
@@ -356,6 +357,16 @@
             this.btnServicios.Text = "Servicios";
             this.btnServicios.UseVisualStyleBackColor = true;
             this.btnServicios.Click += new System.EventHandler(this.btnServicios_Click);
+            // 
+            // btnSuministros
+            // 
+            this.btnSuministros.Location = new System.Drawing.Point(211, 259);
+            this.btnSuministros.Name = "btnSuministros";
+            this.btnSuministros.Size = new System.Drawing.Size(125, 27);
+            this.btnSuministros.TabIndex = 11;
+            this.btnSuministros.Text = "Suministros";
+            this.btnSuministros.UseVisualStyleBackColor = true;
+            this.btnSuministros.Click += new System.EventHandler(this.btnSuministros_Click);
             // 
             // Form1
             // 
@@ -377,12 +388,13 @@
             this.Controls.Add(this.btnMedidores);
             this.Controls.Add(this.btnMedidoresModelos);
             this.Controls.Add(this.btnPersonalizado4);
+            this.Controls.Add(this.btnSuministros);
             this.Controls.Add(this.buttonRutas);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnPersonalizado3);
             this.Controls.Add(this.btnServicios);
-            this.Controls.Add(this.buttonTiposIva);
-            this.Controls.Add(this.buttonDeptos);
+            this.Controls.Add(this.btnTiposIva);
+            this.Controls.Add(this.btnDeptos);
             this.Controls.Add(this.buttonCrudGrilla);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvTest);
@@ -424,10 +436,11 @@
         private Controles.btnPersonalizado categorias;
         private Controles.btnPersonalizado btnMedidoresMasivos;
         private Controles.btnPersonalizado btnTiposConexiones;
-        private System.Windows.Forms.Button buttonDeptos;
+        private System.Windows.Forms.Button btnDeptos;
         private System.Windows.Forms.Button buttonLectura;
-        private System.Windows.Forms.Button buttonTiposIva;
+        private System.Windows.Forms.Button btnTiposIva;
         private System.Windows.Forms.Button btnServicios;
+        private System.Windows.Forms.Button btnSuministros;
     }
 }
 

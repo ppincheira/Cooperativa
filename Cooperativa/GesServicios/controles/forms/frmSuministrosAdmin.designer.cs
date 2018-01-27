@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSuministrosAdmin));
             this.gpbGrupoEstado = new Controles.contenedores.gpbGrupo();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.lblEEstado = new Controles.labels.lblEtiqueta();
             this.gpbGrupo3 = new Controles.contenedores.gpbGrupo();
             this.btnEliminar1 = new Controles.buttons.btnEliminar();
@@ -51,7 +50,6 @@
             this.lblFiltro = new Controles.labels.lblEtiqueta();
             this.gpbGrupo4 = new Controles.contenedores.gpbGrupo();
             this.lblCantidad = new Controles.labels.lblEtiqueta();
-            this.dgBusqueda = new Controles.datos.gesGrid();
             this.gpbGrupo1 = new Controles.contenedores.gpbGrupo();
             this.tabSolapas1 = new Controles.contenedores.tabSolapas();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -59,14 +57,16 @@
             this.gpbGrupo2 = new Controles.contenedores.gpbGrupo();
             this.btnAccionesSuministros2 = new Controles.buttons.btnAccionesSuministros();
             this.btnAccionesSuministros1 = new Controles.buttons.btnAccionesSuministros();
+            this.cmbEstado = new Controles.datos.cmbLista();
+            this.dgBusqueda = new Controles.datos.grdGrillaAdmin();
             this.gpbGrupoEstado.SuspendLayout();
             this.gpbGrupo3.SuspendLayout();
             this.gpbFecha.SuspendLayout();
             this.gpbGrupo4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgBusqueda)).BeginInit();
             this.gpbGrupo1.SuspendLayout();
             this.tabSolapas1.SuspendLayout();
             this.gpbGrupo2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgBusqueda)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbGrupoEstado
@@ -79,14 +79,6 @@
             this.gpbGrupoEstado.Size = new System.Drawing.Size(332, 46);
             this.gpbGrupoEstado.TabIndex = 12;
             this.gpbGrupoEstado.TabStop = false;
-            // 
-            // cmbEstado
-            // 
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(55, 13);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(188, 21);
-            this.cmbEstado.TabIndex = 8;
             // 
             // lblEEstado
             // 
@@ -121,6 +113,7 @@
             this.btnEliminar1.Size = new System.Drawing.Size(40, 40);
             this.btnEliminar1.TabIndex = 7;
             this.btnEliminar1.UseVisualStyleBackColor = true;
+            this.btnEliminar1.Click += new System.EventHandler(this.btnEliminar1_Click);
             // 
             // btnSalir
             // 
@@ -161,6 +154,7 @@
             this.btnVer.Size = new System.Drawing.Size(40, 40);
             this.btnVer.TabIndex = 2;
             this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // btnEditar
             // 
@@ -171,6 +165,7 @@
             this.btnEditar.Size = new System.Drawing.Size(40, 40);
             this.btnEditar.TabIndex = 1;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -181,6 +176,7 @@
             this.btnNuevo.Size = new System.Drawing.Size(40, 40);
             this.btnNuevo.TabIndex = 0;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // gpbFecha
             // 
@@ -271,8 +267,8 @@
             // 
             // gpbGrupo4
             // 
-            this.gpbGrupo4.Controls.Add(this.lblCantidad);
             this.gpbGrupo4.Controls.Add(this.dgBusqueda);
+            this.gpbGrupo4.Controls.Add(this.lblCantidad);
             this.gpbGrupo4.Location = new System.Drawing.Point(12, 121);
             this.gpbGrupo4.Name = "gpbGrupo4";
             this.gpbGrupo4.Size = new System.Drawing.Size(925, 351);
@@ -288,13 +284,6 @@
             this.lblCantidad.Size = new System.Drawing.Size(49, 13);
             this.lblCantidad.TabIndex = 2;
             this.lblCantidad.Text = "Cantidad";
-            // 
-            // dgBusqueda
-            // 
-            this.dgBusqueda.Location = new System.Drawing.Point(6, 19);
-            this.dgBusqueda.Name = "dgBusqueda";
-            this.dgBusqueda.Size = new System.Drawing.Size(913, 312);
-            this.dgBusqueda.TabIndex = 0;
             // 
             // gpbGrupo1
             // 
@@ -370,9 +359,26 @@
             this.btnAccionesSuministros1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAccionesSuministros1.UseVisualStyleBackColor = true;
             // 
+            // cmbEstado
+            // 
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(63, 13);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.cmbEstado.Size = new System.Drawing.Size(188, 21);
+            this.cmbEstado.TabIndex = 16;
+            // 
+            // dgBusqueda
+            // 
+            this.dgBusqueda.AllowUserToAddRows = false;
+            this.dgBusqueda.Location = new System.Drawing.Point(0, 18);
+            this.dgBusqueda.Name = "dgBusqueda";
+            this.dgBusqueda.Size = new System.Drawing.Size(913, 312);
+            this.dgBusqueda.TabIndex = 3;
+            // 
             // frmSuministrosAdmin
             // 
-            this.ClientSize = new System.Drawing.Size(1339, 825);
+            this.ClientSize = new System.Drawing.Size(1339, 749);
             this.Controls.Add(this.gpbGrupo2);
             this.Controls.Add(this.gpbGrupo1);
             this.Controls.Add(this.gpbGrupo4);
@@ -380,6 +386,7 @@
             this.Controls.Add(this.gpbGrupo3);
             this.Controls.Add(this.gpbFecha);
             this.Name = "frmSuministrosAdmin";
+            this.Load += new System.EventHandler(this.frmSuministrosAdmin_Load);
             this.gpbGrupoEstado.ResumeLayout(false);
             this.gpbGrupoEstado.PerformLayout();
             this.gpbGrupo3.ResumeLayout(false);
@@ -387,10 +394,10 @@
             this.gpbFecha.PerformLayout();
             this.gpbGrupo4.ResumeLayout(false);
             this.gpbGrupo4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgBusqueda)).EndInit();
             this.gpbGrupo1.ResumeLayout(false);
             this.tabSolapas1.ResumeLayout(false);
             this.gpbGrupo2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgBusqueda)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,7 +405,6 @@
         #endregion
 
         private Controles.contenedores.gpbGrupo gpbGrupoEstado;
-        public System.Windows.Forms.ComboBox cmbEstado;
         private Controles.labels.lblEtiqueta lblEEstado;
         private Controles.contenedores.gpbGrupo gpbGrupo3;
         private Controles.buttons.btnEliminar btnEliminar1;
@@ -419,7 +425,6 @@
         private Controles.labels.lblEtiqueta lblFiltro;
         private Controles.contenedores.gpbGrupo gpbGrupo4;
         private Controles.labels.lblEtiqueta lblCantidad;
-        private Controles.datos.gesGrid dgBusqueda;
         private Controles.contenedores.gpbGrupo gpbGrupo1;
         private Controles.contenedores.gpbGrupo gpbGrupo2;
         private Controles.contenedores.tabSolapas tabSolapas1;
@@ -427,5 +432,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private Controles.buttons.btnAccionesSuministros btnAccionesSuministros2;
         private Controles.buttons.btnAccionesSuministros btnAccionesSuministros1;
+        public Controles.datos.cmbLista cmbEstado;
+        private Controles.datos.grdGrillaAdmin dgBusqueda;
     }
 }

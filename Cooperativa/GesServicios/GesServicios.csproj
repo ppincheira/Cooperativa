@@ -113,6 +113,10 @@
       <Project>{2b8d11ae-a2f8-4dd8-97a7-9e722b57182e}</Project>
       <Name>Controles</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{30B38EED-BF12-4118-8492-53051E87D716}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\service\Service.csproj">
       <Project>{86fb2f28-828e-4d75-8656-fe5f83fa1d11}</Project>
       <Name>Service</Name>
