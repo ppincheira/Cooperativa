@@ -43,8 +43,11 @@ namespace UI
 
         private void btnPersonalizado2_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0","0"); 
-            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("DOMB", oPermiso);
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0","0");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "DOMB";
+
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
             frmbus.ShowDialog();
 
         }
@@ -89,7 +92,9 @@ namespace UI
             //Aqui se utiliza una clase para asignar la funcionalidad a formularios admin cargados dinamicamente
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10001", "10002", "10003", "10005", "10006","10004");
             //Se instancia un objeto de la clase formulario admin al cual se le pasa por parametro el COD_TABLA
-            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("SRUT", "", oPermiso);
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "SRUT";
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
             frmbus.ShowDialog();
         }
 
@@ -97,7 +102,9 @@ namespace UI
         {
 
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("CALB", "", oPermiso);
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "CALB";
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
             frmbus.ShowDialog();
         }
 
@@ -112,7 +119,9 @@ namespace UI
         {
 
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("COPB", "", oPermiso);
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "COPB";
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
             frmbus.ShowDialog();
         }
 
@@ -130,14 +139,18 @@ namespace UI
         private void gesTextBox1_TextChanged_1(object sender, EventArgs e)
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10100", "10101", "10102", "10104", "10105", "10103");
-            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("MED", oPermiso);
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "MED";
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("TME", "", oPermiso);
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "TME";
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
             frmbus.Text = "Administrador Tipos de Medidores";
             frmbus.ShowDialog();
         }
@@ -145,7 +158,9 @@ namespace UI
         private void button5_Click(object sender, EventArgs e)
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("FAB","", oPermiso);
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "FAB";
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
             frmbus.Text = "Administrador Fabricantes";
             frmbus.ShowDialog();
         }
@@ -153,14 +168,18 @@ namespace UI
         private void btnMedidoresModelos_Click(object sender, EventArgs e)
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10031", "10032", "10033", "10035", "10036", "10034");
-            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("MEM", oPermiso);
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "MEM";
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
             frmbus.ShowDialog();
         }
 
         private void btnMedidores_Click(object sender, EventArgs e)
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10101", "10102", "10103", "10105", "10106", "10104");
-            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("MED", oPermiso);
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "MED";
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
             frmbus.ShowDialog();
 
         }
@@ -168,14 +187,18 @@ namespace UI
         private void categorias_Click(object sender, EventArgs e)
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("SCAT", "", oPermiso);
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "SCAT";
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
             frmbus.ShowDialog();
         }
 
         private void btnTiposConexiones_Click(object sender, EventArgs e)
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10111", "10112", "10113", "10115", "10116", "10114");
-            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("TCS", "", oPermiso);
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "TCS";
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
             frmbus.ShowDialog();
 
         }
@@ -189,7 +212,9 @@ namespace UI
         private void button6_Click(object sender, EventArgs e)
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("LEC", "", oPermiso);
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "LEC";
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
             frmbus.Text = "Administrador Lecturas Conceptos";
             frmbus.ShowDialog();
         }

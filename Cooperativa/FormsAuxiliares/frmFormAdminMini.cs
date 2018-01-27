@@ -15,6 +15,7 @@ using Service;
 using Controles.form;
 using System.Windows.Forms;
 using AppProcesos.gesServicios.frmRutasCrud;
+using static Model.Admin;
 
 namespace FormsAuxiliares
 {
@@ -25,9 +26,9 @@ namespace FormsAuxiliares
         #region << PROPIEDADES >>
 
 
-        
-        private string _Tabla;
-        string _CodigoRegistro;
+
+        public Admin _oAdmin;
+        public string _strRdoCodigo;
         Utility _oUtil;
         private UIFormAdmin _oFormAdmin;
         #endregion
@@ -80,17 +81,23 @@ namespace FormsAuxiliares
             set { this.lblCantidad.Text = value; }
         }
 
+        public string striRdoCodigo
+        {
+            get { return _strRdoCodigo; }
+            set { _strRdoCodigo = value; }
+        }
+
+
         #endregion
 
         #region << EVENTOS >>
-        public frmFormAdminMini(string tabCodigo , string codigoRegistro, FuncionalidadesFoms oPerForm)
+        public frmFormAdminMini(Admin oAdmin, FuncionalidadesFoms oPerForm)
         {
-
             try
             {
                 InitializeComponent();
                 AsignarFuncionalidad(oPerForm);
-                _Tabla = tabCodigo;
+                _oAdmin = oAdmin;
                 _oFormAdmin = new UIFormAdmin(this);
             }
             catch (Exception ex)
@@ -109,16 +116,23 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oFormAdmin.Inicializar(_Tabla);
+                _oFormAdmin.Inicializar(_oAdmin.TabCodigo);
                 _oUtil = new Utility();
                 _oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
                 //_oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
-                switch (_Tabla)
+                switch (_oAdmin.TabCodigo)
                 {
                     case "SCAT":
                         this.dgBusqueda.Columns["DESCRIPCION"].Visible = false;
                         this.Text = "Categorias";
                         break;
+                    case "TETE":
+                        this.Text = "TELEFONOS";
+                        this.dgBusqueda.Columns["DEFECTO"].Visible = false;
+                        _oFormAdmin.MarcarSeleccion(_oAdmin.TabCodigo);
+                        break;
+
+
 
                 }
             }
@@ -137,65 +151,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                switch (_Tabla)
-                {
-                    case "CALB":
-                        frmCallesCrud oFrmCalCrud = new frmCallesCrud(0, "NQ");
-                        if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "SRUT":
-                        frmRutasCrud oFrmRutCrud = new frmRutasCrud(0, "H");
-
-                        if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "TCS":
-                        frmTiposConexionesCrud oFrmTCSCrud = new frmTiposConexionesCrud("", "H");
-
-                        if (oFrmTCSCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "":
-                        Console.WriteLine("Case 2");
-                        break;
-                    case "COPB":
-
-                        frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(0, "NQ");
-                        if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "TME":
-
-                        frmTiposMedidoresCrud oFrmTiposMedidores = new frmTiposMedidoresCrud(0, "");
-                        if (oFrmTiposMedidores.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-
-                    case "FAB":
-
-                        frmFabricantesCrud oFrmFabricantes = new frmFabricantesCrud(0, "");
-                        if (oFrmFabricantes.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "SCAT":                        
-                        frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(0, "I");
-                        if (oFrmCatCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "LEC":
-                        frmLecturasConceptosCrud oFrmLecCrud = new frmLecturasConceptosCrud(0, "");
-                        if (oFrmLecCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "TETE":
-                        frmTelefonosCrud ofrmTel = new frmTelefonosCrud(0, _Tabla, _CodigoRegistro, "I");
-                        if (ofrmTel.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-
-                }
-
+                Nuevo();
 
             }
             catch (Exception ex)
@@ -214,70 +170,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                DataGridViewRow row = this.dgBusqueda.CurrentRow;
-
-                switch (_Tabla)
-                {
-                    case "CALB":
-                        long idCalle = Convert.ToInt64(row.Cells[0].Value);
-                        frmCallesCrud oFrmCalCrud = new frmCallesCrud(idCalle, "NQ");
-                        if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-
-                    case "SRUT":
-                        long idRuta = Convert.ToInt64(row.Cells[0].Value);
-                        frmRutasCrud oFrmRutCrud = new frmRutasCrud(idRuta, "H");
-                        if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "TCS":
-                        string idTCS = row.Cells[0].Value.ToString();
-                        frmTiposConexionesCrud oFrmTCSCrud = new frmTiposConexionesCrud(idTCS, "H");
-                        if (oFrmTCSCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "COPB":
-                        long idCodPostal = Convert.ToInt64(row.Cells[0].Value);
-                        frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
-                        if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "TME":
-                        long idMedidor = Convert.ToInt64(row.Cells[0].Value);
-                        string estadoMedidor = row.Cells[5].Value.ToString();
-                        frmTiposMedidoresCrud oTiposMedidoresCrud = new frmTiposMedidoresCrud(idMedidor, estadoMedidor);
-                        oTiposMedidoresCrud.bloquearFecha();
-                        if (!oTiposMedidoresCrud.IsDisposed)// ESTE CONTROL SE HACE HASTA QUE LA GRILLA DEJE DE TRAER LOS REGISTROS QUE TENGAN EL ESTADO "B"
-                        {
-                            if (oTiposMedidoresCrud.ShowDialog() == DialogResult.OK)
-                                _oFormAdmin.CargarGrilla(_Tabla);
-                        }
-                        break;
-                    case "FAB":
-                        long idFabricante = Convert.ToInt64(row.Cells[0].Value);
-                        string estadoFabricante = row.Cells[2].Value.ToString();
-                        frmFabricantesCrud oFabricantesCrud = new frmFabricantesCrud(idFabricante, estadoFabricante);
-                        oFabricantesCrud.bloquearFecha();
-                        if (!oFabricantesCrud.IsDisposed)
-                            if (oFabricantesCrud.ShowDialog() == DialogResult.OK)
-                                _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "SCAT":
-                        long id = Convert.ToInt64(row.Cells[0].Value);
-                        frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(id, "E");
-                        if (oFrmCatCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-
-                    case "LEC":
-                        long idLec = Convert.ToInt64(row.Cells[0].Value);
-                        frmLecturasConceptosCrud oFrmLecCrud = new frmLecturasConceptosCrud(idLec, "E");
-                        oFrmLecCrud.bloquearFecha();
-                        if (oFrmLecCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                }
+               Editar();
             }
             catch (Exception ex)
             {
@@ -294,43 +187,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                DataGridViewRow row = this.dgBusqueda.CurrentRow;
-                switch (_Tabla)
-                {
-                    case "SRUT": 
-                        long idRuta = Convert.ToInt64(row.Cells[0].Value);
-                        frmRutasCrud oFrmRutCrud = new frmRutasCrud(idRuta, "B");
-                        _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "TCS":
-                        string idTCS = row.Cells[0].Value.ToString();
-                        frmTiposConexionesCrud oFrmTCSCrud = new frmTiposConexionesCrud(idTCS, "B");
-                        if (oFrmTCSCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "FAB":
-                        long idFabricantes = Convert.ToInt64(row.Cells[0].Value);
-                        frmFabricantesCrud oFrmFabricantesCrud = new frmFabricantesCrud(idFabricantes, "B");
-                        _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-
-                    case "TME":
-                        long idTme = Convert.ToInt64(row.Cells[0].Value);
-                        frmTiposMedidoresCrud oFrmMedidorCrud = new frmTiposMedidoresCrud(idTme, "B");
-                        _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "SCAT":
-                        long id = Convert.ToInt64(row.Cells[0].Value);
-                        frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(id, "B");
-                        _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "LEC":
-                        long idLec = Convert.ToInt64(row.Cells[0].Value);
-                        frmLecturasConceptosCrud oFrmLecCrud = new frmLecturasConceptosCrud(idLec, "B");
-                        _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                }
-
+                Eliminar();
             }
             catch (Exception ex)
             {
@@ -348,46 +205,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                DataGridViewRow row = this.dgBusqueda.CurrentRow;
-               
-                switch (_Tabla)
-                {
-                    case "CALB":
-                        long idCalle = Convert.ToInt64(row.Cells[0].Value);
-                        frmCallesCrud oFrmCalCrud = new frmCallesCrud(idCalle, "NQ");
-                        oFrmCalCrud.gbDatos.Enabled = false;
-                        if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "SRUT":
-                        long idRuta = Convert.ToInt64(row.Cells[0].Value);
-                        frmRutasCrud oFrmRutCrud = new frmRutasCrud(idRuta, "H");
-                        oFrmRutCrud.gbDatos .Enabled = false;
-                        if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "TCS":
-                        string idTCS = row.Cells[0].Value.ToString();
-                        frmTiposConexionesCrud oFrmTCSCrud = new frmTiposConexionesCrud(idTCS, "H");
-                        oFrmTCSCrud.gbDatos .Enabled = false;
-                        if (oFrmTCSCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                    case "COPB":
-                        int idCodPostal = Convert.ToInt32(row.Cells[0].Value);
-                        frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
-                        oFrmCodPostalCrud.gbDatos.Enabled = false;
-                        if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-
-                    case "SCAT":
-                        long id = Convert.ToInt64(row.Cells[0].Value);
-                        frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(id, "V");
-                        if (oFrmCatCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_Tabla);
-                        break;
-                }
+                Ver();
             }
             catch (Exception ex)
             {
@@ -435,7 +253,9 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oFormAdmin.CargarGrilla(_Tabla);
+                _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+
+
             }
             catch (Exception ex)
             {
@@ -446,6 +266,65 @@ namespace FormsAuxiliares
                                 ((Control)sender).Name,
                                 this.FindForm().Name);
             }
+        }
+        private void dgBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    AccionOptativa();
+
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+
+        }
+
+        private void dgBusqueda_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+
+                AccionOptativa();
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+        }
+
+        private void dgBusqueda_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _oFormAdmin.Seleccion();
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+             
         }
         #endregion
         #region << METODOS >>
@@ -458,8 +337,240 @@ namespace FormsAuxiliares
             this.btnEliminar.FUN_CODIGO = oPerForm.Del;
             this.btnImprimir.FUN_CODIGO = oPerForm.Imp;
         }
+        private void AccionOptativa()
+        {
+            switch (_oAdmin.Tipo)
+            {
+                case enumTipoForm.Selector:
+                    if (_strRdoCodigo != "")
+                        DialogResult = DialogResult.OK; //cierra el formulario    
+                    else
+                        DialogResult = DialogResult.No;
+                    this.Close();
+                    break;
+                case enumTipoForm.Ninguna:
+                    Editar();
+                    break;
+            }
+        }
+        private void Nuevo()
+        {
+
+            switch (_oAdmin.TabCodigo)
+            {
+                case "CALB":
+                    frmCallesCrud oFrmCalCrud = new frmCallesCrud(0, "NQ");
+                    if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "SRUT":
+                    frmRutasCrud oFrmRutCrud = new frmRutasCrud(0, "H");
+
+                    if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "TCS":
+                    frmTiposConexionesCrud oFrmTCSCrud = new frmTiposConexionesCrud("", "H");
+
+                    if (oFrmTCSCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "":
+                    Console.WriteLine("Case 2");
+                    break;
+                case "COPB":
+
+                    frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(0, "NQ");
+                    if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "TME":
+
+                    frmTiposMedidoresCrud oFrmTiposMedidores = new frmTiposMedidoresCrud(0, "");
+                    if (oFrmTiposMedidores.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+
+                case "FAB":
+
+                    frmFabricantesCrud oFrmFabricantes = new frmFabricantesCrud(0, "");
+                    if (oFrmFabricantes.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "SCAT":
+                    frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(0, "I");
+                    if (oFrmCatCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "LEC":
+                    frmLecturasConceptosCrud oFrmLecCrud = new frmLecturasConceptosCrud(0, "");
+                    if (oFrmLecCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "TETE":
+                    frmTelefonosCrud ofrmTel = new frmTelefonosCrud(0, _oAdmin.TabCodigo, _oAdmin.CodigoRegistro, "I");
+                    if (ofrmTel.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+
+            }
+
+        }
+        private void Ver() {
+
+            DataGridViewRow row = this.dgBusqueda.CurrentRow;
+
+            switch (_oAdmin.TabCodigo)
+            {
+                case "CALB":
+                    long idCalle = Convert.ToInt64(row.Cells[0].Value);
+                    frmCallesCrud oFrmCalCrud = new frmCallesCrud(idCalle, "NQ");
+                    oFrmCalCrud.gbDatos.Enabled = false;
+                    if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "SRUT":
+                    long idRuta = Convert.ToInt64(row.Cells[0].Value);
+                    frmRutasCrud oFrmRutCrud = new frmRutasCrud(idRuta, "H");
+                    oFrmRutCrud.gbDatos.Enabled = false;
+                    if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "TCS":
+                    string idTCS = row.Cells[0].Value.ToString();
+                    frmTiposConexionesCrud oFrmTCSCrud = new frmTiposConexionesCrud(idTCS, "H");
+                    oFrmTCSCrud.gbDatos.Enabled = false;
+                    if (oFrmTCSCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "COPB":
+                    int idCodPostal = Convert.ToInt32(row.Cells[0].Value);
+                    frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
+                    oFrmCodPostalCrud.gbDatos.Enabled = false;
+                    if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+
+                case "SCAT":
+                    long id = Convert.ToInt64(row.Cells[0].Value);
+                    frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(id, "V");
+                    if (oFrmCatCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+            }
+        }
+
+        private void Eliminar() {
+
+            DataGridViewRow row = this.dgBusqueda.CurrentRow;
+            switch (_oAdmin.TabCodigo)
+            {
+                case "SRUT":
+                    long idRuta = Convert.ToInt64(row.Cells[0].Value);
+                    frmRutasCrud oFrmRutCrud = new frmRutasCrud(idRuta, "B");
+                    _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "TCS":
+                    string idTCS = row.Cells[0].Value.ToString();
+                    frmTiposConexionesCrud oFrmTCSCrud = new frmTiposConexionesCrud(idTCS, "B");
+                    if (oFrmTCSCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "FAB":
+                    long idFabricantes = Convert.ToInt64(row.Cells[0].Value);
+                    frmFabricantesCrud oFrmFabricantesCrud = new frmFabricantesCrud(idFabricantes, "B");
+                    _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+
+                case "TME":
+                    long idTme = Convert.ToInt64(row.Cells[0].Value);
+                    frmTiposMedidoresCrud oFrmMedidorCrud = new frmTiposMedidoresCrud(idTme, "B");
+                    _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "SCAT":
+                    long id = Convert.ToInt64(row.Cells[0].Value);
+                    frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(id, "B");
+                    _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "LEC":
+                    long idLec = Convert.ToInt64(row.Cells[0].Value);
+                    frmLecturasConceptosCrud oFrmLecCrud = new frmLecturasConceptosCrud(idLec, "B");
+                    _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+            }
+        }
+        private void Editar() {
+            DataGridViewRow row = this.dgBusqueda.CurrentRow;
+
+            switch (_oAdmin.TabCodigo)
+            {
+                case "CALB":
+                    long idCalle = Convert.ToInt64(row.Cells[0].Value);
+                    frmCallesCrud oFrmCalCrud = new frmCallesCrud(idCalle, "NQ");
+                    if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+
+                case "SRUT":
+                    long idRuta = Convert.ToInt64(row.Cells[0].Value);
+                    frmRutasCrud oFrmRutCrud = new frmRutasCrud(idRuta, "H");
+                    if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "TCS":
+                    string idTCS = row.Cells[0].Value.ToString();
+                    frmTiposConexionesCrud oFrmTCSCrud = new frmTiposConexionesCrud(idTCS, "H");
+                    if (oFrmTCSCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "COPB":
+                    long idCodPostal = Convert.ToInt64(row.Cells[0].Value);
+                    frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
+                    if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "TME":
+                    long idMedidor = Convert.ToInt64(row.Cells[0].Value);
+                    string estadoMedidor = row.Cells[5].Value.ToString();
+                    frmTiposMedidoresCrud oTiposMedidoresCrud = new frmTiposMedidoresCrud(idMedidor, estadoMedidor);
+                    oTiposMedidoresCrud.bloquearFecha();
+                    if (!oTiposMedidoresCrud.IsDisposed)// ESTE CONTROL SE HACE HASTA QUE LA GRILLA DEJE DE TRAER LOS REGISTROS QUE TENGAN EL ESTADO "B"
+                    {
+                        if (oTiposMedidoresCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    }
+                    break;
+                case "FAB":
+                    long idFabricante = Convert.ToInt64(row.Cells[0].Value);
+                    string estadoFabricante = row.Cells[2].Value.ToString();
+                    frmFabricantesCrud oFabricantesCrud = new frmFabricantesCrud(idFabricante, estadoFabricante);
+                    oFabricantesCrud.bloquearFecha();
+                    if (!oFabricantesCrud.IsDisposed)
+                        if (oFabricantesCrud.ShowDialog() == DialogResult.OK)
+                            _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "SCAT":
+                    long id = Convert.ToInt64(row.Cells[0].Value);
+                    frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(id, "E");
+                    if (oFrmCatCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+
+                case "LEC":
+                    long idLec = Convert.ToInt64(row.Cells[0].Value);
+                    frmLecturasConceptosCrud oFrmLecCrud = new frmLecturasConceptosCrud(idLec, "E");
+                    oFrmLecCrud.bloquearFecha();
+                    if (oFrmLecCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+            }
+
+        }
+
+
+
         #endregion
 
-
+ 
     }
 }

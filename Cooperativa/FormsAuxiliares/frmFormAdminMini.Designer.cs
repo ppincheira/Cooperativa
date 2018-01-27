@@ -122,9 +122,15 @@
             this.dgBusqueda.AllowUserToAddRows = false;
             this.dgBusqueda.Location = new System.Drawing.Point(8, 23);
             this.dgBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.dgBusqueda.MultiSelect = false;
             this.dgBusqueda.Name = "dgBusqueda";
+            this.dgBusqueda.ReadOnly = true;
+            this.dgBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgBusqueda.Size = new System.Drawing.Size(744, 384);
             this.dgBusqueda.TabIndex = 0;
+            this.dgBusqueda.SelectionChanged += new System.EventHandler(this.dgBusqueda_SelectionChanged);
+            this.dgBusqueda.DoubleClick += new System.EventHandler(this.dgBusqueda_DoubleClick);
+            this.dgBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgBusqueda_KeyPress);
             // 
             // gpbGrupo3
             // 

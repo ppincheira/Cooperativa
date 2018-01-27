@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AppProcesos.formsAuxiliares.formAdmin
 {
@@ -46,7 +47,6 @@ namespace AppProcesos.formsAuxiliares.formAdmin
                 {
                     _dtCombo.Rows.Add(oDetalle.DctColumna, oDetalle.DctDescripcion);
                 }
-
                 if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl == "FECHA"))
                 {
                     _vista.grupoFecha = true;
@@ -70,6 +70,7 @@ namespace AppProcesos.formsAuxiliares.formAdmin
             TablasBus oTablasBus = new TablasBus();
             DataTable dt = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo, _filtroCampos, _filtroValores);
             _vista.cantidad = "Se encontraron " + oUtil.CargarGrilla(_vista.grilla, dt) + " registros";
+            _vista.grilla.Columns["CODIGO"].Visible = false;
 
         }
 
@@ -93,15 +94,15 @@ namespace AppProcesos.formsAuxiliares.formAdmin
             TablasBus oTablasBus = new TablasBus();
             _vista.grilla.DataSource = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo, _filtroCampos, _filtroValores);
             _vista.cantidad = "Se encontraron " + _vista.grilla.RowCount + " registros";
-            
+            _vista.grilla.Columns["CODIGO"].Visible = false;
+
         }
 
 
-        public void CargarGrilla(string tabla,string filtroCampo, string filtroValor)
+          public void CargarGrilla(string tabla,string filtroCampo, string filtroValor)
         {
             _filtroCampos = filtroCampo;
             _filtroValores = filtroValor;
-
             if (_vista.grupoFecha)
             {
                 _filtroValores = _vista.fechaDesde.ToString("dd/MM/yyyy") + "%" + _vista.fechaHasta.ToString("dd/MM/yyyy") + "&";
@@ -109,14 +110,34 @@ namespace AppProcesos.formsAuxiliares.formAdmin
             }
             if (_vista.grupoEstado)
                 _filtroValores = _filtroValores + " & " + _vista.comboEstado.Text + "&";
-
             _filtroCampos = _filtroCampos + _vista.comboBuscar.SelectedValue.ToString() + "&";
             _filtroValores = _filtroValores + _vista.filtro + "&";
-
             TablasBus oTablasBus = new TablasBus();
             _vista.grilla.DataSource = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo, _filtroCampos, _filtroValores);
             _vista.cantidad = "Se encontraron " + _vista.grilla.RowCount + " registros";
+            _vista.grilla.Columns["CODIGO"].Visible = false;
 
+        }
+
+        public void MarcarSeleccion(string tabla)
+        {
+            for (int i = 0; i < _vista.grilla.Rows.Count; i++)
+            {
+                switch (tabla)
+                {
+                    case "TETE":
+                        if (_vista.grilla.Rows[i].Cells["DEFECTO"].Value.ToString() == "S")
+                            _vista.grilla.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.Gray;
+                        break;
+                }
+
+            }
+        }
+
+        public void Seleccion()
+        {
+            DataGridViewRow row = _vista.grilla.CurrentRow;
+            _vista.striRdoCodigo =row.Cells[0].Value.ToString();
         }
     }
 }

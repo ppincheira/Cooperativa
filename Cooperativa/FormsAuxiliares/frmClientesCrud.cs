@@ -30,22 +30,33 @@ namespace FormsAuxiliares
 
         private void btnDomicilio_Click(object sender, EventArgs e)
         {
-                FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-                FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("DOMB", oPermiso);
-                frmbus.ShowDialog();
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "DOMB";
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
+            frmbus.ShowDialog();
         }
 
         private void btnTelefono_Click(object sender, EventArgs e)
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("TETE", oPermiso);
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "TETE";
+            oAdmin.Tipo = Admin.enumTipoForm.Selector;
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            if (frmbus.ShowDialog() == DialogResult.OK)
+            {
+                string nombre = frmbus.striRdoCodigo;
+            }
             frmbus.ShowDialog();
         }
 
         private void btnEmail_Click(object sender, EventArgs e)
         {
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin("TEEM", oPermiso);
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "TEEM";
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
             frmbus.ShowDialog();
 
         }
