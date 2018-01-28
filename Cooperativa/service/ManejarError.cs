@@ -49,7 +49,7 @@ namespace Service
                 log.WriteLine("Fecha: " + DateTime.Now);
                 log.WriteLine("Error: " + ex.Message);
                 log.WriteLine("Usuario: " + 1);//falta definir variable global
-                log.WriteLine("Subsistema: " + "BILL");//falta definir variable global
+                log.WriteLine("Subsistema: " + "ALL");//falta definir variable global
                 log.WriteLine("Terminal: " + 1);//falta definir variable global               
                 log.Close();
                 ////sale el mensaje de error hacia el formulario

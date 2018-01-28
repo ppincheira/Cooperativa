@@ -243,5 +243,22 @@ namespace UI
             frmbus.ShowDialog();
 
         }
+
+        private void btnPersonas_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10001", "10002", "10003", "10005", "10006", "10004");
+            //Se instancia un objeto de la clase formulario admin al cual se le pasa por parametro el COD_TABLA
+            frmSuministrosAdmin frmbus = new frmSuministrosAdmin("PERB", oPermiso);
+            frmbus.ShowDialog();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "USUS";
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            frmbus.ShowDialog();
+        }
     }
 }

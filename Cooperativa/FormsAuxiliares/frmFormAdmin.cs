@@ -572,7 +572,7 @@ namespace FormsAuxiliares
                         break;
                     case "MEM":
                         frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(id, "H", 1);
-                        oFrmMedModCrud.txtOrdenRuta.Enabled = false;
+                        //oFrmMedModCrud.txtOrdenRuta.Enabled = false;
                         if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                         break;

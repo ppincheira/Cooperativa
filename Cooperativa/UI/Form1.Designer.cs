@@ -57,6 +57,8 @@
             this.btnTiposIva = new System.Windows.Forms.Button();
             this.btnServicios = new System.Windows.Forms.Button();
             this.btnSuministros = new System.Windows.Forms.Button();
+            this.btnPersonas = new Controles.btnPersonalizado();
+            this.btnUsuarios = new Controles.btnPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -371,11 +373,35 @@
             this.btnSuministros.UseVisualStyleBackColor = true;
             this.btnSuministros.Click += new System.EventHandler(this.btnSuministros_Click);
             // 
+            // btnPersonas
+            // 
+            this.btnPersonas.ForeColor = System.Drawing.Color.Green;
+            this.btnPersonas.Location = new System.Drawing.Point(185, 263);
+            this.btnPersonas.Name = "btnPersonas";
+            this.btnPersonas.Size = new System.Drawing.Size(125, 23);
+            this.btnPersonas.TabIndex = 23;
+            this.btnPersonas.Text = "PERSONAS";
+            this.btnPersonas.UseVisualStyleBackColor = true;
+            this.btnPersonas.Click += new System.EventHandler(this.btnPersonas_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.ForeColor = System.Drawing.Color.Green;
+            this.btnUsuarios.Location = new System.Drawing.Point(52, 217);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(125, 23);
+            this.btnUsuarios.TabIndex = 24;
+            this.btnUsuarios.Text = "USUARIOS";
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 500);
+            this.Controls.Add(this.btnUsuarios);
+            this.Controls.Add(this.btnPersonas);
             this.Controls.Add(this.categorias);
             this.Controls.Add(this.btnLectura);
             this.Controls.Add(this.btnFabricantes);
@@ -444,6 +470,8 @@
         private System.Windows.Forms.Button btnTiposIva;
         private System.Windows.Forms.Button btnServicios;
         private System.Windows.Forms.Button btnSuministros;
+        private Controles.btnPersonalizado btnPersonas;
+        private Controles.btnPersonalizado btnUsuarios;
     }
 }
 

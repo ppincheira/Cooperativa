@@ -28,7 +28,7 @@ namespace Business
             return oUsuariosImpl.UsuariosDelete(Id);
         }
 
-        public Usuarios UsuariosGetById(string Id)
+        public Usuarios UsuariosGetById(int Id)
         {
             UsuariosImpl oUsuariosImpl = new UsuariosImpl();
             return oUsuariosImpl.UsuariosGetById(Id);
@@ -42,7 +42,7 @@ namespace Business
         public Usuarios UsuariosLogin(String user, String password)
         {
             UsuariosImpl oUsuariosImpl = new UsuariosImpl();
-            return oUsuariosImpl.UsuariosLogin(user,password);
+            return oUsuariosImpl.UsuariosLogin(user, password);
         }
     }
 }

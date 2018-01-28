@@ -135,6 +135,7 @@
     <Compile Include="TipoConexionServicios.cs" />
     <Compile Include="TiposBarriosLocalidades.cs" />
     <Compile Include="TiposGrupos.cs" />
+    <Compile Include="TiposIdentificadores.cs" />
     <Compile Include="TiposIva.cs" />
     <Compile Include="TiposLocalidades.cs" />
     <Compile Include="TiposMedidores.cs" />
