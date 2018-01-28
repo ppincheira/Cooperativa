@@ -45,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="controles\forms\frmSuministrosCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmSuministrosCrud.Designer.cs">
+      <DependentUpon>frmSuministrosCrud.cs</DependentUpon>
+    </Compile>
     <Compile Include="controles\forms\frmSuministrosAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="controles\forms\Form1.resx">
+      <DependentUpon>frmSuministrosCrud.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="controles\forms\frmSuministrosAdmin.resx">
       <DependentUpon>frmSuministrosAdmin.cs</DependentUpon>
     </EmbeddedResource>
