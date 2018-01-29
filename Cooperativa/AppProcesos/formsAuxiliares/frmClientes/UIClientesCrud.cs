@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,17 @@ namespace AppProcesos.formsAuxiliares.frmClientes
 {
     public class UIClientesCrud
     {
+
+        private IVistaClientesCrud _vista;
+        Utility oUtil;
+
+
+        public UIClientesCrud(IVistaClientesCrud vista)
+        {
+            _vista = vista;
+            oUtil = new Utility();
+        }
+
+
     }
 }
