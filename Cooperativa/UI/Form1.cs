@@ -246,9 +246,10 @@ namespace UI
 
         private void btnPersonas_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10001", "10002", "10003", "10005", "10006", "10004");
-            //Se instancia un objeto de la clase formulario admin al cual se le pasa por parametro el COD_TABLA
-            frmSuministrosAdmin frmbus = new frmSuministrosAdmin("PERB", oPermiso);
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10031", "10032", "10033", "10035", "10036", "10034");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "PERB";
+            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
             frmbus.ShowDialog();
         }
 
