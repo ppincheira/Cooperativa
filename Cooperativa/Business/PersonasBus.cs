@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Implement;
 using Model;
-
+using System.Data;
 
 namespace Business
 {
@@ -26,7 +26,7 @@ namespace Business
             return oPersonasImpl.PersonasDelete(Id);
         }
 
-        public Personas PersonasGetById(int Id)
+        public Personas PersonasGetById(long Id)
         {
             PersonasImpl oPersonasImpl = new PersonasImpl();
             return oPersonasImpl.PersonasGetById(Id);
@@ -36,6 +36,11 @@ namespace Business
         {
             PersonasImpl oPersonasImpl = new PersonasImpl();
             return oPersonasImpl.PersonasGetAll();
+        }
+        public DataTable PersonasGetByFilter()
+        {
+            PersonasImpl oPersonasImpl = new PersonasImpl();
+            return oPersonasImpl.PersonasGetByFilter();
         }
     }
 }

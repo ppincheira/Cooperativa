@@ -253,7 +253,7 @@ namespace FormsAuxiliares
 
         private void pnlPanelEstado1_Click(object sender, EventArgs e)
         {
-            int usuario = _oLogin.validar();
+            long usuario = _oLogin.validar();
             if ( usuario!= 0)
             {
                 //obtener la persona del login

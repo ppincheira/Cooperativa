@@ -92,6 +92,10 @@
     <Compile Include="formsAuxiliares\principal\IVistaPrincipal.cs" />
     <Compile Include="formsAuxiliares\principal\UIPrincipal.cs" />
     <Compile Include="formsAuxiliares\frmFabricantes\UIFabricantesCrud.cs" />
+    <Compile Include="gesSeguridad\frmPersonasCrud\IVistaPersonasCrud.cs" />
+    <Compile Include="gesSeguridad\frmPersonasCrud\UIPersonasCrud.cs" />
+    <Compile Include="gesSeguridad\frmUsuariosCrud\IVistaUsuariosCrud.cs" />
+    <Compile Include="gesSeguridad\frmUsuariosCrud\UIUsuariosCrud.cs" />
     <Compile Include="gesServicios\frmCategoriasCrud\IVistaCategoriasCrud.cs" />
     <Compile Include="gesServicios\frmCategoriasCrud\UICategoriasCrud.cs" />
     <Compile Include="gesServicios\frmLecturasConceptosCrud\IVistaLecturasConceptosCrud.cs" />
@@ -106,6 +110,8 @@
     <Compile Include="gesServicios\frmMedidoresTiposCrud\UITiposMedidoresCrud.cs" />
     <Compile Include="gesServicios\frmRutasCrud\IVistaRutasCrud.cs" />
     <Compile Include="gesServicios\frmRutasCrud\UIRutasCrud.cs" />
+    <Compile Include="gesServicios\frmSuministrosAdmin\IVistaSuministrosAdmin.cs" />
+    <Compile Include="gesServicios\frmSuministrosAdmin\UISuministrosAdmin.cs" />
     <Compile Include="gesServicios\frmTiposConexionesCrud\IVistaTiposConexionesCrud.cs" />
     <Compile Include="gesServicios\frmTiposConexionesCrud\UITiposConexionesCrud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,7 +138,6 @@
     <Folder Include="adminComprobantes\" />
     <Folder Include="adminSuministros\" />
     <Folder Include="cuentasCorrientes\" />
-    <Folder Include="gesServicios\frmSuministrosAdmin\" />
     <Folder Include="gesServicios\frmSuministrosCrud\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

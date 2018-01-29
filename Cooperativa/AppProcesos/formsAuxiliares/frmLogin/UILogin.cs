@@ -24,7 +24,7 @@ namespace AppProcesos.formsAuxiliares.formLogin
 
         }
 
-        public int validar()
+        public long validar()
 
         {
             UsuariosBus oUsuarioBus = new UsuariosBus();
@@ -35,7 +35,7 @@ namespace AppProcesos.formsAuxiliares.formLogin
 
         }
 
-        public string nombreUsuario(int idPersona)
+        public string nombreUsuario(long idPersona)
         {
             PersonasBus oPersonaBus = new PersonasBus();
             Personas oPersona = new Personas();
