@@ -15,6 +15,8 @@ namespace Model
         }
 
       
+        public virtual string filtroCampo { get; set; }
+        public virtual string filtroValores { get; set; }
         public virtual string CodigoRegistro { get; set; }
         public virtual string TabCodigo { get; set; }
 

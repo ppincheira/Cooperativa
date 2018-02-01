@@ -39,9 +39,9 @@ namespace AppProcesos.gesServicios.frmLecturasConceptosCrud
             }
         }
 
-        public void Guardar()
+        public long Guardar()
         {
-            long rtdo;
+            long rtdo= 0 ;
             LecturasConceptos oSLecturasCodigos = new LecturasConceptos();
             LecturasConceptosBus oSLecturasCodigosBus = new LecturasConceptosBus();
 
@@ -56,6 +56,8 @@ namespace AppProcesos.gesServicios.frmLecturasConceptosCrud
                 rtdo = oSLecturasCodigosBus.LecturasConceptosAdd(oSLecturasCodigos);
             else
                 oSLecturasCodigosBus.LecturasConceptosUpdate(oSLecturasCodigos);
+
+            return rtdo;
         }
 
         public bool EliminarLecturasConceptos(long id)

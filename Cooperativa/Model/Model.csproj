@@ -90,6 +90,7 @@
     <Compile Include="DetallesColumnasTablas.cs" />
     <Compile Include="DetallesIva.cs" />
     <Compile Include="LecturasConceptos.cs" />
+    <Compile Include="LecturasModos.cs" />
     <Compile Include="MedidoresModelos.cs" />
     <Compile Include="Distritos.cs" />
     <Compile Include="Domicilios.cs" />

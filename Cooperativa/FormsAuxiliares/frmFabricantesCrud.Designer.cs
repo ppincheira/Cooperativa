@@ -35,6 +35,7 @@
             this.lblBloque = new Controles.labels.lblEtiqueta();
             this.txtDescripcion = new Controles.textBoxes.txtDescripcionCorta();
             this.gbDatos = new Controles.contenedores.gesGroup();
+            this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
             this.chkHabilitado = new Controles.datos.chkBox();
             this.dtpFechaCarga = new Controles.Fecha.dtpFecha();
             this.gesGroup2 = new Controles.contenedores.gesGroup();
@@ -96,10 +97,11 @@
             this.txtDescripcion.Size = new System.Drawing.Size(200, 20);
             this.txtDescripcion.TabIndex = 1;
             this.txtDescripcion.TextoVacio = "<Descripcion>";
-            this.txtDescripcion.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            this.txtDescripcion.TipoControl = Controles.util.Enumerados.enumTipos.Letra;
             // 
             // gbDatos
             // 
+            this.gbDatos.Controls.Add(this.lblEtiqueta1);
             this.gbDatos.Controls.Add(this.chkHabilitado);
             this.gbDatos.Controls.Add(this.dtpFechaCarga);
             this.gbDatos.Controls.Add(this.txtDescripcion);
@@ -114,19 +116,27 @@
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
             // 
+            // lblEtiqueta1
+            // 
+            this.lblEtiqueta1.AutoSize = true;
+            this.lblEtiqueta1.Location = new System.Drawing.Point(6, 240);
+            this.lblEtiqueta1.Name = "lblEtiqueta1";
+            this.lblEtiqueta1.Size = new System.Drawing.Size(43, 13);
+            this.lblEtiqueta1.TabIndex = 25;
+            this.lblEtiqueta1.Text = "Estado:";
+            // 
             // chkHabilitado
             // 
             this.chkHabilitado.AutoSize = true;
             this.chkHabilitado.Checked = true;
             this.chkHabilitado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkHabilitado.Location = new System.Drawing.Point(7, 240);
+            this.chkHabilitado.Location = new System.Drawing.Point(101, 240);
             this.chkHabilitado.Name = "chkHabilitado";
             this.chkHabilitado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
-            this.chkHabilitado.TabIndex = 24;
+            this.chkHabilitado.TabIndex = 4;
             this.chkHabilitado.Text = "Habilitado";
             this.chkHabilitado.UseVisualStyleBackColor = true;
-        
             // 
             // dtpFechaCarga
             // 
@@ -149,10 +159,10 @@
             // btnCancelar
             // 
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(6, 17);
+            this.btnCancelar.Location = new System.Drawing.Point(150, 17);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 71);
-            this.btnCancelar.TabIndex = 16;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnAceptar
@@ -161,7 +171,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(236, 17);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(80, 71);
-            this.btnAceptar.TabIndex = 17;
+            this.btnAceptar.TabIndex = 5;
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click_1);
             // 
@@ -195,5 +205,6 @@
         private Controles.contenedores.gesGroup gesGroup2;
         private Controles.buttons.btnCancelar btnCancelar;
         private Controles.buttons.btnAceptar btnAceptar;
+        private Controles.labels.lblEtiqueta lblEtiqueta1;
     }
 }

@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FormsAuxiliares">
+      <HintPath>..\FormsAuxiliares\bin\Debug\FormsAuxiliares.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -114,6 +117,10 @@
     <ProjectReference Include="..\AppProcesos\AppProcesos.csproj">
       <Project>{713451e2-581c-4099-b5ca-15e95f3f0a16}</Project>
       <Name>AppProcesos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{CBADE339-921E-4277-971C-D80D69751C74}</Project>
+      <Name>Business</Name>
     </ProjectReference>
     <ProjectReference Include="..\Controles\Controles.csproj">
       <Project>{2b8d11ae-a2f8-4dd8-97a7-9e722b57182e}</Project>

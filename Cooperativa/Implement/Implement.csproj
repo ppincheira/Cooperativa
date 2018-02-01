@@ -91,6 +91,7 @@
     <Compile Include="DetallesColumnasTablasImpl.cs" />
     <Compile Include="DetallesIvaImpl.cs" />
     <Compile Include="LecturasConceptosImpl.cs" />
+    <Compile Include="LecturasModosImpl.cs" />
     <Compile Include="MedidoresModelosImpl.cs" />
     <Compile Include="DistritosImpl.cs" />
     <Compile Include="DomiciliosEntidadesImpl.cs" />

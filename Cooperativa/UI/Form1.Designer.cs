@@ -59,6 +59,7 @@
             this.btnSuministros = new System.Windows.Forms.Button();
             this.btnPersonas = new Controles.btnPersonalizado();
             this.btnUsuarios = new Controles.btnPersonalizado();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -395,11 +396,22 @@
             this.btnUsuarios.UseVisualStyleBackColor = true;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(342, 494);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(125, 27);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "Modos Lecturas";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 500);
+            this.ClientSize = new System.Drawing.Size(479, 521);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnPersonas);
             this.Controls.Add(this.categorias);
@@ -472,6 +484,7 @@
         private System.Windows.Forms.Button btnSuministros;
         private Controles.btnPersonalizado btnPersonas;
         private Controles.btnPersonalizado btnUsuarios;
+        private System.Windows.Forms.Button button3;
     }
 }
 

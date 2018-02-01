@@ -14,13 +14,20 @@ using System.Windows.Forms;
 
 namespace GesServicios.controles.forms
 {
-    public partial class frmLecturasConceptosCrud : gesForm , IVistaLecturasConceptosCrud
+    public partial class frmLecturasConceptosCrud : gesForm, IVistaLecturasConceptosCrud
     {
         UILecturasConceptosCrud _oLecturasConceptosCrud;
         Utility oUtil;
         int _UsrNumero;
         string _EstCodigo;
         long _LecCodigo;
+
+        /*Esta variable tiene un uso particular
+         * en caso de que sea false no se va a cerrar el formulario despues de darle a aceptar
+         * esto se va a utilizar para poder recuperar datos del formulario
+         * y luego se cerrara la instancia llamada
+        */
+        public bool control = true;
 
         public long lecCodigo { get { return this._LecCodigo; } set { this._LecCodigo = value; } }
         public string lecDescripcion { get { return this.txtLCDescripcion.Text; } set { this.txtLCDescripcion.Text = value; } }
@@ -53,7 +60,8 @@ namespace GesServicios.controles.forms
                 {
                     Cursor.Current = Cursors.WaitCursor;
                     _oLecturasConceptosCrud.EliminarLecturasConceptos(_LecCodigo);
-                    this.Close();
+                    if (control)
+                        this.Close();
                 }
         }
 
@@ -110,8 +118,9 @@ namespace GesServicios.controles.forms
                 if (this.VALIDARFORM)
                 {
                     DialogResult = DialogResult.OK;
-                    _oLecturasConceptosCrud.Guardar();
-                    this.Close();
+                   this._LecCodigo = _oLecturasConceptosCrud.Guardar();
+                    if (control)
+                        this.Close();
                 }
             }
             catch (Exception ex)
@@ -125,12 +134,12 @@ namespace GesServicios.controles.forms
 
             }
         }
-         
+
         public void bloquearFecha()
         {
             this.dtpFechaCarga.Enabled = false;
         }
 
-  
+
     }
 }

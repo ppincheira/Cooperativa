@@ -31,7 +31,7 @@ namespace Implement
                     "insert into LECTURAS_CONCEPTOS(LEC_CODIGO, LEC_DESCRIPCION, " +
                             "LEC_DESCRIPCION_CORTA, LEC_FECHA_ALTA,EST_CODIGO, USR_CODIGO) " +
                             "values(IDTEMP,'" + oLC.LecDescripcion + "','" + oLC.LecDescripcionCorta + "','" +
-                            oLC.LecFechaAlta.ToShortDateString() + "','" + oLC.EstCodigo + "',"+ oLC.UsrCodigo + ")" + "RETURNING IDTEMP INTO :id;END;";
+                            oLC.LecFechaAlta.ToShortDateString() + "','" + oLC.EstCodigo + "'," + oLC.UsrCodigo + ")" + "RETURNING IDTEMP INTO :id;END;";
 
                 cmd = new OracleCommand(query, cn);
                 adapter = new OracleDataAdapter(cmd);
@@ -43,11 +43,11 @@ namespace Implement
                 });
                 cmd.ExecuteNonQuery();
                 response = long.Parse(cmd.Parameters[":id"].Value.ToString());
-              
+
                 cn.Close();
                 return response;
             }
-                catch (Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -74,6 +74,60 @@ namespace Implement
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
                 return response > 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /*
+               * Este metodo fue creado para poder implementar Modos Lecturas, 
+               * en el cual en la variable string se pasa el texto que se tiene que buscar 
+               * y  en la variable int se controla si se tiene que buscar por:
+               * caso 0: Numero
+               * caso 1: Descripcion corta
+               * caso 2: descripcion
+               * Retorna una Lista ya que puede llegar a traer mas de un resultado 
+              */
+        public List<LecturasConceptos> RecuperarLecturasConceptos(string texto, int posicion)
+        {
+            List<LecturasConceptos> lstLecturasConceptos = new List<LecturasConceptos>();
+            try
+            {
+                string variable = "";
+                switch (posicion)
+                {
+                    case 0: variable = "LEC_CODIGO";
+                        break;
+                    case 1: variable = "LEC_DESCRIPCION_CORTA";
+                        break;
+                    case 2: variable = "LEC_DESCRIPCION";
+                        break;
+                }
+
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "select * from LECTURAS_CONCEPTOS WHERE "+variable+" = '"+texto.ToUpper()+ "'";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt = new DataTable();
+                dt = ds.Tables[0];
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; dt.Rows.Count > i; i++)
+                    {
+                        DataRow dr = dt.Rows[i];
+                        LecturasConceptos NewEnt = new LecturasConceptos();
+                        NewEnt = CargarLecturasConceptos(dr);
+                        lstLecturasConceptos.Add(NewEnt);
+                    }
+                }
+                return lstLecturasConceptos;
             }
             catch (Exception ex)
             {
@@ -214,5 +268,5 @@ namespace Implement
 
 
     }
-    
+
 }
