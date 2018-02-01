@@ -169,25 +169,50 @@ namespace Implement
                     throw ex;
                 }
             }
+        public DataTable EstadosGetByFilterDT(string tabNombre, string estColumnaTabla)
+        {
+            try
+            {
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "SELECT * FROM ESTADOS " +
+                " where  TAB_NOMBRE='" + tabNombre+"'"+
+                " AND EST_COLUMNA_TABLA='"+ estColumnaTabla+"'";
 
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt = new DataTable();
+                dt = ds.Tables[0];
+                return dt;
 
-            //public DataTable EstadosGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
-            //{
-            //    try
-            //    {
-            //        DataTable DTPartes;
-            //        DataSet DSPartes = SqlHelper.ExecuteDataset(SqlImplHelper.getConnectionString(), "EstadosGetAllByFilter", Periodo, Empresa, IdPresentacion,Tipo);
-            //        DTPartes = DSPartes.Tables[0];
-            //        DSPartes.Tables.RemoveAt(0);
-            //        return DTPartes;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        throw ex;
-            //    }
-            //}
-            #endregion
-
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
+
+        //public DataTable EstadosGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
+        //{
+        //    try
+        //    {
+        //        DataTable DTPartes;
+        //        DataSet DSPartes = SqlHelper.ExecuteDataset(SqlImplHelper.getConnectionString(), "EstadosGetAllByFilter", Periodo, Empresa, IdPresentacion,Tipo);
+        //        DTPartes = DSPartes.Tables[0];
+        //        DSPartes.Tables.RemoveAt(0);
+        //        return DTPartes;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
+        #endregion
+
+    }
 }
 

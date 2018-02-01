@@ -25,7 +25,9 @@ namespace AppProcesos.formsAuxiliares.frmClientes
         string strNombre { get; set; }
         decimal? dblLimiteCredito { get; set; }
         cmbLista  cmbiEstadoCredito { get; set; }
-        int intNumeroTransporte { get; set; }
-
+        int? intNumeroTransporte { get; set; }
+        string strTelefono { get; set; }
+        string strEmail { get; set; }
+        string strDomicilio { get; set; }
     }
 }

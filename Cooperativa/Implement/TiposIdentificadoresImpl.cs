@@ -165,6 +165,32 @@ namespace Implement
             }
         }
 
+        public DataTable TiposIdentificadoresGetAllDT()
+        {
+            try
+            {
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = " SELECT tid_codigo, " +
+                                   "        tid_descripcion " +
+                                   " FROM   tipos_identificadores  " +
+                                   " ORDER BY tid_descripcion ";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+
+                DataTable dt;
+                return dt = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public DataTable TiposIdentificadoresGetByFilter()
         {
             try

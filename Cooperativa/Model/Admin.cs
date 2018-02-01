@@ -24,5 +24,8 @@ namespace Model
             get { return tipos; }
             set { tipos = value;  }
         }
+        public virtual string FiltroCampos { get; set; }
+        public virtual string FiltroValores { get; set; }
+
     }
 }

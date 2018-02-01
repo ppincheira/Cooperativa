@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace FormsAuxiliares
 {
-    public partial class frmClientesCrud : gesForm
+    public partial class frmClientesCrud : gesForm, IVistaClientesCrud
     {
 
         #region << PROPIEDADES >>
@@ -75,7 +75,9 @@ namespace FormsAuxiliares
         }
         public string strCategoriaMonotributo
         {
+
             get { return null; }
+            set {}
         }
         public cmbLista cmbiTipoDocumento
         {
@@ -113,18 +115,38 @@ namespace FormsAuxiliares
             get { return this.txtNroTransporte.Text==""?0:int.Parse(this.txtNroTransporte.Text); }
             set { this.txtNroTransporte.Text = value.ToString(); }
         }
+        public string strTelefono
+        {
+            get { return this.chkEsCliente.Checked ? this.txtTelefonoI.Text:this.txtTelefono.Text ; }
+            set { this.txtTelefonoI.Text = value; this.txtTelefono.Text = value; }
+        }
+        public string strEmail
+        {
+            get { return this.chkEsCliente.Checked ? this.txtEmailI.Text : this.txtEmail.Text; }
+            set { this.txtEmailI.Text = value; this.txtEmail.Text = value; }
+        }
+
+        public string strDomicilio
+        {
+            get { return this.chkEsCliente.Checked ? this.txtDomicilioI.Text : this.txtDomicilio.Text; }
+            set { this.txtDomicilioI.Text = value; this.txtDomicilio.Text = value; }
+        }
+
         #endregion
 
 
 
-        public frmClientesCrud()
+        public frmClientesCrud(long EmpNumero)
         {
             InitializeComponent();
+            _EmpNumero = EmpNumero;
+            _oClientesCrud = new UIClientesCrud(this);
         }
 
         private void frmClientesCrud_Load(object sender, EventArgs e)
         {
-
+            oUtil = new Utility();
+            _oClientesCrud.Inicializar();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -161,7 +183,12 @@ namespace FormsAuxiliares
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "TEEM";
-            FormsAuxiliares.frmFormAdmin frmbus = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
+            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            if (frmbus.ShowDialog() == DialogResult.OK)
+            {
+                string nombre = frmbus.striRdoCodigo;
+
+            }
             frmbus.ShowDialog();
 
         }
@@ -170,12 +197,52 @@ namespace FormsAuxiliares
         {
             this.pnlEmpresa.Visible = false;
             this.pnlIndividuo.Visible = true;
+            _oClientesCrud.Inicializar();
+
         }
 
         private void rbEmpresa_CheckedChanged(object sender, EventArgs e)
         {
             this.pnlEmpresa.Visible = true;
             this.pnlIndividuo.Visible = false;
+            _oClientesCrud.Inicializar();
+        }
+        private void pbImagen_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnTelefonosI_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "TETE";
+            oAdmin.Tipo = Admin.enumTipoForm.Selector;
+            FormsAuxiliares.frmFormAdminMini frmAdminMini = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+           //frmAdminMini.
+            if (frmAdminMini.ShowDialog() == DialogResult.OK)
+            {
+                string id = frmAdminMini.striRdoCodigo;
+                _oClientesCrud.CargarTelefonos(long.Parse(id));
+            }
+           
+        }
+        private void btnEmailI_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "TEEM";
+            FormsAuxiliares.frmFormAdminMini frmAdminMini = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+                
+            if (frmAdminMini.ShowDialog() == DialogResult.OK)
+            {
+                string nombre = frmAdminMini.striRdoCodigo;
+
+            }
+           
+        }
+        private void btnDomicilioI_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

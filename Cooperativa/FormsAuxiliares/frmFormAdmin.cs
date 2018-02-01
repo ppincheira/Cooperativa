@@ -456,7 +456,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oFormAdmin.Inicializar(_oAdmin.TabCodigo);
+                _oFormAdmin.Inicializar(_oAdmin);
                 _oUtil = new Utility();
                 _oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
                //No Borrar este comentario es la llama original

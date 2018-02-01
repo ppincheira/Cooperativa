@@ -128,7 +128,7 @@ namespace UI
             //FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("CLIB", oPermiso);
             //frmbus.ShowDialog();
 
-            FormsAuxiliares.frmClientesCrud frmCliente = new FormsAuxiliares.frmClientesCrud();
+            FormsAuxiliares.frmClientesCrud frmCliente = new FormsAuxiliares.frmClientesCrud(0);
             frmCliente.Show();
         }
 

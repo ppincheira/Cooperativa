@@ -43,6 +43,10 @@ namespace Business
             TiposIdentificadoresImpl oTiposIdentificadoresImpl = new TiposIdentificadoresImpl();
             return oTiposIdentificadoresImpl.TiposIdentificadoresGetByFilter();
         }
-
+        public DataTable TiposIdentificadoresGetAllDT()
+        {
+            TiposIdentificadoresImpl oTiposIdentificadoresImpl = new TiposIdentificadoresImpl();
+            return oTiposIdentificadoresImpl.TiposIdentificadoresGetAllDT();
+        }
     }
 }
