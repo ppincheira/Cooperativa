@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Implement;
 using Model;
+using System.Data;
 
 namespace Business
 {
@@ -37,5 +38,11 @@ namespace Business
             return oTiposIvaImpl.TiposIvaGetAll();
         }
 
+
+        public DataTable TiposIvaGetAllDT()
+        {
+            TiposIvaImpl oTiposIvaImpl = new TiposIvaImpl();
+            return oTiposIvaImpl.TiposIvaGetAllDT();
+        }
     }
 }

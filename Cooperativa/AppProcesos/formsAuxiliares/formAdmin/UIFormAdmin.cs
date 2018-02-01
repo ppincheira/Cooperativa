@@ -30,15 +30,16 @@ namespace AppProcesos.formsAuxiliares.formAdmin
 
         }
 
-        public void Inicializar(string tabla)
+        public void Inicializar(Admin oAdmin)
         {
-            _filtroCampos = "";
-            _filtroValores = "";
+            _Campo = "";
+            _filtroCampos = oAdmin.FiltroCampos!=null?oAdmin.FiltroCampos:"" ;
+            _filtroValores = oAdmin.FiltroValores != null?oAdmin.FiltroValores:"";
             _dtCombo = new DataTable();
             _dtCombo.Columns.Add("DctColumna", typeof(string));
             _dtCombo.Columns.Add("DctDescripcion", typeof(string));
             DetallesColumnasTablasBus oDetalleBus = new DetallesColumnasTablasBus();
-            List<DetallesColumnasTablas> ListDetalle = oDetalleBus.DetallesColumnasTablasGetByCodigo(tabla);
+            List<DetallesColumnasTablas> ListDetalle = oDetalleBus.DetallesColumnasTablasGetByCodigo(oAdmin.TabCodigo);
             foreach (DetallesColumnasTablas oDetalle in ListDetalle)
             {
 
@@ -68,7 +69,7 @@ namespace AppProcesos.formsAuxiliares.formAdmin
             if (_Campo.Length > 0)
                 _Campo = _Campo.Substring(0, _Campo.Length - 1);
             TablasBus oTablasBus = new TablasBus();
-            DataTable dt = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo, _filtroCampos, _filtroValores);
+            DataTable dt = oTablasBus.TablasBusquedaGetAllFilter(oAdmin.TabCodigo, _Campo, _filtroCampos, _filtroValores);
             _vista.cantidad = "Se encontraron " + oUtil.CargarGrilla(_vista.grilla, dt) + " registros";
             _vista.grilla.Columns["CODIGO"].Visible = false;
 

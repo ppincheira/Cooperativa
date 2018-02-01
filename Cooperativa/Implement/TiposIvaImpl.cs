@@ -169,24 +169,45 @@ namespace Implement
                     throw ex;
                 }
             }
- 
-            //public DataTable TiposIvaGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
-            //{
-            //    try
-            //    {
-            //        DataTable DTPartes;
-            //        DataSet DSPartes = SqlHelper.ExecuteDataset(SqlImplHelper.getConnectionString(), "TiposIvaGetAllByFilter", Periodo, Empresa, IdPresentacion,Tipo);
-            //        DTPartes = DSPartes.Tables[0];
-            //        DSPartes.Tables.RemoveAt(0);
-            //        return DTPartes;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        throw ex;
-            //    }
-            //}
-            #endregion
+        public DataTable TiposIvaGetAllDT()
+        {
+            try
+            {
 
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "select * from Tipos_Iva ";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt = new DataTable();
+                return dt = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
+        //public DataTable TiposIvaGetAllFilter(DateTime Periodo, string Empresa, int IdPresentacion, string Tipo)
+        //{
+        //    try
+        //    {
+        //        DataTable DTPartes;
+        //        DataSet DSPartes = SqlHelper.ExecuteDataset(SqlImplHelper.getConnectionString(), "TiposIvaGetAllByFilter", Periodo, Empresa, IdPresentacion,Tipo);
+        //        DTPartes = DSPartes.Tables[0];
+        //        DSPartes.Tables.RemoveAt(0);
+        //        return DTPartes;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
+        #endregion
+
+    }
 }
 

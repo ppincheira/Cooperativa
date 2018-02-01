@@ -7,6 +7,7 @@ using Service;
 using Controles.form;
 using System.Windows.Forms;
 using static Model.Admin;
+using System.Reflection;
 
 namespace FormsAuxiliares
 {
@@ -15,9 +16,6 @@ namespace FormsAuxiliares
 
 
         #region << PROPIEDADES >>
-
-
-
         public Admin _oAdmin;
         public FuncionalidadesFoms _oPermiso;
         public string _strRdoCodigo;
@@ -110,7 +108,8 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oFormAdmin.Inicializar(_oAdmin.TabCodigo);
+
+                _oFormAdmin.Inicializar(_oAdmin);
                 _oUtil = new Utility();
                 _oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
                 //_oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
@@ -358,6 +357,7 @@ namespace FormsAuxiliares
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
                 case "SRUT":
+
                     frmRutasCrud oFrmRutCrud = new frmRutasCrud(0, "H");
 
                     if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
@@ -379,7 +379,6 @@ namespace FormsAuxiliares
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
                 case "TME":
-
                     frmTiposMedidoresCrud oFrmTiposMedidores = new frmTiposMedidoresCrud(0, "");
                     if (oFrmTiposMedidores.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
@@ -392,6 +391,7 @@ namespace FormsAuxiliares
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
                 case "SCAT":
+
                     frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(0, "I");
                     if (oFrmCatCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);

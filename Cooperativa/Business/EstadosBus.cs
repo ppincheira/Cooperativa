@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Implement;
 using Model;
+using System.Data;
 
 namespace Business
 {
@@ -36,5 +37,11 @@ namespace Business
             EstadosImpl oEstadosImpl = new EstadosImpl();
             return oEstadosImpl.EstadosGetAll();
         }
-    }
+        public DataTable EstadosGetByFilterDT(string tabNombre, string estColumnaTabla)
+        {
+            EstadosImpl oEstadosImpl = new EstadosImpl();
+            return oEstadosImpl.EstadosGetByFilterDT(tabNombre,estColumnaTabla);
+        }
+
+     }
 }
