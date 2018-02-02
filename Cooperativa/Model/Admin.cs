@@ -13,13 +13,8 @@ namespace Model
         public Admin()
         {
         }
-
-      
-        public virtual string filtroCampo { get; set; }
-        public virtual string filtroValores { get; set; }
         public virtual string CodigoRegistro { get; set; }
         public virtual string TabCodigo { get; set; }
-
         private enumTipoForm tipos = enumTipoForm.Ninguna;
         public virtual enumTipoForm Tipo
         {

@@ -115,12 +115,6 @@ C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.exe
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.pdb
-C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
-C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.Form1.resources
-C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.frmLogin.resources
-C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.Properties.Resources.resources
-C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
-C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\UI.exe.config
 C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\UI.exe
 C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\UI.pdb
@@ -145,5 +139,11 @@ C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Implement.p
 C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\AppProcesos.pdb
 C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\Service.pdb
 C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\es\Microsoft.VisualBasic.PowerPacks.resources.dll
+C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.Form1.resources
+C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.frmLogin.resources
+C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.Properties.Resources.resources
+C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.GenerateResource.Cache
+C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.exe
 C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.pdb

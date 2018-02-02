@@ -267,7 +267,9 @@ namespace UI
             FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "LEM";
+           
             FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            frmbus.Text = "Administrador de Modos Lecturas";
             frmbus.ShowDialog();
         }
     }

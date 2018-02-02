@@ -407,7 +407,7 @@ namespace FormsAuxiliares
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
                 case "LEM":
-                    frmLecturasModosCrud oFrmLemCrud = new frmLecturasModosCrud(0, "");
+                    frmLecturasModosCrudAux oFrmLemCrud = new frmLecturasModosCrudAux(0, "");
                     oFrmLemCrud._oFuncionalidad = _oPermiso;
                     if (oFrmLemCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
@@ -499,14 +499,17 @@ namespace FormsAuxiliares
                     break;
                 case "LEM":
                     long idLem = Convert.ToInt64(row.Cells[0].Value);
-                    frmLecturasConceptosCrud oFrmLemCrud = new frmLecturasConceptosCrud(idLem, "B");
+                    frmLecturasModosCrudAux oFrmLemCrud = new frmLecturasModosCrudAux(idLem, "B");
                     _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
             }
         }
         private void Editar() {
             DataGridViewRow row = this.dgBusqueda.CurrentRow;
-
+            if(row == null)
+            {
+                row = this.dgBusqueda.Rows[1];
+            }
             switch (_oAdmin.TabCodigo)
             {
                 case "CALB":
@@ -570,7 +573,7 @@ namespace FormsAuxiliares
                     break;
                 case "LEM":
                     long idLem = Convert.ToInt64(row.Cells[0].Value);
-                    frmLecturasModosCrud oFrmLemCrud = new frmLecturasModosCrud(idLem, "E");
+                    frmLecturasModosCrudAux oFrmLemCrud = new frmLecturasModosCrudAux(idLem, "E");
                     oFrmLemCrud.bloquearFecha();
                     if (oFrmLemCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
