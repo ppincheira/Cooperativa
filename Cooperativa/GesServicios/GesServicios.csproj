@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FormsAuxiliares">
-      <HintPath>..\FormsAuxiliares\bin\Debug\FormsAuxiliares.dll</HintPath>
+      <HintPath>..\..\.vs\FormsAuxiliares.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
