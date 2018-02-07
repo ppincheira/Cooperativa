@@ -16,6 +16,7 @@ using Controles.form;
 using System.Windows.Forms;
 using GesServicios.controles.forms;
 using static Model.Admin;
+using GesSeguridad.controles.forms;
 
 namespace FormsAuxiliares
 {
@@ -465,6 +466,19 @@ namespace FormsAuxiliares
                 _oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
                 //No Borrar este comentario es la llama original
                 //oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
+                if (this.dgBusqueda.RowCount > 0)
+                    dgBusqueda.CurrentCell = dgBusqueda.Rows[0].Cells[1];
+                //No Borrar este comentario es la llama original
+                //oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
+                switch (_oAdmin.TabCodigo)
+                {
+                    case "PERB":
+                        this.Text = "Personas";
+                        break;
+
+
+                }
+
                 if (_oAdmin.Tipo == enumTipoForm.FiltroAndAlta)
                 {
                     Nuevo();
@@ -571,6 +585,11 @@ namespace FormsAuxiliares
                         frmMedidoresCrud oFrmMedCrud = new frmMedidoresCrud(id, "B", 1);
                         //if (oFrmMedCrud.ShowDialog() == DialogResult.OK)
                             _oFormAdmin.CargarGrilla(_oAdmin);
+                        break;
+                    case "PERB":
+                        frmPersonasCrud oFrmPerCrud = new frmPersonasCrud(id, "B");
+                        //if (oFrmPerCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                         break;
                 }
             }
@@ -719,6 +738,11 @@ namespace FormsAuxiliares
                     if (oFrmMedCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
+                case "PERB":
+                    frmPersonasCrud oFrmPerCrud = new frmPersonasCrud(id, "V");
+                    if (oFrmPerCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
                 case "":
                     Console.WriteLine("Case 2");
                     break;
@@ -752,6 +776,11 @@ namespace FormsAuxiliares
                     frmClientesCrud oFrmCliente = new frmClientesCrud(0);
                     if (oFrmCliente.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;
+                case "PERB":
+                    frmPersonasCrud oFrmPerCrud = new frmPersonasCrud(0, "I");
+                    if (oFrmPerCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
                 case "":
                     Console.WriteLine("Case 2");
@@ -820,6 +849,12 @@ namespace FormsAuxiliares
                     frmClientesCrud oFrmCliente = new frmClientesCrud(idCliente);
                     if (oFrmCliente.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;
+                case "PERB":
+                    int idPersona = Convert.ToInt32(row.Cells[0].Value);
+                    frmPersonasCrud oFrmPerCrud = new frmPersonasCrud(idPersona, "E");
+                    if (oFrmPerCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
                 case "":
                     Console.WriteLine("Case 2");
