@@ -495,9 +495,6 @@ namespace Service
             }
             return true;
         }
-
-
-     
     }
 
 }

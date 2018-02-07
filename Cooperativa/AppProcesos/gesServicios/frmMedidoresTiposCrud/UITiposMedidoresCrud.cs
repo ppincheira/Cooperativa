@@ -25,10 +25,13 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
         public void Inicializar()
         {
             ServiciosBus oServiciosBus = new ServiciosBus();
-
-            oUtil.CargarCombo(_vista.srvCodigo, oServiciosBus.ServiciosGetAllDT(), "SRV_CODIGO", "SRV_DESCRIPCION", "Selecione un servicio..");
+       
+            _vista.srvCodigo.DataSource = oServiciosBus.ServiciosGetAll();
+            _vista.srvCodigo.DisplayMember = "SrvDescripcion";
+            _vista.srvCodigo.ValueMember = "SrvCodigo";
+    
             if (_vista.tmeCodigo != 0)
-            {
+                {
                 TiposMedidores oSMedidor = new TiposMedidores();
                 TiposMedidoresBus oSMedidorBus = new TiposMedidoresBus();
 
@@ -40,6 +43,7 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
                 _vista.tmeFechaCarga = oSMedidor.TmeFechaCarga;
                 _vista.usrNumero = oSMedidor.UsrNumero;
                 _vista.estCodigo = oSMedidor.EstCodigo;
+                
             }
         }
 
@@ -60,12 +64,12 @@ namespace AppProcesos.gesServicios.frmMedidoresCrud
             if (_vista.tmeCodigo == 0)
                 rtdo = oSMeBus.TiposMedidoresAdd(oSMedidor);
             else
-                oSMeBus.TiposMedidoresUpdate(oSMedidor);
+                 oSMeBus.TiposMedidoresUpdate(oSMedidor);
         }
 
         public bool EliminarMedidor(long idMedidor)
         {
-            TiposMedidoresBus oSMeBus = new TiposMedidoresBus();
+            TiposMedidoresBus oSMeBus = new TiposMedidoresBus();            
             TiposMedidores oSMe = oSMeBus.TiposMedidoresGetById(idMedidor.ToString());
             oSMe.EstCodigo = "B";
             return oSMeBus.TiposMedidoresUpdate(oSMe);
