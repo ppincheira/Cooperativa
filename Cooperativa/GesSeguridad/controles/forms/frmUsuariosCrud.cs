@@ -52,13 +52,13 @@ namespace GesSeguridad.controles.forms
             set { this.cmbPerfil = value; }
         }
 
-        public DateTime datUsrAlta
+        public DateTime? datUsrAlta
         {
             get { return DateTime.Parse(this.dtpFechaAlta.Text); }
             set { this.dtpFechaAlta.Text = value.ToString(); }
         }
 
-        public DateTime datUsrBaja
+        public DateTime? datUsrBaja
         {
             get { return DateTime.Parse(this.dtpFechaBaja.Text); }
             set { this.dtpFechaBaja.Text = value.ToString(); }
@@ -112,7 +112,7 @@ namespace GesSeguridad.controles.forms
             {
                 _oUsuariosCrud.Inicializar();
                 oUtility = new Utility();
-                this.tttEtiqueta.SetToolTip(this.txtNombre, "Persona al que se le crea el Usuario");
+                this.tttEtiqueta.SetToolTip(this.cmbPersona, "Persona al que se le crea el Usuario");
                 this.tttEtiqueta.SetToolTip(this.txtNombre, "Nombre del Usuario");
                 this.tttEtiqueta.SetToolTip(this.txtClave, "Clave del Usuario");
                 this.tttEtiqueta.SetToolTip(this.cmbPerfil, "Perfil del Usuario");
@@ -169,5 +169,6 @@ namespace GesSeguridad.controles.forms
             this.Close();
         }
         #endregion
+
     }
 }

@@ -2,6 +2,7 @@
 using Model;
 using Service;
 using System.Windows.Forms;
+using System;
 
 namespace AppProcesos.gesSeguridad.frmUsuariosCrud
 {
@@ -33,17 +34,23 @@ namespace AppProcesos.gesSeguridad.frmUsuariosCrud
                 _vista.strUsrNombre = oUsuarios.UsrNombre;
                 _vista.strUsrClave = oUsuarios.UsrClave;
                 _vista.datUsrAlta = oUsuarios.UsrFechaAlta;
-                _vista.datUsrBaja = oUsuarios.UsrFechaBaja;                
+                _vista.datUsrBaja = oUsuarios.UsrFechaBaja;
                 if (oUsuarios.UsrBloqueado == "S")
                     _vista.booUsrBloqueado = true;
                 else
                     _vista.booUsrBloqueado = false;
+
+                if (oUsuarios.EstCodigo == "H")
+                    _vista.booUsrEstado = true;
+                else
+                    _vista.booUsrEstado = false;
             }
             else
             {
                 _vista.booUsrBloqueado = false;
+                _vista.booUsrEstado = true;
             }
-                
+
         }
 
         public void Guardar()
@@ -52,15 +59,22 @@ namespace AppProcesos.gesSeguridad.frmUsuariosCrud
             Usuarios oUsuarios = new Usuarios();
             UsuariosBus oUsuariosBus = new UsuariosBus();
 
+            oUsuarios.UsrNumero = _vista.intUsrNumero;
             oUsuarios.UsrPerfil = _vista.cmbUsrPerfil.SelectedValue.ToString();
             oUsuarios.PrsNumero = int.Parse(_vista.cmbPrsNumero.SelectedValue.ToString());
             oUsuarios.UsrNombre = _vista.strUsrNombre;
             oUsuarios.UsrClave = _vista.strUsrClave;
-            oUsuarios.UsrFechaAlta = _vista.datUsrAlta;            
+            oUsuarios.UsrFechaAlta = _vista.datUsrAlta;
+
             if (_vista.booUsrBloqueado)
                 oUsuarios.UsrBloqueado = "S";
             else
                 oUsuarios.UsrBloqueado = "N";
+
+            if (_vista.booUsrEstado)
+                oUsuarios.EstCodigo = "H";
+            else
+                oUsuarios.EstCodigo = "I";
 
             if (_vista.intUsrNumero == 0)
             {
@@ -77,7 +91,7 @@ namespace AppProcesos.gesSeguridad.frmUsuariosCrud
 
             UsuariosBus oUsuariosBus = new UsuariosBus();
             Usuarios oUsuarios = oUsuariosBus.UsuariosGetById(idUsuario);
-            oUsuarios.UsrBloqueado = "B";
+            oUsuarios.EstCodigo = "B";
             return oUsuariosBus.UsuariosUpdate(oUsuarios);
         }
     }
