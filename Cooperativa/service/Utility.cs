@@ -18,9 +18,10 @@ namespace Service
     public class Utility
     {
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        public int CargarGrilla(Controles.datos.grdGrillaAdmin grilla, DataTable dt) {
+        public int CargarGrilla(Controles.datos.grdGrillaAdmin grilla, DataTable dt)
+        {
             grilla.DataSource = dt;
-      
+
             return dt.Rows.Count;
         }
 
@@ -43,9 +44,9 @@ namespace Service
         {
             DataRow drPrimer;
             drPrimer = dt.NewRow();
-            drPrimer[Value] =0;
+            drPrimer[Value] = 0;
             drPrimer[Text] = strPrimero;
-            dt.Rows.InsertAt(drPrimer,0);
+            dt.Rows.InsertAt(drPrimer, 0);
             combo.DataSource = dt;
             combo.ValueMember = Value;
             combo.DisplayMember = Text;
@@ -70,8 +71,8 @@ namespace Service
         public Boolean ExportarDataGridViewExcel(DataGridView grd)
         {
 
-            Boolean band= false;
-              
+            Boolean band = false;
+
             SaveFileDialog fichero = new SaveFileDialog();
             fichero.Filter = "Excel (*.xls)|*.xls";
             if (fichero.ShowDialog() == DialogResult.OK)
@@ -82,20 +83,20 @@ namespace Service
                 Microsoft.Office.Interop.Excel.Worksheet hoja_trabajo;
                 aplicacion = new Microsoft.Office.Interop.Excel.Application();
                 libros_trabajo = aplicacion.Workbooks.Add();
-                hoja_trabajo =(Microsoft.Office.Interop.Excel.Worksheet)libros_trabajo.Worksheets.get_Item(1);
+                hoja_trabajo = (Microsoft.Office.Interop.Excel.Worksheet)libros_trabajo.Worksheets.get_Item(1);
 
                 for (int i = 0; i < grd.ColumnCount; i++)
                 {
                     hoja_trabajo.Cells[1, i + 1] = grd.Columns[i].HeaderText;
-                    hoja_trabajo.Rows.Cells[1, i + 1].Interior.Color= System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gray);
+                    hoja_trabajo.Rows.Cells[1, i + 1].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gray);
                 }
                 int k = 2;
                 //Recorremos el DataGridView rellenando la hoja de trabajo
-                for (int i = 0; i < grd.Rows.Count  ; i++)
+                for (int i = 0; i < grd.Rows.Count; i++)
                 {
                     for (int j = 0; j < grd.Columns.Count; j++)
                     {
-                        hoja_trabajo.Cells[k+i + 1, j + 1] = grd.Rows[i].Cells[j].Value.ToString();
+                        hoja_trabajo.Cells[k + i + 1, j + 1] = grd.Rows[i].Cells[j].Value.ToString();
                     }
                 }
 
@@ -111,18 +112,19 @@ namespace Service
 
         public void HabilitarControles(Control contenedor, int usrNumero, string formulario, string sbsCodigo, DataTable dt)
         {
-            if (dt == null) { 
-            FuncionalidadesBus oFunBus = new FuncionalidadesBus();
-            dt = oFunBus.FuncionalidadesPermisos(formulario, usrNumero, sbsCodigo);
+            if (dt == null)
+            {
+                FuncionalidadesBus oFunBus = new FuncionalidadesBus();
+                dt = oFunBus.FuncionalidadesPermisos(formulario, usrNumero, sbsCodigo);
             }
             if (dt.Rows.Count > 0)
             {
                 for (int i = 0; dt.Rows.Count > i; i++)
-                { 
+                {
                     DataRow dr = dt.Rows[i];
                     foreach (Control control in contenedor.Controls)
 
-                        if (control.Controls.Count > 0) HabilitarControles(control,usrNumero,formulario,sbsCodigo,dt);
+                        if (control.Controls.Count > 0) HabilitarControles(control, usrNumero, formulario, sbsCodigo, dt);
                         else
                         {
                             if (control is Controles.buttons.btnEditar)
@@ -146,53 +148,55 @@ namespace Service
         }
 
 
-        public void HabilitarAllControlesInTrue(Control contenedor, int usrNumero, string formulario )
+        public void HabilitarAllControlesInTrue(Control contenedor, int usrNumero, string formulario)
         {
-        
 
-                    foreach (Control control in contenedor.Controls)
 
-                        if (control.Controls.Count > 0) HabilitarAllControlesInTrue(control, usrNumero, formulario);
-                        else
-                        {
-                            if (control is Controles.buttons.btnEditar)
-                                              ((Controles.buttons.btnEditar)control).Enabled = true;
+            foreach (Control control in contenedor.Controls)
 
-                            if (control is Controles.buttons.btnNuevo)
-                                    ((Controles.buttons.btnNuevo)control).Enabled = true;
+                if (control.Controls.Count > 0) HabilitarAllControlesInTrue(control, usrNumero, formulario);
+                else
+                {
+                    if (control is Controles.buttons.btnEditar)
+                        ((Controles.buttons.btnEditar)control).Enabled = true;
 
-                            if (control is Controles.buttons.btnEliminar)
-                                    ((Controles.buttons.btnEliminar)control).Enabled = true;
+                    if (control is Controles.buttons.btnNuevo)
+                        ((Controles.buttons.btnNuevo)control).Enabled = true;
 
-                            if (control is Controles.buttons.btnExportar)
-                                    ((Controles.buttons.btnExportar)control).Enabled = true;
+                    if (control is Controles.buttons.btnEliminar)
+                        ((Controles.buttons.btnEliminar)control).Enabled = true;
 
-                            if (control is Controles.buttons.btnGeneral)    
-                                    ((Controles.buttons.btnGeneral)control).Enabled = true;
+                    if (control is Controles.buttons.btnExportar)
+                        ((Controles.buttons.btnExportar)control).Enabled = true;
+
+                    if (control is Controles.buttons.btnGeneral)
+                        ((Controles.buttons.btnGeneral)control).Enabled = true;
                     if (control is Controles.buttons.btnVer)
                         ((Controles.buttons.btnVer)control).Enabled = true;
                 }
-            
+
         }
 
 
-        public void ValidarFormulario( gesForm formInicial, Control contenedor, int index)
+        public void ValidarFormulario(gesForm formInicial, Control contenedor, int index)
         {
-            
-            
-                    foreach (Control control in contenedor.Controls) { 
 
-                        if (control.Controls.Count > 0)
-                             ValidarFormulario(formInicial, control, index);
-                        else
-                        {
+
+            foreach (Control control in contenedor.Controls)
+            {
+
+                if (control.Controls.Count > 0)
+                    ValidarFormulario(formInicial, control, index);
+                else
+                {
                     if (control is Controles.textBoxes.txtDescripcionCorta)
                         if (((Controles.textBoxes.txtDescripcionCorta)control).REQUERIDO == "SI" && ((Controles.textBoxes.txtDescripcionCorta)control).Text == "" && ((Controles.textBoxes.txtDescripcionCorta)control).TabIndex <= index)
                         {
                             errorProvider1.SetIconPadding(((Controles.textBoxes.txtDescripcionCorta)control), 5);
                             ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Red;
                             formInicial.VALIDARFORM = false;
-                        }else
+                        }
+                        else
                             ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Empty;
 
                     if (control is Controles.textBoxes.txtDescripcion)
@@ -206,36 +210,36 @@ namespace Service
                             ((Controles.textBoxes.txtDescripcion)control).BackColor = System.Drawing.Color.Empty;
 
                     if (control is Controles.textBoxes.txtObservaciones)
-                            if (((Controles.textBoxes.txtObservaciones)control).REQUERIDO == "SI" && ((Controles.textBoxes.txtObservaciones)control).Text == "" && ((Controles.textBoxes.txtObservaciones)control).TabIndex <= index)
-                            {
-                                errorProvider1.SetIconPadding(((Controles.textBoxes.txtObservaciones)control), 5);
-                                ((Controles.textBoxes.txtObservaciones)control).BackColor = System.Drawing.Color.Red;
-                                formInicial.VALIDARFORM = false;
+                        if (((Controles.textBoxes.txtObservaciones)control).REQUERIDO == "SI" && ((Controles.textBoxes.txtObservaciones)control).Text == "" && ((Controles.textBoxes.txtObservaciones)control).TabIndex <= index)
+                        {
+                            errorProvider1.SetIconPadding(((Controles.textBoxes.txtObservaciones)control), 5);
+                            ((Controles.textBoxes.txtObservaciones)control).BackColor = System.Drawing.Color.Red;
+                            formInicial.VALIDARFORM = false;
                         }
                         else
                             ((Controles.textBoxes.txtObservaciones)control).BackColor = System.Drawing.Color.Empty;
 
 
                     if (control is Controles.textBoxes.txtPassword)
-                            if (((Controles.textBoxes.txtPassword)control).REQUERIDO == "SI" && ((Controles.textBoxes.txtPassword)control).Text == "" && ((Controles.textBoxes.txtPassword)control).TabIndex <= index)
-                            {
-                                errorProvider1.SetIconPadding(((Controles.textBoxes.txtPassword)control), 5);
-                                ((Controles.textBoxes.txtPassword)control).BackColor = System.Drawing.Color.Red;
-                                formInicial.VALIDARFORM = false;
-                            }
+                        if (((Controles.textBoxes.txtPassword)control).REQUERIDO == "SI" && ((Controles.textBoxes.txtPassword)control).Text == "" && ((Controles.textBoxes.txtPassword)control).TabIndex <= index)
+                        {
+                            errorProvider1.SetIconPadding(((Controles.textBoxes.txtPassword)control), 5);
+                            ((Controles.textBoxes.txtPassword)control).BackColor = System.Drawing.Color.Red;
+                            formInicial.VALIDARFORM = false;
+                        }
                         else
                             ((Controles.textBoxes.txtPassword)control).BackColor = System.Drawing.Color.Empty;
 
 
                     if (control is Controles.Fecha.dtpFecha)
-                            if (((Controles.Fecha.dtpFecha)control).REQUERIDO == "SI" && ((Controles.Fecha.dtpFecha)control).Text == "" && ((Controles.Fecha.dtpFecha)control).TabIndex <= index)
-                            {
+                        if (((Controles.Fecha.dtpFecha)control).REQUERIDO == "SI" && ((Controles.Fecha.dtpFecha)control).Text == "" && ((Controles.Fecha.dtpFecha)control).TabIndex <= index)
+                        {
                             errorProvider1.SetIconPadding((Controles.Fecha.dtpFecha)control, 5);
                             ((Controles.Fecha.dtpFecha)control).BackColor = System.Drawing.Color.Red;
-                             formInicial.VALIDARFORM = false;
+                            formInicial.VALIDARFORM = false;
                         }
                         else
-                            ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Empty;
+                            ((Controles.Fecha.dtpFecha)control).BackColor = System.Drawing.Color.Empty;
 
 
 
@@ -248,11 +252,11 @@ namespace Service
                         }
                         else
                             ((Controles.datos.chkBox)control).BackColor = System.Drawing.Color.Empty;
-                            
+
                 }
 
             }
-          
+
         }
 
         public void ValidarFormularioEP(gesForm formInicial, Control contenedor, int index)
@@ -267,9 +271,9 @@ namespace Service
                 else
                 {
                     if (control is Controles.textBoxes.txtDescripcionCorta)
-                        if (((Controles.textBoxes.txtDescripcionCorta)control).Requerido ==Enumerados.enumRequerido.SI  && ((Controles.textBoxes.txtDescripcionCorta)control).Text == "" && ((Controles.textBoxes.txtDescripcionCorta)control).TabIndex <= index)
+                        if (((Controles.textBoxes.txtDescripcionCorta)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.textBoxes.txtDescripcionCorta)control).Text == "" && ((Controles.textBoxes.txtDescripcionCorta)control).TabIndex <= index)
                         {
-                           
+
                             ((Controles.textBoxes.txtDescripcionCorta)control).BackColor = System.Drawing.Color.Red;
                             formInicial.VALIDARFORM = false;
                         }
@@ -289,7 +293,7 @@ namespace Service
                     if (control is Controles.textBoxes.txtObservaciones)
                         if (((Controles.textBoxes.txtObservaciones)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.textBoxes.txtObservaciones)control).Text == "" && ((Controles.textBoxes.txtObservaciones)control).TabIndex <= index)
                         {
-                            
+
                             ((Controles.textBoxes.txtObservaciones)control).BackColor = System.Drawing.Color.Red;
                             formInicial.VALIDARFORM = false;
                         }
@@ -300,7 +304,7 @@ namespace Service
                     if (control is Controles.textBoxes.txtPassword)
                         if (((Controles.textBoxes.txtPassword)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.textBoxes.txtPassword)control).Text == "" && ((Controles.textBoxes.txtPassword)control).TabIndex <= index)
                         {
-                           
+
                             ((Controles.textBoxes.txtPassword)control).BackColor = System.Drawing.Color.Red;
                             formInicial.VALIDARFORM = false;
                         }
@@ -310,7 +314,7 @@ namespace Service
                     if (control is Controles.Fecha.dtpFecha)
                         if (((Controles.Fecha.dtpFecha)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.Fecha.dtpFecha)control).Text == "" && ((Controles.Fecha.dtpFecha)control).TabIndex <= index)
                         {
-                           
+
                             ((Controles.Fecha.dtpFecha)control).BackColor = System.Drawing.Color.Red;
                             formInicial.VALIDARFORM = false;
                         }
@@ -321,7 +325,7 @@ namespace Service
                     if (control is Controles.datos.chkBox)
                         if (((Controles.datos.chkBox)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.datos.chkBox)control).Text == "" && ((Controles.datos.chkBox)control).TabIndex <= index)
                         {
-                           
+
                             ((Controles.datos.chkBox)control).BackColor = System.Drawing.Color.Red;
                             formInicial.VALIDARFORM = false;
                         }
@@ -331,8 +335,8 @@ namespace Service
 
 
                     if (control is Controles.datos.cmbLista)
-                        if (((Controles.datos.cmbLista)control).Requerido == Enumerados.enumRequerido.SI  && ((Controles.datos.cmbLista)control).TabIndex <= index
-                             && (((Controles.datos.cmbLista)control).Text == "" || ((Controles.datos.cmbLista)control).SelectedIndex < 0 ))
+                        if (((Controles.datos.cmbLista)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.datos.cmbLista)control).TabIndex <= index
+                             && (((Controles.datos.cmbLista)control).Text == "" || ((Controles.datos.cmbLista)control).SelectedIndex < 0))
                         {
 
                             ((Controles.datos.cmbLista)control).BackColor = System.Drawing.Color.Red;
@@ -367,7 +371,7 @@ namespace Service
                 oAdjunto.AdjCodigoRegistro = "0";
                 oAdjunto.AdjExtencion = oOpen.FileName.Substring(oOpen.FileName.IndexOf("."), (oOpen.FileName.Length - oOpen.FileName.IndexOf(".")));
                 oAdjunto.AdjAdjunto = oOpen.FileName;
-                if (oAdjExistente.AdjCodigo!=0)
+                if (oAdjExistente.AdjCodigo != 0)
                 {
                     oAdjunto.AdjCodigoRegistro = oAdjExistente.AdjCodigoRegistro;
                     oAdjunto.AdjCodigo = oAdjExistente.AdjCodigo;
@@ -393,7 +397,7 @@ namespace Service
                 oAdjunto.AdjFecha = DateTime.Now;
                 oAdjunto.AdjCodigoRegistro = "0";
                 oAdjunto.AdjExtencion = oOpen.FileName.Substring(oOpen.FileName.IndexOf("."), (oOpen.FileName.Length - oOpen.FileName.IndexOf(".")));
-                oAdjunto.AdjAdjunto= oOpen.FileName;
+                oAdjunto.AdjAdjunto = oOpen.FileName;
             }
             return oAdjunto;
         }
@@ -420,7 +424,8 @@ namespace Service
         }
         public bool TipoDatoValido(string valor, string tipo)
         {
-            switch (tipo) {
+            switch (tipo)
+            {
                 case "CHAR":
                     //try
                     //{
@@ -482,11 +487,11 @@ namespace Service
                     };
                     break;
                 case "NVARCHAR2":
-                ;
-                break;
+                    ;
+                    break;
                 case "VARCHAR2":
-                ;
-                break;
+                    ;
+                    break;
                 default:
                     return false;
             }

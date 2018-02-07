@@ -89,6 +89,7 @@
     <Compile Include="AreasBus.cs" />
     <Compile Include="DepartamentosBus.cs" />
     <Compile Include="DetallesIvaBus.cs" />
+    <Compile Include="LecturasModosBus.cs" />
     <Compile Include="MedidoresModelosBus.cs" />
     <Compile Include="DistritosBus.cs" />
     <Compile Include="DomiciliosBus.cs" />

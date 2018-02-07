@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Model;
-using Controles;
 using AppProcesos.formsAuxiliares.formAdmin;
 using GesServicios.controles.forms;
 using Controles.datos;
 using Service;
 using Controles.form;
 using System.Windows.Forms;
-using AppProcesos.gesServicios.frmRutasCrud;
 using static Model.Admin;
 using System.Reflection;
 
@@ -26,9 +17,11 @@ namespace FormsAuxiliares
 
         #region << PROPIEDADES >>
         public Admin _oAdmin;
+        public FuncionalidadesFoms _oPermiso;
         public string _strRdoCodigo;
         Utility _oUtil;
         private UIFormAdmin _oFormAdmin;
+
         #endregion
 
         #region Implementation of IVistaAdminMini
@@ -95,6 +88,7 @@ namespace FormsAuxiliares
             {
                 InitializeComponent();
                 AsignarFuncionalidad(oPerForm);
+                this._oPermiso = oPerForm;
                 _oAdmin = oAdmin;
                 _oFormAdmin = new UIFormAdmin(this);
             }
@@ -429,6 +423,14 @@ namespace FormsAuxiliares
                     if (oFrmTeem.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
+
+                case "LEM":
+                    frmLecturasModosCrudAux oFrmLemCrud = new frmLecturasModosCrudAux(0, "");
+                    oFrmLemCrud._oFuncionalidad = _oPermiso;
+                    if (oFrmLemCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+
             }
 
         }
@@ -513,11 +515,19 @@ namespace FormsAuxiliares
                     frmLecturasConceptosCrud oFrmLecCrud = new frmLecturasConceptosCrud(idLec, "B");
                     _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
+                case "LEM":
+                    long idLem = Convert.ToInt64(row.Cells[0].Value);
+                    frmLecturasModosCrudAux oFrmLemCrud = new frmLecturasModosCrudAux(idLem, "B");
+                    _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
             }
         }
         private void Editar() {
             DataGridViewRow row = this.dgBusqueda.CurrentRow;
-
+            if(row == null)
+            {
+                row = this.dgBusqueda.Rows[1];
+            }
             switch (_oAdmin.TabCodigo)
             {
                 case "CALB":
@@ -577,6 +587,13 @@ namespace FormsAuxiliares
                     frmLecturasConceptosCrud oFrmLecCrud = new frmLecturasConceptosCrud(idLec, "E");
                     oFrmLecCrud.bloquearFecha();
                     if (oFrmLecCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "LEM":
+                    long idLem = Convert.ToInt64(row.Cells[0].Value);
+                    frmLecturasModosCrudAux oFrmLemCrud = new frmLecturasModosCrudAux(idLem, "E");
+                    oFrmLemCrud.bloquearFecha();
+                    if (oFrmLemCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
             }
