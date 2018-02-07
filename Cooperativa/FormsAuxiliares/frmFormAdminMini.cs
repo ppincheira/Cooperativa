@@ -8,6 +8,7 @@ using Controles.form;
 using System.Windows.Forms;
 using static Model.Admin;
 using System.Reflection;
+using GesSeguridad.controles.forms;
 
 namespace FormsAuxiliares
 {
@@ -113,6 +114,9 @@ namespace FormsAuxiliares
                 _oUtil = new Utility();
                 _oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
                 //_oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
+                if (this.dgBusqueda.RowCount > 0)
+                    dgBusqueda.CurrentCell = dgBusqueda.Rows[0].Cells[1];
+
                 switch (_oAdmin.TabCodigo)
                 {
                     case "SCAT":
@@ -124,10 +128,15 @@ namespace FormsAuxiliares
                         this.dgBusqueda.Columns["DEFECTO"].Visible = false;
                         _oFormAdmin.MarcarSeleccion(_oAdmin.TabCodigo);
                         break;
-
-
-
+                    case "USUS":
+                        this.Text = "Usuarios";
+                        break;
                 }
+
+                if (_oAdmin.Tipo == enumTipoForm.FiltroAndAlta)
+                {
+                    Nuevo();
+                }               
             }
             catch (Exception ex)
             {
@@ -247,8 +256,6 @@ namespace FormsAuxiliares
             try
             {
                 _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
-
-
             }
             catch (Exception ex)
             {
@@ -316,8 +323,7 @@ namespace FormsAuxiliares
                                 e.ToString(),
                                 ((Control)sender).Name,
                                 this.FindForm().Name);
-            }
-             
+            }   
         }
         #endregion
         #region << METODOS >>
@@ -335,6 +341,20 @@ namespace FormsAuxiliares
             switch (_oAdmin.Tipo)
             {
                 case enumTipoForm.Selector:
+                    if (_strRdoCodigo != "")
+                        DialogResult = DialogResult.OK; //cierra el formulario    
+                    else
+                        DialogResult = DialogResult.No;
+                    this.Close();
+                    break;
+                case enumTipoForm.FiltroAndAlta:
+                    if (_strRdoCodigo != "")
+                        DialogResult = DialogResult.OK; //cierra el formulario    
+                    else
+                        DialogResult = DialogResult.No;
+                    this.Close();
+                    break;
+                case enumTipoForm.FiltroAndEditar:
                     if (_strRdoCodigo != "")
                         DialogResult = DialogResult.OK; //cierra el formulario    
                     else
@@ -359,7 +379,6 @@ namespace FormsAuxiliares
                 case "SRUT":
 
                     frmRutasCrud oFrmRutCrud = new frmRutasCrud(0, "H");
-
                     if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
@@ -402,14 +421,25 @@ namespace FormsAuxiliares
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
                 case "TETE":
-                    frmTelefonosCrud ofrmTel = new frmTelefonosCrud(0, _oAdmin.TabCodigo, _oAdmin.CodigoRegistro, "I");
-                    if (ofrmTel.ShowDialog() == DialogResult.OK)
+                    frmTelefonosCrud oFrmTel = new frmTelefonosCrud(0, _oAdmin.TabCodigo, _oAdmin.CodigoRegistro, "I");
+                    if (oFrmTel.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
+                case "TEEM":
+                    frmTelefonosCrud oFrmTeem = new frmTelefonosCrud(0, _oAdmin.TabCodigo, _oAdmin.CodigoRegistro, "I");
+                    if (oFrmTeem.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+
                 case "LEM":
-                    frmLecturasModosCrud oFrmLemCrud = new frmLecturasModosCrud(0, "");
+                    frmLecturasModosCrudAux oFrmLemCrud = new frmLecturasModosCrudAux(0, "");
                     oFrmLemCrud._oFuncionalidad = _oPermiso;
                     if (oFrmLemCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "USUS":
+                    frmUsuariosCrud ofrmUsu = new frmUsuariosCrud(0, "I");
+                    if (ofrmUsu.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
 
@@ -457,6 +487,12 @@ namespace FormsAuxiliares
                     if (oFrmCatCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
+                case "USUS":
+                    int idUsus = Convert.ToInt32(row.Cells[0].Value);
+                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsus, "V");
+                    if (oFrmUsuCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
             }
         }
 
@@ -499,14 +535,22 @@ namespace FormsAuxiliares
                     break;
                 case "LEM":
                     long idLem = Convert.ToInt64(row.Cells[0].Value);
-                    frmLecturasConceptosCrud oFrmLemCrud = new frmLecturasConceptosCrud(idLem, "B");
+                    frmLecturasModosCrudAux oFrmLemCrud = new frmLecturasModosCrudAux(idLem, "B");
+                    _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "USUS":
+                    int idUsu = Convert.ToInt32(row.Cells[0].Value);
+                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsu, "B");
                     _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
             }
         }
         private void Editar() {
             DataGridViewRow row = this.dgBusqueda.CurrentRow;
-
+            if(row == null)
+            {
+                row = this.dgBusqueda.Rows[1];
+            }
             switch (_oAdmin.TabCodigo)
             {
                 case "CALB":
@@ -570,9 +614,15 @@ namespace FormsAuxiliares
                     break;
                 case "LEM":
                     long idLem = Convert.ToInt64(row.Cells[0].Value);
-                    frmLecturasModosCrud oFrmLemCrud = new frmLecturasModosCrud(idLem, "E");
+                    frmLecturasModosCrudAux oFrmLemCrud = new frmLecturasModosCrudAux(idLem, "E");
                     oFrmLemCrud.bloquearFecha();
                     if (oFrmLemCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
+                case "USUS":
+                    int idUsu = Convert.ToInt32(row.Cells[0].Value);
+                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsu, "E");
+                    if (oFrmUsuCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
             }

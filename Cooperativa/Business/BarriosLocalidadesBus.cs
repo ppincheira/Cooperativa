@@ -37,10 +37,10 @@ namespace Business
             BarriosLocalidadesImpl oBarriosLocalidadesImpl = new BarriosLocalidadesImpl();
             return oBarriosLocalidadesImpl.BarriosLocalidadesGetAll();
         }
-        public DataTable BarriosLocalidadesGetByLocalidad(long locNumero)
+        public DataTable BarriosLocalidadesGetByLocalidadDT(long locNumero)
         {
             BarriosLocalidadesImpl oBarriosLocalidadesImpl = new BarriosLocalidadesImpl();
-            return oBarriosLocalidadesImpl.BarriosLocalidadesGetByLocalidad(locNumero);
+            return oBarriosLocalidadesImpl.BarriosLocalidadesGetByLocalidadDT(locNumero);
         }
 
     }

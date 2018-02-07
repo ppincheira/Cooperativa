@@ -8,7 +8,7 @@ namespace Business
     public class DomiciliosEntidadesBus
     {
 
-        public int DomiciliosEntidadesAdd(DomiciliosEntidades oDomiciliosEntidades)
+        public  long DomiciliosEntidadesAdd(DomiciliosEntidades oDomiciliosEntidades)
         {
             DomiciliosEntidadesImpl oDomiciliosEntidadesImpl = new DomiciliosEntidadesImpl();
             return oDomiciliosEntidadesImpl.DomiciliosEntidadesAdd(oDomiciliosEntidades);
@@ -30,6 +30,11 @@ namespace Business
         {
             DomiciliosEntidadesImpl oDomiciliosEntidadesImpl = new DomiciliosEntidadesImpl();
             return oDomiciliosEntidadesImpl.DomiciliosEntidadesGetById(Id);
+        }
+        public DomiciliosEntidades DomiciliosEntidadesGetByCodigo(long domCodigo)
+        {
+            DomiciliosEntidadesImpl oDomiciliosEntidadesImpl = new DomiciliosEntidadesImpl();
+            return oDomiciliosEntidadesImpl.DomiciliosEntidadesGetByDomCodigo(domCodigo);
         }
 
         public List<DomiciliosEntidades> DomiciliosEntidadesGetAll()

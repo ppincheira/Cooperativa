@@ -35,17 +35,21 @@ namespace Business
             return auxImple.LecturasModosGetById(oLC);
         }
 
-        public DataTable LecturasConceptosGetAllDT()
+        public DataTable LecturasModosGetAllDT()
         {
             LecturasModosImpl auxImple = new LecturasModosImpl();
             return auxImple.LecturasModosGetAllDT();
         }
 
-        public List<LecturasModos> LecturasConceptosGetAll()
+        public List<LecturasModos> LecturasModosGetAll()
         {
             LecturasModosImpl auxImple = new LecturasModosImpl();
             return auxImple.LecturasModosGetAll();
         }
-
+    /*    public List<LecturasConceptos> LecturasConceptosDeModoById(long id)
+        {
+            LecturasModosImpl auxImple = new LecturasModosImpl();
+            return auxImple.LecturasConceptosDeModoById(id);
+        }*/
     }
 }

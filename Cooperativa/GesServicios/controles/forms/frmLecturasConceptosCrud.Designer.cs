@@ -40,12 +40,14 @@
             this.gesGroup2 = new Controles.contenedores.gesGroup();
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
+            this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
             this.gbDatos.SuspendLayout();
             this.gesGroup2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbDatos
             // 
+            this.gbDatos.Controls.Add(this.lblEtiqueta1);
             this.gbDatos.Controls.Add(this.chkEstado);
             this.gbDatos.Controls.Add(this.txtLCDescripcionCorta);
             this.gbDatos.Controls.Add(this.lblFechaCarga);
@@ -55,7 +57,7 @@
             this.gbDatos.Controls.Add(this.lblDescripcion);
             this.gbDatos.Location = new System.Drawing.Point(12, 12);
             this.gbDatos.Name = "gbDatos";
-            this.gbDatos.Size = new System.Drawing.Size(243, 241);
+            this.gbDatos.Size = new System.Drawing.Size(345, 173);
             this.gbDatos.TabIndex = 4;
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
@@ -65,7 +67,7 @@
             this.chkEstado.AutoSize = true;
             this.chkEstado.Checked = true;
             this.chkEstado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEstado.Location = new System.Drawing.Point(6, 218);
+            this.chkEstado.Location = new System.Drawing.Point(109, 146);
             this.chkEstado.Name = "chkEstado";
             this.chkEstado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.chkEstado.Size = new System.Drawing.Size(73, 17);
@@ -78,7 +80,7 @@
             this.txtLCDescripcionCorta.BackColor = System.Drawing.Color.White;
             this.txtLCDescripcionCorta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtLCDescripcionCorta.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtLCDescripcionCorta.Location = new System.Drawing.Point(12, 38);
+            this.txtLCDescripcionCorta.Location = new System.Drawing.Point(109, 15);
             this.txtLCDescripcionCorta.MaxLength = 10;
             this.txtLCDescripcionCorta.Name = "txtLCDescripcionCorta";
             this.txtLCDescripcionCorta.Requerido = Controles.util.Enumerados.enumRequerido.NO;
@@ -90,7 +92,7 @@
             // lblFechaCarga
             // 
             this.lblFechaCarga.AutoSize = true;
-            this.lblFechaCarga.Location = new System.Drawing.Point(6, 176);
+            this.lblFechaCarga.Location = new System.Drawing.Point(9, 107);
             this.lblFechaCarga.Name = "lblFechaCarga";
             this.lblFechaCarga.Size = new System.Drawing.Size(76, 13);
             this.lblFechaCarga.TabIndex = 32;
@@ -108,7 +110,7 @@
             // dtpFechaCarga
             // 
             this.dtpFechaCarga.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaCarga.Location = new System.Drawing.Point(6, 192);
+            this.dtpFechaCarga.Location = new System.Drawing.Point(109, 100);
             this.dtpFechaCarga.Name = "dtpFechaCarga";
             this.dtpFechaCarga.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.dtpFechaCarga.Size = new System.Drawing.Size(224, 20);
@@ -119,7 +121,7 @@
             this.txtLCDescripcion.BackColor = System.Drawing.Color.White;
             this.txtLCDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtLCDescripcion.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtLCDescripcion.Location = new System.Drawing.Point(12, 77);
+            this.txtLCDescripcion.Location = new System.Drawing.Point(109, 53);
             this.txtLCDescripcion.MaxLength = 30;
             this.txtLCDescripcion.Multiline = true;
             this.txtLCDescripcion.Name = "txtLCDescripcion";
@@ -142,16 +144,16 @@
             // 
             this.gesGroup2.Controls.Add(this.btnCancelar);
             this.gesGroup2.Controls.Add(this.btnAceptar);
-            this.gesGroup2.Location = new System.Drawing.Point(12, 259);
+            this.gesGroup2.Location = new System.Drawing.Point(179, 191);
             this.gesGroup2.Name = "gesGroup2";
-            this.gesGroup2.Size = new System.Drawing.Size(243, 89);
+            this.gesGroup2.Size = new System.Drawing.Size(178, 89);
             this.gesGroup2.TabIndex = 5;
             this.gesGroup2.TabStop = false;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(12, 19);
+            this.btnCancelar.Location = new System.Drawing.Point(6, 19);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 60);
             this.btnCancelar.TabIndex = 77;
@@ -161,18 +163,27 @@
             // btnAceptar
             // 
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
-            this.btnAceptar.Location = new System.Drawing.Point(156, 19);
+            this.btnAceptar.Location = new System.Drawing.Point(92, 19);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(80, 60);
             this.btnAceptar.TabIndex = 5;
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // lblEtiqueta1
+            // 
+            this.lblEtiqueta1.AutoSize = true;
+            this.lblEtiqueta1.Location = new System.Drawing.Point(9, 146);
+            this.lblEtiqueta1.Name = "lblEtiqueta1";
+            this.lblEtiqueta1.Size = new System.Drawing.Size(43, 13);
+            this.lblEtiqueta1.TabIndex = 40;
+            this.lblEtiqueta1.Text = "Estado:";
+            // 
             // frmLecturasConceptosCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(263, 357);
+            this.ClientSize = new System.Drawing.Size(367, 288);
             this.Controls.Add(this.gesGroup2);
             this.Controls.Add(this.gbDatos);
             this.Name = "frmLecturasConceptosCrud";
@@ -198,5 +209,6 @@
         private Controles.contenedores.gesGroup gesGroup2;
         private Controles.buttons.btnCancelar btnCancelar;
         private Controles.buttons.btnAceptar btnAceptar;
+        private Controles.labels.lblEtiqueta lblEtiqueta1;
     }
 }

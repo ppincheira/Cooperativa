@@ -9,6 +9,7 @@ namespace Model {
         public Domicilios() { }
         public virtual long DomCodigo { get; set; }
         public virtual int LocNumero { get; set; }
+        public virtual long BarNumero { get; set; }
         public virtual long CalNumero { get; set; }
         public virtual long CalNumeroDesde { get; set; }
         public virtual long CalNumeroHasta { get; set; }

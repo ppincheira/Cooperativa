@@ -85,7 +85,12 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
 
         }
@@ -99,7 +104,12 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
         }
 
@@ -119,7 +129,12 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
             }
 
         }

@@ -1,4 +1,5 @@
 ﻿using Controles.datos;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,8 @@ namespace AppProcesos.gesServicios.frmLecturasModosCrud
         int usrCodigo { get; set; }                                //Y
         string estCodigo { get; set; }                             //N
         grdGrillaEdit conceptos { get; set; }
+
+        void cargarGrilla(LecturasConceptos olc, int rows);
+
     }
 }

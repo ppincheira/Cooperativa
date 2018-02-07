@@ -8,6 +8,11 @@ namespace Controles.datos
 {
     public  class grdGrillaAdmin : gesGrid
     {
-    
+
+        public grdGrillaAdmin() {
+
+            SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+        }
+
     }
 }

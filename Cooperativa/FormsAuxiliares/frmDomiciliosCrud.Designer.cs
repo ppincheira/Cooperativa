@@ -34,6 +34,10 @@
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.gbDatos = new Controles.contenedores.gesGroup();
+            this.cmbTipo = new Controles.datos.cmbLista();
+            this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
+            this.cmbBarrio = new Controles.datos.cmbLista();
+            this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
             this.cmbCodigoPostal = new Controles.datos.cmbLista();
             this.lblEtiqueta11 = new Controles.labels.lblEtiqueta();
             this.cmbCalleHasta = new Controles.datos.cmbLista();
@@ -61,10 +65,7 @@
             this.lbLocalidad = new Controles.labels.lblEtiqueta();
             this.lbCalle = new Controles.labels.lblEtiqueta();
             this.epError = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cmbBarrio = new Controles.datos.cmbLista();
-            this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
-            this.cmbTipo = new Controles.datos.cmbLista();
-            this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
+            this.chkPorDefecto = new Controles.datos.chkBox();
             this.gesGroup2.SuspendLayout();
             this.gbDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
@@ -106,6 +107,7 @@
             // 
             // gbDatos
             // 
+            this.gbDatos.Controls.Add(this.chkPorDefecto);
             this.gbDatos.Controls.Add(this.cmbTipo);
             this.gbDatos.Controls.Add(this.lblEtiqueta3);
             this.gbDatos.Controls.Add(this.cmbBarrio);
@@ -144,6 +146,50 @@
             this.gbDatos.TabIndex = 2;
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = " ";
+            // 
+            // cmbTipo
+            // 
+            this.cmbTipo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbTipo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Location = new System.Drawing.Point(121, 56);
+            this.cmbTipo.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Requerido = Controles.util.Enumerados.enumRequerido.SI;
+            this.cmbTipo.Size = new System.Drawing.Size(250, 24);
+            this.cmbTipo.TabIndex = 39;
+            // 
+            // lblEtiqueta3
+            // 
+            this.lblEtiqueta3.AutoSize = true;
+            this.lblEtiqueta3.Location = new System.Drawing.Point(72, 60);
+            this.lblEtiqueta3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEtiqueta3.Name = "lblEtiqueta3";
+            this.lblEtiqueta3.Size = new System.Drawing.Size(40, 17);
+            this.lblEtiqueta3.TabIndex = 38;
+            this.lblEtiqueta3.Text = "Tipo:";
+            // 
+            // cmbBarrio
+            // 
+            this.cmbBarrio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbBarrio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbBarrio.FormattingEnabled = true;
+            this.cmbBarrio.Location = new System.Drawing.Point(440, 55);
+            this.cmbBarrio.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbBarrio.Name = "cmbBarrio";
+            this.cmbBarrio.Requerido = Controles.util.Enumerados.enumRequerido.SI;
+            this.cmbBarrio.Size = new System.Drawing.Size(250, 24);
+            this.cmbBarrio.TabIndex = 37;
+            // 
+            // lblEtiqueta2
+            // 
+            this.lblEtiqueta2.AutoSize = true;
+            this.lblEtiqueta2.Location = new System.Drawing.Point(387, 58);
+            this.lblEtiqueta2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEtiqueta2.Name = "lblEtiqueta2";
+            this.lblEtiqueta2.Size = new System.Drawing.Size(50, 17);
+            this.lblEtiqueta2.TabIndex = 36;
+            this.lblEtiqueta2.Text = "Barrio:";
             // 
             // cmbCodigoPostal
             // 
@@ -460,49 +506,16 @@
             // 
             this.epError.ContainerControl = this;
             // 
-            // cmbBarrio
+            // chkPorDefecto
             // 
-            this.cmbBarrio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbBarrio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbBarrio.FormattingEnabled = true;
-            this.cmbBarrio.Location = new System.Drawing.Point(440, 55);
-            this.cmbBarrio.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbBarrio.Name = "cmbBarrio";
-            this.cmbBarrio.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.cmbBarrio.Size = new System.Drawing.Size(250, 24);
-            this.cmbBarrio.TabIndex = 37;
-            // 
-            // lblEtiqueta2
-            // 
-            this.lblEtiqueta2.AutoSize = true;
-            this.lblEtiqueta2.Location = new System.Drawing.Point(387, 58);
-            this.lblEtiqueta2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEtiqueta2.Name = "lblEtiqueta2";
-            this.lblEtiqueta2.Size = new System.Drawing.Size(50, 17);
-            this.lblEtiqueta2.TabIndex = 36;
-            this.lblEtiqueta2.Text = "Barrio:";
-            // 
-            // cmbTipo
-            // 
-            this.cmbTipo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbTipo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(121, 56);
-            this.cmbTipo.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.cmbTipo.Size = new System.Drawing.Size(250, 24);
-            this.cmbTipo.TabIndex = 39;
-            // 
-            // lblEtiqueta3
-            // 
-            this.lblEtiqueta3.AutoSize = true;
-            this.lblEtiqueta3.Location = new System.Drawing.Point(72, 60);
-            this.lblEtiqueta3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEtiqueta3.Name = "lblEtiqueta3";
-            this.lblEtiqueta3.Size = new System.Drawing.Size(40, 17);
-            this.lblEtiqueta3.TabIndex = 38;
-            this.lblEtiqueta3.Text = "Tipo:";
+            this.chkPorDefecto.AutoSize = true;
+            this.chkPorDefecto.Location = new System.Drawing.Point(440, 22);
+            this.chkPorDefecto.Name = "chkPorDefecto";
+            this.chkPorDefecto.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.chkPorDefecto.Size = new System.Drawing.Size(105, 21);
+            this.chkPorDefecto.TabIndex = 6;
+            this.chkPorDefecto.Text = "Por Defecto";
+            this.chkPorDefecto.UseVisualStyleBackColor = true;
             // 
             // frmDomiciliosCrud
             // 
@@ -560,5 +573,6 @@
         private Controles.labels.lblEtiqueta lblEtiqueta3;
         private Controles.datos.cmbLista cmbBarrio;
         private Controles.labels.lblEtiqueta lblEtiqueta2;
+        private Controles.datos.chkBox chkPorDefecto;
     }
 }

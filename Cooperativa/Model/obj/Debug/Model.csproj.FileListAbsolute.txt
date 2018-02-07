@@ -1,18 +1,27 @@
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\bin\Debug\Model.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\bin\Debug\Model.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.dll
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.pdb
-C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Model\bin\Debug\Model.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Model\bin\Debug\Model.pdb
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Model\obj\Debug\Model.dll
 D:\DESARROLLO\CoopeDesarrollo\Cooperativa\Cooperativa\Model\obj\Debug\Model.pdb
+<<<<<<< HEAD
+=======
+C:\GitHub\Cooperativa\Cooperativa\Model\bin\Debug\Model.dll
+C:\GitHub\Cooperativa\Cooperativa\Model\bin\Debug\Model.pdb
+C:\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.dll
+C:\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\bin\Debug\Model.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\bin\Debug\Model.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+>>>>>>> 4cb8eeaa5549f323c7f24492c3f21d8a5df95305
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Model\bin\Debug\Model.dll
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Model\bin\Debug\Model.pdb
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.dll
 C:\Users\Martin\Documents\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.pdb
+<<<<<<< HEAD
 C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\Model\bin\Debug\Model.dll
 C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\Model\bin\Debug\Model.pdb
 C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
@@ -23,3 +32,5 @@ C:\GitHub\Cooperativa\Cooperativa\Model\bin\Debug\Model.pdb
 C:\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.dll
 C:\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.pdb
+=======
+>>>>>>> 4cb8eeaa5549f323c7f24492c3f21d8a5df95305
