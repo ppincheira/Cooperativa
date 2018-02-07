@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Business;
+using FormsAuxiliares;
 using GesServicios.controles.forms;
 using Model;
 
@@ -91,7 +92,7 @@ namespace UI
             //Se instancia un objeto de la clase formulario admin al cual se le pasa por parametro el COD_TABLA
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "SRUT";
-            FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
             frmbus.ShowDialog();
         }
 
@@ -130,6 +131,7 @@ namespace UI
 
             FormsAuxiliares.frmClientesCrud frmCliente = new FormsAuxiliares.frmClientesCrud(0);
             frmCliente.Show();
+           
         }
 
 

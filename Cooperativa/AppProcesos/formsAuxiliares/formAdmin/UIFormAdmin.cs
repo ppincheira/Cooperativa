@@ -33,8 +33,8 @@ namespace AppProcesos.formsAuxiliares.formAdmin
         public void Inicializar(Admin oAdmin)
         {
             _Campo = "";
-            _filtroCampos = oAdmin.FiltroCampos!=null?oAdmin.FiltroCampos:"" ;
-            _filtroValores = oAdmin.FiltroValores != null?oAdmin.FiltroValores:"";
+            _filtroCampos = oAdmin.FiltroCampos != null ? oAdmin.FiltroCampos : "";
+            _filtroValores = oAdmin.FiltroValores != null ? oAdmin.FiltroValores : "";
             _dtCombo = new DataTable();
             _dtCombo.Columns.Add("DctColumna", typeof(string));
             _dtCombo.Columns.Add("DctDescripcion", typeof(string));
@@ -65,7 +65,7 @@ namespace AppProcesos.formsAuxiliares.formAdmin
                 }
             }
 
-            oUtil.CargarCombo(_vista.comboBuscar, _dtCombo, "DctColumna", "DctDescripcion" ,"SELECCIONE..");
+            oUtil.CargarCombo(_vista.comboBuscar, _dtCombo, "DctColumna", "DctDescripcion", "SELECCIONE..");
             if (_Campo.Length > 0)
                 _Campo = _Campo.Substring(0, _Campo.Length - 1);
             TablasBus oTablasBus = new TablasBus();
@@ -100,7 +100,7 @@ namespace AppProcesos.formsAuxiliares.formAdmin
         }
 
 
-          public void CargarGrilla(string tabla,string filtroCampo, string filtroValor)
+        public void CargarGrilla(string tabla, string filtroCampo, string filtroValor)
         {
             _filtroCampos = filtroCampo;
             _filtroValores = filtroValor;
@@ -138,7 +138,8 @@ namespace AppProcesos.formsAuxiliares.formAdmin
         public void Seleccion()
         {
             DataGridViewRow row = _vista.grilla.CurrentRow;
-            _vista.striRdoCodigo =row.Cells[0].Value.ToString();
+            if (row != null)
+                _vista.striRdoCodigo = row.Cells[0].Value.ToString();
         }
     }
 }
