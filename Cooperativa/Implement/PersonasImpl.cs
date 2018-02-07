@@ -21,6 +21,8 @@ namespace Implement
         private OracleCommand cmd;
         private DataSet ds;
         private int response;
+        private string sql;
+
         public int PersonasAdd(Personas oPersona)
         {
             try
@@ -30,37 +32,42 @@ namespace Implement
                 cn.Open();
                 // Clave Secuencia PRS_NUMERO
                 ds = new DataSet();
-                cmd = new OracleCommand("insert into Personas( PRS_NUMERO," +
-                                                             " PRS_APELLIDO, " +
-                                                             " PRS_NOMBRE," +
-                                                             " PRS_ESTADO_CIVIL," +
-                                                             " PRS_TIPO_DOC, " +
-                                                             " PRS_NUMERO_DOC, " +
-                                                             " PRS_SEXO, " +
-                                                             " PRS_FECHA_NACIMIENTO, " +
-                                                             " LOC_NUMERO_NACIMIENTO, " +
-                                                             " PRS_FECHA_INGRESO, " +
-                                                             " PRS_FECHA_BAJA, " +
-                                                             " EST_CODIGO, " +
-                                                             " PRS_MOTIVO_BAJA, " +
-                                                             " PRS_LEGAJO, " +
-                                                             " PRS_CUIL, " +
-                                                             " PRS_CARGO) " +
-                                                   "values( '" + oPersona.PrsApellido + "', '"
-                                                              + oPersona.PrsNombre + "', '"
-                                                              + oPersona.PrsEstadoCivil + "', '"
-                                                              + oPersona.PrsTipoDoc + "', '"
-                                                              + oPersona.PrsNumeroDoc + "', '"
-                                                              + oPersona.PrsSexo + "', '"
-                                                              + "TO_DATE('" + oPersona.PrsFechaNacimiento + "', 'DD/MM/YYYY HH24:MI:SS'), '"
-                                                              + oPersona.LocNumeroNacimiento + "', '"
-                                                              + "TO_DATE('" + oPersona.PrsFechaIngreso + "', 'DD/MM/YYYY HH24:MI:SS'), '"
-                                                              + "TO_DATE('" + oPersona.PrsFechaBaja + "', 'DD/MM/YYYY HH24:MI:SS'), '"
-                                                              + oPersona.EstCodigo + "', '"
-                                                              + oPersona.PrsMotivoBaja + "', '"
-                                                              + oPersona.PrsLegajo + "', '"
-                                                              + oPersona.PrsCuil + "', '"
-                                                              + oPersona.PrsCargo + "')", cn);
+                sql = "insert into Personas( PRS_NUMERO," +
+                                            " PRS_APELLIDO, " +
+                                            " PRS_NOMBRE," +
+                                            " PRS_ESTADO_CIVIL," +
+                                            " TID_CODIGO, " +
+                                            " PRS_DOCUMENTO_NUMERO, " +
+                                            " PRS_SEXO, " +
+                                            " PRS_FECHA_NACIMIENTO, " +
+                                            " LOC_NUMERO_NACIMIENTO, " +
+                                            " PRS_FECHA_INGRESO, " +
+                                            " PRS_FECHA_BAJA, " +
+                                            " EST_CODIGO, " +
+                                            " PRS_MOTIVO_BAJA, " +
+                                            " PRS_LEGAJO, " +
+                                            " PRS_CUIL, " +
+                                            " PRS_CARGO) " +
+                                "values(pkg_secuencias.fnc_prox_secuencia('PRS_NUMERO'),' "
+                                            + oPersona.PrsApellido + "', '"
+                                            + oPersona.PrsNombre + "', '"
+                                            + oPersona.PrsEstadoCivil + "', '"
+                                            + oPersona.PrsTipoDoc + "', '"
+                                            + oPersona.PrsNumeroDoc + "', '"
+                                            + oPersona.PrsSexo + "', "
+                                            + "TO_DATE('" + oPersona.PrsFechaNacimiento + "', 'DD/MM/YYYY HH24:MI:SS'), '"
+                                            + oPersona.LocNumeroNacimiento + "', "
+                                            + "TO_DATE('" + oPersona.PrsFechaIngreso + "', 'DD/MM/YYYY HH24:MI:SS'), "
+                                            + "TO_DATE('" + oPersona.PrsFechaBaja + "', 'DD/MM/YYYY HH24:MI:SS'), '"
+                                            + oPersona.EstCodigo + "', '"
+                                            + oPersona.PrsMotivoBaja + "', '"
+                                            + oPersona.PrsLegajo + "', '"
+                                            + oPersona.PrsCuil + "', '"
+                                            + oPersona.PrsCargo + "')";
+                Console.WriteLine("sql");
+                Console.WriteLine("sql  " + sql);
+                Console.WriteLine("sql");
+                cmd = new OracleCommand(sql, cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -80,23 +87,27 @@ namespace Implement
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
                 ds = new DataSet();
-                cmd = new OracleCommand("update Personas SET " +
-                                                "PRS_APELLIDO='" + oPersona.PrsApellido + "'," +
-                                                "PRS_NOMBRE='" + oPersona.PrsNombre + "'," +
-                                                "PRS_ESTADO_CIVIL='" + oPersona.PrsEstadoCivil + "'," +
-                                                "PRS_TIPO_DOC='" + oPersona.PrsTipoDoc + "'," +
-                                                "PRS_NUMERO_DOC='" + oPersona.PrsNumeroDoc + "'," +
-                                                "PRS_SEXO='" + oPersona.PrsSexo + "'," +
-                                                "PRS_FECHA_NACIMIENTO=TO_DATE('" + oPersona.PrsFechaNacimiento + "', 'DD/MM/YYYY HH24:MI:SS'), " +
-                                                "LOC_NUMERO_NACIMIENTO='" + oPersona.LocNumeroNacimiento + "', " +
-                                                "PRS_FECHA_INGRESO=TO_DATE('" + oPersona.PrsFechaIngreso + "', 'DD/MM/YYYY HH24:MI:SS'), " +
-                                                "PRS_FECHA_BAJA=TO_DATE('" + oPersona.PrsFechaBaja + "', 'DD/MM/YYYY HH24:MI:SS'), " +
-                                                "EST_CODIGO='" + oPersona.EstCodigo + "'," +
-                                                "PRS_MOTIVO_BAJA='" + oPersona.PrsMotivoBaja + "'," +
-                                                "PRS_LEGAJO='" + oPersona.PrsLegajo + "', " +
-                                                "PRS_CUIL='" + oPersona.PrsCuil + "'," +
-                                                "PRS_CARGO='" + oPersona.PrsCargo + "' " +
-                                          "WHERE PRS_NUMERO='" + oPersona.PrsNumero + "' ", cn);
+                sql = "update Personas SET " +
+                                "PRS_APELLIDO='" + oPersona.PrsApellido + "'," +
+                                "PRS_NOMBRE='" + oPersona.PrsNombre + "'," +
+                                "PRS_ESTADO_CIVIL='" + oPersona.PrsEstadoCivil + "'," +
+                                "TID_CODIGO='" + oPersona.PrsTipoDoc + "'," +
+                                "PRS_DOCUMENTO_NUMERO='" + oPersona.PrsNumeroDoc + "'," +
+                                "PRS_SEXO='" + oPersona.PrsSexo + "'," +
+                                "PRS_FECHA_NACIMIENTO=TO_DATE('" + oPersona.PrsFechaNacimiento + "', 'DD/MM/YYYY HH24:MI:SS'), " +
+                                "LOC_NUMERO_NACIMIENTO='" + oPersona.LocNumeroNacimiento + "', " +
+                                "PRS_FECHA_INGRESO=TO_DATE('" + oPersona.PrsFechaIngreso + "', 'DD/MM/YYYY HH24:MI:SS'), " +
+                                "PRS_FECHA_BAJA=TO_DATE('" + oPersona.PrsFechaBaja + "', 'DD/MM/YYYY HH24:MI:SS'), " +
+                                "EST_CODIGO='" + oPersona.EstCodigo + "'," +
+                                "PRS_MOTIVO_BAJA='" + oPersona.PrsMotivoBaja + "'," +
+                                "PRS_LEGAJO='" + oPersona.PrsLegajo + "', " +
+                                "PRS_CUIL='" + oPersona.PrsCuil + "'," +
+                                "PRS_CARGO='" + oPersona.PrsCargo + "' " +
+                        "WHERE PRS_NUMERO='" + oPersona.PrsNumero + "' ";
+                Console.WriteLine("sql");
+                Console.WriteLine("sql  " + sql);
+                Console.WriteLine("sql");
+                cmd = new OracleCommand(sql, cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
                 cn.Close();
@@ -203,9 +214,8 @@ namespace Implement
                 oObjeto.PrsApellido = dr["PRS_APELLIDO"].ToString();
                 oObjeto.PrsNombre = dr["PRS_NOMBRE"].ToString();
                 oObjeto.PrsEstadoCivil = dr["PRS_ESTADO_CIVIL"].ToString();
-                oObjeto.PrsTipoDoc = dr["PRS_TIPO_DOC"].ToString();
-                oObjeto.PrsNumeroDoc = dr["PRS_NUMERO_DOC"].ToString();
-                oObjeto.PrsTipoDoc = dr["PRS_TIPO_DOC"].ToString();
+                oObjeto.PrsTipoDoc = dr["TID_CODIGO"].ToString();
+                oObjeto.PrsNumeroDoc = dr["PRS_DOCUMENTO_NUMERO"].ToString();
                 oObjeto.PrsSexo = dr["PRS_SEXO"].ToString();
                 if (dr["PRS_FECHA_NACIMIENTO"].ToString() != "")
                     oObjeto.PrsFechaNacimiento = DateTime.Parse(dr["PRS_FECHA_NACIMIENTO"].ToString());
@@ -216,11 +226,14 @@ namespace Implement
                 if (dr["PRS_FECHA_BAJA"].ToString() != "")
                     oObjeto.PrsFechaBaja = DateTime.Parse(dr["PRS_FECHA_BAJA"].ToString());
                 oObjeto.EstCodigo = dr["EST_CODIGO"].ToString();
-                oObjeto.PrsMotivoBaja = dr["PRS_MOTIVO_BAJA"].ToString();
+                if (dr["PRS_MOTIVO_BAJA"].ToString() != "")
+                    oObjeto.PrsMotivoBaja = dr["PRS_MOTIVO_BAJA"].ToString();
                 if (dr["PRS_LEGAJO"].ToString() != "")
                     oObjeto.PrsLegajo = dr["PRS_LEGAJO"].ToString();
-                oObjeto.PrsCuil = dr["PRS_CUIL"].ToString();
-                oObjeto.PrsCargo = dr["PRS_CARGO"].ToString();
+                if (dr["PRS_CUIL"].ToString() != "")
+                    oObjeto.PrsCuil = dr["PRS_CUIL"].ToString();
+                if (dr["PRS_CARGO"].ToString() != "")
+                    oObjeto.PrsCargo = dr["PRS_CARGO"].ToString();
                 return oObjeto;
             }
             catch (Exception ex)
