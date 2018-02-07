@@ -45,10 +45,6 @@
             this.lblEFechaDesde = new Controles.labels.lblEtiqueta();
             this.dtpFechaHasta = new Controles.Fecha.dtpFecha();
             this.dtpFechaDesde = new Controles.Fecha.dtpFecha();
-            this.txtFiltro = new Controles.txtFiltro();
-            this.cmbBuscar = new System.Windows.Forms.ComboBox();
-            this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
-            this.lblFiltro = new Controles.labels.lblEtiqueta();
             this.gpbGrupo4 = new Controles.contenedores.gpbGrupo();
             this.dgBusqueda = new Controles.datos.grdGrillaAdmin();
             this.lblCantidad = new Controles.labels.lblEtiqueta();
@@ -60,10 +56,10 @@
             this.btnAccionesSuministros2 = new Controles.buttons.btnAccionesSuministros();
             this.btnAccionesSuministros1 = new Controles.buttons.btnAccionesSuministros();
             this.gpbFiltro = new Controles.contenedores.gpbGrupo();
-            this.txtFiltro1 = new Controles.txtFiltro();
-            this.cmbLista1 = new Controles.datos.cmbLista();
-            this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
-            this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
+            this.txtFiltro = new Controles.txtFiltro();
+            this.cmbBuscar = new Controles.datos.cmbLista();
+            this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
+            this.lblFiltro = new Controles.labels.lblEtiqueta();
             this.gpbGrupoEstado.SuspendLayout();
             this.gpbGrupo3.SuspendLayout();
             this.gpbFecha.SuspendLayout();
@@ -242,44 +238,6 @@
             this.dtpFechaDesde.Size = new System.Drawing.Size(95, 20);
             this.dtpFechaDesde.TabIndex = 8;
             // 
-            // txtFiltro
-            // 
-            this.txtFiltro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFiltro.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtFiltro.Location = new System.Drawing.Point(86, 58);
-            this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtFiltro.Size = new System.Drawing.Size(289, 20);
-            this.txtFiltro.TabIndex = 3;
-            this.txtFiltro.TextoVacio = "<Descripcion>";
-            this.txtFiltro.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
-            // 
-            // cmbBuscar
-            // 
-            this.cmbBuscar.FormattingEnabled = true;
-            this.cmbBuscar.Location = new System.Drawing.Point(86, 14);
-            this.cmbBuscar.Name = "cmbBuscar";
-            this.cmbBuscar.Size = new System.Drawing.Size(289, 21);
-            this.cmbBuscar.TabIndex = 2;
-            // 
-            // lblEtiqueta2
-            // 
-            this.lblEtiqueta2.AutoSize = true;
-            this.lblEtiqueta2.Location = new System.Drawing.Point(6, 64);
-            this.lblEtiqueta2.Name = "lblEtiqueta2";
-            this.lblEtiqueta2.Size = new System.Drawing.Size(45, 13);
-            this.lblEtiqueta2.TabIndex = 1;
-            this.lblEtiqueta2.Text = "FILTRO";
-            // 
-            // lblFiltro
-            // 
-            this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(6, 22);
-            this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(78, 13);
-            this.lblFiltro.TabIndex = 0;
-            this.lblFiltro.Text = "FILTRAR POR";
-            // 
             // gpbGrupo4
             // 
             this.gpbGrupo4.Controls.Add(this.dgBusqueda);
@@ -354,16 +312,15 @@
             this.gpbGrupo2.Controls.Add(this.btnAccionesSuministros1);
             this.gpbGrupo2.Location = new System.Drawing.Point(943, 12);
             this.gpbGrupo2.Name = "gpbGrupo2";
-            this.gpbGrupo2.Size = new System.Drawing.Size(384, 460);
+            this.gpbGrupo2.Size = new System.Drawing.Size(358, 460);
             this.gpbGrupo2.TabIndex = 15;
             this.gpbGrupo2.TabStop = false;
             this.gpbGrupo2.Text = "Datos";
-            this.gpbGrupo2.Enter += new System.EventHandler(this.gpbGrupo2_Enter);
             // 
             // btnAccionesSuministros2
             // 
             this.btnAccionesSuministros2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccionesSuministros2.Location = new System.Drawing.Point(204, 24);
+            this.btnAccionesSuministros2.Location = new System.Drawing.Point(182, 23);
             this.btnAccionesSuministros2.Name = "btnAccionesSuministros2";
             this.btnAccionesSuministros2.Size = new System.Drawing.Size(170, 60);
             this.btnAccionesSuministros2.TabIndex = 1;
@@ -384,60 +341,61 @@
             // 
             // gpbFiltro
             // 
-            this.gpbFiltro.Controls.Add(this.txtFiltro1);
-            this.gpbFiltro.Controls.Add(this.cmbLista1);
-            this.gpbFiltro.Controls.Add(this.lblEtiqueta1);
-            this.gpbFiltro.Controls.Add(this.lblEtiqueta3);
-            this.gpbFiltro.Location = new System.Drawing.Point(35, 20);
+            this.gpbFiltro.Controls.Add(this.txtFiltro);
+            this.gpbFiltro.Controls.Add(this.cmbBuscar);
+            this.gpbFiltro.Controls.Add(this.lblEtiqueta2);
+            this.gpbFiltro.Controls.Add(this.lblFiltro);
+            this.gpbFiltro.Location = new System.Drawing.Point(7, 14);
             this.gpbFiltro.Name = "gpbFiltro";
-            this.gpbFiltro.Size = new System.Drawing.Size(309, 74);
+            this.gpbFiltro.Size = new System.Drawing.Size(386, 101);
             this.gpbFiltro.TabIndex = 16;
             this.gpbFiltro.TabStop = false;
             // 
-            // txtFiltro1
+            // txtFiltro
             // 
-            this.txtFiltro1.BackColor = System.Drawing.Color.White;
-            this.txtFiltro1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFiltro1.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtFiltro1.Location = new System.Drawing.Point(86, 41);
-            this.txtFiltro1.Name = "txtFiltro1";
-            this.txtFiltro1.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtFiltro1.Size = new System.Drawing.Size(208, 20);
-            this.txtFiltro1.TabIndex = 3;
-            this.txtFiltro1.TextoVacio = "<Descripcion>";
-            this.txtFiltro1.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            this.txtFiltro.BackColor = System.Drawing.Color.White;
+            this.txtFiltro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFiltro.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtFiltro.Location = new System.Drawing.Point(105, 58);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtFiltro.Size = new System.Drawing.Size(256, 20);
+            this.txtFiltro.TabIndex = 3;
+            this.txtFiltro.TextoVacio = "<Descripcion>";
+            this.txtFiltro.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
-            // cmbLista1
+            // cmbBuscar
             // 
-            this.cmbLista1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbLista1.FormattingEnabled = true;
-            this.cmbLista1.Location = new System.Drawing.Point(86, 14);
-            this.cmbLista1.Name = "cmbLista1";
-            this.cmbLista1.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.cmbLista1.Size = new System.Drawing.Size(208, 21);
-            this.cmbLista1.TabIndex = 2;
+            this.cmbBuscar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbBuscar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbBuscar.FormattingEnabled = true;
+            this.cmbBuscar.Location = new System.Drawing.Point(105, 16);
+            this.cmbBuscar.Name = "cmbBuscar";
+            this.cmbBuscar.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.cmbBuscar.Size = new System.Drawing.Size(256, 21);
+            this.cmbBuscar.TabIndex = 2;
             // 
-            // lblEtiqueta1
+            // lblEtiqueta2
             // 
-            this.lblEtiqueta1.AutoSize = true;
-            this.lblEtiqueta1.Location = new System.Drawing.Point(6, 48);
-            this.lblEtiqueta1.Name = "lblEtiqueta1";
-            this.lblEtiqueta1.Size = new System.Drawing.Size(45, 13);
-            this.lblEtiqueta1.TabIndex = 1;
-            this.lblEtiqueta1.Text = "FILTRO";
+            this.lblEtiqueta2.AutoSize = true;
+            this.lblEtiqueta2.Location = new System.Drawing.Point(42, 61);
+            this.lblEtiqueta2.Name = "lblEtiqueta2";
+            this.lblEtiqueta2.Size = new System.Drawing.Size(45, 13);
+            this.lblEtiqueta2.TabIndex = 1;
+            this.lblEtiqueta2.Text = "FILTRO";
             // 
-            // lblEtiqueta3
+            // lblFiltro
             // 
-            this.lblEtiqueta3.AutoSize = true;
-            this.lblEtiqueta3.Location = new System.Drawing.Point(6, 22);
-            this.lblEtiqueta3.Name = "lblEtiqueta3";
-            this.lblEtiqueta3.Size = new System.Drawing.Size(78, 13);
-            this.lblEtiqueta3.TabIndex = 0;
-            this.lblEtiqueta3.Text = "FILTRAR POR";
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(3, 19);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(78, 13);
+            this.lblFiltro.TabIndex = 0;
+            this.lblFiltro.Text = "FILTRAR POR";
             // 
             // frmSuministrosAdmin
             // 
-            this.ClientSize = new System.Drawing.Size(1339, 749);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.gpbFiltro);
             this.Controls.Add(this.gpbGrupo2);
             this.Controls.Add(this.gpbGrupo1);
@@ -481,10 +439,6 @@
         private Controles.labels.lblEtiqueta lblEFechaDesde;
         private Controles.Fecha.dtpFecha dtpFechaHasta;
         private Controles.Fecha.dtpFecha dtpFechaDesde;
-        private Controles.txtFiltro txtFiltro;
-        private System.Windows.Forms.ComboBox cmbBuscar;
-        private Controles.labels.lblEtiqueta lblEtiqueta2;
-        private Controles.labels.lblEtiqueta lblFiltro;
         private Controles.contenedores.gpbGrupo gpbGrupo4;
         private Controles.labels.lblEtiqueta lblCantidad;
         private Controles.contenedores.gpbGrupo gpbGrupo1;
@@ -497,9 +451,9 @@
         public Controles.datos.cmbLista cmbEstado;
         private Controles.datos.grdGrillaAdmin dgBusqueda;
         private Controles.contenedores.gpbGrupo gpbFiltro;
-        private Controles.txtFiltro txtFiltro1;
-        private Controles.datos.cmbLista cmbLista1;
-        private Controles.labels.lblEtiqueta lblEtiqueta1;
-        private Controles.labels.lblEtiqueta lblEtiqueta3;
+        private Controles.txtFiltro txtFiltro;
+        private Controles.datos.cmbLista cmbBuscar;
+        private Controles.labels.lblEtiqueta lblEtiqueta2;
+        private Controles.labels.lblEtiqueta lblFiltro;
     }
 }

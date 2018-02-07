@@ -136,9 +136,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="controles\forms\Form1.resx">
-      <DependentUpon>frmSuministrosCrud.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="controles\forms\frmSuministrosAdmin.resx">
       <DependentUpon>frmSuministrosAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controles\forms\frmRutasCrud.resx">
       <DependentUpon>frmRutasCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmSuministrosCrud.resx">
+      <DependentUpon>frmSuministrosCrud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controles\forms\frmTiposConexionesCrud.resx">
       <DependentUpon>frmTiposConexionesCrud.cs</DependentUpon>
