@@ -124,12 +124,13 @@ namespace UI
 
         private void btnPersonalizado7_Click(object sender, EventArgs e)
         {
-            //FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            //FormsAuxiliares.frmFormAdminMini frmbus = new FormsAuxiliares.frmFormAdminMini("CLIB", oPermiso);
-            //frmbus.ShowDialog();
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "CLIE";
+            FormsAuxiliares.frmFormAdmin frmAdmin = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
+            frmAdmin.ShowDialog();
 
-            FormsAuxiliares.frmClientesCrud frmCliente = new FormsAuxiliares.frmClientesCrud(0);
-            frmCliente.Show();
+
         }
 
 

@@ -130,10 +130,12 @@ namespace FormsAuxiliares
                         this.dgBusqueda.Columns["DEFECTO"].Visible = false;
                         _oFormAdmin.MarcarSeleccion(_oAdmin.TabCodigo);
                         break;
-
-
-
                 }
+
+                if (_oAdmin.Tipo == enumTipoForm.FiltroAndAlta)
+                {
+                    Nuevo();
+                }               
             }
             catch (Exception ex)
             {
@@ -253,8 +255,6 @@ namespace FormsAuxiliares
             try
             {
                 _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
-
-
             }
             catch (Exception ex)
             {
@@ -322,8 +322,7 @@ namespace FormsAuxiliares
                                 e.ToString(),
                                 ((Control)sender).Name,
                                 this.FindForm().Name);
-            }
-             
+            }   
         }
         #endregion
         #region << METODOS >>
@@ -341,6 +340,20 @@ namespace FormsAuxiliares
             switch (_oAdmin.Tipo)
             {
                 case enumTipoForm.Selector:
+                    if (_strRdoCodigo != "")
+                        DialogResult = DialogResult.OK; //cierra el formulario    
+                    else
+                        DialogResult = DialogResult.No;
+                    this.Close();
+                    break;
+                case enumTipoForm.FiltroAndAlta:
+                    if (_strRdoCodigo != "")
+                        DialogResult = DialogResult.OK; //cierra el formulario    
+                    else
+                        DialogResult = DialogResult.No;
+                    this.Close();
+                    break;
+                case enumTipoForm.FiltroAndEditar:
                     if (_strRdoCodigo != "")
                         DialogResult = DialogResult.OK; //cierra el formulario    
                     else
@@ -365,7 +378,6 @@ namespace FormsAuxiliares
                 case "SRUT":
 
                     frmRutasCrud oFrmRutCrud = new frmRutasCrud(0, "H");
-
                     if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
@@ -408,11 +420,15 @@ namespace FormsAuxiliares
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
                 case "TETE":
-                    frmTelefonosCrud ofrmTel = new frmTelefonosCrud(0, _oAdmin.TabCodigo, _oAdmin.CodigoRegistro, "I");
-                    if (ofrmTel.ShowDialog() == DialogResult.OK)
+                    frmTelefonosCrud oFrmTel = new frmTelefonosCrud(0, _oAdmin.TabCodigo, _oAdmin.CodigoRegistro, "I");
+                    if (oFrmTel.ShowDialog() == DialogResult.OK)
                         _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
                     break;
-
+                case "TEEM":
+                    frmTelefonosCrud oFrmTeem = new frmTelefonosCrud(0, _oAdmin.TabCodigo, _oAdmin.CodigoRegistro, "I");
+                    if (oFrmTeem.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    break;
             }
 
         }

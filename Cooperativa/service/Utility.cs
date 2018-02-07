@@ -51,6 +51,8 @@ namespace Service
             combo.DisplayMember = Text;
         }
 
+
+
         public void borrarContenidoControles(Control contenedor)
         {
             foreach (Control control in contenedor.Controls)

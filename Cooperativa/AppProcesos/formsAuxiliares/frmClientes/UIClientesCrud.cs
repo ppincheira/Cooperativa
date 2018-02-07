@@ -22,21 +22,70 @@ namespace AppProcesos.formsAuxiliares.frmClientes
             oUtil = new Utility();
         }
 
-
-        public void Inicializar()
+        public void ObtenerId(long empNumero)
         {
+            if (empNumero == 0)
+            {
+                EmpresasBus oEmpBus = new EmpresasBus();
+                _vista.empNumero = oEmpBus.EmpresasGetID();
+            }
+        }
+
+        public void Inicializar(long empNumero, Enumeration.Acciones oAccion )
+        {
+
             CargarTipoIva();
             CargarEstadoCredito();
             CargarTiposDni();
+            _vista.lgCodigoDomicilio = 0;
+            _vista.lgCodigoEmail = 0;
+            _vista.lgCodigoTelefono = 0;
+            _vista.lgCodigoObservacion = 0;
+            if (oAccion !=Enumeration.Acciones.New)
+            {
+                EmpresasBus oEmpBus = new EmpresasBus();
+                Empresas oEmpresa = new Empresas();
+                oEmpresa = oEmpBus.EmpresasGetById(empNumero);
+                _vista.cmbiEstadoCredito.SelectedValue = oEmpresa.EstCodigoCredito;
+                _vista.cmbiTipoDocumento.SelectedValue = oEmpresa.TidCodigo;
+                _vista.cmbiTipoIva.SelectedValue = oEmpresa.TivCodigo;
+                _vista.dblLimiteCredito = oEmpresa.EmpLimiteCredito;
+                _vista.dtpiFechaAlta.Value = oEmpresa.EmpFechaAlta.Value;
+                _vista.dtpiFechaAltaCli.Value = oEmpresa.EmpFechaAltaCli.Value;
+                _vista.dtpiFechaAltaPro.Value = oEmpresa.EmpFechaAltaPro;
+                _vista.dtpiFechaBajaCli.Value = oEmpresa.EmpFechaBajaCli.Value;
+                _vista.dtpiFechaBajaPro.Value = oEmpresa.EmpFechaBajaPro.Value;
+                _vista.empNumero = empNumero;
+                _vista.intNumeroTransporte = oEmpresa.EmpNumeroTransporte;
+                _vista.strApellido = oEmpresa.EmpApellidos;
+                _vista.strCategoriaMonotributo = oEmpresa.EmpCategoriaMonotributo;
+                _vista.strCliente = oEmpresa.EmpCliente;
+                _vista.strCuit = oEmpresa.EmpCuit;
+                _vista.strDenominacionComercial = oEmpresa.EmpDenominacionComercial;
+                  
+                _vista.strDomicilio = "";//aca se carga el domicilio
+                _vista.strEmail = "";//aca se carga el Emai
+                _vista.strNombre = oEmpresa.EmpNombres;
+                _vista.strNroDocumento = oEmpresa.EmpDocumentoNumero;
+                _vista.strObservacion = "";//aca van las observaciones
+                _vista.strPropia = oEmpresa.EmpPropia;
+                _vista.strProveedor = oEmpresa.EmpProveedor;
+                _vista.strRazonSocial = oEmpresa.EmpRazonSocial;
+                _vista.strTelefono = "";//aca van los telefonos
+                _vista.strTitularCheques = oEmpresa.EmpTitularCheques;
+                
+                
+            }
         }
+
+        
 
         public void CargarTelefonos(long id)
         {
             Telefonos oTelefono = new Telefonos();
             TelefonosBus oTelefonoBus = new TelefonosBus();
             oTelefono = oTelefonoBus.TelefonosGetById( id);
-            _vista.strTelefono = oTelefono.TelCodigo + " - " + oTelefono.TelNumero;
-
+            _vista.strTelefono =  oTelefono.TelNumero +" - "+ oTelefono.TelCargo;
         }
 
         public void CargarEmail(long id)
@@ -47,17 +96,23 @@ namespace AppProcesos.formsAuxiliares.frmClientes
             _vista.strEmail = oTelefono.TelEmail;
         }
 
-        public void CargarObservaciones(long id)
+        public void CargarDomicilio(long CodigoRegistro,string tabCodigo)
         {
-            Domicilios oDomicilio = new Domicilios();
             DomiciliosBus oDomicilioBus = new DomiciliosBus();
-            oDomicilio = oDomicilioBus.DomiciliosGetById(id);
+            Domicilios oDomicilio = new Domicilios();
+            oDomicilio = oDomicilioBus.DomiciliosGetByCodigoRegistroDefecto(CodigoRegistro, tabCodigo);
             CallesLocalidadesBus oCalleBus = new CallesLocalidadesBus();
             _vista.strDomicilio = oCalleBus.CallesLocalidadesGetById(oDomicilio.CalNumero).CalDescripcion + " Nro.: " + oDomicilio.DomNumero + " "
                 + " Dpto:" + oDomicilio.DomDepartamento;
 
-
-
+        }
+        
+        public void CargarObservaciones(long id)
+        {
+            ObservacionesBus oObsBus = new ObservacionesBus();
+            Observaciones oObs = new Observaciones();
+            oObs = oObsBus.ObservacionesGetById(id);
+            _vista.strObservacion = oObs.ObsDetalle;
         }
 
 
@@ -76,7 +131,41 @@ namespace AppProcesos.formsAuxiliares.frmClientes
         private void CargarTiposDni()
         {
             TiposIdentificadoresBus oTipoIdentificadoresBus = new TiposIdentificadoresBus();
-            oUtil.CargarCombo(_vista.cmbiTipoDocumento, oTipoIdentificadoresBus.TiposIdentificadoresGetAllDT(), "tid_codigo", "tid_codigo", "..");
+            oUtil.CargarCombo(_vista.cmbiTipoDocumento, oTipoIdentificadoresBus.TiposIdentificadoresGetAllDT(), "tid_codigo", "tid_descripcion", "..");
+        }
+
+        public void Guardar()
+        {
+            Empresas oEmpresa = new Empresas();
+            EmpresasBus oEmpresaBus = new EmpresasBus();
+            oEmpresa.EmpApellidos = _vista.strApellido;
+            oEmpresa.EmpCategoriaMonotributo = _vista.strCategoriaMonotributo;
+            oEmpresa.EmpCliente = _vista.strCliente;
+            oEmpresa.EmpCuit = _vista.strCuit;
+            oEmpresa.EmpDenominacionComercial = _vista.strDenominacionComercial;
+            oEmpresa.EmpDocumentoNumero = _vista.strNroDocumento;
+            oEmpresa.EmpFechaAlta = _vista.dtpiFechaAlta.Value;
+            oEmpresa.EmpFechaAltaCli = _vista.dtpiFechaAltaCli.Value;
+            oEmpresa.EmpFechaAltaPro = _vista.dtpiFechaAltaPro.Value;
+            oEmpresa.EmpFechaBajaCli = _vista.dtpiFechaBajaCli.Value;
+            oEmpresa.EmpFechaBajaPro = _vista.dtpiFechaBajaPro.Value;
+            oEmpresa.EmpLimiteCredito = _vista.dblLimiteCredito;
+            oEmpresa.EmpNombres = _vista.strNombre;
+            oEmpresa.EmpNumero = _vista.empNumero;
+            oEmpresa.EmpNumeroTransporte = _vista.intNumeroTransporte;
+            oEmpresa.EmpObservacion = _vista.strObservacion;
+            oEmpresa.EmpPropia = _vista.strPropia;
+            oEmpresa.EmpProveedor = _vista.strProveedor;
+            oEmpresa.EmpRazonSocial = _vista.strRazonSocial;
+            oEmpresa.EmpTitularCheques = _vista.strTitularCheques;
+            oEmpresa.EstCodigoCli = "";
+            oEmpresa.EstCodigoCredito = _vista.cmbiEstadoCredito.SelectedValue.ToString();
+            oEmpresa.EstCodigoPro = "";
+            oEmpresa.PrsNumero = 1;//falta definir
+            oEmpresa.TidCodigo = _vista.cmbiTipoDocumento.SelectedValue.ToString();
+            oEmpresa.TivCodigo = _vista.cmbiTipoIva.SelectedValue.ToString();
+            oEmpresa.UsrNumeroCarga = 1;//Falta definir
+            oEmpresaBus.EmpresasAdd(oEmpresa);
         }
 
     }

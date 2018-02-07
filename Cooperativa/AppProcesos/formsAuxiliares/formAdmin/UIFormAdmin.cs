@@ -32,6 +32,7 @@ namespace AppProcesos.formsAuxiliares.formAdmin
 
         public void Inicializar(Admin oAdmin)
         {
+            
             _Campo = "";
             _filtroCampos = oAdmin.FiltroCampos!=null?oAdmin.FiltroCampos:"" ;
             _filtroValores = oAdmin.FiltroValores != null?oAdmin.FiltroValores:"";

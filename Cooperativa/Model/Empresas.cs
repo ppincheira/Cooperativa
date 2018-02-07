@@ -38,7 +38,7 @@ namespace Model
         public virtual string EstCodigoCli { get; set; }
         public virtual double? EmpLimiteCredito { get; set; }
         public virtual string EstCodigoCredito { get; set; }
-        public virtual long? EmpNumeroTransporte { get; set; }
+        public virtual int? EmpNumeroTransporte { get; set; }
         public virtual int? PrsNumero { get; set; }
        /* public virtual IList<Accionista> Accionistas { get; set; }
         public virtual IList<Comprobante> Comprobantes { get; set; }

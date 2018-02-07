@@ -1,4 +1,5 @@
 ﻿using Controles.datos;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,7 @@ namespace AppProcesos.formsAuxiliares.frmObservaciones
 {
     public interface IVistaObservaciones
     {
-
-        string tabCodigo { get; set; }
-        int tobCodigo { get; set; }
-        string obsCodigoRegistro { get; set; }
+        AdminObs oAdminObs { get; set; }
         grdGrillaAdmin grilla { get; set; }
         DateTime fechaDesde { get; set; }
         DateTime fechaHasta { get; set; }
