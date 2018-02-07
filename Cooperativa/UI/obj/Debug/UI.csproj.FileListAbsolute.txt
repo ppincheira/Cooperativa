@@ -147,3 +147,5 @@ C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.G
 C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.exe
 C:\Users\nicoc\Documents\GitHub\Cooperativa\Cooperativa\UI\obj\Debug\UI.pdb
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\GesConfiguracion.dll
+C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\UI\bin\Debug\GesConfiguracion.pdb

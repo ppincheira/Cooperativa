@@ -195,12 +195,14 @@ namespace FormsAuxiliares
 
 
 
-        public frmClientesCrud(long EmpNumero)
+        public frmClientesCrud(Int32 EmpNumero)
         {
             InitializeComponent();
             _EmpNumero = EmpNumero;
             if (EmpNumero == 0)
                 _Accion = Enumeration.Acciones.New;
+            else
+                _Accion = Enumeration.Acciones.Edit;
             _oClientesCrud = new UIClientesCrud(this);
         }
 
@@ -275,67 +277,37 @@ namespace FormsAuxiliares
             NuevoDomicilio();
         }
         private void txtDomicilio_TextChanged(object sender, EventArgs e)
-        {
-            if (_CodigoDomicilio != 0)
-                EditarDomicilio();
-            else
-                NuevoDomicilio();
+        { 
+        //    if (_CodigoDomicilio != 0)
+        //        EditarDomicilio();
+        //    else
+        //        NuevoDomicilio();
             
           }
 
         private void btnDomicilioI_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            Admin oAdmin = new Admin();
-            oAdmin.TabCodigo = "DOMB";
-            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
-            FormsAuxiliares.frmFormAdmin oFrmAdminMini = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
-            if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
-            {
-                string id = oFrmAdminMini.striRdoCodigo;
-                _oClientesCrud.CargarDomicilio(_EmpNumero,"CLIE");
-
-            }
+            NuevoDomicilio();
         }
         private void txtDomicilioI_TextChanged(object sender, EventArgs e)
         {
-            if (_CodigoDomicilio != 0)
-                EditarDomicilio();
-            else
-                NuevoDomicilio();
+            //if (_CodigoDomicilio != 0)
+            //    EditarDomicilio();
+            //else
+            //    NuevoDomicilio();
         }
 
 
         private void btnTelefono_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            Admin oAdmin = new Admin();
-            oAdmin.TabCodigo = "TETE";
-            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
-            FormsAuxiliares.frmFormAdminMini oFrmAdminMini = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
-            if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
-            {
-                string id = oFrmAdminMini.striRdoCodigo;
-                _oClientesCrud.CargarTelefonos(long.Parse(id));
-
-            }
+            NuevoTelefono();
             
         }
 
         private void btnEmail_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            Admin oAdmin = new Admin();
-            oAdmin.TabCodigo = "TEEM";
-            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
-            FormsAuxiliares.frmFormAdminMini oFrmAdminMini = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
-            if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
-            {
-                string id = oFrmAdminMini.striRdoCodigo;
-                _oClientesCrud.CargarEmail(long.Parse(id));
 
-            }
-
+            NuevoEmail();
         }
 
       
@@ -345,32 +317,11 @@ namespace FormsAuxiliares
         }
         private void btnTelefonosI_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            Admin oAdmin = new Admin();
-            oAdmin.TabCodigo = "TETE";
-            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
-            FormsAuxiliares.frmFormAdminMini oFrmAdminMini = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
-            if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
-            {
-                string id = oFrmAdminMini.striRdoCodigo;
-                _oClientesCrud.CargarTelefonos(long.Parse(id));
-            }
-           
+            NuevoTelefono();
         }
         private void btnEmailI_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-            Admin oAdmin = new Admin();
-            oAdmin.TabCodigo = "TEEM";
-            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
-            FormsAuxiliares.frmFormAdminMini oFrmAdminMini = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
-                
-            if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
-            {
-                string nombre = oFrmAdminMini.striRdoCodigo;
-
-            }
-           
+            NuevoEmail();
         }
 
         private void btnNuevaObs_Click(object sender, EventArgs e)
@@ -396,6 +347,10 @@ namespace FormsAuxiliares
             oAdmin.CodigoRegistro = _EmpNumero.ToString();
             oAdmin.CodigoEditar = _CodigoDomicilio.ToString();
             oAdmin.TabCodigoRegistro = "CLIE";
+            oAdmin.FiltroCampos = "DE.DEN_CODIGO_REGISTRO&";
+            oAdmin.FiltroValores = _EmpNumero.ToString()+"&";
+            
+
             FormsAuxiliares.frmFormAdmin oFrmAdminMini = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
             if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
             {
@@ -407,19 +362,73 @@ namespace FormsAuxiliares
         }
 
         private void NuevoDomicilio() { 
-        FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
-        Admin oAdmin = new Admin();
-        oAdmin.TabCodigo = "DOMB";
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "DOMB";
             oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
             oAdmin.CodigoRegistro = _EmpNumero.ToString();
             oAdmin.TabCodigoRegistro = "CLIE";
+            oAdmin.FiltroCampos = "DE.DEN_CODIGO_REGISTRO&";
+            oAdmin.FiltroValores = _EmpNumero.ToString()+"&";
             FormsAuxiliares.frmFormAdmin oFrmAdminMini = new FormsAuxiliares.frmFormAdmin(oAdmin, oPermiso);
             if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
             {
                 string id = oFrmAdminMini.striRdoCodigo;
                 _oClientesCrud.CargarDomicilio(_EmpNumero,"CLIE");
+            }
+        }
+
+        private void NuevoTelefono()
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            Admin oAdmin = new Admin();
+            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
+            oAdmin.TabCodigo = "TETE";
+            oAdmin.CodigoRegistro = _EmpNumero.ToString();
+            oAdmin.TabCodigoRegistro = "CLIE";
+            oAdmin.FiltroCampos = "TEL_CODIGO_REGISTRO&";
+            oAdmin.FiltroValores = _EmpNumero.ToString() + "&";
+            FormsAuxiliares.frmFormAdminMini oFrmAdminMini = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
+            {
+                string id = oFrmAdminMini.striRdoCodigo;
+                _oClientesCrud.CargarTelefonos(_EmpNumero,"CLIE");
+            }
+        }
+
+
+        private void EditarTelefono() {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            Admin oAdmin = new Admin();
+            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndEditar;
+            oAdmin.TabCodigo = "TETE";
+            oAdmin.CodigoRegistro = _EmpNumero.ToString();
+            oAdmin.TabCodigoRegistro = "CLIE";
+            oAdmin.FiltroCampos = "TEL_CODIGO_REGISTRO&";
+            oAdmin.FiltroValores = _EmpNumero.ToString() + "&";
+            FormsAuxiliares.frmFormAdminMini oFrmAdminMini = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
+            {
+                string id = oFrmAdminMini.striRdoCodigo;
+                _oClientesCrud.CargarTelefonos(_EmpNumero, "CLIE");
+            }
+        }
+
+        private void NuevoEmail()
+        {
+
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "TEEM";
+            oAdmin.Tipo = Admin.enumTipoForm.FiltroAndAlta;
+            FormsAuxiliares.frmFormAdminMini oFrmAdminMini = new FormsAuxiliares.frmFormAdminMini(oAdmin, oPermiso);
+            if (oFrmAdminMini.ShowDialog() == DialogResult.OK)
+            {
+                string id = oFrmAdminMini.striRdoCodigo;
+               // _oClientesCrud.CargarEmail(long.Parse(id));
 
             }
+
         }
 
     }

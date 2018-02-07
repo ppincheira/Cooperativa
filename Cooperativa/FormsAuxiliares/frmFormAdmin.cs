@@ -565,12 +565,12 @@ namespace FormsAuxiliares
                     case "MEM":
                         frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(id, "B", 1);
                         //if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                         break;
                     case "MED":
                         frmMedidoresCrud oFrmMedCrud = new frmMedidoresCrud(id, "B", 1);
                         //if (oFrmMedCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                            _oFormAdmin.CargarGrilla(_oAdmin);
                         break;
                 }
             }
@@ -594,7 +594,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                _oFormAdmin.CargarGrilla(_oAdmin);
             }
             catch (Exception ex)
             {
@@ -704,20 +704,20 @@ namespace FormsAuxiliares
                     frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(id, _oAdmin);
                     oFrmDomCrud.gbDatos.Enabled = false;
                     if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
 
                     break;
                 case "MEM":
                     frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(id, "H", 1);
                     //oFrmMedModCrud.txtOrdenRuta.Enabled = false;
                     if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "MED":
                     frmMedidoresCrud oFrmMedCrud = new frmMedidoresCrud(id, "H", 1);
                     oFrmMedCrud.gbDatos.Enabled = false;
                     if (oFrmMedCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "":
                     Console.WriteLine("Case 2");
@@ -736,22 +736,22 @@ namespace FormsAuxiliares
                     
                     frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(_oAdmin.CodigoEditar==null?0:long.Parse(_oAdmin.CodigoEditar), _oAdmin);
                     if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "MEM":
                     frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(0, "H", 1);
                     if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "MED":
                     frmMedidoresCrud oFrmMedCrud = new frmMedidoresCrud(0, "H", 1);
                     if (oFrmMedCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "CLIE":
                     frmClientesCrud oFrmCliente = new frmClientesCrud(0);
                     if (oFrmCliente.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "":
                     Console.WriteLine("Case 2");
@@ -765,6 +765,20 @@ namespace FormsAuxiliares
             switch (_oAdmin.Tipo)
             {
                 case enumTipoForm.Selector:
+                    if (_strRdoCodigo != "")
+                        DialogResult = DialogResult.OK; //cierra el formulario    
+                    else
+                        DialogResult = DialogResult.No;
+                    this.Close();
+                    break;
+                case enumTipoForm.FiltroAndAlta:
+                    if (_strRdoCodigo != "")
+                        DialogResult = DialogResult.OK; //cierra el formulario    
+                    else
+                        DialogResult = DialogResult.No;
+                    this.Close();
+                    break;
+                case enumTipoForm.FiltroAndEditar:
                     if (_strRdoCodigo != "")
                         DialogResult = DialogResult.OK; //cierra el formulario    
                     else
@@ -787,25 +801,25 @@ namespace FormsAuxiliares
                     long idDomicilio = Convert.ToInt64(row.Cells[0].Value);
                     frmDomiciliosCrud oFrmDomCrud = new frmDomiciliosCrud(idDomicilio, _oAdmin);
                     if (oFrmDomCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "MEM":
                     long idMedidor = Convert.ToInt64(row.Cells[0].Value);
                     frmMedidoresModelosCrud oFrmMedModCrud = new frmMedidoresModelosCrud(idMedidor, "H", 1);
                     if (oFrmMedModCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "MED":
                     long idMedidores = Convert.ToInt64(row.Cells[0].Value);
                     frmMedidoresCrud oFrmMedCrud = new frmMedidoresCrud(idMedidores, "H", 1);
                     if (oFrmMedCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "CLIE":
                     int idCliente = Convert.ToInt32(row.Cells[0].Value);
-                    frmClientesCrud oFrmCliente = new frmClientesCrud(0);
+                    frmClientesCrud oFrmCliente = new frmClientesCrud(idCliente);
                     if (oFrmCliente.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "":
                     Console.WriteLine("Case 2");

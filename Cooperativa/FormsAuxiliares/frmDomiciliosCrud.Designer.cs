@@ -34,6 +34,7 @@
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.gbDatos = new Controles.contenedores.gesGroup();
+            this.chkPorDefecto = new Controles.datos.chkBox();
             this.cmbTipo = new Controles.datos.cmbLista();
             this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
             this.cmbBarrio = new Controles.datos.cmbLista();
@@ -65,7 +66,6 @@
             this.lbLocalidad = new Controles.labels.lblEtiqueta();
             this.lbCalle = new Controles.labels.lblEtiqueta();
             this.epError = new System.Windows.Forms.ErrorProvider(this.components);
-            this.chkPorDefecto = new Controles.datos.chkBox();
             this.gesGroup2.SuspendLayout();
             this.gbDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
@@ -90,7 +90,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(107, 74);
-            this.btnCancelar.TabIndex = 14;
+            this.btnCancelar.TabIndex = 17;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -101,7 +101,7 @@
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(107, 74);
-            this.btnAceptar.TabIndex = 15;
+            this.btnAceptar.TabIndex = 18;
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
@@ -147,6 +147,17 @@
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = " ";
             // 
+            // chkPorDefecto
+            // 
+            this.chkPorDefecto.AutoSize = true;
+            this.chkPorDefecto.Location = new System.Drawing.Point(440, 22);
+            this.chkPorDefecto.Name = "chkPorDefecto";
+            this.chkPorDefecto.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.chkPorDefecto.Size = new System.Drawing.Size(105, 21);
+            this.chkPorDefecto.TabIndex = 2;
+            this.chkPorDefecto.Text = "Por Defecto";
+            this.chkPorDefecto.UseVisualStyleBackColor = true;
+            // 
             // cmbTipo
             // 
             this.cmbTipo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -157,7 +168,7 @@
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbTipo.Size = new System.Drawing.Size(250, 24);
-            this.cmbTipo.TabIndex = 39;
+            this.cmbTipo.TabIndex = 3;
             // 
             // lblEtiqueta3
             // 
@@ -179,7 +190,7 @@
             this.cmbBarrio.Name = "cmbBarrio";
             this.cmbBarrio.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbBarrio.Size = new System.Drawing.Size(250, 24);
-            this.cmbBarrio.TabIndex = 37;
+            this.cmbBarrio.TabIndex = 4;
             // 
             // lblEtiqueta2
             // 
@@ -201,7 +212,7 @@
             this.cmbCodigoPostal.Name = "cmbCodigoPostal";
             this.cmbCodigoPostal.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbCodigoPostal.Size = new System.Drawing.Size(309, 24);
-            this.cmbCodigoPostal.TabIndex = 10;
+            this.cmbCodigoPostal.TabIndex = 13;
             // 
             // lblEtiqueta11
             // 
@@ -223,7 +234,7 @@
             this.cmbCalleHasta.Name = "cmbCalleHasta";
             this.cmbCalleHasta.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbCalleHasta.Size = new System.Drawing.Size(250, 24);
-            this.cmbCalleHasta.TabIndex = 9;
+            this.cmbCalleHasta.TabIndex = 12;
             // 
             // cmbCalleDesde
             // 
@@ -235,7 +246,7 @@
             this.cmbCalleDesde.Name = "cmbCalleDesde";
             this.cmbCalleDesde.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbCalleDesde.Size = new System.Drawing.Size(250, 24);
-            this.cmbCalleDesde.TabIndex = 8;
+            this.cmbCalleDesde.TabIndex = 11;
             // 
             // lblEntre
             // 
@@ -268,7 +279,7 @@
             this.txtGisY.Name = "txtGisY";
             this.txtGisY.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtGisY.Size = new System.Drawing.Size(141, 22);
-            this.txtGisY.TabIndex = 13;
+            this.txtGisY.TabIndex = 16;
             this.txtGisY.TextoVacio = "<Descripcion>";
             this.txtGisY.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -293,7 +304,7 @@
             this.txtGisX.Name = "txtGisX";
             this.txtGisX.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtGisX.Size = new System.Drawing.Size(159, 22);
-            this.txtGisX.TabIndex = 12;
+            this.txtGisX.TabIndex = 15;
             this.txtGisX.TextoVacio = "<Descripcion>";
             this.txtGisX.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -307,8 +318,8 @@
             this.txtLote.MaxLength = 15;
             this.txtLote.Name = "txtLote";
             this.txtLote.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtLote.Size = new System.Drawing.Size(219, 22);
-            this.txtLote.TabIndex = 11;
+            this.txtLote.Size = new System.Drawing.Size(250, 22);
+            this.txtLote.TabIndex = 14;
             this.txtLote.TextoVacio = "<Descripcion>";
             this.txtLote.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -343,7 +354,7 @@
             this.txtParcela.Name = "txtParcela";
             this.txtParcela.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtParcela.Size = new System.Drawing.Size(310, 22);
-            this.txtParcela.TabIndex = 7;
+            this.txtParcela.TabIndex = 10;
             this.txtParcela.TextoVacio = "<Descripcion>";
             this.txtParcela.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -378,7 +389,7 @@
             this.txtDepartamento.Name = "txtDepartamento";
             this.txtDepartamento.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDepartamento.Size = new System.Drawing.Size(84, 22);
-            this.txtDepartamento.TabIndex = 5;
+            this.txtDepartamento.TabIndex = 8;
             this.txtDepartamento.TextoVacio = "<Descripcion>";
             this.txtDepartamento.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -403,7 +414,7 @@
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtPiso.Size = new System.Drawing.Size(87, 22);
-            this.txtPiso.TabIndex = 6;
+            this.txtPiso.TabIndex = 9;
             this.txtPiso.TextoVacio = "<Descripcion>";
             this.txtPiso.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -438,7 +449,7 @@
             this.txtBloque.Name = "txtBloque";
             this.txtBloque.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtBloque.Size = new System.Drawing.Size(84, 22);
-            this.txtBloque.TabIndex = 4;
+            this.txtBloque.TabIndex = 7;
             this.txtBloque.TextoVacio = "<Bloque>";
             this.txtBloque.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -453,7 +464,7 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.txtNumero.Size = new System.Drawing.Size(87, 22);
-            this.txtNumero.TabIndex = 3;
+            this.txtNumero.TabIndex = 6;
             this.txtNumero.TextoVacio = "<Numero>";
             this.txtNumero.TipoControl = Controles.util.Enumerados.enumTipos.Numero;
             // 
@@ -467,7 +478,7 @@
             this.cmbCalle.Name = "cmbCalle";
             this.cmbCalle.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.cmbCalle.Size = new System.Drawing.Size(309, 24);
-            this.cmbCalle.TabIndex = 2;
+            this.cmbCalle.TabIndex = 5;
             // 
             // cmbLocalidad
             // 
@@ -505,17 +516,6 @@
             // epError
             // 
             this.epError.ContainerControl = this;
-            // 
-            // chkPorDefecto
-            // 
-            this.chkPorDefecto.AutoSize = true;
-            this.chkPorDefecto.Location = new System.Drawing.Point(440, 22);
-            this.chkPorDefecto.Name = "chkPorDefecto";
-            this.chkPorDefecto.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.chkPorDefecto.Size = new System.Drawing.Size(105, 21);
-            this.chkPorDefecto.TabIndex = 6;
-            this.chkPorDefecto.Text = "Por Defecto";
-            this.chkPorDefecto.UseVisualStyleBackColor = true;
             // 
             // frmDomiciliosCrud
             // 

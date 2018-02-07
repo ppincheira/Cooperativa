@@ -105,7 +105,7 @@ namespace AppProcesos.formsAuxiliares.frmDomicilios
                 else
                     oDomEntidades.DenDefecto = "N";
                 oDomEntidades.DenCodigoRegistro = long.Parse(oAdmin.CodigoRegistro);
-                oDomEntidades.TabCodigo = oAdmin.TabCodigo;
+                oDomEntidades.TabCodigo = oAdmin.TabCodigoRegistro;
                 oDomEntidadesBus.DomiciliosEntidadesAdd(oDomEntidades);
             }
             else {
@@ -116,7 +116,7 @@ namespace AppProcesos.formsAuxiliares.frmDomicilios
                 else
                     oDomEntidades.DenDefecto = "N";
                 oDomEntidades.DenCodigoRegistro = long.Parse(oAdmin.CodigoRegistro);
-                oDomEntidades.TabCodigo = oAdmin.TabCodigo;
+                oDomEntidades.TabCodigo = oAdmin.TabCodigoRegistro;
                 oDomEntidadesBus.DomiciliosEntidadesUpdate(oDomEntidades);
                 rtdo = (oDomicilioBus.DomiciliosUpdate(oDomicilio)) ? oDomicilio.DomCodigo : 0;
             }

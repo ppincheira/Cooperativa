@@ -62,8 +62,7 @@ namespace AppProcesos.formsAuxiliares.frmClientes
                 _vista.strCliente = oEmpresa.EmpCliente;
                 _vista.strCuit = oEmpresa.EmpCuit;
                 _vista.strDenominacionComercial = oEmpresa.EmpDenominacionComercial;
-                  
-                _vista.strDomicilio = "";//aca se carga el domicilio
+                CargarDomicilio(empNumero, "CLIE");
                 _vista.strEmail = "";//aca se carga el Emai
                 _vista.strNombre = oEmpresa.EmpNombres;
                 _vista.strNroDocumento = oEmpresa.EmpDocumentoNumero;
@@ -80,13 +79,7 @@ namespace AppProcesos.formsAuxiliares.frmClientes
 
         
 
-        public void CargarTelefonos(long id)
-        {
-            Telefonos oTelefono = new Telefonos();
-            TelefonosBus oTelefonoBus = new TelefonosBus();
-            oTelefono = oTelefonoBus.TelefonosGetById( id);
-            _vista.strTelefono =  oTelefono.TelNumero +" - "+ oTelefono.TelCargo;
-        }
+
 
         public void CargarEmail(long id)
         {
@@ -101,12 +94,23 @@ namespace AppProcesos.formsAuxiliares.frmClientes
             DomiciliosBus oDomicilioBus = new DomiciliosBus();
             Domicilios oDomicilio = new Domicilios();
             oDomicilio = oDomicilioBus.DomiciliosGetByCodigoRegistroDefecto(CodigoRegistro, tabCodigo);
+            if (oDomicilio.DomCodigo != 0){ 
             CallesLocalidadesBus oCalleBus = new CallesLocalidadesBus();
             _vista.strDomicilio = oCalleBus.CallesLocalidadesGetById(oDomicilio.CalNumero).CalDescripcion + " Nro.: " + oDomicilio.DomNumero + " "
                 + " Dpto:" + oDomicilio.DomDepartamento;
-
+            }
+            _vista.lgCodigoDomicilio = oDomicilio.DomCodigo;
         }
-        
+
+        public void CargarTelefonos(long CodigoRegistro, string TabCodigo)
+        {
+            Telefonos oTelefono = new Telefonos();
+            TelefonosBus oTelefonoBus = new TelefonosBus();
+
+            oTelefono = oTelefonoBus.TelefonosGetByCodigoRegistroDefecto(CodigoRegistro, TabCodigo);
+            _vista.strTelefono = oTelefono.TelNumero + " - " + oTelefono.TelCargo;
+        }
+
         public void CargarObservaciones(long id)
         {
             ObservacionesBus oObsBus = new ObservacionesBus();
