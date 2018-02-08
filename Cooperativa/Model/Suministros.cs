@@ -14,9 +14,9 @@ namespace Model {
         public virtual string TcsCodigo { get; set; }
         public virtual long ScaNumero { get; set; }
         public virtual long? SumOrdenRuta { get; set; }
-        public virtual long EmpNumero { get; set; }
+        public virtual long? EmpNumero { get; set; }
         public virtual DateTime? SumFechaAlta { get; set; }
-        public virtual string EstCodigo { get; set; }
+        public virtual decimal? EstCodigo { get; set; }
         public virtual float? SumConsumoEstimado { get; set; }
         public virtual long? SumVoltaje { get; set; }
         public virtual string SumConexion { get; set; }
@@ -28,8 +28,6 @@ namespace Model {
         public virtual string SumMedido { get; set; }
         public virtual long SruNumero { get; set; }
         public virtual long SzoNumero { get; set; }
-        public virtual string SumPermiteFactura { get; set; }
-        public virtual DateTime SumFechaCarga { get; set; }
 //        public virtual IList<MedidoresSuministro> MedidoresSuministros { get; set; }
     }
 }

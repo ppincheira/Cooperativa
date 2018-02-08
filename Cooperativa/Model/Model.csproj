@@ -80,7 +80,6 @@
     <Compile Include="Accionistas.cs" />
     <Compile Include="Adjuntos.cs" />
     <Compile Include="Admin.cs" />
-    <Compile Include="AdminObs.cs" />
     <Compile Include="Areas.cs" />
     <Compile Include="Auditorias.cs" />
     <Compile Include="BarriosLocalidades.cs" />

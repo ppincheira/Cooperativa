@@ -15,8 +15,6 @@ namespace Implement
         private OracleCommand cmd;
         private DataSet ds;
         private long response;
-
-
         public long DomiciliosAdd(Domicilios oDom)
 		{
             try
@@ -29,16 +27,16 @@ namespace Implement
                     " DECLARE IDTEMP NUMBER(15,0); " +
                     " BEGIN " +
                     " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('DOM_CODIGO')) into IDTEMP from dual; " +
-                    "INSERT INTO DOMICILIOS(DOM_CODIGO,LOC_NUMERO,BAR_NUMERO, CAL_NUMERO, " +
+                    "INSERT INTO DOMICILIOS(DOM_CODIGO,LOC_NUMERO, CAL_NUMERO, " +
                     "CAL_NUMERO_DESDE, CAL_NUMERO_HASTA, DOM_NUMERO, DOM_BLOQUE, DOM_PISO, " +
                     "DOM_DEPARTAMENTO, DOM_PARCELA, CPL_NUMERO, DOM_LOTE, DOM_GIS_X, DOM_GIS_Y)"+
-                    " VALUES(IDTEMP,"+oDom.LocNumero +","  +oDom.BarNumero+ ", " + oDom.CalNumero + ", " + oDom.CalNumeroDesde + ", " +
+                    " VALUES(IDTEMP," +oDom.LocNumero + ", " + oDom.CalNumero + ", " + oDom.CalNumeroDesde + ", " +
                     oDom.CalNumeroHasta + ", " + oDom.DomNumero + ", '" + oDom.DomBloque + "', '" +
                     oDom.DomPiso + "', '" + oDom.DomDepartamento + "', '" + oDom.DomParcela + "', " +
                     oDom.CplNumero + ", '" + oDom.DomLote + "', " + (oDom.DomGisX == null ? "null" : oDom.DomGisX.ToString()) + ", " + (oDom.DomGisY == null ? "null" : oDom.DomGisY.ToString()) + 
                      ") RETURNING IDTEMP INTO :id;" +
                     " END;";
-                
+
                 cmd = new OracleCommand(query, cn);
                 cmd.Parameters.Add(new OracleParameter
                 {
@@ -74,7 +72,6 @@ namespace Implement
                 ds = new DataSet();
                 cmd = new OracleCommand("update Domicilios " +
                     "SET LOC_NUMERO=" + oDom.LocNumero + ", " +
-                    "BAR_NUMERO="+oDom.BarNumero+ ", "+
                     "CAL_NUMERO=" + oDom.CalNumero + ", " +
                     "CAL_NUMERO_DESDE=" + oDom.CalNumeroDesde + ", " +
                     "CAL_NUMERO_HASTA=" + oDom.CalNumeroHasta + ", " +
@@ -150,43 +147,6 @@ namespace Implement
 				throw ex;
 			}
 		}
-        /// <summary>
-        ///Este metodo trae el Domicilio por Defecto 
-        /// </summary>
-        /// <param name="CodigoRegistro"></param>
-        /// <param name="TabCodigo"></param>
-        /// <returns></returns>
-        public Domicilios DomiciliosGetByCodigoRegistroDefecto(long CodigoRegistro, string TabCodigo)
-        {
-            try
-            {
-                DataSet ds = new DataSet();
-                Conexion oConexion = new Conexion();
-                OracleConnection cn = oConexion.getConexion();
-                cn.Open();
-                string sqlSelect = " SELECT D.* FROM DOMICILIOS D " +
-                " INNER JOIN DOMICILIOS_ENTIDADES DE ON DE.DOM_CODIGO = D.DOM_CODIGO " +
-                " WHERE DE.DEN_CODIGO_REGISTRO =" + CodigoRegistro +
-                " AND DE.TAB_CODIGO = '" + TabCodigo+"' AND DE.DEN_DEFECTO = 'S' ";     
-                cmd = new OracleCommand(sqlSelect, cn);
-                adapter = new OracleDataAdapter(cmd);
-                cmd.ExecuteNonQuery();
-                adapter.Fill(ds);
-                DataTable dt;
-                dt = ds.Tables[0];
-                Domicilios NewEnt = new Domicilios();
-                if (dt.Rows.Count > 0)
-                {
-                    DataRow dr = dt.Rows[0];
-                    NewEnt = CargarDomicilios(dr);
-                }
-                return NewEnt;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
         public List<Domicilios> DomiciliosGetAll()
 		{
@@ -230,7 +190,6 @@ namespace Implement
                 Domicilios oObjeto = new Domicilios();
                 oObjeto.DomCodigo = long.Parse(dr["DOM_CODIGO"].ToString());
                 oObjeto.LocNumero = int.Parse(dr["LOC_NUMERO"].ToString());
-                oObjeto.BarNumero=long.Parse(dr["BAR_NUMERO"].ToString());
                 oObjeto.CalNumero = long.Parse(dr["CAL_NUMERO"].ToString());
                 oObjeto.CalNumeroDesde = long.Parse(dr["CAL_NUMERO_DESDE"].ToString());
                 oObjeto.CalNumeroHasta = long.Parse(dr["CAL_NUMERO_HASTA"].ToString());

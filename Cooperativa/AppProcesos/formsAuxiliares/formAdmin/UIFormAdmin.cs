@@ -32,7 +32,6 @@ namespace AppProcesos.formsAuxiliares.formAdmin
 
         public void Inicializar(Admin oAdmin)
         {
-            
             _Campo = "";
             _filtroCampos = oAdmin.FiltroCampos!=null?oAdmin.FiltroCampos:"" ;
             _filtroValores = oAdmin.FiltroValores != null?oAdmin.FiltroValores:"";
@@ -43,6 +42,7 @@ namespace AppProcesos.formsAuxiliares.formAdmin
             List<DetallesColumnasTablas> ListDetalle = oDetalleBus.DetallesColumnasTablasGetByCodigo(oAdmin.TabCodigo);
             foreach (DetallesColumnasTablas oDetalle in ListDetalle)
             {
+
                 _Campo = _Campo + ' ' + oDetalle.DctColumna + ' ' + oDetalle.DctDescripcion + ',';
                 if ((oDetalle.DctFiltroBusqueda == "S") && (oDetalle.DctTipoControl != "FECHA") && oDetalle.DctTipoControl != "ESTADO")
                 {
@@ -76,11 +76,10 @@ namespace AppProcesos.formsAuxiliares.formAdmin
         }
 
 
-        public void CargarGrilla(Admin oAdmin)
+        public void CargarGrilla(string tabla)
         {
-            
-            _filtroCampos = oAdmin.FiltroCampos != null ? oAdmin.FiltroCampos : "";
-            _filtroValores = oAdmin.FiltroValores != null ? oAdmin.FiltroValores : "";
+            _filtroCampos = "";
+            _filtroValores = "";
 
             if (_vista.grupoFecha && _Fecha != null)
             {
@@ -90,13 +89,11 @@ namespace AppProcesos.formsAuxiliares.formAdmin
             if (_vista.grupoEstado && _vista.comboEstado.Text != "")
                 _filtroValores = _vista.comboEstado.Text + "&";
 
-            if (_vista.comboBuscar.SelectedValue.ToString()!="0")
-            { 
             _filtroCampos = _filtroCampos + _vista.comboBuscar.SelectedValue.ToString() + "&";
             _filtroValores = _filtroValores + _vista.filtro + "&";
-            }
+
             TablasBus oTablasBus = new TablasBus();
-            _vista.grilla.DataSource = oTablasBus.TablasBusquedaGetAllFilter(oAdmin.TabCodigo, _Campo, _filtroCampos, _filtroValores);
+            _vista.grilla.DataSource = oTablasBus.TablasBusquedaGetAllFilter(tabla, _Campo, _filtroCampos, _filtroValores);
             _vista.cantidad = "Se encontraron " + _vista.grilla.RowCount + " registros";
             _vista.grilla.Columns["CODIGO"].Visible = false;
 
@@ -133,11 +130,6 @@ namespace AppProcesos.formsAuxiliares.formAdmin
                         if (_vista.grilla.Rows[i].Cells["DEFECTO"].Value.ToString() == "S")
                             _vista.grilla.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.Gray;
                         break;
-                    case "CLIE":
-                        if (_vista.grilla.Rows[i].Cells["DEFECTO"].Value.ToString() == "S")
-                            _vista.grilla.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.Gray;
-                        break;
-
                 }
 
             }

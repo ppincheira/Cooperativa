@@ -9,6 +9,7 @@ namespace Model {
         public DetallesColumnasTablas(){
         }
         public virtual string TabCodigo { get; set; }
+        public virtual string DctCodigoTabla { get; set; }
         public virtual string DctColumna { get; set; }
         public virtual short DctNroOrden { get; set; }
         public virtual string DctHabilitado { get; set; }

@@ -33,15 +33,12 @@
             this.btnCancelar = new Controles.buttons.btnCancelar();
             this.btnAceptar = new Controles.buttons.btnAceptar();
             this.gbDatos = new Controles.contenedores.gesGroup();
-            this.chkEstado = new Controles.datos.chkBox();
-            this.cmbPersona = new Controles.datos.cmbLista();
-            this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
             this.dtpFechaBaja = new Controles.Fecha.dtpFecha();
             this.lblEtiqueta9 = new Controles.labels.lblEtiqueta();
             this.dtpFechaAlta = new Controles.Fecha.dtpFecha();
             this.lblEtiqueta8 = new Controles.labels.lblEtiqueta();
             this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
-            this.txtClave = new Controles.textBoxes.txtPassword();
+            this.txtClave = new Controles.textBoxes.txtDescripcion();
             this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
             this.chkBloqueado = new Controles.datos.chkBox();
             this.cmbPerfil = new Controles.datos.cmbLista();
@@ -49,6 +46,9 @@
             this.txtNombre = new Controles.textBoxes.txtDescripcion();
             this.lbDescripcion = new Controles.labels.lblEtiqueta();
             this.tttEtiqueta = new Controles.objects.tttEtiqueta();
+            this.cmbPersona = new Controles.datos.cmbLista();
+            this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
+            this.chkEstado = new Controles.datos.chkBox();
             this.gesGroup2.SuspendLayout();
             this.gbDatos.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +71,6 @@
             this.btnCancelar.Size = new System.Drawing.Size(80, 60);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -81,7 +80,6 @@
             this.btnAceptar.Size = new System.Drawing.Size(80, 60);
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // gbDatos
             // 
@@ -107,37 +105,6 @@
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
             // 
-            // chkEstado
-            // 
-            this.chkEstado.AutoSize = true;
-            this.chkEstado.Location = new System.Drawing.Point(275, 218);
-            this.chkEstado.Name = "chkEstado";
-            this.chkEstado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.chkEstado.Size = new System.Drawing.Size(73, 17);
-            this.chkEstado.TabIndex = 8;
-            this.chkEstado.Text = "Habilitado";
-            this.chkEstado.UseVisualStyleBackColor = true;
-            // 
-            // cmbPersona
-            // 
-            this.cmbPersona.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbPersona.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbPersona.FormattingEnabled = true;
-            this.cmbPersona.Location = new System.Drawing.Point(187, 19);
-            this.cmbPersona.Name = "cmbPersona";
-            this.cmbPersona.Requerido = Controles.util.Enumerados.enumRequerido.SI;
-            this.cmbPersona.Size = new System.Drawing.Size(222, 21);
-            this.cmbPersona.TabIndex = 1;
-            // 
-            // lblEtiqueta3
-            // 
-            this.lblEtiqueta3.AutoSize = true;
-            this.lblEtiqueta3.Location = new System.Drawing.Point(70, 24);
-            this.lblEtiqueta3.Name = "lblEtiqueta3";
-            this.lblEtiqueta3.Size = new System.Drawing.Size(49, 13);
-            this.lblEtiqueta3.TabIndex = 36;
-            this.lblEtiqueta3.Text = "Persona:";
-            // 
             // dtpFechaBaja
             // 
             this.dtpFechaBaja.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -146,8 +113,6 @@
             this.dtpFechaBaja.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.dtpFechaBaja.Size = new System.Drawing.Size(166, 20);
             this.dtpFechaBaja.TabIndex = 6;
-            this.dtpFechaBaja.ShowCheckBox = true;
-            this.dtpFechaBaja.Checked = false;
             // 
             // lblEtiqueta9
             // 
@@ -193,7 +158,6 @@
             this.txtClave.Location = new System.Drawing.Point(186, 87);
             this.txtClave.MaxLength = 30;
             this.txtClave.Name = "txtClave";
-            this.txtClave.PasswordChar = '*';
             this.txtClave.Requerido = Controles.util.Enumerados.enumRequerido.SI;
             this.txtClave.Size = new System.Drawing.Size(165, 20);
             this.txtClave.TabIndex = 3;
@@ -263,6 +227,37 @@
             this.lbDescripcion.TabIndex = 0;
             this.lbDescripcion.Text = "Nombre:";
             // 
+            // cmbPersona
+            // 
+            this.cmbPersona.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbPersona.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbPersona.FormattingEnabled = true;
+            this.cmbPersona.Location = new System.Drawing.Point(187, 19);
+            this.cmbPersona.Name = "cmbPersona";
+            this.cmbPersona.Requerido = Controles.util.Enumerados.enumRequerido.SI;
+            this.cmbPersona.Size = new System.Drawing.Size(222, 21);
+            this.cmbPersona.TabIndex = 1;
+            // 
+            // lblEtiqueta3
+            // 
+            this.lblEtiqueta3.AutoSize = true;
+            this.lblEtiqueta3.Location = new System.Drawing.Point(70, 24);
+            this.lblEtiqueta3.Name = "lblEtiqueta3";
+            this.lblEtiqueta3.Size = new System.Drawing.Size(49, 13);
+            this.lblEtiqueta3.TabIndex = 36;
+            this.lblEtiqueta3.Text = "Persona:";
+            // 
+            // chkEstado
+            // 
+            this.chkEstado.AutoSize = true;
+            this.chkEstado.Location = new System.Drawing.Point(275, 218);
+            this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.chkEstado.Size = new System.Drawing.Size(73, 17);
+            this.chkEstado.TabIndex = 8;
+            this.chkEstado.Text = "Habilitado";
+            this.chkEstado.UseVisualStyleBackColor = true;
+            // 
             // frmUsuariosCrud
             // 
             this.ClientSize = new System.Drawing.Size(479, 384);
@@ -270,7 +265,6 @@
             this.Controls.Add(this.gbDatos);
             this.Name = "frmUsuariosCrud";
             this.Text = "Usuarios";
-            this.Load += new System.EventHandler(this.frmUsuariosCrud_Load);
             this.gesGroup2.ResumeLayout(false);
             this.gbDatos.ResumeLayout(false);
             this.gbDatos.PerformLayout();
@@ -289,7 +283,7 @@
         private Controles.labels.lblEtiqueta lblParcela;
         private Controles.textBoxes.txtDescripcion txtNombre;
         private Controles.labels.lblEtiqueta lbDescripcion;
-        private Controles.textBoxes.txtPassword txtClave;
+        private Controles.textBoxes.txtDescripcion txtClave;
         private Controles.labels.lblEtiqueta lblEtiqueta1;
         private Controles.labels.lblEtiqueta lblEtiqueta2;
         private Controles.Fecha.dtpFecha dtpFechaBaja;

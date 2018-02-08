@@ -12,7 +12,6 @@ namespace AppProcesos.formsAuxiliares.frmDomicilios
         long domCodigo { get; set; }
         string tabCodigo { get; set; }
         long domCodigoRegistro { get; set; }
-        Boolean denDefecto { get; set; }
         string tdoCodigo { get; set; }
         cmbLista cmbiBarrio { get; set; }
         cmbLista cmbiTipo { get; set; }

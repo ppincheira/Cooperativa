@@ -32,10 +32,10 @@ namespace Implement
                 cn.Open();
 
                 ds = new DataSet();
-                cmd = new OracleCommand("insert into DetallesColumnasTablas(TAB_CODIGO, DCT_NRO_ORDEN," +
+                cmd = new OracleCommand("insert into DetallesColumnasTablas(TAB_CODIGO, DCT_CODIGO_TABLA, DCT_NRO_ORDEN," +
                     "DCT_COLUMNA,DCT_HABILITADO,DCT_REQUERIDO,DCT_DESCRIPCION,DCT_ETIQUETA, DCT_TIPO_CONTROL,DCT_LISTA_VALORES," +
                     "DCT_FILTRO_BUSQUEDA) " +
-                    "values('" + oDetalle.TabCodigo + "', " + oDetalle.DctNroOrden + 
+                    "values('" + oDetalle.TabCodigo + "', '" + oDetalle.DctCodigoTabla + "'," + oDetalle.DctNroOrden + 
                     ",'"+oDetalle.DctColumna+"','"+ oDetalle.DctHabilitado+"','"+oDetalle.DctRequerido+"','"+oDetalle.DctDescripcion+"','" + oDetalle.DctEtiqueta +"'"+
                     ",'"+oDetalle.DctTipoControl+"','"+oDetalle.DctListaValores+"','"+oDetalle.DctFiltroBusqueda+"')", cn);
                 adapter = new OracleDataAdapter(cmd);
@@ -255,6 +255,7 @@ namespace Implement
             try
             {
                 DetallesColumnasTablas oObjeto = new DetallesColumnasTablas();
+                oObjeto.DctCodigoTabla = dr["DCT_CODIGO_TABLA"].ToString();
                 oObjeto.TabCodigo = dr["TAB_CODIGO"].ToString();
                 oObjeto.DctNroOrden = short.Parse(dr["DCT_NRO_ORDEN"].ToString());
                 oObjeto.DctColumna = dr["DCT_COLUMNA"].ToString();

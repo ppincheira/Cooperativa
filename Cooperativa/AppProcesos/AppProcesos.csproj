@@ -114,8 +114,6 @@
     <Compile Include="gesServicios\frmRutasCrud\UIRutasCrud.cs" />
     <Compile Include="gesServicios\frmSuministrosAdmin\IVistaSuministrosAdmin.cs" />
     <Compile Include="gesServicios\frmSuministrosAdmin\UISuministrosAdmin.cs" />
-    <Compile Include="gesServicios\frmSuministrosCrud\IVistaSuministrosCrud.cs" />
-    <Compile Include="gesServicios\frmSuministrosCrud\UISuministrosCrud.cs" />
     <Compile Include="gesServicios\frmTiposConexionesCrud\IVistaTiposConexionesCrud.cs" />
     <Compile Include="gesServicios\frmTiposConexionesCrud\UITiposConexionesCrud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -142,6 +140,7 @@
     <Folder Include="adminComprobantes\" />
     <Folder Include="adminSuministros\" />
     <Folder Include="cuentasCorrientes\" />
+    <Folder Include="gesServicios\frmSuministrosCrud\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

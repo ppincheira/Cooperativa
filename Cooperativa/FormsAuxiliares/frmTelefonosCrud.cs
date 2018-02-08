@@ -151,11 +151,6 @@ namespace FormsAuxiliares
             DialogResult = DialogResult.Cancel;
             this.Close();
         }
-        #endregion
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-
-        }
+         #endregion
     }
 }

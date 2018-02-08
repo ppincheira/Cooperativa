@@ -30,7 +30,7 @@ namespace AppProcesos.formsAuxiliares.frmObservaciones
             ObservacionesBus oObsBus = new ObservacionesBus();
             _vista.fechaDesde = DateTime.Now.AddYears(-1);
             _vista.fechaHasta = DateTime.Now.AddDays(1);
-            _vista.cantidad = "Nro de Observaciones:" + oUtil.CargarGrilla(_vista.grilla, oObsBus.ObservacionesGetByFilter(_vista.oAdminObs.TabCodigo,_vista.oAdminObs.TobCodigo,_vista.oAdminObs.CodigoRegistro, _vista.fechaDesde, _vista.fechaHasta)).ToString();
+            _vista.cantidad = "Nro de Observaciones:" + oUtil.CargarGrilla(_vista.grilla, oObsBus.ObservacionesGetByFilter(_vista.tabCodigo, _vista.tobCodigo, _vista.obsCodigoRegistro, _vista.fechaDesde, _vista.fechaHasta)).ToString();
             _vista.grilla.Columns["OBS_CODIGO"].Visible = false;
             _vista.grilla.Columns["OBS_CODIGO_REGISTRO"].Visible = false;
             _vista.grilla.Columns["TOB_CODIGO"].Visible = false;
@@ -41,7 +41,7 @@ namespace AppProcesos.formsAuxiliares.frmObservaciones
 
         public void CargarGrilla() {
             ObservacionesBus oObsBus = new ObservacionesBus();
-            _vista.cantidad = "Nro de Observaciones:"+oUtil.CargarGrilla(_vista.grilla, oObsBus.ObservacionesGetByFilter(_vista.oAdminObs.TabCodigo, _vista.oAdminObs.TobCodigo, _vista.oAdminObs.CodigoRegistro, _vista.fechaDesde, _vista.fechaHasta)).ToString();
+            _vista.cantidad = "Nro de Observaciones:"+oUtil.CargarGrilla(_vista.grilla, oObsBus.ObservacionesGetByFilter(_vista.tabCodigo, _vista.tobCodigo, _vista.obsCodigoRegistro, _vista.fechaDesde, _vista.fechaHasta)).ToString();
         }
 
    

@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 using AppProcesos.gesServicios.frmSuministrosAdmin;
 using Controles.datos;
@@ -12,10 +17,8 @@ namespace GesServicios.controles.forms
     {
         #region << PROPIEDADES >>
 
-        public Admin _oAdmin;
         private string _Tabla;
         Utility _oUtil;
-        public string _strRdoCodigo;
         private UISuministrosAdmin _oSuministrosAdmin;
         #endregion
 
@@ -51,27 +54,11 @@ namespace GesServicios.controles.forms
             get { return this.cmbEstado; }
             set { this.cmbEstado = value; }
         }
-        public cmbLista comboBuscar
-        {
-            get { return this.cmbBuscar; }
-            set { this.cmbBuscar = value; }
-        }
-        public string filtro
-        {
-            get { return this.txtFiltro.Text; }
-            set { this.txtFiltro.Text = value; }
-        }
         public string cantidad
         {
 
             set { this.lblCantidad.Text = value; }
         }
-        public string striRdoCodigo
-        {
-            get { return _strRdoCodigo; }
-            set { _strRdoCodigo = value; }
-        }
-
 
         #endregion
         #region << EVENTOS >>
@@ -87,12 +74,7 @@ namespace GesServicios.controles.forms
             }
             catch (Exception ex)
             {
-                Cursor.Current = Cursors.Default;
-                ManejarError Err = new ManejarError();
-                Err.CargarError(ex,
-                                "frmSuministrosAdmin",
-                                "frmSuministrosAdmin",
-                                this.FindForm().Name);
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
         }
 
@@ -128,9 +110,9 @@ namespace GesServicios.controles.forms
         {
             try
             {
-                frmSuministrosCrud oFrmSumCrud = new frmSuministrosCrud(0,"H");
-                if (oFrmSumCrud.ShowDialog() == DialogResult.OK)
-                    _oSuministrosAdmin.CargarGrilla(_Tabla);
+                //frmSuministrosCrud oFrmSumCrud = new frmSuministrosCrud(0);
+                //if (oFrmSumCrud.ShowDialog() == DialogResult.OK)
+                //    _oSuministrosAdmin.CargarGrilla(_Tabla);
             }
             catch (Exception ex)
             {
@@ -151,9 +133,9 @@ namespace GesServicios.controles.forms
                 DataGridViewRow row = this.dgBusqueda.CurrentRow;
                 long id = Convert.ToInt64(row.Cells[0].Value);
 
-                frmSuministrosCrud oFrmSumCrud = new frmSuministrosCrud(id,"H");
-                if (oFrmSumCrud.ShowDialog() == DialogResult.OK)
-                    _oSuministrosAdmin.CargarGrilla(_Tabla);
+                //frmSuministrosCrud oFrmSumCrud = new frmSuministrosCrud(id);
+                //if (oFrmSumCrud.ShowDialog() == DialogResult.OK)
+                //    _oSuministrosAdmin.CargarGrilla(_Tabla);
             }
             catch (Exception ex)
             {
@@ -173,10 +155,10 @@ namespace GesServicios.controles.forms
             {
                 DataGridViewRow row = this.dgBusqueda.CurrentRow;
                 long id = Convert.ToInt64(row.Cells[0].Value);
-                frmSuministrosCrud oFrmSumCrud = new frmSuministrosCrud(id,"H");
-                oFrmSumCrud.gbDatos.Enabled = false;
-                if (oFrmSumCrud.ShowDialog() == DialogResult.OK)
-                    _oSuministrosAdmin.CargarGrilla(_Tabla);
+                //frmSuministrosCrud oFrmSumCrud = new frmSuministrosCrud(id);
+                //oFrmSumCrud.gbDatos.Enabled = false;
+                //if (oFrmSumCrud.ShowDialog() == DialogResult.OK)
+                //    _oSuministrosAdmin.CargarGrilla(_Tabla);
             }
             catch (Exception ex)
             {
@@ -223,5 +205,5 @@ namespace GesServicios.controles.forms
             this.btnVer.FUN_CODIGO = oPerForm.Ver;
         }
         #endregion
+        }
     }
-}

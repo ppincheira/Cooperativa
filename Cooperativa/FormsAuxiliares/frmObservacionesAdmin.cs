@@ -8,8 +8,6 @@ using Controles.datos;
 using Controles.form;
 using System.Windows.Forms;
 using Service;
-using Model;
-using static Model.AdminObs;
 
 namespace FormsAuxiliares
 {
@@ -17,8 +15,9 @@ namespace FormsAuxiliares
     {
         #region << PROPIEDADES >>
         private UIObservaciones _oUIObservaciones;
-        public AdminObs _oAdmin = new AdminObs();
-        public string _strRdoCodigo;
+        string _tabCodigo;
+        int _tobCodigo;
+        string _obsCodigoRegistro;
         private Utility _oUtility;
 
         #endregion
@@ -44,13 +43,23 @@ namespace FormsAuxiliares
 
         #region Implementation of IVistaObservaciones
 
-        
-        public AdminObs oAdminObs
+        public string tabCodigo
         {
-            get { return _oAdmin; }
-            set { _oAdmin = value; }
+            get { return this._tabCodigo; }
+            set { this._tabCodigo = value; }
         }
-        
+
+        public int tobCodigo
+        {
+            get { return this._tobCodigo; }
+            set { this._tobCodigo = value; }
+        }
+
+        public string obsCodigoRegistro
+        {
+            get { return _obsCodigoRegistro; }
+            set { _obsCodigoRegistro = value; }
+        }
         public grdGrillaAdmin grilla
         {
             get { return this.grdGrillaAdmin; }
@@ -80,9 +89,9 @@ namespace FormsAuxiliares
         {
             InitializeComponent();
             _oUIObservaciones = new UIObservaciones(this);
-            _oAdmin.TabCodigo = tabCodigo;
-            _oAdmin.TobCodigo = tobCodigo;
-            _oAdmin.CodigoRegistro = obsCodigoRegistro;
+            _tabCodigo = tabCodigo;
+            _tobCodigo = tobCodigo;
+            _obsCodigoRegistro = obsCodigoRegistro;
         }
 
         private void InitializeComponent()
@@ -128,7 +137,7 @@ namespace FormsAuxiliares
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Location = new System.Drawing.Point(7, 218);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(64, 17);
+            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
             this.lblCantidad.TabIndex = 1;
             this.lblCantidad.Text = "Cantidad";
             // 
@@ -137,12 +146,9 @@ namespace FormsAuxiliares
             this.grdGrillaAdmin.AllowUserToAddRows = false;
             this.grdGrillaAdmin.Location = new System.Drawing.Point(6, 19);
             this.grdGrillaAdmin.Name = "grdGrillaAdmin";
-            this.grdGrillaAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdGrillaAdmin.Size = new System.Drawing.Size(631, 197);
             this.grdGrillaAdmin.TabIndex = 0;
             this.grdGrillaAdmin.SelectionChanged += new System.EventHandler(this.grdGrillaAdmin_SelectionChanged);
-            this.grdGrillaAdmin.DoubleClick += new System.EventHandler(this.grdGrillaAdmin_DoubleClick);
-            this.grdGrillaAdmin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.grdGrillaAdmin_KeyPress);
             // 
             // gpbGrupo2
             // 
@@ -156,17 +162,12 @@ namespace FormsAuxiliares
             // 
             // txtObservaciones
             // 
-            this.txtObservaciones.BackColor = System.Drawing.Color.White;
             this.txtObservaciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtObservaciones.ColorTextoVacio = System.Drawing.Color.Gray;
             this.txtObservaciones.Location = new System.Drawing.Point(10, 19);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtObservaciones.Size = new System.Drawing.Size(627, 102);
             this.txtObservaciones.TabIndex = 0;
-            this.txtObservaciones.TextoVacio = "<Descripcion>";
-            this.txtObservaciones.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
             // gpbGrupo3
             // 
@@ -185,7 +186,7 @@ namespace FormsAuxiliares
             this.lblEFechaHasta.AutoSize = true;
             this.lblEFechaHasta.Location = new System.Drawing.Point(10, 50);
             this.lblEFechaHasta.Name = "lblEFechaHasta";
-            this.lblEFechaHasta.Size = new System.Drawing.Size(88, 17);
+            this.lblEFechaHasta.Size = new System.Drawing.Size(68, 13);
             this.lblEFechaHasta.TabIndex = 15;
             this.lblEFechaHasta.Text = "Fecha Hasta";
             // 
@@ -194,7 +195,7 @@ namespace FormsAuxiliares
             this.lblEFechaDesde.AutoSize = true;
             this.lblEFechaDesde.Location = new System.Drawing.Point(7, 19);
             this.lblEFechaDesde.Name = "lblEFechaDesde";
-            this.lblEFechaDesde.Size = new System.Drawing.Size(92, 17);
+            this.lblEFechaDesde.Size = new System.Drawing.Size(71, 13);
             this.lblEFechaDesde.TabIndex = 14;
             this.lblEFechaDesde.Text = "Fecha Desde";
             // 
@@ -203,8 +204,7 @@ namespace FormsAuxiliares
             this.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaHasta.Location = new System.Drawing.Point(105, 44);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
-            this.dtpFechaHasta.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.dtpFechaHasta.Size = new System.Drawing.Size(109, 22);
+            this.dtpFechaHasta.Size = new System.Drawing.Size(109, 20);
             this.dtpFechaHasta.TabIndex = 13;
             // 
             // dtpFechaDesde
@@ -212,8 +212,7 @@ namespace FormsAuxiliares
             this.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaDesde.Location = new System.Drawing.Point(105, 12);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
-            this.dtpFechaDesde.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.dtpFechaDesde.Size = new System.Drawing.Size(109, 22);
+            this.dtpFechaDesde.Size = new System.Drawing.Size(109, 20);
             this.dtpFechaDesde.TabIndex = 12;
             // 
             // gpbGrupo4
@@ -336,12 +335,7 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                Cursor.Current = Cursors.Default;
-                ManejarError Err = new ManejarError();
-                Err.CargarError(ex,
-                                e.ToString(),
-                                ((Control)sender).Name,
-                                this.FindForm().Name);
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
         }
 
@@ -349,18 +343,13 @@ namespace FormsAuxiliares
         {
             try
             {
-                frmObservacionesCrud ofrmObs = new frmObservacionesCrud(0, _oAdmin.TobCodigo,_oAdmin.CodigoRegistro, "I");
+                frmObservacionesCrud ofrmObs = new frmObservacionesCrud(0, _tobCodigo, _obsCodigoRegistro, "I");
                 if (ofrmObs.ShowDialog() == DialogResult.OK)
                     _oUIObservaciones.CargarGrilla();
             }
             catch (Exception ex)
             {
-                Cursor.Current = Cursors.Default;
-                ManejarError Err = new ManejarError();
-                Err.CargarError(ex,
-                                e.ToString(),
-                                ((Control)sender).Name,
-                                this.FindForm().Name);
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
         }
 
@@ -368,16 +357,15 @@ namespace FormsAuxiliares
         {
             try
             {
-                Editar();
+                DataGridViewRow row = this.grdGrillaAdmin.CurrentRow;
+                long id = Convert.ToInt64(row.Cells[0].Value);
+                frmObservacionesCrud ofrmObs = new frmObservacionesCrud(id, _tobCodigo, _obsCodigoRegistro, "E");
+                if (ofrmObs.ShowDialog() == DialogResult.OK)
+                    _oUIObservaciones.CargarGrilla();
             }
             catch (Exception ex)
             {
-                Cursor.Current = Cursors.Default;
-                ManejarError Err = new ManejarError();
-                Err.CargarError(ex,
-                                e.ToString(),
-                                ((Control)sender).Name,
-                                this.FindForm().Name);
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
 
         }
@@ -390,12 +378,7 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                Cursor.Current = Cursors.Default;
-                ManejarError Err = new ManejarError();
-                Err.CargarError(ex,
-                                e.ToString(),
-                                ((Control)sender).Name,
-                                this.FindForm().Name);
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
         }
 
@@ -405,18 +388,13 @@ namespace FormsAuxiliares
             {
                 DataGridViewRow row = this.grdGrillaAdmin.CurrentRow;
                 int id = Convert.ToInt32(row.Cells[0].Value);
-                frmObservacionesCrud ofrmObs = new frmObservacionesCrud(id, oAdminObs.TobCodigo, oAdminObs.CodigoRegistro, "V");
+                frmObservacionesCrud ofrmObs = new frmObservacionesCrud(id, _tobCodigo, _obsCodigoRegistro, "V");
 
                 ofrmObs.Show();
             }
             catch (Exception ex)
             {
-                Cursor.Current = Cursors.Default;
-                ManejarError Err = new ManejarError();
-                Err.CargarError(ex,
-                                e.ToString(),
-                                ((Control)sender).Name,
-                                this.FindForm().Name);
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
         }
 
@@ -428,83 +406,8 @@ namespace FormsAuxiliares
             }
             catch (Exception ex)
             {
-                Cursor.Current = Cursors.Default;
-                ManejarError Err = new ManejarError();
-                Err.CargarError(ex,
-                                e.ToString(),
-                                ((Control)sender).Name,
-                                this.FindForm().Name);
+                MessageBox.Show("Error en " + ex.Source + " Mensaje: " + ex.Message);
             }
         }
-
-        private void grdGrillaAdmin_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            try
-            {
-                if (e.KeyChar == Convert.ToChar(Keys.Enter))
-                {
-                    AccionOptativa();
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Cursor.Current = Cursors.Default;
-                ManejarError Err = new ManejarError();
-                Err.CargarError(ex,
-                                e.ToString(),
-                                ((Control)sender).Name,
-                                this.FindForm().Name);
-            }
-        }
-
-        private void grdGrillaAdmin_DoubleClick(object sender, EventArgs e)
-        {
-            try
-            {
-
-                AccionOptativa();
-            }
-            catch (Exception ex)
-            {
-                Cursor.Current = Cursors.Default;
-                ManejarError Err = new ManejarError();
-                Err.CargarError(ex,
-                                e.ToString(),
-                                ((Control)sender).Name,
-                                this.FindForm().Name);
-            }
-        }
-
-
-        #region <<  METODOS >>
-
-        private void AccionOptativa()
-        {
-            switch (_oAdmin.Tipo)
-            {
-                case enumTipoForm.Selector:
-                    if (_strRdoCodigo != "")
-                        DialogResult = DialogResult.OK; //cierra el formulario    
-                    else
-                        DialogResult = DialogResult.No;
-                    this.Close();
-                    break;
-                case enumTipoForm.Ninguna:
-                    Editar();
-                    break;
-            }
-        }
-
-        private void Editar()
-        {
-            DataGridViewRow row = this.grdGrillaAdmin.CurrentRow;
-            long id = Convert.ToInt64(row.Cells[0].Value);
-            frmObservacionesCrud ofrmObs = new frmObservacionesCrud(id, oAdminObs.TobCodigo,oAdminObs.CodigoRegistro, "E");
-            if (ofrmObs.ShowDialog() == DialogResult.OK)
-                _oUIObservaciones.CargarGrilla();
-        }
-        #endregion
     }
 }

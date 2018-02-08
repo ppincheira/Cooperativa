@@ -77,7 +77,6 @@ namespace Controles.datos
         {
             if (this.SelectedIndex > 0)
             {
-               
                 errorProvider2.Clear();
                 this.BackColor = System.Drawing.Color.White;
             }

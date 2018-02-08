@@ -7,13 +7,7 @@ namespace Business
 {
     public class EmpresasBus
     {
-        public long EmpresasGetID()
-        {
-            EmpresasImpl oEmpresasImpl = new EmpresasImpl();
-            return oEmpresasImpl.EmpresasGetID();
-        }
-
-        public long EmpresasAdd(Empresas oEmpresas)
+        public int EmpresasAdd(Empresas oEmpresas)
         {
             EmpresasImpl oEmpresasImpl = new EmpresasImpl();
             return oEmpresasImpl.EmpresasAdd(oEmpresas);

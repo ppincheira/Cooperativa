@@ -77,7 +77,6 @@ namespace FormsAuxiliares
         #region << EVENTOS >>
         public frmObservacionesCrud(long Codigo, int TobCodigo, string CodigoRegistro, string Accion)
         {
-
             try
             {
                 InitializeComponent();

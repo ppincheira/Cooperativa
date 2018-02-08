@@ -32,12 +32,6 @@ namespace Business
             return oDomiciliosImpl.DomiciliosGetById(Id);
         }
 
-        public Domicilios DomiciliosGetByCodigoRegistroDefecto(long CodigoRegistro, string TabCodigo)
-        {
-            DomiciliosImpl oDomiciliosImpl = new DomiciliosImpl();
-            return oDomiciliosImpl.DomiciliosGetByCodigoRegistroDefecto(CodigoRegistro, TabCodigo);
-        }
-
         public List<Domicilios> DomiciliosGetAll()
         {
             DomiciliosImpl oDomiciliosImpl = new DomiciliosImpl();

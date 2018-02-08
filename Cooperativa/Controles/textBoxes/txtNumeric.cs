@@ -10,7 +10,7 @@ using System.Globalization;
 
 namespace Controles
 {
-    public class NumericTextBox : textBoxes.gesTextBox
+    public class NumericTextBox : TextBox
     {
         bool allowSpace = false;
 

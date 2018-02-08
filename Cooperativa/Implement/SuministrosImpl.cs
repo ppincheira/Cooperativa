@@ -13,8 +13,8 @@ namespace Implement
         private OracleDataAdapter adapter;
         private OracleCommand cmd;
         private DataSet ds;
-        private long response;
-        public long SuministrosAdd(Suministros oSum)
+        private int response;
+        public int SuministrosAdd(Suministros oSum)
         {
             try
             {
@@ -23,34 +23,19 @@ namespace Implement
                 cn.Open();
                 // Clave Secuencia SUM_NUMERO
                 ds = new DataSet();
-                string query =
-
-                    " DECLARE IDTEMP NUMBER(15,0); " +
-                    " BEGIN " +
-                    " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('SUM_NUMERO')) into IDTEMP from dual; " +
-                    " insert into Servicios_Rutas " +
-                    "(SUM_NUMERO, SRV_CODIGO, TCS_CODIGO, " +
+                cmd = new OracleCommand("insert into Suministros (SRV_CODIGO, TCS_CODIGO, " +
                     "SCA_NUMERO, SUM_ORDEN_RUTA, EMP_NUMERO, SUM_FECHA_ALTA, EST_CODIGO," +
                     "SUM_CONSUMO_ESTIMADO, SUM_VOLTAJE, SUM_CONEXION, SUM_POTENCIA_L1, " +
                     "SUM_POTENCIA_L2, SUM_POTENCIA_L3, SUM_REGISTRADOR, SUM_PERMITE_CORTE, " +
                     "SUM_MEDIDO, SRU_NUMERO, SZO_NUMERO) " +
-                    "values(IDTEMP,'" + oSum.SrvCodigo + "', '" + oSum.TcsCodigo + "'," + oSum.ScaNumero + "," +
-                    oSum.SumOrdenRuta + "," + oSum.EmpNumero + "," + oSum.SumFechaAlta + "," +
-                    oSum.EstCodigo + ",'" + oSum.SumConsumoEstimado + "," + oSum.SumVoltaje + ",'" +
-                    oSum.SumConexion + "'," + oSum.SumPotenciaL1 + "," + oSum.SumPotenciaL2 + "," +
+                    "values('" + oSum.SrvCodigo + "', '" +oSum.TcsCodigo + "'," + oSum.ScaNumero + "," + 
+                    oSum.SumOrdenRuta + "," + oSum.EmpNumero + "," + oSum.SumFechaAlta + "," + 
+                    oSum.EstCodigo + ",'" + oSum.SumConsumoEstimado + "," + oSum.SumVoltaje + ",'" + 
+                    oSum.SumConexion + "'," + oSum.SumPotenciaL1 + "," + oSum.SumPotenciaL2 + "," + 
                     oSum.SumPotenciaL3 + "," + oSum.SumRegistrador + ",'" + oSum.SumPermiteCorte + "', '" +
-                    oSum.SumMedido + "'," + oSum.SruNumero + "," + oSum.SzoNumero + "') RETURNING IDTEMP INTO :id;" +
-                    " END;";
-                cmd = new OracleCommand(query, cn);
-                cmd.Parameters.Add(new OracleParameter
-                {
-                    ParameterName = ":id",
-                    OracleDbType = OracleDbType.Int64,
-                    Direction = ParameterDirection.Output
-                });
+                    oSum.SumMedido + "'," + oSum.SruNumero + "," + oSum.SzoNumero + ")", cn);
                 adapter = new OracleDataAdapter(cmd);
-                cmd.ExecuteNonQuery();
-                response = long.Parse(cmd.Parameters[":id"].Value.ToString());
+                response = cmd.ExecuteNonQuery();
                 cn.Close();
                 return response;
             }
@@ -204,7 +189,8 @@ namespace Implement
                     oObjeto.EmpNumero = long.Parse(dr["EMP_NUMERO"].ToString());
                 if (dr["SUM_FECHA_ALTA"].ToString() != "")
                     oObjeto.SumFechaAlta =DateTime.Parse(dr["SUM_FECHA_ALTA"].ToString());
-                oObjeto.EstCodigo = dr["EST_CODIGO"].ToString();
+                if (dr["EST_CODIGO"].ToString() != "")
+                    oObjeto.EstCodigo = decimal.Parse(dr["EST_CODIGO"].ToString());
                 if (dr["SUM_CONSUMO_ESTIMADO"].ToString() != "")
                     oObjeto.SumConsumoEstimado = float.Parse(dr["SUM_CONSUMO_ESTIMADO"].ToString());
                 if (dr["SUM_VOLTAJE"].ToString() != "")

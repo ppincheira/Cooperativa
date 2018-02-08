@@ -2,7 +2,7 @@
 using Business;
 using Controles.datos;
 using Controles.form;
-//using FormsAuxiliares; //comente porque sale un error en la compilacion de referencia circular m.Peralta
+using FormsAuxiliares;
 using Model;
 using Service;
 using System;
@@ -194,15 +194,14 @@ namespace GesServicios.controles.forms
                                 break;
                         }
                         oAdmin.FiltroCampos = valorCampo;
-                        //comente porque sale un error en la compilacion de referencia circular m.Peralta 
-                        //frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
-                        //if (frmbus.ShowDialog() == DialogResult.OK)
-                        //{
-                        //    string id = frmbus.striRdoCodigo;
-                        //    LecturasConceptosBus aux = new LecturasConceptosBus();
-                        //    LecturasConceptos aux2 = aux.LecturasConceptosGetById(long.Parse(id));
-                        //    cargarGrilla(aux2, e.RowIndex);
-                        //}
+                        frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
+                        if (frmbus.ShowDialog() == DialogResult.OK)
+                        {
+                            string id = frmbus.striRdoCodigo;
+                            LecturasConceptosBus aux = new LecturasConceptosBus();
+                            LecturasConceptos aux2 = aux.LecturasConceptosGetById(long.Parse(id));
+                            cargarGrilla(aux2, e.RowIndex);
+                        }
                     }
                 }
                 //Si retorna mas de un resultado se tiene que poder elegir entre las opciones
