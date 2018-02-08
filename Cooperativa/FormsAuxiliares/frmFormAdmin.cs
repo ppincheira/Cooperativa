@@ -589,7 +589,7 @@ namespace FormsAuxiliares
                     case "PERB":
                         frmPersonasCrud oFrmPerCrud = new frmPersonasCrud(id, "B");
                         //if (oFrmPerCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                         break;
                 }
             }
@@ -741,7 +741,7 @@ namespace FormsAuxiliares
                 case "PERB":
                     frmPersonasCrud oFrmPerCrud = new frmPersonasCrud(id, "V");
                     if (oFrmPerCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "":
                     Console.WriteLine("Case 2");
@@ -780,7 +780,7 @@ namespace FormsAuxiliares
                 case "PERB":
                     frmPersonasCrud oFrmPerCrud = new frmPersonasCrud(0, "I");
                     if (oFrmPerCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "":
                     Console.WriteLine("Case 2");
@@ -854,7 +854,7 @@ namespace FormsAuxiliares
                     int idPersona = Convert.ToInt32(row.Cells[0].Value);
                     frmPersonasCrud oFrmPerCrud = new frmPersonasCrud(idPersona, "E");
                     if (oFrmPerCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "":
                     Console.WriteLine("Case 2");
