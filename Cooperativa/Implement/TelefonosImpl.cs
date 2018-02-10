@@ -148,6 +148,39 @@ namespace Implement
             }
         }
 
+
+        public Telefonos TelefonosGetByCodigoRegistroDefecto(long CodigoRegistro, string TabCodigo)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = " SELECT * " +
+                                   " FROM   telefonos " +
+                                   " WHERE  TAB_CODIGO ='" + TabCodigo + "' " +
+                                   " AND TEL_CODIGO_REGISTRO="+ CodigoRegistro + " "+
+                                   " AND TEL_DEFECTO='S'";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt;
+                dt = ds.Tables[0];
+                Telefonos NewEnt = new Telefonos();
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow dr = dt.Rows[0];
+                    NewEnt = CargarTelefonos(dr);
+                }
+                return NewEnt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public List<Telefonos> TelefonosGetAll()
         {
             List<Telefonos> lstTelefonos = new List<Telefonos>();

@@ -46,16 +46,16 @@
             this.lblEtiqueta30 = new Controles.labels.lblEtiqueta();
             this.txtLimiteCredito = new Controles.textBoxes.txtDescripcion();
             this.lblEtiqueta29 = new Controles.labels.lblEtiqueta();
-            this.dtpFechaProvBaja = new Controles.Fecha.dtpFecha();
-            this.dtpFechaProvAlta = new Controles.Fecha.dtpFecha();
+            this.dtpFechaBajaPro = new Controles.Fecha.dtpFecha();
+            this.dtpFechaAltaPro = new Controles.Fecha.dtpFecha();
             this.lblEtiqueta26 = new Controles.labels.lblEtiqueta();
             this.lblEtiqueta27 = new Controles.labels.lblEtiqueta();
             this.txtTitularCheques = new Controles.textBoxes.txtDescripcion();
             this.lblEtiqueta14 = new Controles.labels.lblEtiqueta();
             this.lblTitulo2 = new Controles.labels.lblTitulo();
             this.lblTitulo1 = new Controles.labels.lblTitulo();
-            this.dtpFecha3 = new Controles.Fecha.dtpFecha();
-            this.dtpFecha = new Controles.Fecha.dtpFecha();
+            this.dtpFechaBajaCli = new Controles.Fecha.dtpFecha();
+            this.dtpFechaAltaCli = new Controles.Fecha.dtpFecha();
             this.lblEtiqueta12 = new Controles.labels.lblEtiqueta();
             this.lblEtiqueta13 = new Controles.labels.lblEtiqueta();
             this.chkEsProveedor = new Controles.datos.chkBox();
@@ -83,8 +83,6 @@
             this.btnDomicilio = new Controles.buttons.btnGeneral();
             this.lblEtiqueta6 = new Controles.labels.lblEtiqueta();
             this.txtSaldo = new Controles.textBoxes.txtDescripcion();
-            this.txtFechaAlta = new Controles.textBoxes.txtDescripcion();
-            this.lblEtiqueta5 = new Controles.labels.lblEtiqueta();
             this.txtDomicilio = new Controles.textBoxes.txtDescripcion();
             this.lblEtiqueta4 = new Controles.labels.lblEtiqueta();
             this.txtCuit = new Controles.textBoxes.txtDescripcion();
@@ -190,7 +188,7 @@
             this.tabEmpresas.Name = "tabEmpresas";
             this.tabEmpresas.SelectedIndex = 0;
             this.tabEmpresas.Size = new System.Drawing.Size(907, 185);
-            this.tabEmpresas.TabIndex = 6;
+            this.tabEmpresas.TabIndex = 50;
             this.tabEmpresas.Tag = "";
             // 
             // tabPage1
@@ -216,7 +214,7 @@
             this.dtpFechaBajaAccionista.Name = "dtpFechaBajaAccionista";
             this.dtpFechaBajaAccionista.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.dtpFechaBajaAccionista.Size = new System.Drawing.Size(110, 22);
-            this.dtpFechaBajaAccionista.TabIndex = 28;
+            this.dtpFechaBajaAccionista.TabIndex = 22;
             // 
             // dtpFechaAltaAccionista
             // 
@@ -225,16 +223,16 @@
             this.dtpFechaAltaAccionista.Name = "dtpFechaAltaAccionista";
             this.dtpFechaAltaAccionista.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.dtpFechaAltaAccionista.Size = new System.Drawing.Size(110, 22);
-            this.dtpFechaAltaAccionista.TabIndex = 27;
+            this.dtpFechaAltaAccionista.TabIndex = 21;
             // 
             // lblEtiqueta11
             // 
             this.lblEtiqueta11.AutoSize = true;
             this.lblEtiqueta11.Location = new System.Drawing.Point(17, 70);
             this.lblEtiqueta11.Name = "lblEtiqueta11";
-            this.lblEtiqueta11.Size = new System.Drawing.Size(79, 17);
+            this.lblEtiqueta11.Size = new System.Drawing.Size(83, 17);
             this.lblEtiqueta11.TabIndex = 26;
-            this.lblEtiqueta11.Text = "Fecha Alta:";
+            this.lblEtiqueta11.Text = "Fecha Baja:";
             // 
             // txtDistrito
             // 
@@ -246,7 +244,7 @@
             this.txtDistrito.Name = "txtDistrito";
             this.txtDistrito.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDistrito.Size = new System.Drawing.Size(347, 22);
-            this.txtDistrito.TabIndex = 25;
+            this.txtDistrito.TabIndex = 23;
             this.txtDistrito.TextoVacio = "<Descripcion>";
             this.txtDistrito.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -274,16 +272,16 @@
             this.tabPage3.Controls.Add(this.lblEtiqueta30);
             this.tabPage3.Controls.Add(this.txtLimiteCredito);
             this.tabPage3.Controls.Add(this.lblEtiqueta29);
-            this.tabPage3.Controls.Add(this.dtpFechaProvBaja);
-            this.tabPage3.Controls.Add(this.dtpFechaProvAlta);
+            this.tabPage3.Controls.Add(this.dtpFechaBajaPro);
+            this.tabPage3.Controls.Add(this.dtpFechaAltaPro);
             this.tabPage3.Controls.Add(this.lblEtiqueta26);
             this.tabPage3.Controls.Add(this.lblEtiqueta27);
             this.tabPage3.Controls.Add(this.txtTitularCheques);
             this.tabPage3.Controls.Add(this.lblEtiqueta14);
             this.tabPage3.Controls.Add(this.lblTitulo2);
             this.tabPage3.Controls.Add(this.lblTitulo1);
-            this.tabPage3.Controls.Add(this.dtpFecha3);
-            this.tabPage3.Controls.Add(this.dtpFecha);
+            this.tabPage3.Controls.Add(this.dtpFechaBajaCli);
+            this.tabPage3.Controls.Add(this.dtpFechaAltaCli);
             this.tabPage3.Controls.Add(this.lblEtiqueta12);
             this.tabPage3.Controls.Add(this.lblEtiqueta13);
             this.tabPage3.Controls.Add(this.chkEsProveedor);
@@ -303,7 +301,7 @@
             this.cmbEstadoCredito.Name = "cmbEstadoCredito";
             this.cmbEstadoCredito.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbEstadoCredito.Size = new System.Drawing.Size(111, 24);
-            this.cmbEstadoCredito.TabIndex = 45;
+            this.cmbEstadoCredito.TabIndex = 35;
             // 
             // lblEtiqueta30
             // 
@@ -323,7 +321,7 @@
             this.txtLimiteCredito.Name = "txtLimiteCredito";
             this.txtLimiteCredito.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtLimiteCredito.Size = new System.Drawing.Size(275, 22);
-            this.txtLimiteCredito.TabIndex = 42;
+            this.txtLimiteCredito.TabIndex = 34;
             this.txtLimiteCredito.TextoVacio = "<Descripcion>";
             this.txtLimiteCredito.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -336,23 +334,23 @@
             this.lblEtiqueta29.TabIndex = 43;
             this.lblEtiqueta29.Text = "Limite Creditos:";
             // 
-            // dtpFechaProvBaja
+            // dtpFechaBajaPro
             // 
-            this.dtpFechaProvBaja.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaProvBaja.Location = new System.Drawing.Point(612, 120);
-            this.dtpFechaProvBaja.Name = "dtpFechaProvBaja";
-            this.dtpFechaProvBaja.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.dtpFechaProvBaja.Size = new System.Drawing.Size(110, 22);
-            this.dtpFechaProvBaja.TabIndex = 41;
+            this.dtpFechaBajaPro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaBajaPro.Location = new System.Drawing.Point(612, 120);
+            this.dtpFechaBajaPro.Name = "dtpFechaBajaPro";
+            this.dtpFechaBajaPro.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.dtpFechaBajaPro.Size = new System.Drawing.Size(110, 22);
+            this.dtpFechaBajaPro.TabIndex = 39;
             // 
-            // dtpFechaProvAlta
+            // dtpFechaAltaPro
             // 
-            this.dtpFechaProvAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaProvAlta.Location = new System.Drawing.Point(612, 92);
-            this.dtpFechaProvAlta.Name = "dtpFechaProvAlta";
-            this.dtpFechaProvAlta.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.dtpFechaProvAlta.Size = new System.Drawing.Size(110, 22);
-            this.dtpFechaProvAlta.TabIndex = 40;
+            this.dtpFechaAltaPro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaAltaPro.Location = new System.Drawing.Point(612, 92);
+            this.dtpFechaAltaPro.Name = "dtpFechaAltaPro";
+            this.dtpFechaAltaPro.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.dtpFechaAltaPro.Size = new System.Drawing.Size(110, 22);
+            this.dtpFechaAltaPro.TabIndex = 38;
             // 
             // lblEtiqueta26
             // 
@@ -381,7 +379,7 @@
             this.txtTitularCheques.Name = "txtTitularCheques";
             this.txtTitularCheques.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtTitularCheques.Size = new System.Drawing.Size(275, 22);
-            this.txtTitularCheques.TabIndex = 36;
+            this.txtTitularCheques.TabIndex = 37;
             this.txtTitularCheques.TextoVacio = "<Descripcion>";
             this.txtTitularCheques.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -415,23 +413,23 @@
             this.lblTitulo1.TabIndex = 33;
             this.lblTitulo1.Text = "Venta";
             // 
-            // dtpFecha3
+            // dtpFechaBajaCli
             // 
-            this.dtpFecha3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha3.Location = new System.Drawing.Point(116, 72);
-            this.dtpFecha3.Name = "dtpFecha3";
-            this.dtpFecha3.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.dtpFecha3.Size = new System.Drawing.Size(110, 22);
-            this.dtpFecha3.TabIndex = 32;
+            this.dtpFechaBajaCli.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaBajaCli.Location = new System.Drawing.Point(116, 72);
+            this.dtpFechaBajaCli.Name = "dtpFechaBajaCli";
+            this.dtpFechaBajaCli.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.dtpFechaBajaCli.Size = new System.Drawing.Size(110, 22);
+            this.dtpFechaBajaCli.TabIndex = 33;
             // 
-            // dtpFecha
+            // dtpFechaAltaCli
             // 
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(116, 44);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.dtpFecha.Size = new System.Drawing.Size(110, 22);
-            this.dtpFecha.TabIndex = 31;
+            this.dtpFechaAltaCli.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaAltaCli.Location = new System.Drawing.Point(116, 44);
+            this.dtpFechaAltaCli.Name = "dtpFechaAltaCli";
+            this.dtpFechaAltaCli.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.dtpFechaAltaCli.Size = new System.Drawing.Size(110, 22);
+            this.dtpFechaAltaCli.TabIndex = 32;
             // 
             // lblEtiqueta12
             // 
@@ -458,7 +456,7 @@
             this.chkEsProveedor.Name = "chkEsProveedor";
             this.chkEsProveedor.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.chkEsProveedor.Size = new System.Drawing.Size(136, 21);
-            this.chkEsProveedor.TabIndex = 1;
+            this.chkEsProveedor.TabIndex = 36;
             this.chkEsProveedor.Text = "Es un Proveedor";
             this.chkEsProveedor.UseVisualStyleBackColor = true;
             // 
@@ -469,7 +467,7 @@
             this.chkEsCliente.Name = "chkEsCliente";
             this.chkEsCliente.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.chkEsCliente.Size = new System.Drawing.Size(93, 21);
-            this.chkEsCliente.TabIndex = 0;
+            this.chkEsCliente.TabIndex = 31;
             this.chkEsCliente.Text = "Es Cliente";
             this.chkEsCliente.UseVisualStyleBackColor = true;
             // 
@@ -492,8 +490,9 @@
             this.btnNuevaObs.Location = new System.Drawing.Point(849, 69);
             this.btnNuevaObs.Name = "btnNuevaObs";
             this.btnNuevaObs.Size = new System.Drawing.Size(44, 46);
-            this.btnNuevaObs.TabIndex = 1;
+            this.btnNuevaObs.TabIndex = 42;
             this.btnNuevaObs.UseVisualStyleBackColor = true;
+            this.btnNuevaObs.Click += new System.EventHandler(this.btnNuevaObs_Click);
             // 
             // txtObservaciones
             // 
@@ -506,7 +505,7 @@
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtObservaciones.Size = new System.Drawing.Size(815, 89);
-            this.txtObservaciones.TabIndex = 0;
+            this.txtObservaciones.TabIndex = 41;
             this.txtObservaciones.TextoVacio = "<Descripcion>";
             this.txtObservaciones.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -531,7 +530,7 @@
             this.txtNroTransporte.Name = "txtNroTransporte";
             this.txtNroTransporte.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtNroTransporte.Size = new System.Drawing.Size(180, 22);
-            this.txtNroTransporte.TabIndex = 46;
+            this.txtNroTransporte.TabIndex = 51;
             this.txtNroTransporte.TextoVacio = "<Descripcion>";
             this.txtNroTransporte.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -547,10 +546,12 @@
             // rbIndividual
             // 
             this.rbIndividual.AutoSize = true;
+            this.rbIndividual.Checked = true;
             this.rbIndividual.Location = new System.Drawing.Point(167, 11);
             this.rbIndividual.Name = "rbIndividual";
             this.rbIndividual.Size = new System.Drawing.Size(88, 21);
-            this.rbIndividual.TabIndex = 9;
+            this.rbIndividual.TabIndex = 1;
+            this.rbIndividual.TabStop = true;
             this.rbIndividual.Text = "Individual";
             this.rbIndividual.UseVisualStyleBackColor = true;
             this.rbIndividual.CheckedChanged += new System.EventHandler(this.rbIndividual_CheckedChanged);
@@ -558,12 +559,10 @@
             // rbEmpresa
             // 
             this.rbEmpresa.AutoSize = true;
-            this.rbEmpresa.Checked = true;
             this.rbEmpresa.Location = new System.Drawing.Point(261, 11);
             this.rbEmpresa.Name = "rbEmpresa";
             this.rbEmpresa.Size = new System.Drawing.Size(85, 21);
-            this.rbEmpresa.TabIndex = 8;
-            this.rbEmpresa.TabStop = true;
+            this.rbEmpresa.TabIndex = 2;
             this.rbEmpresa.Text = "Empresa";
             this.rbEmpresa.UseVisualStyleBackColor = true;
             this.rbEmpresa.CheckedChanged += new System.EventHandler(this.rbEmpresa_CheckedChanged);
@@ -595,8 +594,6 @@
             this.pnlEmpresa.Controls.Add(this.btnDomicilio);
             this.pnlEmpresa.Controls.Add(this.lblEtiqueta6);
             this.pnlEmpresa.Controls.Add(this.txtSaldo);
-            this.pnlEmpresa.Controls.Add(this.txtFechaAlta);
-            this.pnlEmpresa.Controls.Add(this.lblEtiqueta5);
             this.pnlEmpresa.Controls.Add(this.txtDomicilio);
             this.pnlEmpresa.Controls.Add(this.lblEtiqueta4);
             this.pnlEmpresa.Controls.Add(this.txtCuit);
@@ -618,21 +615,21 @@
             this.cmbTipoIVA.Name = "cmbTipoIVA";
             this.cmbTipoIVA.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbTipoIVA.Size = new System.Drawing.Size(196, 24);
-            this.cmbTipoIVA.TabIndex = 43;
+            this.cmbTipoIVA.TabIndex = 6;
             // 
             // dtpFechaAlta
             // 
             this.dtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaAlta.Location = new System.Drawing.Point(477, 142);
+            this.dtpFechaAlta.Location = new System.Drawing.Point(477, 58);
             this.dtpFechaAlta.Name = "dtpFechaAlta";
             this.dtpFechaAlta.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.dtpFechaAlta.Size = new System.Drawing.Size(110, 22);
-            this.dtpFechaAlta.TabIndex = 44;
+            this.dtpFechaAlta.TabIndex = 12;
             // 
             // lblEtiqueta18
             // 
             this.lblEtiqueta18.AutoSize = true;
-            this.lblEtiqueta18.Location = new System.Drawing.Point(392, 147);
+            this.lblEtiqueta18.Location = new System.Drawing.Point(396, 60);
             this.lblEtiqueta18.Name = "lblEtiqueta18";
             this.lblEtiqueta18.Size = new System.Drawing.Size(79, 17);
             this.lblEtiqueta18.TabIndex = 43;
@@ -641,11 +638,11 @@
             // chkEmpPropia
             // 
             this.chkEmpPropia.AutoSize = true;
-            this.chkEmpPropia.Location = new System.Drawing.Point(465, 115);
+            this.chkEmpPropia.Location = new System.Drawing.Point(477, 119);
             this.chkEmpPropia.Name = "chkEmpPropia";
             this.chkEmpPropia.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.chkEmpPropia.Size = new System.Drawing.Size(131, 21);
-            this.chkEmpPropia.TabIndex = 35;
+            this.chkEmpPropia.TabIndex = 14;
             this.chkEmpPropia.Text = "Empresa Propia";
             this.chkEmpPropia.UseVisualStyleBackColor = true;
             // 
@@ -654,7 +651,7 @@
             this.btnEmail.Location = new System.Drawing.Point(696, 5);
             this.btnEmail.Name = "btnEmail";
             this.btnEmail.Size = new System.Drawing.Size(28, 23);
-            this.btnEmail.TabIndex = 21;
+            this.btnEmail.TabIndex = 10;
             this.btnEmail.Text = "...";
             this.btnEmail.UseVisualStyleBackColor = true;
             this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
@@ -668,7 +665,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtEmail.Size = new System.Drawing.Size(213, 22);
-            this.txtEmail.TabIndex = 20;
+            this.txtEmail.TabIndex = 9;
             this.txtEmail.TextoVacio = "<Descripcion>";
             this.txtEmail.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -686,7 +683,7 @@
             this.btnTelefono.Location = new System.Drawing.Point(696, 31);
             this.btnTelefono.Name = "btnTelefono";
             this.btnTelefono.Size = new System.Drawing.Size(28, 23);
-            this.btnTelefono.TabIndex = 15;
+            this.btnTelefono.TabIndex = 12;
             this.btnTelefono.Text = "...";
             this.btnTelefono.UseVisualStyleBackColor = true;
             this.btnTelefono.Click += new System.EventHandler(this.btnTelefono_Click);
@@ -700,7 +697,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtTelefono.Size = new System.Drawing.Size(213, 22);
-            this.txtTelefono.TabIndex = 14;
+            this.txtTelefono.TabIndex = 11;
             this.txtTelefono.TextoVacio = "<Descripcion>";
             this.txtTelefono.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -718,7 +715,7 @@
             this.btnDomicilio.Location = new System.Drawing.Point(382, 117);
             this.btnDomicilio.Name = "btnDomicilio";
             this.btnDomicilio.Size = new System.Drawing.Size(28, 23);
-            this.btnDomicilio.TabIndex = 12;
+            this.btnDomicilio.TabIndex = 8;
             this.btnDomicilio.Text = "...";
             this.btnDomicilio.UseVisualStyleBackColor = true;
             this.btnDomicilio.Click += new System.EventHandler(this.btnDomicilio_Click);
@@ -726,7 +723,7 @@
             // lblEtiqueta6
             // 
             this.lblEtiqueta6.AutoSize = true;
-            this.lblEtiqueta6.Location = new System.Drawing.Point(423, 92);
+            this.lblEtiqueta6.Location = new System.Drawing.Point(423, 89);
             this.lblEtiqueta6.Name = "lblEtiqueta6";
             this.lblEtiqueta6.Size = new System.Drawing.Size(52, 17);
             this.lblEtiqueta6.TabIndex = 11;
@@ -741,31 +738,9 @@
             this.txtSaldo.Name = "txtSaldo";
             this.txtSaldo.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtSaldo.Size = new System.Drawing.Size(213, 22);
-            this.txtSaldo.TabIndex = 10;
+            this.txtSaldo.TabIndex = 13;
             this.txtSaldo.TextoVacio = "<Descripcion>";
             this.txtSaldo.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
-            // 
-            // txtFechaAlta
-            // 
-            this.txtFechaAlta.BackColor = System.Drawing.Color.White;
-            this.txtFechaAlta.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtFechaAlta.Location = new System.Drawing.Point(477, 59);
-            this.txtFechaAlta.MaxLength = 50;
-            this.txtFechaAlta.Name = "txtFechaAlta";
-            this.txtFechaAlta.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtFechaAlta.Size = new System.Drawing.Size(213, 22);
-            this.txtFechaAlta.TabIndex = 9;
-            this.txtFechaAlta.TextoVacio = "<Descripcion>";
-            this.txtFechaAlta.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
-            // 
-            // lblEtiqueta5
-            // 
-            this.lblEtiqueta5.AutoSize = true;
-            this.lblEtiqueta5.Location = new System.Drawing.Point(392, 64);
-            this.lblEtiqueta5.Name = "lblEtiqueta5";
-            this.lblEtiqueta5.Size = new System.Drawing.Size(79, 17);
-            this.lblEtiqueta5.TabIndex = 8;
-            this.lblEtiqueta5.Text = "Fecha Alta:";
             // 
             // txtDomicilio
             // 
@@ -780,6 +755,7 @@
             this.txtDomicilio.TabIndex = 7;
             this.txtDomicilio.TextoVacio = "<Descripcion>";
             this.txtDomicilio.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            this.txtDomicilio.TextChanged += new System.EventHandler(this.txtDomicilio_TextChanged);
             // 
             // lblEtiqueta4
             // 
@@ -821,7 +797,7 @@
             this.txtDenominacionComercial.Name = "txtDenominacionComercial";
             this.txtDenominacionComercial.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDenominacionComercial.Size = new System.Drawing.Size(195, 22);
-            this.txtDenominacionComercial.TabIndex = 3;
+            this.txtDenominacionComercial.TabIndex = 4;
             this.txtDenominacionComercial.TextoVacio = "<Descripcion>";
             this.txtDenominacionComercial.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -843,7 +819,7 @@
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtRazonSocial.Size = new System.Drawing.Size(195, 22);
-            this.txtRazonSocial.TabIndex = 1;
+            this.txtRazonSocial.TabIndex = 3;
             this.txtRazonSocial.TextoVacio = "<Descripcion>";
             this.txtRazonSocial.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -904,7 +880,7 @@
             this.txtCuitI.Name = "txtCuitI";
             this.txtCuitI.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtCuitI.Size = new System.Drawing.Size(195, 22);
-            this.txtCuitI.TabIndex = 42;
+            this.txtCuitI.TabIndex = 7;
             this.txtCuitI.TextoVacio = "<Descripcion>";
             this.txtCuitI.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -924,7 +900,7 @@
             this.cmbTipoIvaI.Name = "cmbTipoIvaI";
             this.cmbTipoIvaI.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbTipoIvaI.Size = new System.Drawing.Size(195, 24);
-            this.cmbTipoIvaI.TabIndex = 40;
+            this.cmbTipoIvaI.TabIndex = 8;
             // 
             // lblEtiqueta24
             // 
@@ -950,14 +926,14 @@
             this.cmbTipoDniI.Name = "cmbTipoDniI";
             this.cmbTipoDniI.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbTipoDniI.Size = new System.Drawing.Size(61, 24);
-            this.cmbTipoDniI.TabIndex = 38;
+            this.cmbTipoDniI.TabIndex = 5;
             // 
             // btnEmailI
             // 
             this.btnEmailI.Location = new System.Drawing.Point(696, 5);
             this.btnEmailI.Name = "btnEmailI";
             this.btnEmailI.Size = new System.Drawing.Size(28, 23);
-            this.btnEmailI.TabIndex = 21;
+            this.btnEmailI.TabIndex = 12;
             this.btnEmailI.Text = "...";
             this.btnEmailI.UseVisualStyleBackColor = true;
             this.btnEmailI.Click += new System.EventHandler(this.btnEmailI_Click);
@@ -971,7 +947,7 @@
             this.txtEmailI.Name = "txtEmailI";
             this.txtEmailI.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtEmailI.Size = new System.Drawing.Size(213, 22);
-            this.txtEmailI.TabIndex = 20;
+            this.txtEmailI.TabIndex = 11;
             this.txtEmailI.TextoVacio = "<Descripcion>";
             this.txtEmailI.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -989,7 +965,7 @@
             this.btnTelefonosI.Location = new System.Drawing.Point(351, 138);
             this.btnTelefonosI.Name = "btnTelefonosI";
             this.btnTelefonosI.Size = new System.Drawing.Size(28, 23);
-            this.btnTelefonosI.TabIndex = 15;
+            this.btnTelefonosI.TabIndex = 10;
             this.btnTelefonosI.Text = "...";
             this.btnTelefonosI.UseVisualStyleBackColor = true;
             this.btnTelefonosI.Click += new System.EventHandler(this.btnTelefonosI_Click);
@@ -1003,7 +979,7 @@
             this.txtTelefonoI.Name = "txtTelefonoI";
             this.txtTelefonoI.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtTelefonoI.Size = new System.Drawing.Size(195, 22);
-            this.txtTelefonoI.TabIndex = 14;
+            this.txtTelefonoI.TabIndex = 9;
             this.txtTelefonoI.TextoVacio = "<Descripcion>";
             this.txtTelefonoI.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -1021,7 +997,7 @@
             this.btnDomicilioI.Location = new System.Drawing.Point(696, 40);
             this.btnDomicilioI.Name = "btnDomicilioI";
             this.btnDomicilioI.Size = new System.Drawing.Size(28, 23);
-            this.btnDomicilioI.TabIndex = 12;
+            this.btnDomicilioI.TabIndex = 14;
             this.btnDomicilioI.Text = "...";
             this.btnDomicilioI.UseVisualStyleBackColor = true;
             this.btnDomicilioI.Click += new System.EventHandler(this.btnDomicilioI_Click);
@@ -1044,7 +1020,7 @@
             this.txtSaldoI.Name = "txtSaldoI";
             this.txtSaldoI.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtSaldoI.Size = new System.Drawing.Size(213, 22);
-            this.txtSaldoI.TabIndex = 10;
+            this.txtSaldoI.TabIndex = 15;
             this.txtSaldoI.TextoVacio = "<Descripcion>";
             this.txtSaldoI.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -1058,9 +1034,10 @@
             this.txtDomicilioI.Name = "txtDomicilioI";
             this.txtDomicilioI.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDomicilioI.Size = new System.Drawing.Size(215, 78);
-            this.txtDomicilioI.TabIndex = 7;
+            this.txtDomicilioI.TabIndex = 13;
             this.txtDomicilioI.TextoVacio = "<Descripcion>";
             this.txtDomicilioI.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            this.txtDomicilioI.TextChanged += new System.EventHandler(this.txtDomicilioI_TextChanged);
             // 
             // lblEtiqueta19
             // 
@@ -1080,7 +1057,7 @@
             this.txtDNII.Name = "txtDNII";
             this.txtDNII.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtDNII.Size = new System.Drawing.Size(128, 22);
-            this.txtDNII.TabIndex = 5;
+            this.txtDNII.TabIndex = 6;
             this.txtDNII.TextoVacio = "<Descripcion>";
             this.txtDNII.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -1102,7 +1079,7 @@
             this.txtApellidoI.Name = "txtApellidoI";
             this.txtApellidoI.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtApellidoI.Size = new System.Drawing.Size(195, 22);
-            this.txtApellidoI.TabIndex = 3;
+            this.txtApellidoI.TabIndex = 4;
             this.txtApellidoI.TextoVacio = "<Descripcion>";
             this.txtApellidoI.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -1124,7 +1101,7 @@
             this.txtNombreI.Name = "txtNombreI";
             this.txtNombreI.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.txtNombreI.Size = new System.Drawing.Size(195, 22);
-            this.txtNombreI.TabIndex = 1;
+            this.txtNombreI.TabIndex = 3;
             this.txtNombreI.TextoVacio = "<Descripcion>";
             this.txtNombreI.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
             // 
@@ -1182,8 +1159,6 @@
         private Controles.contenedores.pnlPanelContenedor pnlEmpresa;
         private Controles.labels.lblEtiqueta lblEtiqueta6;
         private Controles.textBoxes.txtDescripcion txtSaldo;
-        private Controles.textBoxes.txtDescripcion txtFechaAlta;
-        private Controles.labels.lblEtiqueta lblEtiqueta5;
         private Controles.textBoxes.txtDescripcion txtDomicilio;
         private Controles.labels.lblEtiqueta lblEtiqueta4;
         private Controles.textBoxes.txtDescripcion txtCuit;
@@ -1206,16 +1181,16 @@
         private Controles.Fecha.dtpFecha dtpFechaAltaAccionista;
         private Controles.labels.lblEtiqueta lblEtiqueta11;
         private System.Windows.Forms.TabPage tabPage3;
-        private Controles.Fecha.dtpFecha dtpFecha3;
-        private Controles.Fecha.dtpFecha dtpFecha;
+        private Controles.Fecha.dtpFecha dtpFechaBajaCli;
+        private Controles.Fecha.dtpFecha dtpFechaAltaCli;
         private Controles.labels.lblEtiqueta lblEtiqueta12;
         private Controles.labels.lblEtiqueta lblEtiqueta13;
         private Controles.datos.chkBox chkEsProveedor;
         private Controles.datos.chkBox chkEsCliente;
         private Controles.buttons.btnNuevo btnNuevaObs;
         private Controles.textBoxes.txtDescripcion txtObservaciones;
-        private Controles.Fecha.dtpFecha dtpFechaProvBaja;
-        private Controles.Fecha.dtpFecha dtpFechaProvAlta;
+        private Controles.Fecha.dtpFecha dtpFechaBajaPro;
+        private Controles.Fecha.dtpFecha dtpFechaAltaPro;
         private Controles.labels.lblEtiqueta lblEtiqueta26;
         private Controles.labels.lblEtiqueta lblEtiqueta27;
         private Controles.textBoxes.txtDescripcion txtTitularCheques;

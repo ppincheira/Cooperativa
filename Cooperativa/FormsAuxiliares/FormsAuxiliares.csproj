@@ -247,6 +247,10 @@
       <Project>{2b8d11ae-a2f8-4dd8-97a7-9e722b57182e}</Project>
       <Name>Controles</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GesSeguridad\GesSeguridad.csproj">
+      <Project>{4f833e59-47e3-46c7-be0b-48d8572cabc5}</Project>
+      <Name>GesSeguridad</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GesServicios\GesServicios.csproj">
       <Project>{6e6e3656-eed9-4b5f-832c-a0cc3264872b}</Project>
       <Name>GesServicios</Name>
