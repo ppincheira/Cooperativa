@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using Implement;
 using Model;
 
@@ -35,5 +36,11 @@ namespace Business
             ServiciosCategoriasImpl oServiciosCategoriasImpl = new ServiciosCategoriasImpl();
             return oServiciosCategoriasImpl.ServiciosCategoriasGetAll();
         }
+        public DataTable ServiciosCategoriasGetbySrv(string srvCodigo)
+        {
+            ServiciosCategoriasImpl oServiciosCategoriasImpl = new ServiciosCategoriasImpl();
+            return oServiciosCategoriasImpl.ServiciosCategoriasGetbySrv(srvCodigo);
+        }
+
     }
 }
