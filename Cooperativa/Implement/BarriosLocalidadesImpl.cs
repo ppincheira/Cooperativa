@@ -167,7 +167,7 @@ namespace Implement
 			}
 		}
 
-        public DataTable BarriosLocalidadesGetByLocalidadDT(long locNumero) 
+        public DataTable BarriosLocalidadesGetByLocalidad(long locNumero) 
         {
             try
             {
@@ -176,7 +176,7 @@ namespace Implement
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                string sqlSelect = "select BAR_NUMERO, BAR_DESCRIPCION, LOC_NUMERO, TBL_CODIGO from Barrios_Localidades ";
+                string sqlSelect = "select * from Barrios_Localidades ";
                 cmd = new OracleCommand(sqlSelect, cn);
                 adapter = new OracleDataAdapter(cmd);
                 cmd.ExecuteNonQuery();

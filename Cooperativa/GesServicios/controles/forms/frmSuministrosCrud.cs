@@ -15,7 +15,7 @@ namespace GesServicios.controles.forms
         UISuministrosCrud _oSuministrosCrud;
         Utility oUtil;
 
-        long _SumNumero, _EmpNumero;
+        long _SumNumero;
         string _EstCodigo;
 
         #endregion
@@ -53,8 +53,8 @@ namespace GesServicios.controles.forms
 
         public long EmpNumero
         {
-            get { return _EmpNumero; }
-            set { _EmpNumero = value; }
+            get { return long.Parse(txtEmpNumero.Text); }
+            set { txtEmpNumero.Text = value.ToString(); }
         }
 
         public DateTime? FechaAlta
@@ -139,6 +139,36 @@ namespace GesServicios.controles.forms
             get { return DateTime.Parse(dtpFechaAlta.Text); }
             set { dtpFechaAlta.Text = value.ToString(); }
         }
+        public string strRazonSocial
+        {
+            get { return this.txtEmpRazonSocial.Text; }
+            set { this.txtEmpRazonSocial.Text=value; }
+        }
+        public string strDomicilioEmpresa
+        {
+            get { return this.txtDomicilioEmpresa.Text; }
+            set { this.txtDomicilioEmpresa.Text=value; }
+        }
+        public string strRespIva
+        {
+            get { return this.txtRespIva.Text; }
+            set { this.txtRespIva.Text=value; }
+        }
+         public string strTipoDoc
+        {
+            get { return this.txtTipoDoc.Text; }
+            set { this.txtTipoDoc.Text=value; }
+        }
+        public string strEmpDocumentoNumero
+        {
+            get { return this.txtEmpDocumentoNumero.Text; }
+            set { this.txtEmpDocumentoNumero.Text=value; }
+        }
+        public long numSocio
+        {
+            get { return long.Parse(txtSocio.Text); }
+            set { txtSocio.Text = value.ToString(); }
+        }
         #endregion
         public frmSuministrosCrud(long Suministro, string Estado)
         {
@@ -205,16 +235,17 @@ namespace GesServicios.controles.forms
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
-            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("100047", "100048", "100049", "0", "0", "100050");
             Admin oAdmin = new Admin();
-            oAdmin.TabCodigo = "CLIB";
+            oAdmin.TabCodigo = "CLI";
             oAdmin.Tipo = Admin.enumTipoForm.Selector;
 
-            //frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
-            //if (frmbus.ShowDialog() == DialogResult.OK)
-            //{
-            //    string nombre = frmbus.striRdoCodigo;
-            //}
+            frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
+            if (frmbus.ShowDialog() == DialogResult.OK)
+            {
+                string id = frmbus.striRdoCodigo;
+                _oSuministrosCrud.CargarCliente(long.Parse(id));
+            }
         }
 
         private void btnMedidor_Click(object sender, EventArgs e)
@@ -223,11 +254,11 @@ namespace GesServicios.controles.forms
             Admin oAdmin = new Admin();
             oAdmin.TabCodigo = "MED";
             oAdmin.Tipo = Admin.enumTipoForm.Selector;
-            //frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
-            //if (frmbus.ShowDialog() == DialogResult.OK)
-            //{
-            //    string nombre = frmbus.striRdoCodigo;
-            //}
+            frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
+            if (frmbus.ShowDialog() == DialogResult.OK)
+            {
+                string nombre = frmbus.striRdoCodigo;
+            }
 
         }
 
@@ -270,7 +301,6 @@ namespace GesServicios.controles.forms
             }
 
         }
-
     }
 
 }

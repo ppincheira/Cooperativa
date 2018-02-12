@@ -31,13 +31,6 @@ namespace Business
             return oTelefonosImpl.TelefonosGetById(Id);
         }
 
-
-        public Telefonos TelefonosGetByCodigoRegistroDefecto(long CodigoRegistro, string TabCodigo)
-        {
-            TelefonosImpl oTelefonosImpl = new TelefonosImpl();
-            return oTelefonosImpl.TelefonosGetByCodigoRegistroDefecto(CodigoRegistro, TabCodigo);
-        }
-
         public List<Telefonos> TelefonosGetAll()
         {
             TelefonosImpl oTelefonosImpl = new TelefonosImpl();

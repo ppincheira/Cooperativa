@@ -98,7 +98,7 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
                 rtdo = (oSumBus.SuministrosUpdate(oSum)) ? oSum.SumNumero : 0;
         }
 
-        public bool EliminarModeloMedidor(long idMedidor)
+        public bool EliminarSuministro(long idMedidor)
         {
             SuministrosBus oSumBus = new SuministrosBus();
             Suministros oSum = oSumBus.SuministrosGetById(idMedidor);
@@ -106,6 +106,65 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             return oSumBus.SuministrosUpdate(oSum);
        }
 
+        public void CargarCliente(long id)
+        {
+            Empresas oEmpresa = new Empresas();
+            EmpresasBus oEmpresasBus = new EmpresasBus();
+            oEmpresa = oEmpresasBus.EmpresasGetById(id);
+            _vista.EmpNumero = oEmpresa.EmpNumero;
+            _vista.strRazonSocial = oEmpresa.EmpRazonSocial;
+            _vista.strEmpDocumentoNumero = oEmpresa.EmpDocumentoNumero;
+            CargarSocio(oEmpresa.EmpNumero);
+            CargarTipoIva(oEmpresa.TivCodigo);
+            CargarTipoDni(oEmpresa.TidCodigo);
+            CargarDomicilio(oEmpresa.EmpNumero);
+
+        }
+        private void CargarTipoIva(string id)
+        {
+            TiposIva oTipoIva = new TiposIva();
+            TiposIvaBus oTipoIvaBus = new TiposIvaBus();
+            oTipoIva= oTipoIvaBus.TiposIvaGetById(id);
+            _vista.strRespIva= oTipoIva.TivDescripcion;
+        }
+        private void CargarTipoDni(string id)
+        {
+            TiposIdentificadores oTipoDoc = new TiposIdentificadores();
+            TiposIdentificadoresBus oTiposDocsBus = new TiposIdentificadoresBus();
+            oTipoDoc = oTiposDocsBus.TiposIdentificadoresGetById(id);
+            _vista.strTipoDoc = oTipoDoc.TidDescripcion;
+        }
+        private void CargarSocio(long id)
+        {
+            Accionistas oSocio = new Accionistas();
+            AccionistasBus oSocioBus = new AccionistasBus();
+            oSocio = oSocioBus.AccionistasGetById(id);
+            _vista.numSocio = oSocio.AccNumero;
+        }
+        public void CargarDomicilio(long idEntidad)
+        {
+            long id;
+            //DomiciliosEntidades oDomcilioEntidad = new DomiciliosEntidades();
+            //DomiciliosEntidadesBus oDomicilioEntidadBus = new DomiciliosEntidadesBus();
+            //oDomcilioEntidad = oDomicilioEntidadBus.DomiciliosEntidadesGetByCodReg(idEntidad, ");
+            Domicilios oDomicilio = new Domicilios();
+            DomiciliosBus oDomicilioBus = new DomiciliosBus();
+            //oDomicilio = oDomicilioBus.DomiciliosGetById(id);
+            oDomicilio = oDomicilioBus.DomiciliosGetByCodigoRegistroDefecto(idEntidad, "CLIE");
+            if (oDomicilio.DomCodigo != 0)
+            {
+                CallesLocalidadesBus oCalleBus = new CallesLocalidadesBus();
+                _vista.strDomicilioEmpresa = oCalleBus.CallesLocalidadesGetById(oDomicilio.CalNumero).CalDescripcion + " Nro.: " + oDomicilio.DomNumero + " "
+                    + " Dpto:" + oDomicilio.DomDepartamento;
+            }
+
+            //_vista.lgCodigoDomicilio = oDomicilio.DomCodigo;
+        }
+        private void CargarCategorias()
+        {
+            ServiciosCategoriasBus oCategoriasBus = new ServiciosCategoriasBus();
+            oUtil.CargarCombo(_vista.Categoria, oCategoriasBus.ServiciosCategoriasGetbySrv(_vista.Servicio.Text), "SCA_NUMERO", "SCA_DESCRIPCION", "SELECCIONE..");
+        }
 
     }
 }

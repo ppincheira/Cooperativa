@@ -26,7 +26,7 @@ namespace AppProcesos.formsAuxiliares.frmClientes
         string strApellido { get; set; }
         string strNombre { get; set; }
         double? dblLimiteCredito { get; set; }
-        cmbLista  cmbiEstadoCredito { get; set; }
+        cmbLista cmbiEstadoCredito { get; set; }
         int? intNumeroTransporte { get; set; }
         string strTelefono { get; set; }
         string strEmail { get; set; }
@@ -40,6 +40,5 @@ namespace AppProcesos.formsAuxiliares.frmClientes
         long lgCodigoTelefono { get; set; }
         long lgCodigoEmail { get; set; }
         long lgCodigoObservacion { get; set; }
-
     }
 }

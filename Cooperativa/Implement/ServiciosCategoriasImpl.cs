@@ -180,6 +180,28 @@ namespace Implement
             }
         }
 
+        public DataTable ServiciosCategoriasGetbySrv(string srvCodigo)
+        {
+            List<ServiciosCategorias> lstServiciosCategorias = new List<ServiciosCategorias>();
+            try
+            {
+
+                ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "SELECT * FROM servicios_categorias where srv_codigo='" + srvCodigo + "'";
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                return ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         private ServiciosCategorias CargarServiciosCategorias(DataRow dr)
         {
             try

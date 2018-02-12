@@ -221,9 +221,9 @@ namespace Implement
                         {
                             string[] filterFecha = System.Text.RegularExpressions.Regex.Split(filterV[i], "%");
 
-                            sqlSelect += " AND ("+filterCamp[i] + " >='" + filterFecha[0] +"'";
+                            sqlSelect += " AND ("+filterCamp[i] + " >=to_date('" + filterFecha[0] + "','dd/mm/yyyy')";
                             sqlSelect += " AND ";
-                            sqlSelect += filterCamp[i] + " <='" + filterFecha[1]+"')";
+                            sqlSelect += filterCamp[i] + " <=to_date('" + filterFecha[1]+ "','dd/mm/yyyy'))";
                         }
                         else { 
                             if  (filterCamp[i]!="")

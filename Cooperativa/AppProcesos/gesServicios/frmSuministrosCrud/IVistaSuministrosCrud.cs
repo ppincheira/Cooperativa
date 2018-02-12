@@ -32,6 +32,12 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
         string PermiteFactura { get; set; }
         //int UsrNumero { get; set; }
         DateTime FechaCarga { get; set; }
+        string strRazonSocial { get; set; }
+        string strDomicilioEmpresa { get; set; }
+        string strRespIva { get; set; }
+        string strTipoDoc { get; set; }
+        string strEmpDocumentoNumero { get; set; }
+        long numSocio { get; set; }
 
     }
 }

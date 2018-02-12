@@ -52,8 +52,6 @@ namespace Service
             combo.DisplayMember = Text;
         }
 
-
-
         public void borrarContenidoControles(Control contenedor)
         {
             foreach (Control control in contenedor.Controls)
@@ -290,16 +288,6 @@ namespace Service
                         else
                             ((Controles.textBoxes.txtDescripcion)control).BackColor = System.Drawing.Color.Empty;
 
-                    if (control is Controles.NumericTextBox)
-                        if (((Controles.NumericTextBox)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.NumericTextBox)control).Text == "" && ((Controles.NumericTextBox)control).TabIndex <= index)
-                        {
-
-                            ((Controles.NumericTextBox)control).BackColor = System.Drawing.Color.Red;
-                            formInicial.VALIDARFORM = false;
-                        }
-                        else
-                            ((Controles.NumericTextBox)control).BackColor = System.Drawing.Color.Empty;
-
                     if (control is Controles.textBoxes.txtObservaciones)
                         if (((Controles.textBoxes.txtObservaciones)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.textBoxes.txtObservaciones)control).Text == "" && ((Controles.textBoxes.txtObservaciones)control).TabIndex <= index)
                         {
@@ -346,8 +334,9 @@ namespace Service
 
                     if (control is Controles.datos.cmbLista)
                         if (((Controles.datos.cmbLista)control).Requerido == Enumerados.enumRequerido.SI && ((Controles.datos.cmbLista)control).TabIndex <= index
-                             && (((Controles.datos.cmbLista)control).Text == "" || ((Controles.datos.cmbLista)control).SelectedIndex <= 0))// cambi < por <= martin p.
+                             && (((Controles.datos.cmbLista)control).Text == "" || ((Controles.datos.cmbLista)control).SelectedIndex < 0))
                         {
+
                             ((Controles.datos.cmbLista)control).BackColor = System.Drawing.Color.Red;
                             formInicial.VALIDARFORM = false;
                         }

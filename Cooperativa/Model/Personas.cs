@@ -24,9 +24,9 @@ namespace Model
         public virtual string PrsNumeroDoc { get; set; }
         public virtual string PrsSexo { get; set; }
         public virtual DateTime PrsFechaNacimiento { get; set; }
-        public virtual int? LocNumeroNacimiento { get; set; }
-        public virtual DateTime? PrsFechaIngreso { get; set; }
-        public virtual DateTime? PrsFechaBaja { get; set; }
+        public virtual int LocNumeroNacimiento { get; set; }
+        public virtual DateTime PrsFechaIngreso { get; set; }
+        public virtual DateTime PrsFechaBaja { get; set; }
         public virtual string EstCodigo { get; set; }
         public virtual string PrsMotivoBaja { get; set; }
         public virtual string PrsLegajo { get; set; }
