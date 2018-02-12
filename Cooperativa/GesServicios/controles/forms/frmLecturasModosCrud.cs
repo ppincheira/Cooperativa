@@ -9,20 +9,20 @@ using Service;
 using Model;
 using System.Collections.Generic;
 using Business;
-//using FormsAuxiliares;
+
 
 namespace GesServicios.controles.forms
 {
-    public class frmLecturasModosCrud : gesForm, IVistaLecturasModosCrud
+    public class frmLecturasModosCrud : gesForm
     {
         #region Propiedades
 
         private long _LEMCodigo;
         private int _USRCodigo;
-        public FuncionalidadesFoms _oFuncionalidad;
         private Utility oUtil;
         private UILecturasModosCrud _oLecturasModosCrud;
         private string _EstCodigo;
+
 
 
         private Controles.contenedores.gesGroup gesGroup1;
@@ -32,7 +32,6 @@ namespace GesServicios.controles.forms
         private Controles.labels.lblEtiqueta lblLEMDescripcion;
         private Controles.Fecha.dtpFecha dtpFechaAlta;
         private Controles.labels.lblEtiqueta lblLEMFechaAlta;
-        private Controles.textBoxes.txtDescripcion txtLEMDescripcion;
         private cmbLista cmbSRVCodigo;
         private chkBox chkESTCodigo;
         private Controles.labels.lblEtiqueta lblSRVCodigo;
@@ -45,7 +44,7 @@ namespace GesServicios.controles.forms
         #endregion
 
         public long lemCodigo { get { return this._LEMCodigo; } set { this._LEMCodigo = value; } }
-        public string lemDescripcion { get { return this.txtLEMDescripcion.Text; } set { this.txtLEMDescripcion.Text = value; } }
+        //        public string lemDescripcion { get { return this.txtLEMDescripcion.Text; } set { this.txtLEMDescripcion.Text = value; } }
         public DateTime lemFechaCarga { get { return this.dtpFechaAlta.Value; } set { this.dtpFechaAlta.Value = value; } }
         public cmbLista srvCodigo { get { return this.cmbSRVCodigo; } set { this.cmbSRVCodigo = value; } }
         public int usrCodigo { get { return _USRCodigo; } set { this._USRCodigo = value; } }
@@ -58,7 +57,7 @@ namespace GesServicios.controles.forms
             {
                 _LEMCodigo = NumeroLectura;
                 _EstCodigo = estado;
-                _oLecturasModosCrud = new UILecturasModosCrud(this);
+                //           _oLecturasModosCrud = new UILecturasModosCrud(this);
                 InitializeComponent();
                 if (estado == "B")
                     if (MessageBox.Show("Desea eliminar el Modelo de Lectura: " + NumeroLectura + " ?", "Cooperativa", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -67,9 +66,6 @@ namespace GesServicios.controles.forms
                         _oLecturasModosCrud.EliminarModoLectura(NumeroLectura);
                         this.Close();
                     }
-                //              grdLecturasConceptos.ColumnCount = 3;
-                grdLecturasConceptos.Rows.Add();
-
             }
             catch (Exception ex)
             {
@@ -87,7 +83,6 @@ namespace GesServicios.controles.forms
             this.lblSRVCodigo = new Controles.labels.lblEtiqueta();
             this.dtpFechaAlta = new Controles.Fecha.dtpFecha();
             this.lblLEMFechaAlta = new Controles.labels.lblEtiqueta();
-            this.txtLEMDescripcion = new Controles.textBoxes.txtDescripcion();
             this.lblLEMDescripcion = new Controles.labels.lblEtiqueta();
             this.gesGroup2 = new Controles.contenedores.gesGroup();
             this.grdLecturasConceptos = new Controles.datos.grdGrillaEdit();
@@ -111,7 +106,6 @@ namespace GesServicios.controles.forms
             this.gesGroup1.Controls.Add(this.lblSRVCodigo);
             this.gesGroup1.Controls.Add(this.dtpFechaAlta);
             this.gesGroup1.Controls.Add(this.lblLEMFechaAlta);
-            this.gesGroup1.Controls.Add(this.txtLEMDescripcion);
             this.gesGroup1.Controls.Add(this.lblLEMDescripcion);
             this.gesGroup1.Location = new System.Drawing.Point(12, 12);
             this.gesGroup1.Name = "gesGroup1";
@@ -177,19 +171,6 @@ namespace GesServicios.controles.forms
             this.lblLEMFechaAlta.Size = new System.Drawing.Size(61, 13);
             this.lblLEMFechaAlta.TabIndex = 2;
             this.lblLEMFechaAlta.Text = "Fecha Alta:";
-            // 
-            // txtLEMDescripcion
-            // 
-            this.txtLEMDescripcion.BackColor = System.Drawing.Color.White;
-            this.txtLEMDescripcion.ColorTextoVacio = System.Drawing.Color.Gray;
-            this.txtLEMDescripcion.Location = new System.Drawing.Point(89, 20);
-            this.txtLEMDescripcion.MaxLength = 30;
-            this.txtLEMDescripcion.Name = "txtLEMDescripcion";
-            this.txtLEMDescripcion.Requerido = Controles.util.Enumerados.enumRequerido.NO;
-            this.txtLEMDescripcion.Size = new System.Drawing.Size(199, 20);
-            this.txtLEMDescripcion.TabIndex = 1;
-            this.txtLEMDescripcion.TextoVacio = "<Descripcion>";
-            this.txtLEMDescripcion.TipoControl = Controles.util.Enumerados.enumTipos.Letra;
             // 
             // lblLEMDescripcion
             // 
@@ -331,12 +312,8 @@ namespace GesServicios.controles.forms
             try
             {
                 _USRCodigo = 1;
-                if (this.chkESTCodigo.Checked == true)
-                {
-                    this._EstCodigo = "H";
-                }
-                else
-                    this._EstCodigo = "I";
+                if (this.chkESTCodigo.Checked == true) { this._EstCodigo = "H"; }
+                else this._EstCodigo = "I";
                 //               oUtil.ValidarFormulario(this, this, 3);
                 if (this.VALIDARFORM)
                 {
@@ -362,11 +339,15 @@ namespace GesServicios.controles.forms
         {
             try
             {
+                //esto es necesario porque por alguna razon se des asocia la grilla de la vista de la grilla de los datos
+                conceptos = (grdGrillaEdit)sender;
+                string valorCelda = (string)(((grdGrillaEdit)sender).SelectedCells[0].Value);
+                string valorCampo = "";
                 //Se tiene que preguntar cual es la celda de la cual se esta saliendo,
                 //y se tiene que buscar si alguna lectura concepto concuerda                
-                if ((string)(((grdGrillaEdit)sender).SelectedCells[0].Value) != "")
-                {                 
-                    string valorCelda = (string)(((grdGrillaEdit)sender).SelectedCells[0].Value);
+                if (valorCelda != "")
+                {
+
                     List<LecturasConceptos> datos = new List<LecturasConceptos>();
                     datos = LecturasConceptosBus.RecuperarLecturasConceptos(valorCelda, e.ColumnIndex);
 
@@ -374,26 +355,39 @@ namespace GesServicios.controles.forms
                     //se carga el formulario para agregarlo
                     if (datos.Count == 0)
                     {
-                     
+
 
                         FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("2", "3", "0", "4", "0", "0");
                         Admin oAdmin = new Admin();
                         oAdmin.TabCodigo = "LEC";
                         oAdmin.Tipo = Admin.enumTipoForm.Selector;
-     //                   frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
-   //                     frmbus.
-        /*                if (frmbus.ShowDialog() == DialogResult.OK)
+                        oAdmin.FiltroValores = valorCelda;
+                        switch (e.ColumnIndex)
                         {
-                            string id = frmbus.striRdoCodigo;
-                            
-                            LecturasConceptosBus aux = new LecturasConceptosBus();
-                            LecturasConceptos aux2 = aux.LecturasConceptosGetById(long.Parse(id));
-                            cargarGrilla(aux2,e.RowIndex);
-                        
-                        }*/
+                            case 0:
+                                valorCampo = "LEC_CODIGO";
+                                break;
+                            case 1:
+                                valorCampo = "LEC_DESCRIPCION_CORTA";
+                                break;
+                            case 2:
+                                valorCampo = "LEC_DESCRIPCION";
+                                break;
+                        }
+                        oAdmin.FiltroCampos = valorCampo;
+
+                        /*       frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
+
+                               if (frmbus.ShowDialog() == DialogResult.OK)
+                               {
+                                   string id = frmbus.striRdoCodigo;
+                                   LecturasConceptosBus aux = new LecturasConceptosBus();
+                                   LecturasConceptos aux2 = aux.LecturasConceptosGetById(long.Parse(id));
+                                   cargarGrilla(aux2, e.RowIndex);
+                               }*/
 
 
-                        
+
                     }
                 }
 
@@ -414,7 +408,26 @@ namespace GesServicios.controles.forms
 
         private void cargarGrilla(LecturasConceptos olc, int rows)
         {
- 
+            if (conceptos.Rows.Count == 0)
+            {
+                conceptos.Rows.Add();
+            }
+            conceptos.Rows[rows].Cells[0].Value = olc.LecCodigo;
+            conceptos.Rows[rows].Cells[1].Value = olc.LecDescripcionCorta;
+            conceptos.Rows[rows].Cells[2].Value = olc.LecDescripcion;
+            reorganizarGrilla();
+        }
+
+        private void reorganizarGrilla()
+        {
+            foreach (DataGridViewRow a in conceptos.Rows)
+            {
+                if (a.Cells[0].Value.ToString() == "")
+                {
+                    conceptos.Rows.Remove(a);
+                }
+            }
+            conceptos.Rows.Add();
         }
     }
 }

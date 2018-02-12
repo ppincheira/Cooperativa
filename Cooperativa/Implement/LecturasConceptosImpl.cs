@@ -254,6 +254,7 @@ namespace Implement
                 oObjeto.LecCodigo = long.Parse(dr["LEC_CODIGO"].ToString());
                 oObjeto.LecDescripcion = dr["LEC_DESCRIPCION"].ToString();
                 oObjeto.LecDescripcionCorta = dr["LEC_DESCRIPCION_CORTA"].ToString();
+                oObjeto.EstCodigo = dr["EST_CODIGO"].ToString();
                 if (dr["LEC_FECHA_ALTA"].ToString() != "")
                     oObjeto.LecFechaAlta = DateTime.Parse(dr["LEC_FECHA_ALTA"].ToString());
 

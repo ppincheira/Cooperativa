@@ -1,6 +1,4 @@
-
 *.ide
-*.dll
 *.pdb
 *.config
 *.exe
@@ -151,10 +149,7 @@ Cooperativa/Business/obj/Debug/Business.csproj.FileListAbsolute.txt
 *.cache
 Cooperativa/service/obj/Debug/Service.csprojResolveAssemblyReference.cache
 Cooperativa/service/obj/Debug/Service.csprojResolveAssemblyReference.cache
-*.dll
 Cooperativa/AppProcesos/obj/Debug/AppProcesos.csprojResolveAssemblyReference.cache
-*.dll
-*.dll
 *.pdb
 *.txt
 Cooperativa/.vs/Cooperativa/v15/.suo
@@ -172,3 +167,4 @@ Cooperativa/AppProcesos/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 Cooperativa/.vs/Cooperativa/v15/.suo
 Cooperativa/.vs/Cooperativa/v15/.suo
 Cooperativa/.vs/Cooperativa/v15/.suo
+Cooperativa/AppProcesos/gesServicios/frmSuministrosCrud/IVistaSuministrosCrud.cs

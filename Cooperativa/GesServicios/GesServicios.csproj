@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FormsAuxiliares">
-      <HintPath>..\FormsAuxiliares\bin\Debug\FormsAuxiliares.dll</HintPath>
+      <HintPath>..\Referencias\FormsAuxiliares.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="controles\forms\frmLecturasModosCrudAux.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controles\forms\frmLecturasModosCrudAux.Designer.cs">
+      <DependentUpon>frmLecturasModosCrudAux.cs</DependentUpon>
+    </Compile>
     <Compile Include="controles\forms\frmSuministrosCrud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,8 +142,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="controles\forms\Form1.resx">
-      <DependentUpon>frmSuministrosCrud.cs</DependentUpon>
+    <EmbeddedResource Include="controles\forms\frmLecturasModosCrudAux.resx">
+      <DependentUpon>frmLecturasModosCrudAux.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controles\forms\frmSuministrosAdmin.resx">
       <DependentUpon>frmSuministrosAdmin.cs</DependentUpon>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controles\forms\frmRutasCrud.resx">
       <DependentUpon>frmRutasCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controles\forms\frmSuministrosCrud.resx">
+      <DependentUpon>frmSuministrosCrud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controles\forms\frmTiposConexionesCrud.resx">
       <DependentUpon>frmTiposConexionesCrud.cs</DependentUpon>

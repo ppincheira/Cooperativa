@@ -14,22 +14,37 @@ namespace Implement
         private OracleDataAdapter adapter;
         private OracleCommand cmd;
         private DataSet ds;
-        private int response;
-        public int DomiciliosEntidadesAdd(DomiciliosEntidades oDEn)
+        private long response;
+        public long DomiciliosEntidadesAdd(DomiciliosEntidades oDEn)
 		{
 			try
 			{
                 Conexion oConexion = new Conexion();
                 OracleConnection cn = oConexion.getConexion();
                 cn.Open();
-                // Clave Secuencia DEN_NUMERO
-                ds = new DataSet();
-                cmd = new OracleCommand("insert into Domicilios_Entidades(" +
-                    "TDO_CODIGO, DEN_ID_ORIGEN, TAB_CODIGO) " +
-                    "values('"+oDEn.TdoCodigo + "', "+oDEn.DenIdOrigen + ", '"+oDEn.TabCodigo + "')", cn);
-                adapter = new OracleDataAdapter(cmd);
-                response = cmd.ExecuteNonQuery();
+                string query =
+
+                    " DECLARE IDTEMP NUMBER(15,0); " +
+                    " BEGIN " +
+                    " SELECT(PKG_SECUENCIAS.FNC_PROX_SECUENCIA('DEN_NUMERO')) into IDTEMP from dual; " +
+                    "INSERT INTO DOMICILIOS_ENTIDADES(DEN_NUMERO,TDO_CODIGO,DEN_CODIGO_REGISTRO, TAB_CODIGO, " +
+                    "DOM_CODIGO, DEN_DEFECTO) " +
+                    " VALUES(IDTEMP,'" + oDEn.TdoCodigo + "'," +oDEn.DenCodigoRegistro+ ", '" + oDEn.TabCodigo+ "',"+
+                    oDEn.DomCodigo + ", '" + oDEn.DenDefecto + "') RETURNING IDTEMP INTO :id;" +
+                    " END;";
+
+                cmd = new OracleCommand(query, cn);
+                cmd.Parameters.Add(new OracleParameter
+                {
+                    ParameterName = ":id",
+                    OracleDbType = OracleDbType.Int64,
+                    Direction = ParameterDirection.Output
+                });
+
+                cmd.ExecuteNonQuery();
+                response = long.Parse(cmd.Parameters[":id"].Value.ToString());
                 cn.Close();
+
                 return response;
             }
 			catch(Exception ex)
@@ -48,8 +63,10 @@ namespace Implement
                 ds = new DataSet();
                 cmd = new OracleCommand("update Domicilios_Entidades " +
                     "SET TDO_CODIGO='" + oDEn.TdoCodigo + "'," +
-                    "DEN_ID_ORIGEN=" + oDEn.DenNumero + "," +
-                    "TAB_CODIGO='" + oDEn.TabCodigo + "'" +
+                    "DEN_CODIGO_REGISTRO=" + oDEn.DenCodigoRegistro + "," +
+                    "TAB_CODIGO='" + oDEn.TabCodigo + "'," +
+                    "DOM_CODIGO="+oDEn.DomCodigo +" ,"+
+                    "DEN_DEFECTO='"+oDEn.DenDefecto+"'"+
                     " WHERE DEN_NUMERO=" + oDEn.DenNumero, cn);
                 adapter = new OracleDataAdapter(cmd);
                 response = cmd.ExecuteNonQuery();
@@ -114,6 +131,36 @@ namespace Implement
 			}
 		}
 
+        public DomiciliosEntidades DomiciliosEntidadesGetByDomCodigo(long DomCodigo)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                Conexion oConexion = new Conexion();
+                OracleConnection cn = oConexion.getConexion();
+                cn.Open();
+                string sqlSelect = "select * from Domicilios_Entidades " +
+                    "WHERE DOM_CODIGO=" + DomCodigo.ToString();
+                cmd = new OracleCommand(sqlSelect, cn);
+                adapter = new OracleDataAdapter(cmd);
+                cmd.ExecuteNonQuery();
+                adapter.Fill(ds);
+                DataTable dt;
+                dt = ds.Tables[0];
+                DomiciliosEntidades NewEnt = new DomiciliosEntidades();
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow dr = dt.Rows[0];
+                    NewEnt = CargarDomiciliosEntidades(dr);
+                }
+                return NewEnt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public List<DomiciliosEntidades> DomiciliosEntidadesGetAll()
 		{
             List<DomiciliosEntidades> lstDomiciliosEntidades = new List<DomiciliosEntidades>();
@@ -156,9 +203,10 @@ namespace Implement
                 DomiciliosEntidades oObjeto = new DomiciliosEntidades();
                 oObjeto.DenNumero = long.Parse(dr["DEN_NUMERO"].ToString());
                 oObjeto.TdoCodigo = dr["TDO_CODIGO"].ToString();
-                if (dr["DEN_ID_ORIGEN"].ToString() != "")
-                    oObjeto.DenIdOrigen = long.Parse(dr["DEN_ID_ORIGEN"].ToString());
+                oObjeto.DenCodigoRegistro = long.Parse(dr["DEN_CODIGO_REGISTRO"].ToString());
                 oObjeto.TabCodigo = dr["TAB_CODIGO"].ToString();
+                oObjeto.DomCodigo= long.Parse(dr["DOM_CODIGO"].ToString());
+                oObjeto.DenDefecto = dr["DEN_DEFECTO"].ToString();
                 return oObjeto;
 			}
 			catch(Exception ex)

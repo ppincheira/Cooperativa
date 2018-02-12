@@ -1,6 +1,7 @@
 ﻿using AppProcesos.formsAuxiliares.frmDomicilios;
 using Controles.datos;
 using Controles.form;
+using Model;
 using Service;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,7 @@ namespace FormsAuxiliares
         string _TabCodigo;
         long _DomCodigoRegistro;
         string _TdoCodigo;
+        Admin _oAdmin;
         #endregion
 
         #region Implementation of IVistaDomiciliosCrud
@@ -36,6 +38,11 @@ namespace FormsAuxiliares
         {
             get { return _TabCodigo; }
             set { _TabCodigo = value; }
+        }
+        public Boolean denDefecto
+        {
+            get { return this.chkPorDefecto.Checked; }
+            set { this.chkPorDefecto.Checked = value; }
         }
         public long  domCodigoRegistro
         {
@@ -126,13 +133,14 @@ namespace FormsAuxiliares
         #endregion
 
         #region << EVENTOS >>
-        public frmDomiciliosCrud(long domCodigo)
+        public frmDomiciliosCrud(long domCodigo, Admin oAdmin )
         {
             try
             {
                 InitializeComponent();
                 _DomCodigo = domCodigo;
                 _oDomicilioCrud = new UIDomiciliosCrud(this);
+                _oAdmin = oAdmin;
                 
             }
             catch (Exception ex)
@@ -170,7 +178,7 @@ namespace FormsAuxiliares
                 if (this.VALIDARFORM)
                 {
                     DialogResult = DialogResult.OK;
-                    _oDomicilioCrud.Guardar();
+                    _oDomicilioCrud.Guardar(_oAdmin);
                     this.Close();
                 }
             }

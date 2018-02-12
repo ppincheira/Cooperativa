@@ -1,4 +1,5 @@
 ﻿using Business;
+using Controles.datos;
 using Model;
 using Service;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AppProcesos.gesServicios.frmLecturasModosCrud
 {
@@ -25,9 +27,8 @@ namespace AppProcesos.gesServicios.frmLecturasModosCrud
         {
             ServiciosBus oServiciosBus = new ServiciosBus();
 
-            _vista.srvCodigo.DataSource = oServiciosBus.ServiciosGetAll();
-            _vista.srvCodigo.DisplayMember = "SrvDescripcion";
-            _vista.srvCodigo.ValueMember = "SrvCodigo";
+
+            oUtil.CargarCombo(_vista.srvCodigo, oServiciosBus.ServiciosGetAllDT(), "SRV_CODIGO", "SRV_DESCRIPCION", "Selecione un servicio..");
             if (_vista.lemCodigo != 0)
             {
                 LecturasModos oSLecturas = new LecturasModos();
@@ -43,18 +44,21 @@ namespace AppProcesos.gesServicios.frmLecturasModosCrud
 
 
                 LecturasConceptosBus oSlcBus = new LecturasConceptosBus();
-
+        //        oSMeBus.
                 if (oSLecturas.conceptos.Count > 0)
                 {
-                    foreach(LecturasConceptos oLcAux in oSLecturas.conceptos)
+                 /*   foreach (LecturasConceptos oLcAux in oSLecturas.conceptos)
                     {
-                       _vista.conceptos.DataSource =  oSlcBus.LecturasConceptosGetAllDT().Rows;
+                        _vista.cargarGrilla(oLcAux);
+                        _vista.conceptos.DataSource = oSlcBus.LecturasConceptosGetAllDT().Rows;
+                    }*/
+
+                    for(int i = 0; i < oSLecturas.conceptos.Count; i++)
+                    {
+                        _vista.cargarGrilla(oSLecturas.conceptos[i],i);
                     }
                 }
-                else
-                {
-
-                }
+      
             }
         }
 
@@ -63,18 +67,31 @@ namespace AppProcesos.gesServicios.frmLecturasModosCrud
             long rtdo;
             LecturasModos oSLecturas = new LecturasModos();
             LecturasModosBus oSMeBus = new LecturasModosBus();
-
             oSLecturas.usrCodigo = _vista.usrCodigo;
             oSLecturas.lemDescripcion = _vista.lemDescripcion;
             oSLecturas.lemFechaCarga = _vista.lemFechaCarga;
             oSLecturas.srvCodigo = _vista.srvCodigo.SelectedValue.ToString();
             oSLecturas.lemCodigo = _vista.lemCodigo;
             oSLecturas.estCodigo = _vista.estCodigo;
-
+            oSLecturas.conceptos = cargarConceptos(_vista.conceptos);
             if (_vista.lemCodigo == 0)
                 rtdo = oSMeBus.LecturasModosAdd(oSLecturas);
             else
                 oSMeBus.LecturasModosUpdate(oSLecturas);
+        }
+
+        private List<LecturasConceptos> cargarConceptos(grdGrillaEdit conceptos)
+        {
+            LecturasConceptosBus oSMeBus = new LecturasConceptosBus();
+
+
+            List<LecturasConceptos> salida = new List<LecturasConceptos>();
+            foreach (DataGridViewRow a in conceptos.Rows)
+            {
+                if (a.Cells[0].Value != null)
+                    salida.Add(oSMeBus.LecturasConceptosGetById(long.Parse(a.Cells[0].Value.ToString())));
+            }
+            return salida;
         }
 
         public bool EliminarModoLectura(long idLectura)

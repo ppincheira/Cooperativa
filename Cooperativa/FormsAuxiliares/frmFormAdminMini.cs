@@ -8,6 +8,7 @@ using Controles.form;
 using System.Windows.Forms;
 using static Model.Admin;
 using System.Reflection;
+using GesSeguridad.controles.forms;
 
 namespace FormsAuxiliares
 {
@@ -113,6 +114,9 @@ namespace FormsAuxiliares
                 _oUtil = new Utility();
                 _oUtil.HabilitarAllControlesInTrue(this, 1, "frmFormAdmin");
                 //_oUtil.HabilitarControles(this, 1, "frmFormAdmin", "CAJA", null);
+                if (this.dgBusqueda.RowCount > 0)
+                    dgBusqueda.CurrentCell = dgBusqueda.Rows[0].Cells[1];
+
                 switch (_oAdmin.TabCodigo)
                 {
                     case "SCAT":
@@ -124,10 +128,15 @@ namespace FormsAuxiliares
                         this.dgBusqueda.Columns["DEFECTO"].Visible = false;
                         _oFormAdmin.MarcarSeleccion(_oAdmin.TabCodigo);
                         break;
-
-
-
+                    case "USUS":
+                        this.Text = "Usuarios";
+                        break;
                 }
+
+                if (_oAdmin.Tipo == enumTipoForm.FiltroAndAlta)
+                {
+                    Nuevo();
+                }               
             }
             catch (Exception ex)
             {
@@ -246,9 +255,7 @@ namespace FormsAuxiliares
         {
             try
             {
-                _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
-
-
+                _oFormAdmin.CargarGrilla(_oAdmin);
             }
             catch (Exception ex)
             {
@@ -316,8 +323,7 @@ namespace FormsAuxiliares
                                 e.ToString(),
                                 ((Control)sender).Name,
                                 this.FindForm().Name);
-            }
-             
+            }   
         }
         #endregion
         #region << METODOS >>
@@ -341,6 +347,20 @@ namespace FormsAuxiliares
                         DialogResult = DialogResult.No;
                     this.Close();
                     break;
+                case enumTipoForm.FiltroAndAlta:
+                    if (_strRdoCodigo != "")
+                        DialogResult = DialogResult.OK; //cierra el formulario    
+                    else
+                        DialogResult = DialogResult.No;
+                    this.Close();
+                    break;
+                case enumTipoForm.FiltroAndEditar:
+                    if (_strRdoCodigo != "")
+                        DialogResult = DialogResult.OK; //cierra el formulario    
+                    else
+                        DialogResult = DialogResult.No;
+                    this.Close();
+                    break;
                 case enumTipoForm.Ninguna:
                     Editar();
                     break;
@@ -354,20 +374,19 @@ namespace FormsAuxiliares
                 case "CALB":
                     frmCallesCrud oFrmCalCrud = new frmCallesCrud(0, "NQ");
                     if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "SRUT":
 
                     frmRutasCrud oFrmRutCrud = new frmRutasCrud(0, "H");
-
                     if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "TCS":
                     frmTiposConexionesCrud oFrmTCSCrud = new frmTiposConexionesCrud("", "H");
 
                     if (oFrmTCSCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "":
                     Console.WriteLine("Case 2");
@@ -376,41 +395,52 @@ namespace FormsAuxiliares
 
                     frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(0, "NQ");
                     if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "TME":
                     frmTiposMedidoresCrud oFrmTiposMedidores = new frmTiposMedidoresCrud(0, "");
                     if (oFrmTiposMedidores.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
 
                 case "FAB":
 
                     frmFabricantesCrud oFrmFabricantes = new frmFabricantesCrud(0, "");
                     if (oFrmFabricantes.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "SCAT":
 
                     frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(0, "I");
                     if (oFrmCatCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "LEC":
                     frmLecturasConceptosCrud oFrmLecCrud = new frmLecturasConceptosCrud(0, "");
                     if (oFrmLecCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "TETE":
-                    frmTelefonosCrud ofrmTel = new frmTelefonosCrud(0, _oAdmin.TabCodigo, _oAdmin.CodigoRegistro, "I");
-                    if (ofrmTel.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    frmTelefonosCrud oFrmTel = new frmTelefonosCrud(0, _oAdmin.TabCodigo, _oAdmin.CodigoRegistro, "I");
+                    if (oFrmTel.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
+                case "TEEM":
+                    frmTelefonosCrud oFrmTeem = new frmTelefonosCrud(0, _oAdmin.TabCodigo, _oAdmin.CodigoRegistro, "I");
+                    if (oFrmTeem.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;
+
                 case "LEM":
-                    frmLecturasModosCrud oFrmLemCrud = new frmLecturasModosCrud(0, "");
+                    frmLecturasModosCrudAux oFrmLemCrud = new frmLecturasModosCrudAux(0, "");
                     oFrmLemCrud._oFuncionalidad = _oPermiso;
                     if (oFrmLemCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;
+                case "USUS":
+                    frmUsuariosCrud ofrmUsu = new frmUsuariosCrud(0, "I");
+                    if (ofrmUsu.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
 
             }
@@ -427,35 +457,41 @@ namespace FormsAuxiliares
                     frmCallesCrud oFrmCalCrud = new frmCallesCrud(idCalle, "NQ");
                     oFrmCalCrud.gbDatos.Enabled = false;
                     if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "SRUT":
                     long idRuta = Convert.ToInt64(row.Cells[0].Value);
                     frmRutasCrud oFrmRutCrud = new frmRutasCrud(idRuta, "H");
                     oFrmRutCrud.gbDatos.Enabled = false;
                     if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "TCS":
                     string idTCS = row.Cells[0].Value.ToString();
                     frmTiposConexionesCrud oFrmTCSCrud = new frmTiposConexionesCrud(idTCS, "H");
                     oFrmTCSCrud.gbDatos.Enabled = false;
                     if (oFrmTCSCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "COPB":
                     int idCodPostal = Convert.ToInt32(row.Cells[0].Value);
                     frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
                     oFrmCodPostalCrud.gbDatos.Enabled = false;
                     if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
 
                 case "SCAT":
                     long id = Convert.ToInt64(row.Cells[0].Value);
                     frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(id, "V");
                     if (oFrmCatCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;
+                case "USUS":
+                    int idUsus = Convert.ToInt32(row.Cells[0].Value);
+                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsus, "V");
+                    if (oFrmUsuCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
             }
         }
@@ -468,71 +504,79 @@ namespace FormsAuxiliares
                 case "SRUT":
                     long idRuta = Convert.ToInt64(row.Cells[0].Value);
                     frmRutasCrud oFrmRutCrud = new frmRutasCrud(idRuta, "B");
-                    _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "TCS":
                     string idTCS = row.Cells[0].Value.ToString();
                     frmTiposConexionesCrud oFrmTCSCrud = new frmTiposConexionesCrud(idTCS, "B");
                     if (oFrmTCSCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "FAB":
                     long idFabricantes = Convert.ToInt64(row.Cells[0].Value);
                     frmFabricantesCrud oFrmFabricantesCrud = new frmFabricantesCrud(idFabricantes, "B");
-                    _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
 
                 case "TME":
                     long idTme = Convert.ToInt64(row.Cells[0].Value);
                     frmTiposMedidoresCrud oFrmMedidorCrud = new frmTiposMedidoresCrud(idTme, "B");
-                    _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "SCAT":
                     long id = Convert.ToInt64(row.Cells[0].Value);
                     frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(id, "B");
-                    _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "LEC":
                     long idLec = Convert.ToInt64(row.Cells[0].Value);
                     frmLecturasConceptosCrud oFrmLecCrud = new frmLecturasConceptosCrud(idLec, "B");
-                    _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "LEM":
                     long idLem = Convert.ToInt64(row.Cells[0].Value);
-                    frmLecturasConceptosCrud oFrmLemCrud = new frmLecturasConceptosCrud(idLem, "B");
-                    _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                    frmLecturasModosCrudAux oFrmLemCrud = new frmLecturasModosCrudAux(idLem, "B");
+                    _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;
+                case "USUS":
+                    int idUsu = Convert.ToInt32(row.Cells[0].Value);
+                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsu, "B");
+                    _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
             }
         }
         private void Editar() {
             DataGridViewRow row = this.dgBusqueda.CurrentRow;
-
+            if(row == null)
+            {
+                row = this.dgBusqueda.Rows[1];
+            }
             switch (_oAdmin.TabCodigo)
             {
                 case "CALB":
                     long idCalle = Convert.ToInt64(row.Cells[0].Value);
                     frmCallesCrud oFrmCalCrud = new frmCallesCrud(idCalle, "NQ");
                     if (oFrmCalCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
 
                 case "SRUT":
                     long idRuta = Convert.ToInt64(row.Cells[0].Value);
                     frmRutasCrud oFrmRutCrud = new frmRutasCrud(idRuta, "H");
                     if (oFrmRutCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "TCS":
                     string idTCS = row.Cells[0].Value.ToString();
                     frmTiposConexionesCrud oFrmTCSCrud = new frmTiposConexionesCrud(idTCS, "H");
                     if (oFrmTCSCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "COPB":
                     long idCodPostal = Convert.ToInt64(row.Cells[0].Value);
                     frmCodigoPostalCrud oFrmCodPostalCrud = new frmCodigoPostalCrud(idCodPostal, "NQ");
                     if (oFrmCodPostalCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "TME":
                     long idMedidor = Convert.ToInt64(row.Cells[0].Value);
@@ -542,7 +586,7 @@ namespace FormsAuxiliares
                     if (!oTiposMedidoresCrud.IsDisposed)// ESTE CONTROL SE HACE HASTA QUE LA GRILLA DEJE DE TRAER LOS REGISTROS QUE TENGAN EL ESTADO "B"
                     {
                         if (oTiposMedidoresCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                            _oFormAdmin.CargarGrilla(_oAdmin);
                     }
                     break;
                 case "FAB":
@@ -552,13 +596,13 @@ namespace FormsAuxiliares
                     oFabricantesCrud.bloquearFecha();
                     if (!oFabricantesCrud.IsDisposed)
                         if (oFabricantesCrud.ShowDialog() == DialogResult.OK)
-                            _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                            _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "SCAT":
                     long id = Convert.ToInt64(row.Cells[0].Value);
                     frmCategoriasCrud oFrmCatCrud = new frmCategoriasCrud(id, "E");
                     if (oFrmCatCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
 
                 case "LEC":
@@ -566,14 +610,20 @@ namespace FormsAuxiliares
                     frmLecturasConceptosCrud oFrmLecCrud = new frmLecturasConceptosCrud(idLec, "E");
                     oFrmLecCrud.bloquearFecha();
                     if (oFrmLecCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
                 case "LEM":
                     long idLem = Convert.ToInt64(row.Cells[0].Value);
-                    frmLecturasModosCrud oFrmLemCrud = new frmLecturasModosCrud(idLem, "E");
+                    frmLecturasModosCrudAux oFrmLemCrud = new frmLecturasModosCrudAux(idLem, "E");
                     oFrmLemCrud.bloquearFecha();
                     if (oFrmLemCrud.ShowDialog() == DialogResult.OK)
-                        _oFormAdmin.CargarGrilla(_oAdmin.TabCodigo);
+                        _oFormAdmin.CargarGrilla(_oAdmin);
+                    break;
+                case "USUS":
+                    int idUsu = Convert.ToInt32(row.Cells[0].Value);
+                    frmUsuariosCrud oFrmUsuCrud = new frmUsuariosCrud(idUsu, "E");
+                    if (oFrmUsuCrud.ShowDialog() == DialogResult.OK)
+                        _oFormAdmin.CargarGrilla(_oAdmin);
                     break;
             }
 
