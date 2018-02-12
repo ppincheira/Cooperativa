@@ -77,6 +77,7 @@ namespace AppProcesos.formsAuxiliares.frmClientes
         {
             TiposIdentificadoresBus oTipoIdentificadoresBus = new TiposIdentificadoresBus();
             oUtil.CargarCombo(_vista.cmbiTipoDocumento, oTipoIdentificadoresBus.TiposIdentificadoresGetAllDT(), "tid_codigo", "tid_codigo", "..");
+<<<<<<< HEAD
         }
         public void CargarDomicilio(long CodigoRegistro, string tabCodigo)
         {
@@ -90,6 +91,8 @@ namespace AppProcesos.formsAuxiliares.frmClientes
                     + " Dpto:" + oDomicilio.DomDepartamento;
             }
             _vista.lgCodigoDomicilio = oDomicilio.DomCodigo;
+=======
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
         }
 
     }

@@ -6,9 +6,12 @@ C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\bin\Debu
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\bin\Debug\Model.pdb
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.dll
 C:\Users\Pablo Pincheira\Documents\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.pdb
+<<<<<<< HEAD
 C:\GitHub\Cooperativa\Cooperativa\Model\bin\Debug\Model.dll
 C:\GitHub\Cooperativa\Cooperativa\Model\bin\Debug\Model.pdb
 C:\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.dll
 C:\GitHub\Cooperativa\Cooperativa\Model\obj\Debug\Model.pdb
+=======
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b

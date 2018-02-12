@@ -15,7 +15,15 @@ namespace GesServicios.controles.forms
         UISuministrosCrud _oSuministrosCrud;
         Utility oUtil;
 
+<<<<<<< HEAD
         long _SumNumero;
+=======
+<<<<<<< HEAD
+        long _SumNumero;
+=======
+        long _SumNumero, _EmpNumero;
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
         string _EstCodigo;
 
         #endregion
@@ -53,8 +61,18 @@ namespace GesServicios.controles.forms
 
         public long EmpNumero
         {
+<<<<<<< HEAD
             get { return long.Parse(txtEmpNumero.Text); }
             set { txtEmpNumero.Text = value.ToString(); }
+=======
+<<<<<<< HEAD
+            get { return long.Parse(txtEmpNumero.Text); }
+            set { txtEmpNumero.Text = value.ToString(); }
+=======
+            get { return _EmpNumero; }
+            set { _EmpNumero = value; }
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
         }
 
         public DateTime? FechaAlta
@@ -105,6 +123,7 @@ namespace GesServicios.controles.forms
         }
 
         public string PermiteCorte
+<<<<<<< HEAD
         {
             get { return this.chkPermiteCorte.Checked ? "S" : "N"; }
             set { this.chkPermiteCorte.Checked = (value == "S"); }
@@ -168,6 +187,44 @@ namespace GesServicios.controles.forms
         {
             get { return long.Parse(txtSocio.Text); }
             set { txtSocio.Text = value.ToString(); }
+<<<<<<< HEAD
+=======
+=======
+        {
+            get { return this.chkPermiteCorte.Checked ? "S" : "N"; }
+            set { this.chkPermiteCorte.Checked = (value == "S"); }
+        }
+
+        public string Medido
+        {
+            get { return this.chkMedido.Checked ? "S" : "N"; }
+            set { this.chkMedido.Checked = (value == "S"); }
+        }
+
+        public cmbLista Ruta
+        {
+            get { return cmbRuta; }
+            set { cmbRuta = value; }
+        }
+
+        public cmbLista Zona
+        {
+            get { return cmbZona; }
+            set { cmbZona = value; }
+        }
+
+        public string PermiteFactura
+        {
+            get { return this.chkPermiteFacturacion.Checked ? "S" : "N"; }
+            set { this.chkPermiteFacturacion.Checked = (value == "S"); }
+        }
+
+        public DateTime FechaCarga
+        {
+            get { return DateTime.Parse(dtpFechaAlta.Text); }
+            set { dtpFechaAlta.Text = value.ToString(); }
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
         }
         #endregion
         public frmSuministrosCrud(long Suministro, string Estado)
@@ -205,6 +262,103 @@ namespace GesServicios.controles.forms
                                 ((Control)sender).Name,
                                 this.FindForm().Name);
             }
+<<<<<<< HEAD
+
+        }
+
+        private void frmSuministrosCrud_Load(object sender, EventArgs e)
+        {
+            //Debo cargar primero el servicio que voy a dar, luego el cliente
+            //y luego el domicilio asociado a ese suministro. 
+            //El domicilio en un principio se muestrn los asociados a ese cliente 
+            //pero con la opcion de poder agregar uno nuevo
+            {
+                try
+                {
+                    oUtil = new Utility();
+                    _oSuministrosCrud.Inicializar();
+                }
+                catch (Exception ex)
+                {
+                    Cursor.Current = Cursors.Default;
+                    ManejarError Err = new ManejarError();
+                    Err.CargarError(ex,
+                                    e.ToString(),
+                                    ((Control)sender).Name,
+                                    this.FindForm().Name);
+                }
+
+            }
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("100047", "100048", "100049", "0", "0", "100050");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "CLI";
+            oAdmin.Tipo = Admin.enumTipoForm.Selector;
+
+            frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
+            if (frmbus.ShowDialog() == DialogResult.OK)
+            {
+                string id = frmbus.striRdoCodigo;
+                _oSuministrosCrud.CargarCliente(long.Parse(id));
+            }
+        }
+
+        private void btnMedidor_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("10100", "10101", "10102", "10104", "10105", "10103");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "MED";
+            oAdmin.Tipo = Admin.enumTipoForm.Selector;
+            frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
+            if (frmbus.ShowDialog() == DialogResult.OK)
+            {
+                string nombre = frmbus.striRdoCodigo;
+            }
+
+        }
+
+        private void btnDomicilio_Click(object sender, EventArgs e)
+        {
+            FuncionalidadesFoms oPermiso = new FuncionalidadesFoms("31", "32", "33", "0", "0", "0");
+            Admin oAdmin = new Admin();
+            oAdmin.TabCodigo = "DOM";
+            oAdmin.Tipo = Admin.enumTipoForm.Selector;
+            //frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
+            //if (frmbus.ShowDialog() == DialogResult.OK)
+            //{
+            //    string nombre = frmbus.striRdoCodigo;
+            //}
+
+        }
+
+        private void lblNumeroProv_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                ManejarError Err = new ManejarError();
+                Err.CargarError(ex,
+                                e.ToString(),
+                                ((Control)sender).Name,
+                                this.FindForm().Name);
+            }
+=======
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
 
         }
 

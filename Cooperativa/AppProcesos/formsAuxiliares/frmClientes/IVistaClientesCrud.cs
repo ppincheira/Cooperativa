@@ -1,5 +1,4 @@
 ﻿using Controles.datos;
-using Controles.Fecha;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,18 +18,23 @@ namespace AppProcesos.formsAuxiliares.frmClientes
         string strTitularCheques { get; set; }
         string strPropia { get; set; }
         string strCliente { get; set; }
-        string strProveedor { get; set; }
         string strCategoriaMonotributo { get; set; }
         cmbLista cmbiTipoDocumento { get; set; }
         string strNroDocumento { get; set; }
         string strApellido { get; set; }
         string strNombre { get; set; }
+<<<<<<< HEAD
         double? dblLimiteCredito { get; set; }
         cmbLista cmbiEstadoCredito { get; set; }
+=======
+        decimal? dblLimiteCredito { get; set; }
+        cmbLista  cmbiEstadoCredito { get; set; }
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
         int? intNumeroTransporte { get; set; }
         string strTelefono { get; set; }
         string strEmail { get; set; }
         string strDomicilio { get; set; }
+<<<<<<< HEAD
         dtpFecha dtpiFechaAlta { get; set; }
         dtpFecha dtpiFechaAltaCli { get; set; }
         dtpFecha dtpiFechaBajaCli { get; set; }
@@ -40,5 +44,7 @@ namespace AppProcesos.formsAuxiliares.frmClientes
         long lgCodigoTelefono { get; set; }
         long lgCodigoEmail { get; set; }
         long lgCodigoObservacion { get; set; }
+=======
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
     }
 }

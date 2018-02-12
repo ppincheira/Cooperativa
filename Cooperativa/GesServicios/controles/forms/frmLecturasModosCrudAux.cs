@@ -2,7 +2,15 @@
 using Business;
 using Controles.datos;
 using Controles.form;
+<<<<<<< HEAD
 using FormsAuxiliares;
+=======
+<<<<<<< HEAD
+//using FormsAuxiliares; //comente porque sale un error en la compilacion de referencia circular m.Peralta
+=======
+using FormsAuxiliares;
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
 using Model;
 using Service;
 using System;
@@ -194,6 +202,7 @@ namespace GesServicios.controles.forms
                                 break;
                         }
                         oAdmin.FiltroCampos = valorCampo;
+<<<<<<< HEAD
                         //comente porque sale un error en la compilacion de referencia circular m.Peralta 
                         //frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
                         //if (frmbus.ShowDialog() == DialogResult.OK)
@@ -203,6 +212,10 @@ namespace GesServicios.controles.forms
                         //    LecturasConceptos aux2 = aux.LecturasConceptosGetById(long.Parse(id));
                         //    cargarGrilla(aux2, e.RowIndex);
                         //}
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
                         frmFormAdminMini frmbus = new frmFormAdminMini(oAdmin, oPermiso);
                         if (frmbus.ShowDialog() == DialogResult.OK)
                         {
@@ -211,6 +224,10 @@ namespace GesServicios.controles.forms
                             LecturasConceptos aux2 = aux.LecturasConceptosGetById(long.Parse(id));
                             cargarGrilla(aux2, e.RowIndex);
                         }
+<<<<<<< HEAD
+=======
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
                     }
                 }
                 //Si retorna mas de un resultado se tiene que poder elegir entre las opciones

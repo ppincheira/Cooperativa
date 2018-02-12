@@ -144,6 +144,7 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
         public void CargarDomicilio(long idEntidad)
         {
             long id;
+<<<<<<< HEAD
             //DomiciliosEntidades oDomcilioEntidad = new DomiciliosEntidades();
             //DomiciliosEntidadesBus oDomicilioEntidadBus = new DomiciliosEntidadesBus();
             //oDomcilioEntidad = oDomicilioEntidadBus.DomiciliosEntidadesGetByCodReg(idEntidad, ");
@@ -159,6 +160,17 @@ namespace AppProcesos.gesServicios.frmSuministrosCrud
             }
 
             //_vista.lgCodigoDomicilio = oDomicilio.DomCodigo;
+=======
+            DomiciliosEntidades oDomcilioEntidad = new DomiciliosEntidades();
+            DomiciliosEntidadesBus oDomicilioEntidadBus = new DomiciliosEntidadesBus();
+            //oDomcilioEntidad = oDomicilioEntidadBus.DomiciliosEntidadesGetByCodReg(idEntidad, ");
+            Domicilios oDomicilio = new Domicilios();
+            DomiciliosBus oDomicilioBus = new DomiciliosBus();
+            oDomicilio = oDomicilioBus.DomiciliosGetById(id);
+            CallesLocalidadesBus oCalleBus = new CallesLocalidadesBus();
+            _vista.strDomicilioEmpresa = oCalleBus.CallesLocalidadesGetById(oDomicilio.CalNumero).CalDescripcion + " Nro.: " + oDomicilio.DomNumero + " "
+                + " Dpto:" + oDomicilio.DomDepartamento;
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
         }
         private void CargarCategorias()
         {

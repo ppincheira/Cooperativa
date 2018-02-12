@@ -85,18 +85,44 @@
             this.txtOrdenRuta = new Controles.textBoxes.txtDescripcionCorta();
             this.gesGroup4 = new Controles.contenedores.gesGroup();
             this.lblEtiqueta15 = new Controles.labels.lblEtiqueta();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             this.txtTipoDoc = new Controles.textBoxes.txtDescripcion();
             this.lblEtiqueta14 = new Controles.labels.lblEtiqueta();
             this.txtEmpDocumentoNumero = new Controles.textBoxes.txtDescripcion();
             this.txtRespIva = new Controles.textBoxes.txtDescripcion();
             this.lblEtiqueta13 = new Controles.labels.lblEtiqueta();
             this.txtDomicilioEmpresa = new Controles.textBoxes.txtDescripcion();
+<<<<<<< HEAD
+=======
             this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
             this.txtEmpRazonSocial = new Controles.textBoxes.txtDescripcion();
             this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
             this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
             this.txtSocio = new Controles.textBoxes.txtDescripcion();
             this.txtEmpNumero = new Controles.textBoxes.txtDescripcion();
+=======
+            this.txtDescripcion15 = new Controles.textBoxes.txtDescripcion();
+            this.lblEtiqueta14 = new Controles.labels.lblEtiqueta();
+            this.txtDescripcion14 = new Controles.textBoxes.txtDescripcion();
+            this.txtDescripcion13 = new Controles.textBoxes.txtDescripcion();
+            this.lblEtiqueta13 = new Controles.labels.lblEtiqueta();
+            this.txtDescripcion4 = new Controles.textBoxes.txtDescripcion();
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
+            this.lblEtiqueta3 = new Controles.labels.lblEtiqueta();
+            this.txtEmpRazonSocial = new Controles.textBoxes.txtDescripcion();
+            this.lblEtiqueta2 = new Controles.labels.lblEtiqueta();
+            this.lblEtiqueta1 = new Controles.labels.lblEtiqueta();
+<<<<<<< HEAD
+            this.txtSocio = new Controles.textBoxes.txtDescripcion();
+            this.txtEmpNumero = new Controles.textBoxes.txtDescripcion();
+=======
+            this.txtDescripcion2 = new Controles.textBoxes.txtDescripcion();
+            this.txtDescripcion1 = new Controles.textBoxes.txtDescripcion();
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             this.gesGroup5 = new Controles.contenedores.gesGroup();
             this.lblDepartamento = new Controles.labels.lblEtiqueta();
             this.txtDepartamento = new Controles.textBoxes.txtDescripcionCorta();
@@ -303,11 +329,27 @@
             this.tabSumnistros.Controls.Add(this.tabPage1);
             this.tabSumnistros.Controls.Add(this.tabPage2);
             this.tabSumnistros.Controls.Add(this.tabPage3);
+<<<<<<< HEAD
             this.tabSumnistros.Location = new System.Drawing.Point(4, 382);
             this.tabSumnistros.Margin = new System.Windows.Forms.Padding(2);
             this.tabSumnistros.Name = "tabSumnistros";
             this.tabSumnistros.SelectedIndex = 0;
             this.tabSumnistros.Size = new System.Drawing.Size(827, 192);
+=======
+<<<<<<< HEAD
+            this.tabSumnistros.Location = new System.Drawing.Point(4, 382);
+            this.tabSumnistros.Margin = new System.Windows.Forms.Padding(2);
+            this.tabSumnistros.Name = "tabSumnistros";
+            this.tabSumnistros.SelectedIndex = 0;
+            this.tabSumnistros.Size = new System.Drawing.Size(827, 192);
+=======
+            this.tabSumnistros.Location = new System.Drawing.Point(4, 368);
+            this.tabSumnistros.Margin = new System.Windows.Forms.Padding(2);
+            this.tabSumnistros.Name = "tabSumnistros";
+            this.tabSumnistros.SelectedIndex = 0;
+            this.tabSumnistros.Size = new System.Drawing.Size(827, 206);
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             this.tabSumnistros.TabIndex = 7;
             this.tabSumnistros.Tag = "";
             // 
@@ -329,7 +371,15 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+<<<<<<< HEAD
             this.tabPage1.Size = new System.Drawing.Size(819, 166);
+=======
+<<<<<<< HEAD
+            this.tabPage1.Size = new System.Drawing.Size(819, 166);
+=======
+            this.tabPage1.Size = new System.Drawing.Size(819, 180);
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Medidores";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -347,7 +397,14 @@
             // 
             this.txtDescripcion12.BackColor = System.Drawing.Color.White;
             this.txtDescripcion12.ColorTextoVacio = System.Drawing.Color.Gray;
+<<<<<<< HEAD
             this.txtDescripcion12.Enabled = false;
+=======
+<<<<<<< HEAD
+            this.txtDescripcion12.Enabled = false;
+=======
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             this.txtDescripcion12.Location = new System.Drawing.Point(430, 58);
             this.txtDescripcion12.MaxLength = 50;
             this.txtDescripcion12.Name = "txtDescripcion12";
@@ -370,7 +427,14 @@
             // 
             this.txtDescripcion11.BackColor = System.Drawing.Color.White;
             this.txtDescripcion11.ColorTextoVacio = System.Drawing.Color.Gray;
+<<<<<<< HEAD
             this.txtDescripcion11.Enabled = false;
+=======
+<<<<<<< HEAD
+            this.txtDescripcion11.Enabled = false;
+=======
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             this.txtDescripcion11.Location = new System.Drawing.Point(102, 64);
             this.txtDescripcion11.MaxLength = 50;
             this.txtDescripcion11.Name = "txtDescripcion11";
@@ -393,7 +457,14 @@
             // 
             this.txtDescripcion10.BackColor = System.Drawing.Color.White;
             this.txtDescripcion10.ColorTextoVacio = System.Drawing.Color.Gray;
+<<<<<<< HEAD
             this.txtDescripcion10.Enabled = false;
+=======
+<<<<<<< HEAD
+            this.txtDescripcion10.Enabled = false;
+=======
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             this.txtDescripcion10.Location = new System.Drawing.Point(430, 32);
             this.txtDescripcion10.MaxLength = 50;
             this.txtDescripcion10.Name = "txtDescripcion10";
@@ -427,7 +498,14 @@
             // 
             this.txtDescripcion9.BackColor = System.Drawing.Color.White;
             this.txtDescripcion9.ColorTextoVacio = System.Drawing.Color.Gray;
+<<<<<<< HEAD
             this.txtDescripcion9.Enabled = false;
+=======
+<<<<<<< HEAD
+            this.txtDescripcion9.Enabled = false;
+=======
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             this.txtDescripcion9.Location = new System.Drawing.Point(102, 35);
             this.txtDescripcion9.MaxLength = 50;
             this.txtDescripcion9.Name = "txtDescripcion9";
@@ -498,6 +576,7 @@
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // txtVoltaje
+<<<<<<< HEAD
             // 
             this.txtVoltaje.BackColor = System.Drawing.Color.Red;
             this.txtVoltaje.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -543,6 +622,53 @@
             this.lblConsumoEstimado.TabIndex = 43;
             this.lblConsumoEstimado.Text = "Consumo Estimado:";
             // 
+=======
+            // 
+            this.txtVoltaje.BackColor = System.Drawing.Color.Red;
+            this.txtVoltaje.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtVoltaje.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtVoltaje.Location = new System.Drawing.Point(243, 104);
+            this.txtVoltaje.MaxLength = 15;
+            this.txtVoltaje.Name = "txtVoltaje";
+            this.txtVoltaje.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtVoltaje.Size = new System.Drawing.Size(100, 20);
+            this.txtVoltaje.TabIndex = 40;
+            this.txtVoltaje.TextoVacio = "<Descripcion>";
+            this.txtVoltaje.TipoControl = Controles.util.Enumerados.enumTipos.Numero;
+            // 
+            // lblVoltaje
+            // 
+            this.lblVoltaje.AutoSize = true;
+            this.lblVoltaje.Location = new System.Drawing.Point(185, 107);
+            this.lblVoltaje.Name = "lblVoltaje";
+            this.lblVoltaje.Size = new System.Drawing.Size(42, 13);
+            this.lblVoltaje.TabIndex = 42;
+            this.lblVoltaje.Text = "Voltaje:";
+            // 
+            // txtConsumoEstimado
+            // 
+            this.txtConsumoEstimado.BackColor = System.Drawing.Color.Red;
+            this.txtConsumoEstimado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtConsumoEstimado.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtConsumoEstimado.Location = new System.Drawing.Point(291, 74);
+            this.txtConsumoEstimado.MaxLength = 15;
+            this.txtConsumoEstimado.Name = "txtConsumoEstimado";
+            this.txtConsumoEstimado.Requerido = Controles.util.Enumerados.enumRequerido.SI;
+            this.txtConsumoEstimado.Size = new System.Drawing.Size(100, 20);
+            this.txtConsumoEstimado.TabIndex = 41;
+            this.txtConsumoEstimado.TextoVacio = "<Descripcion>";
+            this.txtConsumoEstimado.TipoControl = Controles.util.Enumerados.enumTipos.Decimal;
+            // 
+            // lblConsumoEstimado
+            // 
+            this.lblConsumoEstimado.AutoSize = true;
+            this.lblConsumoEstimado.Location = new System.Drawing.Point(185, 78);
+            this.lblConsumoEstimado.Name = "lblConsumoEstimado";
+            this.lblConsumoEstimado.Size = new System.Drawing.Size(100, 13);
+            this.lblConsumoEstimado.TabIndex = 43;
+            this.lblConsumoEstimado.Text = "Consumo Estimado:";
+            // 
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             // lblPotenciaL2
             // 
             this.lblPotenciaL2.AutoSize = true;
@@ -684,7 +810,11 @@
             this.cmbCategoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbCategoria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCategoria.FormattingEnabled = true;
+<<<<<<< HEAD
             this.cmbCategoria.Location = new System.Drawing.Point(109, 22);
+=======
+            this.cmbCategoria.Location = new System.Drawing.Point(75, 20);
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Requerido = Controles.util.Enumerados.enumRequerido.NO;
             this.cmbCategoria.Size = new System.Drawing.Size(165, 21);
@@ -765,6 +895,10 @@
             // gesGroup4
             // 
             this.gesGroup4.Controls.Add(this.lblEtiqueta15);
+<<<<<<< HEAD
+            this.gesGroup4.Controls.Add(this.txtTipoDoc);
+=======
+<<<<<<< HEAD
             this.gesGroup4.Controls.Add(this.txtTipoDoc);
             this.gesGroup4.Controls.Add(this.lblEtiqueta14);
             this.gesGroup4.Controls.Add(this.txtEmpDocumentoNumero);
@@ -777,11 +911,39 @@
             this.gesGroup4.Controls.Add(this.lblEtiqueta1);
             this.gesGroup4.Controls.Add(this.txtSocio);
             this.gesGroup4.Controls.Add(this.txtEmpNumero);
+=======
+            this.gesGroup4.Controls.Add(this.txtDescripcion15);
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
+            this.gesGroup4.Controls.Add(this.lblEtiqueta14);
+            this.gesGroup4.Controls.Add(this.txtEmpDocumentoNumero);
+            this.gesGroup4.Controls.Add(this.txtRespIva);
+            this.gesGroup4.Controls.Add(this.lblEtiqueta13);
+            this.gesGroup4.Controls.Add(this.txtDomicilioEmpresa);
+            this.gesGroup4.Controls.Add(this.lblEtiqueta3);
+            this.gesGroup4.Controls.Add(this.txtEmpRazonSocial);
+            this.gesGroup4.Controls.Add(this.lblEtiqueta2);
+            this.gesGroup4.Controls.Add(this.lblEtiqueta1);
+<<<<<<< HEAD
+            this.gesGroup4.Controls.Add(this.txtSocio);
+            this.gesGroup4.Controls.Add(this.txtEmpNumero);
+=======
+            this.gesGroup4.Controls.Add(this.txtDescripcion2);
+            this.gesGroup4.Controls.Add(this.txtDescripcion1);
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             this.gesGroup4.Controls.Add(this.lblNumeroProv);
             this.gesGroup4.Controls.Add(this.btnCliente);
             this.gesGroup4.Location = new System.Drawing.Point(2, 104);
             this.gesGroup4.Name = "gesGroup4";
+<<<<<<< HEAD
             this.gesGroup4.Size = new System.Drawing.Size(538, 157);
+=======
+<<<<<<< HEAD
+            this.gesGroup4.Size = new System.Drawing.Size(538, 157);
+=======
+            this.gesGroup4.Size = new System.Drawing.Size(538, 138);
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             this.gesGroup4.TabIndex = 9;
             this.gesGroup4.TabStop = false;
             this.gesGroup4.Text = "Cliente/Socio";
@@ -789,12 +951,24 @@
             // lblEtiqueta15
             // 
             this.lblEtiqueta15.AutoSize = true;
+<<<<<<< HEAD
             this.lblEtiqueta15.Location = new System.Drawing.Point(8, 134);
+=======
+<<<<<<< HEAD
+            this.lblEtiqueta15.Location = new System.Drawing.Point(8, 134);
+=======
+            this.lblEtiqueta15.Location = new System.Drawing.Point(212, 108);
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             this.lblEtiqueta15.Name = "lblEtiqueta15";
             this.lblEtiqueta15.Size = new System.Drawing.Size(54, 13);
             this.lblEtiqueta15.TabIndex = 43;
             this.lblEtiqueta15.Text = "Tipo Doc:";
             // 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             // txtTipoDoc
             // 
             this.txtTipoDoc.BackColor = System.Drawing.Color.White;
@@ -808,16 +982,45 @@
             this.txtTipoDoc.TabIndex = 42;
             this.txtTipoDoc.TextoVacio = "<Descripcion>";
             this.txtTipoDoc.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+<<<<<<< HEAD
+=======
+=======
+            // txtDescripcion15
+            // 
+            this.txtDescripcion15.BackColor = System.Drawing.Color.White;
+            this.txtDescripcion15.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtDescripcion15.Location = new System.Drawing.Point(272, 105);
+            this.txtDescripcion15.MaxLength = 50;
+            this.txtDescripcion15.Name = "txtDescripcion15";
+            this.txtDescripcion15.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtDescripcion15.Size = new System.Drawing.Size(73, 20);
+            this.txtDescripcion15.TabIndex = 42;
+            this.txtDescripcion15.TextoVacio = "<Descripcion>";
+            this.txtDescripcion15.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             // 
             // lblEtiqueta14
             // 
             this.lblEtiqueta14.AutoSize = true;
+<<<<<<< HEAD
             this.lblEtiqueta14.Location = new System.Drawing.Point(236, 135);
+=======
+<<<<<<< HEAD
+            this.lblEtiqueta14.Location = new System.Drawing.Point(236, 135);
+=======
+            this.lblEtiqueta14.Location = new System.Drawing.Point(352, 108);
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             this.lblEtiqueta14.Name = "lblEtiqueta14";
             this.lblEtiqueta14.Size = new System.Drawing.Size(22, 13);
             this.lblEtiqueta14.TabIndex = 41;
             this.lblEtiqueta14.Text = "N°:";
             // 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             // txtEmpDocumentoNumero
             // 
             this.txtEmpDocumentoNumero.BackColor = System.Drawing.Color.White;
@@ -845,6 +1048,36 @@
             this.txtRespIva.TabIndex = 39;
             this.txtRespIva.TextoVacio = "<Descripcion>";
             this.txtRespIva.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+<<<<<<< HEAD
+=======
+=======
+            // txtDescripcion14
+            // 
+            this.txtDescripcion14.BackColor = System.Drawing.Color.White;
+            this.txtDescripcion14.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtDescripcion14.Location = new System.Drawing.Point(377, 105);
+            this.txtDescripcion14.MaxLength = 50;
+            this.txtDescripcion14.Name = "txtDescripcion14";
+            this.txtDescripcion14.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtDescripcion14.Size = new System.Drawing.Size(150, 20);
+            this.txtDescripcion14.TabIndex = 40;
+            this.txtDescripcion14.TextoVacio = "<Descripcion>";
+            this.txtDescripcion14.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            // 
+            // txtDescripcion13
+            // 
+            this.txtDescripcion13.BackColor = System.Drawing.Color.White;
+            this.txtDescripcion13.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtDescripcion13.Location = new System.Drawing.Point(130, 105);
+            this.txtDescripcion13.MaxLength = 50;
+            this.txtDescripcion13.Name = "txtDescripcion13";
+            this.txtDescripcion13.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtDescripcion13.Size = new System.Drawing.Size(64, 20);
+            this.txtDescripcion13.TabIndex = 39;
+            this.txtDescripcion13.TextoVacio = "<Descripcion>";
+            this.txtDescripcion13.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             // 
             // lblEtiqueta13
             // 
@@ -855,6 +1088,7 @@
             this.lblEtiqueta13.TabIndex = 38;
             this.lblEtiqueta13.Text = "Responsabilidad IVA:";
             // 
+<<<<<<< HEAD
             // txtDomicilioEmpresa
             // 
             this.txtDomicilioEmpresa.BackColor = System.Drawing.Color.White;
@@ -868,6 +1102,36 @@
             this.txtDomicilioEmpresa.TabIndex = 37;
             this.txtDomicilioEmpresa.TextoVacio = "<Descripcion>";
             this.txtDomicilioEmpresa.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+=======
+<<<<<<< HEAD
+            // txtDomicilioEmpresa
+            // 
+            this.txtDomicilioEmpresa.BackColor = System.Drawing.Color.White;
+            this.txtDomicilioEmpresa.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtDomicilioEmpresa.Enabled = false;
+            this.txtDomicilioEmpresa.Location = new System.Drawing.Point(130, 76);
+            this.txtDomicilioEmpresa.MaxLength = 50;
+            this.txtDomicilioEmpresa.Name = "txtDomicilioEmpresa";
+            this.txtDomicilioEmpresa.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtDomicilioEmpresa.Size = new System.Drawing.Size(397, 20);
+            this.txtDomicilioEmpresa.TabIndex = 37;
+            this.txtDomicilioEmpresa.TextoVacio = "<Descripcion>";
+            this.txtDomicilioEmpresa.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+=======
+            // txtDescripcion4
+            // 
+            this.txtDescripcion4.BackColor = System.Drawing.Color.White;
+            this.txtDescripcion4.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtDescripcion4.Location = new System.Drawing.Point(130, 76);
+            this.txtDescripcion4.MaxLength = 50;
+            this.txtDescripcion4.Name = "txtDescripcion4";
+            this.txtDescripcion4.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtDescripcion4.Size = new System.Drawing.Size(397, 20);
+            this.txtDescripcion4.TabIndex = 37;
+            this.txtDescripcion4.TextoVacio = "<Descripcion>";
+            this.txtDescripcion4.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             // 
             // lblEtiqueta3
             // 
@@ -878,6 +1142,7 @@
             this.lblEtiqueta3.TabIndex = 36;
             this.lblEtiqueta3.Text = "Domicilio:";
             // 
+<<<<<<< HEAD
             // txtEmpRazonSocial
             // 
             this.txtEmpRazonSocial.BackColor = System.Drawing.Color.White;
@@ -891,6 +1156,36 @@
             this.txtEmpRazonSocial.TabIndex = 35;
             this.txtEmpRazonSocial.TextoVacio = "<Descripcion>";
             this.txtEmpRazonSocial.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+=======
+<<<<<<< HEAD
+            // txtEmpRazonSocial
+            // 
+            this.txtEmpRazonSocial.BackColor = System.Drawing.Color.White;
+            this.txtEmpRazonSocial.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtEmpRazonSocial.Enabled = false;
+            this.txtEmpRazonSocial.Location = new System.Drawing.Point(130, 46);
+            this.txtEmpRazonSocial.MaxLength = 50;
+            this.txtEmpRazonSocial.Name = "txtEmpRazonSocial";
+            this.txtEmpRazonSocial.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtEmpRazonSocial.Size = new System.Drawing.Size(397, 20);
+            this.txtEmpRazonSocial.TabIndex = 35;
+            this.txtEmpRazonSocial.TextoVacio = "<Descripcion>";
+            this.txtEmpRazonSocial.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+=======
+            // txtDescripcion3
+            // 
+            this.txtDescripcion3.BackColor = System.Drawing.Color.White;
+            this.txtDescripcion3.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtDescripcion3.Location = new System.Drawing.Point(130, 46);
+            this.txtDescripcion3.MaxLength = 50;
+            this.txtDescripcion3.Name = "txtDescripcion3";
+            this.txtDescripcion3.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtDescripcion3.Size = new System.Drawing.Size(397, 20);
+            this.txtDescripcion3.TabIndex = 35;
+            this.txtDescripcion3.TextoVacio = "<Descripcion>";
+            this.txtDescripcion3.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             // 
             // lblEtiqueta2
             // 
@@ -910,6 +1205,10 @@
             this.lblEtiqueta1.TabIndex = 33;
             this.lblEtiqueta1.Text = "N° Cliente";
             // 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             // txtSocio
             // 
             this.txtSocio.BackColor = System.Drawing.Color.White;
@@ -937,6 +1236,36 @@
             this.txtEmpNumero.TabIndex = 31;
             this.txtEmpNumero.TextoVacio = "<Descripcion>";
             this.txtEmpNumero.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+<<<<<<< HEAD
+=======
+=======
+            // txtDescripcion2
+            // 
+            this.txtDescripcion2.BackColor = System.Drawing.Color.White;
+            this.txtDescripcion2.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtDescripcion2.Location = new System.Drawing.Point(377, 13);
+            this.txtDescripcion2.MaxLength = 50;
+            this.txtDescripcion2.Name = "txtDescripcion2";
+            this.txtDescripcion2.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtDescripcion2.Size = new System.Drawing.Size(150, 20);
+            this.txtDescripcion2.TabIndex = 32;
+            this.txtDescripcion2.TextoVacio = "<Descripcion>";
+            this.txtDescripcion2.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+            // 
+            // txtDescripcion1
+            // 
+            this.txtDescripcion1.BackColor = System.Drawing.Color.White;
+            this.txtDescripcion1.ColorTextoVacio = System.Drawing.Color.Gray;
+            this.txtDescripcion1.Location = new System.Drawing.Point(130, 13);
+            this.txtDescripcion1.MaxLength = 50;
+            this.txtDescripcion1.Name = "txtDescripcion1";
+            this.txtDescripcion1.Requerido = Controles.util.Enumerados.enumRequerido.NO;
+            this.txtDescripcion1.Size = new System.Drawing.Size(150, 20);
+            this.txtDescripcion1.TabIndex = 31;
+            this.txtDescripcion1.TextoVacio = "<Descripcion>";
+            this.txtDescripcion1.TipoControl = Controles.util.Enumerados.enumTipos.Ninguna;
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             // 
             // gesGroup5
             // 
@@ -963,7 +1292,15 @@
             this.gesGroup5.Controls.Add(this.lblEtiqueta4);
             this.gesGroup5.Controls.Add(this.txtDescripcion5);
             this.gesGroup5.Controls.Add(this.btnGeneral1);
+<<<<<<< HEAD
             this.gesGroup5.Location = new System.Drawing.Point(2, 262);
+=======
+<<<<<<< HEAD
+            this.gesGroup5.Location = new System.Drawing.Point(2, 262);
+=======
+            this.gesGroup5.Location = new System.Drawing.Point(2, 248);
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
             this.gesGroup5.Name = "gesGroup5";
             this.gesGroup5.Size = new System.Drawing.Size(835, 115);
             this.gesGroup5.TabIndex = 10;
@@ -1172,6 +1509,10 @@
             this.Controls.Add(this.gbDatos);
             this.Controls.Add(this.gesGroup2);
             this.Name = "frmSuministrosCrud";
+<<<<<<< HEAD
+=======
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
             this.Text = "Suministros";
             this.Load += new System.EventHandler(this.frmSuministrosCrud_Load);
             this.gesGroup2.ResumeLayout(false);
@@ -1235,11 +1576,27 @@
         private Controles.contenedores.gesGroup gesGroup5;
         private System.Windows.Forms.TabPage tabPage3;
         private Controles.labels.lblEtiqueta lblEtiqueta1;
+<<<<<<< HEAD
         private Controles.textBoxes.txtDescripcion txtSocio;
         private Controles.textBoxes.txtDescripcion txtEmpNumero;
         private Controles.textBoxes.txtDescripcion txtEmpRazonSocial;
         private Controles.labels.lblEtiqueta lblEtiqueta2;
         private Controles.textBoxes.txtDescripcion txtDomicilioEmpresa;
+=======
+<<<<<<< HEAD
+        private Controles.textBoxes.txtDescripcion txtSocio;
+        private Controles.textBoxes.txtDescripcion txtEmpNumero;
+        private Controles.textBoxes.txtDescripcion txtEmpRazonSocial;
+        private Controles.labels.lblEtiqueta lblEtiqueta2;
+        private Controles.textBoxes.txtDescripcion txtDomicilioEmpresa;
+=======
+        private Controles.textBoxes.txtDescripcion txtDescripcion2;
+        private Controles.textBoxes.txtDescripcion txtDescripcion1;
+        private Controles.textBoxes.txtDescripcion txtDescripcion3;
+        private Controles.labels.lblEtiqueta lblEtiqueta2;
+        private Controles.textBoxes.txtDescripcion txtDescripcion4;
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
         private Controles.labels.lblEtiqueta lblEtiqueta3;
         private Controles.labels.lblEtiqueta lblEtiqueta7;
         private Controles.textBoxes.txtDescripcion txtDescripcion8;
@@ -1277,10 +1634,24 @@
         private Controles.labels.lblEtiqueta lblEtiqueta10;
         private Controles.textBoxes.txtDescripcion txtDescripcion10;
         private Controles.labels.lblEtiqueta lblEtiqueta15;
+<<<<<<< HEAD
         private Controles.textBoxes.txtDescripcion txtTipoDoc;
         private Controles.labels.lblEtiqueta lblEtiqueta14;
         private Controles.textBoxes.txtDescripcion txtEmpDocumentoNumero;
         private Controles.textBoxes.txtDescripcion txtRespIva;
+=======
+<<<<<<< HEAD
+        private Controles.textBoxes.txtDescripcion txtTipoDoc;
+        private Controles.labels.lblEtiqueta lblEtiqueta14;
+        private Controles.textBoxes.txtDescripcion txtEmpDocumentoNumero;
+        private Controles.textBoxes.txtDescripcion txtRespIva;
+=======
+        private Controles.textBoxes.txtDescripcion txtDescripcion15;
+        private Controles.labels.lblEtiqueta lblEtiqueta14;
+        private Controles.textBoxes.txtDescripcion txtDescripcion14;
+        private Controles.textBoxes.txtDescripcion txtDescripcion13;
+>>>>>>> 145bbb4fbfb7d7846254ecbbce863cd386f9e871
+>>>>>>> 80a687236975e3e2b8b7068dc9cef4f5dcf6cc9b
         private Controles.labels.lblEtiqueta lblEtiqueta13;
     }
 }
